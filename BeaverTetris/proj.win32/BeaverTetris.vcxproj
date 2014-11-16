@@ -139,11 +139,15 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="GamePlayerDataSource.cpp" />
+    <ClCompile Include="LoadingGameDataSource.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="GamePlayerDataSource.h" />
+    <ClInclude Include="LoadingGameDataSource.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
