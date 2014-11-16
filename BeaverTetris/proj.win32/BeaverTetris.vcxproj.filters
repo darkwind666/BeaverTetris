@@ -22,15 +22,27 @@
     <Filter Include="CocosStartClasses">
       <UniqueIdentifier>{ce3e45ee-210b-495c-9107-38af0cd72c05}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Singletons">
+      <UniqueIdentifier>{b8b344ce-3e2f-41df-a988-254394f68476}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Constants">
+      <UniqueIdentifier>{51d90541-23ee-4391-aea4-56662411e0e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Factories">
+      <UniqueIdentifier>{a3dbe40b-7841-4f54-b24e-9eb2e4782d82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EventSystem">
+      <UniqueIdentifier>{9ca80150-17e2-4522-8cf6-7bad9c94e314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\GameLogic">
+      <UniqueIdentifier>{46bdaa44-2361-4f5b-8724-7249d3cd8136}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
     <ClCompile Include="LoadingGameDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="GamePlayerDataSource.cpp">
       <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
@@ -45,14 +57,110 @@
     <ClCompile Include="RecordsDataSource.cpp">
       <Filter>Models</Filter>
     </ClCompile>
-    <ClCompile Include="MainGameMenuDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="GameLevelsDataSource.cpp">
       <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="PlayerSelectionDataSource.cpp">
       <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="GameInitiator.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceLocator.cpp">
+      <Filter>Singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="GameViewElementsDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="GameGraphicsDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSoundDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTransitionsController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGraphFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="DevelopersSceneFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRecordsSceneFacory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRecordsSceneFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingGameSceneFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGameSceneFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGameLevelSceneFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGameSceneFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenesTransitionsFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlayersDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentPlayerDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGameMenuDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="EventDispatcher.cpp">
+      <Filter>EventSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="UserEvent.cpp">
+      <Filter>EventSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLevelsMenuDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerScoreDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerInputController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="AiSystem.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionSystem.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="GameBoard.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveSystem.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreSystem.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="WinGameSystem.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEventsFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="GameVictoryFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="SpellsFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="TetrominosFactory.cpp">
+      <Filter>Factories</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,9 +168,6 @@
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="LoadingGameDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="GamePlayerDataSource.h">
       <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
@@ -77,14 +182,110 @@
     <ClInclude Include="RecordsDataSource.h">
       <Filter>Models</Filter>
     </ClInclude>
-    <ClInclude Include="MainGameMenuDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
     <ClInclude Include="GameLevelsDataSource.h">
       <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="PlayerSelectionDataSource.h">
       <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="GameInitiator.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceLocator.h">
+      <Filter>Singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="GameViewElementsDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="GameGraphicsDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSoundDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTransitionsController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGraphFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="DevelopersSceneFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRecordsSceneFacory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRecordsSceneFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingGameSceneFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGameSceneFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGameLevelSceneFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGameSceneFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenesTransitionsFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlayersDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentPlayerDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGameMenuDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="EventDispatcher.h">
+      <Filter>EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="UserEvent.h">
+      <Filter>EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLevelsMenuDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerScoreDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInputController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="AiSystem.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionSystem.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBoard.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveSystem.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreSystem.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="WinGameSystem.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEventsFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="GameVictoryFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellsFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="TetrominosFactory.h">
+      <Filter>Factories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
