@@ -39,6 +39,9 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>CocosStartClasses</Filter>
     </ClCompile>
+    <ClCompile Include="DevelopersDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -55,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>CocosStartClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="DevelopersDataSource.h">
+      <Filter>Models</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
