@@ -45,6 +45,9 @@
     <ClCompile Include="RecordsDataSource.cpp">
       <Filter>Models</Filter>
     </ClCompile>
+    <ClCompile Include="MainGameMenuDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -66,6 +69,9 @@
       <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="RecordsDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGameMenuDataSource.h">
       <Filter>Models</Filter>
     </ClInclude>
   </ItemGroup>
