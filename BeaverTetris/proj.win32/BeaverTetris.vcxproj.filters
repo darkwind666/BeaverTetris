@@ -51,6 +51,9 @@
     <ClCompile Include="GameLevelsDataSource.cpp">
       <Filter>Models</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerSelectionDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -78,6 +81,9 @@
       <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="GameLevelsDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSelectionDataSource.h">
       <Filter>Models</Filter>
     </ClInclude>
   </ItemGroup>

@@ -145,6 +145,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="LoadingGameDataSource.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainGameMenuDataSource.cpp" />
+    <ClCompile Include="PlayerSelectionDataSource.cpp" />
     <ClCompile Include="RecordsDataSource.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="LoadingGameDataSource.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="MainGameMenuDataSource.h" />
+    <ClInclude Include="PlayerSelectionDataSource.h" />
     <ClInclude Include="RecordsDataSource.h" />
   </ItemGroup>
   <ItemGroup>
