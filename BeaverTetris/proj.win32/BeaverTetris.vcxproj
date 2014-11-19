@@ -146,6 +146,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="DevelopersSceneFactory.cpp" />
     <ClCompile Include="EventDispatcher.cpp" />
     <ClCompile Include="GameBoard.cpp" />
+    <ClCompile Include="GameDataFactory.cpp" />
     <ClCompile Include="GameEventsFactory.cpp" />
     <ClCompile Include="GameGraphicsDataSource.cpp" />
     <ClCompile Include="GameInitiator.cpp" />
@@ -189,6 +190,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="DevelopersSceneFactory.h" />
     <ClInclude Include="EventDispatcher.h" />
     <ClInclude Include="GameBoard.h" />
+    <ClInclude Include="GameDataFactory.h" />
+    <ClInclude Include="GameEnums.h" />
     <ClInclude Include="GameEventsFactory.h" />
     <ClInclude Include="GameGraphicsDataSource.h" />
     <ClInclude Include="GameInitiator.h" />
@@ -218,6 +221,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="SelectGameLevelSceneFactory.h" />
     <ClInclude Include="ServiceLocator.h" />
     <ClInclude Include="StartGameSceneFactory.h" />
+    <ClInclude Include="GameStructures.h" />
     <ClInclude Include="TetrominosFactory.h" />
     <ClInclude Include="UserEvent.h" />
     <ClInclude Include="WinGameSystem.h" />

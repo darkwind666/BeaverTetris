@@ -1,11 +1,27 @@
 #include "ServiceLocator.h"
 
+static GameViewElementsDataSource  *_gameViewElementsDataSource;
+static GameTransitionsController *_gameTransitionsController;
 
-ServiceLocator::ServiceLocator(void)
+
+GameViewElementsDataSource*  ServiceLocator::getGameViewElementsDataSource()
 {
+	return _gameViewElementsDataSource;
+}
+
+void ServiceLocator::setGameViewElementsDataSource(GameViewElementsDataSource *aGameViewElementsDataSource)
+{
+	_gameViewElementsDataSource = aGameViewElementsDataSource;
 }
 
 
-ServiceLocator::~ServiceLocator(void)
+
+GameTransitionsController*  ServiceLocator::getGameTransitionsController()
 {
+	return _gameTransitionsController;
+}
+
+void ServiceLocator::setGameTransitionsController(GameTransitionsController *aGameTransitionsController)
+{
+	_gameTransitionsController = aGameTransitionsController;
 }

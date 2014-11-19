@@ -162,6 +162,9 @@
     <ClCompile Include="TetrominosFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="GameDataFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -285,6 +288,15 @@
       <Filter>Factories</Filter>
     </ClInclude>
     <ClInclude Include="TetrominosFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEnums.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStructures.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDataFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
   </ItemGroup>
