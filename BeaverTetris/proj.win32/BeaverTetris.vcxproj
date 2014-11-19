@@ -152,7 +152,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameInitiator.cpp" />
     <ClCompile Include="GameLevelsDataSource.cpp" />
     <ClCompile Include="GameLevelsMenuDataSource.cpp" />
-    <ClCompile Include="GamePlayersDataSource.cpp" />
+    <ClCompile Include="GamePlayersDatabase.cpp" />
+    <ClCompile Include="GamePopUpsController.cpp" />
     <ClCompile Include="GameRecordsSceneFacory.cpp" />
     <ClCompile Include="GameRecordsSceneFactory.cpp" />
     <ClCompile Include="GameSoundDataSource.cpp" />
@@ -177,7 +178,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="ServiceLocator.cpp" />
     <ClCompile Include="StartGameSceneFactory.cpp" />
     <ClCompile Include="TetrominosFactory.cpp" />
-    <ClCompile Include="UserEvent.cpp" />
     <ClCompile Include="WinGameSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +189,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="DevelopersDataSource.h" />
     <ClInclude Include="DevelopersSceneFactory.h" />
     <ClInclude Include="EventDispatcher.h" />
+    <ClInclude Include="EventHandlerInterface.h" />
     <ClInclude Include="GameBoard.h" />
     <ClInclude Include="GameDataFactory.h" />
     <ClInclude Include="GameEnums.h" />
@@ -197,7 +198,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameInitiator.h" />
     <ClInclude Include="GameLevelsDataSource.h" />
     <ClInclude Include="GameLevelsMenuDataSource.h" />
-    <ClInclude Include="GamePlayersDataSource.h" />
+    <ClInclude Include="GamePlayersDatabase.h" />
+    <ClInclude Include="GamePopUpsController.h" />
     <ClInclude Include="GameRecordsSceneFacory.h" />
     <ClInclude Include="GameRecordsSceneFactory.h" />
     <ClInclude Include="GameSoundDataSource.h" />
@@ -223,7 +225,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="StartGameSceneFactory.h" />
     <ClInclude Include="GameStructures.h" />
     <ClInclude Include="TetrominosFactory.h" />
-    <ClInclude Include="UserEvent.h" />
     <ClInclude Include="WinGameSystem.h" />
   </ItemGroup>
   <ItemGroup>

@@ -108,9 +108,6 @@
     <ClCompile Include="ScenesTransitionsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="GamePlayersDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="CurrentPlayerDataSource.cpp">
       <Filter>Models</Filter>
     </ClCompile>
@@ -118,9 +115,6 @@
       <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="EventDispatcher.cpp">
-      <Filter>EventSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="UserEvent.cpp">
       <Filter>EventSystem</Filter>
     </ClCompile>
     <ClCompile Include="GameLevelsMenuDataSource.cpp">
@@ -164,6 +158,12 @@
     </ClCompile>
     <ClCompile Include="GameDataFactory.cpp">
       <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlayersDatabase.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePopUpsController.cpp">
+      <Filter>Controllers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -236,9 +236,6 @@
     <ClInclude Include="ScenesTransitionsFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
-    <ClInclude Include="GamePlayersDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
     <ClInclude Include="CurrentPlayerDataSource.h">
       <Filter>Models</Filter>
     </ClInclude>
@@ -246,9 +243,6 @@
       <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="EventDispatcher.h">
-      <Filter>EventSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="UserEvent.h">
       <Filter>EventSystem</Filter>
     </ClInclude>
     <ClInclude Include="GameLevelsMenuDataSource.h">
@@ -298,6 +292,15 @@
     </ClInclude>
     <ClInclude Include="GameDataFactory.h">
       <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlayersDatabase.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="EventHandlerInterface.h">
+      <Filter>EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePopUpsController.h">
+      <Filter>Controllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

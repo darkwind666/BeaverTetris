@@ -1,19 +1,18 @@
 #pragma once
 
-#include "GameEnums.h"
+#include "EventHandlerInterface.h"
 #include <vector>
+#include "GameEnums.h"
 
 using namespace std;
 
-class GameTransitionsController
+class GameTransitionsController : public EventHandlerInterface
 {
 public:
 	GameTransitionsController(void);
 	~GameTransitionsController(void);
 
-	void goToInitialState(void);
-	void goToState(GameState aGameState);
-	void goToPreviousState(void);
+	void handleEventWithInformation(GameEventInformation aEventInformation);
 
 	void addSceneFactory();
 	void addTransitionFromStateToState(GameState stateOne, GameState stateTwo, TransitionType transitionType);
@@ -22,5 +21,9 @@ private:
 
 	vector <GameState> _stateFactories;
 	vector < vector <TransitionType> > _transitions;
+
+	void goToInitialState(void);
+	void changeState(void);
+	void goToPreviousState(void);
 
 };

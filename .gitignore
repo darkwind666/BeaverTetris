@@ -228,3 +228,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+*.tlog
+*.lastbuildstate
+*.unsuccessfulbuild
+*.idb
