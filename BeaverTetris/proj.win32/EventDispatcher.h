@@ -14,6 +14,7 @@ public:
 
 	void handleEvent(GameEvent aEvent);
 	void setEventHandlerWithEventName(EventHandlerInterface *aEventHandler , EventType *aEventType);
+	void removeEventHandlerWithEventName(EventHandlerInterface *aEventHandler , EventType *aEventType);
 
 protected:
 
