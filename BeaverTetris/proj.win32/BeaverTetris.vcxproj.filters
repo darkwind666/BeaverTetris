@@ -49,6 +49,9 @@
     <Filter Include="Models\GameEvents">
       <UniqueIdentifier>{8daf41ff-e804-4cf2-a96e-6984f76f4347}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Factories\ScenesFactories">
+      <UniqueIdentifier>{911dcd74-afde-4e96-9480-bedc7cb33206}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -94,24 +97,6 @@
       <Filter>Controllers</Filter>
     </ClCompile>
     <ClCompile Include="SceneGraphFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="DevelopersSceneFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="GameRecordsSceneFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingGameSceneFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="MainGameSceneFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectGameLevelSceneFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="StartGameSceneFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
     <ClCompile Include="ScenesTransitionsFactory.cpp">
@@ -222,6 +207,33 @@
     <ClCompile Include="GameEventsDataSource.cpp">
       <Filter>Models</Filter>
     </ClCompile>
+    <ClCompile Include="EndGameController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="EndGameDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentLevelAwardDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="DevelopersSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRecordsSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingGameSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGameSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGameLevelSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGameSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -267,24 +279,6 @@
       <Filter>Controllers</Filter>
     </ClInclude>
     <ClInclude Include="SceneGraphFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="DevelopersSceneFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="GameRecordsSceneFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadingGameSceneFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="MainGameSceneFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectGameLevelSceneFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="StartGameSceneFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
     <ClInclude Include="ScenesTransitionsFactory.h">
@@ -403,6 +397,33 @@
     </ClInclude>
     <ClInclude Include="GameEventsDataSource.h">
       <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="EndGameController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="EndGameDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentLevelAwardDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="DevelopersSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRecordsSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingGameSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGameSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGameLevelSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGameSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

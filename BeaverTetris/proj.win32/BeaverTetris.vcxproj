@@ -144,9 +144,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="CurrentDetailController.cpp" />
     <ClCompile Include="CurrentGameVictoryConditionDataSource.cpp" />
+    <ClCompile Include="CurrentLevelAwardDataSource.cpp" />
     <ClCompile Include="CurrentPlayerDataSource.cpp" />
     <ClCompile Include="DevelopersDataSource.cpp" />
     <ClCompile Include="DevelopersSceneFactory.cpp" />
+    <ClCompile Include="EndGameController.cpp" />
+    <ClCompile Include="EndGameDataSource.cpp" />
     <ClCompile Include="EventDispatcher.cpp" />
     <ClCompile Include="GameBoard.cpp" />
     <ClCompile Include="GameBoardViewDataSource.cpp" />
@@ -203,9 +206,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="CurrentDetailController.h" />
     <ClInclude Include="CurrentGameVictoryConditionDataSource.h" />
+    <ClInclude Include="CurrentLevelAwardDataSource.h" />
     <ClInclude Include="CurrentPlayerDataSource.h" />
     <ClInclude Include="DevelopersDataSource.h" />
     <ClInclude Include="DevelopersSceneFactory.h" />
+    <ClInclude Include="EndGameController.h" />
+    <ClInclude Include="EndGameDataSource.h" />
     <ClInclude Include="EventDispatcher.h" />
     <ClInclude Include="EventHandlerInterface.h" />
     <ClInclude Include="GameBoard.h" />
