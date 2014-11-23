@@ -234,6 +234,7 @@
     <ClCompile Include="StartGameSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
+    <ClCompile Include="GameViewInformationFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -424,6 +425,13 @@
     </ClInclude>
     <ClInclude Include="StartGameSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="GameViewInformationFactory.h" />
+    <ClInclude Include="GameElementsKeys.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="GameResourcesExtension.h">
+      <Filter>Constants</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

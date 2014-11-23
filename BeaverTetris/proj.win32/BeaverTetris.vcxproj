@@ -172,6 +172,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameTransitionsController.cpp" />
     <ClCompile Include="GameVictoryFactory.cpp" />
     <ClCompile Include="GameViewElementsDataSource.cpp" />
+    <ClCompile Include="GameViewInformationFactory.cpp" />
     <ClCompile Include="LoadingGameDataSource.cpp" />
     <ClCompile Include="LoadingGameSceneFactory.cpp" />
     <ClCompile Include="main.cpp" />
@@ -231,11 +232,14 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GamePlayersDatabase.h" />
     <ClInclude Include="GamePopUpsController.h" />
     <ClInclude Include="GameRecordsSceneFactory.h" />
+    <ClInclude Include="GameResourcesExtension.h" />
     <ClInclude Include="GameSoundDataSource.h" />
     <ClInclude Include="GameSystemInterface.h" />
     <ClInclude Include="GameTransitionsController.h" />
     <ClInclude Include="GameVictoryFactory.h" />
     <ClInclude Include="GameViewElementsDataSource.h" />
+    <ClInclude Include="GameViewInformationFactory.h" />
+    <ClInclude Include="GameElementsKeys.h" />
     <ClInclude Include="LoadingGameDataSource.h" />
     <ClInclude Include="LoadingGameSceneFactory.h" />
     <ClInclude Include="main.h" />
