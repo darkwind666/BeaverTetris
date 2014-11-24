@@ -22,15 +22,15 @@ struct PlayerInformation
 	int playerScore;
 };
 
-struct GameEvent
-{
-	std::string eventName;
-	GameEventInformation eventInformation;
-};
-
 struct GameEventInformation
 {
 	GameState gameState;
+};
+
+struct GameEvent
+{
+	EventType eventType;
+	GameEventInformation eventInformation;
 };
 
 struct MenuItemInformation
@@ -39,6 +39,13 @@ struct MenuItemInformation
 	std::string selectedImage;
 	cocos2d::Vec2 position;
 	GameEvent gameEvent;
+};
+
+struct VictoryConditionInformation
+{
+	int detailsCount;
+	int time;
+	std::map <TetraminoType, int> gameTetraminos;
 };
 
 struct LevelInformation
@@ -51,12 +58,6 @@ struct LevelInformation
 	
 };
 
-struct VictoryConditionInformation
-{
-	int detailsCount;
-	int time;
-	std::map <TetraminoType, int> gameTetraminos;
-};
 
 struct TetraminoDetail
 {

@@ -23,8 +23,9 @@ enum TransitionType
 
 enum EventType
 {
-	kEvent1,
-	kEvent2,
+	kGoToInitualSceneEvent,
+	kGoToSceneEvent,
+	kGoToPreviousSceneEvent,
 	kEvent3,
 	kEvent4,
 	kEvent5,

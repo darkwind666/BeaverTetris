@@ -1,9 +1,10 @@
 #pragma once
 
+#include "ServiceInterface.h"
 #include <string>
 #include "GameStructures.h"
 
-class GameLevelsDataSource
+class GameLevelsDataSource : public ServiceInterface
 {
 public:
 	GameLevelsDataSource(void);

@@ -1,7 +1,7 @@
 #pragma once 
 
 class GameViewElementsDataSource;
-class GameTransitionsController;
+class EventDispatcher;
 
 class GameInitiator
 {
@@ -14,7 +14,7 @@ public:
 private:
 
 	GameViewElementsDataSource *_gameViewElementsDataSource;
-	GameTransitionsController *_gameTransitionsController;
+	EventDispatcher *_eventDispatcher;
 
 };
 

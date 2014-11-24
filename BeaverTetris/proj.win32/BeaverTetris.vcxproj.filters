@@ -246,6 +246,12 @@
     <ClCompile Include="GameFileExtensionMaker.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
+    <ClCompile Include="TetraminosCharacteristicsDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadGameController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -454,6 +460,12 @@
     </ClInclude>
     <ClInclude Include="GameFileExtensionMaker.h">
       <Filter>SupportedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminosCharacteristicsDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadGameController.h">
+      <Filter>Controllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,6 @@
 class EventHandlerInterface
 {
 public:
-	virtual void handleEventWithInformation(GameEventInformation aEventInformation) = 0;
+	virtual void handleEventWithInformation(GameEvent aEvent) = 0;
 };
 

@@ -1,10 +1,11 @@
 #pragma once
 
+#include "ServiceInterface.h"
 #include <string>
 #include <vector>
 #include "GameStructures.h"
 
-class GamePlayersDatabase
+class GamePlayersDatabase : public ServiceInterface
 {
 public:
 

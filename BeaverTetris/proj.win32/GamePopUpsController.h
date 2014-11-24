@@ -9,7 +9,7 @@ public:
 	GamePopUpsController(void);
 	~GamePopUpsController(void);
 
-	void handleEventWithInformation(GameEventInformation aEventInformation);
+	void handleEventWithInformation(GameEvent aEvent);
 
 private:
 

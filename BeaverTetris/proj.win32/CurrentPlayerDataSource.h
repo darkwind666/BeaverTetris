@@ -1,10 +1,11 @@
 #pragma once
 
+#include "ServiceInterface.h"
 #include <string>
 #include <vector>
 #include "GamePlayersDatabase.h"
 
-class CurrentPlayerDataSource
+class CurrentPlayerDataSource :public ServiceInterface
 {
 public:
 	CurrentPlayerDataSource(GamePlayersDatabase *aGamePlayersDatabase);
