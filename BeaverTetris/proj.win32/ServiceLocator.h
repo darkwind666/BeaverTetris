@@ -1,16 +1,14 @@
 #pragma once
 
-class GameViewElementsDataSource;
-class GameTransitionsController;
+#include <string>
+#include <map>
+#include "ServiceInterface.h"
 
 class ServiceLocator
 {
 public:
 
-	static GameViewElementsDataSource* getGameViewElementsDataSource();
-	static void setGameViewElementsDataSource(GameViewElementsDataSource *aGameViewElementsDataSource);
-
-	static GameTransitionsController* getGameTransitionsController();
-	static void setGameTransitionsController(GameTransitionsController *aGameTransitionsController);
+	static ServiceInterface* getServiceForKey(std::string aKey);
+	static void setServiceForKey(ServiceInterface *service, std::string aKey);
 
 };

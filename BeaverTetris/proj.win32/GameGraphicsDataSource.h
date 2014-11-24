@@ -1,6 +1,6 @@
 #pragma once
 
-class string;
+#include <string>
 
 class GameGraphicsDataSource
 {
@@ -8,9 +8,14 @@ public:
 	GameGraphicsDataSource(void);
 	~GameGraphicsDataSource(void);
 
-	string getInitialGraphic();
+	std::string getInitialGraphic();
 	int getGraphicCount();
-	string getGraphicForIndex(int aIndex);
+	std::string getGraphicForIndex(int aIndex);
 
+private:
+
+	std::string _startGraphic;
+	std::string *_graphics;
+	int _graphicElementsCount;
 
 };

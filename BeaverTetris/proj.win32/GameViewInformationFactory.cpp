@@ -1,8 +1,8 @@
 #include "GameViewInformationFactory.h"
 
 #include <string>
-#include "GameElementsKeys.h"
-#include "GameResourcesExtension.h"
+#include "GameViewElementsKeys.h"
+#include "GameFileExtensionMaker.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -18,16 +18,22 @@ GameViewInformationFactory::~GameViewInformationFactory(void)
 	_elementsInformation.clear();
 }
 
-void GameViewInformationFactory::setGameElementsInformationInDataSource(GameViewElementsDataSource aDataSource) 
+void GameViewInformationFactory::setGameElementsInformationInDataSource(GameViewElementsDataSource *aDataSource) 
 {
 
+	std::map <std::string , ViewElementInformation>::iterator iterator;
+
+	for (iterator = _elementsInformation.begin; iterator!= _elementsInformation.end; iterator++)
+	{
+		aDataSource->setViewStructureForKey( (*iterator).second , (*iterator).first );
+	}
 }
 
 std::map <std::string , ViewElementInformation> GameViewInformationFactory::makeViewData() 
 {
 
 	ViewElementInformation viewElement1;
-	viewElement1.elementImage =  makeImageNameWithKey(gameElement1Key);
+	viewElement1.elementImage =  GameFileExtensionMaker::getGraphicWithExtension(gameElement1Key);
 	viewElement1.elementPosition = Vec2(10, 10);
 	viewElement1.elementZOrder = 3;
 
@@ -37,10 +43,5 @@ std::map <std::string , ViewElementInformation> GameViewInformationFactory::make
 
 }
 
-string GameViewInformationFactory::makeImageNameWithKey(const string gameElementKey) 
-{
-	string imageNameWithExtansion = gameElementKey + graphicFileExtension;
-	return imageNameWithExtansion;
-}
 
 

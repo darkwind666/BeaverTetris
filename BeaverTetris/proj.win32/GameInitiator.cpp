@@ -1,8 +1,10 @@
 #include "GameInitiator.h"
 #include "ServiceLocator.h"
+#include "GameServicesKeys.h"
 #include "GameViewElementsDataSource.h"
 #include "GameTransitionsController.h"
 #include "GameGraphicsDataSource.h"
+#include "GameViewInformationFactory.h"
 
 GameInitiator::GameInitiator() 
 {
@@ -18,8 +20,12 @@ GameInitiator::~GameInitiator()
 
 void GameInitiator::setInitialState()
 {
-	ServiceLocator::setGameViewElementsDataSource(_gameViewElementsDataSource);
-	ServiceLocator::setGameTransitionsController(_gameTransitionsController);
+
+	GameViewInformationFactory viewInformationFactory;
+	viewInformationFactory.setGameElementsInformationInDataSource(_gameViewElementsDataSource);
+
+	ServiceLocator::setServiceForKey(_gameViewElementsDataSource,gameViewElementsDataSourceKey);
+	ServiceLocator::setServiceForKey(_gameTransitionsController,gameTransitionsControllerKey);
 
 	GameGraphicsDataSource gameGraphicsDataSource;
 	gameGraphicsDataSource.getInitialGraphic();

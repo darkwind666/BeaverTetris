@@ -1,27 +1,13 @@
 #include "ServiceLocator.h"
 
-static GameViewElementsDataSource  *_gameViewElementsDataSource;
-static GameTransitionsController *_gameTransitionsController;
+static std::map <std::string, ServiceInterface*> _services;
 
-
-GameViewElementsDataSource*  ServiceLocator::getGameViewElementsDataSource()
+ServiceInterface* ServiceLocator::getServiceForKey(std::string aKey) 
 {
-	return _gameViewElementsDataSource;
+	return _services[aKey];
 }
 
-void ServiceLocator::setGameViewElementsDataSource(GameViewElementsDataSource *aGameViewElementsDataSource)
+void ServiceLocator::setServiceForKey(ServiceInterface *service, std::string aKey) 
 {
-	_gameViewElementsDataSource = aGameViewElementsDataSource;
-}
-
-
-
-GameTransitionsController*  ServiceLocator::getGameTransitionsController()
-{
-	return _gameTransitionsController;
-}
-
-void ServiceLocator::setGameTransitionsController(GameTransitionsController *aGameTransitionsController)
-{
-	_gameTransitionsController = aGameTransitionsController;
+	_services[aKey] = service;
 }

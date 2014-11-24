@@ -1,12 +1,13 @@
 #pragma once
 
 #include "EventHandlerInterface.h"
+#include "ServiceInterface.h"
 #include <vector>
 #include "GameEnums.h"
 
 using namespace std;
 
-class GameTransitionsController : public EventHandlerInterface
+class GameTransitionsController : public EventHandlerInterface, public ServiceInterface
 {
 public:
 	GameTransitionsController(void);

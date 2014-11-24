@@ -52,6 +52,9 @@
     <Filter Include="Factories\ScenesFactories">
       <UniqueIdentifier>{911dcd74-afde-4e96-9480-bedc7cb33206}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SupportedFiles">
+      <UniqueIdentifier>{f3ea7cf3-0d7b-4e4e-a20c-04a9b9da7045}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -234,7 +237,15 @@
     <ClCompile Include="StartGameSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
-    <ClCompile Include="GameViewInformationFactory.cpp" />
+    <ClCompile Include="GameViewInformationFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceInterface.cpp">
+      <Filter>Singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFileExtensionMaker.cpp">
+      <Filter>SupportedFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -426,12 +437,23 @@
     <ClInclude Include="StartGameSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
-    <ClInclude Include="GameViewInformationFactory.h" />
-    <ClInclude Include="GameElementsKeys.h">
-      <Filter>Constants</Filter>
-    </ClInclude>
     <ClInclude Include="GameResourcesExtension.h">
       <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="GameViewInformationFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="GameViewElementsKeys.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="GameServicesKeys.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceInterface.h">
+      <Filter>Singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFileExtensionMaker.h">
+      <Filter>SupportedFiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

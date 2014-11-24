@@ -1,11 +1,12 @@
 #pragma once
 
+#include "ServiceInterface.h"
 #include <map>
 #include <string>
 #include "cocos2d.h"
 #include "GameStructures.h"
 
-class GameViewElementsDataSource
+class GameViewElementsDataSource :public ServiceInterface
 {
 public:
 	GameViewElementsDataSource(void);

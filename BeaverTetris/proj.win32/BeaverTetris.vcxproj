@@ -158,6 +158,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameEventInterface.cpp" />
     <ClCompile Include="GameEventsDataSource.cpp" />
     <ClCompile Include="GameEventsFactory.cpp" />
+    <ClCompile Include="GameFileExtensionMaker.cpp" />
     <ClCompile Include="GameFlowController.cpp" />
     <ClCompile Include="GameGraphicsDataSource.cpp" />
     <ClCompile Include="GameInitiator.cpp" />
@@ -181,6 +182,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="PlayerInputController.cpp" />
     <ClCompile Include="PlayerScoreDataSource.cpp" />
     <ClCompile Include="ScoreSystem.cpp" />
+    <ClCompile Include="ServiceInterface.cpp" />
     <ClCompile Include="SpellBox.cpp" />
     <ClCompile Include="SpellInterface.cpp" />
     <ClCompile Include="SpellsFactory.cpp" />
@@ -223,6 +225,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameEventInterface.h" />
     <ClInclude Include="GameEventsDataSource.h" />
     <ClInclude Include="GameEventsFactory.h" />
+    <ClInclude Include="GameFileExtensionMaker.h" />
     <ClInclude Include="GameFlowController.h" />
     <ClInclude Include="GameGraphicsDataSource.h" />
     <ClInclude Include="GameInitiator.h" />
@@ -239,7 +242,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameVictoryFactory.h" />
     <ClInclude Include="GameViewElementsDataSource.h" />
     <ClInclude Include="GameViewInformationFactory.h" />
-    <ClInclude Include="GameElementsKeys.h" />
+    <ClInclude Include="GameViewElementsKeys.h" />
+    <ClInclude Include="GameServicesKeys.h" />
     <ClInclude Include="LoadingGameDataSource.h" />
     <ClInclude Include="LoadingGameSceneFactory.h" />
     <ClInclude Include="main.h" />
@@ -248,6 +252,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="PlayerInputController.h" />
     <ClInclude Include="PlayerScoreDataSource.h" />
     <ClInclude Include="ScoreSystem.h" />
+    <ClInclude Include="ServiceInterface.h" />
     <ClInclude Include="SpellBox.h" />
     <ClInclude Include="SpellInterface.h" />
     <ClInclude Include="SpellsFactory.h" />
