@@ -7,7 +7,7 @@
 #include "GameLevelsDataSource.h"
 #include "TetraminosCharacteristicsDataSource.h"
 
-
+#include "StartGameMenuDataSource.h"
 
 GameDataFactory::GameDataFactory(void)
 {
@@ -34,5 +34,13 @@ void GameDataFactory::createGameData(void)
 
 void GameDataFactory::createGameLogic(void) 
 {
+	GameViewElementsDataSource *gameViewElementsDataSource = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
+	StartGameMenuDataSource *startGameMenuDataSource = new StartGameMenuDataSource(_currentPlayerDataSource, gameViewElementsDataSource);
+
+
+
+
+
+	ServiceLocator::setServiceForKey(startGameMenuDataSource, startGameMenuDataSourceKey);
 
 }

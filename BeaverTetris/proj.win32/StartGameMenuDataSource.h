@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ServiceInterface.h"
 #include <string>
 #include <vector>
 #include "cocos2d.h"
@@ -7,17 +8,20 @@
 #include "CurrentPlayerDataSource.h"
 #include "GameViewElementsDataSource.h"
 
-class StartGameMenuDataSource
+class StartGameMenuDataSource :public ServiceInterface
 {
 public:
 	StartGameMenuDataSource(CurrentPlayerDataSource *aCurrentPlayerDataSource, GameViewElementsDataSource *aGameViewElementsDataSource);
-	~StartGameMenuDataSource(void);
+	~StartGameMenuDataSource();
 
 	int getMenuItemsCount();
 	std::string getMenuItemUnselectedImageForIndex(int aIndex);
 	std::string getMenuItemSelectedImageForIndex(int aIndex);
 	cocos2d::Vec2 getMenuItemPositionForIndex(int aIndex);
 	GameEvent getMenuItemEventForIndex(int aIndex);
+
+	void refreshDataSource();
+
 
 private:
 

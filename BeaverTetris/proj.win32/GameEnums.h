@@ -26,8 +26,8 @@ enum EventType
 	kGoToInitualSceneEvent,
 	kGoToSceneEvent,
 	kGoToPreviousSceneEvent,
-	kEvent3,
-	kEvent4,
+	kGoToPopUp3,
+	kClosePopUp4,
 	kEvent5,
 };
 

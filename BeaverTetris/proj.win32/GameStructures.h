@@ -18,13 +18,14 @@ struct ViewElementInformation
 
 struct PlayerInformation
 {
-	std::string elementImage;
+	std::string playerName;
 	int playerScore;
 };
 
 struct GameEventInformation
 {
 	GameState gameState;
+	PopUpType popUp;
 };
 
 struct GameEvent

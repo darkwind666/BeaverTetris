@@ -4,19 +4,20 @@
 #include <string>
 #include <vector>
 #include "GamePlayersDatabase.h"
+#include "GameStructures.h"
 
 class CurrentPlayerDataSource :public ServiceInterface
 {
 public:
 	CurrentPlayerDataSource(GamePlayersDatabase *aGamePlayersDatabase);
-	~CurrentPlayerDataSource(void);
+	~CurrentPlayerDataSource();
 
 	bool isThereCurentPlayer();
 	std::string getPlayerName();
 	int getPlayerScore();
-	int getPlayerCompletedLevels();
+	int getPlayerCompletedLevelsCount();
 
-	void setNewPlayerWithName(std::string);
+	void setNewPlayerWithName(std::string aNewPlayerName);
 	void setPlayerScore(int aPlayerScore);
 	void completeLevel(std::string aCompletedLevelName);
 
@@ -24,9 +25,9 @@ public:
 	void cleanPlayer();
 
 private:
-
 	std::vector <std::string> _completedLevelsNames;
 	GamePlayersDatabase *_gamePlayersDatabase;
-
+	bool _isThereCurentPlayer;
+	PlayerInformation _playerData;
 };
 

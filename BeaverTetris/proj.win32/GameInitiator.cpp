@@ -27,6 +27,8 @@ void GameInitiator::setInitialState()
 	viewInformationFactory.setGameElementsInformationInDataSource(_gameViewElementsDataSource);
 	GameTransitionsController *gameTransitionsController = new GameTransitionsController;
 	_eventDispatcher->setEventHandlerWithEventName(gameTransitionsController, kGoToSceneEvent);
+	_eventDispatcher->setEventHandlerWithEventName(gameTransitionsController, kGoToInitualSceneEvent);
+	_eventDispatcher->setEventHandlerWithEventName(gameTransitionsController, kGoToPreviousSceneEvent);
 
 	ServiceLocator::setServiceForKey(_gameViewElementsDataSource,gameViewElementsDataSourceKey);
 	ServiceLocator::setServiceForKey(_eventDispatcher,eventDispatcherKey);
