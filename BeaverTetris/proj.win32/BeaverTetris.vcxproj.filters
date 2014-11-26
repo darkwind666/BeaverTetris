@@ -252,6 +252,12 @@
     <ClCompile Include="LoadGameController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="SelectGameLevelController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGameMenuController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -465,6 +471,12 @@
       <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="LoadGameController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGameLevelController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGameMenuController.h">
       <Filter>Controllers</Filter>
     </ClInclude>
   </ItemGroup>

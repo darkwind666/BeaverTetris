@@ -8,7 +8,6 @@ enum GameState
 	kPlayGame,
 	kDevelopers,
 	kRecords,
-
 };
 
 enum TransitionType
@@ -26,14 +25,14 @@ enum EventType
 	kGoToInitualSceneEvent,
 	kGoToSceneEvent,
 	kGoToPreviousSceneEvent,
-	kGoToPopUp3,
-	kClosePopUp4,
+	kGoToPopUp,
+	kClosePopUp,
 	kEvent5,
 };
 
 enum PopUpType
 {
-	kPopUp1,
+	kRegulateSoundPopUp,
 	kPopUp2,
 	kPopUp3,
 };

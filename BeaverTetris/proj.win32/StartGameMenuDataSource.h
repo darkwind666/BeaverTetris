@@ -6,12 +6,11 @@
 #include "cocos2d.h"
 #include "GameStructures.h"
 #include "CurrentPlayerDataSource.h"
-#include "GameViewElementsDataSource.h"
 
 class StartGameMenuDataSource :public ServiceInterface
 {
 public:
-	StartGameMenuDataSource(CurrentPlayerDataSource *aCurrentPlayerDataSource, GameViewElementsDataSource *aGameViewElementsDataSource);
+	StartGameMenuDataSource(CurrentPlayerDataSource *aCurrentPlayerDataSource);
 	~StartGameMenuDataSource();
 
 	int getMenuItemsCount();
@@ -26,8 +25,12 @@ public:
 private:
 
 	CurrentPlayerDataSource *_currentPlayerDataSource;
-	GameViewElementsDataSource *_gameViewElementsDataSource;
 	std::vector <MenuItemInformation> _menuItems;
+
+	vector <MenuItemInformation> makeMenuItems();
+	std::string makeSelectedImageForKey(std::string aKey);
+	std::string makeUnselectedImageForKey(std::string aKey);
+	void passImagesToMenuItemInformationWithKey(MenuItemInformation &aMenuItemInformation, string aKey);
 
 };
 

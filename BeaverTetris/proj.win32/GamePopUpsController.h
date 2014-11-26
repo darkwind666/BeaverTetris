@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EventHandlerInterface.h"
+#include <map>
 
 class GamePopUpsController :public EventHandlerInterface
 {
@@ -12,6 +13,11 @@ public:
 	void handleEventWithInformation(GameEvent aEvent);
 
 private:
+
+	typedef void (GamePopUpsController::*handlerFunctionPointer) (void);
+
+	std::map <EventType, handlerFunctionPointer> _eventHandlers;
+	GameEventInformation _eventInformation;
 
 	void showPopUp(void);
 	void closePopUp(void);

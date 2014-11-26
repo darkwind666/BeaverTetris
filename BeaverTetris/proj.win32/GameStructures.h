@@ -38,7 +38,6 @@ struct MenuItemInformation
 {
 	std::string unselectedImage;
 	std::string selectedImage;
-	cocos2d::Vec2 position;
 	GameEvent gameEvent;
 };
 

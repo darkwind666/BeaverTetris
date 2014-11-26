@@ -10,9 +10,12 @@ public:
 	GameLevelsDataSource(void);
 	~GameLevelsDataSource(void);
 
-	int getLevelsCount;
+	int getLevelsCount();
 	std::string getLevelNameForIndex(int aIndex);
 	LevelInformation getLevelDataForIndex(int aIndex);
+
+	std::string *_levelNames;
+	int _levelsCount;
 
 };
 

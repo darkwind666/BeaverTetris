@@ -183,10 +183,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="PlayerInputController.cpp" />
     <ClCompile Include="PlayerScoreDataSource.cpp" />
     <ClCompile Include="ScoreSystem.cpp" />
+    <ClCompile Include="SelectGameLevelController.cpp" />
     <ClCompile Include="ServiceInterface.cpp" />
     <ClCompile Include="SpellBox.cpp" />
     <ClCompile Include="SpellInterface.cpp" />
     <ClCompile Include="SpellsFactory.cpp" />
+    <ClCompile Include="StartGameMenuController.cpp" />
     <ClCompile Include="StartGameMenuDataSource.cpp" />
     <ClCompile Include="MainGameSceneFactory.cpp" />
     <ClCompile Include="PlayerSelectionDataSource.cpp" />
@@ -255,10 +257,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="PlayerInputController.h" />
     <ClInclude Include="PlayerScoreDataSource.h" />
     <ClInclude Include="ScoreSystem.h" />
+    <ClInclude Include="SelectGameLevelController.h" />
     <ClInclude Include="ServiceInterface.h" />
     <ClInclude Include="SpellBox.h" />
     <ClInclude Include="SpellInterface.h" />
     <ClInclude Include="SpellsFactory.h" />
+    <ClInclude Include="StartGameMenuController.h" />
     <ClInclude Include="StartGameMenuDataSource.h" />
     <ClInclude Include="MainGameSceneFactory.h" />
     <ClInclude Include="PlayerSelectionDataSource.h" />
