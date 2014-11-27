@@ -39,7 +39,7 @@ enum PopUpType
 
 enum TetraminoType
 {
-	kTetramino1,
+	kTetraminoEmpty,
 	kTetramino2,
 	kTetramino3,
 };

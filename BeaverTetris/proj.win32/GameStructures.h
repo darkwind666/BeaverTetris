@@ -5,7 +5,6 @@
 #include <map>
 #include "cocos2d.h"
 #include "GameEnums.h"
-#include "Tetramino.h"
 
 
 struct ViewElementInformation
@@ -58,14 +57,13 @@ struct LevelInformation
 	
 };
 
-
-struct TetraminoDetail
+struct GamePositionOnBoard
 {
-	Tetramino tetraminos[3][3];
-	int positionX;
-	int positionY;
-
+	int xPosition;
+	int yPosition;
+	
 };
+
 
 
 

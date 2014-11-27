@@ -2,7 +2,7 @@
 
 #include <vector>
 #include "GameStructures.h"
-#include "cocos2d.h"
+#include "Tetramino.h"
 
 class GameBoard
 {
@@ -15,13 +15,17 @@ public:
 	int getGameBoardWidth();
 	int getGameBoardHeight();
 	Tetramino getTetraminoForXYposition(int xPosition, int yPosition);
-	std::vector <cocos2d::Vec2> getAvailableTetraminis();
-
+	std::vector <GamePositionOnBoard> getAvailableTetraminis();
 
 	void removeTetraminoForXYposition(int xPosition, int yPosition);
 	void cleanTetraminoRowForYposition(int yPosition);
 	void cleanGameBoard(void);
 
+private:
+
+	Tetramino *_tetramins;
+	int _gameBoardWidth;
+	int _gameBoardHeight;
 
 };
 

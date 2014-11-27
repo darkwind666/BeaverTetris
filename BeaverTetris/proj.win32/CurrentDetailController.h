@@ -1,14 +1,32 @@
 #pragma once
+
+#include "TetraminisDetailsFactory.h"
+#include "ActiveDetails.h"
+#include "GameBoard.h"
+
+class CollisionDelegate;
+
 class CurrentDetailController
 {
 public:
-	CurrentDetailController(void);
+	CurrentDetailController(TetraminisDetailsFactory *detailsFactory, ActiveDetails *activeDetailsStore, GameBoard *aGameBoard);
 	~CurrentDetailController(void);
 
 	void makeNewDetail(void);
 	void moveLeftDetail(void);
 	void moveRightDetail(void);
 	void rotateDetail(void);
+
+private:
+
+	TetraminisDetailsFactory *_detailsFactory;
+	ActiveDetails *_activeDetailsStore;
+	TetraminoDetail *_currentDetail;
+	GameBoard *_gameBoard;
+	CollisionDelegate *_collisionDelegate;
+
+	void setNewPositionIfNoCollision(GamePositionOnBoard aNewDetailPosition);
+	bool collideWithOtherTetraminos(TetraminoDetail aDetail);
 
 };
 

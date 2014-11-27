@@ -1,0 +1,74 @@
+#include "TetraminoDetail.h"
+#include "GameEnums.h"
+
+using namespace std;
+
+TetraminoDetail::TetraminoDetail(int width, int height)
+{
+	_gameBoardTetraminos = new GameBoard(width,height);
+	_detailWidth = width;
+	_detailHeight = height;
+
+	GamePositionOnBoard position;
+	position.xPosition = width;
+	position.yPosition = height;
+	_position = position;
+}
+
+TetraminoDetail::~TetraminoDetail(void)
+{
+}
+
+int TetraminoDetail::getDetailWidth()
+{
+	return _detailWidth;
+}
+
+int TetraminoDetail::getDetailHeight()
+{
+	return _detailHeight;
+}
+
+Tetramino TetraminoDetail::getTetraminoForXY(int xPosition, int yPosition)
+{
+	return _gameBoardTetraminos->getTetraminoForXYposition(xPosition, yPosition);
+}
+
+GamePositionOnBoard TetraminoDetail::getDetailPosition()
+{
+	return _position;
+}
+
+vector<GamePositionOnBoard> TetraminoDetail::getAvailableTetraminos()
+{
+	return _gameBoardTetraminos->getAvailableTetraminis();
+}
+
+void TetraminoDetail::setTetraminoForXY(Tetramino aTetramino, int xPosition, int yPosition)
+{
+	_gameBoardTetraminos->setTetraminoXYposition(aTetramino,xPosition,yPosition);
+}
+
+void TetraminoDetail::setDetailPosition(GamePositionOnBoard aDetailPosition)
+{
+	_position = aDetailPosition;
+}
+
+void TetraminoDetail::rotateDetail()
+{
+	GameBoard newGameBoard = GameBoard(_detailWidth,_detailHeight);
+
+	for (int xIndex = 0; xIndex < _detailWidth; xIndex++)
+	{
+
+		for (int yIndex = 0; yIndex < _detailHeight; yIndex++)
+		{
+			Tetramino rotatedTetramino = _gameBoardTetraminos->getTetraminoForXYposition(xIndex, yIndex);
+			newGameBoard.setTetraminoXYposition(rotatedTetramino, ((newGameBoard.getGameBoardWidth - 1) - yIndex), xIndex);
+		}
+
+	}
+
+	_gameBoardTetraminos = newGameBoard;
+
+}

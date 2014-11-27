@@ -1,5 +1,8 @@
 #pragma once
 
+#include <vector>
+#include "GameSystemInterface.h"
+
 class GameSystemInterface;
 
 class GameManager
@@ -9,14 +12,14 @@ public:
 	~GameManager(void);
 
 	void setUpdateInterval(float aUpdateInterval);
-
 	void update(float deltaTime);
-	void pause();
-	void start();
+	void addSystem(GameSystemInterface *aSystem);
 
-	void addSystem(GameSystemInterface aSystem);
+private:
 
-
+	float _updateInterval;
+	int _currentTimeInterval;
+	std::vector<GameSystemInterface*> _systems;
 
 };
 

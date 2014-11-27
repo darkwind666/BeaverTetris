@@ -1,7 +1,7 @@
 #include "CollisionSystem.h"
 
 
-CollisionSystem::CollisionSystem(void)
+CollisionSystem::CollisionSystem(GameBoard *aGameBoard, ActiveDetails *aActiveDetails)
 {
 }
 

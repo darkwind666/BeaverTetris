@@ -258,6 +258,15 @@
     <ClCompile Include="StartGameMenuController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="TetraminisDetailsFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="TetraminoDetail.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionDelegate.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -478,6 +487,18 @@
     </ClInclude>
     <ClInclude Include="StartGameMenuController.h">
       <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminisDetailsFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminoDetail.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDesignConstants.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDelegate.h">
+      <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
