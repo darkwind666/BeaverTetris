@@ -141,6 +141,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="ActiveDetails.cpp" />
     <ClCompile Include="AiSystem.cpp" />
+    <ClCompile Include="AwardForTetraminoDataSource.cpp" />
     <ClCompile Include="CollisionDelegate.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="CurrentDetailController.cpp" />
@@ -203,6 +204,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="Tetramino.cpp" />
     <ClCompile Include="TetraminoDetail.cpp" />
     <ClCompile Include="TetraminosCharacteristicsDataSource.cpp" />
+    <ClCompile Include="TetraminosSeparatorDelegate.cpp" />
     <ClCompile Include="TetrominosFactory.cpp" />
     <ClCompile Include="VictoryCondition.cpp" />
     <ClCompile Include="VictoryConditionViewDataSource.cpp" />
@@ -213,6 +215,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="ActiveDetails.h" />
     <ClInclude Include="AiSystem.h" />
+    <ClInclude Include="AwardForTetraminoDataSource.h" />
     <ClInclude Include="CollisionDelegate.h" />
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="CurrentDetailController.h" />
@@ -282,6 +285,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="Tetramino.h" />
     <ClInclude Include="TetraminoDetail.h" />
     <ClInclude Include="TetraminosCharacteristicsDataSource.h" />
+    <ClInclude Include="TetraminosSeparatorDelegate.h" />
     <ClInclude Include="TetrominosFactory.h" />
     <ClInclude Include="VictoryCondition.h" />
     <ClInclude Include="VictoryConditionViewDataSource.h" />

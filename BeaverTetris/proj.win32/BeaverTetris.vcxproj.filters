@@ -267,6 +267,12 @@
     <ClCompile Include="CollisionDelegate.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
+    <ClCompile Include="AwardForTetraminoDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="TetraminosSeparatorDelegate.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -498,6 +504,12 @@
       <Filter>Constants</Filter>
     </ClInclude>
     <ClInclude Include="CollisionDelegate.h">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="AwardForTetraminoDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminosSeparatorDelegate.h">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
   </ItemGroup>

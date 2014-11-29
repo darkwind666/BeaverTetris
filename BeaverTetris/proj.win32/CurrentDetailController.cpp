@@ -54,6 +54,9 @@ void CurrentDetailController::rotateDetail(void)
 {
 	TetraminoDetail rotatedTetramino = *_currentDetail;
 	rotatedTetramino.rotateDetail();
+
+
+
 	bool collide = _collisionDelegate->checkCollisionWithDetail(rotatedTetramino);
 
 	if (!collide)
