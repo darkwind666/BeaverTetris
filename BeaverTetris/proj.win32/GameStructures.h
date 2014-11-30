@@ -25,6 +25,7 @@ struct GameEventInformation
 {
 	GameState gameState;
 	PopUpType popUp;
+	PlayerActionInGameType playerAction;
 };
 
 struct GameEvent
@@ -61,6 +62,13 @@ struct GamePositionOnBoard
 {
 	int xPosition;
 	int yPosition;
+	
+};
+
+struct PlayerControllInformation
+{
+	std::string controlKey;
+	GameEvent controlEvent;
 	
 };
 

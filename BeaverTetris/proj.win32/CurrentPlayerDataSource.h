@@ -16,6 +16,7 @@ public:
 	std::string getPlayerName();
 	int getPlayerScore();
 	int getPlayerCompletedLevelsCount();
+	int getPlayerAvailableSpellsCount();
 
 	void setNewPlayerWithName(std::string aNewPlayerName);
 	void setPlayerScore(int aPlayerScore);

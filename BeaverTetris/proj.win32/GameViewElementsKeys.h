@@ -19,3 +19,9 @@ const string gameLevel7Key = string("gameLevel7");
 const string gameLevel8Key = string("gameLevel8");
 const string gameLevel9Key = string("gameLevel9");
 const string gameLevel10Key = string("gameLevel10");
+
+const string playerControl1Key = string("playerControl1Key");
+const string playerControl2Key = string("playerControl2Key");
+const string playerControl3Key = string("playerControl3Key");
+const string playerControl4Key = string("playerControl4Key");
+const string playerControl5Key = string("playerControl5Key");

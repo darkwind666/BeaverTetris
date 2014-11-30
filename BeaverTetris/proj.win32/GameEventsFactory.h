@@ -11,6 +11,7 @@ public:
 
 	static GameEvent makeGoToSceneEventWithKey(GameState aKey);
 	static GameEvent makeGoToPopUpEventWithKey(PopUpType aKey);
+	static GameEvent makePlayerActionInGameEventWithKey(PlayerActionInGameType aKey);
 
 };
 

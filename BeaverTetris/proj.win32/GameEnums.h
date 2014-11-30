@@ -27,14 +27,16 @@ enum EventType
 	kGoToPreviousSceneEvent,
 	kGoToPopUp,
 	kClosePopUp,
-	kEvent5,
+	kPlayerActionInGameEvent,
 };
 
 enum PopUpType
 {
 	kRegulateSoundPopUp,
-	kPopUp2,
-	kPopUp3,
+	kWinGamePopUp,
+	kLoseGameUp,
+	kWinAllGamePopUp,
+	kPauseGamePopUp,
 };
 
 enum TetraminoType
@@ -72,4 +74,12 @@ enum DirectionType
 	kBottomDirection,
 	kLeftDirection,
 	kEndDirection,
+};
+
+enum PlayerActionInGameType
+{
+	kTurnDetailLeft,
+	kTurnDetailRight,
+	kAccelerateDetail,
+	kRotateDetail,
 };

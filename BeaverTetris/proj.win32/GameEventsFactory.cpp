@@ -30,3 +30,13 @@ GameEvent GameEventsFactory::makeGoToPopUpEventWithKey(PopUpType aKey)
 	gameEvent.eventInformation = eventInformation;
 	return gameEvent;
 }
+
+GameEvent GameEventsFactory::makePlayerActionInGameEventWithKey(PlayerActionInGameType aKey)
+{
+	GameEvent gameEvent;
+	gameEvent.eventType = kPlayerActionInGameEvent;
+	GameEventInformation eventInformation;
+	eventInformation.playerAction = aKey;
+	gameEvent.eventInformation = eventInformation;
+	return gameEvent;
+}

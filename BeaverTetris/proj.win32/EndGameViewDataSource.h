@@ -4,11 +4,11 @@
 #include "cocos2d.h"
 #include "GameStructures.h"
 
-class EndGameDataSource
+class EndGameViewDataSource
 {
 public:
-	EndGameDataSource(void);
-	~EndGameDataSource(void);
+	EndGameViewDataSource(void);
+	~EndGameViewDataSource(void);
 
 	int getMenuItemCount(void);
 	std::string getMenuItemImageForIndex(int aIndex);
