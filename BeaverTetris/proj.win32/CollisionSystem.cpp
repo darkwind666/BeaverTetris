@@ -56,9 +56,9 @@ void CollisionSystem::writeTetraminoDetailInBoard(TetraminoDetail *aTetraminoDet
 			
 		for (int xIndex = 0; xIndex < aTetraminoDetail->getDetailWidth; xIndex++)
 		{			
-			Tetramino tetraminoInDetail = aTetraminoDetail->getTetraminoForXY(xIndex,yIndex);			
+			Tetramino *tetraminoInDetail = aTetraminoDetail->getTetraminoForXY(xIndex,yIndex);			
 			
-			if (tetraminoInDetail.getTetraminoType > kTetraminoEmpty)
+			if (tetraminoInDetail->getTetraminoType > kTetraminoEmpty)
 			{			
 				GamePositionOnBoard detailPosition = aTetraminoDetail->getDetailPosition();						
 				_gameBoard->setTetraminoXYposition(tetraminoInDetail ,detailPosition.xPosition + xIndex, detailPosition.yPosition + yIndex);

@@ -29,7 +29,7 @@ int TetraminoDetail::getDetailHeight()
 	return _detailHeight;
 }
 
-Tetramino TetraminoDetail::getTetraminoForXY(int xPosition, int yPosition)
+Tetramino* TetraminoDetail::getTetraminoForXY(int xPosition, int yPosition)
 {
 	return _gameBoardTetraminos->getTetraminoForXYposition(xPosition, yPosition);
 }
@@ -44,7 +44,7 @@ vector<GamePositionOnBoard> TetraminoDetail::getAvailableTetraminos()
 	return _gameBoardTetraminos->getAvailableTetraminis();
 }
 
-void TetraminoDetail::setTetraminoForXY(Tetramino aTetramino, int xPosition, int yPosition)
+void TetraminoDetail::setTetraminoForXY(Tetramino *aTetramino, int xPosition, int yPosition)
 {
 	_gameBoardTetraminos->setTetraminoXYposition(aTetramino,xPosition,yPosition);
 }
@@ -56,15 +56,15 @@ void TetraminoDetail::setDetailPosition(GamePositionOnBoard aDetailPosition)
 
 void TetraminoDetail::rotateDetail()
 {
-	GameBoard newGameBoard = GameBoard(_detailWidth,_detailHeight);
+	GameBoard *newGameBoard = new GameBoard(_detailWidth,_detailHeight);
 
 	for (int xIndex = 0; xIndex < _detailWidth; xIndex++)
 	{
 
 		for (int yIndex = 0; yIndex < _detailHeight; yIndex++)
 		{
-			Tetramino rotatedTetramino = _gameBoardTetraminos->getTetraminoForXYposition(xIndex, yIndex);
-			newGameBoard.setTetraminoXYposition(rotatedTetramino, ((newGameBoard.getGameBoardWidth - 1) - yIndex), xIndex);
+			Tetramino *rotatedTetramino = _gameBoardTetraminos->getTetraminoForXYposition(xIndex, yIndex);
+			newGameBoard->setTetraminoXYposition(rotatedTetramino, ((newGameBoard->getGameBoardWidth - 1) - yIndex), xIndex);
 		}
 
 	}

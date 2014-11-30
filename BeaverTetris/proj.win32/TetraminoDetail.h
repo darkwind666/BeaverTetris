@@ -13,11 +13,11 @@ public:
 	int getDetailWidth();
 	int getDetailHeight();
 
-	Tetramino getTetraminoForXY(int xPosition, int yPosition);
+	Tetramino* getTetraminoForXY(int xPosition, int yPosition);
 	GamePositionOnBoard getDetailPosition();
 	std::vector<GamePositionOnBoard> getAvailableTetraminos();
 
-	void setTetraminoForXY(Tetramino aTetramino, int xPosition, int yPosition);
+	void setTetraminoForXY(Tetramino *aTetramino, int xPosition, int yPosition);
 	void setDetailPosition(GamePositionOnBoard aDetailPosition);
 
 	void rotateDetail();

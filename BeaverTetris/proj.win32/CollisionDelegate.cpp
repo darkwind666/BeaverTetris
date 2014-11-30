@@ -20,10 +20,10 @@ bool CollisionDelegate::checkCollisionWithDetail(TetraminoDetail aDetail)
 
 		for (int yIndex = detailPosition.yPosition; yIndex < aDetail.getDetailHeight; yIndex++)
 		{
-			Tetramino tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,yIndex);
+			Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,yIndex);
 			Tetramino tetraminoInDetail = aDetail.getTetraminoForXY(xIndex - detailPosition.xPosition, yIndex - detailPosition.yPosition);
 
-			if (tetraminoInBoard.getTetraminoType > kTetraminoEmpty && tetraminoInDetail.getTetraminoType > kTetraminoEmpty)
+			if (tetraminoInBoard->getTetraminoType > kTetraminoEmpty && tetraminoInDetail.getTetraminoType > kTetraminoEmpty)
 			{
 				return true;
 			}

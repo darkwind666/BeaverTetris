@@ -65,3 +65,11 @@ enum GameEventType
 	kGameEvent2,
 };
 
+enum DirectionType
+{
+	kTopDirection,
+	kRightDirection,
+	kBottomDirection,
+	kLeftDirection,
+	kEndDirection,
+};

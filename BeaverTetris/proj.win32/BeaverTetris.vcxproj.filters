@@ -264,14 +264,17 @@
     <ClCompile Include="TetraminoDetail.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionDelegate.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
     <ClCompile Include="AwardForTetraminoDataSource.cpp">
       <Filter>Models</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionDelegate.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="DetailsFromBoardDataSource.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
     <ClCompile Include="TetraminosSeparatorDelegate.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
+      <Filter>Models\GameLogic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -503,14 +506,17 @@
     <ClInclude Include="GameDesignConstants.h">
       <Filter>Constants</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionDelegate.h">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
     <ClInclude Include="AwardForTetraminoDataSource.h">
       <Filter>Models</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionDelegate.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="DetailsFromBoardDataSource.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
     <ClInclude Include="TetraminosSeparatorDelegate.h">
-      <Filter>Models\GameLogic\Systems</Filter>
+      <Filter>Models\GameLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

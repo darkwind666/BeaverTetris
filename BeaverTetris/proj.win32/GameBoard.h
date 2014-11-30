@@ -10,11 +10,11 @@ public:
 	GameBoard(int width, int height);
 	~GameBoard(void);
 
-	void setTetraminoXYposition(Tetramino aTetramino, int xPosition, int yPosition);
+	void setTetraminoXYposition(Tetramino *aTetramino, int xPosition, int yPosition);
 
 	int getGameBoardWidth();
 	int getGameBoardHeight();
-	Tetramino getTetraminoForXYposition(int xPosition, int yPosition);
+	Tetramino* getTetraminoForXYposition(int xPosition, int yPosition);
 	std::vector <GamePositionOnBoard> getAvailableTetraminis();
 
 	void removeTetraminoForXYposition(int xPosition, int yPosition);
@@ -23,7 +23,7 @@ public:
 
 private:
 
-	Tetramino *_tetramins;
+	Tetramino **_tetramins;
 	int _gameBoardWidth;
 	int _gameBoardHeight;
 

@@ -6,6 +6,7 @@ class Tetramino
 {
 public:
 	Tetramino(void);
+	Tetramino(TetraminoType aType);
 	~Tetramino(void);
 
 	TetraminoType getTetraminoType(void);

@@ -16,7 +16,7 @@ GameBoard::~GameBoard(void)
 }
 
 
-void GameBoard::setTetraminoXYposition(Tetramino aTetramino, int xPosition, int yPosition)
+void GameBoard::setTetraminoXYposition(Tetramino *aTetramino, int xPosition, int yPosition)
 {
 	_tetramins[yPosition * _gameBoardWidth + xPosition] = aTetramino;
 }
@@ -31,9 +31,9 @@ int GameBoard::getGameBoardHeight()
 	return _gameBoardHeight;
 }
 
-Tetramino GameBoard::getTetraminoForXYposition(int xPosition, int yPosition)
+Tetramino* GameBoard::getTetraminoForXYposition(int xPosition, int yPosition)
 {
-	Tetramino tetramino = _tetramins[yPosition * _gameBoardWidth + xPosition];
+	Tetramino *tetramino = _tetramins[yPosition * _gameBoardWidth + xPosition];
 	return tetramino;
 }
 
@@ -47,8 +47,8 @@ vector <GamePositionOnBoard> GameBoard::getAvailableTetraminis()
 
 		for (int yPosition = 0; yPosition < _gameBoardWidth; yPosition++)
 		{
-			Tetramino tetramino = getTetraminoForXYposition(xPosition,yPosition);
-			if (tetramino.getTetraminoType > kTetraminoEmpty)
+			Tetramino *tetramino = getTetraminoForXYposition(xPosition,yPosition);
+			if (tetramino->getTetraminoType() > kTetraminoEmpty)
 			{
 				GamePositionOnBoard position;
 				position.xPosition = xPosition;
@@ -66,7 +66,7 @@ vector <GamePositionOnBoard> GameBoard::getAvailableTetraminis()
 
 void GameBoard::removeTetraminoForXYposition(int xPosition, int yPosition)
 {
-	Tetramino newTetramino;
+	Tetramino *newTetramino = new Tetramino();
 	_tetramins[xPosition * _gameBoardWidth + yPosition] = newTetramino;
 }
 
@@ -80,5 +80,16 @@ void GameBoard::cleanTetraminoRowForYposition(int yPosition)
 
 void GameBoard::cleanGameBoard(void)
 {
-	_tetramins = new Tetramino[_gameBoardHeight * _gameBoardWidth];
+
+	int tetraminosCount = _gameBoardHeight * _gameBoardWidth;
+	_tetramins = new Tetramino*[_gameBoardHeight * _gameBoardWidth];
+
+	for (int tetraminoIndex = 0; tetraminoIndex < tetraminosCount; tetraminoIndex++)
+	{
+		Tetramino *cleanTetramino = new Tetramino();
+		_tetramins[tetraminoIndex] = cleanTetramino;
+
+	}
+
+	
 }

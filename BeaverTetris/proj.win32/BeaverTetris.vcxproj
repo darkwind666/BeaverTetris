@@ -148,6 +148,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="CurrentGameVictoryConditionDataSource.cpp" />
     <ClCompile Include="CurrentLevelAwardDataSource.cpp" />
     <ClCompile Include="CurrentPlayerDataSource.cpp" />
+    <ClCompile Include="DetailsFromBoardDataSource.cpp" />
     <ClCompile Include="DevelopersDataSource.cpp" />
     <ClCompile Include="DevelopersSceneFactory.cpp" />
     <ClCompile Include="EndGameController.cpp" />
@@ -222,6 +223,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="CurrentGameVictoryConditionDataSource.h" />
     <ClInclude Include="CurrentLevelAwardDataSource.h" />
     <ClInclude Include="CurrentPlayerDataSource.h" />
+    <ClInclude Include="DetailsFromBoardDataSource.h" />
     <ClInclude Include="DevelopersDataSource.h" />
     <ClInclude Include="DevelopersSceneFactory.h" />
     <ClInclude Include="EndGameController.h" />

@@ -29,8 +29,8 @@ void ScoreSystem::updateSystem(float deltaTime)
 
 			for (int xIndex = 0; xIndex < _gameBoard->getGameBoardWidth; xIndex++)
 			{
-				Tetramino tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,yIndex);
-				tetraminoInBoard.reduceLive();
+				Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,yIndex);
+				tetraminoInBoard->reduceLive();
 				int award = getAwardForTetramino(tetraminoInBoard);
 				playerAwardForLine += award;
 
@@ -48,7 +48,7 @@ void ScoreSystem::updateSystem(float deltaTime)
 
 	if (_someObjectWasDeletedIndicator)
 	{
-		_tetraminosSeparatorDelegate->separateTetraminos;
+		_tetraminosSeparatorDelegate->separateTetraminos();
 		_someObjectWasDeletedIndicator = false;
 	}
 
@@ -60,9 +60,9 @@ bool ScoreSystem::fullLineCheck(int lineIndex)
 
 		for (int xIndex = 0; xIndex < _gameBoard->getGameBoardWidth; xIndex++)
 		{
-			Tetramino tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,lineIndex);
+			Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,lineIndex);
 
-			if (tetraminoInBoard.getTetraminoType <= kTetraminoEmpty)
+			if (tetraminoInBoard->getTetraminoType <= kTetraminoEmpty)
 			{
 				fullLine = false;
 				break;
@@ -72,14 +72,14 @@ bool ScoreSystem::fullLineCheck(int lineIndex)
 		return fullLine;
 }
 
-int ScoreSystem::getAwardForTetramino(Tetramino aTetramino)
+int ScoreSystem::getAwardForTetramino(Tetramino *aTetramino)
 {
 
 	int award = 0;
 
-	if (aTetramino.getTetraminoLivesCount <= 0)
+	if (aTetramino->getTetraminoLivesCount <= 0)
 	{
-		award += _awardForTetraminoDataSource->getAwardForTetraminoType(aTetramino.getTetraminoType);
+		award += _awardForTetraminoDataSource->getAwardForTetraminoType(aTetramino->getTetraminoType);
 	}
 
 	return award;
@@ -90,9 +90,9 @@ void ScoreSystem::removeKilledTetraminos(int lineIndex)
 {
 	for (int xIndex = 0; xIndex < _gameBoard->getGameBoardWidth; xIndex++)
 	{
-		Tetramino tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,lineIndex);
+		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,lineIndex);
 	
-		if (tetraminoInBoard.getTetraminoLivesCount <= 0)
+		if (tetraminoInBoard->getTetraminoLivesCount <= 0)
 		{
 			_gameBoard->removeTetraminoForXYposition(xIndex,lineIndex);
 			_someObjectWasDeletedIndicator = true;

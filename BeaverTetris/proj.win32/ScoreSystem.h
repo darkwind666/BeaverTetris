@@ -22,7 +22,7 @@ private:
 	TetraminosSeparatorDelegate *_tetraminosSeparatorDelegate;
 
 	bool fullLineCheck(int lineIndex);
-	int getAwardForTetramino(Tetramino aTetramino);
+	int getAwardForTetramino(Tetramino *aTetramino);
 	void removeKilledTetraminos(int lineIndex);
 	bool _someObjectWasDeletedIndicator;
 
