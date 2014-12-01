@@ -12,7 +12,7 @@ public:
 
 	virtual int getVictoryStateInformationCount(void) = 0;
 	virtual std::string getVictoryStateInformationForIndex(int aIndex) = 0;
-	virtual std::string getVictoryStateIconImage(void) = 0;
+	virtual std::string getVictoryStateIconImageForIndex(int aIndex) = 0;
 
 	virtual bool playerWin(void) = 0;
 

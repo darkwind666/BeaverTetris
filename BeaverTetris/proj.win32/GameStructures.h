@@ -5,6 +5,7 @@
 #include <map>
 #include "cocos2d.h"
 #include "GameEnums.h"
+#include "GameDesignConstants.h"
 
 
 struct ViewElementInformation
@@ -70,6 +71,20 @@ struct PlayerControllInformation
 	std::string controlKey;
 	GameEvent controlEvent;
 	
+};
+
+struct GameLevelInformation
+{
+	std::string levelName;
+	int levelAward;
+	std::vector<TetraminoType> availableTetraminos;
+	std::vector<TetraminoDetailType> availableTetraminoDetails;
+};
+
+struct TetraminoDetailInformation
+{
+	bool rotateble;
+	int tetraminoElements[standartDetailWidth][standartDetailHeight];
 };
 
 

@@ -2,13 +2,13 @@
 
 #include "GameSystemInterface.h"
 #include "CurrentPlayerDataSource.h"
-#include "CurrentLevelDataSource.h"
+#include "CurrentLevelWinResultDataSource.h"
 #include "GameBoard.h"
 
 class WinGameSystem :public GameSystemInterface
 {
 public:
-	WinGameSystem(CurrentPlayerDataSource *aCurrentPlayerDataSource, CurrentLevelDataSource *aCurrentLevelDataSource, GameBoard *aGameBoard);
+	WinGameSystem(CurrentPlayerDataSource *aCurrentPlayerDataSource, CurrentLevelWinResultDataSource *aCurrentLevelWinResultDataSource, GameBoard *aGameBoard);
 	~WinGameSystem(void);
 
 	void updateSystem(float deltaTime);
@@ -16,7 +16,7 @@ public:
 private:
 
 	CurrentPlayerDataSource *_currentPlayerDataSource;
-	CurrentLevelDataSource *_currentLevelDataSource;
+	CurrentLevelWinResultDataSource *_currentLevelWinResultDataSource;
 	GameBoard *_gameBoard;
 
 	bool loseGameChecker();

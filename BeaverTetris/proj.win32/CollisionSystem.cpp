@@ -3,10 +3,11 @@
 
 using namespace std;
 
-CollisionSystem::CollisionSystem(GameBoard *aGameBoard, ActiveDetails *aActiveDetails)
+CollisionSystem::CollisionSystem(GameBoard *aGameBoard, ActiveDetails *aActiveDetails, GameFlowController *aGameFlowController)
 {
 	_activeDetailsStore = aActiveDetails;
 	_gameBoard = aGameBoard;
+	_gameFlowController = aGameFlowController;
 	_collisionDelegate = new  CollisionDelegate(aGameBoard);
 }
 
@@ -19,6 +20,11 @@ CollisionSystem::~CollisionSystem(void)
 void CollisionSystem::updateSystem(float deltaTime)
 {
 	vector<TetraminoDetail*> tetraminoDetails = _activeDetailsStore->getActiveDetails();
+
+	if (tetraminoDetails.size <= 0)
+	{
+		_gameFlowController->makeNewGameEvent;
+	}
 
 	vector<TetraminoDetail*>::iterator tetraminoDetailsIterator;
 

@@ -7,10 +7,10 @@
 
 using namespace std;
 
-WinGameSystem::WinGameSystem(CurrentPlayerDataSource *aCurrentPlayerDataSource, CurrentLevelDataSource *aCurrentLevelDataSource, GameBoard *aGameBoard)
+WinGameSystem::WinGameSystem(CurrentPlayerDataSource *aCurrentPlayerDataSource, CurrentLevelWinResultDataSource *aCurrentLevelWinResultDataSource, GameBoard *aGameBoard)
 {
 	_currentPlayerDataSource = aCurrentPlayerDataSource;
-	_currentLevelDataSource = aCurrentLevelDataSource;
+	_currentLevelWinResultDataSource = aCurrentLevelWinResultDataSource;
 	_gameBoard = aGameBoard;
 }
 
@@ -25,16 +25,16 @@ void WinGameSystem::updateSystem(float deltaTime)
 
 	EventDispatcher *eventDispatcher = (EventDispatcher*)ServiceLocator::getServiceForKey(eventDispatcherKey);
 
-	if (_currentLevelDataSource->winGameResult)
+	if (_currentLevelWinResultDataSource->winGameResult)
 	{
-		int awardForVictory = _currentLevelDataSource->getCurrentLevelAward;
+		int awardForVictory = _currentLevelWinResultDataSource->getCurrentLevelAward;
 		int currentPlayerScore = _currentPlayerDataSource->getPlayerScore;
 		_currentPlayerDataSource->setPlayerScore(currentPlayerScore + awardForVictory);
 
-		string winLevelName = _currentLevelDataSource->getCurrentLevelName;
+		string winLevelName = _currentLevelWinResultDataSource->getCurrentLevelName;
 		_currentPlayerDataSource->completeLevel(winLevelName);
 
-		if (_currentLevelDataSource->winAllGameResult)
+		if (_currentLevelWinResultDataSource->winAllGameResult)
 		{
 			eventDispatcher->handleEvent(GameEventsFactory::makeGoToPopUpEventWithKey(kWinAllGamePopUp));
 		}

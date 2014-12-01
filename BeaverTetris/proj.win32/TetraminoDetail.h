@@ -19,6 +19,7 @@ public:
 
 	void setTetraminoForXY(Tetramino *aTetramino, int xPosition, int yPosition);
 	void setDetailPosition(GamePositionOnBoard aDetailPosition);
+	void setDetailRotatebleFlag(bool aRotatable);
 
 	void rotateDetail();
 
@@ -28,6 +29,7 @@ private:
 	GameBoard *_gameBoardTetraminos;
 	int _detailWidth;
 	int _detailHeight;
+	bool _rotatable;
 	GamePositionOnBoard _position;
 
 };

@@ -46,6 +46,13 @@ enum TetraminoType
 	kTetramino3,
 };
 
+enum TetraminoDetailType
+{
+	kTetraminoDetail1,
+	kTetraminoDetail2,
+	kTetraminoDetail3,
+};
+
 enum VictoryConditionType
 {
 	kVictoryCondition1,

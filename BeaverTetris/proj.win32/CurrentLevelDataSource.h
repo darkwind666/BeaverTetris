@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>
+#include "GameStructures.h"
 
 class CurrentLevelDataSource
 {
@@ -8,11 +8,7 @@ public:
 	CurrentLevelDataSource(void);
 	~CurrentLevelDataSource(void);
 
-	bool winGameResult();
-	bool winAllGameResult();
-
-	std::string getCurrentLevelName();
-	int getCurrentLevelAward();
+	GameLevelInformation getCurrentLevelData();
 
 };
 

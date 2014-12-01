@@ -147,6 +147,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="CurrentDetailController.cpp" />
     <ClCompile Include="CurrentGameVictoryConditionDataSource.cpp" />
     <ClCompile Include="CurrentLevelAwardDataSource.cpp" />
+    <ClCompile Include="CurrentLevelDataSource.cpp" />
     <ClCompile Include="CurrentPlayerDataSource.cpp" />
     <ClCompile Include="DetailsFromBoardDataSource.cpp" />
     <ClCompile Include="DevelopersDataSource.cpp" />
@@ -212,7 +213,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="TetrominosFactory.cpp" />
     <ClCompile Include="VictoryCondition.cpp" />
     <ClCompile Include="VictoryConditionViewDataSource.cpp" />
-    <ClCompile Include="CurrentLevelDataSource.cpp" />
+    <ClCompile Include="CurrentLevelWinResultDataSource.cpp" />
     <ClCompile Include="WinGameSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +227,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="CurrentDetailController.h" />
     <ClInclude Include="CurrentGameVictoryConditionDataSource.h" />
     <ClInclude Include="CurrentLevelAwardDataSource.h" />
+    <ClInclude Include="CurrentLevelDataSource.h" />
     <ClInclude Include="CurrentPlayerDataSource.h" />
     <ClInclude Include="DetailsFromBoardDataSource.h" />
     <ClInclude Include="DevelopersDataSource.h" />
@@ -299,7 +301,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="TetrominosFactory.h" />
     <ClInclude Include="VictoryCondition.h" />
     <ClInclude Include="VictoryConditionViewDataSource.h" />
-    <ClInclude Include="CurrentLevelDataSource.h" />
+    <ClInclude Include="CurrentLevelWinResultDataSource.h" />
     <ClInclude Include="WinGameSystem.h" />
   </ItemGroup>
   <ItemGroup>

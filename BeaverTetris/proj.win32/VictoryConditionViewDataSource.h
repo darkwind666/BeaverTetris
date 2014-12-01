@@ -2,11 +2,13 @@
 
 #include <string>
 #include "cocos2d.h"
+#include "GameVictoryFactory.h"
+#include "PlayerSelectionDataSource.h"
 
 class VictoryConditionViewDataSource
 {
 public:
-	VictoryConditionViewDataSource(void);
+	VictoryConditionViewDataSource(GameVictoryFactory *aGameVictoryFactory, PlayerSelectionDataSource *aPlayerSelectionDataSource);
 	~VictoryConditionViewDataSource(void);
 
 	int getVictoryConditionsCount(void);
@@ -14,8 +16,15 @@ public:
 	cocos2d::Vec2 getVictoryConditionIconImagePositionForIndex(int aIndex);
 
 	std::string getVictoryConditionInformationForIndex(int aIndex);
-	cocos2d::Vec2 getVictoryConditionInformationForIndexPositionForIndex(int aIndex);
+	cocos2d::Vec2 getVictoryConditionInformationPositionForIndex(int aIndex);
 
+	void refreshDataSource();
+
+private:
+
+	GameVictoryFactory *_gameVictoryFactory;
+	PlayerSelectionDataSource *_playerSelectionDataSource;
+	VictoryCondition *_currentVictoryCondition;
 
 };
 
