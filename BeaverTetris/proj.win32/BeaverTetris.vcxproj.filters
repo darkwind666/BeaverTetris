@@ -294,6 +294,9 @@
     <ClCompile Include="CurrentLevelDataSource.cpp">
       <Filter>Models</Filter>
     </ClCompile>
+    <ClCompile Include="TetraminosCombinatorDelegate.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -553,6 +556,9 @@
     </ClInclude>
     <ClInclude Include="CurrentLevelDataSource.h">
       <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminosCombinatorDelegate.h">
+      <Filter>Models\GameLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

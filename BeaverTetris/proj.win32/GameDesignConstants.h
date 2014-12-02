@@ -7,3 +7,6 @@ const int playerPrizeForLine = 100;
 
 const int standartDetailWidth = 3;
 const int standartDetailHeight = 3;
+
+const int tetraminosInChainCount = 4;
+const int prizeForChainConstant = 30;

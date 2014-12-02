@@ -70,6 +70,17 @@ void GameBoard::removeTetraminoForXYposition(int xPosition, int yPosition)
 	_tetramins[xPosition * _gameBoardWidth + yPosition] = newTetramino;
 }
 
+void GameBoard::removeTetraminos(std::vector <GamePositionOnBoard> aNeedToRemoveTetraminos)
+{
+	vector <GamePositionOnBoard>::iterator detailElementsIterator;
+	
+	for (detailElementsIterator = aNeedToRemoveTetraminos.begin; detailElementsIterator != aNeedToRemoveTetraminos.end; detailElementsIterator++)
+	{
+		GamePositionOnBoard tetraminoPosition = *detailElementsIterator;
+		removeTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+	}
+}
+
 void GameBoard::cleanTetraminoRowForYposition(int yPosition)
 {
 	for (int xPosition = 0; xPosition < _gameBoardWidth; xPosition++)

@@ -18,6 +18,7 @@ public:
 	std::vector <GamePositionOnBoard> getAvailableTetraminis();
 
 	void removeTetraminoForXYposition(int xPosition, int yPosition);
+	void removeTetraminos(std::vector <GamePositionOnBoard> aNeedToRemoveTetraminos);
 	void cleanTetraminoRowForYposition(int yPosition);
 	void cleanGameBoard(void);
 

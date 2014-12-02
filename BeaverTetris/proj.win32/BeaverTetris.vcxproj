@@ -209,6 +209,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="Tetramino.cpp" />
     <ClCompile Include="TetraminoDetail.cpp" />
     <ClCompile Include="TetraminosCharacteristicsDataSource.cpp" />
+    <ClCompile Include="TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="TetraminosSeparatorDelegate.cpp" />
     <ClCompile Include="TetrominosFactory.cpp" />
     <ClCompile Include="VictoryCondition.cpp" />
@@ -297,6 +298,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="Tetramino.h" />
     <ClInclude Include="TetraminoDetail.h" />
     <ClInclude Include="TetraminosCharacteristicsDataSource.h" />
+    <ClInclude Include="TetraminosCombinatorDelegate.h" />
     <ClInclude Include="TetraminosSeparatorDelegate.h" />
     <ClInclude Include="TetrominosFactory.h" />
     <ClInclude Include="VictoryCondition.h" />

@@ -4,6 +4,7 @@
 #include "ActiveDetails.h"
 #include <vector>
 #include "DetailsFromBoardDataSource.h"
+#include "TetraminosCombinatorDelegate.h"
 
 class TetraminosSeparatorDelegate
 {
@@ -18,15 +19,10 @@ private:
 	GameBoard *_gameBoard;
 	ActiveDetails *_activeDetails;
 	DetailsFromBoardDataSource *_detailsFromBoardDataSource;
+	TetraminosCombinatorDelegate *_tetraminosCombinatorDelegate;
 
 	std::vector < std::vector <GamePositionOnBoard> > getTetraminoDetailsInGame();
 	void replaceTetraminosDetailsFromBoardToActiveDetailsStrore(std::vector < std::vector <GamePositionOnBoard> > aTetraminoDetailsInGame);
-
-	GamePositionOnBoard  getMaxDetailPositionFromDetailsElements(std::vector <GamePositionOnBoard> aDetailElements);
-	GamePositionOnBoard  getMinDetailPositionFromDetailsElements(std::vector <GamePositionOnBoard> aDetailElements);
-	GamePositionOnBoard getDetailSizeFromMaxAndMinPosition(GamePositionOnBoard aMaxDetailPosition, GamePositionOnBoard aMinDetailPosition);
-
-	TetraminoDetail* getDetailWithMaxMinDetailPositionAndDetailSize(std::vector <GamePositionOnBoard> aDetailElements, GamePositionOnBoard aMaxDetailPosition, GamePositionOnBoard aMinDetailPosition, GamePositionOnBoard aDetailSize);
 
 };
 
