@@ -79,6 +79,7 @@ struct GameLevelInformation
 	int levelAward;
 	std::vector<TetraminoType> availableTetraminos;
 	std::vector<TetraminoDetailType> availableTetraminoDetails;
+	std::vector<TetraminoType> availableBosses;
 };
 
 struct TetraminoDetailInformation

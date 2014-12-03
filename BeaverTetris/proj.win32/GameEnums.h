@@ -42,8 +42,14 @@ enum PopUpType
 enum TetraminoType
 {
 	kTetraminoEmpty,
-	kTetramino2,
-	kTetramino3,
+	kTetraminoRed,
+	kTetraminoGreen,
+	kTetraminoBlue,
+	kTetraminoGold,
+	kTetraminoBlack,
+	kTetraminoBossQueen,
+	kTetraminoBossPrincess,
+	kTetraminoBossKing,
 };
 
 enum TetraminoDetailType

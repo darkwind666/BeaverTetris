@@ -58,6 +58,9 @@
     <Filter Include="Models\ViewsDataSources">
       <UniqueIdentifier>{41e76297-0b62-42b0-a304-553b5cc314ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Models\AIStrateges">
+      <UniqueIdentifier>{9bd97b0e-b767-461a-a9db-11a7e0692470}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -296,6 +299,21 @@
     </ClCompile>
     <ClCompile Include="TetraminosCombinatorDelegate.cpp">
       <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentBossDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="AIMovementStrategy.cpp">
+      <Filter>Models\AIStrateges</Filter>
+    </ClCompile>
+    <ClCompile Include="AISpellCastsStrategy.cpp">
+      <Filter>Models\AIStrateges</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStrategyInterface.cpp">
+      <Filter>Models\AIStrateges</Filter>
+    </ClCompile>
+    <ClCompile Include="BossesFactory.cpp">
+      <Filter>Factories</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -559,6 +577,21 @@
     </ClInclude>
     <ClInclude Include="TetraminosCombinatorDelegate.h">
       <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentBossDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="AIMovementStrategy.h">
+      <Filter>Models\AIStrateges</Filter>
+    </ClInclude>
+    <ClInclude Include="AISpellCastsStrategy.h">
+      <Filter>Models\AIStrateges</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStrategyInterface.h">
+      <Filter>Models\AIStrateges</Filter>
+    </ClInclude>
+    <ClInclude Include="BossesFactory.h">
+      <Filter>Factories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
