@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "GameEnums.h"
 
 class SpellBox
 {
@@ -11,7 +12,9 @@ public:
 	int getAvailableSpellsCount();
 	std::string getSpellNameOnIndex(int aIndex);
 	int getSpellCostOnIndex(int aIndex);
-	void useSpellOnIndex(int aIndex);
+	SpellType getSpellTypeOnIndex(int aIndex);
+
+	void useSpellOnType(SpellType aSpellType);
 
 };
 

@@ -10,3 +10,4 @@ const string gameLevelsDataSourceKey = string("GameLevelsDataSource");
 const string tetraminosCharacteristicsDataSourceKey = string("TetraminosCharacteristicsDataSource");
 const string startGameMenuDataSourceKey = string("StartGameMenuDataSource");
 const string gameLevelsMenuDataSourceKey = string("GameLevelsMenuDataSource");
+const string activeDetailsKey = string("ActiveDetails");

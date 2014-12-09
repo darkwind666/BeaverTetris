@@ -1,5 +1,6 @@
 #include "TetraminisDetailsFactory.h"
 #include "GameDesignConstants.h"
+#include "GameHelper.h"
 
 using namespace std;
 
@@ -27,8 +28,8 @@ TetraminoType TetraminisDetailsFactory::getRandomTetraminoType()
 {
 	GameLevelInformation currentLevel = _currentLevelDataSource->getCurrentLevelData;
 	vector<TetraminoType> availableTetraminos = currentLevel.availableTetraminos;
-	srand(time(0));
-	int randomTetraminoType = rand() % availableTetraminos.size;
+	int randomTetraminoType = GameHelper::getRandomNumberFromUpInterval(availableTetraminos.size);
+
 	TetraminoType tetraminoType = availableTetraminos[randomTetraminoType];
 	return tetraminoType;
 }
@@ -37,8 +38,7 @@ TetraminoDetailType TetraminisDetailsFactory::getRandomTetraminoDetailType()
 {
 	GameLevelInformation currentLevel = _currentLevelDataSource->getCurrentLevelData;
 	vector<TetraminoDetailType> availableTetraminoDetailsType = currentLevel.availableTetraminoDetails;
-	srand(time(0));
-	int randomDetailType = rand() % availableTetraminoDetailsType.size;
+	int randomDetailType = GameHelper::getRandomNumberFromUpInterval(availableTetraminoDetailsType.size);
 	TetraminoDetailType detailType = availableTetraminoDetailsType[randomDetailType];
 	return detailType;
 }

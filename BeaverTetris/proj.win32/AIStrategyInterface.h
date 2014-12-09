@@ -6,7 +6,7 @@ public:
 	AIStrategyInterface(void);
 	~AIStrategyInterface(void);
 
-	void updateAI();
+	virtual void updateAI()=0;
 
 };
 

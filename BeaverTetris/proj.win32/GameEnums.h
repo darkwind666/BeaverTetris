@@ -72,6 +72,10 @@ enum SpellType
 	kSpell2,
 	kSpell3,
 	kSpell4,
+	kBadSpell,
+	kBadSpellOne,
+	kBadSpellTwo,
+	kSpellEnd,
 };
 
 enum GameEventType
@@ -95,4 +99,13 @@ enum PlayerActionInGameType
 	kTurnDetailRight,
 	kAccelerateDetail,
 	kRotateDetail,
+};
+
+enum BossMovementType
+{
+	kIdleMovement,
+	kTurnLeftMovement,
+	kTurnRightMovement,
+	kTurnUpMovement,
+	kTurnDownMovement,
 };

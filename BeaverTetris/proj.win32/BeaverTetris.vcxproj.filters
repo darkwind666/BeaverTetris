@@ -315,6 +315,9 @@
     <ClCompile Include="BossesFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="GameHelper.cpp">
+      <Filter>SupportedFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -592,6 +595,9 @@
     </ClInclude>
     <ClInclude Include="BossesFactory.h">
       <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="GameHelper.h">
+      <Filter>SupportedFiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

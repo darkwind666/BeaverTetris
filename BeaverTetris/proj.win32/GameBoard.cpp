@@ -37,6 +37,29 @@ Tetramino* GameBoard::getTetraminoForXYposition(int xPosition, int yPosition)
 	return tetramino;
 }
 
+GamePositionOnBoard GameBoard::getTetraminoPosition(Tetramino *aTetramino)
+{
+
+	for (int xPosition = 0; xPosition < _gameBoardHeight; xPosition++)
+	{
+
+		for (int yPosition = 0; yPosition < _gameBoardWidth; yPosition++)
+		{
+			Tetramino *tetramino = getTetraminoForXYposition(xPosition,yPosition);
+			if (tetramino == aTetramino)
+			{
+				GamePositionOnBoard position;
+				position.xPosition = xPosition;
+				position.yPosition = yPosition;
+				return position;
+			}
+
+		}
+
+	}
+
+}
+
 vector <GamePositionOnBoard> GameBoard::getAvailableTetraminis()
 {
 

@@ -2,6 +2,8 @@
 
 const int normalUpdateInterval = 60;
 const int acceleratedUpdateInterval = 30;
+const int tetraminoBossTimeIntervalConstant = 130;
+const int tetraminoBossTimeIntervalSpellCastConstant = 100;
 
 const int playerPrizeForLine = 100;
 

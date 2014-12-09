@@ -15,6 +15,7 @@ public:
 	int getGameBoardWidth();
 	int getGameBoardHeight();
 	Tetramino* getTetraminoForXYposition(int xPosition, int yPosition);
+	GamePositionOnBoard getTetraminoPosition(Tetramino *aTetramino);
 	std::vector <GamePositionOnBoard> getAvailableTetraminis();
 
 	void removeTetraminoForXYposition(int xPosition, int yPosition);
