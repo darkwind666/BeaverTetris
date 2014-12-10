@@ -16,6 +16,10 @@ public:
 	void moveLeftDetail(void);
 	void moveRightDetail(void);
 	void rotateDetail(void);
+	void removeCurrentDetail();
+	void setUnAvailableCurrentDetail();
+	bool availableCurrentDetail();
+
 
 private:
 

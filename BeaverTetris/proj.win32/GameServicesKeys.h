@@ -11,3 +11,5 @@ const string tetraminosCharacteristicsDataSourceKey = string("TetraminosCharacte
 const string startGameMenuDataSourceKey = string("StartGameMenuDataSource");
 const string gameLevelsMenuDataSourceKey = string("GameLevelsMenuDataSource");
 const string activeDetailsKey = string("ActiveDetails");
+const string currentDetailControllerKey = string("CurrentDetailController");
+const string gameBoardKey = string("GameBoard");

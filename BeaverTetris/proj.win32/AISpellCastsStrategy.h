@@ -1,19 +1,20 @@
 #pragma once
 
 #include "AIStrategyInterface.h"
-#include "SpellBox.h"
+#include "SpellsFactory.h"
+
 
 class AISpellCastsStrategy : public AIStrategyInterface
 {
 public:
-	AISpellCastsStrategy(SpellBox *aSpellBox);
+	AISpellCastsStrategy(SpellsFactory *aSpellsFactory);
 	~AISpellCastsStrategy(void);
 
 	void updateAI();
 
 private:
 
-	SpellBox *_spellBox;
+	SpellsFactory *_spellsFactory;
 	int _currentUpdateState;
 
 };

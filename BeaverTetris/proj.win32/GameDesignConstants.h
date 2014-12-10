@@ -12,3 +12,8 @@ const int standartDetailHeight = 3;
 
 const int tetraminosInChainCount = 4;
 const int prizeForChainConstant = 30;
+
+const int randomExplosionsCount = 10;
+const int meteorsCount = 10;
+const int meteorAreaExplosionLength = 1;
+const int minEmptyTetraminoForCohesionCount = 10;

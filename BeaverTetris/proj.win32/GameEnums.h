@@ -68,13 +68,13 @@ enum VictoryConditionType
 
 enum SpellType
 {
-	kSpell1,
-	kSpell2,
-	kSpell3,
-	kSpell4,
+	kRocketSpell,
+	kRandomExplosionsSpell,
+	kFirestormSpell,
+	kCohessionSpell,
 	kBadSpell,
-	kBadSpellOne,
-	kBadSpellTwo,
+	kAddLineToBoardBottomSpell,
+	kDamageToPlayerSpell,
 	kSpellEnd,
 };
 

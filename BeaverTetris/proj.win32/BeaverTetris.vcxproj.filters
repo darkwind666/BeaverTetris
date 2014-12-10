@@ -318,6 +318,24 @@
     <ClCompile Include="GameHelper.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
+    <ClCompile Include="CohesionSpell.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
+    <ClCompile Include="FirestromSpell.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomExplosionsSpell.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
+    <ClCompile Include="RocketSpell.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
+    <ClCompile Include="AddLineToBoardBottomSpell.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
+    <ClCompile Include="DamageToPlayerSpell.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -598,6 +616,24 @@
     </ClInclude>
     <ClInclude Include="GameHelper.h">
       <Filter>SupportedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="CohesionSpell.h">
+      <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="FirestromSpell.h">
+      <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomExplosionsSpell.h">
+      <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="RocketSpell.h">
+      <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="AddLineToBoardBottomSpell.h">
+      <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageToPlayerSpell.h">
+      <Filter>Models\Spells</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

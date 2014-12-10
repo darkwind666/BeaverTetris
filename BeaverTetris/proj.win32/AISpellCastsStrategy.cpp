@@ -4,9 +4,9 @@
 #include "GameHelper.h"
 
 
-AISpellCastsStrategy::AISpellCastsStrategy(SpellBox *aSpellBox)
+AISpellCastsStrategy::AISpellCastsStrategy(SpellsFactory *aSpellsFactory)
 {
-	_spellBox = aSpellBox;
+	_spellsFactory = aSpellsFactory;
 	_currentUpdateState = 0;
 }
 
@@ -21,6 +21,6 @@ void AISpellCastsStrategy::updateAI()
 	{
 		_currentUpdateState = 0;
 		int randomSpellType = kBadSpell + 1 + GameHelper::getRandomNumberFromUpInterval(kSpellEnd - kBadSpell - 1);
-		_spellBox->useSpellOnType((SpellType)randomSpellType);
+		_spellsFactory->useSpellForType((SpellType)randomSpellType);
 	}
 }

@@ -88,6 +88,13 @@ struct TetraminoDetailInformation
 	int tetraminoElements[standartDetailWidth][standartDetailHeight];
 };
 
+struct SpellInformation
+{
+	SpellType spellType;
+	std::string spellName;
+	int spellCost;
+};
+
 
 
 

@@ -1,20 +1,29 @@
 #pragma once
 
 #include <string>
-#include "GameEnums.h"
+#include <vector>
+#include "GameStructures.h"
+#include "SpellsFactory.h"
+#include "CurrentPlayerDataSource.h"
 
 class SpellBox
 {
 public:
-	SpellBox(void);
+	SpellBox(SpellsFactory *aSpellsFactory, CurrentPlayerDataSource *aCurrentPlayerDataSource);
 	~SpellBox(void);
 
 	int getAvailableSpellsCount();
 	std::string getSpellNameOnIndex(int aIndex);
 	int getSpellCostOnIndex(int aIndex);
-	SpellType getSpellTypeOnIndex(int aIndex);
+	void useSpellOnIndex(int aIndex);
 
-	void useSpellOnType(SpellType aSpellType);
+private:
+
+	SpellsFactory *_spellsFactory;
+	CurrentPlayerDataSource *_currentPlayerDataSource;
+	std::vector<SpellInformation> _spellsInformations;
+
+	std::vector<SpellInformation> getSpellsInformation();
 
 };
 
