@@ -3,7 +3,7 @@
 
 using namespace std;
 
-CollisionSystem::CollisionSystem(GameBoard *aGameBoard, ActiveDetails *aActiveDetails, GameFlowController *aGameFlowController)
+CollisionSystem::CollisionSystem(GameBoard *aGameBoard, ActiveDetails *aActiveDetails, GameFlowSystem *aGameFlowController)
 {
 	_activeDetailsStore = aActiveDetails;
 	_gameBoard = aGameBoard;

@@ -195,14 +195,8 @@
     <ClCompile Include="SpellInterface.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
-    <ClCompile Include="GameFlowController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="GameEventInterface.cpp">
       <Filter>Models\GameEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="GameEventsDataSource.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="EndGameController.cpp">
       <Filter>Controllers</Filter>
@@ -335,6 +329,18 @@
     </ClCompile>
     <ClCompile Include="DamageToPlayerSpell.cpp">
       <Filter>Models\Spells</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFlowSystem.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentGameEventsDataSource.cpp">
+      <Filter>Models</Filter>
+    </ClCompile>
+    <ClCompile Include="TetraminosFallEvent.cpp">
+      <Filter>Models\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeAccelerationEvent.cpp">
+      <Filter>Models\GameEvents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -479,14 +485,8 @@
     <ClInclude Include="SpellInterface.h">
       <Filter>Models\Spells</Filter>
     </ClInclude>
-    <ClInclude Include="GameFlowController.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
     <ClInclude Include="GameEventInterface.h">
       <Filter>Models\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="GameEventsDataSource.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="EndGameController.h">
       <Filter>Controllers</Filter>
@@ -634,6 +634,18 @@
     </ClInclude>
     <ClInclude Include="DamageToPlayerSpell.h">
       <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFlowSystem.h">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentGameEventsDataSource.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminosFallEvent.h">
+      <Filter>Models\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeAccelerationEvent.h">
+      <Filter>Models\GameEvents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

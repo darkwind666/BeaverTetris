@@ -7,6 +7,7 @@ public:
 
 	virtual bool eventTime(void) = 0;
 	virtual void runEvent(void) = 0;
+	virtual void updateEvent(void) = 0;
 
 };
 
