@@ -17,3 +17,4 @@ const int randomExplosionsCount = 10;
 const int meteorsCount = 10;
 const int meteorAreaExplosionLength = 1;
 const int minEmptyTetraminoForCohesionCount = 10;
+const int minPeacefulNonEmptyTetraminosCount = 6;
