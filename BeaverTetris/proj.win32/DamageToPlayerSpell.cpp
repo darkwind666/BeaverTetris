@@ -3,7 +3,6 @@
 #include "GameServicesKeys.h"
 #include "GameDesignConstants.h"
 #include "GameHelper.h"
-#include "TetraminosSeparatorDelegate.h"
 #include "ActiveDetails.h"
 #include "GameEnums.h"
 
@@ -41,12 +40,6 @@ void DamageToPlayerSpell::castSpell()
 	for (linesIterator = linesWithUnpeacefulCount.begin; linesIterator != linesWithUnpeacefulCount.end; linesIterator++)
 	{
 		makeReductionInLine(*linesIterator);
-	}
-
-	if (_someTetraminosWasRemoved)
-	{
-		separateTetraminos();
-		_someTetraminosWasRemoved = false;
 	}
 
 }
@@ -100,15 +93,6 @@ void DamageToPlayerSpell::makeReductionInLine(int aLine)
 		GamePositionOnBoard tetraminoPosition = unEmptyAndNoBossesTetraminos[reductionElementIndex];
 		_gameBoard->removeTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
 		unEmptyAndNoBossesTetraminos.erase(unEmptyAndNoBossesTetraminos.begin + reductionElementIndex);
-		_someTetraminosWasRemoved = true;
 	}
 
-}
-
-
-void DamageToPlayerSpell::separateTetraminos()
-{
-	ActiveDetails *activeDetails = (ActiveDetails*)ServiceLocator::getServiceForKey(activeDetailsKey);
-	TetraminosSeparatorDelegate *separatorDelegate = new TetraminosSeparatorDelegate(_gameBoard, activeDetails);
-	separatorDelegate->separateTetraminos;
 }

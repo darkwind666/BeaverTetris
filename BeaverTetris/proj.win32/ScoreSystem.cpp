@@ -3,13 +3,11 @@
 
 using namespace std;
 
-ScoreSystem::ScoreSystem(AwardForTetraminoDataSource *aAwardForTetraminoDataSource, GameBoard *aGameBoard, CurrentPlayerDataSource *aCurrentPlayerDataSource, TetraminosSeparatorDelegate *aTetraminosSeparatorDelegate)
+ScoreSystem::ScoreSystem(AwardForTetraminoDataSource *aAwardForTetraminoDataSource, GameBoard *aGameBoard, CurrentPlayerDataSource *aCurrentPlayerDataSource)
 {
 	_awardForTetraminoDataSource = aAwardForTetraminoDataSource;
 	_gameBoard = aGameBoard;
 	_currentPlayerDataSource = aCurrentPlayerDataSource;
-	_someObjectWasDeletedIndicator = false;
-	_tetraminosSeparatorDelegate = aTetraminosSeparatorDelegate;
 	_detailsFromBoardDataSource = new DetailsFromBoardDataSource(aGameBoard);
 	_tetraminosCombinatorDelegate = new TetraminosCombinatorDelegate(aGameBoard);
 }
@@ -24,12 +22,6 @@ void ScoreSystem::updateSystem(float deltaTime)
 
 	checkFilledLines();
 	checkTetraminoChains();
-
-	if (_someObjectWasDeletedIndicator)
-	{
-		_tetraminosSeparatorDelegate->separateTetraminos();
-		_someObjectWasDeletedIndicator = false;
-	}
 
 }
 
@@ -78,8 +70,6 @@ void ScoreSystem::checkTetraminoChains()
 			int awardForChain = getAwardForChainForTetraminos(*detailsInGameIterator);
 			int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
 			_currentPlayerDataSource->setPlayerScore(currentPlayerScore + awardForChain);
-			_someObjectWasDeletedIndicator = true;
-
 		}
 
 	}
@@ -215,7 +205,6 @@ void ScoreSystem::removeKilledTetraminos(int lineIndex)
 		if (tetraminoInBoard->getTetraminoLivesCount <= 0)
 		{
 			_gameBoard->removeTetraminoForXYposition(xIndex,lineIndex);
-			_someObjectWasDeletedIndicator = true;
 		}
 	
 	}

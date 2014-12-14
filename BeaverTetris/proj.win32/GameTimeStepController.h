@@ -5,11 +5,11 @@
 
 class GameSystemInterface;
 
-class GameManager
+class GameTimeStepController
 {
 public:
-	GameManager(void);
-	~GameManager(void);
+	GameTimeStepController(void);
+	~GameTimeStepController(void);
 
 	void setUpdateInterval(float aUpdateInterval);
 	void update(float deltaTime);

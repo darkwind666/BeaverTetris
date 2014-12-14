@@ -6,14 +6,10 @@
 
 AIMovementStrategy::AIMovementStrategy(GameBoard *aGameBoard, Tetramino *aTetramino)
 {
-
 	_gameBoard = aGameBoard;
 	_bossTetramino = aTetramino;
 	_currentUpdateState = 0;
 	_lastTetraminoInBossPlace = new Tetramino();
-	ActiveDetails *activeDetails = (ActiveDetails*)ServiceLocator::getServiceForKey(activeDetailsKey);
-	_tetraminosSeparatorDelegate = new TetraminosSeparatorDelegate(aGameBoard, activeDetails);
-
 }
 
 
@@ -130,12 +126,6 @@ void AIMovementStrategy::placeBossOnNewPosition(GamePositionOnBoard newBossPosit
 		GamePositionOnBoard currentBossPosition = _gameBoard->getTetraminoPosition(_bossTetramino);
 		_gameBoard->setTetraminoXYposition(_lastTetraminoInBossPlace, currentBossPosition.xPosition, currentBossPosition.yPosition);
 		_gameBoard->setTetraminoXYposition(_bossTetramino, newBossPosition.xPosition, newBossPosition.yPosition);
-	
-		if (_lastTetraminoInBossPlace->getTetraminoType == kTetraminoEmpty)
-		{
-			_tetraminosSeparatorDelegate->separateTetraminos();
-		}
-	
 		_lastTetraminoInBossPlace = tetraminoOnNewPosition;
 	}
 }

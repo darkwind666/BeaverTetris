@@ -3,7 +3,6 @@
 #include "AIStrategyInterface.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
-#include "TetraminosSeparatorDelegate.h"
 #include "GameStructures.h"
 #include "GameEnums.h"
 
@@ -22,7 +21,6 @@ private:
 
 	int _currentUpdateState;
 	Tetramino *_lastTetraminoInBossPlace;
-	TetraminosSeparatorDelegate *_tetraminosSeparatorDelegate;
 
 	GamePositionOnBoard getNewBossPosition();
 	void placeBossOnNewPosition(GamePositionOnBoard newBossPosition);

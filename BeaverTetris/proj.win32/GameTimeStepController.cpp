@@ -1,9 +1,9 @@
-#include "GameManager.h"
+#include "GameTimeStepController.h"
 #include "GameDesignConstants.h"
 
 using namespace std;
 
-GameManager::GameManager(void)
+GameTimeStepController::GameTimeStepController(void)
 {
 	_updateInterval = normalUpdateInterval;
 	_currentTimeInterval = 0;
@@ -11,19 +11,19 @@ GameManager::GameManager(void)
 }
 
 
-GameManager::~GameManager(void)
+GameTimeStepController::~GameTimeStepController(void)
 {
 }
 
 
-void GameManager::setUpdateInterval(float aUpdateInterval)
+void GameTimeStepController::setUpdateInterval(float aUpdateInterval)
 {
 	_updateInterval = aUpdateInterval;
 	_currentTimeInterval = 0;
 
 }
 
-void GameManager::update(float deltaTime)
+void GameTimeStepController::update(float deltaTime)
 {
 	if (_currentTimeInterval >= _updateInterval)
 	{
@@ -34,7 +34,7 @@ void GameManager::update(float deltaTime)
 
 }
 
-void GameManager::addSystem(GameSystemInterface *aSystem)
+void GameTimeStepController::addSystem(GameSystemInterface *aSystem)
 {
 	_systems.push_back(aSystem);
 }

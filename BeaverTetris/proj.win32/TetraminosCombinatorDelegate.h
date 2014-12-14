@@ -12,6 +12,7 @@ public:
 	~TetraminosCombinatorDelegate(void);
 
 	TetraminoDetail* combineTetraminosInDetail(std::vector <GamePositionOnBoard> aDetailElements);
+	vector <TetraminoDetail*> combineTetraminosInDetails(std::vector < std::vector <GamePositionOnBoard> > aTetraminoDetailsInGame);
 
 private:
 

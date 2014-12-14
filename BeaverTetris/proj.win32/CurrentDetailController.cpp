@@ -55,7 +55,7 @@ void CurrentDetailController::rotateDetail(void)
 	TetraminoDetail rotatedTetramino = *_currentDetail;
 	rotatedTetramino.rotateDetail();
 
-	bool collide = _collisionDelegate->checkCollisionWithDetail(rotatedTetramino);
+	bool collide = _collisionDelegate->checkCollisionWithDetail(&rotatedTetramino);
 
 	if (!collide)
 	{
@@ -85,7 +85,7 @@ void CurrentDetailController::setNewPositionIfNoCollision(GamePositionOnBoard aN
 {
 	TetraminoDetail movedTetramino = *_currentDetail;
 	movedTetramino.setDetailPosition = aNewDetailPosition;
-	bool collide = _collisionDelegate->checkCollisionWithDetail(movedTetramino);
+	bool collide = _collisionDelegate->checkCollisionWithDetail(&movedTetramino);
 
 		if (!collide)
 		{

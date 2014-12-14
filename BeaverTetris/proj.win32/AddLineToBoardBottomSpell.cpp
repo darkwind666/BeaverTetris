@@ -3,7 +3,6 @@
 #include "GameServicesKeys.h"
 #include "GameDesignConstants.h"
 #include "GameHelper.h"
-#include "TetraminosSeparatorDelegate.h"
 #include "ActiveDetails.h"
 #include "GameEnums.h"
 
@@ -28,13 +27,6 @@ void AddLineToBoardBottomSpell::castSpell()
 {
 	riseAllTetraminos();
 	addRowToBottom();
-	bool emptyTetraminos = checkEmptyTetraminosInBottom();
-
-	if (emptyTetraminos)
-	{
-		separateTetraminos();
-	}
-
 }
 
 void AddLineToBoardBottomSpell::riseAllTetraminos()
@@ -86,11 +78,4 @@ bool AddLineToBoardBottomSpell::checkEmptyTetraminosInBottom()
 		}
 	}
 	return emptyTetramino;
-}
-
-void AddLineToBoardBottomSpell::separateTetraminos()
-{
-	ActiveDetails *activeDetails = (ActiveDetails*)ServiceLocator::getServiceForKey(activeDetailsKey);
-	TetraminosSeparatorDelegate *separatorDelegate = new TetraminosSeparatorDelegate(_gameBoard, activeDetails);
-	separatorDelegate->separateTetraminos;
 }

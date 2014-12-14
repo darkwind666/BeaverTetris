@@ -150,9 +150,6 @@
     <ClCompile Include="GamePopUpsController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Models\GameLogic</Filter>
-    </ClCompile>
     <ClCompile Include="CurrentDetailController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
@@ -255,9 +252,6 @@
     <ClCompile Include="DetailsFromBoardDataSource.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
-    <ClCompile Include="TetraminosSeparatorDelegate.cpp">
-      <Filter>Models\GameLogic</Filter>
-    </ClCompile>
     <ClCompile Include="VictoryConditionViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
@@ -341,6 +335,15 @@
     </ClCompile>
     <ClCompile Include="TimeAccelerationEvent.cpp">
       <Filter>Models\GameEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="TetraminoDetailLocatorDelegate.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTimeStepController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="FillingGapInBoardSystem.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -439,9 +442,6 @@
     </ClInclude>
     <ClInclude Include="GamePopUpsController.h">
       <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Models\GameLogic</Filter>
     </ClInclude>
     <ClInclude Include="CurrentDetailController.h">
       <Filter>Controllers</Filter>
@@ -557,9 +557,6 @@
     <ClInclude Include="DetailsFromBoardDataSource.h">
       <Filter>Models\GameLogic</Filter>
     </ClInclude>
-    <ClInclude Include="TetraminosSeparatorDelegate.h">
-      <Filter>Models\GameLogic</Filter>
-    </ClInclude>
     <ClInclude Include="VictoryConditionViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
@@ -646,6 +643,15 @@
     </ClInclude>
     <ClInclude Include="TimeAccelerationEvent.h">
       <Filter>Models\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminoDetailLocatorDelegate.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTimeStepController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="FillingGapInBoardSystem.h">
+      <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

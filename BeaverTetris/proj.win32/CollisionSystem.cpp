@@ -3,12 +3,12 @@
 
 using namespace std;
 
-CollisionSystem::CollisionSystem(GameBoard *aGameBoard, ActiveDetails *aActiveDetails, GameFlowSystem *aGameFlowController)
+CollisionSystem::CollisionSystem(GameBoard *aGameBoard, ActiveDetails *aActiveDetails)
 {
 	_activeDetailsStore = aActiveDetails;
 	_gameBoard = aGameBoard;
-	_gameFlowController = aGameFlowController;
 	_collisionDelegate = new  CollisionDelegate(aGameBoard);
+	_tetraminoDetailLocatorDelegate = new TetraminoDetailLocatorDelegate(aGameBoard);
 }
 
 
@@ -21,13 +21,7 @@ void CollisionSystem::updateSystem(float deltaTime)
 {
 	vector<TetraminoDetail*> tetraminoDetails = _activeDetailsStore->getActiveDetails();
 
-	if (tetraminoDetails.size <= 0)
-	{
-		_gameFlowController->makeNewGameEvent;
-	}
-
 	vector<TetraminoDetail*>::iterator tetraminoDetailsIterator;
-
 	for (tetraminoDetailsIterator = tetraminoDetails.begin; tetraminoDetailsIterator != tetraminoDetails.end; tetraminoDetailsIterator++)
 	{
 		TetraminoDetail *tetraminoDetail = *tetraminoDetailsIterator;
@@ -43,7 +37,7 @@ void CollisionSystem::updateSystem(float deltaTime)
 		}
 		else
 		{
-			bool collide = _collisionDelegate->checkCollisionWithDetail(collidebleTetramino);
+			bool collide = _collisionDelegate->checkCollisionWithDetail(&collidebleTetramino);
 			
 			if (collide)
 			{
@@ -57,24 +51,8 @@ void CollisionSystem::updateSystem(float deltaTime)
 
 void CollisionSystem::writeTetraminoDetailInBoard(TetraminoDetail *aTetraminoDetail)
 {
-	for (int yIndex = 0; yIndex < aTetraminoDetail->getDetailHeight; yIndex++)
-	{
-			
-		for (int xIndex = 0; xIndex < aTetraminoDetail->getDetailWidth; xIndex++)
-		{			
-			Tetramino *tetraminoInDetail = aTetraminoDetail->getTetraminoForXY(xIndex,yIndex);			
-			
-			if (tetraminoInDetail->getTetraminoType > kTetraminoEmpty)
-			{			
-				GamePositionOnBoard detailPosition = aTetraminoDetail->getDetailPosition();						
-				_gameBoard->setTetraminoXYposition(tetraminoInDetail ,detailPosition.xPosition + xIndex, detailPosition.yPosition + yIndex);
-			}			
-			
-		
-		}			
-			
-	}	
 
+	_tetraminoDetailLocatorDelegate->writeTetraminoDetailInBoard(aTetraminoDetail);
 	_activeDetailsStore->removeDetail(aTetraminoDetail);
 
 }

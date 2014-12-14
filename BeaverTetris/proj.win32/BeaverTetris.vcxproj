@@ -163,6 +163,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="EndGameController.cpp" />
     <ClCompile Include="EndGameViewDataSource.cpp" />
     <ClCompile Include="EventDispatcher.cpp" />
+    <ClCompile Include="FillingGapInBoardSystem.cpp" />
     <ClCompile Include="FirestromSpell.cpp" />
     <ClCompile Include="GameBoard.cpp" />
     <ClCompile Include="GameBoardViewDataSource.cpp" />
@@ -178,7 +179,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameInitiator.cpp" />
     <ClCompile Include="GameLevelsDataSource.cpp" />
     <ClCompile Include="GameLevelsMenuDataSource.cpp" />
-    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameTimeStepController.cpp" />
     <ClCompile Include="GamePlayersDatabase.cpp" />
     <ClCompile Include="GamePopUpsController.cpp" />
     <ClCompile Include="GameRecordsSceneFactory.cpp" />
@@ -220,10 +221,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="TetraminisDetailsFactory.cpp" />
     <ClCompile Include="Tetramino.cpp" />
     <ClCompile Include="TetraminoDetail.cpp" />
+    <ClCompile Include="TetraminoDetailLocatorDelegate.cpp" />
     <ClCompile Include="TetraminosCharacteristicsDataSource.cpp" />
     <ClCompile Include="TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="TetraminosFallEvent.cpp" />
-    <ClCompile Include="TetraminosSeparatorDelegate.cpp" />
     <ClCompile Include="TetrominosFactory.cpp" />
     <ClCompile Include="TimeAccelerationEvent.cpp" />
     <ClCompile Include="VictoryCondition.cpp" />
@@ -259,6 +260,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="EndGameViewDataSource.h" />
     <ClInclude Include="EventDispatcher.h" />
     <ClInclude Include="EventHandlerInterface.h" />
+    <ClInclude Include="FillingGapInBoardSystem.h" />
     <ClInclude Include="FirestromSpell.h" />
     <ClInclude Include="GameBoard.h" />
     <ClInclude Include="GameBoardViewDataSource.h" />
@@ -276,7 +278,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameInitiator.h" />
     <ClInclude Include="GameLevelsDataSource.h" />
     <ClInclude Include="GameLevelsMenuDataSource.h" />
-    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameTimeStepController.h" />
     <ClInclude Include="GamePlayersDatabase.h" />
     <ClInclude Include="GamePopUpsController.h" />
     <ClInclude Include="GameRecordsSceneFactory.h" />
@@ -323,10 +325,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="TetraminisDetailsFactory.h" />
     <ClInclude Include="Tetramino.h" />
     <ClInclude Include="TetraminoDetail.h" />
+    <ClInclude Include="TetraminoDetailLocatorDelegate.h" />
     <ClInclude Include="TetraminosCharacteristicsDataSource.h" />
     <ClInclude Include="TetraminosCombinatorDelegate.h" />
     <ClInclude Include="TetraminosFallEvent.h" />
-    <ClInclude Include="TetraminosSeparatorDelegate.h" />
     <ClInclude Include="TetrominosFactory.h" />
     <ClInclude Include="TimeAccelerationEvent.h" />
     <ClInclude Include="VictoryCondition.h" />

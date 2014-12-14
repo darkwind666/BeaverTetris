@@ -3,7 +3,6 @@
 #include "GameServicesKeys.h"
 #include "GameDesignConstants.h"
 #include "GameHelper.h"
-#include "TetraminosSeparatorDelegate.h"
 #include "ActiveDetails.h"
 
 
@@ -31,14 +30,11 @@ bool FirestromSpell::spellAvailable(void)
 
 void FirestromSpell::castSpell()
 {
-
 	for (int meteorIndex = 0; meteorIndex <= meteorsCount; meteorIndex++)
 	{
 		int randomMeteorPositionX = GameHelper::getRandomNumberFromUpInterval(_gameBoard->getGameBoardWidth);
 		runFireballWithXPosition(randomMeteorPositionX);
 	}
-
-	removeDeathTetraminos();
 }
 
 void FirestromSpell::runFireballWithXPosition(int positionX)
@@ -98,15 +94,4 @@ void FirestromSpell::makeExplosionOnPositionXY(int positionX, int positionY)
 
 	}
 
-}
-
-void FirestromSpell::removeDeathTetraminos()
-{
-	if (_someTetraminosWasRemoved)
-	{
-		ActiveDetails *activeDetails = (ActiveDetails*)ServiceLocator::getServiceForKey(activeDetailsKey);
-		TetraminosSeparatorDelegate *separatorDelegate = new TetraminosSeparatorDelegate(_gameBoard, activeDetails);
-		separatorDelegate->separateTetraminos;
-		_someTetraminosWasRemoved = false;
-	}
 }

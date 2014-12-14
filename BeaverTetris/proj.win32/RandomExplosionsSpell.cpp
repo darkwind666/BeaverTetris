@@ -3,7 +3,6 @@
 #include "GameServicesKeys.h"
 #include "GameDesignConstants.h"
 #include "GameHelper.h"
-#include "TetraminosSeparatorDelegate.h"
 #include "ActiveDetails.h"
 
 using namespace std;
@@ -39,9 +38,6 @@ void RandomExplosionsSpell::castSpell()
 	{
 		removeRandomTetraminoInAvailableTetraminos(availableTetraminos);
 	}
-
-	removeDeathTetraminos();
-
 }
 
 void RandomExplosionsSpell::removeRandomTetraminoInAvailableTetraminos(std::vector <GamePositionOnBoard> &availableTetraminos)
@@ -58,15 +54,4 @@ void RandomExplosionsSpell::removeRandomTetraminoInAvailableTetraminos(std::vect
 	}
 	
 	availableTetraminos.erase(availableTetraminos.begin() + randomTetramino);
-}
-
-void RandomExplosionsSpell::removeDeathTetraminos()
-{
-	if (_someTetraminosWasRemoved)
-	{
-		ActiveDetails *activeDetails = (ActiveDetails*)ServiceLocator::getServiceForKey(activeDetailsKey);
-		TetraminosSeparatorDelegate *separatorDelegate = new TetraminosSeparatorDelegate(_gameBoard, activeDetails);
-		separatorDelegate->separateTetraminos;
-		_someTetraminosWasRemoved = false;
-	}
 }
