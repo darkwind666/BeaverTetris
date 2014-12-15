@@ -23,8 +23,8 @@ VictoryConditionsFactory::~VictoryConditionsFactory(void)
 
 VictoryConditionInterface* VictoryConditionsFactory::makeCurrentVictoryCondition()
 {
-	_currentLevelInformation = _currentLevelDataSource->getCurrentLevelData;
-	victoryConditionBuildFunction makeCurrentVictoryConditionBuilder = _victoryConditionsBuildFunctions[_currentLevelInformation.victoryCondition];
+	_currentLevelInformation = _currentLevelDataSource->getCurrentLevelData();
+	victoryConditionBuildFunction makeCurrentVictoryConditionBuilder = _victoryConditionsBuildFunctions[_currentLevelInformation.victoryConditionType];
 	VictoryConditionInterface *currentVictoryCondition = (this->*makeCurrentVictoryConditionBuilder)();
 	return currentVictoryCondition;
 }

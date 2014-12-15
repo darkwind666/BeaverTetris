@@ -6,11 +6,11 @@
 class WinBossCondition :public VictoryConditionInterface
 {
 public:
-	WinBossCondition(LevelInformation aLevelInformation);
+	WinBossCondition(GameLevelInformation aLevelInformation);
 	~WinBossCondition(void);
 
 	int getVictoryStateInformationCount(void);
-	std::string getVictoryStateInformationForIndex(int aIndex);
+	int getVictoryStateInformationForIndex(int aIndex);
 	std::string getVictoryStateIconImageForIndex(int aIndex);
 	
 	bool playerWin(void);

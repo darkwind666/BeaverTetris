@@ -1,9 +1,8 @@
 #pragma once
 
-#include "EventHandlerInterface.h"
 #include <string>
 
-class VictoryConditionInterface :public EventHandlerInterface
+class VictoryConditionInterface
 {
 public:
 	VictoryConditionInterface(void);
@@ -11,7 +10,7 @@ public:
 
 
 	virtual int getVictoryStateInformationCount(void) = 0;
-	virtual std::string getVictoryStateInformationForIndex(int aIndex) = 0;
+	virtual int getVictoryStateInformationForIndex(int aIndex) = 0;
 	virtual std::string getVictoryStateIconImageForIndex(int aIndex) = 0;
 
 	virtual bool playerWin(void) = 0;

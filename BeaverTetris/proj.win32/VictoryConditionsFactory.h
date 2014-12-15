@@ -18,7 +18,7 @@ private:
 	typedef VictoryConditionInterface* (VictoryConditionsFactory::*victoryConditionBuildFunction) ();
 
 	CurrentLevelDataSource *_currentLevelDataSource;
-	LevelInformation _currentLevelInformation;
+	GameLevelInformation _currentLevelInformation;
 	std::map<VictoryConditionType, victoryConditionBuildFunction> _victoryConditionsBuildFunctions;
 
 	VictoryConditionInterface* makePlaceSomeDetailsCondition();

@@ -1,5 +1,6 @@
 #include "VictoryConditionViewDataSource.h"
 #include "GameViewConstants.h"
+#include "StringsSupporter.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -35,7 +36,8 @@ Vec2 VictoryConditionViewDataSource::getVictoryConditionIconImagePositionForInde
 
 string VictoryConditionViewDataSource::getVictoryConditionInformationForIndex(int aIndex)
 {
-	string victoryConditionInformation = _currentVictoryCondition->getVictoryStateInformationForIndex(aIndex);
+	int stateInformation = _currentVictoryCondition->getVictoryStateInformationForIndex(aIndex);
+	string victoryConditionInformation = StringsSupporter::getStringFromNumber(stateInformation);
 	return victoryConditionInformation;
 }
 

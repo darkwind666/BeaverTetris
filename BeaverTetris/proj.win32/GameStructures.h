@@ -81,6 +81,8 @@ struct GameLevelInformation
 	std::vector<TetraminoDetailType> availableTetraminoDetails;
 	std::vector<TetraminoType> availableBosses;
 	VictoryConditionType victoryConditionType;
+	int needToPlaceDetailsCount;
+	int remainTimes;
 };
 
 struct TetraminoDetailInformation

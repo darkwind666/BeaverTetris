@@ -25,3 +25,6 @@ const string playerControl2Key = string("playerControl2Key");
 const string playerControl3Key = string("playerControl3Key");
 const string playerControl4Key = string("playerControl4Key");
 const string playerControl5Key = string("playerControl5Key");
+
+const string placeDetailsIconKey = string("PlaceDetailsIcon");
+const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");

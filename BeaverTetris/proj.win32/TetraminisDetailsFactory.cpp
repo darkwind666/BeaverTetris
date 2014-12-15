@@ -8,6 +8,7 @@ TetraminisDetailsFactory::TetraminisDetailsFactory(CurrentLevelDataSource *aCurr
 {
 	_currentLevelDataSource = aCurrentLevelDataSource;
 	_detailsTypesData = makeDetailsData();
+	_createdDetailsCount = 0;
 }
 
 
@@ -20,8 +21,13 @@ TetraminoDetail* TetraminisDetailsFactory::getNewDetail()
 	TetraminoType tetraminoType = getRandomTetraminoType();
 	TetraminoDetailType detailType = getRandomTetraminoDetailType();
 	TetraminoDetail *newDetail = getNewDetailWithDetailTypeAndTetraminoType(detailType, tetraminoType);
+	_createdDetailsCount++;
 	return newDetail;
+}
 
+int TetraminisDetailsFactory::getCreatedDetailsCount()
+{
+	return _createdDetailsCount;
 }
 
 TetraminoType TetraminisDetailsFactory::getRandomTetraminoType()

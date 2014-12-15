@@ -2,19 +2,26 @@
 
 #include "VictoryConditionInterface.h"
 #include "GameStructures.h"
+#include "TetraminisDetailsFactory.h"
 
 class PlaceSomeDetailsCondition :public VictoryConditionInterface
 {
 public:
-	PlaceSomeDetailsCondition(LevelInformation aLevelInformation);
+	PlaceSomeDetailsCondition(GameLevelInformation aLevelInformation);
 	~PlaceSomeDetailsCondition(void);
 
     int getVictoryStateInformationCount(void);
-    std::string getVictoryStateInformationForIndex(int aIndex);
+    int getVictoryStateInformationForIndex(int aIndex);
     std::string getVictoryStateIconImageForIndex(int aIndex);
     
     bool playerWin(void);
     void update(void);
+
+private:
+
+	int _needToPlaceDetailsCount;
+	int _placedDetailsCount;
+	TetraminisDetailsFactory *_tetraminisDetailsFactory;
 
 };
 

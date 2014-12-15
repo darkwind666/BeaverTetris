@@ -12,11 +12,13 @@ public:
 	~TetraminisDetailsFactory(void);
 
 	TetraminoDetail* getNewDetail();
+	int getCreatedDetailsCount();
 
 private:
 
 	CurrentLevelDataSource *_currentLevelDataSource;
 	std::map<TetraminoDetailType, TetraminoDetailInformation> _detailsTypesData;
+	int _createdDetailsCount;
 
 	std::map<TetraminoDetailType, TetraminoDetailInformation> makeDetailsData();
 	void copyMasiveToMassive(int *aSourceMassive, int *aDestinationMassive);
