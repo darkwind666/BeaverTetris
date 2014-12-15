@@ -152,10 +152,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="CurrentBossDataSource.cpp" />
     <ClCompile Include="CurrentDetailController.cpp" />
-    <ClCompile Include="CurrentGameVictoryConditionDataSource.cpp" />
     <ClCompile Include="CurrentLevelAwardDataSource.cpp" />
     <ClCompile Include="CurrentLevelDataSource.cpp" />
     <ClCompile Include="CurrentPlayerDataSource.cpp" />
+    <ClCompile Include="CurrentVictoryConditionDataSource.cpp" />
     <ClCompile Include="DamageToPlayerSpell.cpp" />
     <ClCompile Include="DetailsFromBoardDataSource.cpp" />
     <ClCompile Include="DevelopersDataSource.cpp" />
@@ -186,7 +186,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameSoundDataSource.cpp" />
     <ClCompile Include="GameSystemInterface.cpp" />
     <ClCompile Include="GameTransitionsController.cpp" />
-    <ClCompile Include="GameVictoryFactory.cpp" />
+    <ClCompile Include="PlaceSomeDetailsCondition.cpp" />
+    <ClCompile Include="RemainSomeTimeCondition.cpp" />
+    <ClCompile Include="RemoveSomeTetraminosCondition.cpp" />
+    <ClCompile Include="VictoryConditionsFactory.cpp" />
     <ClCompile Include="GameViewElementsDataSource.cpp" />
     <ClCompile Include="GameViewInformationFactory.cpp" />
     <ClCompile Include="LoadGameController.cpp" />
@@ -227,9 +230,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="TetraminosFallEvent.cpp" />
     <ClCompile Include="TetrominosFactory.cpp" />
     <ClCompile Include="TimeAccelerationEvent.cpp" />
-    <ClCompile Include="VictoryCondition.cpp" />
+    <ClCompile Include="VictoryConditionInterface.cpp" />
     <ClCompile Include="VictoryConditionViewDataSource.cpp" />
     <ClCompile Include="CurrentLevelWinResultDataSource.cpp" />
+    <ClCompile Include="WinBossCondition.cpp" />
+    <ClCompile Include="WinGamesDataSource.cpp" />
     <ClCompile Include="WinGameSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -248,10 +253,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="CurrentBossDataSource.h" />
     <ClInclude Include="CurrentDetailController.h" />
-    <ClInclude Include="CurrentGameVictoryConditionDataSource.h" />
     <ClInclude Include="CurrentLevelAwardDataSource.h" />
     <ClInclude Include="CurrentLevelDataSource.h" />
     <ClInclude Include="CurrentPlayerDataSource.h" />
+    <ClInclude Include="CurrentVictoryConditionDataSource.h" />
     <ClInclude Include="DamageToPlayerSpell.h" />
     <ClInclude Include="DetailsFromBoardDataSource.h" />
     <ClInclude Include="DevelopersDataSource.h" />
@@ -286,7 +291,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameSoundDataSource.h" />
     <ClInclude Include="GameSystemInterface.h" />
     <ClInclude Include="GameTransitionsController.h" />
-    <ClInclude Include="GameVictoryFactory.h" />
+    <ClInclude Include="PlaceSomeDetailsCondition.h" />
+    <ClInclude Include="RemainSomeTimeCondition.h" />
+    <ClInclude Include="RemoveSomeTetraminosCondition.h" />
+    <ClInclude Include="VictoryConditionsFactory.h" />
     <ClInclude Include="GameViewConstants.h" />
     <ClInclude Include="GameViewElementsDataSource.h" />
     <ClInclude Include="GameViewInformationFactory.h" />
@@ -331,9 +339,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="TetraminosFallEvent.h" />
     <ClInclude Include="TetrominosFactory.h" />
     <ClInclude Include="TimeAccelerationEvent.h" />
-    <ClInclude Include="VictoryCondition.h" />
+    <ClInclude Include="VictoryConditionInterface.h" />
     <ClInclude Include="VictoryConditionViewDataSource.h" />
     <ClInclude Include="CurrentLevelWinResultDataSource.h" />
+    <ClInclude Include="WinBossCondition.h" />
+    <ClInclude Include="WinGamesDataSource.h" />
     <ClInclude Include="WinGameSystem.h" />
   </ItemGroup>
   <ItemGroup>

@@ -4,7 +4,7 @@
 using namespace std;
 using namespace cocos2d;
 
-VictoryConditionViewDataSource::VictoryConditionViewDataSource(GameVictoryFactory *aGameVictoryFactory, PlayerSelectionDataSource *aPlayerSelectionDataSource)
+VictoryConditionViewDataSource::VictoryConditionViewDataSource(VictoryConditionsFactory *aGameVictoryFactory, PlayerSelectionDataSource *aPlayerSelectionDataSource)
 {
 	_gameVictoryFactory = aGameVictoryFactory;
 	_playerSelectionDataSource = aPlayerSelectionDataSource;

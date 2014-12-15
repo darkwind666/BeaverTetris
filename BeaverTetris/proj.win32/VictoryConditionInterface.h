@@ -3,11 +3,11 @@
 #include "EventHandlerInterface.h"
 #include <string>
 
-class VictoryCondition :public EventHandlerInterface
+class VictoryConditionInterface :public EventHandlerInterface
 {
 public:
-	VictoryCondition(void);
-	~VictoryCondition(void);
+	VictoryConditionInterface(void);
+	~VictoryConditionInterface(void);
 
 
 	virtual int getVictoryStateInformationCount(void) = 0;
@@ -15,6 +15,7 @@ public:
 	virtual std::string getVictoryStateIconImageForIndex(int aIndex) = 0;
 
 	virtual bool playerWin(void) = 0;
+	virtual void update(void) = 0;
 
 };
 

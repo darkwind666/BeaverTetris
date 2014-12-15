@@ -61,9 +61,10 @@ enum TetraminoDetailType
 
 enum VictoryConditionType
 {
-	kVictoryCondition1,
-	kVictoryCondition2,
-	kVictoryCondition3,
+	kPlaceSomeDetailsCondition,
+	kRemainSomeTimeCondition,
+	kRemoveSomeTetraminosCondition,
+	kWinBossCondition,
 };
 
 enum SpellType

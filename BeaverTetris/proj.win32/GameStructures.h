@@ -80,6 +80,7 @@ struct GameLevelInformation
 	std::vector<TetraminoType> availableTetraminos;
 	std::vector<TetraminoDetailType> availableTetraminoDetails;
 	std::vector<TetraminoType> availableBosses;
+	VictoryConditionType victoryConditionType;
 };
 
 struct TetraminoDetailInformation

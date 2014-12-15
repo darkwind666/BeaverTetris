@@ -2,13 +2,13 @@
 
 #include <string>
 #include "cocos2d.h"
-#include "GameVictoryFactory.h"
+#include "VictoryConditionsFactory.h"
 #include "PlayerSelectionDataSource.h"
 
 class VictoryConditionViewDataSource
 {
 public:
-	VictoryConditionViewDataSource(GameVictoryFactory *aGameVictoryFactory, PlayerSelectionDataSource *aPlayerSelectionDataSource);
+	VictoryConditionViewDataSource(VictoryConditionsFactory *aGameVictoryFactory, PlayerSelectionDataSource *aPlayerSelectionDataSource);
 	~VictoryConditionViewDataSource(void);
 
 	int getVictoryConditionsCount(void);
@@ -22,9 +22,9 @@ public:
 
 private:
 
-	GameVictoryFactory *_gameVictoryFactory;
+	VictoryConditionsFactory *_gameVictoryFactory;
 	PlayerSelectionDataSource *_playerSelectionDataSource;
-	VictoryCondition *_currentVictoryCondition;
+	VictoryConditionInterface *_currentVictoryCondition;
 
 };
 

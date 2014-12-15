@@ -61,13 +61,13 @@
     <Filter Include="Models\AIStrateges">
       <UniqueIdentifier>{9bd97b0e-b767-461a-a9db-11a7e0692470}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Models\DataSources">
+      <UniqueIdentifier>{f953f722-12f6-417e-abe7-3964b7904aac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingGameDataSource.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>CocosStartClasses</Filter>
@@ -75,29 +75,11 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>CocosStartClasses</Filter>
     </ClCompile>
-    <ClCompile Include="DevelopersDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="RecordsDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="GameLevelsDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerSelectionDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="GameInitiator.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
     <ClCompile Include="ServiceLocator.cpp">
       <Filter>Singletons</Filter>
-    </ClCompile>
-    <ClCompile Include="GameGraphicsDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="GameSoundDataSource.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="GameTransitionsController.cpp">
       <Filter>Controllers</Filter>
@@ -108,20 +90,8 @@
     <ClCompile Include="ScenesTransitionsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="CurrentPlayerDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="StartGameMenuDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="EventDispatcher.cpp">
       <Filter>EventSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="GameLevelsMenuDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerScoreDataSource.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="PlayerInputController.cpp">
       <Filter>Controllers</Filter>
@@ -130,9 +100,6 @@
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
     <ClCompile Include="GameEventsFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="GameVictoryFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
     <ClCompile Include="SpellsFactory.cpp">
@@ -144,17 +111,11 @@
     <ClCompile Include="GameDataFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="GamePlayersDatabase.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="GamePopUpsController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
     <ClCompile Include="CurrentDetailController.cpp">
       <Filter>Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="NewGameTetraminoDataSource.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="ActiveDetails.cpp">
       <Filter>Models\GameLogic</Filter>
@@ -176,12 +137,6 @@
     </ClCompile>
     <ClCompile Include="WinGameSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="VictoryCondition.cpp">
-      <Filter>Models\VictoryConditions</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentGameVictoryConditionDataSource.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="Tetramino.cpp">
       <Filter>Models\GameLogic</Filter>
@@ -225,9 +180,6 @@
     <ClCompile Include="GameFileExtensionMaker.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
-    <ClCompile Include="TetraminosCharacteristicsDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="LoadGameController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
@@ -242,9 +194,6 @@
     </ClCompile>
     <ClCompile Include="TetraminoDetail.cpp">
       <Filter>Models\GameLogic</Filter>
-    </ClCompile>
-    <ClCompile Include="AwardForTetraminoDataSource.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="CollisionDelegate.cpp">
       <Filter>Models\GameLogic</Filter>
@@ -276,20 +225,8 @@
     <ClCompile Include="PlayerGameControlsDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
-    <ClCompile Include="CurrentLevelAwardDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentLevelWinResultDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentLevelDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminosCombinatorDelegate.cpp">
       <Filter>Models\GameLogic</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentBossDataSource.cpp">
-      <Filter>Models</Filter>
     </ClCompile>
     <ClCompile Include="AIMovementStrategy.cpp">
       <Filter>Models\AIStrateges</Filter>
@@ -327,9 +264,6 @@
     <ClCompile Include="GameFlowSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="CurrentGameEventsDataSource.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminosFallEvent.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
@@ -345,13 +279,94 @@
     <ClCompile Include="FillingGapInBoardSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
+    <ClCompile Include="VictoryConditionInterface.cpp">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="VictoryConditionsFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaceSomeDetailsCondition.cpp">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="RemainSomeTimeCondition.cpp">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveSomeTetraminosCondition.cpp">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="WinBossCondition.cpp">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="AwardForTetraminoDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentBossDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentGameEventsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentLevelAwardDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentLevelDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentLevelWinResultDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentPlayerDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentVictoryConditionDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="DevelopersDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameGraphicsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLevelsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLevelsMenuDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlayersDatabase.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSoundDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingGameDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="NewGameTetraminoDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerScoreDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerSelectionDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGameMenuDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="TetraminosCharacteristicsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="WinGamesDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadingGameDataSource.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>CocosStartClasses</Filter>
@@ -359,29 +374,11 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>CocosStartClasses</Filter>
     </ClInclude>
-    <ClInclude Include="DevelopersDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="RecordsDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="GameLevelsDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerSelectionDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
     <ClInclude Include="GameInitiator.h">
       <Filter>Controllers</Filter>
     </ClInclude>
     <ClInclude Include="ServiceLocator.h">
       <Filter>Singletons</Filter>
-    </ClInclude>
-    <ClInclude Include="GameGraphicsDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="GameSoundDataSource.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="GameTransitionsController.h">
       <Filter>Controllers</Filter>
@@ -392,20 +389,8 @@
     <ClInclude Include="ScenesTransitionsFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
-    <ClInclude Include="CurrentPlayerDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="StartGameMenuDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
     <ClInclude Include="EventDispatcher.h">
       <Filter>EventSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="GameLevelsMenuDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerScoreDataSource.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="PlayerInputController.h">
       <Filter>Controllers</Filter>
@@ -414,9 +399,6 @@
       <Filter>Models\GameLogic</Filter>
     </ClInclude>
     <ClInclude Include="GameEventsFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="GameVictoryFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
     <ClInclude Include="SpellsFactory.h">
@@ -434,9 +416,6 @@
     <ClInclude Include="GameDataFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
-    <ClInclude Include="GamePlayersDatabase.h">
-      <Filter>Models</Filter>
-    </ClInclude>
     <ClInclude Include="EventHandlerInterface.h">
       <Filter>EventSystem</Filter>
     </ClInclude>
@@ -445,9 +424,6 @@
     </ClInclude>
     <ClInclude Include="CurrentDetailController.h">
       <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="NewGameTetraminoDataSource.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="ActiveDetails.h">
       <Filter>Models\GameLogic</Filter>
@@ -469,12 +445,6 @@
     </ClInclude>
     <ClInclude Include="WinGameSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="VictoryCondition.h">
-      <Filter>Models\VictoryConditions</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentGameVictoryConditionDataSource.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="Tetramino.h">
       <Filter>Models\GameLogic</Filter>
@@ -527,9 +497,6 @@
     <ClInclude Include="GameFileExtensionMaker.h">
       <Filter>SupportedFiles</Filter>
     </ClInclude>
-    <ClInclude Include="TetraminosCharacteristicsDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
     <ClInclude Include="LoadGameController.h">
       <Filter>Controllers</Filter>
     </ClInclude>
@@ -547,9 +514,6 @@
     </ClInclude>
     <ClInclude Include="GameDesignConstants.h">
       <Filter>Constants</Filter>
-    </ClInclude>
-    <ClInclude Include="AwardForTetraminoDataSource.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="CollisionDelegate.h">
       <Filter>Models\GameLogic</Filter>
@@ -584,20 +548,8 @@
     <ClInclude Include="PlayerGameControlsDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
-    <ClInclude Include="CurrentLevelAwardDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentLevelWinResultDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentLevelDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
     <ClInclude Include="TetraminosCombinatorDelegate.h">
       <Filter>Models\GameLogic</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentBossDataSource.h">
-      <Filter>Models</Filter>
     </ClInclude>
     <ClInclude Include="AIMovementStrategy.h">
       <Filter>Models\AIStrateges</Filter>
@@ -635,9 +587,6 @@
     <ClInclude Include="GameFlowSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
-    <ClInclude Include="CurrentGameEventsDataSource.h">
-      <Filter>Models</Filter>
-    </ClInclude>
     <ClInclude Include="TetraminosFallEvent.h">
       <Filter>Models\GameEvents</Filter>
     </ClInclude>
@@ -652,6 +601,90 @@
     </ClInclude>
     <ClInclude Include="FillingGapInBoardSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="VictoryConditionInterface.h">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="VictoryConditionsFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaceSomeDetailsCondition.h">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="RemainSomeTimeCondition.h">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveSomeTetraminosCondition.h">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="WinBossCondition.h">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="AwardForTetraminoDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentBossDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentGameEventsDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentLevelAwardDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentLevelDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentLevelWinResultDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentPlayerDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentVictoryConditionDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="DevelopersDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameGraphicsDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLevelsDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLevelsMenuDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlayersDatabase.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSoundDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingGameDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="NewGameTetraminoDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerScoreDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSelectionDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordsDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGameMenuDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminosCharacteristicsDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="WinGamesDataSource.h">
+      <Filter>Models\DataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
