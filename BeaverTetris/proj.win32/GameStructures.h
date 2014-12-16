@@ -83,6 +83,7 @@ struct GameLevelInformation
 	VictoryConditionType victoryConditionType;
 	int needToPlaceDetailsCount;
 	int remainTimes;
+	std::vector<TetraminosForWinInformation> tetraminosCollectionForWin;
 };
 
 struct TetraminoDetailInformation
@@ -96,6 +97,12 @@ struct SpellInformation
 	SpellType spellType;
 	std::string spellName;
 	int spellCost;
+};
+
+struct TetraminosForWinInformation
+{
+	TetraminoType tetraminoType;
+	int tetraminosCount;
 };
 
 

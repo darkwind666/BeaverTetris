@@ -28,3 +28,5 @@ const string playerControl5Key = string("playerControl5Key");
 
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");
+
+const string tetraminoForWinConditionIconSuffixKey = string("WinConditionIcon");

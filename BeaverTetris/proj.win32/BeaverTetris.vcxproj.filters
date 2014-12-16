@@ -64,6 +64,9 @@
     <Filter Include="Models\DataSources">
       <UniqueIdentifier>{f953f722-12f6-417e-abe7-3964b7904aac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Models\GameLogic\GameBoard">
+      <UniqueIdentifier>{5f9502a4-ceec-4750-b3c5-f64a61613936}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -95,9 +98,6 @@
     </ClCompile>
     <ClCompile Include="PlayerInputController.cpp">
       <Filter>Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="GameBoard.cpp">
-      <Filter>Models\GameLogic</Filter>
     </ClCompile>
     <ClCompile Include="GameEventsFactory.cpp">
       <Filter>Factories</Filter>
@@ -363,6 +363,15 @@
     <ClCompile Include="WinGamesDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
+    <ClCompile Include="GameBoard.cpp">
+      <Filter>Models\GameLogic\GameBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="GameBoardObserverInterface.cpp">
+      <Filter>Models\GameLogic\GameBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="KeysForEnumsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -394,9 +403,6 @@
     </ClInclude>
     <ClInclude Include="PlayerInputController.h">
       <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameBoard.h">
-      <Filter>Models\GameLogic</Filter>
     </ClInclude>
     <ClInclude Include="GameEventsFactory.h">
       <Filter>Factories</Filter>
@@ -684,6 +690,15 @@
       <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="WinGamesDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBoard.h">
+      <Filter>Models\GameLogic\GameBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBoardObserverInterface.h">
+      <Filter>Models\GameLogic\GameBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="KeysForEnumsDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
   </ItemGroup>

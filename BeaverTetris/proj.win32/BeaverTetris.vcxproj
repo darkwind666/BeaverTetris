@@ -166,6 +166,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="FillingGapInBoardSystem.cpp" />
     <ClCompile Include="FirestromSpell.cpp" />
     <ClCompile Include="GameBoard.cpp" />
+    <ClCompile Include="GameBoardObserverInterface.cpp" />
     <ClCompile Include="GameBoardViewDataSource.cpp" />
     <ClCompile Include="GameControllViewDataSource.cpp" />
     <ClCompile Include="GameDataFactory.cpp" />
@@ -186,6 +187,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameSoundDataSource.cpp" />
     <ClCompile Include="GameSystemInterface.cpp" />
     <ClCompile Include="GameTransitionsController.cpp" />
+    <ClCompile Include="KeysForEnumsDataSource.cpp" />
     <ClCompile Include="PlaceSomeDetailsCondition.cpp" />
     <ClCompile Include="RemainSomeTimeCondition.cpp" />
     <ClCompile Include="RemoveSomeTetraminosCondition.cpp" />
@@ -268,6 +270,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="FillingGapInBoardSystem.h" />
     <ClInclude Include="FirestromSpell.h" />
     <ClInclude Include="GameBoard.h" />
+    <ClInclude Include="GameBoardObserverInterface.h" />
     <ClInclude Include="GameBoardViewDataSource.h" />
     <ClInclude Include="GameControllViewDataSource.h" />
     <ClInclude Include="GameDataFactory.h" />
@@ -291,6 +294,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameSoundDataSource.h" />
     <ClInclude Include="GameSystemInterface.h" />
     <ClInclude Include="GameTransitionsController.h" />
+    <ClInclude Include="KeysForEnumsDataSource.h" />
     <ClInclude Include="PlaceSomeDetailsCondition.h" />
     <ClInclude Include="RemainSomeTimeCondition.h" />
     <ClInclude Include="RemoveSomeTetraminosCondition.h" />

@@ -3,6 +3,7 @@
 #include <vector>
 #include "GameStructures.h"
 #include "Tetramino.h"
+#include "GameBoardObserverInterface.h"
 
 class GameBoard
 {
@@ -23,11 +24,15 @@ public:
 	void cleanTetraminoRowForYposition(int yPosition);
 	void cleanGameBoard(void);
 
+	void addObserver(GameBoardObserverInterface *aGameBoardObserver);
+	void removeObserver(GameBoardObserverInterface *aGameBoardObserver);
+
 private:
 
 	Tetramino **_tetramins;
 	int _gameBoardWidth;
 	int _gameBoardHeight;
+	GameBoardObserverInterface *_gameBoardObserver;
 
 };
 

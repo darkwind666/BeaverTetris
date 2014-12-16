@@ -15,3 +15,4 @@ const string currentDetailControllerKey = string("CurrentDetailController");
 const string gameBoardKey = string("GameBoard");
 const string tetraminisDetailsFactoryKey = string("TetraminisDetailsFactory");
 const string gameTimeStepControllerKey = string("GameTimeStepController");
+const string keysForEnumsDataSourceKey = string("KeysForEnumsDataSource");
