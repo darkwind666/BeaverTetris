@@ -18,6 +18,7 @@ public:
 	Tetramino* getTetraminoForXYposition(int xPosition, int yPosition);
 	GamePositionOnBoard getTetraminoPosition(Tetramino *aTetramino);
 	std::vector <GamePositionOnBoard> getAvailableTetraminis();
+	std::vector <GamePositionOnBoard> getTetraminisForType(TetraminoType aTetraminoType);
 
 	void removeTetraminoForXYposition(int xPosition, int yPosition);
 	void removeTetraminos(std::vector <GamePositionOnBoard> aNeedToRemoveTetraminos);
@@ -29,10 +30,15 @@ public:
 
 private:
 
+	typedef bool (GameBoard::*predicateFunction)(TetraminoType aFirstType, TetraminoType aSecondType);
+
 	Tetramino **_tetramins;
 	int _gameBoardWidth;
 	int _gameBoardHeight;
 	GameBoardObserverInterface *_gameBoardObserver;
 
+	vector <GamePositionOnBoard> findAllTetraminisForTypeAndPredicate(TetraminoType aTetraminoType, predicateFunction aPredicateFunction);
+	bool equalType(TetraminoType aFirstType, TetraminoType aSecondType);
+	bool largerType(TetraminoType aFirstType, TetraminoType aSecondType);
 };
 

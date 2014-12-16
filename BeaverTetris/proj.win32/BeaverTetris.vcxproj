@@ -191,6 +191,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="PlaceSomeDetailsCondition.cpp" />
     <ClCompile Include="RemainSomeTimeCondition.cpp" />
     <ClCompile Include="RemoveSomeTetraminosCondition.cpp" />
+    <ClCompile Include="RemovingDeadTetraminosSystem.cpp" />
+    <ClCompile Include="TetraminoObserverInterface.cpp" />
     <ClCompile Include="VictoryConditionsFactory.cpp" />
     <ClCompile Include="GameViewElementsDataSource.cpp" />
     <ClCompile Include="GameViewInformationFactory.cpp" />
@@ -298,6 +300,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="PlaceSomeDetailsCondition.h" />
     <ClInclude Include="RemainSomeTimeCondition.h" />
     <ClInclude Include="RemoveSomeTetraminosCondition.h" />
+    <ClInclude Include="RemovingDeadTetraminosSystem.h" />
+    <ClInclude Include="TetraminoObserverInterface.h" />
     <ClInclude Include="VictoryConditionsFactory.h" />
     <ClInclude Include="GameViewConstants.h" />
     <ClInclude Include="GameViewElementsDataSource.h" />

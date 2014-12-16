@@ -62,29 +62,50 @@ GamePositionOnBoard GameBoard::getTetraminoPosition(Tetramino *aTetramino)
 
 vector <GamePositionOnBoard> GameBoard::getAvailableTetraminis()
 {
+	vector <GamePositionOnBoard> availableTetraminos = findAllTetraminisForTypeAndPredicate(kTetraminoEmpty, &GameBoard::largerType);
+	return availableTetraminos;
 
-	vector <GamePositionOnBoard> availableTetraminos = vector <GamePositionOnBoard>();
+}
 
+vector <GamePositionOnBoard> GameBoard::getTetraminisForType(TetraminoType aTetraminoType)
+{
+	vector <GamePositionOnBoard> tetraminisForType = findAllTetraminisForTypeAndPredicate(aTetraminoType, &GameBoard::equalType);
+	return tetraminisForType;
+}
+
+vector <GamePositionOnBoard> GameBoard::findAllTetraminisForTypeAndPredicate(TetraminoType aTetraminoType, predicateFunction aPredicateFunction)
+{
+	vector <GamePositionOnBoard> tetraminisForType = vector <GamePositionOnBoard>();
+	
 	for (int xPosition = 0; xPosition < _gameBoardHeight; xPosition++)
 	{
-
+	
 		for (int yPosition = 0; yPosition < _gameBoardWidth; yPosition++)
 		{
 			Tetramino *tetramino = getTetraminoForXYposition(xPosition,yPosition);
-			if (tetramino->getTetraminoType() > kTetraminoEmpty)
+			if ((this->*aPredicateFunction)(tetramino->getTetraminoType, aTetraminoType))
 			{
 				GamePositionOnBoard position;
 				position.xPosition = xPosition;
 				position.yPosition = yPosition;
-				availableTetraminos.push_back(position);
+				tetraminisForType.push_back(position);
 			}
-
+	
 		}
-
+	
 	}
+	
+	return tetraminisForType;
+}
 
-	return availableTetraminos;
+bool GameBoard::equalType(TetraminoType aFirstType, TetraminoType aSecondType)
+{
+	return (aFirstType == aSecondType);
+}
 
+bool GameBoard::largerType(TetraminoType aFirstType, TetraminoType aSecondType)
+{
+	return (aFirstType > aSecondType);
 }
 
 void GameBoard::removeTetraminoForXYposition(int xPosition, int yPosition)

@@ -67,6 +67,9 @@
     <Filter Include="Models\GameLogic\GameBoard">
       <UniqueIdentifier>{5f9502a4-ceec-4750-b3c5-f64a61613936}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Observers">
+      <UniqueIdentifier>{08d3357f-e85e-4416-9113-67c65f1ec3ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -366,11 +369,17 @@
     <ClCompile Include="GameBoard.cpp">
       <Filter>Models\GameLogic\GameBoard</Filter>
     </ClCompile>
-    <ClCompile Include="GameBoardObserverInterface.cpp">
-      <Filter>Models\GameLogic\GameBoard</Filter>
-    </ClCompile>
     <ClCompile Include="KeysForEnumsDataSource.cpp">
       <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameBoardObserverInterface.cpp">
+      <Filter>Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="TetraminoObserverInterface.cpp">
+      <Filter>Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="RemovingDeadTetraminosSystem.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -695,11 +704,17 @@
     <ClInclude Include="GameBoard.h">
       <Filter>Models\GameLogic\GameBoard</Filter>
     </ClInclude>
-    <ClInclude Include="GameBoardObserverInterface.h">
-      <Filter>Models\GameLogic\GameBoard</Filter>
-    </ClInclude>
     <ClInclude Include="KeysForEnumsDataSource.h">
       <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBoardObserverInterface.h">
+      <Filter>Observers</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminoObserverInterface.h">
+      <Filter>Observers</Filter>
+    </ClInclude>
+    <ClInclude Include="RemovingDeadTetraminosSystem.h">
+      <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
