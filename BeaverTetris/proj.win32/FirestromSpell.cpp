@@ -82,12 +82,6 @@ void FirestromSpell::makeExplosionOnPositionXY(int positionX, int positionY)
 				Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(widthIndex, heightIndex);
 				tetraminoInBoard->reduceLive;
 
-				if (tetraminoInBoard->getTetraminoLivesCount <= 0)
-				{
-					_gameBoard->removeTetraminoForXYposition(widthIndex, heightIndex);
-					_someTetraminosWasRemoved = true;
-				}
-
 			}
 
 		}

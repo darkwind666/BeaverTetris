@@ -44,8 +44,6 @@ void ScoreSystem::checkFilledLines()
 	
 			}
 	
-			removeKilledTetraminos(yIndex);
-	
 			playerAwardForLine += playerPrizeForLine;
 			int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
 			_currentPlayerDataSource->setPlayerScore(currentPlayerScore + playerAwardForLine);
@@ -194,18 +192,4 @@ int ScoreSystem::getAwardForTetramino(Tetramino *aTetramino)
 
 	return award;
 
-}
-
-void ScoreSystem::removeKilledTetraminos(int lineIndex)
-{
-	for (int xIndex = 0; xIndex < _gameBoard->getGameBoardWidth; xIndex++)
-	{
-		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,lineIndex);
-	
-		if (tetraminoInBoard->getTetraminoLivesCount <= 0)
-		{
-			_gameBoard->removeTetraminoForXYposition(xIndex,lineIndex);
-		}
-	
-	}
 }

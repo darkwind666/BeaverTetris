@@ -47,11 +47,6 @@ void RandomExplosionsSpell::removeRandomTetraminoInAvailableTetraminos(std::vect
 	Tetramino *tetramino = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
 	
 	tetramino->reduceLive;
-	if (tetramino->getTetraminoLivesCount <= 0)
-	{
-		_gameBoard->removeTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
-		_someTetraminosWasRemoved = true;
-	}
 	
 	availableTetraminos.erase(availableTetraminos.begin() + randomTetramino);
 }
