@@ -2,33 +2,31 @@
 
 #include "EventHandlerInterface.h"
 #include "ServiceInterface.h"
-#include <vector>
+#include "GameTransitionsViewController.h"
 #include <map>
-#include "GameEnums.h"
-#include "GameStructures.h"
+#include "PlayerSelectionDataSource.h"
 
-class GameTransitionsController : public EventHandlerInterface, public ServiceInterface
+class GameTransitionsController :public EventHandlerInterface, ServiceInterface
 {
-public:
-	GameTransitionsController(void);
+public: 
+	GameTransitionsController(GameTransitionsViewController *aGameTransitionsViewController, PlayerSelectionDataSource *aPlayerSelectionDataSource);
 	~GameTransitionsController(void);
 
 	void handleEventWithInformation(GameEvent aEvent);
-
-	void addSceneFactory();
-	void addTransitionFromStateToState(GameState stateOne, GameState stateTwo, TransitionType transitionType);
 
 private:
 
 	typedef void (GameTransitionsController::*handlerFunctionPointer) (void);
 
-	std::vector <GameState> _stateFactories;
-	std::vector < std::vector <TransitionType> > _transitions;
+	GameTransitionsViewController *_gameTransitionsViewController;
+	PlayerSelectionDataSource *_playerSelectionDataSource;
 	std::map <EventType, handlerFunctionPointer> _eventHandlers;
 	GameEventInformation _eventInformation;
-
+	
 	void goToInitialState(void);
 	void changeState(void);
 	void goToPreviousState(void);
+	void goToNextLevel(void);
 
 };
+

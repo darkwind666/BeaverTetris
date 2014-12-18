@@ -70,6 +70,9 @@
     <Filter Include="Observers">
       <UniqueIdentifier>{08d3357f-e85e-4416-9113-67c65f1ec3ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Controllers\ViewControllers">
+      <UniqueIdentifier>{548331d5-1833-4e4d-9269-981f7ce4ef07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -87,9 +90,6 @@
     <ClCompile Include="ServiceLocator.cpp">
       <Filter>Singletons</Filter>
     </ClCompile>
-    <ClCompile Include="GameTransitionsController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="SceneGraphFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
@@ -98,9 +98,6 @@
     </ClCompile>
     <ClCompile Include="EventDispatcher.cpp">
       <Filter>EventSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerInputController.cpp">
-      <Filter>Controllers</Filter>
     </ClCompile>
     <ClCompile Include="GameEventsFactory.cpp">
       <Filter>Factories</Filter>
@@ -182,15 +179,6 @@
     </ClCompile>
     <ClCompile Include="GameFileExtensionMaker.cpp">
       <Filter>SupportedFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadGameController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectGameLevelController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="StartGameMenuController.cpp">
-      <Filter>Controllers</Filter>
     </ClCompile>
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <Filter>Factories</Filter>
@@ -384,6 +372,24 @@
     <ClCompile Include="GameKeyWithSuffixSupporter.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
+    <ClCompile Include="GameTransitionsViewController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadGameController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerInputController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectGameLevelController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGameMenuController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTransitionsController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -401,9 +407,6 @@
     <ClInclude Include="ServiceLocator.h">
       <Filter>Singletons</Filter>
     </ClInclude>
-    <ClInclude Include="GameTransitionsController.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
     <ClInclude Include="SceneGraphFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
@@ -412,9 +415,6 @@
     </ClInclude>
     <ClInclude Include="EventDispatcher.h">
       <Filter>EventSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerInputController.h">
-      <Filter>Controllers</Filter>
     </ClInclude>
     <ClInclude Include="GameEventsFactory.h">
       <Filter>Factories</Filter>
@@ -514,15 +514,6 @@
     </ClInclude>
     <ClInclude Include="GameFileExtensionMaker.h">
       <Filter>SupportedFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadGameController.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectGameLevelController.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="StartGameMenuController.h">
-      <Filter>Controllers</Filter>
     </ClInclude>
     <ClInclude Include="TetraminisDetailsFactory.h">
       <Filter>Factories</Filter>
@@ -724,6 +715,24 @@
     </ClInclude>
     <ClInclude Include="GameViewSuffixes.h">
       <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTransitionsViewController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadGameController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInputController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectGameLevelController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGameMenuController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTransitionsController.h">
+      <Filter>Controllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

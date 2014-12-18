@@ -188,6 +188,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameSoundDataSource.cpp" />
     <ClCompile Include="GameSystemInterface.cpp" />
     <ClCompile Include="GameTransitionsController.cpp" />
+    <ClCompile Include="GameTransitionsViewController.cpp" />
     <ClCompile Include="KeysForEnumsDataSource.cpp" />
     <ClCompile Include="PlaceSomeDetailsCondition.cpp" />
     <ClCompile Include="RemainSomeTimeCondition.cpp" />
@@ -298,6 +299,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameSoundDataSource.h" />
     <ClInclude Include="GameSystemInterface.h" />
     <ClInclude Include="GameTransitionsController.h" />
+    <ClInclude Include="GameTransitionsViewController.h" />
     <ClInclude Include="GameViewSuffixes.h" />
     <ClInclude Include="KeysForEnumsDataSource.h" />
     <ClInclude Include="PlaceSomeDetailsCondition.h" />
