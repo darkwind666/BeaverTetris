@@ -5,6 +5,8 @@
 #include "GameViewElementsDataSource.h"
 #include "EventDispatcher.h"
 #include "GameTransitionsViewController.h"
+#include "PlayerSelectionDataSource.h"
+#include "GameTransitionsController.h"
 #include "GameGraphicsDataSource.h"
 #include "GameViewInformationFactory.h"
 
@@ -25,7 +27,10 @@ void GameInitiator::setInitialState()
 
 	GameViewInformationFactory viewInformationFactory;
 	viewInformationFactory.setGameElementsInformationInDataSource(_gameViewElementsDataSource);
-	GameTransitionsViewController *gameTransitionsController = new GameTransitionsViewController;
+
+	GameTransitionsViewController *gameTransitionsViewController = new GameTransitionsViewController();
+	PlayerSelectionDataSource *playerSelectionDataSource = new PlayerSelectionDataSource();
+	GameTransitionsController *gameTransitionsController = new GameTransitionsController(gameTransitionsViewController, playerSelectionDataSource);
 	_eventDispatcher->setEventHandlerWithEventName(gameTransitionsController, kGoToSceneEvent);
 	_eventDispatcher->setEventHandlerWithEventName(gameTransitionsController, kGoToInitualSceneEvent);
 	_eventDispatcher->setEventHandlerWithEventName(gameTransitionsController, kGoToPreviousSceneEvent);

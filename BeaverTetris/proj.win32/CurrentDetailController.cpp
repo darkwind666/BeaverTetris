@@ -42,7 +42,9 @@ void CurrentDetailController::moveRightDetail(void)
 {
 	GamePositionOnBoard currentDetailPosition = _currentDetail->getDetailPosition();
 
-	if ( (currentDetailPosition.xPosition + _currentDetail->getDetailWidth) > _gameBoard->getGameBoardWidth)
+	int detailNextPosition = currentDetailPosition.xPosition + 1 + _currentDetail->getDetailWidth();
+
+	if (detailNextPosition > _gameBoard->getGameBoardWidth())
 	{
 		GamePositionOnBoard newCurrentDetailPosition = currentDetailPosition;
 		newCurrentDetailPosition.xPosition = currentDetailPosition.xPosition + 1;
@@ -84,7 +86,7 @@ bool CurrentDetailController::availableCurrentDetail()
 void CurrentDetailController::setNewPositionIfNoCollision(GamePositionOnBoard aNewDetailPosition)
 {
 	TetraminoDetail movedTetramino = *_currentDetail;
-	movedTetramino.setDetailPosition = aNewDetailPosition;
+	movedTetramino.setDetailPosition(aNewDetailPosition);
 	bool collide = _collisionDelegate->checkCollisionWithDetail(&movedTetramino);
 
 		if (!collide)

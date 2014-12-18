@@ -59,11 +59,11 @@ vector<TetraminoDetail*> TetraminosFallEvent::getTetraminoDetailsForFalling()
 
 TetraminoDetail* TetraminosFallEvent::getNewDetailFromWidthIndex(int aWidthIndex)
 {
-	TetraminoDetail *newDetail = _tetraminisDetailsFactory->getNewDetail;
+	TetraminoDetail *newDetail = _tetraminisDetailsFactory->getNewDetail();
 
 	GamePositionOnBoard detailPosition;
-	detailPosition.yPosition = _gameBoard->getGameBoardHeight - newDetail->getDetailHeight;
-	detailPosition.xPosition = newDetail->getDetailWidth * aWidthIndex;
+	detailPosition.yPosition = _gameBoard->getGameBoardHeight() - newDetail->getDetailHeight();
+	detailPosition.xPosition = newDetail->getDetailWidth() * aWidthIndex;
 
 	newDetail->setDetailPosition(detailPosition);
 	return newDetail;
@@ -74,7 +74,7 @@ void TetraminosFallEvent::placeDetailsOnGameBoard(vector<TetraminoDetail*> aTetr
 	CollisionDelegate *collisionDelegate = new CollisionDelegate(_gameBoard);
 
 	vector<TetraminoDetail*>::iterator detailsIterator;
-	for (detailsIterator = aTetraminoDetails.begin; detailsIterator != aTetraminoDetails.end; detailsIterator++)
+	for (detailsIterator = aTetraminoDetails.begin(); detailsIterator != aTetraminoDetails.end(); detailsIterator++)
 	{
 		TetraminoDetail *tetraminoDetail = *detailsIterator;
 		GamePositionOnBoard detailCollisionPosition = collisionDelegate->getCollisionPositionWithBoardForDetail(tetraminoDetail);

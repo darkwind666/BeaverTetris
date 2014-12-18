@@ -27,7 +27,7 @@ private:
 	CurrentPlayerDataSource *_currentPlayerDataSource;
 	std::vector <MenuItemInformation> _menuItems;
 
-	vector <MenuItemInformation> makeMenuItems();
+	std::vector <MenuItemInformation> makeMenuItems();
 
 };
 

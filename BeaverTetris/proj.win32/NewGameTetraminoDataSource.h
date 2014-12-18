@@ -2,6 +2,8 @@
 
 #include "GameStructures.h"
 
+class TetraminoDetail;
+
 class NewGameTetraminoDataSource
 {
 public:

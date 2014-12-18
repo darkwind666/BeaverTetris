@@ -20,7 +20,7 @@ GameBoardViewDataSource::~GameBoardViewDataSource(void)
 
 int GameBoardViewDataSource::getTetraminosCount()
 {
-	return (_gameBoard->getGameBoardHeight * _gameBoard->getGameBoardWidth);
+	return (_gameBoard->getGameBoardHeight() * _gameBoard->getGameBoardWidth());
 }
 
 string GameBoardViewDataSource::getTetraminoImageForIndex(int aIndex)
@@ -28,7 +28,7 @@ string GameBoardViewDataSource::getTetraminoImageForIndex(int aIndex)
 	int tetraminoColumn = getColumnForIndex(aIndex);
 	int tetraminoRow = getRowForIndex(aIndex);
 	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoRow, tetraminoColumn);
-	TetraminoType tetraminoType = tetraminoInBoard->getTetraminoType;
+	TetraminoType tetraminoType = tetraminoInBoard->getTetraminoType();
 	string tetraminoKey = _keysForEnumsDataSource->getKeyForTetraminoType(tetraminoType);
 	return GameFileExtensionMaker::getGraphicWithExtension(tetraminoKey);
 }
@@ -42,12 +42,12 @@ Vec2 GameBoardViewDataSource::getTetraminoPositionForIndex(int aIndex)
 
 int GameBoardViewDataSource::getColumnForIndex(int aIndex)
 {
-	int boardWidth = _gameBoard->getGameBoardWidth;
+	int boardWidth = _gameBoard->getGameBoardWidth();
 	return aIndex / boardWidth;
 }
 
 int GameBoardViewDataSource::getRowForIndex(int aIndex)
 {
-	int boardWidth = _gameBoard->getGameBoardWidth;
+	int boardWidth = _gameBoard->getGameBoardWidth();
 	return aIndex % boardWidth;
 }

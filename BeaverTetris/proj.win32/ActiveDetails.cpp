@@ -21,7 +21,7 @@ void ActiveDetails::addDetail(TetraminoDetail *aDetail)
 void  ActiveDetails::removeDetail(TetraminoDetail *aDetail)
 {
 	vector<TetraminoDetail*>::iterator iteratorToNeedRemoveElement;
-	iteratorToNeedRemoveElement = find(_tetraminoDetails.begin, _tetraminoDetails.end, aDetail);
+	iteratorToNeedRemoveElement = find(_tetraminoDetails.begin(), _tetraminoDetails.end(), aDetail);
 	_tetraminoDetails.erase(iteratorToNeedRemoveElement);
 }
 

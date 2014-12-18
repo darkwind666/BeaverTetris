@@ -12,7 +12,7 @@ public:
 	AIMovementStrategy(GameBoard *aGameBoard, Tetramino *aTetramino);
 	~AIMovementStrategy(void);
 
-	void update();
+	void updateAI();
 
 private:
 

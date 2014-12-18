@@ -21,10 +21,10 @@ bool CurrentGameEventsDataSource::availableEvent(void)
 
 	vector<GameEventInterface*>::iterator gameEventsIterator;
 
-	for (gameEventsIterator = _gameEvents.begin; gameEventsIterator != _gameEvents.end; gameEventsIterator++)
+	for (gameEventsIterator = _gameEvents.begin(); gameEventsIterator != _gameEvents.end(); gameEventsIterator++)
 	{
 		GameEventInterface *gameEvent = *gameEventsIterator;
-		if (gameEvent->eventTime)
+		if (gameEvent->eventTime())
 		{
 			availableEvent = true;
 			return availableEvent;
@@ -37,12 +37,12 @@ void CurrentGameEventsDataSource::runAvailableEvent(void)
 {
 	vector<GameEventInterface*>::iterator gameEventsIterator;
 	
-	for (gameEventsIterator = _gameEvents.begin; gameEventsIterator != _gameEvents.end; gameEventsIterator++)
+	for (gameEventsIterator = _gameEvents.begin(); gameEventsIterator != _gameEvents.end(); gameEventsIterator++)
 	{
 		GameEventInterface *gameEvent = *gameEventsIterator;
-		if (gameEvent->eventTime)
+		if (gameEvent->eventTime())
 		{
-			gameEvent->runEvent;
+			gameEvent->runEvent();
 		}
 	}
 }
@@ -50,12 +50,12 @@ void CurrentGameEventsDataSource::runAvailableEvent(void)
 void CurrentGameEventsDataSource::updateEvents(void)
 {
 	vector<GameEventInterface*>::iterator gameEventsIterator;
-	for (gameEventsIterator = _gameEvents.begin; gameEventsIterator != _gameEvents.end; gameEventsIterator++)
+	for (gameEventsIterator = _gameEvents.begin(); gameEventsIterator != _gameEvents.end(); gameEventsIterator++)
 	{
 		GameEventInterface *gameEvent = *gameEventsIterator;
-		if (gameEvent->eventTime)
+		if (gameEvent->eventTime())
 		{
-			gameEvent->updateEvent;
+			gameEvent->updateEvent();
 		}
 	}
 }

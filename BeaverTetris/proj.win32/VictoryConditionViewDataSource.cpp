@@ -19,7 +19,7 @@ VictoryConditionViewDataSource::~VictoryConditionViewDataSource(void)
 
 int VictoryConditionViewDataSource::getVictoryConditionsCount(void)
 {
-	int victoryConditionsCount = _currentVictoryCondition->getVictoryStateInformationCount;
+	int victoryConditionsCount = _currentVictoryCondition->getVictoryStateInformationCount();
 	return victoryConditionsCount;
 }
 
@@ -50,6 +50,6 @@ Vec2 VictoryConditionViewDataSource::getVictoryConditionInformationPositionForIn
 
 void VictoryConditionViewDataSource::refreshDataSource()
 {
-	int currentLevelIndex = _playerSelectionDataSource->getSelectedGameLevel;
+	int currentLevelIndex = _playerSelectionDataSource->getSelectedGameLevel();
 	_currentVictoryCondition = _gameVictoryFactory->makeVictoryConditionForLevelIndex(currentLevelIndex);
 }

@@ -50,7 +50,7 @@ string GameLevelsMenuDataSource::getLevelIconImageForIndex(int aIndex)
 {
 	string levelKey;
 
-	if (aIndex > _currentPlayerDataSource->getPlayerCompletedLevelsCount)
+	if (aIndex > _currentPlayerDataSource->getPlayerCompletedLevelsCount())
 	{
 		levelKey = GameFileExtensionMaker::getGraphicWithExtension(newAvailableLevel);
 	} 

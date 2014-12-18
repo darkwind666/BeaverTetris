@@ -29,19 +29,15 @@ void CurrentBossDataSource::refreshDataSource()
 vector<AIStrategyInterface*> CurrentBossDataSource::makeCurrentBossAIStrategies()
 {
 	vector<AIStrategyInterface*> aiStrategies = vector<AIStrategyInterface*>();
+	GameLevelInformation currentLevelInformation = _currentLevelDataSource->getCurrentLevelData();
 
-	GameLevelInformation currentLevelInformation = _currentLevelDataSource->getCurrentLevelData;
-	vector<TetraminoType> availableBosses = currentLevelInformation.availableBosses;
-
-	vector<TetraminoType>::iterator availableBossesIterator;
-
-	for (availableBossesIterator = availableBosses.begin; availableBossesIterator != availableBosses.end; availableBossesIterator++)
+	TetraminoBossesInformation bosses = currentLevelInformation.availableBosses;
+	for (int bossIndex = 0; bossIndex <= bosses.bossesCount; bossIndex++)
 	{
-		TetraminoType bossType = *availableBossesIterator;
+		TetraminoType bossType = bosses.aBossType;
 		Tetramino *newBoss = new Tetramino(bossType);
 		vector<AIStrategyInterface*> bossAIStrategies = _bossesFactory->getBossAIstrategiesForBossType(newBoss);
 		addBossStratagiesToAllStrategies(&bossAIStrategies, &aiStrategies);
-
 	}
 
 	return aiStrategies;
@@ -53,7 +49,7 @@ void CurrentBossDataSource::addBossStratagiesToAllStrategies(vector<AIStrategyIn
 
 	vector<AIStrategyInterface*>::iterator bossStratagiesIterator;
 
-	for (bossStratagiesIterator = bossStratagies->begin; bossStratagiesIterator != bossStratagies->end; bossStratagiesIterator++)
+	for (bossStratagiesIterator = bossStratagies->begin(); bossStratagiesIterator != bossStratagies->end(); bossStratagiesIterator++)
 	{
 		allStrategies->push_back(*bossStratagiesIterator);
 	}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Tetramino.h"
+class Tetramino;
 
 class TetraminoObserverInterface
 {
@@ -8,7 +8,7 @@ public:
 	TetraminoObserverInterface(void);
 	~TetraminoObserverInterface(void);
 
-	virtual void tetraminoRemoving(Tetramino *aTetramino);
+	virtual void tetraminoRemoving(Tetramino *aTetramino) = 0;
 
 };
 

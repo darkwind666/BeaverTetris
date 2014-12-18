@@ -73,6 +73,18 @@ struct PlayerControllInformation
 	
 };
 
+struct TetraminoBossesInformation
+{
+	TetraminoType aBossType;
+	int bossesCount;
+};
+
+struct TetraminosForWinInformation
+{
+	TetraminoType tetraminoType;
+	int tetraminosCount;
+};
+
 struct GameLevelInformation
 {
 	std::string levelName;
@@ -99,17 +111,6 @@ struct SpellInformation
 	int spellCost;
 };
 
-struct TetraminoBossesInformation
-{
-	TetraminoType aBossType;
-	int bossesCount;
-};
-
-struct TetraminosForWinInformation
-{
-	TetraminoType tetraminoType;
-	int tetraminosCount;
-};
 
 
 

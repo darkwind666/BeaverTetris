@@ -43,7 +43,7 @@ vector <GamePositionOnBoard> TetraminosPositionsDelegate::findAllTetraminisForTy
 		for (int yPosition = 0; yPosition < _gameBoardWidth; yPosition++)
 		{
 			Tetramino *tetramino = getTetraminoForXYposition(xPosition,yPosition);
-			if ((this->*aPredicateFunction)(tetramino->getTetraminoType, aTetraminoType))
+			if ((this->*aPredicateFunction)(tetramino->getTetraminoType(), aTetraminoType))
 			{
 				GamePositionOnBoard position;
 				position.xPosition = xPosition;

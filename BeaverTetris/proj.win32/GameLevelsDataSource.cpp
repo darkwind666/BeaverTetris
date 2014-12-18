@@ -33,5 +33,6 @@ string GameLevelsDataSource::getLevelNameForIndex(int aIndex)
 
 LevelInformation GameLevelsDataSource::getLevelDataForIndex(int aIndex)
 {
-
+	LevelInformation levelInformation;
+	return levelInformation;
 }

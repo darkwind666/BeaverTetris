@@ -7,9 +7,9 @@
 using namespace std;
 using namespace cocos2d;
 
-const float startXMenuPosition = 23.7;
-const float startYMenuPosition = 23.7;
-const float menuItemOffsetY = 23.7;
+const float startXMenuPosition = 23.7f;
+const float startYMenuPosition = 23.7f;
+const float menuItemOffsetY = 23.7f;
 
 StartGameViewDataSource::StartGameViewDataSource(CurrentPlayerDataSource *aCurrentPlayerDataSource)
 {
@@ -29,7 +29,7 @@ vector <MenuItemInformation> StartGameViewDataSource::makeMenuItems()
 
 	vector <MenuItemInformation> menuItems = vector <MenuItemInformation>();
 
-	if (_currentPlayerDataSource->isThereCurentPlayer)
+	if (_currentPlayerDataSource->isThereCurentPlayer())
 	{
 		MenuItemInformation menuItem1;
 	    menuItem1.gameEvent = GameEventsFactory::makeGoToSceneEventWithKey(kSelectLevel);

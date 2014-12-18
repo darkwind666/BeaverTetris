@@ -2,7 +2,7 @@
 #include "GameBoard.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
-#include "GameViewElementsKeys.h"
+#include "GameViewSuffixes.h"
 
 using namespace std;
 
@@ -20,19 +20,19 @@ WinBossCondition::~WinBossCondition(void)
 
 int WinBossCondition::getVictoryStateInformationCount(void)
 {
-	return _bosses.size;
+	return _bosses.size();
 }
 
 int WinBossCondition::getVictoryStateInformationForIndex(int aIndex)
 {
 	Tetramino *boss = _bosses[aIndex];
-	return boss->getTetraminoLivesCount;
+	return boss->getTetraminoLivesCount();
 }
 
 string WinBossCondition::getVictoryStateIconImageForIndex(int aIndex)
 {
 	Tetramino *boss = _bosses[aIndex];
-	string tetraminosTypeForWinName = _keysForEnumsDataSource->getKeyForTetraminoType(boss->getTetraminoType);
+	string tetraminosTypeForWinName = _keysForEnumsDataSource->getKeyForTetraminoType(boss->getTetraminoType());
 	return (tetraminosTypeForWinName + tetraminoForWinConditionIconSuffixKey);
 }
 
@@ -42,10 +42,10 @@ bool WinBossCondition::playerWin(void)
 
 	vector<Tetramino*>::iterator bossesIterator;
 	
-	for (bossesIterator = _bosses.begin; bossesIterator != _bosses.end; bossesIterator++)
+	for (bossesIterator = _bosses.begin(); bossesIterator != _bosses.end(); bossesIterator++)
 	{
 		Tetramino *bossTetramino = *bossesIterator;
-		if (bossTetramino->getTetraminoLivesCount >= 0)
+		if (bossTetramino->getTetraminoLivesCount() >= 0)
 		{
 			playerWin = false;
 			return playerWin;
@@ -56,9 +56,9 @@ bool WinBossCondition::playerWin(void)
 
 void WinBossCondition::tetraminoRemoving(Tetramino *aTetramino)
 {
-	int removingElementIndex = find(_bosses.begin, _bosses.end, aTetramino);
+	vector<Tetramino*>::iterator removingElementIndex = find(_bosses.begin(), _bosses.end(), aTetramino);
 	aTetramino->removeObserver(this);
-	_bosses.erase(_bosses.begin + removingElementIndex);
+	_bosses.erase(removingElementIndex);
 }
 
 void WinBossCondition::update(void)
@@ -75,7 +75,7 @@ vector<Tetramino*> WinBossCondition::getBossesFromLevel(GameLevelInformation aLe
 
 	vector<GamePositionOnBoard>::iterator bossesPositionsIterator;
 
-	for (bossesPositionsIterator = gameBossesPositions.begin; bossesPositionsIterator != gameBossesPositions.end; bossesPositionsIterator++)
+	for (bossesPositionsIterator = gameBossesPositions.begin(); bossesPositionsIterator != gameBossesPositions.end(); bossesPositionsIterator++)
 	{
 		GamePositionOnBoard bossPosition = *bossesPositionsIterator;
 		Tetramino *bossTetramino = gameBoard->getTetraminoForXYposition(bossPosition.xPosition, bossPosition.yPosition);
@@ -88,7 +88,7 @@ void WinBossCondition::subscribeToBosses()
 {
 	vector<Tetramino*>::iterator bossesIterator;
 
-	for (bossesIterator = _bosses.begin; bossesIterator != _bosses.end; bossesIterator++)
+	for (bossesIterator = _bosses.begin(); bossesIterator != _bosses.end(); bossesIterator++)
 	{
 		Tetramino *bossTetramino = *bossesIterator;
 		bossTetramino->addObserver(this);

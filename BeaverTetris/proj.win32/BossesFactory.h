@@ -4,6 +4,7 @@
 #include <map>
 #include "AIStrategyInterface.h"
 #include "Tetramino.h"
+#include "GameBoard.h"
 
 class BossesFactory
 {
@@ -17,6 +18,8 @@ private:
 
 	typedef std::vector<AIStrategyInterface*> (BossesFactory::*bossFactoryMethod) (void);
 
+	GameBoard *_gameBoard;
+	Tetramino *_tetramino;
 	std::map<TetraminoType, bossFactoryMethod> _availableAIStrategiesPrototypes;
 
 	std::map< TetraminoType, bossFactoryMethod> makeAIStrategiesHandlers();

@@ -10,7 +10,7 @@ SpellsViewDataSource::SpellsViewDataSource(CurrentPlayerDataSource *aCurrentPlay
 {
 	_currentPlayerDataSource = aCurrentPlayerDataSource;
 	_spellBox = aSpellBox;
-	_availableSpellsCount = aCurrentPlayerDataSource->getPlayerAvailableSpellsCount;
+	_availableSpellsCount = aCurrentPlayerDataSource->getPlayerAvailableSpellsCount();
 }
 
 
@@ -43,7 +43,7 @@ string SpellsViewDataSource::getSpellCostOnIndex(int aIndex)
 void SpellsViewDataSource::useSpellOnIndex(int aIndex)
 {
 	int spellCost = _spellBox->getSpellCostOnIndex(aIndex);
-	int currentPlayerScore = _currentPlayerDataSource->getPlayerScore;
+	int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
 
 	if (currentPlayerScore >= spellCost && aIndex <= _availableSpellsCount)
 	{
@@ -55,5 +55,5 @@ void SpellsViewDataSource::useSpellOnIndex(int aIndex)
 
 void SpellsViewDataSource::refreshDataSource()
 {
-	_availableSpellsCount = _currentPlayerDataSource->getPlayerAvailableSpellsCount;
+	_availableSpellsCount = _currentPlayerDataSource->getPlayerAvailableSpellsCount();
 }

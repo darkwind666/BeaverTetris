@@ -43,7 +43,7 @@ void GamePlayersDatabase::setPlayerResult(std::string aPlayerName, int playerSco
 
 void GamePlayersDatabase::sortPlayers()
 {
-	sort(_players.begin, _players.end, sortFunction);
+	sort(_players.begin(), _players.end(), sortFunction);
 }
 
 bool sortFunction(const PlayerInformation &left, const PlayerInformation &right)

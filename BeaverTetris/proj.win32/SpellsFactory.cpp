@@ -21,13 +21,13 @@ SpellsFactory::~SpellsFactory(void)
 bool SpellsFactory::spellAvailable(SpellType aSpellType)
 {
 	SpellInterface *spell = _spells[aSpellType];
-	return spell->spellAvailable;
+	return spell->spellAvailable();
 }
 
 void SpellsFactory::useSpellForType(SpellType aSpellType)
 {
 	SpellInterface *spell = _spells[aSpellType];
-	spell->castSpell;
+	spell->castSpell();
 }
 
 map<SpellType, SpellInterface*> SpellsFactory::makeSpells()

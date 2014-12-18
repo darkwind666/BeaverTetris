@@ -24,7 +24,7 @@ private:
 	BossesFactory *_bossesFactory;
 
 	std::vector<AIStrategyInterface*> makeCurrentBossAIStrategies();
-	void addBossStratagiesToAllStrategies(vector<AIStrategyInterface*> *bossStratagies, vector<AIStrategyInterface*> *allStrategies);
+	void addBossStratagiesToAllStrategies(std::vector<AIStrategyInterface*> *bossStratagies, std::vector<AIStrategyInterface*> *allStrategies);
 
 };
 

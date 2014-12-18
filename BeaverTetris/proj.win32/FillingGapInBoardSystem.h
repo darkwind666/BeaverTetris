@@ -25,7 +25,7 @@ private:
 	TetraminoDetailLocatorDelegate *_tetraminoDetailLocatorDelegate;
 	CollisionDelegate *_collisionDelegate;
 
-	void fillGapsInBoardWithDetails(vector<TetraminoDetail*> *aTetraminoDetailsInGame);
+	void fillGapsInBoardWithDetails(std::vector<TetraminoDetail*> *aTetraminoDetailsInGame);
 
 };
 

@@ -2,11 +2,14 @@
 #include "GameDesignConstants.h"
 #include "GameEnums.h"
 #include "GameHelper.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "SpellsFactory.h"
 
 
-AISpellCastsStrategy::AISpellCastsStrategy(SpellsFactory *aSpellsFactory)
+AISpellCastsStrategy::AISpellCastsStrategy()
 {
-	_spellsFactory = aSpellsFactory;
+	_spellsFactory = (SpellsFactory*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_currentUpdateState = 0;
 }
 

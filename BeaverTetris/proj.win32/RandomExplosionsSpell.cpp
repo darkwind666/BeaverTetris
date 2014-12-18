@@ -20,10 +20,10 @@ RandomExplosionsSpell::~RandomExplosionsSpell(void)
 
 bool RandomExplosionsSpell::spellAvailable(void)
 {
-	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis;
+	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis();
 	bool spellAvailable = true;
 
-	if (availableTetraminos.size < randomExplosionsCount)
+	if (availableTetraminos.size() < randomExplosionsCount)
 	{
 		spellAvailable = false;
 	}
@@ -32,7 +32,7 @@ bool RandomExplosionsSpell::spellAvailable(void)
 
 void RandomExplosionsSpell::castSpell()
 {
-	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis;
+	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis();
 
 	for (int removeTetraminoIndex = 0; removeTetraminoIndex <= randomExplosionsCount; removeTetraminoIndex++)
 	{
@@ -42,11 +42,11 @@ void RandomExplosionsSpell::castSpell()
 
 void RandomExplosionsSpell::removeRandomTetraminoInAvailableTetraminos(std::vector <GamePositionOnBoard> &availableTetraminos)
 {
-	int randomTetramino = GameHelper::getRandomNumberFromUpInterval(availableTetraminos.size);
+	int randomTetramino = GameHelper::getRandomNumberFromUpInterval(availableTetraminos.size());
 	GamePositionOnBoard tetraminoPosition = availableTetraminos[randomTetramino];
 	Tetramino *tetramino = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
 	
-	tetramino->reduceLive;
+	tetramino->reduceLive();
 	
 	availableTetraminos.erase(availableTetraminos.begin() + randomTetramino);
 }

@@ -1,7 +1,7 @@
 #include "RemoveSomeTetraminosCondition.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
-#include "GameViewElementsKeys.h"
+#include "GameViewSuffixes.h"
 
 using namespace std;
 
@@ -21,7 +21,7 @@ RemoveSomeTetraminosCondition::~RemoveSomeTetraminosCondition(void)
 
 int RemoveSomeTetraminosCondition::getVictoryStateInformationCount(void)
 {
-	return _tetraminosCollectionForWin.size;
+	return _tetraminosCollectionForWin.size();
 }
 
 int RemoveSomeTetraminosCondition::getVictoryStateInformationForIndex(int aIndex)
@@ -42,7 +42,7 @@ bool RemoveSomeTetraminosCondition::playerWin(void)
 	bool playerWin = true;
 
 	vector<TetraminosForWinInformation>::iterator tetraminosIterator;
-	for (tetraminosIterator = _tetraminosCollectionForWin.begin; tetraminosIterator != _tetraminosCollectionForWin.end; tetraminosIterator++)
+	for (tetraminosIterator = _tetraminosCollectionForWin.begin(); tetraminosIterator != _tetraminosCollectionForWin.end(); tetraminosIterator++)
 	{
 		TetraminosForWinInformation tetraminosForWin = *tetraminosIterator;
 		if (tetraminosForWin.tetraminosCount > 0)
@@ -57,10 +57,10 @@ bool RemoveSomeTetraminosCondition::playerWin(void)
 void RemoveSomeTetraminosCondition::tetraminoRemoving(Tetramino *aTetramino)
 {
 	vector<TetraminosForWinInformation>::iterator tetraminosIterator;
-	for (tetraminosIterator = _tetraminosCollectionForWin.begin; tetraminosIterator != _tetraminosCollectionForWin.end; tetraminosIterator++)
+	for (tetraminosIterator = _tetraminosCollectionForWin.begin(); tetraminosIterator != _tetraminosCollectionForWin.end(); tetraminosIterator++)
 	{
 		TetraminosForWinInformation tetraminosForWin = *tetraminosIterator;
-		if (tetraminosForWin.tetraminoType == aTetramino->getTetraminoType)
+		if (tetraminosForWin.tetraminoType == aTetramino->getTetraminoType())
 		{
 			tetraminosForWin.tetraminosCount = tetraminosForWin.tetraminosCount - 1;
 			break;

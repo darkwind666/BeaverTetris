@@ -19,18 +19,18 @@ GameFlowSystem::~GameFlowSystem(void)
 
 void GameFlowSystem::updateSystem(float deltaTime)
 {
-	vector<TetraminoDetail*> activeDetails = _activeDetails->getActiveDetails;
-	if (activeDetails.size <= 0)
+	vector<TetraminoDetail*> activeDetails = _activeDetails->getActiveDetails();
+	if (activeDetails.size() <= 0)
 	{
-		if (_currentGameEventsDataSource->availableEvent)
+		if (_currentGameEventsDataSource->availableEvent())
 		{
-			_currentGameEventsDataSource->runAvailableEvent;
+			_currentGameEventsDataSource->runAvailableEvent();
 		}
 		else
 		{
-			_currentDetailController->makeNewDetail;
+			_currentDetailController->makeNewDetail();
 		}
 
 	}
-	_currentGameEventsDataSource->updateEvents;
+	_currentGameEventsDataSource->updateEvents();
 }

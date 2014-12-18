@@ -1,4 +1,5 @@
 #include "CurrentVictoryConditionDataSource.h"
+#include "StringsSupporter.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ CurrentVictoryConditionDataSource::~CurrentVictoryConditionDataSource(void)
 
 int CurrentVictoryConditionDataSource::getVictoryConditionsCount(void)
 {
-	return _currentVictoryCondition->getVictoryStateInformationCount;
+	return _currentVictoryCondition->getVictoryStateInformationCount();
 }
 
 string CurrentVictoryConditionDataSource::getVictoryConditionNameForIndex(int aIndex)
@@ -26,17 +27,18 @@ string CurrentVictoryConditionDataSource::getVictoryConditionNameForIndex(int aI
 
 string CurrentVictoryConditionDataSource::getVictoryConditionInformationForIndex(int aIndex)
 {
-	return _currentVictoryCondition->getVictoryStateInformationForIndex(aIndex);
+	int currentState = _currentVictoryCondition->getVictoryStateInformationForIndex(aIndex);
+	return StringsSupporter::getStringFromNumber(currentState);
 }
                           
 void CurrentVictoryConditionDataSource::updateCurrentVictoryCondition()
 {
-	_currentVictoryCondition->update;
+	_currentVictoryCondition->update();
 }
 
 bool CurrentVictoryConditionDataSource::winGameResult()
 {
-	return _currentVictoryCondition->playerWin;
+	return _currentVictoryCondition->playerWin();
 }
 
 string CurrentVictoryConditionDataSource::getCurrentLevelName()
@@ -51,6 +53,6 @@ int CurrentVictoryConditionDataSource::getCurrentLevelAward()
 
 void CurrentVictoryConditionDataSource::refreshDataSource()
 {
-	_currentLevelInformation = _currentLevelDataSource->getCurrentLevelData;
-	_currentVictoryCondition = _victoryConditionsFactory->makeCurrentVictoryCondition;
+	_currentLevelInformation = _currentLevelDataSource->getCurrentLevelData();
+	_currentVictoryCondition = _victoryConditionsFactory->makeCurrentVictoryCondition();
 }

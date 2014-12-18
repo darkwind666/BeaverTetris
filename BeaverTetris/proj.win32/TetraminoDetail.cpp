@@ -73,7 +73,7 @@ void TetraminoDetail::rotateDetail()
 			for (int yIndex = 0; yIndex < _detailHeight; yIndex++)
 			{
 				Tetramino *rotatedTetramino = _gameBoardTetraminos->getTetraminoForXYposition(xIndex, yIndex);
-				newGameBoard->setTetraminoXYposition(rotatedTetramino, ((newGameBoard->getGameBoardWidth - 1) - yIndex), xIndex);
+				newGameBoard->setTetraminoXYposition(rotatedTetramino, ((newGameBoard->getGameBoardWidth() - 1) - yIndex), xIndex);
 			}
 		
 		}

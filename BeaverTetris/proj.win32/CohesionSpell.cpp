@@ -22,7 +22,7 @@ bool CohesionSpell::spellAvailable(void)
 	vector<GamePositionOnBoard> emptyTetraminosForCohesion = getEmptyTetraminosForCohesion();
 	bool spellAvailable = true;
 
-	if (emptyTetraminosForCohesion.size < minEmptyTetraminoForCohesionCount)
+	if (emptyTetraminosForCohesion.size() < minEmptyTetraminoForCohesionCount)
 	{
 		spellAvailable = false;
 	}
@@ -33,11 +33,13 @@ void CohesionSpell::castSpell()
 {
 	vector<GamePositionOnBoard> emptyTetraminosForCohesion = getEmptyTetraminosForCohesion();
 
-	for (int emptyTetraminosIndex = 0; emptyTetraminosIndex <= emptyTetraminosForCohesion.size; emptyTetraminosIndex++)
+	int tetraminosSize = emptyTetraminosForCohesion.size();
+
+	for (int emptyTetraminosIndex = 0; emptyTetraminosIndex <= tetraminosSize; emptyTetraminosIndex++)
 	{
-		int randomEmptyTetraminoIndex = GameHelper::getRandomNumberFromUpInterval(emptyTetraminosForCohesion.size);
+		int randomEmptyTetraminoIndex = GameHelper::getRandomNumberFromUpInterval(emptyTetraminosForCohesion.size());
 		setNewTetraminoForIndexInEmptyTetraminos(randomEmptyTetraminoIndex, emptyTetraminosForCohesion);
-		emptyTetraminosForCohesion.erase(emptyTetraminosForCohesion.begin + randomEmptyTetraminoIndex);
+		emptyTetraminosForCohesion.erase(emptyTetraminosForCohesion.begin() + randomEmptyTetraminoIndex);
 	}
 
 }
@@ -48,10 +50,10 @@ vector<GamePositionOnBoard> CohesionSpell::getEmptyTetraminosForCohesion()
 {
 	vector<GamePositionOnBoard> emptyTetraminosForCohesion;
 
-	vector<GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis;
+	vector<GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis();
 	vector<GamePositionOnBoard>::iterator availableTetraminosIterator;
 
-	for (availableTetraminosIterator = availableTetraminos.begin; availableTetraminosIterator != availableTetraminos.end; availableTetraminosIterator++)
+	for (availableTetraminosIterator = availableTetraminos.begin(); availableTetraminosIterator != availableTetraminos.end(); availableTetraminosIterator++)
 	{
 		vector<GamePositionOnBoard> emptyTetraminosPositionsAroundPosition = getEmptyTetraminosPositionsAroundPosition(*availableTetraminosIterator);
 		setNewEmptyTetraminosInEmptyTetraminosForCohesion(emptyTetraminosPositionsAroundPosition, emptyTetraminosForCohesion);
@@ -96,7 +98,7 @@ vector<GamePositionOnBoard> CohesionSpell::getEmptyTetraminosPositionsWithoutBor
 
 	vector<GamePositionOnBoard>::iterator emptyTetraminosPositionsIterator;
 
-	for (emptyTetraminosPositionsIterator = emptyTetraminosPositions.begin; emptyTetraminosPositionsIterator != emptyTetraminosPositions.end; emptyTetraminosPositionsIterator++)
+	for (emptyTetraminosPositionsIterator = emptyTetraminosPositions.begin(); emptyTetraminosPositionsIterator != emptyTetraminosPositions.end(); emptyTetraminosPositionsIterator++)
 	{
 		GamePositionOnBoard positionInBoard = *emptyTetraminosPositionsIterator;
 		bool inWidthBorder = (positionInBoard.xPosition >= 0 && positionInBoard.xPosition <= _gameBoard->getGameBoardWidth());
@@ -105,7 +107,7 @@ vector<GamePositionOnBoard> CohesionSpell::getEmptyTetraminosPositionsWithoutBor
 		if (inWidthBorder && inHeightBorder)
 		{
 			Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(positionInBoard.xPosition, positionInBoard.yPosition);
-			if (tetraminoInBoard->getTetraminoType == kTetraminoEmpty)
+			if (tetraminoInBoard->getTetraminoType() == kTetraminoEmpty)
 			{
 				emptyTetraminosPositionsWithoutBorder.push_back(positionInBoard);
 			}
@@ -120,7 +122,7 @@ void CohesionSpell::setNewEmptyTetraminosInEmptyTetraminosForCohesion(vector<Gam
 {
 
 	vector<GamePositionOnBoard>::iterator newEmptyTetraminosIterator;
-	for (newEmptyTetraminosIterator = newEmptyTetraminosPositions.begin; newEmptyTetraminosIterator != newEmptyTetraminosPositions.end; newEmptyTetraminosIterator++)
+	for (newEmptyTetraminosIterator = newEmptyTetraminosPositions.begin(); newEmptyTetraminosIterator != newEmptyTetraminosPositions.end(); newEmptyTetraminosIterator++)
 	{
 		GamePositionOnBoard newTetraminoPosition = *newEmptyTetraminosIterator;
 		setNewEmptyTetraminoInEmptyTetraminos(newTetraminoPosition, emptyTetraminosForCohesion);
@@ -134,7 +136,7 @@ void CohesionSpell::setNewEmptyTetraminoInEmptyTetraminos(GamePositionOnBoard ne
 	Tetramino *newTetramino = _gameBoard->getTetraminoForXYposition(newTetraminoPosition.xPosition, newTetraminoPosition.yPosition);
 	
 	vector<GamePositionOnBoard>::iterator emptyTetraminosForCohesionIterator;
-	for (emptyTetraminosForCohesionIterator = emptyTetraminosForCohesion.begin; emptyTetraminosForCohesionIterator < emptyTetraminosForCohesion.end; emptyTetraminosForCohesionIterator++)
+	for (emptyTetraminosForCohesionIterator = emptyTetraminosForCohesion.begin(); emptyTetraminosForCohesionIterator < emptyTetraminosForCohesion.end(); emptyTetraminosForCohesionIterator++)
 	{
 		GamePositionOnBoard oldTetraminoPosition = *emptyTetraminosForCohesionIterator;
 		Tetramino *oldTetramino = _gameBoard->getTetraminoForXYposition(oldTetraminoPosition.xPosition, oldTetraminoPosition.yPosition);
@@ -150,7 +152,7 @@ void CohesionSpell::setNewEmptyTetraminoInEmptyTetraminos(GamePositionOnBoard ne
 
 void CohesionSpell::setNewTetraminoForIndexInEmptyTetraminos(int tetraminoIndex, std::vector<GamePositionOnBoard> &emptyTetraminosForCohesion)
 {
-	GamePositionOnBoard emptyTetraminoPosition = emptyTetraminosForCohesion[randomEmptyTetraminoIndex];
+	GamePositionOnBoard emptyTetraminoPosition = emptyTetraminosForCohesion[tetraminoIndex];
 	TetraminoType newTetraminoType = getRandomTetraminoType();
 	Tetramino *newTetramino = new Tetramino(newTetraminoType);
 	_gameBoard->setTetraminoXYposition(newTetramino, emptyTetraminoPosition.xPosition, emptyTetraminoPosition.yPosition);

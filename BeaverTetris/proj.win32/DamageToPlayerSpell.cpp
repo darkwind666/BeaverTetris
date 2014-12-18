@@ -24,7 +24,7 @@ bool DamageToPlayerSpell::spellAvailable(void)
 
 	vector<int> linesWithUnpeacefulCount = getLinesWithUnpeacefulCount();
 
-	if (linesWithUnpeacefulCount.size <= 0)
+	if (linesWithUnpeacefulCount.size() <= 0)
 	{
 		spellAvailable = false;
 	}
@@ -37,7 +37,7 @@ void DamageToPlayerSpell::castSpell()
 
 	vector<int>::iterator linesIterator;
 
-	for (linesIterator = linesWithUnpeacefulCount.begin; linesIterator != linesWithUnpeacefulCount.end; linesIterator++)
+	for (linesIterator = linesWithUnpeacefulCount.begin(); linesIterator != linesWithUnpeacefulCount.end(); linesIterator++)
 	{
 		makeReductionInLine(*linesIterator);
 	}
@@ -48,11 +48,11 @@ vector<int> DamageToPlayerSpell::getLinesWithUnpeacefulCount()
 {
 	vector<int> linesWithUnpeacefulCount;
 
-	for (int heightIndex = 0; heightIndex < _gameBoard->getGameBoardHeight; heightIndex++)
+	for (int heightIndex = 0; heightIndex < _gameBoard->getGameBoardHeight(); heightIndex++)
 	{
 		vector<GamePositionOnBoard> unEmptyAndNoBossesTetraminos = getUnEmptyAndNoBossesTetraminosInLine(heightIndex);
 
-		if (unEmptyAndNoBossesTetraminos.size > minPeacefulNonEmptyTetraminosCount)
+		if (unEmptyAndNoBossesTetraminos.size() > minPeacefulNonEmptyTetraminosCount)
 		{
 			linesWithUnpeacefulCount.push_back(heightIndex);
 		}
@@ -66,10 +66,10 @@ vector<GamePositionOnBoard> DamageToPlayerSpell::getUnEmptyAndNoBossesTetraminos
 
 	vector<GamePositionOnBoard> unEmptyAndNoBossesTetraminos;
 
-	for (int widthIndex = 0; widthIndex < _gameBoard->getGameBoardWidth; widthIndex++)
+	for (int widthIndex = 0; widthIndex < _gameBoard->getGameBoardWidth(); widthIndex++)
 	{
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(widthIndex, aLine);
-		if (tetraminoInBoard->getTetraminoType > kTetraminoEmpty && tetraminoInBoard->getTetraminoType < kTetraminoBossQueen)
+		if (tetraminoInBoard->getTetraminoType() > kTetraminoEmpty && tetraminoInBoard->getTetraminoType() < kTetraminoBossQueen)
 		{
 			GamePositionOnBoard tetraminoInBoardPosition;
 			tetraminoInBoardPosition.xPosition = widthIndex;
@@ -85,14 +85,14 @@ vector<GamePositionOnBoard> DamageToPlayerSpell::getUnEmptyAndNoBossesTetraminos
 void DamageToPlayerSpell::makeReductionInLine(int aLine)
 {
 	vector<GamePositionOnBoard> unEmptyAndNoBossesTetraminos = getUnEmptyAndNoBossesTetraminosInLine(aLine);
-	int reductionCount = unEmptyAndNoBossesTetraminos.size - minPeacefulNonEmptyTetraminosCount;
+	int reductionCount = unEmptyAndNoBossesTetraminos.size() - minPeacefulNonEmptyTetraminosCount;
 
 	for (int reductionIndex = 0; reductionIndex <= reductionCount; reductionIndex++)
 	{
-		int reductionElementIndex = GameHelper::getRandomNumberFromUpInterval(unEmptyAndNoBossesTetraminos.size);
+		int reductionElementIndex = GameHelper::getRandomNumberFromUpInterval(unEmptyAndNoBossesTetraminos.size());
 		GamePositionOnBoard tetraminoPosition = unEmptyAndNoBossesTetraminos[reductionElementIndex];
 		_gameBoard->removeTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
-		unEmptyAndNoBossesTetraminos.erase(unEmptyAndNoBossesTetraminos.begin + reductionElementIndex);
+		unEmptyAndNoBossesTetraminos.erase(unEmptyAndNoBossesTetraminos.begin() + reductionElementIndex);
 	}
 
 }

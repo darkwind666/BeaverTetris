@@ -10,9 +10,9 @@
 using namespace std;
 using namespace cocos2d;
 
-const float startXMenuPosition = 23.7;
-const float startYMenuPosition = 23.7;
-const float menuItemOffsetY = 23.7;
+const float startXMenuPosition = 23.7f;
+const float startYMenuPosition = 23.7f;
+const float menuItemOffsetY = 23.7f;
 
 EndGameViewDataSource::EndGameViewDataSource(CurrentLevelWinResultDataSource *aCurrentLevelWinResultDataSource, CurrentLevelDataSource *aCurrentLevelDataSource)
 {
@@ -39,7 +39,7 @@ vector <MenuItemInformation> EndGameViewDataSource::makeMenuItems()
 	bool winCurrentGame  = getGameResult();
 	bool winAllGames = _currentLevelWinResultDataSource->winAllGameResult();
 
-	if (getGameResult && !winAllGames)
+	if (winCurrentGame && !winAllGames)
 	{
 		MenuItemInformation nextGameMenuItem;
 		GameEvent nextGameMenuItemGameEvent;
@@ -58,7 +58,7 @@ EndGameViewDataSource::~EndGameViewDataSource(void)
 
 int EndGameViewDataSource::getMenuItemCount(void)
 {
-	return _menuItems.size;
+	return _menuItems.size();
 }
 
 string EndGameViewDataSource::getMenuItemImageForIndex(int aIndex)
@@ -77,7 +77,7 @@ string EndGameViewDataSource::getGameResultImage(void)
 {
 	string gameResultImage;
 
-	if (getGameResult)
+	if (getGameResult())
 	{
 		gameResultImage = GameFileExtensionMaker::getGraphicWithExtension(winGameKey);
 	}

@@ -17,11 +17,11 @@ FirestromSpell::~FirestromSpell(void)
 
 bool FirestromSpell::spellAvailable(void)
 {
-	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis;
+	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis();
 
 	bool spellAvailable = true;
 
-	if (availableTetraminos.size <= 0)
+	if (availableTetraminos.size() <= 0)
 	{
 		spellAvailable = false;
 	}
@@ -32,7 +32,7 @@ void FirestromSpell::castSpell()
 {
 	for (int meteorIndex = 0; meteorIndex <= meteorsCount; meteorIndex++)
 	{
-		int randomMeteorPositionX = GameHelper::getRandomNumberFromUpInterval(_gameBoard->getGameBoardWidth);
+		int randomMeteorPositionX = GameHelper::getRandomNumberFromUpInterval(_gameBoard->getGameBoardWidth());
 		runFireballWithXPosition(randomMeteorPositionX);
 	}
 }
@@ -41,11 +41,11 @@ void FirestromSpell::runFireballWithXPosition(int positionX)
 {
 	bool wasExplosion = false;
 	
-	for (int heightIndex = _gameBoard->getGameBoardHeight; heightIndex < 0; heightIndex--)
+	for (int heightIndex = _gameBoard->getGameBoardHeight(); heightIndex < 0; heightIndex--)
 	{
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(positionX, heightIndex);
 	
-		if (tetraminoInBoard->getTetraminoType > kTetraminoEmpty)
+		if (tetraminoInBoard->getTetraminoType() > kTetraminoEmpty)
 		{
 			makeExplosionOnPositionXY(positionX, heightIndex);
 			wasExplosion = true;
@@ -70,17 +70,17 @@ void FirestromSpell::makeExplosionOnPositionXY(int positionX, int positionY)
 	for (int heightIndex = downHeight; heightIndex <= upHeight; heightIndex++)
 	{
 
-		bool availableHeight = (heightIndex >= 0 && heightIndex <= _gameBoard->getGameBoardHeight);
+		bool availableHeight = (heightIndex >= 0 && heightIndex <= _gameBoard->getGameBoardHeight());
 
 		for (int widthIndex = downWidth; widthIndex <= upWidth; widthIndex++)
 		{
 
-			bool availableWidth = (widthIndex >= 0 && widthIndex <= _gameBoard->getGameBoardWidth);
+			bool availableWidth = (widthIndex >= 0 && widthIndex <= _gameBoard->getGameBoardWidth());
 
 			if (availableHeight && availableWidth)
 			{
 				Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(widthIndex, heightIndex);
-				tetraminoInBoard->reduceLive;
+				tetraminoInBoard->reduceLive();
 
 			}
 

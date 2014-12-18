@@ -37,7 +37,7 @@ void GameTransitionsController::changeState(void)
 
 void GameTransitionsController::goToPreviousState(void)
 {
-	_gameTransitionsViewController->goToPreviousState()
+	_gameTransitionsViewController->goToPreviousState();
 }
 
 void GameTransitionsController::goToNextLevel(void)

@@ -34,7 +34,7 @@ private:
 	GameViewElementsDataSource *_gameViewElementsDataSource;
 	std::vector <MenuItemInformation> _menuItems;
 	
-	vector <MenuItemInformation> makeMenuItems();
+	std::vector <MenuItemInformation> makeMenuItems();
 
 };
 

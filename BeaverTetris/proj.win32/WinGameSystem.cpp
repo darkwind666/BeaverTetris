@@ -25,17 +25,17 @@ void WinGameSystem::updateSystem(float deltaTime)
 
 	EventDispatcher *eventDispatcher = (EventDispatcher*)ServiceLocator::getServiceForKey(eventDispatcherKey);
 
-	if (_currentLevelWinResultDataSource->winGameResult)
+	if (_currentLevelWinResultDataSource->winGameResult())
 	{
-		int awardForVictory = _currentLevelWinResultDataSource->getCurrentLevelAward;
-		int currentPlayerScore = _currentPlayerDataSource->getPlayerScore;
+		int awardForVictory = _currentLevelWinResultDataSource->getCurrentLevelAward();
+		int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
 		_currentPlayerDataSource->setPlayerScore(currentPlayerScore + awardForVictory);
 
-		string winLevelName = _currentLevelWinResultDataSource->getCurrentLevelName;
+		string winLevelName = _currentLevelWinResultDataSource->getCurrentLevelName();
 		_currentPlayerDataSource->completeLevel(winLevelName);
 		_currentLevelWinResultDataSource->setCurrentGameWinResult(true);
 
-		if (_currentLevelWinResultDataSource->winAllGameResult)
+		if (_currentLevelWinResultDataSource->winAllGameResult())
 		{
 			eventDispatcher->handleEvent(GameEventsFactory::makeGoToPopUpEventWithKey(kWinAllGamePopUp));
 		}
@@ -47,7 +47,7 @@ void WinGameSystem::updateSystem(float deltaTime)
 	}
 	else
 	{
-		if (loseGameChecker)
+		if (loseGameChecker())
 		{
 			_currentLevelWinResultDataSource->setCurrentGameWinResult(false);
 			eventDispatcher->handleEvent(GameEventsFactory::makeGoToPopUpEventWithKey(kLoseGameUp));
@@ -59,19 +59,19 @@ void WinGameSystem::updateSystem(float deltaTime)
 bool WinGameSystem::loseGameChecker()
 {
 
-	int downLoseZoneY = _gameBoard->getGameBoardHeight - standartDetailHeight;
-	int upLoseZoneY = _gameBoard->getGameBoardHeight;
+	int downLoseZoneY = _gameBoard->getGameBoardHeight() - standartDetailHeight;
+	int upLoseZoneY = _gameBoard->getGameBoardHeight();
 
 	bool isThereTetraminoInLoseZone = false;
 
 	for (int yIndex = downLoseZoneY; yIndex < upLoseZoneY; yIndex++)
 	{
 
-		for (int xIndex = 0; xIndex < _gameBoard->getGameBoardWidth; xIndex++)
+		for (int xIndex = 0; xIndex < _gameBoard->getGameBoardWidth(); xIndex++)
 		{
 			Tetramino *tetraminoIngameBoard = _gameBoard->getTetraminoForXYposition(xIndex, yIndex);
 
-			if (tetraminoIngameBoard->getTetraminoType > kTetraminoEmpty)
+			if (tetraminoIngameBoard->getTetraminoType() > kTetraminoEmpty)
 			{
 				isThereTetraminoInLoseZone = true;
 				return isThereTetraminoInLoseZone;

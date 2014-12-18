@@ -16,7 +16,7 @@ private:
 	std::map <std::string , ViewElementInformation> _elementsInformation;
 
 	std::map <std::string , ViewElementInformation> makeViewData(void);
-	string GameViewInformationFactory::makeImageNameWithKey(const std::string gameElementKey);
+	std::string GameViewInformationFactory::makeImageNameWithKey(const std::string gameElementKey);
 
 };
 

@@ -18,6 +18,7 @@ private:
 	AwardForTetraminoDataSource *_awardForTetraminoDataSource;
 	CurrentPlayerDataSource *_currentPlayerDataSource;
 
+	bool fullLineCheck(int lineIndex);
 	int getAwardForTetramino(Tetramino *aTetramino);
 
 };

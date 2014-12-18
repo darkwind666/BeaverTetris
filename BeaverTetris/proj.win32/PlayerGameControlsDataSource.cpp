@@ -19,7 +19,7 @@ PlayerGameControlsDataSource::~PlayerGameControlsDataSource(void)
 
 int PlayerGameControlsDataSource::getPlayerControlsCount()
 {
-	return _playerControls.size;
+	return _playerControls.size();
 }
 
 string PlayerGameControlsDataSource::getPlayerControlIconImageOnIndex(int aIndex)

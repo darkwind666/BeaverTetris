@@ -32,9 +32,9 @@ int TetraminisDetailsFactory::getCreatedDetailsCount()
 
 TetraminoType TetraminisDetailsFactory::getRandomTetraminoType()
 {
-	GameLevelInformation currentLevel = _currentLevelDataSource->getCurrentLevelData;
+	GameLevelInformation currentLevel = _currentLevelDataSource->getCurrentLevelData();
 	vector<TetraminoType> availableTetraminos = currentLevel.availableTetraminos;
-	int randomTetraminoType = GameHelper::getRandomNumberFromUpInterval(availableTetraminos.size);
+	int randomTetraminoType = GameHelper::getRandomNumberFromUpInterval(availableTetraminos.size());
 
 	TetraminoType tetraminoType = availableTetraminos[randomTetraminoType];
 	return tetraminoType;
@@ -42,9 +42,9 @@ TetraminoType TetraminisDetailsFactory::getRandomTetraminoType()
 
 TetraminoDetailType TetraminisDetailsFactory::getRandomTetraminoDetailType()
 {
-	GameLevelInformation currentLevel = _currentLevelDataSource->getCurrentLevelData;
+	GameLevelInformation currentLevel = _currentLevelDataSource->getCurrentLevelData();
 	vector<TetraminoDetailType> availableTetraminoDetailsType = currentLevel.availableTetraminoDetails;
-	int randomDetailType = GameHelper::getRandomNumberFromUpInterval(availableTetraminoDetailsType.size);
+	int randomDetailType = GameHelper::getRandomNumberFromUpInterval(availableTetraminoDetailsType.size());
 	TetraminoDetailType detailType = availableTetraminoDetailsType[randomDetailType];
 	return detailType;
 }
@@ -53,7 +53,7 @@ TetraminoDetail* TetraminisDetailsFactory::getNewDetailWithDetailTypeAndTetramin
 {
 	TetraminoDetail *newDetail = new TetraminoDetail(standartDetailWidth,standartDetailHeight);
 	TetraminoDetailInformation newDetailInformation = _detailsTypesData[aTetraminoDetailType];
-	newDetail->setDetailRotatebleFlag = newDetailInformation.rotateble;
+	newDetail->setDetailRotatebleFlag(newDetailInformation.rotateble);
 
 	for (int yIndex = 0; yIndex < standartDetailHeight; yIndex++)
 	{
@@ -124,6 +124,7 @@ map<TetraminoDetailType, TetraminoDetailInformation> TetraminisDetailsFactory::m
 	detailsData[kTetraminoDetail2] = detail2;
 	detailsData[kTetraminoDetail3] = detail3;
 
+	return detailsData;
 }
 
 void TetraminisDetailsFactory::copyMasiveToMassive(int *aSourceMassive, int *aDestinationMassive)

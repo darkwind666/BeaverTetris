@@ -14,10 +14,10 @@ RocketSpell::~RocketSpell(void)
 
 bool RocketSpell::spellAvailable()
 {
-	return _currentDetailController->availableCurrentDetail;
+	return _currentDetailController->availableCurrentDetail();
 }
 
 void RocketSpell::castSpell()
 {
-	_currentDetailController->removeCurrentDetail;
+	_currentDetailController->removeCurrentDetail();
 }

@@ -16,7 +16,7 @@ void CurrentLevelDataSource::playerChangeSelectedLevel(int aCurrentSelectedLevel
 {
 	
 	vector<CurrentLevelDataSourceObserver*>::iterator observersIterator;
-	for (observersIterator = _observers.begin; observersIterator != _observers.end; observersIterator++)
+	for (observersIterator = _observers.begin(); observersIterator != _observers.end(); observersIterator++)
 	{
 		CurrentLevelDataSourceObserver *observer = *observersIterator;
 		observer->levelChanged();
@@ -31,6 +31,6 @@ void CurrentLevelDataSource::addObserver(CurrentLevelDataSourceObserver *aCurren
 
 void CurrentLevelDataSource::removeObserver(CurrentLevelDataSourceObserver *aCurrentLevelDataSourceObserver)
 {
-	int observerIndex = find(_observers.begin, _observers.end, aCurrentLevelDataSourceObserver);
-	_observers.erase(_observers.begin + observerIndex);
+	vector<CurrentLevelDataSourceObserver*>::iterator observerIndex = find(_observers.begin(), _observers.end(), aCurrentLevelDataSourceObserver);
+	_observers.erase(observerIndex);
 }

@@ -4,7 +4,6 @@
 #include "TetraminoDetail.h"
 #include "GameBoard.h"
 
-
 class TetraminosCombinatorDelegate
 {
 public:
@@ -12,7 +11,7 @@ public:
 	~TetraminosCombinatorDelegate(void);
 
 	TetraminoDetail* combineTetraminosInDetail(std::vector <GamePositionOnBoard> aDetailElements);
-	vector <TetraminoDetail*> combineTetraminosInDetails(std::vector < std::vector <GamePositionOnBoard> > aTetraminoDetailsInGame);
+	std::vector <TetraminoDetail*> combineTetraminosInDetails(std::vector < std::vector <GamePositionOnBoard> > aTetraminoDetailsInGame);
 
 private:
 
