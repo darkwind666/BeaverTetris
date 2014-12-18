@@ -150,9 +150,6 @@
     <ClCompile Include="GameEventInterface.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
-    <ClCompile Include="EndGameController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="DevelopersSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
@@ -390,6 +387,15 @@
     <ClCompile Include="GameTransitionsController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="EndGameController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerSelectionObserver.cpp">
+      <Filter>Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentLevelDataSourceObserver.cpp">
+      <Filter>Observers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -475,9 +481,6 @@
     </ClInclude>
     <ClInclude Include="GameEventInterface.h">
       <Filter>Models\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="EndGameController.h">
-      <Filter>Controllers</Filter>
     </ClInclude>
     <ClInclude Include="DevelopersSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
@@ -733,6 +736,15 @@
     </ClInclude>
     <ClInclude Include="GameTransitionsController.h">
       <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="EndGameController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSelectionObserver.h">
+      <Filter>Observers</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentLevelDataSourceObserver.h">
+      <Filter>Observers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
