@@ -405,6 +405,9 @@
     <ClCompile Include="SimilarTetraminosCombination.cpp">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClCompile>
+    <ClCompile Include="TetraminosPositionsDelegate.cpp">
+      <Filter>Models\GameLogic\GameBoard</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -760,6 +763,9 @@
     </ClInclude>
     <ClInclude Include="SimilarTetraminosCombination.h">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClInclude>
+    <ClInclude Include="TetraminosPositionsDelegate.h">
+      <Filter>Models\GameLogic\GameBoard</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

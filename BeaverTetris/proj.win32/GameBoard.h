@@ -4,6 +4,7 @@
 #include "GameStructures.h"
 #include "Tetramino.h"
 #include "GameBoardObserverInterface.h"
+#include "TetraminosPositionsDelegate.h"
 
 class GameBoard
 {
@@ -15,8 +16,10 @@ public:
 
 	int getGameBoardWidth();
 	int getGameBoardHeight();
+
 	Tetramino* getTetraminoForXYposition(int xPosition, int yPosition);
 	GamePositionOnBoard getTetraminoPosition(Tetramino *aTetramino);
+
 	std::vector <GamePositionOnBoard> getAvailableTetraminis();
 	std::vector <GamePositionOnBoard> getTetraminisForType(TetraminoType aTetraminoType);
 
@@ -36,9 +39,7 @@ private:
 	int _gameBoardWidth;
 	int _gameBoardHeight;
 	GameBoardObserverInterface *_gameBoardObserver;
+	TetraminosPositionsDelegate *_tetraminosSourceDelegate;
 
-	vector <GamePositionOnBoard> findAllTetraminisForTypeAndPredicate(TetraminoType aTetraminoType, predicateFunction aPredicateFunction);
-	bool equalType(TetraminoType aFirstType, TetraminoType aSecondType);
-	bool largerType(TetraminoType aFirstType, TetraminoType aSecondType);
 };
 
