@@ -25,6 +25,7 @@ enum EventType
 	kGoToInitualSceneEvent,
 	kGoToSceneEvent,
 	kGoToPreviousSceneEvent,
+	kGoToNextLevelSceneEvent,
 	kGoToPopUp,
 	kClosePopUp,
 	kPlayerActionInGameEvent,

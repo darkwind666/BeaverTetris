@@ -33,6 +33,7 @@ void WinGameSystem::updateSystem(float deltaTime)
 
 		string winLevelName = _currentLevelWinResultDataSource->getCurrentLevelName;
 		_currentPlayerDataSource->completeLevel(winLevelName);
+		_currentLevelWinResultDataSource->setCurrentGameWinResult(true);
 
 		if (_currentLevelWinResultDataSource->winAllGameResult)
 		{
@@ -48,6 +49,7 @@ void WinGameSystem::updateSystem(float deltaTime)
 	{
 		if (loseGameChecker)
 		{
+			_currentLevelWinResultDataSource->setCurrentGameWinResult(false);
 			eventDispatcher->handleEvent(GameEventsFactory::makeGoToPopUpEventWithKey(kLoseGameUp));
 		}
 	}

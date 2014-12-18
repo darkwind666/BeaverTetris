@@ -357,9 +357,6 @@
     <ClCompile Include="RecordsDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
-    <ClCompile Include="StartGameMenuDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminosCharacteristicsDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
@@ -380,6 +377,12 @@
     </ClCompile>
     <ClCompile Include="RemovingDeadTetraminosSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGameViewDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameKeyWithSuffixSupporter.cpp">
+      <Filter>SupportedFiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -692,9 +695,6 @@
     <ClInclude Include="RecordsDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
-    <ClInclude Include="StartGameMenuDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
     <ClInclude Include="TetraminosCharacteristicsDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
@@ -715,6 +715,15 @@
     </ClInclude>
     <ClInclude Include="RemovingDeadTetraminosSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGameViewDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="GameKeyWithSuffixSupporter.h">
+      <Filter>SupportedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="GameViewSuffixes.h">
+      <Filter>Constants</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

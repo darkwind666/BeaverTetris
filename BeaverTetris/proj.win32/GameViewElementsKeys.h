@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 
 using namespace std;
@@ -29,4 +31,7 @@ const string playerControl5Key = string("playerControl5Key");
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");
 
-const string tetraminoForWinConditionIconSuffixKey = string("WinConditionIcon");
+const string gameResultKey = string("GameResult");
+const string loseGameKey = string("LoseGameImage");
+const string winGameKey = string("WinGameImage");
+const string gameAwardKey = string("GameAward");

@@ -10,9 +10,12 @@ public:
 
 	bool winGameResult();
 	bool winAllGameResult();
+	bool winCurrentGame(void);
 
 	std::string getCurrentLevelName();
 	int getCurrentLevelAward();
+
+	void setCurrentGameWinResult(bool winResult);
 
 };
 

@@ -178,6 +178,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameGraphicsDataSource.cpp" />
     <ClCompile Include="GameHelper.cpp" />
     <ClCompile Include="GameInitiator.cpp" />
+    <ClCompile Include="GameKeyWithSuffixSupporter.cpp" />
     <ClCompile Include="GameLevelsDataSource.cpp" />
     <ClCompile Include="GameLevelsMenuDataSource.cpp" />
     <ClCompile Include="GameTimeStepController.cpp" />
@@ -215,7 +216,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="SpellsFactory.cpp" />
     <ClCompile Include="SpellsViewDataSource.cpp" />
     <ClCompile Include="StartGameMenuController.cpp" />
-    <ClCompile Include="StartGameMenuDataSource.cpp" />
+    <ClCompile Include="StartGameViewDataSource.cpp" />
     <ClCompile Include="MainGameSceneFactory.cpp" />
     <ClCompile Include="PlayerSelectionDataSource.cpp" />
     <ClCompile Include="RecordsDataSource.cpp" />
@@ -286,6 +287,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameGraphicsDataSource.h" />
     <ClInclude Include="GameHelper.h" />
     <ClInclude Include="GameInitiator.h" />
+    <ClInclude Include="GameKeyWithSuffixSupporter.h" />
     <ClInclude Include="GameLevelsDataSource.h" />
     <ClInclude Include="GameLevelsMenuDataSource.h" />
     <ClInclude Include="GameTimeStepController.h" />
@@ -296,6 +298,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameSoundDataSource.h" />
     <ClInclude Include="GameSystemInterface.h" />
     <ClInclude Include="GameTransitionsController.h" />
+    <ClInclude Include="GameViewSuffixes.h" />
     <ClInclude Include="KeysForEnumsDataSource.h" />
     <ClInclude Include="PlaceSomeDetailsCondition.h" />
     <ClInclude Include="RemainSomeTimeCondition.h" />
@@ -327,7 +330,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="SpellsFactory.h" />
     <ClInclude Include="SpellsViewDataSource.h" />
     <ClInclude Include="StartGameMenuController.h" />
-    <ClInclude Include="StartGameMenuDataSource.h" />
+    <ClInclude Include="StartGameViewDataSource.h" />
     <ClInclude Include="MainGameSceneFactory.h" />
     <ClInclude Include="PlayerSelectionDataSource.h" />
     <ClInclude Include="RecordsDataSource.h" />

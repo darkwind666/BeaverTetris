@@ -1,13 +1,17 @@
 #pragma once
 
 #include <string>
+#include <vector>
 #include "cocos2d.h"
 #include "GameStructures.h"
+#include "CurrentLevelWinResultDataSource.h"
+#include "CurrentLevelDataSource.h"
+#include "GameViewElementsDataSource.h"
 
 class EndGameViewDataSource
 {
 public:
-	EndGameViewDataSource(void);
+	EndGameViewDataSource(CurrentLevelWinResultDataSource *aCurrentLevelWinResultDataSource, CurrentLevelDataSource *aCurrentLevelDataSource);
 	~EndGameViewDataSource(void);
 
 	int getMenuItemCount(void);
@@ -16,10 +20,21 @@ public:
 
 	std::string getGameResultImage(void);
 	cocos2d::Vec2  getGameResultImagePosition(void);
+	int getGameAward(void);
+	cocos2d::Vec2  getGameAvardLabelPosition(void);
 
 	bool getGameResult(void);
 
-	void setGameResult(bool winGame);
+	void refreshDataSource();
+
+private:
+
+	CurrentLevelWinResultDataSource *_currentLevelWinResultDataSource;
+	CurrentLevelDataSource *_currentLevelDataSource;
+	GameViewElementsDataSource *_gameViewElementsDataSource;
+	std::vector <MenuItemInformation> _menuItems;
+	
+	vector <MenuItemInformation> makeMenuItems();
 
 };
 

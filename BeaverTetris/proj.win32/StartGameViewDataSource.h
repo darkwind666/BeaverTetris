@@ -7,11 +7,11 @@
 #include "GameStructures.h"
 #include "CurrentPlayerDataSource.h"
 
-class StartGameMenuDataSource :public ServiceInterface
+class StartGameViewDataSource :public ServiceInterface
 {
 public:
-	StartGameMenuDataSource(CurrentPlayerDataSource *aCurrentPlayerDataSource);
-	~StartGameMenuDataSource();
+	StartGameViewDataSource(CurrentPlayerDataSource *aCurrentPlayerDataSource);
+	~StartGameViewDataSource();
 
 	int getMenuItemsCount();
 	std::string getMenuItemUnselectedImageForIndex(int aIndex);
@@ -28,9 +28,6 @@ private:
 	std::vector <MenuItemInformation> _menuItems;
 
 	vector <MenuItemInformation> makeMenuItems();
-	std::string makeSelectedImageForKey(std::string aKey);
-	std::string makeUnselectedImageForKey(std::string aKey);
-	void passImagesToMenuItemInformationWithKey(MenuItemInformation &aMenuItemInformation, string aKey);
 
 };
 
