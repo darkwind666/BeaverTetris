@@ -10,6 +10,10 @@ ScoreSystem::ScoreSystem(AwardForTetraminoDataSource *aAwardForTetraminoDataSour
 	_currentPlayerDataSource = aCurrentPlayerDataSource;
 	_detailsFromBoardDataSource = new DetailsFromBoardDataSource(aGameBoard);
 	_tetraminosCombinatorDelegate = new TetraminosCombinatorDelegate(aGameBoard);
+
+
+	_fullLineCombination = new FullLineCombination(aGameBoard,aCurrentPlayerDataSource);
+
 }
 
 
@@ -20,37 +24,9 @@ ScoreSystem::~ScoreSystem(void)
 void ScoreSystem::updateSystem(float deltaTime)
 {
 
-	checkFilledLines();
+	_fullLineCombination->checkFullLineCombination;
 	checkTetraminoChains();
 
-}
-
-void ScoreSystem::checkFilledLines()
-{
-	for (int yIndex = 0; yIndex < _gameBoard->getGameBoardHeight; yIndex++)
-	{
-	
-		if (fullLineCheck(yIndex))
-		{
-	
-			int playerAwardForLine;
-	
-			for (int xIndex = 0; xIndex < _gameBoard->getGameBoardWidth; xIndex++)
-			{
-				Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,yIndex);
-				tetraminoInBoard->reduceLive();
-				int award = getAwardForTetramino(tetraminoInBoard);
-				playerAwardForLine += award;
-	
-			}
-	
-			playerAwardForLine += playerPrizeForLine;
-			int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
-			_currentPlayerDataSource->setPlayerScore(currentPlayerScore + playerAwardForLine);
-	
-		}
-	
-	}
 }
 
 void ScoreSystem::checkTetraminoChains()

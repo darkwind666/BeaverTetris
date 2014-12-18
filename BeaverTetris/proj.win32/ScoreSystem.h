@@ -8,6 +8,8 @@
 #include "DetailsFromBoardDataSource.h"
 #include "TetraminosCombinatorDelegate.h"
 
+#include "FullLineCombination.h"
+
 class ScoreSystem :public GameSystemInterface
 {
 public:
@@ -17,6 +19,10 @@ public:
 	void updateSystem(float deltaTime);
 
 private:
+
+
+	FullLineCombination *_fullLineCombination;
+
 
 	AwardForTetraminoDataSource *_awardForTetraminoDataSource;
 	GameBoard *_gameBoard;

@@ -73,6 +73,9 @@
     <Filter Include="Controllers\ViewControllers">
       <UniqueIdentifier>{548331d5-1833-4e4d-9269-981f7ce4ef07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Models\GameLogic\TetraminosCombinations">
+      <UniqueIdentifier>{755be405-5d25-4912-9675-2d1a480fab85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -395,6 +398,12 @@
     </ClCompile>
     <ClCompile Include="CurrentLevelDataSourceObserver.cpp">
       <Filter>Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="FullLineCombination.cpp">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClCompile>
+    <ClCompile Include="SimilarTetraminosCombination.cpp">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -745,6 +754,12 @@
     </ClInclude>
     <ClInclude Include="CurrentLevelDataSourceObserver.h">
       <Filter>Observers</Filter>
+    </ClInclude>
+    <ClInclude Include="FullLineCombination.h">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClInclude>
+    <ClInclude Include="SimilarTetraminosCombination.h">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
