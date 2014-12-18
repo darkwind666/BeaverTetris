@@ -3,12 +3,13 @@
 #include <string>
 #include "GameBoard.h"
 #include "cocos2d.h"
+#include "KeysForEnumsDataSource.h"
 
 class GameBoardViewDataSource
 {
 public:
 
-	GameBoardViewDataSource(GameBoard *aGameBoard);
+	GameBoardViewDataSource(GameBoard *aGameBoard, KeysForEnumsDataSource *aKeysForEnumsDataSource);
 	~GameBoardViewDataSource(void);
 
 	int getTetraminosCount();
@@ -18,7 +19,10 @@ public:
 private:
 
 	GameBoard *_gameBoard;
+	KeysForEnumsDataSource *_keysForEnumsDataSource;
 
+	int getColumnForIndex(int aIndex);
+	int getRowForIndex(int aIndex);
 
 };
 
