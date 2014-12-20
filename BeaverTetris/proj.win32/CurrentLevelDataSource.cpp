@@ -12,6 +12,12 @@ CurrentLevelDataSource::~CurrentLevelDataSource(void)
 {
 }
 
+GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
+{
+	GameLevelInformation gameLevelInformation;
+	return gameLevelInformation;
+}
+
 void CurrentLevelDataSource::playerChangeSelectedLevel(int aCurrentSelectedLevel)
 {
 	

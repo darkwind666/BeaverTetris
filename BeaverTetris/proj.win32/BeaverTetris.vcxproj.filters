@@ -117,9 +117,6 @@
     <ClCompile Include="GamePopUpsController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
-    <ClCompile Include="CurrentDetailController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="ActiveDetails.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
@@ -407,6 +404,9 @@
     </ClCompile>
     <ClCompile Include="TetraminosPositionsDelegate.cpp">
       <Filter>Models\GameLogic\GameBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentDetailController.cpp">
+      <Filter>Controllers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

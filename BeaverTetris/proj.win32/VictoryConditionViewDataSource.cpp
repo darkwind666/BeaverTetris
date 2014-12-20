@@ -50,6 +50,5 @@ Vec2 VictoryConditionViewDataSource::getVictoryConditionInformationPositionForIn
 
 void VictoryConditionViewDataSource::refreshDataSource()
 {
-	int currentLevelIndex = _playerSelectionDataSource->getSelectedGameLevel();
-	_currentVictoryCondition = _gameVictoryFactory->makeVictoryConditionForLevelIndex(currentLevelIndex);
+	_currentVictoryCondition = _gameVictoryFactory->makeCurrentVictoryCondition();
 }

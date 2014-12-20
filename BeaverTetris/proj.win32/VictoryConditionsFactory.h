@@ -11,7 +11,7 @@ public:
 	VictoryConditionsFactory(CurrentLevelDataSource *aCurrentLevelDataSource);
 	~VictoryConditionsFactory(void);
 
-	VictoryConditionInterface* makeVictoryConditionForLevelIndex(int aIndex);
+	VictoryConditionInterface* makeCurrentVictoryCondition();
 
 private:
 

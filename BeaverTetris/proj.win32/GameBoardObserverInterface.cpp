@@ -9,3 +9,4 @@ GameBoardObserverInterface::GameBoardObserverInterface(void)
 GameBoardObserverInterface::~GameBoardObserverInterface(void)
 {
 }
+

@@ -38,6 +38,10 @@ int CurrentPlayerDataSource::getPlayerCompletedLevelsCount()
 }
 
 
+int CurrentPlayerDataSource::getPlayerAvailableSpellsCount()
+{
+	return 42;
+}
 
 
 void CurrentPlayerDataSource::setNewPlayerWithName(string aNewPlayerName)

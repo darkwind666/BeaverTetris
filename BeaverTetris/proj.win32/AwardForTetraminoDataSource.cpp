@@ -9,3 +9,8 @@ AwardForTetraminoDataSource::AwardForTetraminoDataSource(TetraminosCharacteristi
 AwardForTetraminoDataSource::~AwardForTetraminoDataSource(void)
 {
 }
+
+int AwardForTetraminoDataSource::getAwardForTetraminoType(TetraminoType aTetraminoType)
+{
+	return 42;
+}
