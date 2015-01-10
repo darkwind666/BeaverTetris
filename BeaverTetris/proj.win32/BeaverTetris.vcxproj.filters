@@ -408,6 +408,9 @@
     <ClCompile Include="CurrentDetailController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CocosViewConfigurator.cpp">
+      <Filter>CocosStartClasses</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -766,6 +769,9 @@
     </ClInclude>
     <ClInclude Include="TetraminosPositionsDelegate.h">
       <Filter>Models\GameLogic\GameBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CocosViewConfigurator.h">
+      <Filter>CocosStartClasses</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

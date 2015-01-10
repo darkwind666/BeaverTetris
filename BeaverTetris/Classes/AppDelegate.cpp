@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
+#include "CocosViewConfigurator.h"
 
 USING_NS_CC;
 
@@ -28,7 +29,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
         glview = GLViewImpl::create("My Game");
-		glview->setFrameSize(320, 568);
+		CocosViewConfigurator *cocosViewConfigurator = new CocosViewConfigurator();
+		cocosViewConfigurator->configurateView(glview);
+		delete cocosViewConfigurator;
         director->setOpenGLView(glview);
     }
     // turn on display FPS
