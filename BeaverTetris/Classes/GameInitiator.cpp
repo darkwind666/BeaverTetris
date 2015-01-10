@@ -6,8 +6,8 @@
 #include "ScenesFactory.h"
 #include "ScenesTransitionsFactory.h"
 #include "GameTransitionsViewController.h"
-#include "proj.win32\GameServicesKeys.h"
-#include "proj.win32\ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "ServiceLocator.h"
 
 GameInitiator::GameInitiator() 
 {
