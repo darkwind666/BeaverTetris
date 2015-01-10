@@ -1,10 +1,11 @@
 #pragma once
 
 #include "ServiceInterface.h"
-#include <map>
 #include <string>
 #include "cocos2d.h"
 #include "GameStructures.h"
+
+class GameViewInformationFactory;
 
 class GameViewElementsDataSource :public ServiceInterface
 {
@@ -16,10 +17,8 @@ public:
 	std::string getElementImageForKey(std::string aKey);
 	int getElementZOrderForKey(std::string aKey);
 
-	void setViewStructureForKey(ViewElementInformation aElementInformation, std::string aKey);
-
 private:
 
-	std::map <std::string , ViewElementInformation> _elementsInformation;
+	GameViewInformationFactory *_gameViewInformationFactory;
 
 };

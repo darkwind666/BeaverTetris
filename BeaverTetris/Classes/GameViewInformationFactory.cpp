@@ -18,25 +18,19 @@ GameViewInformationFactory::~GameViewInformationFactory(void)
 	_elementsInformation.clear();
 }
 
-void GameViewInformationFactory::setGameElementsInformationInDataSource(GameViewElementsDataSource *aDataSource) 
+ViewElementInformation GameViewInformationFactory::getViewInformationForKey(string aKey)
 {
-	map <string , ViewElementInformation>::iterator informationIterator ;
-	for (informationIterator = _elementsInformation.begin(); informationIterator != _elementsInformation.end(); informationIterator++)
-	{
-		aDataSource->setViewStructureForKey( (*informationIterator).second , (*informationIterator).first );
-	}
+	return _elementsInformation[aKey];
 }
 
 map <string , ViewElementInformation> GameViewInformationFactory::makeViewData() 
 {
 	
+	std::map <std::string , ViewElementInformation> viewElementsInformation;
+
 	ViewElementInformation viewElement1;
-	viewElement1.elementImage =  GameFileExtensionMaker::getGraphicWithExtension(gameElement1Key);
 	viewElement1.elementPosition = Vec2(10, 10);
 	viewElement1.elementZOrder = 3;
-
-
-	std::map <std::string , ViewElementInformation> viewElementsInformation;
 	viewElementsInformation[gameElement1Key] = viewElement1;
 
 	return viewElementsInformation;

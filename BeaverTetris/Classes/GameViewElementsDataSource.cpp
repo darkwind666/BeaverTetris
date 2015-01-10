@@ -1,39 +1,38 @@
 #include "GameViewElementsDataSource.h"
+#include "GameViewInformationFactory.h"
+#include "GameViewConstants.h"
+#include "GameFileExtensionMaker.h"
+
+using namespace cocos2d;
 
 GameViewElementsDataSource::GameViewElementsDataSource(void)
 {
-	 _elementsInformation = std::map < std::string,ViewElementInformation>();
+	 _gameViewInformationFactory = new GameViewInformationFactory();
 }
 
 
 GameViewElementsDataSource::~GameViewElementsDataSource(void)
 {
-	_elementsInformation.clear();
 }
 
 
-cocos2d::Vec2 GameViewElementsDataSource::getElementPositionForKey(std::string aKey) 
+Vec2 GameViewElementsDataSource::getElementPositionForKey(std::string aKey) 
 {
-	ViewElementInformation elementsInformation = _elementsInformation[aKey];
-	return elementsInformation.elementPosition;
+	ViewElementInformation elementsInformation = _gameViewInformationFactory->getViewInformationForKey(aKey);
+	Vec2 positionInDesignResolution = elementsInformation.elementPosition;
+	Vec2 relativeElementPosition = Vec2(designResolutionWidth / positionInDesignResolution.x, designResolutionHeight / positionInDesignResolution.y);
+	Size currentScreenSize = CCDirector::getInstance()->getWinSize();
+	Vec2 absoluteElementPosition = Vec2(currentScreenSize.width * relativeElementPosition.x, currentScreenSize.height * relativeElementPosition.y);
+	return absoluteElementPosition;
 }
 
 std::string GameViewElementsDataSource::getElementImageForKey(std::string aKey)
 {
-	ViewElementInformation elementsInformation = _elementsInformation[aKey];
-	return elementsInformation.elementImage;
+	return GameFileExtensionMaker::getGraphicWithExtension(aKey);
 }
 
 int GameViewElementsDataSource::getElementZOrderForKey(std::string aKey)
 {
-	ViewElementInformation elementsInformation = _elementsInformation[aKey];
+	ViewElementInformation elementsInformation = _gameViewInformationFactory->getViewInformationForKey(aKey);
 	return elementsInformation.elementZOrder;
-}
-
-
-void GameViewElementsDataSource::setViewStructureForKey(ViewElementInformation aElementInformation, std::string aKey)
-{
-
-	_elementsInformation[aKey] = aElementInformation;
-
 }

@@ -22,15 +22,18 @@ GameInitiator::~GameInitiator()
 void GameInitiator::setInitialState()
 {
 	GameViewElementsDataSource *gameViewElementsDataSource = new GameViewElementsDataSource();
-	GameGraphicsLoader *gameGraphicsLoader = getGameGraphicsLoader();
-	GameTransitionsViewController *gameTransitionsViewController = getGameTransitionsViewController();
-	
+
 	ServiceLocator::setServiceForKey(gameViewElementsDataSource,gameViewElementsDataSourceKey);
+
+	/*
+	GameTransitionsViewController *gameTransitionsViewController = getGameTransitionsViewController();
+	GameGraphicsLoader *gameGraphicsLoader = getGameGraphicsLoader();
 	ServiceLocator::setServiceForKey(gameGraphicsLoader,gameGraphicsLoaderKey);
 	ServiceLocator::setServiceForKey(gameTransitionsViewController,gameTransitionsViewControllerKey);
 
 	gameGraphicsLoader->setInitialGraphic();
 	gameTransitionsViewController->goToInitialState();
+	*/
 }
 
 GameGraphicsLoader* GameInitiator::getGameGraphicsLoader()

@@ -4,8 +4,8 @@
 #include <vector>
 #include <map>
 #include "cocos2d.h"
-#include "GameEnums.h"
-#include "GameDesignConstants.h"
+#include "proj.win32\GameEnums.h"
+#include "proj.win32\GameDesignConstants.h"
 
 
 struct ViewElementInformation

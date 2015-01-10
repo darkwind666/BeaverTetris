@@ -90,9 +90,6 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>CocosStartClasses</Filter>
     </ClCompile>
-    <ClCompile Include="ServiceLocator.cpp">
-      <Filter>Singletons</Filter>
-    </ClCompile>
     <ClCompile Include="SceneGraphFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
@@ -164,15 +161,6 @@
     </ClCompile>
     <ClCompile Include="StartGameSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
-    </ClCompile>
-    <ClCompile Include="GameViewInformationFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="ServiceInterface.cpp">
-      <Filter>Singletons</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFileExtensionMaker.cpp">
-      <Filter>SupportedFiles</Filter>
     </ClCompile>
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <Filter>Factories</Filter>
@@ -405,9 +393,6 @@
     <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameGraphicsDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\ScenesFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
@@ -420,6 +405,21 @@
     <ClCompile Include="..\Classes\GameGraphicsLoader.cpp">
       <Filter>Controllers\Loaders</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ServiceLocator.cpp">
+      <Filter>Singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ServiceInterface.cpp">
+      <Filter>Singletons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameViewInformationFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameFileExtensionMaker.cpp">
+      <Filter>SupportedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameGraphicsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -430,9 +430,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>CocosStartClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="ServiceLocator.h">
-      <Filter>Singletons</Filter>
     </ClInclude>
     <ClInclude Include="SceneGraphFactory.h">
       <Filter>Factories</Filter>
@@ -450,9 +447,6 @@
       <Filter>Factories</Filter>
     </ClInclude>
     <ClInclude Include="GameEnums.h">
-      <Filter>Constants</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStructures.h">
       <Filter>Constants</Filter>
     </ClInclude>
     <ClInclude Include="GameDataFactory.h">
@@ -521,21 +515,6 @@
     <ClInclude Include="GameResourcesExtension.h">
       <Filter>Constants</Filter>
     </ClInclude>
-    <ClInclude Include="GameViewInformationFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="GameViewElementsKeys.h">
-      <Filter>Constants</Filter>
-    </ClInclude>
-    <ClInclude Include="GameServicesKeys.h">
-      <Filter>Constants</Filter>
-    </ClInclude>
-    <ClInclude Include="ServiceInterface.h">
-      <Filter>Singletons</Filter>
-    </ClInclude>
-    <ClInclude Include="GameFileExtensionMaker.h">
-      <Filter>SupportedFiles</Filter>
-    </ClInclude>
     <ClInclude Include="TetraminisDetailsFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
@@ -565,9 +544,6 @@
     </ClInclude>
     <ClInclude Include="SpellsViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="GameViewConstants.h">
-      <Filter>Constants</Filter>
     </ClInclude>
     <ClInclude Include="StringsSupporter.h">
       <Filter>SupportedFiles</Filter>
@@ -773,9 +749,6 @@
     <ClInclude Include="..\Classes\GameViewElementsDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameGraphicsDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\ScenesFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
@@ -787,6 +760,33 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameGraphicsLoader.h">
       <Filter>Controllers\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameServicesKeys.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ServiceLocator.h">
+      <Filter>Singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameStructures.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ServiceInterface.h">
+      <Filter>Singletons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameViewInformationFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameViewConstants.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameFileExtensionMaker.h">
+      <Filter>SupportedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameViewElementsKeys.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameGraphicsDataSource.h">
+      <Filter>Models\DataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,9 @@
 #pragma once
 
 #include <string>
+#include "ServiceInterface.h"
 
-class GameGraphicsDataSource
+class GameGraphicsDataSource :public ServiceInterface
 {
 public:
 	GameGraphicsDataSource(void);

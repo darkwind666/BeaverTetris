@@ -1,10 +1,10 @@
 #pragma once
 
-#include "EventHandlerInterface.h"
+#include "proj.win32\EventHandlerInterface.h"
 #include "ServiceInterface.h"
 #include <vector>
 #include <map>
-#include "GameEnums.h"
+#include "proj.win32\GameEnums.h"
 #include "GameStructures.h"
 
 class ScenesTransitionsFactory;

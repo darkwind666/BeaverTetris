@@ -1,6 +1,6 @@
 #pragma once
 
-#include "proj.win32\ServiceInterface.h"
+#include "ServiceInterface.h"
 
 class GameGraphicsDataSource;
 

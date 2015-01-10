@@ -140,16 +140,22 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
+    <ClCompile Include="..\Classes\GameFileExtensionMaker.cpp" />
     <ClCompile Include="..\Classes\GameGraphicsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameGraphicsLoader.cpp" />
-    <ClCompile Include="..\Classes\GameInitiator.cpp" />
+    <ClCompile Include="..\Classes\GameInitiator.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\Classes\GameTransitionsViewController.cpp" />
     <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp" />
+    <ClCompile Include="..\Classes\GameViewInformationFactory.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\Classes\ScenesFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp" />
+    <ClCompile Include="..\Classes\ServiceInterface.cpp" />
+    <ClCompile Include="..\Classes\ServiceLocator.cpp" />
     <ClCompile Include="ActiveDetails.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -256,9 +262,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameEventsFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="GameFileExtensionMaker.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="GameFlowSystem.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -325,9 +328,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="VictoryConditionsFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="GameViewInformationFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="LoadGameController.cpp" />
     <ClCompile Include="LoadingGameDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -361,9 +361,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SelectGameLevelController.cpp" />
-    <ClCompile Include="ServiceInterface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="SpellBox.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -393,9 +390,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SelectGameLevelSceneFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="ServiceLocator.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="StartGameSceneFactory.cpp">
@@ -453,14 +447,22 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />
+    <ClInclude Include="..\Classes\GameFileExtensionMaker.h" />
     <ClInclude Include="..\Classes\GameGraphicsDataSource.h" />
     <ClInclude Include="..\Classes\GameGraphicsLoader.h" />
     <ClInclude Include="..\Classes\GameInitiator.h" />
+    <ClInclude Include="..\Classes\GameServicesKeys.h" />
+    <ClInclude Include="..\Classes\GameStructures.h" />
     <ClInclude Include="..\Classes\GameTransitionsViewController.h" />
+    <ClInclude Include="..\Classes\GameViewConstants.h" />
     <ClInclude Include="..\Classes\GameViewElementsDataSource.h" />
+    <ClInclude Include="..\Classes\GameViewElementsKeys.h" />
+    <ClInclude Include="..\Classes\GameViewInformationFactory.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\ScenesFactory.h" />
     <ClInclude Include="..\Classes\ScenesTransitionsFactory.h" />
+    <ClInclude Include="..\Classes\ServiceInterface.h" />
+    <ClInclude Include="..\Classes\ServiceLocator.h" />
     <ClInclude Include="ActiveDetails.h" />
     <ClInclude Include="AddLineToBoardBottomSpell.h" />
     <ClInclude Include="AIMovementStrategy.h" />
@@ -500,7 +502,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameEventInterface.h" />
     <ClInclude Include="CurrentGameEventsDataSource.h" />
     <ClInclude Include="GameEventsFactory.h" />
-    <ClInclude Include="GameFileExtensionMaker.h" />
     <ClInclude Include="GameFlowSystem.h" />
     <ClInclude Include="GameHelper.h" />
     <ClInclude Include="GameKeyWithSuffixSupporter.h" />
@@ -525,10 +526,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="TetraminoObserverInterface.h" />
     <ClInclude Include="TetraminosPositionsDelegate.h" />
     <ClInclude Include="VictoryConditionsFactory.h" />
-    <ClInclude Include="GameViewConstants.h" />
-    <ClInclude Include="GameViewInformationFactory.h" />
-    <ClInclude Include="GameViewElementsKeys.h" />
-    <ClInclude Include="GameServicesKeys.h" />
     <ClInclude Include="LoadGameController.h" />
     <ClInclude Include="LoadingGameDataSource.h" />
     <ClInclude Include="LoadingGameSceneFactory.h" />
@@ -542,7 +539,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RocketSpell.h" />
     <ClInclude Include="ScoreSystem.h" />
     <ClInclude Include="SelectGameLevelController.h" />
-    <ClInclude Include="ServiceInterface.h" />
     <ClInclude Include="SpellBox.h" />
     <ClInclude Include="SpellInterface.h" />
     <ClInclude Include="SpellsFactory.h" />
@@ -554,9 +550,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RecordsDataSource.h" />
     <ClInclude Include="SceneGraphFactory.h" />
     <ClInclude Include="SelectGameLevelSceneFactory.h" />
-    <ClInclude Include="ServiceLocator.h" />
     <ClInclude Include="StartGameSceneFactory.h" />
-    <ClInclude Include="GameStructures.h" />
     <ClInclude Include="StringsSupporter.h" />
     <ClInclude Include="TetraminisDetailsFactory.h" />
     <ClInclude Include="Tetramino.h" />

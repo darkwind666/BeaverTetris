@@ -9,14 +9,13 @@ public:
 	GameViewInformationFactory(void);
 	~GameViewInformationFactory(void);
 
-	void setGameElementsInformationInDataSource(GameViewElementsDataSource *aDataSource);
+	ViewElementInformation getViewInformationForKey(std::string aKey);
 
 private:
 
 	std::map <std::string , ViewElementInformation> _elementsInformation;
 
 	std::map <std::string , ViewElementInformation> makeViewData(void);
-	std::string GameViewInformationFactory::makeImageNameWithKey(const std::string gameElementKey);
 
 };
 

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-GameTransitionsViewController::GameTransitionsViewController(void)
+GameTransitionsViewController::GameTransitionsViewController(ScenesTransitionsFactory *aScenesTransitionsFactory, ScenesFactory *aScenesFactory)
 {
 	
 }
