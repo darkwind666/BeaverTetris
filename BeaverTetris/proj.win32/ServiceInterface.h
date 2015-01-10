@@ -3,6 +3,6 @@ class ServiceInterface
 {
 public:
 	ServiceInterface(void);
-	~ServiceInterface(void);
+	virtual ~ServiceInterface(void);
 };
 

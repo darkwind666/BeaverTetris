@@ -76,6 +76,9 @@
     <Filter Include="Models\GameLogic\TetraminosCombinations">
       <UniqueIdentifier>{755be405-5d25-4912-9675-2d1a480fab85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Controllers\Loaders">
+      <UniqueIdentifier>{0244c3e7-cd6c-4e29-b379-48725c5c306a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -87,16 +90,10 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>CocosStartClasses</Filter>
     </ClCompile>
-    <ClCompile Include="GameInitiator.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="ServiceLocator.cpp">
       <Filter>Singletons</Filter>
     </ClCompile>
     <ClCompile Include="SceneGraphFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="ScenesTransitionsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
     <ClCompile Include="EventDispatcher.cpp">
@@ -190,9 +187,6 @@
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
     <ClCompile Include="VictoryConditionViewDataSource.cpp">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameViewElementsDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
     <ClCompile Include="GameControllViewDataSource.cpp">
@@ -312,9 +306,6 @@
     <ClCompile Include="DevelopersDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
-    <ClCompile Include="GameGraphicsDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="GameLevelsDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
@@ -369,9 +360,6 @@
     <ClCompile Include="GameKeyWithSuffixSupporter.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
-    <ClCompile Include="GameTransitionsViewController.cpp">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClCompile>
     <ClCompile Include="LoadGameController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
@@ -411,6 +399,27 @@
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp">
       <Filter>CocosStartClasses</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameInitiator.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameGraphicsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ScenesFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameTransitionsViewController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameGraphicsLoader.cpp">
+      <Filter>Controllers\Loaders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -422,16 +431,10 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>CocosStartClasses</Filter>
     </ClInclude>
-    <ClInclude Include="GameInitiator.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
     <ClInclude Include="ServiceLocator.h">
       <Filter>Singletons</Filter>
     </ClInclude>
     <ClInclude Include="SceneGraphFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="ScenesTransitionsFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
     <ClInclude Include="EventDispatcher.h">
@@ -549,9 +552,6 @@
       <Filter>Models\GameLogic</Filter>
     </ClInclude>
     <ClInclude Include="VictoryConditionViewDataSource.h">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="GameViewElementsDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="GameControllViewDataSource.h">
@@ -674,9 +674,6 @@
     <ClInclude Include="DevelopersDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
-    <ClInclude Include="GameGraphicsDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
     <ClInclude Include="GameLevelsDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
@@ -734,9 +731,6 @@
     <ClInclude Include="GameViewSuffixes.h">
       <Filter>Constants</Filter>
     </ClInclude>
-    <ClInclude Include="GameTransitionsViewController.h">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClInclude>
     <ClInclude Include="LoadGameController.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
@@ -772,6 +766,27 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CocosViewConfigurator.h">
       <Filter>CocosStartClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameInitiator.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameViewElementsDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameGraphicsDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ScenesFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ScenesTransitionsFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameTransitionsViewController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameGraphicsLoader.h">
+      <Filter>Controllers\Loaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

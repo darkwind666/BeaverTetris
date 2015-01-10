@@ -7,10 +7,13 @@
 #include "GameEnums.h"
 #include "GameStructures.h"
 
-class GameTransitionsViewController 
+class ScenesTransitionsFactory;
+class ScenesFactory;
+
+class GameTransitionsViewController : public  ServiceInterface
 {
 public:
-	GameTransitionsViewController(void);
+	GameTransitionsViewController(ScenesTransitionsFactory *aScenesTransitionsFactory, ScenesFactory *aScenesFactory);
 	~GameTransitionsViewController(void);
 
 	void addSceneFactory();

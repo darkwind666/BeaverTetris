@@ -5,6 +5,8 @@
 using namespace std;
 
 const string gameViewElementsDataSourceKey = string("GameViewElementsDataSource");
+const string gameGraphicsLoaderKey = string("GameGraphicsLoader");
+const string gameTransitionsViewControllerKey = string("GameTransitionsViewController");
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");
 const string currentPlayerDataSourceKey = string("CurrentPlayerDataSource");

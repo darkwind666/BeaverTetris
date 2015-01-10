@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 #include "CocosViewConfigurator.h"
+#include "GameInitiator.h"
 
 USING_NS_CC;
 
@@ -34,11 +35,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		delete cocosViewConfigurator;
         director->setOpenGLView(glview);
     }
+
     // turn on display FPS
     director->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
+
+	GameInitiator *gameInitiator = new GameInitiator();
+	gameInitiator->setInitialState();
+	delete gameInitiator;
 
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();
