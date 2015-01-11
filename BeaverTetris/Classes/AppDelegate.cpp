@@ -46,11 +46,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	gameInitiator->setInitialState();
 	delete gameInitiator;
 
-    // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
-
-    // run
-    director->runWithScene(scene);
+   /* auto scene = HelloWorld::createScene();
+    director->runWithScene(scene);*/
 
     return true;
 }

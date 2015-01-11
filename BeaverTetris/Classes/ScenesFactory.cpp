@@ -1,6 +1,8 @@
 #include "ScenesFactory.h"
 #include "SceneFactory.h"
 
+#include "LoadingGameSceneFactory.h"
+
 using namespace std;
 using namespace cocos2d;
 
@@ -23,6 +25,9 @@ CCScene* ScenesFactory::getGameSceneForId(GameState aSceneId)
 std::map<GameState, SceneFactory*> ScenesFactory::getScenesFactories()
 {
 	map<GameState, SceneFactory*> scenesFactories;
+
+	scenesFactories[kLoadGame] = new LoadingGameSceneFactory();
+
 	return scenesFactories;
 }
 

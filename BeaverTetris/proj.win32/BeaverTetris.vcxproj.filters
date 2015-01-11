@@ -150,9 +150,6 @@
     <ClCompile Include="GameRecordsSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
-    <ClCompile Include="LoadingGameSceneFactory.cpp">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClCompile>
     <ClCompile Include="MainGameSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
@@ -423,6 +420,9 @@
     <ClCompile Include="..\Classes\SceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -498,9 +498,6 @@
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="GameRecordsSceneFactory.h">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadingGameSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="MainGameSceneFactory.h">
@@ -792,6 +789,9 @@
       <Filter>Constants</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\SceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LoadingGameSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
   </ItemGroup>
