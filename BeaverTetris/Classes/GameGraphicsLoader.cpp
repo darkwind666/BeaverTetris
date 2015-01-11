@@ -36,7 +36,7 @@ void GameGraphicsLoader::loadGraphicForIndex(int aIndex)
 
 void GameGraphicsLoader::setGraphicWithFrameAndFile(string frame, string file)
 {
-	TextureCache *textureCache = TextureCache::getInstance();
+	TextureCache *textureCache = CCDirector::getInstance()->getTextureCache();
 	textureCache->addImage(file);
 	
 	SpriteFrameCache *spriteFrameCache = SpriteFrameCache::getInstance();

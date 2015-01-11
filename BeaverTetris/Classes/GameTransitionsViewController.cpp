@@ -1,42 +1,41 @@
 #include "GameTransitionsViewController.h"
+#include "ScenesFactory.h"
+#include "GameViewConstants.h"
 
 using namespace std;
+using namespace cocos2d;
 
-GameTransitionsViewController::GameTransitionsViewController(ScenesTransitionsFactory *aScenesTransitionsFactory, ScenesFactory *aScenesFactory)
+GameTransitionsViewController::GameTransitionsViewController()
 {
-	
+	_scenesFactory = new ScenesFactory();
 }
 
 GameTransitionsViewController::~GameTransitionsViewController(void)
 {
 }
 
-
-void GameTransitionsViewController::addSceneFactory()
-{
-	
-}
-
-
-void GameTransitionsViewController::addTransitionFromStateToState(GameState stateOne, GameState stateTwo, TransitionType transitionType) 
-{
-
-}
-
-
-
-
 void GameTransitionsViewController::goToInitialState(void)
 {
-
+	CCScene *sceneWithTransition = getSceneWithTransitionForId(kLoadGame);
+	CCDirector *director = CCDirector::getInstance();
+	director->runWithScene(sceneWithTransition);
 }
 
-void GameTransitionsViewController::changeState(void)
+void GameTransitionsViewController::changeOnNewState(GameState aNewGameState)
 {
-
+	CCScene *sceneWithTransition = getSceneWithTransitionForId(aNewGameState);
+	CCDirector *director = CCDirector::getInstance();
+	director->replaceScene(sceneWithTransition);
 }
 
-void GameTransitionsViewController::goToPreviousState(void)
+CCScene* GameTransitionsViewController::getSceneWithTransitionForId(GameState aSceneId)
 {
+	CCScene *startScene = _scenesFactory->getGameSceneForId(aSceneId);
+	CCScene *sceneWithTransition = getSceneWithStandartTransition(startScene);
+	return sceneWithTransition;
+}
 
+CCScene* GameTransitionsViewController::getSceneWithStandartTransition(CCScene* aScene)
+{
+	return CCTransitionFadeUp::create(standartTransitionDuration, aScene);
 }

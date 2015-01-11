@@ -316,6 +316,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="RemovingDeadTetraminosSystem.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="SceneFactory.cpp" />
     <ClCompile Include="SimilarTetraminosCombination.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -447,6 +448,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />
+    <ClInclude Include="..\Classes\GameEnums.h" />
     <ClInclude Include="..\Classes\GameFileExtensionMaker.h" />
     <ClInclude Include="..\Classes\GameGraphicsDataSource.h" />
     <ClInclude Include="..\Classes\GameGraphicsLoader.h" />
@@ -498,7 +500,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameControllViewDataSource.h" />
     <ClInclude Include="GameDataFactory.h" />
     <ClInclude Include="GameDesignConstants.h" />
-    <ClInclude Include="GameEnums.h" />
     <ClInclude Include="GameEventInterface.h" />
     <ClInclude Include="CurrentGameEventsDataSource.h" />
     <ClInclude Include="GameEventsFactory.h" />
@@ -522,6 +523,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RemainSomeTimeCondition.h" />
     <ClInclude Include="RemoveSomeTetraminosCondition.h" />
     <ClInclude Include="RemovingDeadTetraminosSystem.h" />
+    <ClInclude Include="SceneFactory.h" />
     <ClInclude Include="SimilarTetraminosCombination.h" />
     <ClInclude Include="TetraminoObserverInterface.h" />
     <ClInclude Include="TetraminosPositionsDelegate.h" />

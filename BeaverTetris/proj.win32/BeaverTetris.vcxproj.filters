@@ -420,6 +420,9 @@
     <ClCompile Include="..\Classes\GameGraphicsDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
+    <ClCompile Include="SceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -445,9 +448,6 @@
     </ClInclude>
     <ClInclude Include="TetrominosFactory.h">
       <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="GameEnums.h">
-      <Filter>Constants</Filter>
     </ClInclude>
     <ClInclude Include="GameDataFactory.h">
       <Filter>Factories</Filter>
@@ -787,6 +787,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameGraphicsDataSource.h">
       <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameEnums.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

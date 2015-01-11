@@ -20,7 +20,7 @@ string GameFileExtensionMaker::getGraphicWithExtension(string aGraphicKey)
 	return graphicFileWithExtension;
 }
 
-static std::string getGraphicFramesWithExtension(std::string aGraphicKey)
+string GameFileExtensionMaker::getGraphicFramesWithExtension(std::string aGraphicKey)
 {
 	string graphicFramesWithExtension = aGraphicKey + graphicFramesFileExtension;
 	return graphicFramesWithExtension;

@@ -13,7 +13,5 @@ public:
 
 private:
 
-	GameTransitionsViewController* getGameTransitionsViewController();
-
 };
 
