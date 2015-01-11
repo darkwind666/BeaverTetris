@@ -1,5 +1,6 @@
 #include "GameFileExtensionMaker.h"
 #include "proj.win32\GameResourcesExtension.h"
+#include <vector>
 
 using namespace std;
 
@@ -19,12 +20,31 @@ string GameFileExtensionMaker::getGraphicWithExtension(string aGraphicKey)
 	return graphicFileWithExtension;
 }
 
+static std::string getGraphicFramesWithExtension(std::string aGraphicKey)
+{
+	string graphicFramesWithExtension = aGraphicKey + graphicFramesFileExtension;
+	return graphicFramesWithExtension;
+}
+
 string* GameFileExtensionMaker::getGraphicsFilesWithExtension(string *aGraphicsKeys, int arraySize) 
 {
 	pointerToFunction pointer = &getGraphicWithExtension;
 	string *newStringArray = GameFileExtensionMaker::getFilesWithExtension(aGraphicsKeys,arraySize,pointer);
 	return newStringArray;
+}
 
+vector<string> GameFileExtensionMaker::getGraphicsFilesNamesWithExtension(vector<string> aSourceKeys)
+{
+	vector<string> graphicsFilesNamesWithExtension;
+
+	vector<string>::iterator sourceKeysIterator;
+	for (sourceKeysIterator = aSourceKeys.begin(); sourceKeysIterator != aSourceKeys.end(); sourceKeysIterator++)
+	{
+		string fileKey = *sourceKeysIterator;
+		string fileWithExtension = GameFileExtensionMaker::getGraphicWithExtension(fileKey);
+		graphicsFilesNamesWithExtension.push_back(fileWithExtension);
+	}
+	return graphicsFilesNamesWithExtension;
 }
 
 string GameFileExtensionMaker::getSoundWithExtension(std::string aSoundKey)

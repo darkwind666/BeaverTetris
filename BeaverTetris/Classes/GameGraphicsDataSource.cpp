@@ -6,15 +6,10 @@ using namespace std;
 const string startGraphicName = string("StartGraphics");
 const string gameStartMenuGraphicName = string("StartGraphics");
 
-
 GameGraphicsDataSource::GameGraphicsDataSource(void)
 {
-	_startGraphic = GameFileExtensionMaker::getGraphicWithExtension(startGraphicName);
-	 string graphicKeys[] = {startGraphicName,gameStartMenuGraphicName};
-	 _graphicElementsCount = sizeof(graphicKeys) / sizeof(graphicKeys[0]);
-	_graphics = GameFileExtensionMaker::getGraphicsFilesWithExtension(graphicKeys, _graphicElementsCount);
+	_graphicsKeys = getGraphicKeys();
 }
-
 
 GameGraphicsDataSource::~GameGraphicsDataSource(void)
 {
@@ -22,15 +17,35 @@ GameGraphicsDataSource::~GameGraphicsDataSource(void)
 
 string GameGraphicsDataSource::getInitialGraphic() 
 {
-	return _startGraphic;
+	return GameFileExtensionMaker::getGraphicWithExtension(startGraphicName);
+}
+
+string GameGraphicsDataSource::getInitialGraphicFrame()
+{
+	return GameFileExtensionMaker::getGraphicFramesWithExtension(startGraphicName);
 }
 
 int GameGraphicsDataSource::getGraphicCount() 
 {
-	return _graphicElementsCount;
+	return _graphicsKeys.size();
 }
 
-std::string GameGraphicsDataSource::getGraphicForIndex(int aIndex) 
+string GameGraphicsDataSource::getGraphicForIndex(int aIndex) 
 {
-	return _graphics[aIndex];
+	string graphicKey = _graphicsKeys[aIndex];
+	return GameFileExtensionMaker::getGraphicWithExtension(graphicKey);
+}
+
+string GameGraphicsDataSource::getGraphicFrameForIndex(int aIndex)
+{
+	string graphicKey = _graphicsKeys[aIndex];
+	return GameFileExtensionMaker::getGraphicFramesWithExtension(graphicKey);
+}
+
+std::vector<std::string> GameGraphicsDataSource::getGraphicKeys()
+{
+	vector<string> graphicsKeys;
+	graphicsKeys.push_back(startGraphicName);
+	graphicsKeys.push_back(gameStartMenuGraphicName);
+	return graphicsKeys;
 }

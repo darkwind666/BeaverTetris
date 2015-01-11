@@ -13,7 +13,6 @@ public:
 
 private:
 
-	GameGraphicsLoader* getGameGraphicsLoader();
 	GameTransitionsViewController* getGameTransitionsViewController();
 
 };

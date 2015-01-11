@@ -1,7 +1,6 @@
 #include "GameInitiator.h"
 
 #include "GameViewElementsDataSource.h"
-#include "GameGraphicsDataSource.h"
 #include "GameGraphicsLoader.h"
 #include "ScenesFactory.h"
 #include "ScenesTransitionsFactory.h"
@@ -22,25 +21,19 @@ GameInitiator::~GameInitiator()
 void GameInitiator::setInitialState()
 {
 	GameViewElementsDataSource *gameViewElementsDataSource = new GameViewElementsDataSource();
+	GameGraphicsLoader *gameGraphicsLoader =  new GameGraphicsLoader();
 
 	ServiceLocator::setServiceForKey(gameViewElementsDataSource,gameViewElementsDataSourceKey);
+	ServiceLocator::setServiceForKey(gameGraphicsLoader,gameGraphicsLoaderKey);
 
 	/*
 	GameTransitionsViewController *gameTransitionsViewController = getGameTransitionsViewController();
-	GameGraphicsLoader *gameGraphicsLoader = getGameGraphicsLoader();
-	ServiceLocator::setServiceForKey(gameGraphicsLoader,gameGraphicsLoaderKey);
+
 	ServiceLocator::setServiceForKey(gameTransitionsViewController,gameTransitionsViewControllerKey);
 
 	gameGraphicsLoader->setInitialGraphic();
 	gameTransitionsViewController->goToInitialState();
 	*/
-}
-
-GameGraphicsLoader* GameInitiator::getGameGraphicsLoader()
-{
-	GameGraphicsDataSource *gameGraphicsDataSource = new GameGraphicsDataSource();
-	GameGraphicsLoader *gameGraphicsLoader = new GameGraphicsLoader(gameGraphicsDataSource);
-	return gameGraphicsLoader;
 }
 
 GameTransitionsViewController* GameInitiator::getGameTransitionsViewController()

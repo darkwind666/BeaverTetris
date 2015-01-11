@@ -9,7 +9,9 @@ public:
 	~GameFileExtensionMaker(void);
 
 	static std::string getGraphicWithExtension(std::string aGraphicKey);
+	static std::string getGraphicFramesWithExtension(std::string aGraphicKey);
 	static std::string* getGraphicsFilesWithExtension(std::string *aGraphicKey, int arraySize);
+	static std::vector<std::string> getGraphicsFilesNamesWithExtension(std::vector<std::string> aSourceKeys);
 
 	static std::string getSoundWithExtension(std::string aSoundKey);
 	static std::string* getSoundFilesWithExtension(std::string *aSoundKey, int arraySize);
