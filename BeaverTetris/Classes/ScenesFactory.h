@@ -4,6 +4,8 @@
 #include "cocos2d.h"
 #include <map>
 
+class SceneFactory;
+
 class ScenesFactory
 {
 public:
@@ -14,7 +16,9 @@ public:
 
 private:
 
-	std::map<GameState, >
+	std::map<GameState, SceneFactory*> _scenesFactories;
+
+	std::map<GameState, SceneFactory*> getScenesFactories();
 
 };
 

@@ -420,7 +420,7 @@
     <ClCompile Include="..\Classes\GameGraphicsDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
-    <ClCompile Include="SceneFactory.cpp">
+    <ClCompile Include="..\Classes\SceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
   </ItemGroup>
@@ -791,7 +791,7 @@
     <ClInclude Include="..\Classes\GameEnums.h">
       <Filter>Constants</Filter>
     </ClInclude>
-    <ClInclude Include="SceneFactory.h">
+    <ClInclude Include="..\Classes\SceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
   </ItemGroup>
