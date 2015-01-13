@@ -22,13 +22,20 @@ CCScene* LoadingGameSceneFactory::createScene()
 	background->ignoreAnchorPointForPosition(false);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(background,loadingScene,loadingGameBackgroundKey);
 
-	CCSprite *beaver = CCSprite::create("HelloWorld.png");
-	beaver->setScale(0.3f);
+	CCNode *beaver = getBeaverWithClock();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(beaver,loadingScene,loadingGameBeaverKey);
-
-	LoadGameController *loadGameController = new LoadGameController();
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(loadGameController,loadingScene,loadingGameClockKey);
 
 	return loadingScene;
 
 }
+
+CCNode* LoadingGameSceneFactory::getBeaverWithClock()
+{
+	CCSprite *beaver = CCSprite::create("HelloWorld.png");
+	beaver->setScale(0.3f);
+	
+	LoadGameController *loadGameController = new LoadGameController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(loadGameController,beaver,loadingGameClockKey);
+	return beaver;
+}
+

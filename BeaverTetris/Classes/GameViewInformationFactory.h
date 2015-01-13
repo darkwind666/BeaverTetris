@@ -16,7 +16,15 @@ private:
 
 	std::map <std::string , ViewElementInformation> _elementsInformation;
 
-	std::map <std::string , ViewElementInformation> makeViewData(void);
+	void makeViewData();
+
+	void makeLoadingScreenData();
+	void makeStartGameSreenData();
+	void makeSelectGameLevelScreenData();
+	void makeMainGameScreenData();
+	void makeRecordsScreenData();
+	void makeDevelopersScreenData();
+
 	cocos2d::Vec2 getScreenCenter();
 
 };

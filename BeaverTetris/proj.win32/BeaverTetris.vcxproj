@@ -166,6 +166,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ServiceInterface.cpp" />
     <ClCompile Include="..\Classes\ServiceLocator.cpp" />
     <ClCompile Include="..\Classes\GameSoundLoader.cpp" />
+    <ClCompile Include="..\Classes\StartGameAnimationController.cpp" />
+    <ClCompile Include="..\Classes\StartGameBeaverController.cpp" />
+    <ClCompile Include="..\Classes\StartGameSceneFactory.cpp" />
     <ClCompile Include="ActiveDetails.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -392,9 +395,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="SelectGameLevelSceneFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="StartGameSceneFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="StringsSupporter.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -476,6 +476,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ServiceInterface.h" />
     <ClInclude Include="..\Classes\ServiceLocator.h" />
     <ClInclude Include="..\Classes\GameSoundLoader.h" />
+    <ClInclude Include="..\Classes\StartGameAnimationController.h" />
+    <ClInclude Include="..\Classes\StartGameBeaverController.h" />
+    <ClInclude Include="..\Classes\StartGameSceneFactory.h" />
     <ClInclude Include="ActiveDetails.h" />
     <ClInclude Include="AddLineToBoardBottomSpell.h" />
     <ClInclude Include="AIMovementStrategy.h" />
@@ -557,7 +560,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RecordsDataSource.h" />
     <ClInclude Include="SceneGraphFactory.h" />
     <ClInclude Include="SelectGameLevelSceneFactory.h" />
-    <ClInclude Include="StartGameSceneFactory.h" />
     <ClInclude Include="StringsSupporter.h" />
     <ClInclude Include="TetraminisDetailsFactory.h" />
     <ClInclude Include="Tetramino.h" />

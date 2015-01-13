@@ -1,6 +1,9 @@
 #include "LoadGameController.h"
 #include "LoadingGameDataSource.h"
 #include "GameViewConstants.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameTransitionsViewController.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -10,7 +13,7 @@ LoadGameController::LoadGameController(void)
 	CCSprite *sourceView = CCSprite::create("HelloWorld.png");
 	_loadGameControllerView =  CCProgressTimer::create(sourceView);
 	_loadGameControllerView->setPercentage(0);
-	_loadGameControllerView->setScale(0.2f);
+	_loadGameControllerView->setScale(0.7f);
 	this->addChild(_loadGameControllerView);
 
 	_loadingGameDataSource = new LoadingGameDataSource();
@@ -37,7 +40,8 @@ void LoadGameController::loadGameResource()
 	}
 	else
 	{
-		CCLOG("Go to start game menu");
+		GameTransitionsViewController *transitionsController = (GameTransitionsViewController*)ServiceLocator::getServiceForKey(gameTransitionsViewControllerKey);
+		transitionsController->changeOnNewState(kStartGame);
 	}
 
 }

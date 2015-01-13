@@ -10,7 +10,8 @@ using namespace cocos2d;
 
 GameViewInformationFactory::GameViewInformationFactory(void)
 {
-	_elementsInformation =  makeViewData();
+	_elementsInformation =  map <string , ViewElementInformation> ();
+	makeViewData();
 }
 
 
@@ -24,28 +25,74 @@ ViewElementInformation GameViewInformationFactory::getViewInformationForKey(stri
 	return _elementsInformation[aKey];
 }
 
-map <string , ViewElementInformation> GameViewInformationFactory::makeViewData() 
+void GameViewInformationFactory::makeViewData() 
 {
 	
-	std::map <std::string , ViewElementInformation> viewElementsInformation;
+	makeLoadingScreenData();
+	makeStartGameSreenData();
+	makeSelectGameLevelScreenData();
+	makeMainGameScreenData();
+	makeRecordsScreenData();
+	makeDevelopersScreenData();
 
+}
+
+void GameViewInformationFactory::makeLoadingScreenData()
+{
 	ViewElementInformation loadingScreenBackground;
 	loadingScreenBackground.elementPosition = getScreenCenter();
 	loadingScreenBackground.elementZOrder = kLoadingBackgroundZOrder;
-	viewElementsInformation[loadingGameBackgroundKey] = loadingScreenBackground;
-
+	_elementsInformation[loadingGameBackgroundKey] = loadingScreenBackground;
+	
 	ViewElementInformation loadingBeaver;
 	loadingBeaver.elementPosition = Vec2(130, 200);
 	loadingBeaver.elementZOrder = kLoadingBeaverZOrder;
-	viewElementsInformation[loadingGameBeaverKey] = loadingBeaver;
-
+	_elementsInformation[loadingGameBeaverKey] = loadingBeaver;
+	
 	ViewElementInformation loadingClock;
-	loadingClock.elementPosition = Vec2(150, 300);
+	loadingClock.elementPosition = Vec2(350, 630);
 	loadingClock.elementZOrder = kLoadingClockZOrder;
-	viewElementsInformation[loadingGameClockKey] = loadingClock;
-
-	return viewElementsInformation;
+	_elementsInformation[loadingGameClockKey] = loadingClock;
 }
+
+void GameViewInformationFactory::makeStartGameSreenData()
+{
+	ViewElementInformation startGameScreenBackground;
+	startGameScreenBackground.elementPosition = getScreenCenter();
+	startGameScreenBackground.elementZOrder = kStartGameBackgroundZOrder;
+	_elementsInformation[startGameMenuBackgroundKey] = startGameScreenBackground;
+
+	ViewElementInformation startGameBeaver;
+	startGameBeaver.elementPosition = Vec2(130, 200);
+	startGameBeaver.elementZOrder = kStartGameBeaverZOrder;
+	_elementsInformation[startGameBeaverKey] = startGameBeaver;
+
+	ViewElementInformation startGameMenu;
+	startGameMenu.elementPosition = Vec2(130, 200);
+	startGameMenu.elementZOrder = kLoadingBackgroundZOrder;
+	_elementsInformation[startGameMenuKey] = startGameMenu;
+}
+
+void GameViewInformationFactory::makeSelectGameLevelScreenData()
+{
+
+}
+
+void GameViewInformationFactory::makeMainGameScreenData()
+{
+
+}
+
+void GameViewInformationFactory::makeRecordsScreenData()
+{
+
+}
+
+void GameViewInformationFactory::makeDevelopersScreenData()
+{
+
+}
+
 
 Vec2 GameViewInformationFactory::getScreenCenter()
 {

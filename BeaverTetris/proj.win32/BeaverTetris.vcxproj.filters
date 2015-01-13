@@ -156,9 +156,6 @@
     <ClCompile Include="SelectGameLevelSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
-    <ClCompile Include="StartGameSceneFactory.cpp">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
@@ -438,6 +435,15 @@
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\StartGameBeaverController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StartGameAnimationController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StartGameSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -519,9 +525,6 @@
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="SelectGameLevelSceneFactory.h">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClInclude>
-    <ClInclude Include="StartGameSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="GameResourcesExtension.h">
@@ -826,6 +829,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameViewElementsZOrders.h">
       <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartGameBeaverController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartGameAnimationController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartGameSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

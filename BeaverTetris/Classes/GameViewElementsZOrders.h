@@ -6,3 +6,10 @@ enum LoadingSreenZOrdes
 	kLoadingBeaverZOrder,
 	kLoadingClockZOrder,
 };
+
+enum StartGameSreenZOrdes
+{
+	kStartGameBackgroundZOrder,
+	kStartGameBeaverZOrder,
+	kStartGameMenuZOrder,
+};

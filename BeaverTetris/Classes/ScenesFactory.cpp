@@ -2,6 +2,7 @@
 #include "SceneFactory.h"
 
 #include "LoadingGameSceneFactory.h"
+#include "StartGameSceneFactory.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -27,6 +28,7 @@ std::map<GameState, SceneFactory*> ScenesFactory::getScenesFactories()
 	map<GameState, SceneFactory*> scenesFactories;
 
 	scenesFactories[kLoadGame] = new LoadingGameSceneFactory();
+	scenesFactories[kStartGame] = new StartGameSceneFactory();
 
 	return scenesFactories;
 }
