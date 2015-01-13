@@ -20,7 +20,7 @@ Vec2 GameViewElementsDataSource::getElementPositionForKey(std::string aKey)
 {
 	ViewElementInformation elementsInformation = _gameViewInformationFactory->getViewInformationForKey(aKey);
 	Vec2 positionInDesignResolution = elementsInformation.elementPosition;
-	Vec2 relativeElementPosition = Vec2(designResolutionWidth / positionInDesignResolution.x, designResolutionHeight / positionInDesignResolution.y);
+	Vec2 relativeElementPosition = Vec2( positionInDesignResolution.x / designResolutionWidth, positionInDesignResolution.y / designResolutionHeight);
 	Size currentScreenSize = CCDirector::getInstance()->getWinSize();
 	Vec2 absoluteElementPosition = Vec2(currentScreenSize.width * relativeElementPosition.x, currentScreenSize.height * relativeElementPosition.y);
 	return absoluteElementPosition;

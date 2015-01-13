@@ -28,6 +28,7 @@ void GameInitiator::setInitialState()
 	ServiceLocator::setServiceForKey(gameGraphicsLoader,gameGraphicsLoaderKey);
 	ServiceLocator::setServiceForKey(gameTransitionsViewController,gameTransitionsViewControllerKey);
 
+	gameGraphicsLoader->setInitialGraphic();
 	gameTransitionsViewController->goToInitialState();
 	
 }

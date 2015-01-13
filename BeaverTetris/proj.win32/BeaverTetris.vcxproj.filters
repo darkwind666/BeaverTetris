@@ -435,6 +435,9 @@
     <ClCompile Include="..\Classes\LoadingGameDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CocosNodesHelper.cpp">
+      <Filter>SupportedFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -816,6 +819,12 @@
       <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameDesignConstants.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CocosNodesHelper.h">
+      <Filter>SupportedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameViewElementsZOrders.h">
       <Filter>Constants</Filter>
     </ClInclude>
   </ItemGroup>

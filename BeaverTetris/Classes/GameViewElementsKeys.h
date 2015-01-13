@@ -4,6 +4,10 @@
 
 using namespace std;
 
+const string loadingGameBackgroundKey = string("loadingGameBackground");
+const string loadingGameBeaverKey = string("loadingGameBeaver");
+const string loadingGameClockKey = string("loadingGameClock");
+
 const string gameElement1Key = string("gameElement1");
 const string gameElement2Key = string("gameElement2");
 const string gameElement3Key = string("gameElement3");

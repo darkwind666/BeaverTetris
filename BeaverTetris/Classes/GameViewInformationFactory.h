@@ -2,6 +2,7 @@
 
 #include <string>
 #include "GameViewElementsDataSource.h"
+#include "cocos2d.h"
 
 class GameViewInformationFactory
 {
@@ -16,6 +17,7 @@ private:
 	std::map <std::string , ViewElementInformation> _elementsInformation;
 
 	std::map <std::string , ViewElementInformation> makeViewData(void);
+	cocos2d::Vec2 getScreenCenter();
 
 };
 

@@ -1,5 +1,7 @@
 #include "LoadingGameSceneFactory.h"
 #include "LoadGameController.h"
+#include "CocosNodesHelper.h"
+#include "GameViewElementsKeys.h"
 
 using namespace cocos2d;
 
@@ -17,17 +19,15 @@ CCScene* LoadingGameSceneFactory::createScene()
 	CCScene *loadingScene = CCScene::create();
 
 	CCLayerColor *background = CCLayerColor::create(Color4B::RED);
+	background->ignoreAnchorPointForPosition(false);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(background,loadingScene,loadingGameBackgroundKey);
 
 	CCSprite *beaver = CCSprite::create("HelloWorld.png");
 	beaver->setScale(0.3f);
-	beaver->setPosition(130, 200);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(beaver,loadingScene,loadingGameBeaverKey);
 
 	LoadGameController *loadGameController = new LoadGameController();
-	loadGameController->setPosition(150, 300);
-
-	loadingScene->addChild(background, 1);
-	loadingScene->addChild(beaver, 1);
-	loadingScene->addChild(loadGameController, 1);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(loadGameController,loadingScene,loadingGameClockKey);
 
 	return loadingScene;
 

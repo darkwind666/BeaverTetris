@@ -139,6 +139,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
     <ClCompile Include="..\Classes\GameDataLoader.cpp" />
     <ClCompile Include="..\Classes\GameFileExtensionMaker.cpp" />
@@ -445,6 +446,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\CocosNodesHelper.h" />
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />
     <ClInclude Include="..\Classes\GameDataLoader.h" />
     <ClInclude Include="..\Classes\GameDesignConstants.h" />
@@ -461,6 +463,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameViewConstants.h" />
     <ClInclude Include="..\Classes\GameViewElementsDataSource.h" />
     <ClInclude Include="..\Classes\GameViewElementsKeys.h" />
+    <ClInclude Include="..\Classes\GameViewElementsZOrders.h" />
     <ClInclude Include="..\Classes\GameViewInformationFactory.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LoadGameController.h" />
