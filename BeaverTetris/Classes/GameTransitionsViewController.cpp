@@ -37,5 +37,5 @@ CCScene* GameTransitionsViewController::getSceneWithTransitionForId(GameState aS
 
 CCScene* GameTransitionsViewController::getSceneWithStandartTransition(CCScene* aScene)
 {
-	return CCTransitionFadeUp::create(standartTransitionDuration, aScene);
+	return CCTransitionFade::create(standartTransitionDuration, aScene);
 }

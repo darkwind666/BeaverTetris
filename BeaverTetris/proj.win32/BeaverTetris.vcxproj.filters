@@ -300,12 +300,6 @@
     <ClCompile Include="GamePlayersDatabase.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
-    <ClCompile Include="GameSoundDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingGameDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="NewGameTetraminoDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
@@ -344,9 +338,6 @@
     </ClCompile>
     <ClCompile Include="GameKeyWithSuffixSupporter.cpp">
       <Filter>SupportedFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadGameController.cpp">
-      <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
     <ClCompile Include="PlayerInputController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
@@ -422,6 +413,27 @@
     </ClCompile>
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LoadGameController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ResourcesLoader.cpp">
+      <Filter>Controllers\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameSoundDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameDataLoader.cpp">
+      <Filter>Controllers\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameSoundLoader.cpp">
+      <Filter>Controllers\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameLogicLoader.cpp">
+      <Filter>Controllers\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LoadingGameDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -517,9 +529,6 @@
     </ClInclude>
     <ClInclude Include="TetraminoDetail.h">
       <Filter>Models\GameLogic</Filter>
-    </ClInclude>
-    <ClInclude Include="GameDesignConstants.h">
-      <Filter>Constants</Filter>
     </ClInclude>
     <ClInclude Include="CollisionDelegate.h">
       <Filter>Models\GameLogic</Filter>
@@ -656,12 +665,6 @@
     <ClInclude Include="GamePlayersDatabase.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
-    <ClInclude Include="GameSoundDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadingGameDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
     <ClInclude Include="NewGameTetraminoDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
@@ -703,9 +706,6 @@
     </ClInclude>
     <ClInclude Include="GameViewSuffixes.h">
       <Filter>Constants</Filter>
-    </ClInclude>
-    <ClInclude Include="LoadGameController.h">
-      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
     <ClInclude Include="PlayerInputController.h">
       <Filter>Controllers\ViewControllers</Filter>
@@ -793,6 +793,30 @@
     </ClInclude>
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LoadGameController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ResourcesLoader.h">
+      <Filter>Controllers\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameSoundDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameDataLoader.h">
+      <Filter>Controllers\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameSoundLoader.h">
+      <Filter>Controllers\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameLogicLoader.h">
+      <Filter>Controllers\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LoadingGameDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameDesignConstants.h">
+      <Filter>Constants</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

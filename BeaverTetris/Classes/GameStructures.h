@@ -5,8 +5,14 @@
 #include <map>
 #include "cocos2d.h"
 #include "GameEnums.h"
-#include "proj.win32\GameDesignConstants.h"
+#include "GameDesignConstants.h"
 
+class ResourcesLoader;
+struct ResoucesLoaderInformation
+{
+	int loadPercentage;
+	ResourcesLoader *resourcesLoader;
+};
 
 struct ViewElementInformation
 {

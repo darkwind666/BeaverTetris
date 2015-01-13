@@ -45,7 +45,5 @@ string GameGraphicsDataSource::getGraphicFrameForIndex(int aIndex)
 std::vector<std::string> GameGraphicsDataSource::getGraphicKeys()
 {
 	vector<string> graphicsKeys;
-	graphicsKeys.push_back(startGraphicName);
-	graphicsKeys.push_back(gameStartMenuGraphicName);
 	return graphicsKeys;
 }

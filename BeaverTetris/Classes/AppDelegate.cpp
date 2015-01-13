@@ -46,8 +46,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	gameInitiator->setInitialState();
 	delete gameInitiator;
 
-   /* auto scene = HelloWorld::createScene();
-    director->runWithScene(scene);*/
+    /*auto scene = HelloWorld::createScene();
+	director->runWithScene(scene);*/
 
     return true;
 }

@@ -22,6 +22,15 @@ void GameGraphicsLoader::setInitialGraphic()
 	setGraphicWithFrameAndFile(initialGraphicFrame, initialGraphic);
 }
 
+void GameGraphicsLoader::loadResources()
+{
+	int graphicCount = getGraphicCount();
+	for (int graphicIndex = 0; graphicIndex <= graphicCount; graphicIndex++)
+	{
+		loadGraphicForIndex(graphicIndex);
+	}
+}
+
 int GameGraphicsLoader::getGraphicCount()
 {
 	return _gameGraphicsDataSource->getGraphicCount();
