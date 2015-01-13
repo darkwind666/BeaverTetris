@@ -34,7 +34,7 @@ void LoadingGameDataSource::loadResouceForIndex(int aResourceIndex)
 	loaderInformation.resourcesLoader->loadResources();
 }
 
-vector<ResoucesLoaderInformation> getLoadersInformation()
+vector<ResoucesLoaderInformation> LoadingGameDataSource::getLoadersInformation()
 {
 	vector<ResoucesLoaderInformation> loadersInformation;
 

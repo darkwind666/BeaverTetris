@@ -8,9 +8,7 @@ const string sound2Name = string("StartGraphics");
 
 GameSoundDataSource::GameSoundDataSource(void)
 {
-	 string graphicKeys[] = {sound1Name,sound2Name};
-	 _soundsElementsCount = sizeof(graphicKeys) / sizeof(graphicKeys[0]);
-	_sounds = GameFileExtensionMaker::getGraphicsFilesWithExtension(graphicKeys, _soundsElementsCount);
+	
 }
 
 

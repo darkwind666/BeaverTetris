@@ -18,5 +18,7 @@ const int soundLoadingPercentage = 25;
 const int dataLoadingPercentage = 25;
 const int logicLoadingPercentage = 25;
 
+const float onePercentActionDuration = 0.01;
+
 const int spellIconsInterval = 60;
 const int victoryConditionInformationYOffset = 60;
