@@ -108,9 +108,6 @@
     <ClCompile Include="GameDataFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="GamePopUpsController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="ActiveDetails.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
@@ -279,9 +276,6 @@
     <ClCompile Include="CurrentLevelWinResultDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
-    <ClCompile Include="CurrentPlayerDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="CurrentVictoryConditionDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
@@ -329,9 +323,6 @@
     </ClCompile>
     <ClCompile Include="RemovingDeadTetraminosSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="StartGameViewDataSource.cpp">
-      <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
     <ClCompile Include="GameKeyWithSuffixSupporter.cpp">
       <Filter>SupportedFiles</Filter>
@@ -444,6 +435,18 @@
     <ClCompile Include="..\Classes\StartGameSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CurrentPlayerDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameStatesHelper.cpp">
+      <Filter>SupportedFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamePopUpsController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StartGameMenuDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -475,9 +478,6 @@
     </ClInclude>
     <ClInclude Include="EventHandlerInterface.h">
       <Filter>EventSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="GamePopUpsController.h">
-      <Filter>Controllers</Filter>
     </ClInclude>
     <ClInclude Include="CurrentDetailController.h">
       <Filter>Controllers</Filter>
@@ -552,9 +552,6 @@
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="EndGameViewDataSource.h">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="SpellsViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="StringsSupporter.h">
@@ -653,9 +650,6 @@
     <ClInclude Include="CurrentLevelWinResultDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
-    <ClInclude Include="CurrentPlayerDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
     <ClInclude Include="CurrentVictoryConditionDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
@@ -703,9 +697,6 @@
     </ClInclude>
     <ClInclude Include="RemovingDeadTetraminosSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="StartGameViewDataSource.h">
-      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="GameKeyWithSuffixSupporter.h">
       <Filter>SupportedFiles</Filter>
@@ -838,6 +829,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\StartGameSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentPlayerDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameStatesHelper.h">
+      <Filter>SupportedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamePopUpsController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellsViewDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartGameMenuDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

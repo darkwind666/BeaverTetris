@@ -3,13 +3,12 @@
 #include "ServiceInterface.h"
 #include <string>
 #include <vector>
-#include "GamePlayersDatabase.h"
 #include "GameStructures.h"
 
 class CurrentPlayerDataSource :public ServiceInterface
 {
 public:
-	CurrentPlayerDataSource(GamePlayersDatabase *aGamePlayersDatabase);
+	CurrentPlayerDataSource();
 	~CurrentPlayerDataSource();
 
 	bool isThereCurentPlayer();
@@ -27,7 +26,6 @@ public:
 
 private:
 	std::vector <std::string> _completedLevelsNames;
-	GamePlayersDatabase *_gamePlayersDatabase;
 	bool _isThereCurentPlayer;
 	PlayerInformation _playerData;
 };

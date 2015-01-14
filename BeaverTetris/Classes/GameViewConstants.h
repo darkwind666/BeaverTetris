@@ -20,5 +20,9 @@ const int logicLoadingPercentage = 25;
 
 const float onePercentActionDuration = 0.01;
 
+const float startXMenuPosition = 23.7f;
+const float startYMenuPosition = 23.7f;
+const float startMenuItemOffsetY = 23.7f;
+
 const int spellIconsInterval = 60;
 const int victoryConditionInformationYOffset = 60;

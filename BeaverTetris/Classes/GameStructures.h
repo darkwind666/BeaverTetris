@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <functional>
 #include "cocos2d.h"
 #include "GameEnums.h"
 #include "GameDesignConstants.h"
@@ -13,6 +14,14 @@ struct ResoucesLoaderInformation
 	int loadPercentage;
 	ResourcesLoader *resourcesLoader;
 };
+
+
+struct StartGameMenuItemInformation
+{
+	std::string imageKey;
+	std::function<void()> callback;
+};
+
 
 struct ViewElementInformation
 {

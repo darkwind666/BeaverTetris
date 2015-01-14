@@ -2,9 +2,8 @@
 
 using namespace std;
 
-CurrentPlayerDataSource::CurrentPlayerDataSource(GamePlayersDatabase *aGamePlayersDatabase)
+CurrentPlayerDataSource::CurrentPlayerDataSource()
 {
-	_gamePlayersDatabase = aGamePlayersDatabase;
 	_completedLevelsNames = vector <string>();
 	_isThereCurentPlayer = false;
 }
@@ -68,11 +67,6 @@ void CurrentPlayerDataSource::completeLevel(string aCompletedLevelName)
 		_completedLevelsNames.push_back(aCompletedLevelName);
 	}
 
-}
-
-void CurrentPlayerDataSource::sendPlayerResultToDatabase()
-{
-	_gamePlayersDatabase->setPlayerResult(_playerData.playerName, _playerData.playerScore);
 }
 
 void CurrentPlayerDataSource::cleanPlayer()

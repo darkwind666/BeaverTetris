@@ -1,9 +1,7 @@
 #include "LoadGameController.h"
 #include "LoadingGameDataSource.h"
 #include "GameViewConstants.h"
-#include "ServiceLocator.h"
-#include "GameServicesKeys.h"
-#include "GameTransitionsViewController.h"
+#include "GameStatesHelper.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -40,8 +38,7 @@ void LoadGameController::loadGameResource()
 	}
 	else
 	{
-		GameTransitionsViewController *transitionsController = (GameTransitionsViewController*)ServiceLocator::getServiceForKey(gameTransitionsViewControllerKey);
-		transitionsController->changeOnNewState(kStartGame);
+		GameStatesHelper::goToScene(kStartGame);
 	}
 
 }

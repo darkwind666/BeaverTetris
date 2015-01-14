@@ -7,7 +7,7 @@
 #include "GameLevelsDataSource.h"
 #include "TetraminosCharacteristicsDataSource.h"
 
-#include "StartGameViewDataSource.h"
+#include "StartGameMenuDataSource.h"
 #include "GameViewElementsDataSource.h"
 #include "GamePopUpsController.h"
 #include "EventDispatcher.h"
@@ -39,7 +39,7 @@ void GameDataFactory::createGameData(void)
 void GameDataFactory::createGameLogic(void) 
 {
 	GameViewElementsDataSource *gameViewElementsDataSource = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
-	StartGameViewDataSource *startGameMenuDataSource = new StartGameViewDataSource(_currentPlayerDataSource);
+	StartGameMenuDataSource *startGameMenuDataSource = new StartGameMenuDataSource(_currentPlayerDataSource);
 
 	EventDispatcher *eventDispatcher = (EventDispatcher*)ServiceLocator::getServiceForKey(eventDispatcherKey);
 
