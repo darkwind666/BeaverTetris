@@ -17,8 +17,11 @@ public:
 	std::string getElementImageForKey(std::string aKey);
 	int getElementZOrderForKey(std::string aKey);
 
+	cocos2d::Vec2 getElementOffsetForKey(std::string aKey);
+	cocos2d::Vec2 getElementFinalActionPositionForKey(std::string aKey);
+
 private:
 
 	GameViewInformationFactory *_gameViewInformationFactory;
-
+	cocos2d::Vec2 getAbsolutePosition(cocos2d::Vec2 aDesignPosition);
 };

@@ -2,11 +2,11 @@
 #include "GameViewElementsKeys.h"
 #include "GameFileExtensionMaker.h"
 #include "GameStatesHelper.h"
-#include "GameViewConstants.h"
 
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "CurrentPlayerDataSource.h"
+#include "GameElementsDataHelper.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -79,7 +79,9 @@ string StartGameMenuDataSource::getMenuImageForIndex(int aIndex)
 
 Vec2 StartGameMenuDataSource::getMenuItemPositionForIndex(int aIndex)
 {
-	Vec2 position = Vec2(0, 0 - (startMenuItemOffsetY * aIndex));
+	
+	Vec2 offset = GameElementsDataHelper::getElementOffsetForKey(startGameMenuKey);
+	Vec2 position = Vec2(0, 0 - (offset.y * aIndex));
 	return position;
 }
 

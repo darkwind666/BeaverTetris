@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-#include "GameViewElementsDataSource.h"
 #include "cocos2d.h"
+#include "GameStructures.h"
 
 class GameViewInformationFactory
 {

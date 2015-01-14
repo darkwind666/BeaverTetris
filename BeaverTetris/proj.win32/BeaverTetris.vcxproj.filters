@@ -450,6 +450,9 @@
     <ClCompile Include="..\Classes\GameViewStyleHelper.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameElementsDataHelper.cpp">
+      <Filter>SupportedFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -849,6 +852,9 @@
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameViewStyleHelper.h">
+      <Filter>SupportedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameElementsDataHelper.h">
       <Filter>SupportedFiles</Filter>
     </ClInclude>
   </ItemGroup>

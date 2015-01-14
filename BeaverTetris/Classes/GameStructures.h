@@ -27,6 +27,8 @@ struct ViewElementInformation
 {
 	std::string elementImage;
 	cocos2d::Vec2 elementPosition;
+	cocos2d::Vec2 elementOffset;
+	cocos2d::Vec2 elementActionFinalPosition;
 	int elementZOrder;
 
 };
