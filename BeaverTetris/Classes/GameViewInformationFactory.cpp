@@ -68,7 +68,7 @@ void GameViewInformationFactory::makeStartGameSreenData()
 	_elementsInformation[startGameBeaverKey] = startGameBeaver;
 
 	ViewElementInformation startGameMenu;
-	startGameMenu.elementPosition = Vec2(130, 200);
+	startGameMenu.elementPosition = Vec2(80, 400);
 	startGameMenu.elementZOrder = kLoadingBackgroundZOrder;
 	_elementsInformation[startGameMenuKey] = startGameMenu;
 }

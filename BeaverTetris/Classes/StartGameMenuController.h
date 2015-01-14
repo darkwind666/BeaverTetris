@@ -1,8 +1,10 @@
 #pragma once
 
+#include "cocos2d.h"
+
 class StartGameMenuDataSource;
 
-class StartGameMenuController
+class StartGameMenuController : public cocos2d::CCNode
 {
 public:
 	StartGameMenuController(void);
@@ -11,6 +13,9 @@ public:
 private :
 
 	StartGameMenuDataSource *_startGameViewDataSource;
+
+	void createStartMenu();
+	void buttonWasPressed(cocos2d::CCObject* pSender);
 
 };
 

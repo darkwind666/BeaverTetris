@@ -3,6 +3,7 @@
 #include "ServiceInterface.h"
 #include <string>
 #include <vector>
+#include <functional>
 #include "cocos2d.h"
 #include "GameStructures.h"
 #include "CurrentPlayerDataSource.h"
@@ -16,7 +17,7 @@ public:
 	int getMenuItemsCount();
 	std::string getMenuImageForIndex(int aIndex);
 	cocos2d::Vec2 getMenuItemPositionForIndex(int aIndex);
-	void pressMenuItemForIndex(int aIndex);
+	std::function<void()> getMenuItemCallbackForIndex(int aIndex);
 
 private:
 
