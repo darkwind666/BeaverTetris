@@ -5,6 +5,7 @@
 #include "GameBackgroundSoundRegulator.h"
 #include "GameElementsDataHelper.h"
 #include "GameViewStyleHelper.h"
+#include "GameAnimationActionsConstants.h"
 
 using namespace cocos2d;
 
@@ -25,8 +26,9 @@ void RegulateSoundPopUp::showPopUp()
 {
 	_oldControllerPosition = _popUpView->getPosition();
 	Vec2 newControllerPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(startGameRegulateSoundPadKey);
-	CCAction *moveController = CCMoveTo::create(1.0f, newControllerPosition);
-	_popUpView->runAction(moveController);
+	CCActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartAppearDuration, newControllerPosition);
+	CCAction *ease = CCEaseBackOut::create(moveController);
+	_popUpView->runAction(ease);
 }
 
 CCNode* RegulateSoundPopUp::makePopUpView()
@@ -54,7 +56,7 @@ void RegulateSoundPopUp::closePopUp(CCObject* pSender)
 {
 	CCNode *button = (CCNode*)pSender;
 	std::function<void()> buttonCallback = [this](){
-		CCAction *moveController = CCMoveTo::create(1.0f, _oldControllerPosition);
+		CCActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartDisapperDuration, _oldControllerPosition);
 		_popUpView->runAction(moveController);
 	};
 	GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);

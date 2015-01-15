@@ -10,3 +10,6 @@ const float standardButtonScaleForAction = 0.8f;
 const float startMenuActionDuration = 1.5f;
 const float beaverStartScreenActionDuration = 1.0f;
 const float beaverClockArrowRotationSpeed = 1.0f;
+
+const float regulateSoundPopUpStartAppearDuration = 1.0f;
+const float regulateSoundPopUpStartDisapperDuration = 0.5f;
