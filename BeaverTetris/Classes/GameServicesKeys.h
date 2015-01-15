@@ -8,6 +8,7 @@ const string gameViewElementsDataSourceKey = string("GameViewElementsDataSource"
 const string gameGraphicsLoaderKey = string("GameGraphicsLoader");
 const string gameTransitionsViewControllerKey = string("GameTransitionsViewController");
 const string currentPlayerDataSourceKey = string("CurrentPlayerDataSource");
+const string gamePopUpsControllerKey = string("GamePopUpsController");
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");
 const string gameLevelsDataSourceKey = string("GameLevelsDataSource");

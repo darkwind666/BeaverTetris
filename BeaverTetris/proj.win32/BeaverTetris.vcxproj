@@ -168,6 +168,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp" />
+    <ClCompile Include="..\Classes\ScreenPopUp.cpp" />
     <ClCompile Include="..\Classes\ServiceInterface.cpp" />
     <ClCompile Include="..\Classes\ServiceLocator.cpp" />
     <ClCompile Include="..\Classes\GameSoundLoader.cpp" />
@@ -476,6 +477,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SceneFactory.h" />
     <ClInclude Include="..\Classes\ScenesFactory.h" />
     <ClInclude Include="..\Classes\ScenesTransitionsFactory.h" />
+    <ClInclude Include="..\Classes\ScreenPopUp.h" />
     <ClInclude Include="..\Classes\ServiceInterface.h" />
     <ClInclude Include="..\Classes\ServiceLocator.h" />
     <ClInclude Include="..\Classes\GameSoundLoader.h" />
