@@ -9,9 +9,8 @@ public:
 	virtual ~ScreenPopUp(void);
 
 	virtual void showPopUp() = 0;
-	virtual void closePopUp() = 0;
 
-	void subscribePupUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage);
+	void subscribePopUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage);
 	void unSubscribePupUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage);
 
 };

@@ -14,7 +14,7 @@ public:
 	~GamePopUpsController(void);
 
 	void showPopUp(PopUpType aPopUp);
-	void subscribePupUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage);
+	void subscribePopUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage);
 	void unSubscribePupUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage);
 
 private:

@@ -13,4 +13,13 @@ enum StartGameSreenZOrdes
 	kStartGameBeaverZOrder,
 	kStartGameMenuZOrder,
 	kBeaverClockArrowZOrder,
+	kStartGameRegulateSoundPopUpZOrder,
+};
+
+enum StartGameRegulateSoundPopUpZOrders
+{
+	kStartGameRegulateSoundPopUpPadZOrder,
+	kStartGameRegulateSoundSliderZOrder,
+	kStartGameRegulateSoundEffectsSliderZOrder,
+	kStartGameRegulateSoundPopUpCloseButtonZOrder,
 };

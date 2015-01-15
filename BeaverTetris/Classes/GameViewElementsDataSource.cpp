@@ -1,7 +1,6 @@
 #include "GameViewElementsDataSource.h"
 #include "GameViewInformationFactory.h"
 #include "GameViewConstants.h"
-#include "GameFileExtensionMaker.h"
 
 using namespace cocos2d;
 
@@ -26,7 +25,8 @@ Vec2 GameViewElementsDataSource::getElementPositionForKey(std::string aKey)
 
 std::string GameViewElementsDataSource::getElementImageForKey(std::string aKey)
 {
-	return GameFileExtensionMaker::getGraphicWithExtension(aKey);
+	ViewElementInformation elementsInformation = _gameViewInformationFactory->getViewInformationForKey(aKey);
+	return elementsInformation.elementImage;
 }
 
 int GameViewElementsDataSource::getElementZOrderForKey(std::string aKey)

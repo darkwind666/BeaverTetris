@@ -2,6 +2,7 @@
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
 #include "StartGameAnimationController.h"
+#include "RegulateSoundPopUp.h"
 
 using namespace cocos2d;
 
@@ -24,6 +25,9 @@ CCScene* StartGameSceneFactory::createScene()
 
 	StartGameAnimationController *startGameAnimationController = new StartGameAnimationController();
 	startGameScene->addChild(startGameAnimationController);
+
+	RegulateSoundPopUp *regulateSoundPopUp = new RegulateSoundPopUp();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(regulateSoundPopUp,startGameScene,startGameRegulateSoundPopUpKey);
 
 	return startGameScene;
 }

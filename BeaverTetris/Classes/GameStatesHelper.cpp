@@ -21,6 +21,6 @@ void GameStatesHelper::goToScene(GameState aState)
 
 void GameStatesHelper::goToPopUp(PopUpType aPopUp)
 {
-	GamePopUpsController *popUpsController = (GamePopUpsController*)ServiceLocator::getServiceForKey(gameTransitionsViewControllerKey);
+	GamePopUpsController *popUpsController = (GamePopUpsController*)ServiceLocator::getServiceForKey(gamePopUpsControllerKey);
 	popUpsController->showPopUp(aPopUp);
 }

@@ -13,6 +13,12 @@ const string startGameBeaverKey = string("startGameBeaver");
 const string startGameBeaverClockKey = string("startGameBeaverClock");
 const string startGameMenuKey = string("startGameMenu");
 
+const string startGameRegulateSoundPopUpKey = string("startGameRegulateSoundPopUp");
+const string startGameRegulateSoundPadKey = string("startGameRegulateSoundPad");
+const string startGameRegulateSoundSliderKey = string("startGameRegulateSoundSlider");
+const string startGameRegulateSoundEffectsSliderKey = string("startGameRegulateSoundEffectsSlider");
+const string startGameRegulateSoundCloseButtonKey = string("startGameRegulateSoundCloseButton");
+
 const string gameElement1Key = string("gameElement1");
 const string gameElement2Key = string("gameElement2");
 const string gameElement3Key = string("gameElement3");

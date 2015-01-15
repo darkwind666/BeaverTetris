@@ -20,12 +20,16 @@ private:
 
 	void makeLoadingScreenData();
 	void makeStartGameSreenData();
+	void makeStartGameRegulateSoundPopUpData();
 	void makeSelectGameLevelScreenData();
 	void makeMainGameScreenData();
 	void makeRecordsScreenData();
 	void makeDevelopersScreenData();
 
 	cocos2d::Vec2 getScreenCenter();
+	float getScreenCenterX();
+	float getScreenCenterY();
+	std::string getImageNameForKey(std::string aKey);
 
 };
 

@@ -142,6 +142,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
     <ClCompile Include="..\Classes\CurrentPlayerDataSource.cpp" />
+    <ClCompile Include="..\Classes\GameBackgroundSoundRegulator.cpp" />
     <ClCompile Include="..\Classes\GameDataLoader.cpp" />
     <ClCompile Include="..\Classes\GameElementsDataHelper.cpp" />
     <ClCompile Include="..\Classes\GameFileExtensionMaker.cpp" />
@@ -153,6 +154,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameLogicLoader.cpp" />
     <ClCompile Include="..\Classes\GamePopUpsController.cpp" />
     <ClCompile Include="..\Classes\GameSoundDataSource.cpp" />
+    <ClCompile Include="..\Classes\GameSoundEffectsRegulator.cpp" />
     <ClCompile Include="..\Classes\GameStatesHelper.cpp" />
     <ClCompile Include="..\Classes\GameTransitionsViewController.cpp" />
     <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp" />
@@ -164,6 +166,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\LoadGameController.cpp" />
     <ClCompile Include="..\Classes\LoadingGameDataSource.cpp" />
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp" />
+    <ClCompile Include="..\Classes\RegulateSoundPopUp.cpp" />
     <ClCompile Include="..\Classes\ResourcesLoader.cpp" />
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesFactory.cpp" />
@@ -173,7 +176,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ServiceLocator.cpp" />
     <ClCompile Include="..\Classes\GameSoundLoader.cpp" />
     <ClCompile Include="..\Classes\StartGameAnimationController.cpp" />
-    <ClCompile Include="..\Classes\StartGameBeaverController.cpp" />
     <ClCompile Include="..\Classes\StartGameMenuController.cpp" />
     <ClCompile Include="..\Classes\StartGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\StartGameMenuDataSource.cpp" />
@@ -448,6 +450,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />
     <ClInclude Include="..\Classes\CurrentPlayerDataSource.h" />
     <ClInclude Include="..\Classes\GameAnimationActionsConstants.h" />
+    <ClInclude Include="..\Classes\GameBackgroundSoundRegulator.h" />
     <ClInclude Include="..\Classes\GameDataLoader.h" />
     <ClInclude Include="..\Classes\GameDesignConstants.h" />
     <ClInclude Include="..\Classes\GameElementsDataHelper.h" />
@@ -460,6 +463,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GamePopUpsController.h" />
     <ClInclude Include="..\Classes\GameServicesKeys.h" />
     <ClInclude Include="..\Classes\GameSoundDataSource.h" />
+    <ClInclude Include="..\Classes\GameSoundEffectsRegulator.h" />
     <ClInclude Include="..\Classes\GameStatesHelper.h" />
     <ClInclude Include="..\Classes\GameStructures.h" />
     <ClInclude Include="..\Classes\GameTransitionsViewController.h" />
@@ -473,6 +477,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\LoadGameController.h" />
     <ClInclude Include="..\Classes\LoadingGameDataSource.h" />
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h" />
+    <ClInclude Include="..\Classes\RegulateSoundPopUp.h" />
     <ClInclude Include="..\Classes\ResourcesLoader.h" />
     <ClInclude Include="..\Classes\SceneFactory.h" />
     <ClInclude Include="..\Classes\ScenesFactory.h" />
@@ -482,7 +487,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ServiceLocator.h" />
     <ClInclude Include="..\Classes\GameSoundLoader.h" />
     <ClInclude Include="..\Classes\StartGameAnimationController.h" />
-    <ClInclude Include="..\Classes\StartGameBeaverController.h" />
     <ClInclude Include="..\Classes\StartGameMenuController.h" />
     <ClInclude Include="..\Classes\StartGameSceneFactory.h" />
     <ClInclude Include="..\Classes\StartGameMenuDataSource.h" />

@@ -17,18 +17,13 @@ void ScreenPopUp::showPopUp()
 
 }
 
-void ScreenPopUp::closePopUp()
-{
-
-}
-
-void subscribePupUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage)
+void ScreenPopUp::subscribePopUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage)
 {
 	GamePopUpsController *popUpsController = (GamePopUpsController*)ServiceLocator::getServiceForKey(gamePopUpsControllerKey);
-	popUpsController->subscribePupUpToMessage(aPopUp, aMessage);
+	popUpsController->subscribePopUpToMessage(aPopUp, aMessage);
 }
 
-void unSubscribePupUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage)
+void ScreenPopUp::unSubscribePupUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage)
 {
 	GamePopUpsController *popUpsController = (GamePopUpsController*)ServiceLocator::getServiceForKey(gamePopUpsControllerKey);
 	popUpsController->unSubscribePupUpToMessage(aPopUp, aMessage);

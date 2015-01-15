@@ -82,6 +82,9 @@
     <Filter Include="Controllers\ViewControllers\PopUps">
       <UniqueIdentifier>{06a801be-e3fd-4adc-986f-a94536a09c8b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Controllers\ViewControllers\Regulators">
+      <UniqueIdentifier>{797c4b9e-f46b-4d4f-a321-5b16030d6c64}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -426,9 +429,6 @@
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\StartGameBeaverController.cpp">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\StartGameAnimationController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
@@ -458,6 +458,15 @@
     </ClCompile>
     <ClCompile Include="..\Classes\ScreenPopUp.cpp">
       <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RegulateSoundPopUp.cpp">
+      <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBackgroundSoundRegulator.cpp">
+      <Filter>Controllers\ViewControllers\Regulators</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameSoundEffectsRegulator.cpp">
+      <Filter>Controllers\ViewControllers\Regulators</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -830,9 +839,6 @@
     <ClInclude Include="..\Classes\GameViewElementsZOrders.h">
       <Filter>Constants</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\StartGameBeaverController.h">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\StartGameAnimationController.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
@@ -868,6 +874,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ScreenPopUp.h">
       <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RegulateSoundPopUp.h">
+      <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBackgroundSoundRegulator.h">
+      <Filter>Controllers\ViewControllers\Regulators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameSoundEffectsRegulator.h">
+      <Filter>Controllers\ViewControllers\Regulators</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

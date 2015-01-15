@@ -52,8 +52,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 
 	StartGameMenuItemInformation menuItem4;
 	menuItem4.imageKey = gameElement4Key;
-	//menuItem4.callback = [](){GameStatesHelper::goToPopUp(kRegulateSoundPopUp);};
-	menuItem4.callback = [](){CCLOG("kRegulateSoundPopUp");};
+	menuItem4.callback = [](){GameStatesHelper::goToPopUp(kRegulateSoundPopUp);};
     menuItems.push_back(menuItem4);
 
 	StartGameMenuItemInformation menuItem5;
