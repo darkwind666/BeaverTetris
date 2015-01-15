@@ -1,6 +1,6 @@
 #include "GameTransitionsViewController.h"
 #include "ScenesFactory.h"
-#include "GameViewConstants.h"
+#include "GameAnimationActionsConstants.h"
 
 using namespace std;
 using namespace cocos2d;

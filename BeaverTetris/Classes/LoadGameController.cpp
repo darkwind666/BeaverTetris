@@ -1,6 +1,6 @@
 #include "LoadGameController.h"
 #include "LoadingGameDataSource.h"
-#include "GameViewConstants.h"
+#include "GameAnimationActionsConstants.h"
 #include "GameStatesHelper.h"
 
 using namespace std;

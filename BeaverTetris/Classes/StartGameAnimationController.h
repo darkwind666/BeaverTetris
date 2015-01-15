@@ -15,6 +15,12 @@ public:
 private:
 
 	StartGameMenuController *_startGameMenuController;
+	cocos2d::CCNode *_beaver;
+	cocos2d::CCNode *_beaverClockArrow;
+
+	cocos2d::CCFiniteTimeAction* getAnimationWithMenu();
+	cocos2d::CCFiniteTimeAction* getAnimationWithBeaver();
+	cocos2d::CCFiniteTimeAction* getAnimationWithBeaverClockArrow();
 
 };
 

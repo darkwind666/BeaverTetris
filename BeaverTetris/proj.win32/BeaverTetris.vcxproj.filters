@@ -857,6 +857,9 @@
     <ClInclude Include="..\Classes\GameElementsDataHelper.h">
       <Filter>SupportedFiles</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\GameAnimationActionsConstants.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
