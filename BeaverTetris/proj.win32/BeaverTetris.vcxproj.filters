@@ -183,9 +183,6 @@
     <ClCompile Include="SpellsViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
-    <ClCompile Include="StringsSupporter.cpp">
-      <Filter>SupportedFiles</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerGameControlsDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
@@ -468,6 +465,15 @@
     <ClCompile Include="..\Classes\GameKeyWithSuffixSupporter.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SelectLevelPlayerStatusController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PlayerStatusDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StringsSupporter.cpp">
+      <Filter>SupportedFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -571,9 +577,6 @@
     </ClInclude>
     <ClInclude Include="EndGameViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="StringsSupporter.h">
-      <Filter>SupportedFiles</Filter>
     </ClInclude>
     <ClInclude Include="PlayerGameControlsDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
@@ -883,6 +886,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameViewSuffixes.h">
       <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SelectLevelPlayerStatusController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerStatusDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StringsSupporter.h">
+      <Filter>SupportedFiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

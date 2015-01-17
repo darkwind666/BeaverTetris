@@ -169,6 +169,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\LoadGameController.cpp" />
     <ClCompile Include="..\Classes\LoadingGameDataSource.cpp" />
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp" />
+    <ClCompile Include="..\Classes\PlayerStatusDataSource.cpp" />
     <ClCompile Include="..\Classes\RegulateSoundPopUp.cpp" />
     <ClCompile Include="..\Classes\ResourcesLoader.cpp" />
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
@@ -177,6 +178,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ScreenPopUp.cpp" />
     <ClCompile Include="..\Classes\SelectGameLevelController.cpp" />
     <ClCompile Include="..\Classes\SelectGameLevelSceneFactory.cpp" />
+    <ClCompile Include="..\Classes\SelectLevelPlayerStatusController.cpp" />
     <ClCompile Include="..\Classes\ServiceInterface.cpp" />
     <ClCompile Include="..\Classes\ServiceLocator.cpp" />
     <ClCompile Include="..\Classes\GameSoundLoader.cpp" />
@@ -184,6 +186,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\StartGameMenuController.cpp" />
     <ClCompile Include="..\Classes\StartGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\StartGameMenuDataSource.cpp" />
+    <ClCompile Include="..\Classes\StringsSupporter.cpp" />
     <ClCompile Include="ActiveDetails.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -387,9 +390,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="SceneGraphFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="StringsSupporter.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -473,6 +473,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\LoadGameController.h" />
     <ClInclude Include="..\Classes\LoadingGameDataSource.h" />
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h" />
+    <ClInclude Include="..\Classes\PlayerStatusDataSource.h" />
     <ClInclude Include="..\Classes\RegulateSoundPopUp.h" />
     <ClInclude Include="..\Classes\ResourcesLoader.h" />
     <ClInclude Include="..\Classes\SceneFactory.h" />
@@ -481,6 +482,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ScreenPopUp.h" />
     <ClInclude Include="..\Classes\SelectGameLevelController.h" />
     <ClInclude Include="..\Classes\SelectGameLevelSceneFactory.h" />
+    <ClInclude Include="..\Classes\SelectLevelPlayerStatusController.h" />
     <ClInclude Include="..\Classes\ServiceInterface.h" />
     <ClInclude Include="..\Classes\ServiceLocator.h" />
     <ClInclude Include="..\Classes\GameSoundLoader.h" />
@@ -488,6 +490,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\StartGameMenuController.h" />
     <ClInclude Include="..\Classes\StartGameSceneFactory.h" />
     <ClInclude Include="..\Classes\StartGameMenuDataSource.h" />
+    <ClInclude Include="..\Classes\StringsSupporter.h" />
     <ClInclude Include="ActiveDetails.h" />
     <ClInclude Include="AddLineToBoardBottomSpell.h" />
     <ClInclude Include="AIMovementStrategy.h" />
@@ -559,7 +562,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="PlayerSelectionDataSource.h" />
     <ClInclude Include="RecordsDataSource.h" />
     <ClInclude Include="SceneGraphFactory.h" />
-    <ClInclude Include="StringsSupporter.h" />
     <ClInclude Include="TetraminisDetailsFactory.h" />
     <ClInclude Include="Tetramino.h" />
     <ClInclude Include="TetraminoDetail.h" />
