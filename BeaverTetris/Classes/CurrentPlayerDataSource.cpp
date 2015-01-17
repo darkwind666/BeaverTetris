@@ -24,12 +24,14 @@ bool CurrentPlayerDataSource::isThereCurentPlayer()
 
 string CurrentPlayerDataSource::getPlayerName()
 {
-	return _playerData.playerName;
+	//return _playerData.playerName;
+	return string("Sasha");
 }
 
 int CurrentPlayerDataSource::getPlayerScore()
 {
-	return _playerData.playerScore;
+	//return _playerData.playerScore;
+	return 1000;
 }
 
 int CurrentPlayerDataSource::getPlayerCompletedLevelsCount()

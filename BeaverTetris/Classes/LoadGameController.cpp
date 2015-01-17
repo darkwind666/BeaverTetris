@@ -58,6 +58,6 @@ void LoadGameController::runLoadingActionWithLoadingPercent(int aLoadingPercent)
 	
 	CCFiniteTimeAction *progressAction = CCProgressFromTo::create(actionDuration, currentPercent, currentPercent + aLoadingPercent);
 	CCFiniteTimeAction *callback = CCCallFunc::create(this, CC_CALLFUNC_SELECTOR(LoadGameController::loadGameResource));
-	CCAction *sequence = CCSequence::create(progressAction, callback, NULL);
+	Action *sequence = CCSequence::create(progressAction, callback, NULL);
 	_loadGameControllerView->runAction(sequence);
 }

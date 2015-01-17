@@ -20,8 +20,6 @@ const string startGameRegulateSoundEffectsSliderKey = string("startGameRegulateS
 const string startGameRegulateSoundCloseButtonKey = string("startGameRegulateSoundCloseButton");
 
 const string selectLevelMenuKey = string("selectLevelMenu");
-const string selectLevelScenePlayerStatusControllerKey = string("selectLevelScenePlayerStatusController");
-const string createNewPlayerControllerKey = string("createNewPlayerController");
 
 const string gameLevel1Key = string("gameLevel1");
 const string gameLevel2Key = string("gameLevel2");
@@ -33,6 +31,14 @@ const string gameLevel7Key = string("gameLevel7");
 const string gameLevel8Key = string("gameLevel8");
 const string gameLevel9Key = string("gameLevel9");
 const string gameLevel10Key = string("gameLevel10");
+
+const string selectLevelScenePlayerStatusControllerKey = string("selectLevelScenePlayerStatusController");
+const string selectLevelScenePlayerStatusPadKey = string("selectLevelScenePlayerStatusPad");
+const string selectLevelScenePlayerStatusNameKey = string("selectLevelScenePlayerStatusName");
+const string selectLevelScenePlayerStatusScoreKey = string("selectLevelScenePlayerStatusScore");
+
+const string createNewPlayerControllerKey = string("createNewPlayerController");
+
 
 
 const string gameElement1Key = string("gameElement1");

@@ -30,3 +30,10 @@ enum SelectGameLevelScreenZOrders
 	kSelectLevelScenePlayerStatusControllerZOrder,
 	kCreateNewPlayerControllerZOrder,
 };
+
+enum SelectGameLevelPlayerStatusZOrders
+{
+	kSelectLevelPlayerStatusPadZOrder,
+	kSelectLevelPlayerStatusNameZOrder,
+	kSelectLevelPlayerStatusScoreZOrder,
+};

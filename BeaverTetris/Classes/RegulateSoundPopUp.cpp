@@ -27,7 +27,7 @@ void RegulateSoundPopUp::showPopUp()
 	_oldControllerPosition = _popUpView->getPosition();
 	Vec2 newControllerPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(startGameRegulateSoundPadKey);
 	CCActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartAppearDuration, newControllerPosition);
-	CCAction *ease = CCEaseBackOut::create(moveController);
+	Action *ease = CCEaseBackOut::create(moveController);
 	_popUpView->runAction(ease);
 }
 

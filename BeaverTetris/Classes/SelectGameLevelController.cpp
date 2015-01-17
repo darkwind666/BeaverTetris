@@ -24,22 +24,22 @@ SelectGameLevelController::~SelectGameLevelController(void)
 
 }
 
-void SelectGameLevelController::makeScrollableMenuWithBackground(CCMenu *aMenu)
+void SelectGameLevelController::makeScrollableMenuWithBackground(Menu *aMenu)
 {
 
-	CCLayer *contentContainer = CCLayer::create();
-	CCLayerColor *background = CCLayerColor::create(Color4B::BLUE);
+	Layer *contentContainer = Layer::create();
+	LayerColor *background = LayerColor::create(Color4B::BLUE);
 	contentContainer->addChild(background);
 	contentContainer->addChild(aMenu);
 
-	CCNode *scrollableMenu = makeScrollableMenuWithContent(contentContainer);
+	Node *scrollableMenu = makeScrollableMenuWithContent(contentContainer);
 	this->addChild(scrollableMenu);
 }
 
 
-CCNode* SelectGameLevelController::makeScrollableMenuWithContent(CCNode* aContentContainer)
+Node* SelectGameLevelController::makeScrollableMenuWithContent(Node* aContentContainer)
 {
-	Size winSise = CCDirector::getInstance()->getWinSize();
+	Size winSise = Director::getInstance()->getWinSize();
 	Size scrollSize = CCSizeMake(winSise.width, winSise.height + 360);
 	ScrollView *scrollLayer = ScrollView::create(winSise, aContentContainer);
 	scrollLayer->ignoreAnchorPointForPosition(false);
@@ -53,7 +53,7 @@ void SelectGameLevelController::onEnterTransitionDidFinish()
 {
 	vector<CCMenuItemImage*> levelIcons = makeLevelsIcons();
 	addLevelIconsToMenu(levelIcons);
-	CCAction *menuAnimation = makeMenuAnimationWithIcons(levelIcons);
+	Action *menuAnimation = makeMenuAnimationWithIcons(levelIcons);
 	this->runAction(menuAnimation);
 }
 
@@ -83,10 +83,10 @@ void SelectGameLevelController::addLevelIconsToMenu(vector<CCMenuItemImage*>  aL
 	}
 }
 
-CCAction*  SelectGameLevelController::makeMenuAnimationWithIcons(vector<CCMenuItemImage*>  aLevelIcons)
+Action*  SelectGameLevelController::makeMenuAnimationWithIcons(vector<CCMenuItemImage*>  aLevelIcons)
 {
 	Vector<FiniteTimeAction*> actions = makeActionWithEachIcon(aLevelIcons);
-	CCAction *sequence = CCSequence::create(actions);
+	Action *sequence = Sequence::create(actions);
 	return sequence;
 }
 

@@ -35,37 +35,37 @@ StartGameAnimationController::~StartGameAnimationController(void)
 void StartGameAnimationController::onEnterTransitionDidFinish()
 {
 	
-	CCFiniteTimeAction *actionWithMenu = getAnimationWithMenu();
-	CCFiniteTimeAction *actionWithBeaver = getAnimationWithBeaver();
-	CCFiniteTimeAction *actionWithClockArrow = getAnimationWithBeaverClockArrow();
+	FiniteTimeAction *actionWithMenu = getAnimationWithMenu();
+	FiniteTimeAction *actionWithBeaver = getAnimationWithBeaver();
+	FiniteTimeAction *actionWithClockArrow = getAnimationWithBeaverClockArrow();
 
-	CCAction *sequence = CCSequence::create(actionWithMenu, actionWithBeaver, actionWithClockArrow, NULL);
+	Action *sequence = Sequence::create(actionWithMenu, actionWithBeaver, actionWithClockArrow, NULL);
 	this->runAction(sequence);
 }
 
-CCFiniteTimeAction* StartGameAnimationController::getAnimationWithMenu()
+FiniteTimeAction* StartGameAnimationController::getAnimationWithMenu()
 {
 	Vec2 finalMenuPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(startGameMenuKey);
-	CCActionInterval *moveMenu = CCMoveTo::create(startMenuActionDuration, finalMenuPosition);
-	CCFiniteTimeAction *ease = CCEaseBackOut::create(moveMenu);
-	CCFiniteTimeAction *actionWithMenu = CCTargetedAction::create(_startGameMenuController, ease);
+	ActionInterval *moveMenu = MoveTo::create(startMenuActionDuration, finalMenuPosition);
+	FiniteTimeAction *ease = EaseBackOut::create(moveMenu);
+	FiniteTimeAction *actionWithMenu = TargetedAction::create(_startGameMenuController, ease);
 	return actionWithMenu;
 }
 
-CCFiniteTimeAction* StartGameAnimationController::getAnimationWithBeaver()
+FiniteTimeAction* StartGameAnimationController::getAnimationWithBeaver()
 {
 	Vec2 finalBeaverPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(startGameBeaverKey);
 	Vec2 beaverJumpOffset = GameElementsDataHelper::getElementOffsetForKey(startGameBeaverKey);
-	CCActionInterval *beaverJump = CCJumpTo::create(beaverStartScreenActionDuration, finalBeaverPosition, beaverJumpOffset.y, 1);
-	CCFiniteTimeAction *actionWithBeaver = CCTargetedAction::create(_beaver, beaverJump);
+	ActionInterval *beaverJump = JumpTo::create(beaverStartScreenActionDuration, finalBeaverPosition, beaverJumpOffset.y, 1);
+	FiniteTimeAction *actionWithBeaver = TargetedAction::create(_beaver, beaverJump);
 	return actionWithBeaver;
 }
 
-CCFiniteTimeAction* StartGameAnimationController::getAnimationWithBeaverClockArrow()
+FiniteTimeAction* StartGameAnimationController::getAnimationWithBeaverClockArrow()
 {
-	CCFiniteTimeAction *actionWithClockArrow = CCCallFunc::create([this](){
-		CCActionInterval *rotateActionUp = CCRotateBy::create(beaverClockArrowRotationSpeed, 90);
-		CCFiniteTimeAction *repeat = CCRepeatForever::create(rotateActionUp);
+	FiniteTimeAction *actionWithClockArrow = CallFunc::create([this](){
+		ActionInterval *rotateActionUp = RotateBy::create(beaverClockArrowRotationSpeed, 90);
+		FiniteTimeAction *repeat = RepeatForever::create(rotateActionUp);
 		_beaverClockArrow->runAction(repeat);
 	});
 	return actionWithClockArrow;

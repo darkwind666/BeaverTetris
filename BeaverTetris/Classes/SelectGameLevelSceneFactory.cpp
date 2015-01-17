@@ -1,7 +1,9 @@
 #include "SelectGameLevelSceneFactory.h"
-#include "SelectGameLevelController.h"
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
+
+#include "SelectGameLevelController.h"
+#include "SelectLevelPlayerStatusController.h"
 
 using namespace cocos2d;
 
@@ -21,6 +23,8 @@ CCScene* SelectGameLevelSceneFactory::createScene()
 	SelectGameLevelController *selectGameLevelController = new SelectGameLevelController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectGameLevelController,selectGameLevelScene,selectLevelMenuKey);
 
+	SelectLevelPlayerStatusController *selectLevelPlayerStatusController = new SelectLevelPlayerStatusController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectLevelPlayerStatusController,selectGameLevelScene,selectLevelScenePlayerStatusControllerKey);
 
 	return selectGameLevelScene;
 }
