@@ -4,11 +4,13 @@
 
 class PlayerStatusDataSource;
 
-class SelectLevelPlayerStatusController : public cocos2d::CCNode
+class SelectLevelPlayerStatusController : public cocos2d::Node
 {
 public:
 	SelectLevelPlayerStatusController(void);
 	~SelectLevelPlayerStatusController(void);
+
+	virtual void onEnterTransitionDidFinish();
 
 private:
 
@@ -18,7 +20,7 @@ private:
 	cocos2d::LabelTTF* _playerScore;
 
 	cocos2d::LabelTTF* getStandardLabel();
-	cocos2d::CCNode* getPlayerStatusPad();
+	cocos2d::Node* getPlayerStatusPad();
 	void placeAllViewParts();
 
 };

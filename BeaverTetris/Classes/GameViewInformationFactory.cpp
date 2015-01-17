@@ -194,8 +194,8 @@ void GameViewInformationFactory::makeSelectGameLevelPlayerStatusData()
 {
 	ViewElementInformation selectGameLevelPlayerStatusPad;
 	selectGameLevelPlayerStatusPad.elementImage = getImageNameForKey(selectLevelScenePlayerStatusControllerKey);
-	selectGameLevelPlayerStatusPad.elementPosition = Vec2(240, 420);
-	selectGameLevelPlayerStatusPad.elementActionFinalPosition = Vec2(0, 0);
+	selectGameLevelPlayerStatusPad.elementPosition = Vec2(240, 580);
+	selectGameLevelPlayerStatusPad.elementActionFinalPosition = Vec2(240, 420);
 	selectGameLevelPlayerStatusPad.elementZOrder = kSelectLevelPlayerStatusPadZOrder;
 	_elementsInformation[selectLevelScenePlayerStatusPadKey] = selectGameLevelPlayerStatusPad;
 
