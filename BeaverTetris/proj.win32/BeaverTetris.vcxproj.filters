@@ -474,6 +474,9 @@
     <ClCompile Include="..\Classes\StringsSupporter.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\PlayerStatusDelegateInterface.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -895,6 +898,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\StringsSupporter.h">
       <Filter>SupportedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerStatusDelegateInterface.h">
+      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

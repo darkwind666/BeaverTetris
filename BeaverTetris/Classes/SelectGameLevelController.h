@@ -1,17 +1,18 @@
 #pragma once
 
+#include "PlayerStatusDelegateInterface.h"
 #include "cocos2d.h"
 #include <vector>
 
 class GameLevelsMenuDataSource;
 
-class SelectGameLevelController : public cocos2d::CCNode
+class SelectGameLevelController : public cocos2d::CCNode, public PlayerStatusDelegateInterface
 {
 public:
 	SelectGameLevelController(void);
 	~SelectGameLevelController(void);
 
-	virtual void onEnterTransitionDidFinish();
+	virtual void showPlayerStatus();
 
 private:
 

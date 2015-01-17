@@ -49,7 +49,7 @@ Node* SelectGameLevelController::makeScrollableMenuWithContent(Node* aContentCon
 	return scrollLayer;
 }
 
-void SelectGameLevelController::onEnterTransitionDidFinish()
+void SelectGameLevelController::showPlayerStatus()
 {
 	vector<CCMenuItemImage*> levelIcons = makeLevelsIcons();
 	addLevelIconsToMenu(levelIcons);

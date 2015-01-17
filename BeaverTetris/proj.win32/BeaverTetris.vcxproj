@@ -170,6 +170,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\LoadingGameDataSource.cpp" />
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDataSource.cpp" />
+    <ClCompile Include="..\Classes\PlayerStatusDelegateInterface.cpp" />
     <ClCompile Include="..\Classes\RegulateSoundPopUp.cpp" />
     <ClCompile Include="..\Classes\ResourcesLoader.cpp" />
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
@@ -474,6 +475,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\LoadingGameDataSource.h" />
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h" />
     <ClInclude Include="..\Classes\PlayerStatusDataSource.h" />
+    <ClInclude Include="..\Classes\PlayerStatusDelegateInterface.h" />
     <ClInclude Include="..\Classes\RegulateSoundPopUp.h" />
     <ClInclude Include="..\Classes\ResourcesLoader.h" />
     <ClInclude Include="..\Classes\SceneFactory.h" />

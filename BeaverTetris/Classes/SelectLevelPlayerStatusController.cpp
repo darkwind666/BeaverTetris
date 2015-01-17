@@ -10,7 +10,7 @@ using namespace cocos2d;
 SelectLevelPlayerStatusController::SelectLevelPlayerStatusController(void)
 {
 	_playerStatusDataSource = new PlayerStatusDataSource();
-
+	_delegate = NULL;
 	_playerName = getStandardLabel();
 	_playerScore = getStandardLabel();
 	_playerStatusView = getPlayerStatusPad();
@@ -47,8 +47,37 @@ void SelectLevelPlayerStatusController::onEnterTransitionDidFinish()
 	_playerName->setString(_playerStatusDataSource->getPlayerName());
 	_playerScore->setString(_playerStatusDataSource->getPlayerScore());
 
+	Action *showControllerAction = getShowControllerAnimation();
+	_playerStatusView->runAction(showControllerAction);
+}
+
+Action* SelectLevelPlayerStatusController::getShowControllerAnimation()
+{
 	Vec2 finalActionPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(selectLevelScenePlayerStatusPadKey);
 	ActionInterval *movePad = MoveTo::create(playerStatusPadActionDuration, finalActionPosition);
-	Action *ease = EaseBackOut::create(movePad);
-	_playerStatusView->runAction(ease);
+	FiniteTimeAction *ease = EaseBackOut::create(movePad);
+	FiniteTimeAction *callback = getCallback();
+	Action *sequence = Sequence::create(ease, callback, NULL);
+	return sequence;
+}
+
+FiniteTimeAction* SelectLevelPlayerStatusController::getCallback()
+{
+	FiniteTimeAction *callback = CallFunc::create([this](){
+		if (_delegate)
+		{
+			_delegate->showPlayerStatus();
+		}
+	});
+	return callback;
+}
+
+void SelectLevelPlayerStatusController::showPlayerStatus()
+{
+
+}
+
+void SelectLevelPlayerStatusController::setDelegate(PlayerStatusDelegateInterface *aDelegate)
+{
+	_delegate = aDelegate;
 }
