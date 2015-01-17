@@ -23,3 +23,10 @@ enum StartGameRegulateSoundPopUpZOrders
 	kStartGameRegulateSoundEffectsSliderZOrder,
 	kStartGameRegulateSoundPopUpCloseButtonZOrder,
 };
+
+enum SelectGameLevelScreenZOrders
+{
+	kSelectLevelMenuZOrder,
+	kSelectLevelScenePlayerStatusControllerZOrder,
+	kCreateNewPlayerControllerZOrder,
+};

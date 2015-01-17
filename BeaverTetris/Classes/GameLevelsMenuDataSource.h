@@ -3,24 +3,23 @@
 #include "ServiceInterface.h"
 #include <string>
 #include <vector>
-#include "CurrentPlayerDataSource.h"
-#include "GameLevelsDataSource.h"
-#include "GameViewElementsDataSource.h"
 #include "GameStructures.h"
 #include "cocos2d.h"
+
+class CurrentPlayerDataSource;
+class GameLevelsDataSource;
+class GameViewElementsDataSource;
 
 class GameLevelsMenuDataSource :public ServiceInterface
 {
 public:
-	GameLevelsMenuDataSource(CurrentPlayerDataSource *aCurrentPlayerDataSource, GameLevelsDataSource *aGameLevelsDataSource, GameViewElementsDataSource *aGameViewElementsDataSource);
+	GameLevelsMenuDataSource();
 	~GameLevelsMenuDataSource(void);
 
 	int getLevelsCount(void);
 	std::string getLevelIconImageForIndex(int aIndex);
 	cocos2d::Vec2 getLevelIconPositionForIndex(int aIndex);
-	GameEvent getLevelEventForIndex(int aIndex);
-
-	void refreshDataSource();
+	void selectGameLevelForIndex(int aIndex);
 
 private:
 
@@ -30,6 +29,7 @@ private:
 	GameViewElementsDataSource *_gameViewElementsDataSource;
 
 	std::vector <std::string> makeMenuItems();
+	int getAvailableLevelsCount();
 
 };
 

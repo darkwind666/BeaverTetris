@@ -1,6 +1,6 @@
 #include "CocosViewConfigurator.h"
 #include "CCPlatformConfig.h"
-#include "proj.win32\GameViewConstants.h"
+#include "GameViewConstants.h"
 #include <vector>
 
 using namespace std;

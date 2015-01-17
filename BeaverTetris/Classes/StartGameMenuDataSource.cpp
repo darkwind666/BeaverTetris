@@ -33,15 +33,13 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 	{
 		StartGameMenuItemInformation menuItem1;
 		menuItem1.imageKey = gameElement1Key;
-		//menuItem1.callback = [](){GameStatesHelper::goToScene(kSelectLevel);};
-		menuItem1.callback = [](){CCLOG("kSelectLevel");};
+		menuItem1.callback = [](){GameStatesHelper::goToScene(kSelectLevel);};
 		menuItems.push_back(menuItem1);
 	}
 
 	StartGameMenuItemInformation menuItem2;
 	menuItem2.imageKey = gameElement2Key;
-	//menuItem2.callback = [](){GameStatesHelper::goToScene(kSelectLevel);};
-	menuItem2.callback = [](){CCLOG("kSelectLevel");};
+	menuItem2.callback = [](){GameStatesHelper::goToScene(kSelectLevel);};
     menuItems.push_back(menuItem2);
 
 	StartGameMenuItemInformation menuItem3;

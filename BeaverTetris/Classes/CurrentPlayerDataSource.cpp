@@ -6,6 +6,7 @@ CurrentPlayerDataSource::CurrentPlayerDataSource()
 {
 	_completedLevelsNames = vector <string>();
 	_isThereCurentPlayer = false;
+	_selectedGameLevelIndex = 0;
 }
 
 
@@ -33,7 +34,8 @@ int CurrentPlayerDataSource::getPlayerScore()
 
 int CurrentPlayerDataSource::getPlayerCompletedLevelsCount()
 {
-	return _completedLevelsNames.size();
+	//return _completedLevelsNames.size();
+	return 10;
 }
 
 
@@ -56,6 +58,11 @@ void CurrentPlayerDataSource::setNewPlayerWithName(string aNewPlayerName)
 void CurrentPlayerDataSource::setPlayerScore(int aPlayerScore)
 {
 	_playerData.playerScore = aPlayerScore;
+}
+
+void CurrentPlayerDataSource::setSelectedGameLevelIndex(int aGameLevelIndex)
+{
+	_selectedGameLevelIndex = aGameLevelIndex;
 }
 
 void CurrentPlayerDataSource::completeLevel(string aCompletedLevelName)

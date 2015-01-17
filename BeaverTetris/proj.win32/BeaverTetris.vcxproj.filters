@@ -156,9 +156,6 @@
     <ClCompile Include="MainGameSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
-    <ClCompile Include="SelectGameLevelSceneFactory.cpp">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
@@ -288,12 +285,6 @@
     <ClCompile Include="DevelopersDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
-    <ClCompile Include="GameLevelsDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameLevelsMenuDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="GamePlayersDatabase.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
@@ -330,13 +321,7 @@
     <ClCompile Include="RemovingDeadTetraminosSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="GameKeyWithSuffixSupporter.cpp">
-      <Filter>SupportedFiles</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerInputController.cpp">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClCompile>
-    <ClCompile Include="SelectGameLevelController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
     <ClCompile Include="GameTransitionsController.cpp">
@@ -468,6 +453,21 @@
     <ClCompile Include="..\Classes\GameSoundEffectsRegulator.cpp">
       <Filter>Controllers\ViewControllers\Regulators</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SelectGameLevelSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SelectGameLevelController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameLevelsMenuDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameLevelsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameKeyWithSuffixSupporter.cpp">
+      <Filter>SupportedFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -543,9 +543,6 @@
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="MainGameSceneFactory.h">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectGameLevelSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="GameResourcesExtension.h">
@@ -677,12 +674,6 @@
     <ClInclude Include="DevelopersDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
-    <ClInclude Include="GameLevelsDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="GameLevelsMenuDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
     <ClInclude Include="GamePlayersDatabase.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
@@ -719,16 +710,7 @@
     <ClInclude Include="RemovingDeadTetraminosSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
-    <ClInclude Include="GameKeyWithSuffixSupporter.h">
-      <Filter>SupportedFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="GameViewSuffixes.h">
-      <Filter>Constants</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerInputController.h">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClInclude>
-    <ClInclude Include="SelectGameLevelController.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
     <ClInclude Include="GameTransitionsController.h">
@@ -883,6 +865,24 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameSoundEffectsRegulator.h">
       <Filter>Controllers\ViewControllers\Regulators</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SelectGameLevelSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SelectGameLevelController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameLevelsMenuDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameLevelsDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameKeyWithSuffixSupporter.h">
+      <Filter>SupportedFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameViewSuffixes.h">
+      <Filter>Constants</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

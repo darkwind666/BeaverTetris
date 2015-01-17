@@ -22,6 +22,7 @@ private:
 	void makeStartGameSreenData();
 	void makeStartGameRegulateSoundPopUpData();
 	void makeSelectGameLevelScreenData();
+	void makeSelectGameLevelMenuData();
 	void makeMainGameScreenData();
 	void makeRecordsScreenData();
 	void makeDevelopersScreenData();

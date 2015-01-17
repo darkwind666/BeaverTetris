@@ -4,6 +4,8 @@
 
 using namespace std;
 
+
+
 GameKeyWithSuffixSupporter::GameKeyWithSuffixSupporter(void)
 {
 }
@@ -27,4 +29,9 @@ string GameKeyWithSuffixSupporter::makeSelectedImageForKey(string aKey)
 string GameKeyWithSuffixSupporter::makeUnselectedImageForKey(string aKey)
 {
 	return GameFileExtensionMaker::getGraphicWithExtension(aKey + unselectedPrefix);
+}
+
+string GameKeyWithSuffixSupporter::makeLockedImageForKey(std::string aKey)
+{
+	return (aKey + lockedPrefix);
 }
