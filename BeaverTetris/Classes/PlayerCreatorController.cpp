@@ -4,6 +4,8 @@
 #include "CurrentPlayerDataSource.h"
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
+#include "GameElementsDataHelper.h"
+#include "GameAnimationActionsConstants.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -64,8 +66,29 @@ Node* PlayerCreatorController::getPlayerCreatorInputHolder()
 	return createPlayerControllerInput;
 }
 
+void PlayerCreatorController::onEnterTransitionDidFinish()
+{
+
+	if (!_currentPlayerDataSource->isThereCurentPlayer())
+	{
+		_previousPosition = _controllerView->getPosition();
+		Vec2 finalActionPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(playerCreatorControllerPadKey);
+		ActionInterval *movePad = MoveTo::create(createPlayerControllerAppearDuration, finalActionPosition);
+		Action *ease = EaseBackOut::create(movePad);
+		_controllerView->runAction(ease);
+	}
+	else
+	{
+
+	}
+	
+}
+
 void PlayerCreatorController::editBoxReturn(EditBox* editBox)
 {
 	const char* textStart = editBox->getText();
 	_currentPlayerDataSource->setNewPlayerWithName(string(textStart));
+
+	ActionInterval *movePadBack = MoveTo::create(createPlayerControllerDisapperDuration, _previousPosition);
+	_controllerView->runAction(movePadBack);
 }

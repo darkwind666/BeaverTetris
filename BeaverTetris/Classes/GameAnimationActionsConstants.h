@@ -17,3 +17,6 @@ const float regulateSoundPopUpStartDisapperDuration = 0.5f;
 const float levelIconAppearActionDuration = 0.3f;
 
 const float playerStatusPadActionDuration = 0.6f;
+
+const float createPlayerControllerAppearDuration = 0.6f;
+const float createPlayerControllerDisapperDuration = 0.3f;

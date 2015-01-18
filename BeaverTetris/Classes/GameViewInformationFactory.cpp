@@ -222,8 +222,8 @@ void GameViewInformationFactory::makeSelectGameLevelPlayerCreatorControllerData(
 {
 	ViewElementInformation playerCreatorPad;
 	playerCreatorPad.elementImage = getImageNameForKey(selectLevelScenePlayerStatusControllerKey);
-	playerCreatorPad.elementPosition = getScreenCenter();
-	playerCreatorPad.elementActionFinalPosition = Vec2(240, 420);
+	playerCreatorPad.elementPosition = Vec2(getScreenCenterX(), 560);
+	playerCreatorPad.elementActionFinalPosition = getScreenCenter();
 	playerCreatorPad.elementZOrder = kPlayerCreatorPadZOrder;
 	_elementsInformation[playerCreatorControllerPadKey] = playerCreatorPad;
 

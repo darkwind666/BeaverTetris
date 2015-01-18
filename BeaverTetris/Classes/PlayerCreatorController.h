@@ -12,6 +12,7 @@ public:
 	~PlayerCreatorController(void);
 
 	virtual void editBoxReturn(cocos2d::ui::EditBox* editBox);
+	virtual void onEnterTransitionDidFinish();
 
 private:
 
