@@ -29,6 +29,7 @@ CCScene* SelectGameLevelSceneFactory::createScene()
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectLevelPlayerStatusController,selectGameLevelScene,selectLevelScenePlayerStatusControllerKey);
 
 	PlayerCreatorController *playerCreatorController = new PlayerCreatorController();
+	playerCreatorController->setDelegate(selectLevelPlayerStatusController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerCreatorController,selectGameLevelScene,playerCreatorControllerKey);
 
 	return selectGameLevelScene;

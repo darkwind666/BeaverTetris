@@ -11,7 +11,6 @@ public:
 	SelectLevelPlayerStatusController(void);
 	~SelectLevelPlayerStatusController(void);
 
-	virtual void onEnterTransitionDidFinish();
 	virtual void showPlayerStatus();
 
 	void setDelegate(PlayerStatusDelegateInterface *aDelegate);

@@ -42,15 +42,6 @@ void SelectLevelPlayerStatusController::placeAllViewParts()
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_playerScore, _playerStatusView, selectLevelScenePlayerStatusScoreKey);
 }
 
-void SelectLevelPlayerStatusController::onEnterTransitionDidFinish()
-{
-	_playerName->setString(_playerStatusDataSource->getPlayerName());
-	_playerScore->setString(_playerStatusDataSource->getPlayerScore());
-
-	Action *showControllerAction = getShowControllerAnimation();
-	_playerStatusView->runAction(showControllerAction);
-}
-
 Action* SelectLevelPlayerStatusController::getShowControllerAnimation()
 {
 	Vec2 finalActionPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(selectLevelScenePlayerStatusPadKey);
@@ -74,7 +65,11 @@ FiniteTimeAction* SelectLevelPlayerStatusController::getCallback()
 
 void SelectLevelPlayerStatusController::showPlayerStatus()
 {
-
+	_playerName->setString(_playerStatusDataSource->getPlayerName());
+	_playerScore->setString(_playerStatusDataSource->getPlayerScore());
+	
+	Action *showControllerAction = getShowControllerAnimation();
+	_playerStatusView->runAction(showControllerAction);
 }
 
 void SelectLevelPlayerStatusController::setDelegate(PlayerStatusDelegateInterface *aDelegate)

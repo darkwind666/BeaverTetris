@@ -6,12 +6,14 @@
 #include "GameViewElementsKeys.h"
 #include "GameElementsDataHelper.h"
 #include "GameAnimationActionsConstants.h"
+#include "PlayerStatusDelegateInterface.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
 
 PlayerCreatorController::PlayerCreatorController(void)
 {
+	_delegate = NULL;
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_controllerView = getControllerView();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_controllerView, this, playerCreatorControllerPadKey);
@@ -68,7 +70,6 @@ Node* PlayerCreatorController::getPlayerCreatorInputHolder()
 
 void PlayerCreatorController::onEnterTransitionDidFinish()
 {
-
 	if (!_currentPlayerDataSource->isThereCurentPlayer())
 	{
 		_previousPosition = _controllerView->getPosition();
@@ -79,9 +80,8 @@ void PlayerCreatorController::onEnterTransitionDidFinish()
 	}
 	else
 	{
-
+		invokeDelegate();
 	}
-	
 }
 
 void PlayerCreatorController::editBoxReturn(EditBox* editBox)
@@ -90,5 +90,20 @@ void PlayerCreatorController::editBoxReturn(EditBox* editBox)
 	_currentPlayerDataSource->setNewPlayerWithName(string(textStart));
 
 	ActionInterval *movePadBack = MoveTo::create(createPlayerControllerDisapperDuration, _previousPosition);
-	_controllerView->runAction(movePadBack);
+	FiniteTimeAction *callback = CallFunc::create([this](){invokeDelegate();});
+	Action *sequence = Sequence::create(movePadBack, callback, NULL);
+	_controllerView->runAction(sequence);
+}
+
+void PlayerCreatorController::setDelegate(PlayerStatusDelegateInterface *aDelegate)
+{
+	_delegate = aDelegate;
+}
+
+void  PlayerCreatorController::invokeDelegate()
+{
+	if (_delegate)
+	{
+		_delegate->showPlayerStatus();
+	}
 }
