@@ -144,6 +144,13 @@ void GameViewInformationFactory::makeSelectGameLevelScreenData()
 	
 	makeSelectGameLevelPlayerStatusData();
 
+	ViewElementInformation playerCreatorController;
+	playerCreatorController.elementImage = getImageNameForKey(playerCreatorControllerKey);
+	playerCreatorController.elementPosition = Vec2(0, 0);
+	playerCreatorController.elementZOrder = kPlayerCreatorControllerZOrder;
+	_elementsInformation[playerCreatorControllerKey] = playerCreatorController;
+
+	makeSelectGameLevelPlayerCreatorControllerData();
 }
 
 void GameViewInformationFactory::makeSelectGameLevelMenuData()
@@ -208,6 +215,27 @@ void GameViewInformationFactory::makeSelectGameLevelPlayerStatusData()
 	selectLevelScenePlayerStatusScore.elementPosition = Vec2(240, 110);
 	selectLevelScenePlayerStatusScore.elementZOrder = kSelectLevelPlayerStatusScoreZOrder;
 	_elementsInformation[selectLevelScenePlayerStatusScoreKey] = selectLevelScenePlayerStatusScore;
+
+}
+
+void GameViewInformationFactory::makeSelectGameLevelPlayerCreatorControllerData()
+{
+	ViewElementInformation playerCreatorPad;
+	playerCreatorPad.elementImage = getImageNameForKey(selectLevelScenePlayerStatusControllerKey);
+	playerCreatorPad.elementPosition = getScreenCenter();
+	playerCreatorPad.elementActionFinalPosition = Vec2(240, 420);
+	playerCreatorPad.elementZOrder = kPlayerCreatorPadZOrder;
+	_elementsInformation[playerCreatorControllerPadKey] = playerCreatorPad;
+
+	ViewElementInformation playerCreatorText;
+	playerCreatorText.elementPosition = Vec2(140, 110);
+	playerCreatorText.elementZOrder = kPlayerCreatorTextZOrder;
+	_elementsInformation[playerCreatorControllerTextKey] = playerCreatorText;
+
+	ViewElementInformation playerCreatorInput;
+	playerCreatorInput.elementPosition = Vec2(140, 50);
+	playerCreatorInput.elementZOrder = kPlayerCreatorInputZOrder;
+	_elementsInformation[playerCreatorControllerInputKey] = playerCreatorInput;
 
 }
 

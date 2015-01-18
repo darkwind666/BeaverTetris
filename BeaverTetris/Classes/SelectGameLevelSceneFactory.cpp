@@ -4,6 +4,7 @@
 
 #include "SelectGameLevelController.h"
 #include "SelectLevelPlayerStatusController.h"
+#include "PlayerCreatorController.h"
 
 using namespace cocos2d;
 
@@ -26,6 +27,9 @@ CCScene* SelectGameLevelSceneFactory::createScene()
 	SelectLevelPlayerStatusController *selectLevelPlayerStatusController = new SelectLevelPlayerStatusController();
 	selectLevelPlayerStatusController->setDelegate(selectGameLevelController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectLevelPlayerStatusController,selectGameLevelScene,selectLevelScenePlayerStatusControllerKey);
+
+	PlayerCreatorController *playerCreatorController = new PlayerCreatorController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerCreatorController,selectGameLevelScene,playerCreatorControllerKey);
 
 	return selectGameLevelScene;
 }

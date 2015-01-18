@@ -477,6 +477,9 @@
     <ClCompile Include="..\Classes\PlayerStatusDelegateInterface.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\PlayerCreatorController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -900,6 +903,9 @@
       <Filter>SupportedFiles</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\PlayerStatusDelegateInterface.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerCreatorController.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>

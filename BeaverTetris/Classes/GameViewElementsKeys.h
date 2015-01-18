@@ -37,9 +37,10 @@ const string selectLevelScenePlayerStatusPadKey = string("selectLevelScenePlayer
 const string selectLevelScenePlayerStatusNameKey = string("selectLevelScenePlayerStatusName");
 const string selectLevelScenePlayerStatusScoreKey = string("selectLevelScenePlayerStatusScore");
 
-const string createNewPlayerControllerKey = string("createNewPlayerController");
-
-
+const string playerCreatorControllerKey = string("playerCreatorController");
+const string playerCreatorControllerPadKey = string("playerCreatorControllerPad");
+const string playerCreatorControllerTextKey = string("playerCreatorControllerText");
+const string playerCreatorControllerInputKey = string("playerCreatorControllerInput");
 
 const string gameElement1Key = string("gameElement1");
 const string gameElement2Key = string("gameElement2");
