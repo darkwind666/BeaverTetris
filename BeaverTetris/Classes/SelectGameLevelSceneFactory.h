@@ -10,5 +10,9 @@ public:
 
 	virtual cocos2d::CCScene* createScene();
 
+private:
+
+	cocos2d::MenuItemImage* getCloseButton();
+
 };
 

@@ -151,6 +151,13 @@ void GameViewInformationFactory::makeSelectGameLevelScreenData()
 	_elementsInformation[playerCreatorControllerKey] = playerCreatorController;
 
 	makeSelectGameLevelPlayerCreatorControllerData();
+
+	ViewElementInformation selectLevelSceneBackButton;
+	selectLevelSceneBackButton.elementImage = getImageNameForKey(playerCreatorControllerKey);
+	selectLevelSceneBackButton.elementPosition = Vec2(70, 40);
+	selectLevelSceneBackButton.elementZOrder = kSelectLevelSceneBackButtonZOrder;
+	_elementsInformation[selectLevelSceneBackButtonKey] = selectLevelSceneBackButton;
+
 }
 
 void GameViewInformationFactory::makeSelectGameLevelMenuData()
