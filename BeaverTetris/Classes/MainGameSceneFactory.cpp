@@ -16,7 +16,7 @@ MainGameSceneFactory::~MainGameSceneFactory(void)
 {
 }
 
-Scene* createScene()
+Scene* MainGameSceneFactory::createScene()
 {
 	GameLogicLoader *gameLogicLoader = new GameLogicLoader();
 	gameLogicLoader->loadResources();

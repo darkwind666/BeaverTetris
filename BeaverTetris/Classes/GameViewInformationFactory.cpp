@@ -265,7 +265,7 @@ void GameViewInformationFactory::makeMainGameScreenData()
 void GameViewInformationFactory::makeMainGameWorldData()
 {
 	ViewElementInformation mainGameBackground;
-	mainGameBackground.elementPosition = Vec2(0, 0);
+	mainGameBackground.elementPosition = getScreenCenter();
 	mainGameBackground.elementZOrder = kMainGameBackgroundZOrder;
 	_elementsInformation[mainGameBackgroundControllerKey] = mainGameBackground;
 
