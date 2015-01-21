@@ -1,16 +1,21 @@
 #include "GameBoardViewDataSource.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameBoard.h"
+#include "KeysForEnumsDataSource.h"
 #include "GameFileExtensionMaker.h"
+#include "Tetramino.h"
 
-int gameBoardViewColumnOffset = 4;
-int gameBoardViewRowOffset = 4;
+const int gameBoardViewColumnOffset = 4;
+const int gameBoardViewRowOffset = 4;
 
 using namespace std;
 using namespace cocos2d;
 
-GameBoardViewDataSource::GameBoardViewDataSource(GameBoard *aGameBoard, KeysForEnumsDataSource *aKeysForEnumsDataSource)
+GameBoardViewDataSource::GameBoardViewDataSource()
 {
-	_gameBoard = aGameBoard;
-	_keysForEnumsDataSource = aKeysForEnumsDataSource;
+	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	_keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
 }
 
 
@@ -20,7 +25,9 @@ GameBoardViewDataSource::~GameBoardViewDataSource(void)
 
 int GameBoardViewDataSource::getTetraminosCount()
 {
-	return (_gameBoard->getGameBoardHeight() * _gameBoard->getGameBoardWidth());
+	int gameBoardHeight = _gameBoard->getGameBoardHeight();
+	int gameBoardWidth = _gameBoard->getGameBoardWidth();
+	return (gameBoardHeight * gameBoardWidth);
 }
 
 string GameBoardViewDataSource::getTetraminoImageForIndex(int aIndex)

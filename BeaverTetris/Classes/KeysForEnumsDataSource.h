@@ -1,9 +1,10 @@
 #pragma once
 
+#include "ServiceInterface.h"
 #include "GameEnums.h"
 #include <string>
 
-class KeysForEnumsDataSource
+class KeysForEnumsDataSource : public ServiceInterface
 {
 public:
 	KeysForEnumsDataSource(void);

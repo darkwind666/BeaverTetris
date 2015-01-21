@@ -1,12 +1,14 @@
 #pragma once
 
+#include "ServiceInterface.h"
 #include <vector>
 #include "GameStructures.h"
-#include "Tetramino.h"
 #include "GameBoardObserverInterface.h"
 #include "TetraminosPositionsDelegate.h"
 
-class GameBoard
+class Tetramino;
+
+class GameBoard : public ServiceInterface
 {
 public:
 	GameBoard(int width, int height);

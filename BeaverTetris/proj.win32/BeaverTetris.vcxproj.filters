@@ -135,9 +135,6 @@
     <ClCompile Include="WinGameSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="Tetramino.cpp">
-      <Filter>Models\GameLogic</Filter>
-    </ClCompile>
     <ClCompile Include="SpellBox.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
@@ -169,9 +166,6 @@
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
     <ClCompile Include="GameControllViewDataSource.cpp">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameBoardViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
     <ClCompile Include="EndGameViewDataSource.cpp">
@@ -298,12 +292,6 @@
       <Filter>Models\DataSources</Filter>
     </ClCompile>
     <ClCompile Include="WinGamesDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameBoard.cpp">
-      <Filter>Models\GameLogic\GameBoard</Filter>
-    </ClCompile>
-    <ClCompile Include="KeysForEnumsDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
     <ClCompile Include="GameBoardObserverInterface.cpp">
@@ -492,6 +480,18 @@
     <ClCompile Include="..\Classes\MainGameBackgroundDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameBoardViewDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBoard.cpp">
+      <Filter>Models\GameLogic\GameBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\KeysForEnumsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Tetramino.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -548,9 +548,6 @@
     <ClInclude Include="WinGameSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
-    <ClInclude Include="Tetramino.h">
-      <Filter>Models\GameLogic</Filter>
-    </ClInclude>
     <ClInclude Include="SpellBox.h">
       <Filter>Models\Spells</Filter>
     </ClInclude>
@@ -585,9 +582,6 @@
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="GameControllViewDataSource.h">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="GameBoardViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="EndGameViewDataSource.h">
@@ -711,12 +705,6 @@
       <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="WinGamesDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="GameBoard.h">
-      <Filter>Models\GameLogic\GameBoard</Filter>
-    </ClInclude>
-    <ClInclude Include="KeysForEnumsDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="GameBoardObserverInterface.h">
@@ -931,6 +919,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MainGameBackgroundDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBoardViewDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBoard.h">
+      <Filter>Models\GameLogic\GameBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\KeysForEnumsDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Tetramino.h">
+      <Filter>Models\GameLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

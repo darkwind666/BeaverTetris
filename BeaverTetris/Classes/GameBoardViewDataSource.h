@@ -1,15 +1,16 @@
 #pragma once
 
 #include <string>
-#include "GameBoard.h"
 #include "cocos2d.h"
-#include "KeysForEnumsDataSource.h"
+
+class GameBoard;
+class KeysForEnumsDataSource;
 
 class GameBoardViewDataSource
 {
 public:
 
-	GameBoardViewDataSource(GameBoard *aGameBoard, KeysForEnumsDataSource *aKeysForEnumsDataSource);
+	GameBoardViewDataSource();
 	~GameBoardViewDataSource(void);
 
 	int getTetraminosCount();
