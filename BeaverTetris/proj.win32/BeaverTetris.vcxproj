@@ -143,6 +143,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
     <ClCompile Include="..\Classes\CurrentPlayerDataSource.cpp" />
     <ClCompile Include="..\Classes\GameBackgroundSoundRegulator.cpp" />
+    <ClCompile Include="..\Classes\GameBoardController.cpp" />
     <ClCompile Include="..\Classes\GameDataLoader.cpp" />
     <ClCompile Include="..\Classes\GameElementsDataHelper.cpp" />
     <ClCompile Include="..\Classes\GameFileExtensionMaker.cpp" />
@@ -163,12 +164,16 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameViewInformationFactory.cpp" />
     <ClCompile Include="..\Classes\GameViewStyleHelper.cpp" />
+    <ClCompile Include="..\Classes\GameWorldBackgroundController.cpp" />
+    <ClCompile Include="..\Classes\GameWorldController.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\Classes\LoadGameController.cpp" />
     <ClCompile Include="..\Classes\LoadingGameDataSource.cpp" />
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp" />
+    <ClCompile Include="..\Classes\MainGameBackgroundDataSource.cpp" />
+    <ClCompile Include="..\Classes\MainGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\PlayerCreatorController.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDataSource.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDelegateInterface.cpp" />
@@ -380,9 +385,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="SpellsViewDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="MainGameSceneFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="PlayerSelectionDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -445,6 +447,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CurrentPlayerDataSource.h" />
     <ClInclude Include="..\Classes\GameAnimationActionsConstants.h" />
     <ClInclude Include="..\Classes\GameBackgroundSoundRegulator.h" />
+    <ClInclude Include="..\Classes\GameBoardController.h" />
     <ClInclude Include="..\Classes\GameDataLoader.h" />
     <ClInclude Include="..\Classes\GameDesignConstants.h" />
     <ClInclude Include="..\Classes\GameElementsDataHelper.h" />
@@ -471,10 +474,14 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameViewInformationFactory.h" />
     <ClInclude Include="..\Classes\GameViewStyleHelper.h" />
     <ClInclude Include="..\Classes\GameViewSuffixes.h" />
+    <ClInclude Include="..\Classes\GameWorldBackgroundController.h" />
+    <ClInclude Include="..\Classes\GameWorldController.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LoadGameController.h" />
     <ClInclude Include="..\Classes\LoadingGameDataSource.h" />
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h" />
+    <ClInclude Include="..\Classes\MainGameBackgroundDataSource.h" />
+    <ClInclude Include="..\Classes\MainGameSceneFactory.h" />
     <ClInclude Include="..\Classes\PlayerCreatorController.h" />
     <ClInclude Include="..\Classes\PlayerStatusDataSource.h" />
     <ClInclude Include="..\Classes\PlayerStatusDelegateInterface.h" />
@@ -562,7 +569,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="SpellInterface.h" />
     <ClInclude Include="SpellsFactory.h" />
     <ClInclude Include="SpellsViewDataSource.h" />
-    <ClInclude Include="MainGameSceneFactory.h" />
     <ClInclude Include="PlayerSelectionDataSource.h" />
     <ClInclude Include="RecordsDataSource.h" />
     <ClInclude Include="SceneGraphFactory.h" />

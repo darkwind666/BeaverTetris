@@ -44,6 +44,10 @@ int CurrentPlayerDataSource::getPlayerAvailableSpellsCount()
 	return 42;
 }
 
+int CurrentPlayerDataSource::getSelectedGameLevelIndex()
+{
+	return _selectedGameLevelIndex;
+}
 
 void CurrentPlayerDataSource::setNewPlayerWithName(string aNewPlayerName)
 {

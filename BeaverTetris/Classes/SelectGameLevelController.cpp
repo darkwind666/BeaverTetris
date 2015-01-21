@@ -108,6 +108,6 @@ void SelectGameLevelController::buttonWasPressed(CCObject* pSender)
 {
 	CCNode *button = (CCNode*)pSender;
 	int buttonTag = button->getTag();
-	std::function<void()> buttonCallback = [=](){CCLOG("%d", buttonTag);};
+	std::function<void()> buttonCallback = [=](){_gameLevelsMenuDataSource->selectGameLevelForIndex(buttonTag);};
 	GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);
 }

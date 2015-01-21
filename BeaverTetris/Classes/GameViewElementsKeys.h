@@ -44,6 +44,13 @@ const string playerCreatorControllerInputKey = string("playerCreatorControllerIn
 
 const string selectLevelSceneBackButtonKey = string("selectLevelSceneBackButton");
 
+const string gameWorldControllerKey = string("gameWorldController");
+const string mainGameBackgroundControllerKey = string("mainGameBackgroundController");
+const string mainGameBoardControllerKey = string("mainGameBoardController");
+const string mainGameAnimationControllerKey = string("mainGameAnimationController");
+
+const string gameHudControllerKey = string("gameHudController");
+
 const string gameElement1Key = string("gameElement1");
 const string gameElement2Key = string("gameElement2");
 const string gameElement3Key = string("gameElement3");

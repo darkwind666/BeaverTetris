@@ -5,12 +5,10 @@
 #include "GameGraphicsLoader.h"
 #include "GameSoundLoader.h"
 #include "GameDataLoader.h"
-#include "GameLogicLoader.h"
 
-const int graphicLoadingPercentage = 25;
-const int soundLoadingPercentage = 25;
+const int graphicLoadingPercentage = 45;
+const int soundLoadingPercentage = 30;
 const int dataLoadingPercentage = 25;
-const int logicLoadingPercentage = 25;
 
 LoadingGameDataSource::LoadingGameDataSource(void)
 {
@@ -54,14 +52,9 @@ vector<ResoucesLoaderInformation> LoadingGameDataSource::getLoadersInformation()
 	dataLoader.loadPercentage = dataLoadingPercentage;
 	dataLoader.resourcesLoader = new GameDataLoader();
 
-	ResoucesLoaderInformation logicLoader;
-	logicLoader.loadPercentage = logicLoadingPercentage;
-	logicLoader.resourcesLoader = new GameLogicLoader();
-
 	loadersInformation.push_back(graphicLoader);
 	loadersInformation.push_back(soundLoader);
 	loadersInformation.push_back(dataLoader);
-	loadersInformation.push_back(logicLoader);
 
 	return loadersInformation;
 }

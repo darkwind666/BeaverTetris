@@ -45,3 +45,16 @@ enum PlayerCreatorZOrders
 	kPlayerCreatorTextZOrder,
 	kPlayerCreatorInputZOrder,
 };
+
+enum MainGameScreenZOrders
+{
+	kWorldControllerZOrder,
+	kHudControllerZOrder,
+};
+
+enum MainGameWorldZOrders
+{
+	kMainGameBackgroundZOrder,
+	kMainGameBoardZOrder,
+	kMainGameAnimationZOrder,
+};

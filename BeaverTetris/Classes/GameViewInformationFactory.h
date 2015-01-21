@@ -26,6 +26,7 @@ private:
 	void makeSelectGameLevelPlayerStatusData();
 	void makeSelectGameLevelPlayerCreatorControllerData();
 	void makeMainGameScreenData();
+	void makeMainGameWorldData();
 	void makeRecordsScreenData();
 	void makeDevelopersScreenData();
 

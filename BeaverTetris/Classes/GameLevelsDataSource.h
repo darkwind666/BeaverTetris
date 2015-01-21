@@ -12,7 +12,7 @@ public:
 
 	int getLevelsCount();
 	std::string getLevelNameForIndex(int aIndex);
-	LevelInformation getLevelDataForIndex(int aIndex);
+	GameLevelInformation getLevelDataForIndex(int aIndex);
 
 	std::string *_levelNames;
 	int _levelsCount;

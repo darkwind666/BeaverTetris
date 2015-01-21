@@ -153,9 +153,6 @@
     <ClCompile Include="GameRecordsSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
-    <ClCompile Include="MainGameSceneFactory.cpp">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
@@ -405,9 +402,6 @@
     <ClCompile Include="..\Classes\GameLogicLoader.cpp">
       <Filter>Controllers\Loaders</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\LoadingGameDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp">
       <Filter>SupportedFiles</Filter>
     </ClCompile>
@@ -479,6 +473,24 @@
     </ClCompile>
     <ClCompile Include="..\Classes\PlayerCreatorController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainGameSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LoadingGameDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameWorldController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBoardController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameWorldBackgroundController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainGameBackgroundDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -552,9 +564,6 @@
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="GameRecordsSceneFactory.h">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClInclude>
-    <ClInclude Include="MainGameSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="GameResourcesExtension.h">
@@ -818,9 +827,6 @@
     <ClInclude Include="..\Classes\GameLogicLoader.h">
       <Filter>Controllers\Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\LoadingGameDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\GameDesignConstants.h">
       <Filter>Constants</Filter>
     </ClInclude>
@@ -907,6 +913,24 @@
     </ClInclude>
     <ClInclude Include="..\Classes\PlayerCreatorController.h">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGameSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LoadingGameDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameWorldController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBoardController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameWorldBackgroundController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGameBackgroundDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

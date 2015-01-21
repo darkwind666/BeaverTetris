@@ -29,15 +29,12 @@ ViewElementInformation GameViewInformationFactory::getViewInformationForKey(stri
 
 void GameViewInformationFactory::makeViewData() 
 {
-	
 	makeLoadingScreenData();
 	makeStartGameSreenData();
-	makeStartGameRegulateSoundPopUpData();
 	makeSelectGameLevelScreenData();
 	makeMainGameScreenData();
 	makeRecordsScreenData();
 	makeDevelopersScreenData();
-
 }
 
 void GameViewInformationFactory::makeLoadingScreenData()
@@ -90,15 +87,18 @@ void GameViewInformationFactory::makeStartGameSreenData()
 	beaverClockArrow.elementZOrder = kBeaverClockArrowZOrder;
 	_elementsInformation[startGameBeaverClockKey] = beaverClockArrow;
 
-}
-
-void GameViewInformationFactory::makeStartGameRegulateSoundPopUpData()
-{
 	ViewElementInformation startGameRegulateSoundPopUp;
 	startGameRegulateSoundPopUp.elementPosition = Vec2(0, 0);
 	startGameRegulateSoundPopUp.elementActionFinalPosition = getScreenCenter();
 	startGameRegulateSoundPopUp.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
 	_elementsInformation[startGameRegulateSoundPopUpKey] = startGameRegulateSoundPopUp;
+
+	makeStartGameRegulateSoundPopUpData();
+
+}
+
+void GameViewInformationFactory::makeStartGameRegulateSoundPopUpData()
+{
 
 	ViewElementInformation startGameRegulateSoundPopUpPad;
 	startGameRegulateSoundPopUpPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
@@ -248,6 +248,36 @@ void GameViewInformationFactory::makeSelectGameLevelPlayerCreatorControllerData(
 
 void GameViewInformationFactory::makeMainGameScreenData()
 {
+	ViewElementInformation mainGameWorldController;
+	mainGameWorldController.elementPosition = Vec2(0, 0);
+	mainGameWorldController.elementZOrder = kWorldControllerZOrder;
+	_elementsInformation[gameWorldControllerKey] = mainGameWorldController;
+	
+	makeMainGameWorldData();
+
+	ViewElementInformation mainGameHudController;
+	mainGameHudController.elementPosition = Vec2(0, 0);
+	mainGameHudController.elementZOrder = kHudControllerZOrder;
+	_elementsInformation[gameHudControllerKey] = mainGameHudController;
+
+}
+
+void GameViewInformationFactory::makeMainGameWorldData()
+{
+	ViewElementInformation mainGameBackground;
+	mainGameBackground.elementPosition = Vec2(0, 0);
+	mainGameBackground.elementZOrder = kMainGameBackgroundZOrder;
+	_elementsInformation[mainGameBackgroundControllerKey] = mainGameBackground;
+
+	ViewElementInformation mainGameBoard;
+	mainGameBoard.elementPosition = Vec2(0, 0);
+	mainGameBoard.elementZOrder = kMainGameBoardZOrder;
+	_elementsInformation[mainGameBoardControllerKey] = mainGameBoard;
+
+	ViewElementInformation mainGameAnimation;
+	mainGameAnimation.elementPosition = Vec2(0, 0);
+	mainGameAnimation.elementZOrder = kMainGameAnimationZOrder;
+	_elementsInformation[mainGameAnimationControllerKey] = mainGameAnimation;
 
 }
 
