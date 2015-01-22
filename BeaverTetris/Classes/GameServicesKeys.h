@@ -10,9 +10,9 @@ const string gameTransitionsViewControllerKey = string("GameTransitionsViewContr
 const string gamePopUpsControllerKey = string("GamePopUpsController");
 const string currentPlayerDataSourceKey = string("CurrentPlayerDataSource");
 const string gameLevelsDataSourceKey = string("GameLevelsDataSource");
+const string keysForEnumsDataSourceKey = string("KeysForEnumsDataSource");
 
 const string gameBoardKey = string("GameBoard");
-const string keysForEnumsDataSourceKey = string("KeysForEnumsDataSource");
 
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");
