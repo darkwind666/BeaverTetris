@@ -2,6 +2,8 @@
 
 #include "cocos2d.h"
 
+class GameBoardController;
+
 class GameWorldController : public cocos2d::Node
 {
 public:
@@ -9,6 +11,8 @@ public:
 	~GameWorldController(void);
 
 private:
+
+	GameBoardController *_gameBoardController;
 
 	void makeControllerView();
 

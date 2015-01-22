@@ -47,9 +47,20 @@ const string selectLevelSceneBackButtonKey = string("selectLevelSceneBackButton"
 const string gameWorldControllerKey = string("gameWorldController");
 const string mainGameBackgroundControllerKey = string("mainGameBackgroundController");
 const string mainGameBoardControllerKey = string("mainGameBoardController");
+
+const string redTetraminoKey = string("TetraminoRed");
+const string greenTetraminoKey = string("TetraminoGreen");
+const string blueTetraminoKey = string("TetraminoBlue");
+const string goldTetraminoKey = string("TetraminoGold");
+const string blackTetraminoKey = string("TetraminoBlack");
+const string queenTetraminoKey = string("TetraminoBossQueen");
+const string princessTetraminoKey = string("TetraminoBossPrincess");
+const string kingTetraminoKey = string("TetraminoBossKing");
+
 const string mainGameAnimationControllerKey = string("mainGameAnimationController");
 
 const string gameHudControllerKey = string("gameHudController");
+
 
 const string gameElement1Key = string("gameElement1");
 const string gameElement2Key = string("gameElement2");

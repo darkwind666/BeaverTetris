@@ -32,9 +32,8 @@ int GameBoardViewDataSource::getTetraminosCount()
 
 string GameBoardViewDataSource::getTetraminoImageForIndex(int aIndex)
 {
-	int tetraminoColumn = getColumnForIndex(aIndex);
-	int tetraminoRow = getRowForIndex(aIndex);
-	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoRow, tetraminoColumn);
+	GamePositionOnBoard tetraminoPosition = getPositionForIndex(aIndex);
+	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
 	TetraminoType tetraminoType = tetraminoInBoard->getTetraminoType();
 	string tetraminoKey = _keysForEnumsDataSource->getKeyForTetraminoType(tetraminoType);
 	return GameFileExtensionMaker::getGraphicWithExtension(tetraminoKey);
@@ -42,9 +41,30 @@ string GameBoardViewDataSource::getTetraminoImageForIndex(int aIndex)
 
 Vec2 GameBoardViewDataSource::getTetraminoPositionForIndex(int aIndex)
 {
+	GamePositionOnBoard tetraminoPosition = getPositionForIndex(aIndex);
+	return Vec2(tetraminoPosition.yPosition * gameBoardViewColumnOffset, tetraminoPosition.xPosition * gameBoardViewRowOffset);
+}
+
+bool GameBoardViewDataSource::availableTetraminoOnIndex(int aIndex)
+{
+	bool availableTetramino = true;
+	GamePositionOnBoard tetraminoPosition = getPositionForIndex(aIndex);
+	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+	if (tetraminoInBoard->getTetraminoType() <= kTetraminoEmpty)
+	{
+		availableTetramino = false;
+	}
+	return availableTetramino;
+}
+
+GamePositionOnBoard GameBoardViewDataSource::getPositionForIndex(int aIndex)
+{
 	int tetraminoColumn = getColumnForIndex(aIndex);
 	int tetraminoRow = getRowForIndex(aIndex);
-	return Vec2(tetraminoColumn * gameBoardViewColumnOffset, tetraminoRow * gameBoardViewRowOffset);
+	GamePositionOnBoard positionOnBoard;
+	positionOnBoard.xPosition = tetraminoRow;
+	positionOnBoard.yPosition = tetraminoColumn;
+	return positionOnBoard;
 }
 
 int GameBoardViewDataSource::getColumnForIndex(int aIndex)
