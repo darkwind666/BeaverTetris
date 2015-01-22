@@ -21,10 +21,10 @@ GameBoard::~GameBoard(void)
 
 void GameBoard::cleanGameBoard(void)
 {
-	for (int heightIndex = 0; heightIndex <= _gameBoardHeight; heightIndex++)
+	for (int heightIndex = 0; heightIndex < _gameBoardHeight; heightIndex++)
 	{
 		vector<Tetramino*> tetraminosLine;
-		for (int widthIndex = 0; widthIndex <= _gameBoardWidth; widthIndex++)
+		for (int widthIndex = 0; widthIndex < _gameBoardWidth; widthIndex++)
 		{
 			Tetramino *emptyTetramino = new Tetramino();
 			tetraminosLine.push_back(emptyTetramino);

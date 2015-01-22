@@ -16,8 +16,7 @@ TetraminosPositionsDelegate::~TetraminosPositionsDelegate(void)
 
 Tetramino* TetraminosPositionsDelegate::getTetraminoForXYposition(int xPosition, int yPosition)
 {
-	vector< vector<Tetramino*> > tetraminos = *_tetraminos;
-	Tetramino *tetramino = tetraminos[yPosition][xPosition];
+	Tetramino *tetramino = (*_tetraminos)[yPosition][xPosition];
 	return tetramino;
 }
 

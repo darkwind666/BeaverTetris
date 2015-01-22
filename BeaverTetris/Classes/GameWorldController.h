@@ -10,6 +10,8 @@ public:
 	GameWorldController(void);
 	~GameWorldController(void);
 
+	virtual void update(float delta);
+
 private:
 
 	GameBoardController *_gameBoardController;

@@ -50,10 +50,12 @@ bool GameBoardViewDataSource::availableTetraminoOnIndex(int aIndex)
 	bool availableTetramino = true;
 	GamePositionOnBoard tetraminoPosition = getPositionForIndex(aIndex);
 	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+	
 	if (tetraminoInBoard->getTetraminoType() <= kTetraminoEmpty)
 	{
 		availableTetramino = false;
 	}
+	
 	return availableTetramino;
 }
 

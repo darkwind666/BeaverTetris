@@ -8,6 +8,7 @@ GameWorldController::GameWorldController(void)
 {
 	_gameBoardController = new GameBoardController();
 	makeControllerView();
+	scheduleUpdate();
 }
 
 
@@ -21,5 +22,9 @@ void GameWorldController::makeControllerView()
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(backgroundController, this, mainGameBackgroundControllerKey);
 
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_gameBoardController, this, mainGameBoardControllerKey);
+}
 
+void GameWorldController::update(float delta)
+{
+	_gameBoardController->redrawGameBoard();
 }

@@ -41,7 +41,7 @@ vector<Sprite*> GameBoardController::getTetraminosViews()
 	vector<Sprite*> tetraminosViews;
 
 	int tetraminosCount = _gameBoardViewDataSource->getTetraminosCount();
-	for (int tetraminoIndex = 0; tetraminoIndex <= tetraminosCount; tetraminoIndex++)
+	for (int tetraminoIndex = 0; tetraminoIndex < tetraminosCount; tetraminoIndex++)
 	{
 		Sprite *tetraminoView = Sprite::create();
 		Vec2 tetraminoViewPosition = _gameBoardViewDataSource->getTetraminoPositionForIndex(tetraminoIndex);
@@ -87,7 +87,7 @@ void GameBoardController::hideAllTetraminos()
 void GameBoardController::updateGameBoardView()
 {
 	int tetraminosCount = _gameBoardViewDataSource->getTetraminosCount();
-	for (int tetraminoIndex = 0; tetraminoIndex <= tetraminosCount; tetraminoIndex++)
+	for (int tetraminoIndex = 0; tetraminoIndex < tetraminosCount; tetraminoIndex++)
 	{
 		if (_gameBoardViewDataSource->availableTetraminoOnIndex(tetraminoIndex))
 		{
