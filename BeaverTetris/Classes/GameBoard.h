@@ -3,10 +3,10 @@
 #include "ServiceInterface.h"
 #include <vector>
 #include "GameStructures.h"
-#include "GameBoardObserverInterface.h"
-#include "TetraminosPositionsDelegate.h"
 
 class Tetramino;
+class GameBoardObserverInterface;
+class TetraminosPositionsDelegate;
 
 class GameBoard : public ServiceInterface
 {
@@ -23,11 +23,10 @@ public:
 	GamePositionOnBoard getTetraminoPosition(Tetramino *aTetramino);
 
 	std::vector <GamePositionOnBoard> getAvailableTetraminis();
-	std::vector <GamePositionOnBoard> getTetraminisForType(TetraminoType aTetraminoType);
+	std::vector <GamePositionOnBoard> getTetraminosForType(TetraminoType aTetraminoType);
 
 	void removeTetraminoForXYposition(int xPosition, int yPosition);
 	void removeTetraminos(std::vector <GamePositionOnBoard> aNeedToRemoveTetraminos);
-	void cleanTetraminoRowForYposition(int yPosition);
 	void cleanGameBoard(void);
 
 	void addObserver(GameBoardObserverInterface *aGameBoardObserver);
@@ -35,11 +34,9 @@ public:
 
 private:
 
-	typedef bool (GameBoard::*predicateFunction)(TetraminoType aFirstType, TetraminoType aSecondType);
-
-	Tetramino **_tetramins;
 	int _gameBoardWidth;
 	int _gameBoardHeight;
+	std::vector< std::vector<Tetramino*> > _tetramins;
 	GameBoardObserverInterface *_gameBoardObserver;
 	TetraminosPositionsDelegate *_tetraminosSourceDelegate;
 

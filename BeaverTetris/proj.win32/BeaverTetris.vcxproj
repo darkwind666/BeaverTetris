@@ -145,6 +145,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameBackgroundSoundRegulator.cpp" />
     <ClCompile Include="..\Classes\GameBoard.cpp" />
     <ClCompile Include="..\Classes\GameBoardController.cpp" />
+    <ClCompile Include="..\Classes\GameBoardObserverInterface.cpp" />
     <ClCompile Include="..\Classes\GameBoardViewDataSource.cpp" />
     <ClCompile Include="..\Classes\GameDataLoader.cpp" />
     <ClCompile Include="..\Classes\GameElementsDataHelper.cpp" />
@@ -198,6 +199,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\StartGameMenuDataSource.cpp" />
     <ClCompile Include="..\Classes\StringsSupporter.cpp" />
     <ClCompile Include="..\Classes\Tetramino.cpp" />
+    <ClCompile Include="..\Classes\TetraminoObserverInterface.cpp" />
+    <ClCompile Include="..\Classes\TetraminosPositionsDelegate.cpp" />
     <ClCompile Include="ActiveDetails.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -277,9 +280,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="FullLineCombination.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="GameBoardObserverInterface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="GameControllViewDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -332,12 +332,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SimilarTetraminosCombination.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="TetraminoObserverInterface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="TetraminosPositionsDelegate.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="VictoryConditionsFactory.cpp">
@@ -441,6 +435,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameBackgroundSoundRegulator.h" />
     <ClInclude Include="..\Classes\GameBoard.h" />
     <ClInclude Include="..\Classes\GameBoardController.h" />
+    <ClInclude Include="..\Classes\GameBoardObserverInterface.h" />
     <ClInclude Include="..\Classes\GameBoardViewDataSource.h" />
     <ClInclude Include="..\Classes\GameDataLoader.h" />
     <ClInclude Include="..\Classes\GameDesignConstants.h" />
@@ -498,6 +493,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\StartGameMenuDataSource.h" />
     <ClInclude Include="..\Classes\StringsSupporter.h" />
     <ClInclude Include="..\Classes\Tetramino.h" />
+    <ClInclude Include="..\Classes\TetraminoObserverInterface.h" />
+    <ClInclude Include="..\Classes\TetraminosPositionsDelegate.h" />
     <ClInclude Include="ActiveDetails.h" />
     <ClInclude Include="AddLineToBoardBottomSpell.h" />
     <ClInclude Include="AIMovementStrategy.h" />
@@ -526,7 +523,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="FillingGapInBoardSystem.h" />
     <ClInclude Include="FirestromSpell.h" />
     <ClInclude Include="FullLineCombination.h" />
-    <ClInclude Include="GameBoardObserverInterface.h" />
     <ClInclude Include="GameControllViewDataSource.h" />
     <ClInclude Include="GameDataFactory.h" />
     <ClInclude Include="GameEventInterface.h" />
@@ -546,8 +542,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RemoveSomeTetraminosCondition.h" />
     <ClInclude Include="RemovingDeadTetraminosSystem.h" />
     <ClInclude Include="SimilarTetraminosCombination.h" />
-    <ClInclude Include="TetraminoObserverInterface.h" />
-    <ClInclude Include="TetraminosPositionsDelegate.h" />
     <ClInclude Include="VictoryConditionsFactory.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="MoveSystem.h" />

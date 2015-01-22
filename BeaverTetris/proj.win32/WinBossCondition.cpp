@@ -71,7 +71,7 @@ vector<Tetramino*> WinBossCondition::getBossesFromLevel(GameLevelInformation aLe
 	vector<Tetramino*> bosses; 
 
 	GameBoard *gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
-	vector<GamePositionOnBoard> gameBossesPositions = gameBoard->getTetraminisForType(aLevelInformation.availableBosses.aBossType);
+	vector<GamePositionOnBoard> gameBossesPositions = gameBoard->getTetraminosForType(aLevelInformation.availableBosses.aBossType);
 
 	vector<GamePositionOnBoard>::iterator bossesPositionsIterator;
 
