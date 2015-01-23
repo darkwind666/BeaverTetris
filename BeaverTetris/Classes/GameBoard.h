@@ -15,6 +15,7 @@ public:
 	~GameBoard(void);
 
 	void setTetraminoXYposition(Tetramino *aTetramino, int xPosition, int yPosition);
+	void replaceTetraminoXYposition(Tetramino *aTetramino, int xPosition, int yPosition);
 
 	int getGameBoardWidth();
 	int getGameBoardHeight();
@@ -27,8 +28,7 @@ public:
 
 	void removeTetraminoForXYposition(int xPosition, int yPosition);
 	void removeTetraminos(std::vector <GamePositionOnBoard> aNeedToRemoveTetraminos);
-	void cleanGameBoard(void);
-
+	
 	void addObserver(GameBoardObserverInterface *aGameBoardObserver);
 	void removeObserver(GameBoardObserverInterface *aGameBoardObserver);
 
@@ -39,6 +39,8 @@ private:
 	std::vector< std::vector<Tetramino*> > _tetramins;
 	GameBoardObserverInterface *_gameBoardObserver;
 	TetraminosPositionsDelegate *_tetraminosSourceDelegate;
+
+	void cleanGameBoard(void);
 
 };
 

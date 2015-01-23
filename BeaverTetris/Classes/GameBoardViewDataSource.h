@@ -5,6 +5,7 @@
 #include "GameStructures.h"
 
 class GameBoard;
+class CurrentDetailViewDataSource;
 class KeysForEnumsDataSource;
 
 class GameBoardViewDataSource
@@ -22,11 +23,14 @@ public:
 private:
 
 	GameBoard *_gameBoard;
+	CurrentDetailViewDataSource *_currentDetailViewDataSource;
 	KeysForEnumsDataSource *_keysForEnumsDataSource;
 
 	GamePositionOnBoard getPositionForIndex(int aIndex);
 	int getColumnForIndex(int aIndex);
 	int getRowForIndex(int aIndex);
+
+	TetraminoType getVisibleTetraminoTypeOnPosition(GamePositionOnBoard aPosition);
 
 };
 

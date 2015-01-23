@@ -17,6 +17,14 @@ GameBoard::GameBoard(int width, int height)
 
 GameBoard::~GameBoard(void)
 {
+	for (int widthIndex = 0; widthIndex < _gameBoardWidth; widthIndex++)
+	{
+		for (int heightIndex = 0; heightIndex < _gameBoardHeight; heightIndex++)
+		{
+			Tetramino *tetramino = _tetramins[widthIndex][heightIndex];
+			delete tetramino;
+		}
+	}
 }
 
 void GameBoard::cleanGameBoard(void)
@@ -36,6 +44,13 @@ void GameBoard::cleanGameBoard(void)
 
 void GameBoard::setTetraminoXYposition(Tetramino *aTetramino, int xPosition, int yPosition)
 {
+	_tetramins[xPosition][yPosition] = aTetramino;
+}
+
+void GameBoard::replaceTetraminoXYposition(Tetramino *aTetramino, int xPosition, int yPosition)
+{
+	Tetramino *tetramino = _tetramins[xPosition][yPosition];
+	delete tetramino;
 	_tetramins[xPosition][yPosition] = aTetramino;
 }
 

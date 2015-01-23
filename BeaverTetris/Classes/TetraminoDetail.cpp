@@ -18,6 +18,7 @@ TetraminoDetail::TetraminoDetail(int width, int height)
 
 TetraminoDetail::~TetraminoDetail(void)
 {
+	delete _gameBoardTetraminos;
 }
 
 int TetraminoDetail::getDetailWidth()
@@ -47,7 +48,7 @@ vector<GamePositionOnBoard> TetraminoDetail::getAvailableTetraminos()
 
 void TetraminoDetail::setTetraminoForXY(Tetramino *aTetramino, int xPosition, int yPosition)
 {
-	_gameBoardTetraminos->setTetraminoXYposition(aTetramino,xPosition,yPosition);
+	_gameBoardTetraminos->replaceTetraminoXYposition(aTetramino,xPosition,yPosition);
 }
 
 void TetraminoDetail::setDetailPosition(GamePositionOnBoard aDetailPosition)

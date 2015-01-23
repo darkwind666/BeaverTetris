@@ -35,7 +35,7 @@ void CurrentDetailController::moveLeftDetail(void)
 
 void CurrentDetailController::moveRightDetail(void)
 {
-	GamePositionOnBoard currentDetailPosition = getCurrentDetailPosition());
+	GamePositionOnBoard currentDetailPosition = getCurrentDetailPosition();
 
 	int detailNextPosition = currentDetailPosition.xPosition + 1 + getCurrentDetail()->getDetailWidth();
 
@@ -71,6 +71,8 @@ void CurrentDetailController::updateSystem(float deltaTime)
 		if (tetraminoDetailPosition.yPosition > 0)
 		{
 			tetraminoDetailPosition.yPosition = tetraminoDetailPosition.yPosition - 1;
+			TetraminoDetail *currentDetail = getCurrentDetail();
+			currentDetail->setDetailPosition(tetraminoDetailPosition);
 		}
 	}
 }

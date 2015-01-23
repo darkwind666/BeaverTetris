@@ -21,7 +21,7 @@ void FillingGapInBoardSystem::updateSystem(float deltaTime)
 {
 	vector < vector <GamePositionOnBoard> > tetraminoDetailsInGame = _detailsFromBoardDataSource->getTetraminoDetailsInGame();
 	vector <TetraminoDetail*> tetraminoDetailsInBoard = _tetraminosCombinatorDelegate->combineTetraminosInDetails(tetraminoDetailsInGame);
-	_gameBoard->cleanGameBoard();
+	//_gameBoard->cleanGameBoard();
 	fillGapsInBoardWithDetails(&tetraminoDetailsInBoard);
 }
 

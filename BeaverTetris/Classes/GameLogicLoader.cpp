@@ -29,6 +29,7 @@ void GameLogicLoader::loadResources()
 	ServiceLocator::setServiceForKey(currentDetailDataSource, currentDetailDataSourceKey);
 
 	CurrentDetailController *currentDetailController = new CurrentDetailController(gameBoard, currentDetailDataSource);
+	gameTimeStepController->addSystem(currentDetailController);
 	ServiceLocator::setServiceForKey(currentDetailController, currentDetailControllerKey);
 
 }

@@ -2,6 +2,7 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "GameBoard.h"
+#include "CurrentDetailViewDataSource.h"
 #include "KeysForEnumsDataSource.h"
 #include "GameFileExtensionMaker.h"
 #include "Tetramino.h"
@@ -14,6 +15,7 @@ using namespace cocos2d;
 GameBoardViewDataSource::GameBoardViewDataSource()
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	_currentDetailViewDataSource = new CurrentDetailViewDataSource();
 	_keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
 }
 
@@ -32,10 +34,20 @@ int GameBoardViewDataSource::getTetraminosCount()
 string GameBoardViewDataSource::getTetraminoImageForIndex(int aIndex)
 {
 	GamePositionOnBoard tetraminoPosition = getPositionForIndex(aIndex);
-	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
-	TetraminoType tetraminoType = tetraminoInBoard->getTetraminoType();
+	TetraminoType tetraminoType = getVisibleTetraminoTypeOnPosition(tetraminoPosition);
 	string tetraminoKey = _keysForEnumsDataSource->getKeyForTetraminoType(tetraminoType);
 	return GameFileExtensionMaker::getGraphicWithExtension(tetraminoKey);
+}
+
+TetraminoType GameBoardViewDataSource::getVisibleTetraminoTypeOnPosition(GamePositionOnBoard aPosition)
+{
+	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(aPosition.xPosition, aPosition.yPosition);
+	TetraminoType tetraminoType = tetraminoInBoard->getTetraminoType();
+	if (tetraminoInBoard->getTetraminoType() <= kTetraminoEmpty)
+	{
+		tetraminoType = _currentDetailViewDataSource->getTetraminoTypeOnPositionInCurrentDetail(aPosition);
+	}
+	return tetraminoType;
 }
 
 Vec2 GameBoardViewDataSource::getTetraminoPositionForIndex(int aIndex)
@@ -53,7 +65,7 @@ bool GameBoardViewDataSource::availableTetraminoOnIndex(int aIndex)
 	
 	if (tetraminoInBoard->getTetraminoType() <= kTetraminoEmpty)
 	{
-		availableTetramino = false;
+		availableTetramino = _currentDetailViewDataSource->checkPositionInCurrentDetail(tetraminoPosition);
 	}
 	
 	return availableTetramino;

@@ -4,6 +4,7 @@
 Tetramino::Tetramino(void)
 {
 	_tetraminoType = kTetraminoEmpty;
+	_tetraminoObserver = NULL;
 }
 
 Tetramino::Tetramino(TetraminoType aType)

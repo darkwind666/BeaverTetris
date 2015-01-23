@@ -498,6 +498,9 @@
     <ClCompile Include="..\Classes\TetraminoDetail.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CurrentDetailViewDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -943,6 +946,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TetraminoDetail.h">
       <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentDetailViewDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
