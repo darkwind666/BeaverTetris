@@ -14,7 +14,7 @@ RocketSpell::~RocketSpell(void)
 
 bool RocketSpell::spellAvailable()
 {
-	return _currentDetailController->availableCurrentDetail();
+	return _currentDetailController->currentDetailAvailable();
 }
 
 void RocketSpell::castSpell()

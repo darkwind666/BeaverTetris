@@ -153,9 +153,6 @@
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="TetraminoDetail.cpp">
-      <Filter>Models\GameLogic</Filter>
-    </ClCompile>
     <ClCompile Include="CollisionDelegate.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
@@ -314,9 +311,6 @@
     </ClCompile>
     <ClCompile Include="SimilarTetraminosCombination.cpp">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentDetailController.cpp">
-      <Filter>Controllers</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp">
       <Filter>CocosStartClasses</Filter>
@@ -495,6 +489,15 @@
     <ClCompile Include="..\Classes\GameSystemInterface.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CurrentDetailController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CurrentDetailDataSource.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TetraminoDetail.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -526,9 +529,6 @@
     </ClInclude>
     <ClInclude Include="EventHandlerInterface.h">
       <Filter>EventSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentDetailController.h">
-      <Filter>Controllers</Filter>
     </ClInclude>
     <ClInclude Include="ActiveDetails.h">
       <Filter>Models\GameLogic</Filter>
@@ -571,9 +571,6 @@
     </ClInclude>
     <ClInclude Include="TetraminisDetailsFactory.h">
       <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="TetraminoDetail.h">
-      <Filter>Models\GameLogic</Filter>
     </ClInclude>
     <ClInclude Include="CollisionDelegate.h">
       <Filter>Models\GameLogic</Filter>
@@ -937,6 +934,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameSystemInterface.h">
       <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentDetailController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentDetailDataSource.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminoDetail.h">
+      <Filter>Models\GameLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,8 @@
 
 #include "GameBoard.h"
 #include "GameTimeStepController.h"
+#include "CurrentDetailDataSource.h"
+#include "CurrentDetailController.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -22,4 +24,11 @@ void GameLogicLoader::loadResources()
 
 	GameTimeStepController *gameTimeStepController = new GameTimeStepController();
 	ServiceLocator::setServiceForKey(gameTimeStepController, gameTimeStepControllerKey);
+
+	CurrentDetailDataSource *currentDetailDataSource = new CurrentDetailDataSource();
+	ServiceLocator::setServiceForKey(currentDetailDataSource, currentDetailDataSourceKey);
+
+	CurrentDetailController *currentDetailController = new CurrentDetailController(gameBoard, currentDetailDataSource);
+	ServiceLocator::setServiceForKey(currentDetailController, currentDetailControllerKey);
+
 }
