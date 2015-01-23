@@ -6,8 +6,8 @@ using namespace std;
 TetraminosPositionsDelegate::TetraminosPositionsDelegate(std::vector< std::vector<Tetramino*> > *tetraminos)
 {
 	_tetraminos = tetraminos;
-	_gameBoardHeight = _tetraminos->size();
-	_gameBoardWidth = _tetraminos[0].size();
+	_gameBoardHeight = _tetraminos[0].size();
+	_gameBoardWidth = _tetraminos->size();
 }
 
 TetraminosPositionsDelegate::~TetraminosPositionsDelegate(void)
@@ -16,7 +16,7 @@ TetraminosPositionsDelegate::~TetraminosPositionsDelegate(void)
 
 Tetramino* TetraminosPositionsDelegate::getTetraminoForXYposition(int xPosition, int yPosition)
 {
-	Tetramino *tetramino = (*_tetraminos)[yPosition][xPosition];
+	Tetramino *tetramino = (*_tetraminos)[xPosition][yPosition];
 	return tetramino;
 }
 

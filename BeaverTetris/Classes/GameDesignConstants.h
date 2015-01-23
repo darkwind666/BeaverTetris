@@ -1,5 +1,8 @@
 #pragma once
 
+const int tetrisBlocksWidth = 10;
+const int tetrisBlocksHeight = 20;
+
 const int normalUpdateInterval = 60;
 const int acceleratedUpdateInterval = 30;
 

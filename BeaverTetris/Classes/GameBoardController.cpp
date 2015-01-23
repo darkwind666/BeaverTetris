@@ -102,6 +102,8 @@ void GameBoardController::drawTetraminoTextureOnIndex(std::string aTetraminoText
 	Sprite *tetraminoView = _tetraminosViews[aTetraminoIndex];
 	tetraminoView->setVisible(true);
 	tetraminoView->setTexture("HelloWorld.png");
+	tetraminoView->setScaleX(0.05f);
+	tetraminoView->setScaleY(0.08f);
 	
 	Color3B tetraminoColor = getColorForKey(aTetraminoTextureKey);
 	tetraminoView->setColor(tetraminoColor);
@@ -111,7 +113,7 @@ Color3B GameBoardController::getColorForKey(string aKey)
 {
 	string fileExtension = ".png";
 	int fileExtensionPosition = aKey.find(fileExtension);
-	string colorKey = aKey.erase(fileExtensionPosition + fileExtension.size());
+	string colorKey = aKey.erase(fileExtensionPosition, fileExtensionPosition + fileExtension.size());
 	return _tetraminosColors[colorKey];
 }
 

@@ -5,7 +5,7 @@ using namespace std;
 CurrentPlayerDataSource::CurrentPlayerDataSource()
 {
 	_completedLevelsNames = vector <string>();
-	_isThereCurentPlayer = false;
+	_isThereCurentPlayer = true;
 	_selectedGameLevelIndex = 0;
 }
 

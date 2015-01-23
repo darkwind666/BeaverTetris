@@ -5,9 +5,8 @@
 #include "KeysForEnumsDataSource.h"
 #include "GameFileExtensionMaker.h"
 #include "Tetramino.h"
-
-const int gameBoardViewColumnOffset = 4;
-const int gameBoardViewRowOffset = 4;
+#include "GameElementsDataHelper.h"
+#include "GameViewElementsKeys.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -41,8 +40,9 @@ string GameBoardViewDataSource::getTetraminoImageForIndex(int aIndex)
 
 Vec2 GameBoardViewDataSource::getTetraminoPositionForIndex(int aIndex)
 {
+	cocos2d::Vec2 tetraminoOffset = GameElementsDataHelper::getElementOffsetForKey(mainGameBoardControllerKey);
 	GamePositionOnBoard tetraminoPosition = getPositionForIndex(aIndex);
-	return Vec2(tetraminoPosition.yPosition * gameBoardViewColumnOffset, tetraminoPosition.xPosition * gameBoardViewRowOffset);
+	return Vec2(tetraminoPosition.xPosition * tetraminoOffset.x, tetraminoPosition.yPosition * tetraminoOffset.y);
 }
 
 bool GameBoardViewDataSource::availableTetraminoOnIndex(int aIndex)
