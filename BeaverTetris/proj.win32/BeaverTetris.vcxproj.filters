@@ -225,9 +225,6 @@
     <ClCompile Include="TetraminoDetailLocatorDelegate.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
-    <ClCompile Include="GameTimeStepController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="FillingGapInBoardSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
@@ -492,6 +489,12 @@
     <ClCompile Include="..\Classes\TetraminoObserverInterface.cpp">
       <Filter>Observers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameTimeStepController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameSystemInterface.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -637,9 +640,6 @@
     </ClInclude>
     <ClInclude Include="TetraminoDetailLocatorDelegate.h">
       <Filter>Models\GameLogic</Filter>
-    </ClInclude>
-    <ClInclude Include="GameTimeStepController.h">
-      <Filter>Controllers</Filter>
     </ClInclude>
     <ClInclude Include="FillingGapInBoardSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
@@ -931,6 +931,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TetraminoObserverInterface.h">
       <Filter>Observers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameTimeStepController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameSystemInterface.h">
+      <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

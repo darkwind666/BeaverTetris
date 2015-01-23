@@ -13,6 +13,7 @@ const string gameLevelsDataSourceKey = string("GameLevelsDataSource");
 const string keysForEnumsDataSourceKey = string("KeysForEnumsDataSource");
 
 const string gameBoardKey = string("GameBoard");
+const string gameTimeStepControllerKey = string("GameTimeStepController");
 
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");
@@ -23,7 +24,7 @@ const string activeDetailsKey = string("ActiveDetails");
 const string currentDetailControllerKey = string("CurrentDetailController");
 
 const string tetraminisDetailsFactoryKey = string("TetraminisDetailsFactory");
-const string gameTimeStepControllerKey = string("GameTimeStepController");
+
 
 const string awardForTetraminoDataSourceKey = string("AwardForTetraminoDataSource");
 const string spellsFactoryKey = string("SpellsFactory");

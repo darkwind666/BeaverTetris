@@ -3,6 +3,7 @@
 #include "cocos2d.h"
 
 class GameBoardController;
+class GameTimeStepController;
 
 class GameWorldController : public cocos2d::Node
 {
@@ -16,6 +17,7 @@ public:
 private:
 
 	GameBoardController *_gameBoardController;
+	GameTimeStepController *_gameTimeStepController;
 
 	void makeControllerView();
 

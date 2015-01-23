@@ -163,6 +163,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameSoundDataSource.cpp" />
     <ClCompile Include="..\Classes\GameSoundEffectsRegulator.cpp" />
     <ClCompile Include="..\Classes\GameStatesHelper.cpp" />
+    <ClCompile Include="..\Classes\GameSystemInterface.cpp" />
+    <ClCompile Include="..\Classes\GameTimeStepController.cpp" />
     <ClCompile Include="..\Classes\GameTransitionsViewController.cpp" />
     <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameViewInformationFactory.cpp" />
@@ -299,9 +301,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GameHelper.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GameTimeStepController.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GamePlayersDatabase.cpp">
@@ -455,6 +454,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameSoundEffectsRegulator.h" />
     <ClInclude Include="..\Classes\GameStatesHelper.h" />
     <ClInclude Include="..\Classes\GameStructures.h" />
+    <ClInclude Include="..\Classes\GameSystemInterface.h" />
+    <ClInclude Include="..\Classes\GameTimeStepController.h" />
     <ClInclude Include="..\Classes\GameTransitionsViewController.h" />
     <ClInclude Include="..\Classes\GameViewConstants.h" />
     <ClInclude Include="..\Classes\GameViewElementsDataSource.h" />
@@ -530,7 +531,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameEventsFactory.h" />
     <ClInclude Include="GameFlowSystem.h" />
     <ClInclude Include="GameHelper.h" />
-    <ClInclude Include="GameTimeStepController.h" />
     <ClInclude Include="GamePlayersDatabase.h" />
     <ClInclude Include="GameRecordsSceneFactory.h" />
     <ClInclude Include="GameResourcesExtension.h" />
