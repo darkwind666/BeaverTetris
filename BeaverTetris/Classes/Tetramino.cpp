@@ -10,6 +10,7 @@ Tetramino::Tetramino(void)
 Tetramino::Tetramino(TetraminoType aType)
 {
 	_tetraminoType = aType;
+	_tetraminoObserver = NULL;
 }
 
 

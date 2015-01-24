@@ -1,5 +1,6 @@
 #include "CurrentDetailController.h"
 #include "CollisionDelegate.h"
+#include "TetraminoDetailLocatorDelegate.h"
 #include "CurrentDetailDataSource.h"
 #include "TetraminoDetail.h"
 #include "GameBoard.h"
@@ -13,6 +14,7 @@ CurrentDetailController::CurrentDetailController(GameBoard *aGameBoard, CurrentD
 	_gameBoard = aGameBoard;
 	_currentDetailDataSource = aDetailDataSource;
 	_collisionDelegate = new CollisionDelegate(aGameBoard);
+	_tetraminoDetailLocatorDelegate = new TetraminoDetailLocatorDelegate(aGameBoard);
 }
 
 
@@ -68,23 +70,39 @@ void CurrentDetailController::updateSystem(float deltaTime)
 {
 	if (_currentDetailDataSource->currentDetailAvailable())
 	{
-		GamePositionOnBoard newDetailPosition = getCurrentDetail()->getDetailPosition();
-		newDetailPosition.yPosition = newDetailPosition.yPosition - 1;
-
-		TetraminoDetail *currentDetail = getCurrentDetail();
-		TetraminoDetail *detailWithNewPosition = new TetraminoDetail((*currentDetail));
-		detailWithNewPosition->setDetailPosition(newDetailPosition);
-
-		if (_collisionDelegate->checkCollisionDetailWithGameBorders(detailWithNewPosition))
-		{
-			
-		}
-		else
-		{
-			currentDetail->setDetailPosition(newDetailPosition);
-		}
-
+		moveDownDetail();
 	}
+}
+
+void CurrentDetailController::moveDownDetail()
+{
+	TetraminoDetail *currentDetail = getCurrentDetail();
+	GamePositionOnBoard newDetailPosition = currentDetail->getDetailPosition();
+	newDetailPosition.yPosition = newDetailPosition.yPosition - 1;
+	
+	if (checkCollisionForCurrentDetailWithNewPosition(newDetailPosition))
+	{
+		_tetraminoDetailLocatorDelegate->writeTetraminoDetailInBoard(currentDetail);
+		_currentDetailDataSource->removeCurrentDetail();
+	}
+	else
+	{
+		setNewDetailPosition(newDetailPosition);
+	}
+}
+
+bool CurrentDetailController::checkCollisionForCurrentDetailWithNewPosition(GamePositionOnBoard aNewDetailPosition)
+{
+	TetraminoDetail *currentDetail = getCurrentDetail();
+	TetraminoDetail *detailWithNewPosition = new TetraminoDetail((*currentDetail));
+	detailWithNewPosition->setDetailPosition(aNewDetailPosition);
+	return (_collisionDelegate->checkCollisionDetailWithGameBorders(detailWithNewPosition));
+}
+
+void CurrentDetailController::setNewDetailPosition(GamePositionOnBoard aNewDetailPosition)
+{
+	TetraminoDetail *currentDetail = getCurrentDetail();
+	currentDetail->setDetailPosition(aNewDetailPosition);
 }
 
 void CurrentDetailController::setNewPositionIfNoCollision(GamePositionOnBoard aNewDetailPosition)

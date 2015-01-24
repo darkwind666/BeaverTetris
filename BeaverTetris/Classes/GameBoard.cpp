@@ -10,6 +10,7 @@ GameBoard::GameBoard(int width, int height)
 {
 	_gameBoardWidth = width;
 	_gameBoardHeight = height;
+	_gameBoardObserver = NULL;
 	_tetramins = vector< vector<Tetramino*> >();
 	cleanGameBoard();
 	_tetraminosSourceDelegate = new TetraminosPositionsDelegate(&_tetramins);
@@ -17,14 +18,7 @@ GameBoard::GameBoard(int width, int height)
 
 GameBoard::~GameBoard(void)
 {
-	for (int widthIndex = 0; widthIndex < _gameBoardWidth; widthIndex++)
-	{
-		for (int heightIndex = 0; heightIndex < _gameBoardHeight; heightIndex++)
-		{
-			Tetramino *tetramino = _tetramins[widthIndex][heightIndex];
-			delete tetramino;
-		}
-	}
+	
 }
 
 void GameBoard::cleanGameBoard(void)

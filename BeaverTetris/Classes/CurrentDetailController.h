@@ -6,8 +6,10 @@
 
 class GameBoard;
 class CollisionDelegate;
+class TetraminoDetailLocatorDelegate;
 class CurrentDetailDataSource;
 class TetraminoDetail;
+
 
 class CurrentDetailController : public GameSystemInterface, public ServiceInterface
 {
@@ -25,6 +27,7 @@ private:
 
 	GameBoard *_gameBoard;
 	CollisionDelegate *_collisionDelegate;
+	TetraminoDetailLocatorDelegate *_tetraminoDetailLocatorDelegate;
 	CurrentDetailDataSource *_currentDetailDataSource;
 
 	TetraminoDetail* getCurrentDetail();
@@ -32,5 +35,8 @@ private:
 	void setNewPositionIfNoCollision(GamePositionOnBoard aNewDetailPosition);
 	bool collideWithOtherTetraminos(TetraminoDetail aDetail);
 
+	void moveDownDetail();
+	bool checkCollisionForCurrentDetailWithNewPosition(GamePositionOnBoard aNewDetailPosition);
+	void setNewDetailPosition(GamePositionOnBoard aNewDetailPosition);
 };
 

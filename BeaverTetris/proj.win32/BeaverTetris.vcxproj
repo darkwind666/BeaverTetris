@@ -206,6 +206,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\StringsSupporter.cpp" />
     <ClCompile Include="..\Classes\Tetramino.cpp" />
     <ClCompile Include="..\Classes\TetraminoDetail.cpp" />
+    <ClCompile Include="..\Classes\TetraminoDetailLocatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminoObserverInterface.cpp" />
     <ClCompile Include="..\Classes\TetraminosPositionsDelegate.cpp" />
     <ClCompile Include="ActiveDetails.cpp">
@@ -384,9 +385,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="TetraminoDetailLocatorDelegate.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="TetraminosCharacteristicsDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -495,6 +493,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\StringsSupporter.h" />
     <ClInclude Include="..\Classes\Tetramino.h" />
     <ClInclude Include="..\Classes\TetraminoDetail.h" />
+    <ClInclude Include="..\Classes\TetraminoDetailLocatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminoObserverInterface.h" />
     <ClInclude Include="..\Classes\TetraminosPositionsDelegate.h" />
     <ClInclude Include="ActiveDetails.h" />
@@ -559,7 +558,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RecordsDataSource.h" />
     <ClInclude Include="SceneGraphFactory.h" />
     <ClInclude Include="TetraminisDetailsFactory.h" />
-    <ClInclude Include="TetraminoDetailLocatorDelegate.h" />
     <ClInclude Include="TetraminosCharacteristicsDataSource.h" />
     <ClInclude Include="TetraminosCombinatorDelegate.h" />
     <ClInclude Include="TetraminosFallEvent.h" />

@@ -216,9 +216,6 @@
     <ClCompile Include="TimeAccelerationEvent.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
-    <ClCompile Include="TetraminoDetailLocatorDelegate.cpp">
-      <Filter>Models\GameLogic</Filter>
-    </ClCompile>
     <ClCompile Include="FillingGapInBoardSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
@@ -501,6 +498,9 @@
     <ClCompile Include="..\Classes\CollisionDelegate.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetraminoDetailLocatorDelegate.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -634,9 +634,6 @@
     </ClInclude>
     <ClInclude Include="TimeAccelerationEvent.h">
       <Filter>Models\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="TetraminoDetailLocatorDelegate.h">
-      <Filter>Models\GameLogic</Filter>
     </ClInclude>
     <ClInclude Include="FillingGapInBoardSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
@@ -948,6 +945,9 @@
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CollisionDelegate.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminoDetailLocatorDelegate.h">
       <Filter>Models\GameLogic</Filter>
     </ClInclude>
   </ItemGroup>

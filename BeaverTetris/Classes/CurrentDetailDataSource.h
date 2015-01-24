@@ -23,5 +23,7 @@ private:
 	TetraminoDetail *_currentDetail;
 	bool _currentDetailAvailable;
 
+	TetraminoDetail* makeNewTetraminoDetail();
+
 };
 

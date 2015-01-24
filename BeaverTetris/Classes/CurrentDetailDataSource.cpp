@@ -7,21 +7,7 @@ CurrentDetailDataSource::CurrentDetailDataSource(void)
 {
 	//_detailsFactory = new TetraminisDetailsFactory();
 	_currentDetailAvailable = true;
-	_currentDetail = new TetraminoDetail(3,3);
-
-	GamePositionOnBoard startDetailPosition;
-	startDetailPosition.xPosition = 5;
-	startDetailPosition.yPosition = 20;
-
-	_currentDetail->setDetailPosition(startDetailPosition);
-
-	Tetramino *newTetraminoRight = new Tetramino(kTetraminoBlue);
-	Tetramino *newTetraminoCentre = new Tetramino(kTetraminoBlue);
-	Tetramino *newTetraminoLeft = new Tetramino(kTetraminoBlue);
-
-	_currentDetail->setTetraminoForXY(newTetraminoRight ,0,1);
-	_currentDetail->setTetraminoForXY(newTetraminoCentre ,1,1);
-	_currentDetail->setTetraminoForXY(newTetraminoLeft ,2,1);
+	_currentDetail = makeNewTetraminoDetail();
 }
 
 
@@ -42,10 +28,31 @@ void CurrentDetailDataSource::makeNewDetail(void)
 void CurrentDetailDataSource::removeCurrentDetail()
 {
 	delete(_currentDetail);
-	_currentDetailAvailable = false;
+	_currentDetail = makeNewTetraminoDetail();
+	//_currentDetailAvailable = false;
 }
 
 bool CurrentDetailDataSource::currentDetailAvailable()
 {
 	return _currentDetailAvailable;
+}
+
+TetraminoDetail* CurrentDetailDataSource::makeNewTetraminoDetail()
+{
+	TetraminoDetail *newDetail = new TetraminoDetail(3,3);
+	
+	GamePositionOnBoard startDetailPosition;
+	startDetailPosition.xPosition = 5;
+	startDetailPosition.yPosition = 20;
+	
+	newDetail->setDetailPosition(startDetailPosition);
+	
+	Tetramino *newTetraminoRight = new Tetramino(kTetraminoBlue);
+	Tetramino *newTetraminoCentre = new Tetramino(kTetraminoBlue);
+	Tetramino *newTetraminoLeft = new Tetramino(kTetraminoBlue);
+	
+	newDetail->setTetraminoForXY(newTetraminoRight ,0,1);
+	newDetail->setTetraminoForXY(newTetraminoCentre ,1,1);
+	newDetail->setTetraminoForXY(newTetraminoLeft ,2,1);
+	return newDetail;
 }

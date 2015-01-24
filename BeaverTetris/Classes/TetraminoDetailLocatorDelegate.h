@@ -15,5 +15,7 @@ private:
 
 	GameBoard *_gameBoard;
 
+	void writeTetraminoRowFromDetail(int aRow, TetraminoDetail *aTetraminoDetail);
+
 };
 
