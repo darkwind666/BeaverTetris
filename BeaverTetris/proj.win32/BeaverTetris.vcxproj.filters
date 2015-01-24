@@ -153,9 +153,6 @@
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionDelegate.cpp">
-      <Filter>Models\GameLogic</Filter>
-    </ClCompile>
     <ClCompile Include="DetailsFromBoardDataSource.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
@@ -501,6 +498,9 @@
     <ClCompile Include="..\Classes\CurrentDetailViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CollisionDelegate.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -574,9 +574,6 @@
     </ClInclude>
     <ClInclude Include="TetraminisDetailsFactory.h">
       <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionDelegate.h">
-      <Filter>Models\GameLogic</Filter>
     </ClInclude>
     <ClInclude Include="DetailsFromBoardDataSource.h">
       <Filter>Models\GameLogic</Filter>
@@ -949,6 +946,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CurrentDetailViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CollisionDelegate.h">
+      <Filter>Models\GameLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

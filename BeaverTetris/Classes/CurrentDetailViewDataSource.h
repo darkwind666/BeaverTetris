@@ -21,7 +21,6 @@ private:
 	bool inWidthInterval(GamePositionOnBoard aPosition);
 	bool inHeightInterval(GamePositionOnBoard aPosition);
 	bool availableTetraminoOnPositionInCurrentDetail(GamePositionOnBoard aPosition);
-	GamePositionOnBoard convertPositionInCurrentDetailPosition(GamePositionOnBoard aPosition);
 
 };
 

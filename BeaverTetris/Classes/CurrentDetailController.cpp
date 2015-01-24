@@ -1,9 +1,10 @@
 #include "CurrentDetailController.h"
-//#include "CollisionDelegate.h"
+#include "CollisionDelegate.h"
 #include "CurrentDetailDataSource.h"
 #include "TetraminoDetail.h"
 #include "GameBoard.h"
 #include <vector>
+#include "cocos2d.h"
 
 using namespace std;
 
@@ -11,7 +12,7 @@ CurrentDetailController::CurrentDetailController(GameBoard *aGameBoard, CurrentD
 {
 	_gameBoard = aGameBoard;
 	_currentDetailDataSource = aDetailDataSource;
-	//_collisionDelegate = new CollisionDelegate(aGameBoard);
+	_collisionDelegate = new CollisionDelegate(aGameBoard);
 }
 
 
@@ -67,13 +68,22 @@ void CurrentDetailController::updateSystem(float deltaTime)
 {
 	if (_currentDetailDataSource->currentDetailAvailable())
 	{
-		GamePositionOnBoard tetraminoDetailPosition = getCurrentDetail()->getDetailPosition();
-		if (tetraminoDetailPosition.yPosition > 0)
+		GamePositionOnBoard newDetailPosition = getCurrentDetail()->getDetailPosition();
+		newDetailPosition.yPosition = newDetailPosition.yPosition - 1;
+
+		TetraminoDetail *currentDetail = getCurrentDetail();
+		TetraminoDetail *detailWithNewPosition = new TetraminoDetail((*currentDetail));
+		detailWithNewPosition->setDetailPosition(newDetailPosition);
+
+		if (_collisionDelegate->checkCollisionDetailWithGameBorders(detailWithNewPosition))
 		{
-			tetraminoDetailPosition.yPosition = tetraminoDetailPosition.yPosition - 1;
-			TetraminoDetail *currentDetail = getCurrentDetail();
-			currentDetail->setDetailPosition(tetraminoDetailPosition);
+			
 		}
+		else
+		{
+			currentDetail->setDetailPosition(newDetailPosition);
+		}
+
 	}
 }
 

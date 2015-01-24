@@ -22,7 +22,8 @@ public:
 	void setDetailRotatebleFlag(bool aRotatable);
 
 	void rotateDetail();
-
+	GamePositionOnBoard convertPositionInDetailToAbsolutePosition(GamePositionOnBoard aPosition);
+	GamePositionOnBoard convertAbsolutePositionToPositionInDetail(GamePositionOnBoard aPosition);
 
 private:
 

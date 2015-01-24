@@ -141,6 +141,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
+    <ClCompile Include="..\Classes\CollisionDelegate.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailController.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailViewDataSource.cpp" />
@@ -232,9 +233,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="CohesionSpell.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="CollisionDelegate.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="CollisionSystem.cpp">
@@ -427,6 +425,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\CocosNodesHelper.h" />
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />
+    <ClInclude Include="..\Classes\CollisionDelegate.h" />
     <ClInclude Include="..\Classes\CurrentDetailController.h" />
     <ClInclude Include="..\Classes\CurrentDetailDataSource.h" />
     <ClInclude Include="..\Classes\CurrentDetailViewDataSource.h" />
@@ -507,7 +506,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="AwardForTetraminoDataSource.h" />
     <ClInclude Include="BossesFactory.h" />
     <ClInclude Include="CohesionSpell.h" />
-    <ClInclude Include="CollisionDelegate.h" />
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="CurrentBossDataSource.h" />
     <ClInclude Include="CurrentLevelAwardDataSource.h" />

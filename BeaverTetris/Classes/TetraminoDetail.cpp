@@ -84,3 +84,23 @@ void TetraminoDetail::rotateDetail()
 
 
 }
+
+GamePositionOnBoard TetraminoDetail::convertPositionInDetailToAbsolutePosition(GamePositionOnBoard aPosition)
+{
+	GamePositionOnBoard currentDetailPosition = this->getDetailPosition();
+	
+	GamePositionOnBoard tetraminoPositionInDetail;
+	tetraminoPositionInDetail.xPosition = currentDetailPosition.xPosition + aPosition.xPosition;
+	tetraminoPositionInDetail.yPosition = currentDetailPosition.yPosition + aPosition.yPosition;
+	return tetraminoPositionInDetail;
+}
+
+GamePositionOnBoard TetraminoDetail::convertAbsolutePositionToPositionInDetail(GamePositionOnBoard aPosition)
+{
+	GamePositionOnBoard currentDetailPosition = this->getDetailPosition();
+	
+	GamePositionOnBoard tetraminoPositionInDetail;
+	tetraminoPositionInDetail.xPosition = aPosition.xPosition - currentDetailPosition.xPosition;
+	tetraminoPositionInDetail.yPosition = aPosition.yPosition - currentDetailPosition.yPosition;
+	return tetraminoPositionInDetail;
+}

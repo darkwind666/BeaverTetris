@@ -70,7 +70,7 @@ bool CurrentDetailViewDataSource::availableTetraminoOnPositionInCurrentDetail(Ga
 {
 	bool availableTetraminoInCurrentDetail = false;
 	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	GamePositionOnBoard tetraminoPositionInDetail = convertPositionInCurrentDetailPosition(aPosition);
+	GamePositionOnBoard tetraminoPositionInDetail = currentDetail->convertAbsolutePositionToPositionInDetail(aPosition);
 	Tetramino *tetraminoInDetail = currentDetail->getTetraminoForXY(tetraminoPositionInDetail.xPosition, tetraminoPositionInDetail.yPosition);
 	
 	if (tetraminoInDetail->getTetraminoType() > kTetraminoEmpty)
@@ -80,21 +80,10 @@ bool CurrentDetailViewDataSource::availableTetraminoOnPositionInCurrentDetail(Ga
 	return availableTetraminoInCurrentDetail;
 }
 
-GamePositionOnBoard CurrentDetailViewDataSource::convertPositionInCurrentDetailPosition(GamePositionOnBoard aPosition)
-{
-	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	GamePositionOnBoard currentDetailPosition = currentDetail->getDetailPosition();
-	
-	GamePositionOnBoard tetraminoPositionInDetail;
-	tetraminoPositionInDetail.xPosition = aPosition.xPosition - currentDetailPosition.xPosition;
-	tetraminoPositionInDetail.yPosition = aPosition.yPosition - currentDetailPosition.yPosition;
-	return tetraminoPositionInDetail;
-}
-
 TetraminoType CurrentDetailViewDataSource::getTetraminoTypeOnPositionInCurrentDetail(GamePositionOnBoard aPosition)
 {
 	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	GamePositionOnBoard tetraminoPositionInDetail = convertPositionInCurrentDetailPosition(aPosition);
+	GamePositionOnBoard tetraminoPositionInDetail = currentDetail->convertAbsolutePositionToPositionInDetail(aPosition);
 	Tetramino *tetraminoInDetail = currentDetail->getTetraminoForXY(tetraminoPositionInDetail.xPosition, tetraminoPositionInDetail.yPosition);
 	return tetraminoInDetail->getTetraminoType();
 }
