@@ -185,6 +185,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\MainGameBackgroundDataSource.cpp" />
     <ClCompile Include="..\Classes\MainGameSceneFactory.cpp" />
+    <ClCompile Include="..\Classes\PlayerActionControllerDesktop.cpp" />
+    <ClCompile Include="..\Classes\PlayerActionControllerFactory.cpp" />
     <ClCompile Include="..\Classes\PlayerCreatorController.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDataSource.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDelegateInterface.cpp" />
@@ -473,6 +475,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h" />
     <ClInclude Include="..\Classes\MainGameBackgroundDataSource.h" />
     <ClInclude Include="..\Classes\MainGameSceneFactory.h" />
+    <ClInclude Include="..\Classes\PlayerActionControllerDesktop.h" />
+    <ClInclude Include="..\Classes\PlayerActionControllerFactory.h" />
     <ClInclude Include="..\Classes\PlayerCreatorController.h" />
     <ClInclude Include="..\Classes\PlayerStatusDataSource.h" />
     <ClInclude Include="..\Classes\PlayerStatusDelegateInterface.h" />

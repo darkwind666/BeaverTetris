@@ -85,6 +85,9 @@
     <Filter Include="Controllers\ViewControllers\Regulators">
       <UniqueIdentifier>{797c4b9e-f46b-4d4f-a321-5b16030d6c64}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Controllers\ViewControllers\PlayerActionsControllers">
+      <UniqueIdentifier>{7d84fbf8-bcc1-446e-adac-be9ed28ece3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -503,6 +506,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\GameHudsController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PlayerActionControllerFactory.cpp">
+      <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PlayerActionControllerDesktop.cpp">
+      <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -955,6 +964,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameHudsController.h">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerActionControllerFactory.h">
+      <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerActionControllerDesktop.h">
+      <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
