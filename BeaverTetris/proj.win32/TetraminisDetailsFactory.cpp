@@ -4,6 +4,12 @@
 
 using namespace std;
 
+struct TetraminoDetailInformation
+{
+	bool rotateble;
+	int tetraminoElements[standartDetailWidth][standartDetailHeight];
+};
+
 TetraminisDetailsFactory::TetraminisDetailsFactory(CurrentLevelDataSource *aCurrentLevelDataSource)
 {
 	_currentLevelDataSource = aCurrentLevelDataSource;

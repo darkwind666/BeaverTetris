@@ -11,7 +11,7 @@ public:
 	CollisionDelegate(GameBoard *aGameBoard);
 	~CollisionDelegate(void);
 
-	bool checkCollisionWithDetail(TetraminoDetail *aDetail);
+	bool checkCollisionDetailWithOtherTetraminos(TetraminoDetail *aDetail);
 	GamePositionOnBoard getCollisionPositionWithBoardForDetail(TetraminoDetail *aDetail);
 	bool checkCollisionDetailWithGameBorders(TetraminoDetail *detailWithNewPosition);
 
@@ -19,7 +19,9 @@ private:
 
 	GameBoard *_gameBoard;
 
-	bool collisionWithDetailPositionAndDetail(GamePositionOnBoard aDetailPosition, TetraminoDetail *aDetail);
+	bool checkCollisionColumnWithOtherTetraminos(int aColumn, TetraminoDetail *aDetail);
+	bool checkCollisionDetailWithOtherTetraminosOnPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition);
+	bool positionInBoard(GamePositionOnBoard aPosition);
 
 	bool detailOutBoard(TetraminoDetail *aDetail);
 	bool checkCollisionWithDetailRow(int detailRow ,TetraminoDetail *aDetail);

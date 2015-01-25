@@ -12,59 +12,6 @@ CollisionDelegate::~CollisionDelegate(void)
 {
 }
 
-bool CollisionDelegate::checkCollisionWithDetail(TetraminoDetail *aDetail)
-{
-	GamePositionOnBoard detailPosition = aDetail->getDetailPosition();
-	bool collision = collisionWithDetailPositionAndDetail(detailPosition, aDetail);
-	return collision;
-}
-
-GamePositionOnBoard CollisionDelegate::getCollisionPositionWithBoardForDetail(TetraminoDetail *aDetail)
-{
-	GamePositionOnBoard detailPosition = aDetail->getDetailPosition();
-	GamePositionOnBoard detailCollisionPosition = detailPosition;
-
-	for (int heightIndex = detailPosition.yPosition; heightIndex <= 0; heightIndex--)
-	{
-		detailCollisionPosition.yPosition = heightIndex;
-		bool collision = collisionWithDetailPositionAndDetail(detailPosition, aDetail);
-		if (collision)
-		{
-			break;
-		}
-		else
-		{
-			detailPosition = detailCollisionPosition;
-		}
-		
-	}
-	return detailPosition;
-}
-
-bool CollisionDelegate::collisionWithDetailPositionAndDetail(GamePositionOnBoard aDetailPosition, TetraminoDetail *aDetail)
-{
-
-	bool collision = false;
-
-	for (int xIndex = aDetailPosition.xPosition; xIndex <  aDetailPosition.xPosition + aDetail->getDetailWidth(); xIndex++)
-	{
-	
-		for (int yIndex = aDetailPosition.yPosition; yIndex < aDetail->getDetailHeight(); yIndex++)
-		{
-			Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,yIndex);
-			Tetramino *tetraminoInDetail = aDetail->getTetraminoForXY(xIndex - aDetailPosition.xPosition, yIndex - aDetailPosition.yPosition);
-	
-			if (tetraminoInBoard->getTetraminoType() > kTetraminoEmpty && tetraminoInDetail->getTetraminoType() > kTetraminoEmpty)
-			{
-				collision = true;
-				return collision;
-			}
-	
-		}
-	
-	}
-	return collision;
-}
 
 bool CollisionDelegate::checkCollisionDetailWithGameBorders(TetraminoDetail *detailWithNewPosition)
 {
@@ -141,4 +88,90 @@ bool CollisionDelegate::tetraminoInDetailOutBoard(GamePositionOnBoard aTetramino
 	int detailWidth = aDetail->getDetailWidth();
 	bool collisionWithRightBorder = (aTetraminoAbsolutePosition.xPosition > (gameBoardWidth - detailWidth));
 	return (collisionWithDownBorder == true || collisionWithLeftBorder == true || collisionWithRightBorder == true);
+}
+
+
+
+
+bool CollisionDelegate::checkCollisionDetailWithOtherTetraminos(TetraminoDetail *aDetail)
+{
+	GamePositionOnBoard detailPosition = aDetail->getDetailPosition();
+	bool collision = false;
+	for (int xIndex = detailPosition.xPosition; xIndex <  detailPosition.xPosition + aDetail->getDetailWidth(); xIndex++)
+	{
+		if (checkCollisionColumnWithOtherTetraminos(xIndex, aDetail))
+		{
+			collision = true;
+			break;
+		}
+	}
+	return collision;
+}
+
+bool CollisionDelegate::checkCollisionColumnWithOtherTetraminos(int aColumn, TetraminoDetail *aDetail)
+{
+	GamePositionOnBoard detailPosition = aDetail->getDetailPosition();
+	bool collision = false;
+	for (int yIndex = detailPosition.yPosition; yIndex < detailPosition.yPosition + aDetail->getDetailHeight(); yIndex++)
+	{
+		GamePositionOnBoard gameBoardPosition;
+		gameBoardPosition.xPosition = aColumn;
+		gameBoardPosition.yPosition = yIndex;
+		if (checkCollisionDetailWithOtherTetraminosOnPosition(aDetail, gameBoardPosition))
+		{
+			collision = true;
+			break;
+		}
+	}
+	return collision;
+}
+
+bool CollisionDelegate::checkCollisionDetailWithOtherTetraminosOnPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition)
+{
+	bool collision = false;
+	if (positionInBoard(aPosition))
+	{
+		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(aPosition.xPosition, aPosition.yPosition);
+		GamePositionOnBoard positionInTetramino = aDetail->convertAbsolutePositionToPositionInDetail(aPosition);
+		Tetramino *tetraminoInDetail = aDetail->getTetraminoForXY(positionInTetramino.xPosition, positionInTetramino.yPosition);
+		if (tetraminoInBoard->getTetraminoType() > kTetraminoEmpty && tetraminoInDetail->getTetraminoType() > kTetraminoEmpty)
+		{
+			collision = true;
+		}
+	}
+	return collision;
+}
+
+bool CollisionDelegate::positionInBoard(GamePositionOnBoard aPosition)
+{
+	bool inWidthInterval = (aPosition.xPosition >= 0 && aPosition.xPosition < _gameBoard->getGameBoardWidth());
+	bool inHeightInterval = (aPosition.yPosition >= 0 && aPosition.yPosition < _gameBoard->getGameBoardHeight());
+	return (inWidthInterval == true && inHeightInterval == true);
+}
+
+GamePositionOnBoard CollisionDelegate::getCollisionPositionWithBoardForDetail(TetraminoDetail *aDetail)
+{
+	GamePositionOnBoard detailPosition = aDetail->getDetailPosition();
+	GamePositionOnBoard detailCollisionPosition = detailPosition;
+
+	for (int heightIndex = detailPosition.yPosition; heightIndex <= 0; heightIndex--)
+	{
+		detailCollisionPosition.yPosition = heightIndex;
+		TetraminoDetail *detailWithNewPosition = new TetraminoDetail(*aDetail);
+		detailWithNewPosition->setDetailPosition(detailCollisionPosition);
+
+		bool collision = checkCollisionDetailWithOtherTetraminos(detailWithNewPosition);
+		if (collision)
+		{
+			delete detailWithNewPosition;
+			break;
+		}
+		else
+		{
+			delete detailWithNewPosition;
+			detailPosition = detailCollisionPosition;
+		}
+		
+	}
+	return detailPosition;
 }

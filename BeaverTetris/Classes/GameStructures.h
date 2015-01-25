@@ -6,7 +6,6 @@
 #include <functional>
 #include "cocos2d.h"
 #include "GameEnums.h"
-#include "GameDesignConstants.h"
 
 class ResourcesLoader;
 struct ResoucesLoaderInformation
@@ -113,12 +112,6 @@ struct GameLevelInformation
 	int needToPlaceDetailsCount;
 	int remainTimes;
 	std::vector<TetraminosForWinInformation> tetraminosCollectionForWin;
-};
-
-struct TetraminoDetailInformation
-{
-	bool rotateble;
-	int tetraminoElements[standartDetailWidth][standartDetailHeight];
 };
 
 struct SpellInformation

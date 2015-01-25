@@ -37,7 +37,7 @@ void CollisionSystem::updateSystem(float deltaTime)
 		}
 		else
 		{
-			bool collide = _collisionDelegate->checkCollisionWithDetail(&collidebleTetramino);
+			bool collide = _collisionDelegate->checkCollisionDetailWithOtherTetraminos(&collidebleTetramino);
 			
 			if (collide)
 			{
