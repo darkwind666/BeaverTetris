@@ -86,7 +86,7 @@ bool CollisionDelegate::tetraminoInDetailOutBoard(GamePositionOnBoard aTetramino
 	bool collisionWithLeftBorder = (aTetraminoAbsolutePosition.xPosition < 0); 
 	int gameBoardWidth = _gameBoard->getGameBoardWidth();
 	int detailWidth = aDetail->getDetailWidth();
-	bool collisionWithRightBorder = (aTetraminoAbsolutePosition.xPosition > (gameBoardWidth - detailWidth));
+	bool collisionWithRightBorder = (aTetraminoAbsolutePosition.xPosition > (gameBoardWidth - 1));
 	return (collisionWithDownBorder == true || collisionWithLeftBorder == true || collisionWithRightBorder == true);
 }
 

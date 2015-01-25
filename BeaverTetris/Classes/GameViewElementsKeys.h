@@ -60,7 +60,8 @@ const string kingTetraminoKey = string("TetraminoBossKing");
 const string mainGameAnimationControllerKey = string("mainGameAnimationController");
 
 const string gameHudControllerKey = string("gameHudController");
-
+const string gameHudBackgroundKey = string("gameHudBackground");
+const string playerActionControllerKey = string("playerActionController");
 
 const string gameElement1Key = string("gameElement1");
 const string gameElement2Key = string("gameElement2");

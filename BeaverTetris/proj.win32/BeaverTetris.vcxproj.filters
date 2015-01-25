@@ -501,6 +501,9 @@
     <ClCompile Include="..\Classes\TetraminoDetailLocatorDelegate.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameHudsController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -949,6 +952,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TetraminoDetailLocatorDelegate.h">
       <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameHudsController.h">
+      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

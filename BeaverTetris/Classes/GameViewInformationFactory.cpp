@@ -260,6 +260,7 @@ void GameViewInformationFactory::makeMainGameScreenData()
 	mainGameHudController.elementZOrder = kHudControllerZOrder;
 	_elementsInformation[gameHudControllerKey] = mainGameHudController;
 
+	makeMainGameHudsData();
 }
 
 void GameViewInformationFactory::makeMainGameWorldData()
@@ -279,6 +280,20 @@ void GameViewInformationFactory::makeMainGameWorldData()
 	mainGameAnimation.elementPosition = Vec2(0, 0);
 	mainGameAnimation.elementZOrder = kMainGameAnimationZOrder;
 	_elementsInformation[mainGameAnimationControllerKey] = mainGameAnimation;
+
+}
+
+void GameViewInformationFactory::makeMainGameHudsData()
+{
+	ViewElementInformation mainGameHudsBackground;
+	mainGameHudsBackground.elementPosition =  Vec2(290, getScreenCenterY());
+	mainGameHudsBackground.elementZOrder = kMainGameHudsBackgroundZOrder;
+	_elementsInformation[gameHudBackgroundKey] = mainGameHudsBackground;
+
+	ViewElementInformation mainGamePlayerActionController;
+	mainGamePlayerActionController.elementPosition = getScreenCenter();
+	mainGamePlayerActionController.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	_elementsInformation[playerActionControllerKey] = mainGamePlayerActionController;
 
 }
 

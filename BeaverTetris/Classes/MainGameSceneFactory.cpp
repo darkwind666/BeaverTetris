@@ -4,6 +4,7 @@
 #include "GameViewElementsKeys.h"
 
 #include "GameWorldController.h"
+#include "GameHudsController.h"
 
 using namespace cocos2d;
 
@@ -25,6 +26,9 @@ Scene* MainGameSceneFactory::createScene()
 
 	GameWorldController *gameWorldController = new GameWorldController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameWorldController, mainGameScene, gameWorldControllerKey);
+
+	GameHudsController *gameHudsController = new GameHudsController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameHudsController, mainGameScene, gameHudControllerKey);
 
 	return mainGameScene;
 }

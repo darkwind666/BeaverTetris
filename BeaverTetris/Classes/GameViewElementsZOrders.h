@@ -58,3 +58,9 @@ enum MainGameWorldZOrders
 	kMainGameBoardZOrder,
 	kMainGameAnimationZOrder,
 };
+
+enum MainGameHudsZOrders
+{
+	kMainGameHudsBackgroundZOrder,
+	kMainGamePlayerActionControllerZOrder,
+};

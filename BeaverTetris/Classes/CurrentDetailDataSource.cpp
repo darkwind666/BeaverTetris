@@ -42,7 +42,7 @@ TetraminoDetail* CurrentDetailDataSource::makeNewTetraminoDetail()
 	TetraminoDetail *newDetail = new TetraminoDetail(3,3);
 	
 	GamePositionOnBoard startDetailPosition;
-	startDetailPosition.xPosition = 5;
+	startDetailPosition.xPosition = 7;
 	startDetailPosition.yPosition = 20;
 	
 	newDetail->setDetailPosition(startDetailPosition);

@@ -156,6 +156,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameFileExtensionMaker.cpp" />
     <ClCompile Include="..\Classes\GameGraphicsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameGraphicsLoader.cpp" />
+    <ClCompile Include="..\Classes\GameHudsController.cpp" />
     <ClCompile Include="..\Classes\GameInitiator.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -441,6 +442,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameFileExtensionMaker.h" />
     <ClInclude Include="..\Classes\GameGraphicsDataSource.h" />
     <ClInclude Include="..\Classes\GameGraphicsLoader.h" />
+    <ClInclude Include="..\Classes\GameHudsController.h" />
     <ClInclude Include="..\Classes\GameInitiator.h" />
     <ClInclude Include="..\Classes\GameKeyWithSuffixSupporter.h" />
     <ClInclude Include="..\Classes\GameLevelsDataSource.h" />
