@@ -188,6 +188,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\PlayerActionControllerDesktop.cpp" />
     <ClCompile Include="..\Classes\PlayerActionControllerFactory.cpp" />
     <ClCompile Include="..\Classes\PlayerCreatorController.cpp" />
+    <ClCompile Include="..\Classes\PlayerGameControlsDataSource.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDataSource.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDelegateInterface.cpp" />
     <ClCompile Include="..\Classes\RegulateSoundPopUp.cpp" />
@@ -348,9 +349,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="NewGameTetraminoDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="PlayerGameControlsDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="PlayerInputController.cpp" />
     <ClCompile Include="PlayerScoreDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -478,6 +476,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\PlayerActionControllerDesktop.h" />
     <ClInclude Include="..\Classes\PlayerActionControllerFactory.h" />
     <ClInclude Include="..\Classes\PlayerCreatorController.h" />
+    <ClInclude Include="..\Classes\PlayerGameControlsDataSource.h" />
     <ClInclude Include="..\Classes\PlayerStatusDataSource.h" />
     <ClInclude Include="..\Classes\PlayerStatusDelegateInterface.h" />
     <ClInclude Include="..\Classes\RegulateSoundPopUp.h" />
@@ -550,7 +549,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="main.h" />
     <ClInclude Include="MoveSystem.h" />
     <ClInclude Include="NewGameTetraminoDataSource.h" />
-    <ClInclude Include="PlayerGameControlsDataSource.h" />
     <ClInclude Include="PlayerInputController.h" />
     <ClInclude Include="PlayerScoreDataSource.h" />
     <ClInclude Include="RandomExplosionsSpell.h" />

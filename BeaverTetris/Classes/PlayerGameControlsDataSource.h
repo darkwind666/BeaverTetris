@@ -2,20 +2,22 @@
 
 #include <string>
 #include <vector>
+#include <functional>
 #include "cocos2d.h"
 #include "GameStructures.h"
-#include "GameViewElementsDataSource.h"
+
+class GameViewElementsDataSource;
 
 class PlayerGameControlsDataSource
 {
 public:
-	PlayerGameControlsDataSource(GameViewElementsDataSource *aGameViewElementsDataSource);
+	PlayerGameControlsDataSource();
 	~PlayerGameControlsDataSource(void);
 
 	int getPlayerControlsCount();
 	std::string getPlayerControlIconImageOnIndex(int aIndex);
 	cocos2d::Vec2 getPlayerControlPositionOnIndex(int aIndex);
-	GameEvent getPlayerControlEventOnIndex(int aIndex);
+	std::function<void()> getPlayerControlCallbackForIndex(int aIndex);
 
 private:
 

@@ -21,6 +21,12 @@ struct StartGameMenuItemInformation
 	std::function<void()> callback;
 };
 
+struct PlayerControllInformation
+{
+	std::string imageKey;
+	std::function<void()> callback;
+	std::string keyboardKey;
+};
 
 struct ViewElementInformation
 {
@@ -79,13 +85,6 @@ struct GamePositionOnBoard
 {
 	int xPosition;
 	int yPosition;
-	
-};
-
-struct PlayerControllInformation
-{
-	std::string controlKey;
-	GameEvent controlEvent;
 	
 };
 

@@ -63,18 +63,18 @@ const string gameHudControllerKey = string("gameHudController");
 const string gameHudBackgroundKey = string("gameHudBackground");
 const string playerActionControllerKey = string("playerActionController");
 
+const string rotateDetailControlKey = string("rotateDetailControl");
+const string accelerateDetailControlKey = string("accelerateDetailControl");
+const string moveDetailLeftControlKey = string("moveDetailLeftControl");
+const string moveDetailRightControlKey = string("moveDetailRightControl");
+const string pauseGameControlKey = string("pauseGameControl");
+
 const string gameElement1Key = string("gameElement1");
 const string gameElement2Key = string("gameElement2");
 const string gameElement3Key = string("gameElement3");
 const string gameElement4Key = string("gameElement4");
 const string gameElement5Key = string("gameElement5");
 const string gameElement6Key = string("gameElement6");
-
-const string playerControl1Key = string("playerControl1Key");
-const string playerControl2Key = string("playerControl2Key");
-const string playerControl3Key = string("playerControl3Key");
-const string playerControl4Key = string("playerControl4Key");
-const string playerControl5Key = string("playerControl5Key");
 
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");

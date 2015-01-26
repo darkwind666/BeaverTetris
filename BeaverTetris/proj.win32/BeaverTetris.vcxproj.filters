@@ -171,9 +171,6 @@
     <ClCompile Include="SpellsViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerGameControlsDataSource.cpp">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminosCombinatorDelegate.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
@@ -513,6 +510,9 @@
     <ClCompile Include="..\Classes\PlayerActionControllerDesktop.cpp">
       <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\PlayerGameControlsDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -597,9 +597,6 @@
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="EndGameViewDataSource.h">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerGameControlsDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="TetraminosCombinatorDelegate.h">
@@ -970,6 +967,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\PlayerActionControllerDesktop.h">
       <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerGameControlsDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

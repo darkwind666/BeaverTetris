@@ -295,6 +295,41 @@ void GameViewInformationFactory::makeMainGameHudsData()
 	mainGamePlayerActionController.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[playerActionControllerKey] = mainGamePlayerActionController;
 
+	makeMainGamePlayerControllersData();
+
+}
+
+void GameViewInformationFactory::makeMainGamePlayerControllersData()
+{
+	ViewElementInformation rotateDetailControl;
+	rotateDetailControl.elementImage = getImageNameForKey(rotateDetailControlKey);
+	rotateDetailControl.elementPosition = getScreenCenter();
+	rotateDetailControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	_elementsInformation[rotateDetailControlKey] = rotateDetailControl;
+
+	ViewElementInformation accelerateDetailControl;
+	accelerateDetailControl.elementImage = getImageNameForKey(accelerateDetailControlKey);
+	accelerateDetailControl.elementPosition = getScreenCenter();
+	accelerateDetailControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	_elementsInformation[accelerateDetailControlKey] = accelerateDetailControl;
+
+	ViewElementInformation moveDetailLeftControl;
+	moveDetailLeftControl.elementImage = getImageNameForKey(moveDetailLeftControlKey);
+	moveDetailLeftControl.elementPosition = getScreenCenter();
+	moveDetailLeftControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	_elementsInformation[moveDetailLeftControlKey] = moveDetailLeftControl;
+
+	ViewElementInformation moveDetailRightControl;
+	moveDetailRightControl.elementImage = getImageNameForKey(moveDetailRightControlKey);
+	moveDetailRightControl.elementPosition = getScreenCenter();
+	moveDetailRightControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	_elementsInformation[moveDetailRightControlKey] = moveDetailRightControl;
+
+	ViewElementInformation pauseGameControl;
+	pauseGameControl.elementImage = getImageNameForKey(pauseGameControlKey);
+	pauseGameControl.elementPosition = getScreenCenter();
+	pauseGameControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	_elementsInformation[pauseGameControlKey] = pauseGameControl;
 }
 
 void GameViewInformationFactory::makeRecordsScreenData()
