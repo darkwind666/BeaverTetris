@@ -25,7 +25,7 @@ struct PlayerControllInformation
 {
 	std::string imageKey;
 	std::function<void()> callback;
-	std::string keyboardKey;
+	int keyboardKey;
 };
 
 struct ViewElementInformation

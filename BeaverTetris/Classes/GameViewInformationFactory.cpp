@@ -291,7 +291,7 @@ void GameViewInformationFactory::makeMainGameHudsData()
 	_elementsInformation[gameHudBackgroundKey] = mainGameHudsBackground;
 
 	ViewElementInformation mainGamePlayerActionController;
-	mainGamePlayerActionController.elementPosition = getScreenCenter();
+	mainGamePlayerActionController.elementPosition =  Vec2(280, 40);
 	mainGamePlayerActionController.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[playerActionControllerKey] = mainGamePlayerActionController;
 
@@ -301,33 +301,35 @@ void GameViewInformationFactory::makeMainGameHudsData()
 
 void GameViewInformationFactory::makeMainGamePlayerControllersData()
 {
+	int controllerOffset = 25;
+
 	ViewElementInformation rotateDetailControl;
 	rotateDetailControl.elementImage = getImageNameForKey(rotateDetailControlKey);
-	rotateDetailControl.elementPosition = getScreenCenter();
+	rotateDetailControl.elementPosition = Vec2(0, controllerOffset);
 	rotateDetailControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[rotateDetailControlKey] = rotateDetailControl;
 
 	ViewElementInformation accelerateDetailControl;
 	accelerateDetailControl.elementImage = getImageNameForKey(accelerateDetailControlKey);
-	accelerateDetailControl.elementPosition = getScreenCenter();
+	accelerateDetailControl.elementPosition = Vec2(0, 0);
 	accelerateDetailControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[accelerateDetailControlKey] = accelerateDetailControl;
 
 	ViewElementInformation moveDetailLeftControl;
 	moveDetailLeftControl.elementImage = getImageNameForKey(moveDetailLeftControlKey);
-	moveDetailLeftControl.elementPosition = getScreenCenter();
+	moveDetailLeftControl.elementPosition = Vec2(-controllerOffset, 0);
 	moveDetailLeftControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[moveDetailLeftControlKey] = moveDetailLeftControl;
 
 	ViewElementInformation moveDetailRightControl;
 	moveDetailRightControl.elementImage = getImageNameForKey(moveDetailRightControlKey);
-	moveDetailRightControl.elementPosition = getScreenCenter();
+	moveDetailRightControl.elementPosition = Vec2(controllerOffset, 0);
 	moveDetailRightControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[moveDetailRightControlKey] = moveDetailRightControl;
 
 	ViewElementInformation pauseGameControl;
 	pauseGameControl.elementImage = getImageNameForKey(pauseGameControlKey);
-	pauseGameControl.elementPosition = getScreenCenter();
+	pauseGameControl.elementPosition = Vec2(controllerOffset, controllerOffset);
 	pauseGameControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[pauseGameControlKey] = pauseGameControl;
 }
