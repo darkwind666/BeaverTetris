@@ -9,6 +9,7 @@ class TetraminoDetail
 {
 public:
 	TetraminoDetail(int width, int height);
+	TetraminoDetail(TetraminoDetail &copy);
 	~TetraminoDetail(void);
 
 	int getDetailWidth();
@@ -21,10 +22,8 @@ public:
 	void setTetraminoForXY(Tetramino *aTetramino, int xPosition, int yPosition);
 	void setDetailPosition(GamePositionOnBoard aDetailPosition);
 	void setDetailRotatebleFlag(bool aRotatable);
-
+	
 	void rotateDetail();
-	void rotateDetailBoard();
-	void rotateColumnAndPlaceInNewBoard(int aColumn, GameBoard *aGameBoard);
 	GamePositionOnBoard convertPositionInDetailToAbsolutePosition(GamePositionOnBoard aPosition);
 	GamePositionOnBoard convertAbsolutePositionToPositionInDetail(GamePositionOnBoard aPosition);
 
@@ -35,6 +34,11 @@ private:
 	int _detailHeight;
 	bool _rotatable;
 	GamePositionOnBoard _position;
+
+	void copyTetraminosInDetail(TetraminoDetail *aDestinationDetail);
+
+	void rotateDetailBoard();
+	void rotateColumnAndPlaceInNewBoard(int aColumn, GameBoard *aGameBoard);
 
 };
 

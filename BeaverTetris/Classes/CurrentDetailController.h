@@ -32,8 +32,6 @@ private:
 
 	TetraminoDetail* getCurrentDetail();
 	GamePositionOnBoard getCurrentDetailPosition();
-	void setNewPositionIfNoCollision(GamePositionOnBoard aNewDetailPosition);
-	bool collideWithOtherTetraminos(TetraminoDetail aDetail);
 
 	void moveDownDetail();
 	bool checkCollisionForCurrentDetailWithNewPosition(GamePositionOnBoard aNewDetailPosition);

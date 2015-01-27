@@ -18,9 +18,30 @@ TetraminoDetail::TetraminoDetail(int width, int height)
 	_position = position;
 }
 
+TetraminoDetail::TetraminoDetail(TetraminoDetail &copy)
+{
+	setDetailPosition(copy._position);
+	_gameBoardTetraminos = new GameBoard(copy._detailWidth,copy._detailHeight);
+	copy.copyTetraminosInDetail(this);
+	_detailWidth = copy._detailWidth;
+	_detailHeight = copy._detailHeight;
+}
+
 TetraminoDetail::~TetraminoDetail(void)
 {
 	delete _gameBoardTetraminos;
+}
+
+void TetraminoDetail::copyTetraminosInDetail(TetraminoDetail *aDestinationDetail)
+{
+	for (int xIndex = 0; xIndex < _detailWidth; xIndex++)
+	{
+		for (int yIndex = 0; yIndex < _detailHeight; yIndex++)
+		{
+			Tetramino *rotatedTetramino = _gameBoardTetraminos->getTetraminoForXYposition(xIndex, yIndex);
+			aDestinationDetail->setTetraminoForXY(rotatedTetramino, xIndex, yIndex);
+		}
+	}
 }
 
 int TetraminoDetail::getDetailWidth()
