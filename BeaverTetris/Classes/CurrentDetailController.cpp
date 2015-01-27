@@ -52,18 +52,18 @@ void CurrentDetailController::moveRightDetail(void)
 
 void CurrentDetailController::rotateDetail(void)
 {
-	TetraminoDetail rotatedTetramino = *getCurrentDetail();
-	rotatedTetramino.rotateDetail();
+	TetraminoDetail *currentDetail = getCurrentDetail();
+	int currentDetailWidth = currentDetail->getDetailWidth();
+	int currentDetailHeight = currentDetail->getDetailHeight();
+	TetraminoDetail *rotatedDetail = new TetraminoDetail(currentDetailWidth, currentDetailHeight);
+	rotatedDetail->setDetailPosition(currentDetail->getDetailPosition());
+	rotatedDetail->rotateDetail();
 
-	/*
-	bool collide = _collisionDelegate->checkCollisionDetailWithOtherTetraminos(&rotatedTetramino);
-
-	if (!collide)
+	if (!checkCollisionForDetail(rotatedDetail))
 	{
-		_currentDetail->rotateDetail();
+		currentDetail->rotateDetail();
 	}
-	*/
-
+	delete rotatedDetail;
 }
 
 void CurrentDetailController::updateSystem(float deltaTime)
@@ -96,10 +96,13 @@ bool CurrentDetailController::checkCollisionForCurrentDetailWithNewPosition(Game
 	TetraminoDetail *currentDetail = getCurrentDetail();
 	TetraminoDetail *detailWithNewPosition = new TetraminoDetail((*currentDetail));
 	detailWithNewPosition->setDetailPosition(aNewDetailPosition);
+	return checkCollisionForDetail(detailWithNewPosition);
+}
 
-	bool collisionWithBorders = _collisionDelegate->checkCollisionDetailWithGameBorders(detailWithNewPosition);
-	bool collisionWithOtherTetraminos = _collisionDelegate->checkCollisionDetailWithOtherTetraminos(detailWithNewPosition);
-
+bool CurrentDetailController::checkCollisionForDetail(TetraminoDetail *aDetail)
+{
+	bool collisionWithBorders = _collisionDelegate->checkCollisionDetailWithGameBorders(aDetail);
+	bool collisionWithOtherTetraminos = _collisionDelegate->checkCollisionDetailWithOtherTetraminos(aDetail);
 	return (collisionWithBorders == true || collisionWithOtherTetraminos == true);
 }
 

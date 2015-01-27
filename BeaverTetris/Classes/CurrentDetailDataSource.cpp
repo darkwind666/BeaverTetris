@@ -54,5 +54,6 @@ TetraminoDetail* CurrentDetailDataSource::makeNewTetraminoDetail()
 	newDetail->setTetraminoForXY(newTetraminoRight ,0,1);
 	newDetail->setTetraminoForXY(newTetraminoCentre ,1,1);
 	newDetail->setTetraminoForXY(newTetraminoLeft ,2,1);
+
 	return newDetail;
 }

@@ -1,5 +1,6 @@
 #include "CollisionDelegate.h"
 #include "TetraminoDetail.h"
+#include "Tetramino.h"
 #include "GameBoard.h"
 
 CollisionDelegate::CollisionDelegate(GameBoard *aGameBoard)

@@ -1,5 +1,5 @@
 #include "TetraminoDetailLocatorDelegate.h"
-
+#include "Tetramino.h"
 
 TetraminoDetailLocatorDelegate::TetraminoDetailLocatorDelegate(GameBoard *aGameBoard)
 {

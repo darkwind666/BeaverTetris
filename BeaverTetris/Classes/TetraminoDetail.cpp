@@ -1,5 +1,7 @@
 #include "TetraminoDetail.h"
+#include "Tetramino.h"
 #include "GameEnums.h"
+#include "GameBoard.h"
 
 using namespace std;
 
@@ -63,26 +65,31 @@ void TetraminoDetail::setDetailRotatebleFlag(bool aRotatable)
 
 void TetraminoDetail::rotateDetail()
 {
-
 	if (_rotatable)
 	{
-		GameBoard *newGameBoard = new GameBoard(_detailWidth,_detailHeight);
-		
-		for (int xIndex = 0; xIndex < _detailWidth; xIndex++)
-		{
-		
-			for (int yIndex = 0; yIndex < _detailHeight; yIndex++)
-			{
-				Tetramino *rotatedTetramino = _gameBoardTetraminos->getTetraminoForXYposition(xIndex, yIndex);
-				newGameBoard->setTetraminoXYposition(rotatedTetramino, ((newGameBoard->getGameBoardWidth() - 1) - yIndex), xIndex);
-			}
-		
-		}
-		
-		_gameBoardTetraminos = newGameBoard;
+		rotateDetailBoard();
 	}
+}
 
+void TetraminoDetail::rotateDetailBoard()
+{
+	GameBoard *newGameBoard = new GameBoard(_detailWidth,_detailHeight);
+	for (int xIndex = 0; xIndex < _detailWidth; xIndex++)
+	{
+		rotateColumnAndPlaceInNewBoard(xIndex, newGameBoard);
+	}
+	
+	delete _gameBoardTetraminos;
+	_gameBoardTetraminos = newGameBoard;
+}
 
+void TetraminoDetail::rotateColumnAndPlaceInNewBoard(int aColumn, GameBoard *aGameBoard)
+{
+	for (int yIndex = 0; yIndex < _detailHeight; yIndex++)
+	{
+		Tetramino *rotatedTetramino = _gameBoardTetraminos->getTetraminoForXYposition(aColumn, yIndex);
+		aGameBoard->replaceTetraminoXYposition(rotatedTetramino, yIndex, aColumn);
+	}
 }
 
 GamePositionOnBoard TetraminoDetail::convertPositionInDetailToAbsolutePosition(GamePositionOnBoard aPosition)

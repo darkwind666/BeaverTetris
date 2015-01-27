@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Tetramino.h"
 #include "GameStructures.h"
-#include "GameBoard.h"
+
+class GameBoard;
+class Tetramino;
 
 class TetraminoDetail
 {
@@ -22,6 +23,8 @@ public:
 	void setDetailRotatebleFlag(bool aRotatable);
 
 	void rotateDetail();
+	void rotateDetailBoard();
+	void rotateColumnAndPlaceInNewBoard(int aColumn, GameBoard *aGameBoard);
 	GamePositionOnBoard convertPositionInDetailToAbsolutePosition(GamePositionOnBoard aPosition);
 	GamePositionOnBoard convertAbsolutePositionToPositionInDetail(GamePositionOnBoard aPosition);
 
