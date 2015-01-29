@@ -212,6 +212,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\StartGameMenuDataSource.cpp" />
     <ClCompile Include="..\Classes\StringsSupporter.cpp" />
     <ClCompile Include="..\Classes\Tetramino.cpp" />
+    <ClCompile Include="..\Classes\TetraminoColorsDataSource.cpp" />
     <ClCompile Include="..\Classes\TetraminoDetail.cpp" />
     <ClCompile Include="..\Classes\TetraminoDetailLocatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminoObserverInterface.cpp" />
@@ -503,6 +504,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\StartGameMenuDataSource.h" />
     <ClInclude Include="..\Classes\StringsSupporter.h" />
     <ClInclude Include="..\Classes\Tetramino.h" />
+    <ClInclude Include="..\Classes\TetraminoColorsDataSource.h" />
     <ClInclude Include="..\Classes\TetraminoDetail.h" />
     <ClInclude Include="..\Classes\TetraminoDetailLocatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminoObserverInterface.h" />

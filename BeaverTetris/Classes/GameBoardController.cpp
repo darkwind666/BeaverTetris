@@ -1,6 +1,6 @@
 #include "GameBoardController.h"
 #include "GameBoardViewDataSource.h"
-#include "GameViewElementsKeys.h"
+#include "TetraminoColorsDataSource.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -9,7 +9,7 @@ GameBoardController::GameBoardController(void)
 {
 	_gameBoardViewDataSource = new GameBoardViewDataSource();
 	_redrawAvailable = true;
-	_tetraminosColors = getTetraminosColors();
+	_tetraminoColorsDataSource = new TetraminoColorsDataSource();
 	_tetraminosViews = getTetraminosViews();
 	addTetraminoViewsToController();
 	redrawGameBoard();
@@ -18,22 +18,6 @@ GameBoardController::GameBoardController(void)
 
 GameBoardController::~GameBoardController(void)
 {
-}
-
-map<string, Color3B> GameBoardController::getTetraminosColors()
-{
-	map<string, Color3B> tetraminosColors;
-
-	tetraminosColors[redTetraminoKey] = Color3B::RED;
-	tetraminosColors[greenTetraminoKey] = Color3B::GREEN;
-	tetraminosColors[blueTetraminoKey] = Color3B::BLUE;
-	tetraminosColors[goldTetraminoKey] = Color3B::YELLOW;
-	tetraminosColors[blackTetraminoKey] = Color3B::BLACK;
-	tetraminosColors[queenTetraminoKey] = Color3B::MAGENTA;
-	tetraminosColors[princessTetraminoKey] = Color3B::GRAY;
-	tetraminosColors[kingTetraminoKey] = Color3B::WHITE;
-
-	return tetraminosColors;
 }
 
 vector<Sprite*> GameBoardController::getTetraminosViews()
@@ -105,17 +89,10 @@ void GameBoardController::drawTetraminoTextureOnIndex(std::string aTetraminoText
 	tetraminoView->setScaleX(0.05f);
 	tetraminoView->setScaleY(0.08f);
 	
-	Color3B tetraminoColor = getColorForKey(aTetraminoTextureKey);
+	Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(aTetraminoTextureKey);
 	tetraminoView->setColor(tetraminoColor);
 }
 
-Color3B GameBoardController::getColorForKey(string aKey)
-{
-	string fileExtension = ".png";
-	int fileExtensionPosition = aKey.find(fileExtension);
-	string colorKey = aKey.erase(fileExtensionPosition, fileExtensionPosition + fileExtension.size());
-	return _tetraminosColors[colorKey];
-}
 
 void GameBoardController::setRedrawAvailable(bool redrawAvailable)
 {

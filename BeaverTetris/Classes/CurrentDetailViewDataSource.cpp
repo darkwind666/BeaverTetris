@@ -42,7 +42,9 @@ Vec2 CurrentDetailViewDataSource::getTetraminoPositionForIndex(int aIndex)
 {
 	Vec2 tetraminoOffset = GameElementsDataHelper::getElementOffsetForKey(mainGameBoardControllerKey);
 	GamePositionOnBoard tetraminoPosition = getCurrentDetail()->getPositionForIndex(aIndex);
-	return Vec2(tetraminoPosition.xPosition * tetraminoOffset.x, tetraminoPosition.yPosition * tetraminoOffset.y);
+	float xPosition = (-tetraminoOffset.x / 2) + tetraminoPosition.xPosition * tetraminoOffset.x;
+	float yPosition = (-tetraminoOffset.y / 2) + tetraminoPosition.yPosition * tetraminoOffset.y;
+	return Vec2(xPosition, yPosition);
 }
 
 bool CurrentDetailViewDataSource::availableTetraminoOnIndex(int aIndex)

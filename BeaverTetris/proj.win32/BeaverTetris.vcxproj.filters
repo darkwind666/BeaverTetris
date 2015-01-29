@@ -525,6 +525,9 @@
     <ClCompile Include="..\Classes\CurrentDetailTetraminosChecker.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetraminoColorsDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -991,6 +994,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CurrentDetailTetraminosChecker.h">
       <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminoColorsDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

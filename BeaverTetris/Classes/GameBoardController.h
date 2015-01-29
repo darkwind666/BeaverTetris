@@ -5,6 +5,7 @@
 #include <vector>
 
 class GameBoardViewDataSource;
+class TetraminoColorsDataSource;
 
 class GameBoardController : public cocos2d::Node
 {
@@ -25,9 +26,7 @@ private:
 	GameBoardViewDataSource *_gameBoardViewDataSource;
 	bool _redrawAvailable;
 	std::vector<cocos2d::Sprite*> _tetraminosViews;
-	std::map<std::string, cocos2d::Color3B> _tetraminosColors;
-
-	std::map<std::string, cocos2d::Color3B> getTetraminosColors();
+	TetraminoColorsDataSource *_tetraminoColorsDataSource;
 
 	void updateTetraminoViews();
 	void updateGameBoardView();
@@ -35,7 +34,7 @@ private:
 	std::vector<cocos2d::Sprite*> getTetraminosViews();
 	void addTetraminoViewsToController();
 	void hideAllTetraminos();
-	cocos2d::Color3B getColorForKey(std::string aKey);
+	
 
 };
 

@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 
 class CurrentDetailDataSource;
+class CurrentDetailViewDataSource;
 
 class CurrentDetailAnimationControler : public cocos2d::Node, public CurrentDetailControllerDelegate
 {
@@ -16,6 +17,7 @@ public:
 private:
 
 	CurrentDetailDataSource *_currentDetailDataSource;
+	CurrentDetailViewDataSource *_currentDetailViewDataSource;
 
 };
 
