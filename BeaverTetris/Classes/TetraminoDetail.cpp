@@ -44,46 +44,6 @@ void TetraminoDetail::copyTetraminosInDetail(TetraminoDetail *aDestinationDetail
 	}
 }
 
-int TetraminoDetail::getDetailWidth()
-{
-	return _detailWidth;
-}
-
-int TetraminoDetail::getDetailHeight()
-{
-	return _detailHeight;
-}
-
-Tetramino* TetraminoDetail::getTetraminoForXY(int xPosition, int yPosition)
-{
-	return _gameBoardTetraminos->getTetraminoForXYposition(xPosition, yPosition);
-}
-
-GamePositionOnBoard TetraminoDetail::getDetailPosition()
-{
-	return _position;
-}
-
-vector<GamePositionOnBoard> TetraminoDetail::getAvailableTetraminos()
-{
-	return _gameBoardTetraminos->getAvailableTetraminis();
-}
-
-void TetraminoDetail::setTetraminoForXY(Tetramino *aTetramino, int xPosition, int yPosition)
-{
-	_gameBoardTetraminos->replaceTetraminoXYposition(aTetramino,xPosition,yPosition);
-}
-
-void TetraminoDetail::setDetailPosition(GamePositionOnBoard aDetailPosition)
-{
-	_position = aDetailPosition;
-}
-
-void TetraminoDetail::setDetailRotatebleFlag(bool aRotatable)
-{
-	_rotatable = aRotatable;
-}
-
 void TetraminoDetail::rotateDetail()
 {
 	if (_rotatable)
@@ -131,4 +91,49 @@ GamePositionOnBoard TetraminoDetail::convertAbsolutePositionToPositionInDetail(G
 	tetraminoPositionInDetail.xPosition = aPosition.xPosition - currentDetailPosition.xPosition;
 	tetraminoPositionInDetail.yPosition = aPosition.yPosition - currentDetailPosition.yPosition;
 	return tetraminoPositionInDetail;
+}
+
+int TetraminoDetail::getDetailWidth()
+{
+	return _detailWidth;
+}
+
+int TetraminoDetail::getDetailHeight()
+{
+	return _detailHeight;
+}
+
+Tetramino* TetraminoDetail::getTetraminoForXY(int xPosition, int yPosition)
+{
+	return _gameBoardTetraminos->getTetraminoForXYposition(xPosition, yPosition);
+}
+
+GamePositionOnBoard TetraminoDetail::getDetailPosition()
+{
+	return _position;
+}
+
+vector<GamePositionOnBoard> TetraminoDetail::getAvailableTetraminos()
+{
+	return _gameBoardTetraminos->getAvailableTetraminis();
+}
+
+void TetraminoDetail::setTetraminoForXY(Tetramino *aTetramino, int xPosition, int yPosition)
+{
+	_gameBoardTetraminos->replaceTetraminoXYposition(aTetramino,xPosition,yPosition);
+}
+
+void TetraminoDetail::setDetailPosition(GamePositionOnBoard aDetailPosition)
+{
+	_position = aDetailPosition;
+}
+
+void TetraminoDetail::setDetailRotatebleFlag(bool aRotatable)
+{
+	_rotatable = aRotatable;
+}
+
+GamePositionOnBoard TetraminoDetail::getPositionForIndex(int aIndex)
+{
+	return _gameBoardTetraminos->getPositionForIndex(aIndex);
 }

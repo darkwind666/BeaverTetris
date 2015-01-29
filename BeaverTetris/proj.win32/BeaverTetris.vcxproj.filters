@@ -88,6 +88,9 @@
     <Filter Include="Controllers\ViewControllers\PlayerActionsControllers">
       <UniqueIdentifier>{7d84fbf8-bcc1-446e-adac-be9ed28ece3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Controllers\ViewControllers\AnimationControllers">
+      <UniqueIdentifier>{34e66d98-f3b9-456c-a1f7-245d6ee646ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -512,6 +515,15 @@
     </ClCompile>
     <ClCompile Include="..\Classes\PlayerGameControlsDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CurrentDetailControllerDelegate.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CurrentDetailAnimationControler.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CurrentDetailTetraminosChecker.cpp">
+      <Filter>Models\GameLogic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -970,6 +982,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\PlayerGameControlsDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentDetailControllerDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentDetailAnimationControler.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentDetailTetraminosChecker.h">
+      <Filter>Models\GameLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

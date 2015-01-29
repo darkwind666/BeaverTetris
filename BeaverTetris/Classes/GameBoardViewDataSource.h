@@ -7,6 +7,7 @@
 class GameBoard;
 class CurrentDetailViewDataSource;
 class KeysForEnumsDataSource;
+class CurrentDetailTetraminosChecker;
 
 class GameBoardViewDataSource
 {
@@ -24,11 +25,8 @@ private:
 
 	GameBoard *_gameBoard;
 	CurrentDetailViewDataSource *_currentDetailViewDataSource;
+	CurrentDetailTetraminosChecker *_currentDetailTetraminosChecker;
 	KeysForEnumsDataSource *_keysForEnumsDataSource;
-
-	GamePositionOnBoard getPositionForIndex(int aIndex);
-	int getColumnForIndex(int aIndex);
-	int getRowForIndex(int aIndex);
 
 	TetraminoType getVisibleTetraminoTypeOnPosition(GamePositionOnBoard aPosition);
 

@@ -142,8 +142,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
     <ClCompile Include="..\Classes\CollisionDelegate.cpp" />
+    <ClCompile Include="..\Classes\CurrentDetailAnimationControler.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailController.cpp" />
+    <ClCompile Include="..\Classes\CurrentDetailControllerDelegate.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailDataSource.cpp" />
+    <ClCompile Include="..\Classes\CurrentDetailTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailViewDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentPlayerDataSource.cpp" />
     <ClCompile Include="..\Classes\GameBackgroundSoundRegulator.cpp" />
@@ -425,8 +428,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CocosNodesHelper.h" />
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />
     <ClInclude Include="..\Classes\CollisionDelegate.h" />
+    <ClInclude Include="..\Classes\CurrentDetailAnimationControler.h" />
     <ClInclude Include="..\Classes\CurrentDetailController.h" />
+    <ClInclude Include="..\Classes\CurrentDetailControllerDelegate.h" />
     <ClInclude Include="..\Classes\CurrentDetailDataSource.h" />
+    <ClInclude Include="..\Classes\CurrentDetailTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CurrentDetailViewDataSource.h" />
     <ClInclude Include="..\Classes\CurrentPlayerDataSource.h" />
     <ClInclude Include="..\Classes\GameAnimationActionsConstants.h" />

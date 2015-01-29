@@ -3,87 +3,74 @@
 #include "GameServicesKeys.h"
 #include "CurrentDetailDataSource.h"
 #include "TetraminoDetail.h"
+#include "Tetramino.h"
+#include "KeysForEnumsDataSource.h"
+#include "GameFileExtensionMaker.h"
+
+#include "GameElementsDataHelper.h"
+#include "GameViewElementsKeys.h"
+
+using namespace std;
+using namespace cocos2d;
 
 CurrentDetailViewDataSource::CurrentDetailViewDataSource(void)
 {
 	_currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
+	_keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
 }
-
 
 CurrentDetailViewDataSource::~CurrentDetailViewDataSource(void)
 {
 }
 
-bool CurrentDetailViewDataSource::checkPositionInCurrentDetail(GamePositionOnBoard aPosition)
+int CurrentDetailViewDataSource::getTetraminosCount()
 {
-	bool inCurrentDetail = false;
-	if (_currentDetailDataSource->currentDetailAvailable())
+	int detailHeight = getCurrentDetail()->getDetailHeight();
+	int detailWidth = getCurrentDetail()->getDetailWidth();
+	return (detailHeight * detailWidth);
+}
+
+string CurrentDetailViewDataSource::getTetraminoImageForIndex(int aIndex)
+{
+	Tetramino *tetraminoInDetail = getTetraminoOnIndex(aIndex);
+	TetraminoType tetraminoType = tetraminoInDetail->getTetraminoType();
+	string tetraminoKey = _keysForEnumsDataSource->getKeyForTetraminoType(tetraminoType);
+	return GameFileExtensionMaker::getGraphicWithExtension(tetraminoKey);
+}
+
+Vec2 CurrentDetailViewDataSource::getTetraminoPositionForIndex(int aIndex)
+{
+	Vec2 tetraminoOffset = GameElementsDataHelper::getElementOffsetForKey(mainGameBoardControllerKey);
+	GamePositionOnBoard tetraminoPosition = getCurrentDetail()->getPositionForIndex(aIndex);
+	return Vec2(tetraminoPosition.xPosition * tetraminoOffset.x, tetraminoPosition.yPosition * tetraminoOffset.y);
+}
+
+bool CurrentDetailViewDataSource::availableTetraminoOnIndex(int aIndex)
+{
+	bool availableTetramino = true;
+	Tetramino *tetraminoInBoard = getTetraminoOnIndex(aIndex);
+	if (tetraminoInBoard->getTetraminoType() <= kTetraminoEmpty)
 	{
-		bool positionInDetail = positionBelongsToCurrentDetail(aPosition);
-		if (positionInDetail)
-		{
-			inCurrentDetail = availableTetraminoOnPositionInCurrentDetail(aPosition);
-		}
+		availableTetramino = false;
 	}
-	return inCurrentDetail;
-}
-
-bool CurrentDetailViewDataSource::positionBelongsToCurrentDetail(GamePositionOnBoard aPosition)
-{
-	bool positionBelongsToCurrentDetail = true;
-
-	bool widthInterval = inWidthInterval(aPosition);
-	bool heightInterval = inHeightInterval(aPosition);
-
-	if (widthInterval == false || heightInterval == false)
-	{
-		positionBelongsToCurrentDetail = false;
-	}
-	return positionBelongsToCurrentDetail;
-}
-
-bool CurrentDetailViewDataSource::inWidthInterval(GamePositionOnBoard aPosition)
-{
-	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	GamePositionOnBoard currentDetailPosition = currentDetail->getDetailPosition();
-
-	bool downWidthInterval = (aPosition.xPosition >= currentDetailPosition.xPosition);
-	int detailWidth = currentDetail->getDetailWidth();
-	bool upWidthInterval = (aPosition.xPosition < (currentDetailPosition.xPosition + detailWidth));
-	bool widthInterval = (downWidthInterval == true && upWidthInterval == true);
-	return widthInterval;
-}
-
-bool CurrentDetailViewDataSource::inHeightInterval(GamePositionOnBoard aPosition)
-{
-	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	GamePositionOnBoard currentDetailPosition = currentDetail->getDetailPosition();
-
-	bool downHeightInterval = (aPosition.yPosition >= currentDetailPosition.yPosition);
-	int detailHeight = currentDetail->getDetailHeight();
-	bool upHeightInterval = (aPosition.yPosition < (currentDetailPosition.yPosition + detailHeight));
-	bool heightInterval = (downHeightInterval == true && upHeightInterval == true);
-	return heightInterval;
-}
-
-bool CurrentDetailViewDataSource::availableTetraminoOnPositionInCurrentDetail(GamePositionOnBoard aPosition)
-{
-	bool availableTetraminoInCurrentDetail = false;
-	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	GamePositionOnBoard tetraminoPositionInDetail = currentDetail->convertAbsolutePositionToPositionInDetail(aPosition);
-	Tetramino *tetraminoInDetail = currentDetail->getTetraminoForXY(tetraminoPositionInDetail.xPosition, tetraminoPositionInDetail.yPosition);
-	
-	if (tetraminoInDetail->getTetraminoType() > kTetraminoEmpty)
-	{
-		availableTetraminoInCurrentDetail = true;
-	}
-	return availableTetraminoInCurrentDetail;
+	return availableTetramino;
 }
 
 TetraminoType CurrentDetailViewDataSource::getTetraminoTypeOnPositionInCurrentDetail(GamePositionOnBoard aPosition)
 {
-	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	GamePositionOnBoard tetraminoPositionInDetail = currentDetail->convertAbsolutePositionToPositionInDetail(aPosition);
-	Tetramino *tetraminoInDetail = currentDetail->getTetraminoForXY(tetraminoPositionInDetail.xPosition, tetraminoPositionInDetail.yPosition);
+	GamePositionOnBoard tetraminoPositionInDetail = getCurrentDetail()->convertAbsolutePositionToPositionInDetail(aPosition);
+	Tetramino *tetraminoInDetail = getCurrentDetail()->getTetraminoForXY(tetraminoPositionInDetail.xPosition, tetraminoPositionInDetail.yPosition);
 	return tetraminoInDetail->getTetraminoType();
+}
+
+Tetramino* CurrentDetailViewDataSource::getTetraminoOnIndex(int aIndex)
+{
+	GamePositionOnBoard tetraminoPosition = getCurrentDetail()->getPositionForIndex(aIndex);
+	Tetramino *tetraminoInBoard = getCurrentDetail()->getTetraminoForXY(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+	return tetraminoInBoard;
+}
+
+TetraminoDetail* CurrentDetailViewDataSource::getCurrentDetail()
+{
+	return _currentDetailDataSource->getCurrentDetail();
 }

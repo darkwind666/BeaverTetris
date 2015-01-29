@@ -1,6 +1,7 @@
 #include "CurrentDetailController.h"
 #include "CollisionDelegate.h"
 #include "TetraminoDetailLocatorDelegate.h"
+#include "CurrentDetailControllerDelegate.h"
 #include "CurrentDetailDataSource.h"
 #include "TetraminoDetail.h"
 #include "GameBoard.h"
@@ -15,6 +16,7 @@ CurrentDetailController::CurrentDetailController(GameBoard *aGameBoard, CurrentD
 	_currentDetailDataSource = aDetailDataSource;
 	_collisionDelegate = new CollisionDelegate(aGameBoard);
 	_tetraminoDetailLocatorDelegate = new TetraminoDetailLocatorDelegate(aGameBoard);
+	_delegate = NULL;
 }
 
 
@@ -78,11 +80,20 @@ void CurrentDetailController::throwDetailOnGameBoard()
 
 		TetraminoDetail *currentDetail = getCurrentDetail();
 		GamePositionOnBoard finalCurrentDetailPositionOnBoard = _collisionDelegate->getCollisionPositionWithBoardForDetail(currentDetail);
+		if (_delegate)
+		{
+			_delegate->throwCurrentDetailOnPosition(finalCurrentDetailPositionOnBoard);
+		}
 		setNewDetailPosition(finalCurrentDetailPositionOnBoard);
 		writeCurrentDetailInBoardAndRemove();
 
 	};
 	makeOperationWithCurrentDetail(throwDetail);
+}
+
+void CurrentDetailController::setDelegate(CurrentDetailControllerDelegate *aDelegate)
+{
+	_delegate = aDelegate;
 }
 
 void CurrentDetailController::updateSystem(float deltaTime)
