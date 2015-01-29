@@ -24,60 +24,83 @@ CurrentDetailController::~CurrentDetailController(void)
 
 void CurrentDetailController::moveLeftDetail(void)
 {
-	TetraminoDetail *currentDetail = getCurrentDetail();
-	GamePositionOnBoard newDetailPosition = currentDetail->getDetailPosition();
-	newDetailPosition.xPosition = newDetailPosition.xPosition - 1;
-	
-	if (!checkCollisionForCurrentDetailWithNewPosition(newDetailPosition))
-	{
-		setNewDetailPosition(newDetailPosition);
-	}
-	
+	function<void()> moveLeftDetail = [this](){
+
+		GamePositionOnBoard newDetailPosition = getCurrentDetailPosition();
+		newDetailPosition.xPosition = newDetailPosition.xPosition - 1;
+		
+		if (!checkCollisionForCurrentDetailWithNewPosition(newDetailPosition))
+		{
+			setNewDetailPosition(newDetailPosition);
+		}
+
+	};
+	makeOperationWithCurrentDetail(moveLeftDetail);
 }
 
 void CurrentDetailController::moveRightDetail(void)
 {
-	TetraminoDetail *currentDetail = getCurrentDetail();
-	GamePositionOnBoard newDetailPosition = currentDetail->getDetailPosition();
-	newDetailPosition.xPosition = newDetailPosition.xPosition + 1;
-	
-	if (!checkCollisionForCurrentDetailWithNewPosition(newDetailPosition))
-	{
-		setNewDetailPosition(newDetailPosition);
-	}
+	function<void()> moveRightDetail = [this](){
+
+		GamePositionOnBoard newDetailPosition = getCurrentDetailPosition();
+		newDetailPosition.xPosition = newDetailPosition.xPosition + 1;
+		
+		if (!checkCollisionForCurrentDetailWithNewPosition(newDetailPosition))
+		{
+			setNewDetailPosition(newDetailPosition);
+		}
+
+	};
+	makeOperationWithCurrentDetail(moveRightDetail);
 }
 
 void CurrentDetailController::rotateDetail(void)
 {
-	TetraminoDetail *currentDetail = getCurrentDetail();
-	TetraminoDetail *rotatedDetail = new TetraminoDetail(*currentDetail);
-	rotatedDetail->rotateDetail();
+	function<void()> rotateDetail = [this](){
 
-	if (!checkCollisionForDetail(rotatedDetail))
-	{
-		currentDetail->rotateDetail();
-	}
-	delete rotatedDetail;
+		TetraminoDetail *currentDetail = getCurrentDetail();
+		TetraminoDetail *rotatedDetail = new TetraminoDetail(*currentDetail);
+		rotatedDetail->rotateDetail();
+		
+		if (!checkCollisionForDetail(rotatedDetail))
+		{
+			currentDetail->rotateDetail();
+		}
+		delete rotatedDetail;
+
+	};
+	makeOperationWithCurrentDetail(rotateDetail);
+}
+
+void CurrentDetailController::throwDetailOnGameBoard()
+{
+	function<void()> throwDetail = [this](){
+
+		TetraminoDetail *currentDetail = getCurrentDetail();
+		GamePositionOnBoard finalCurrentDetailPositionOnBoard = _collisionDelegate->getCollisionPositionWithBoardForDetail(currentDetail);
+		setNewDetailPosition(finalCurrentDetailPositionOnBoard);
+		writeCurrentDetailInBoardAndRemove();
+
+	};
+	makeOperationWithCurrentDetail(throwDetail);
 }
 
 void CurrentDetailController::updateSystem(float deltaTime)
 {
-	if (_currentDetailDataSource->currentDetailAvailable())
-	{
-		moveDownDetail();
-	}
+	function<void()> moveDownDetail = [this](){
+		CurrentDetailController::moveDownDetail();
+	};
+	makeOperationWithCurrentDetail(moveDownDetail);
 }
 
 void CurrentDetailController::moveDownDetail()
 {
-	TetraminoDetail *currentDetail = getCurrentDetail();
-	GamePositionOnBoard newDetailPosition = currentDetail->getDetailPosition();
+	GamePositionOnBoard newDetailPosition = getCurrentDetailPosition();
 	newDetailPosition.yPosition = newDetailPosition.yPosition - 1;
 
 	if (checkCollisionForCurrentDetailWithNewPosition(newDetailPosition))
 	{
-		_tetraminoDetailLocatorDelegate->writeTetraminoDetailInBoard(currentDetail);
-		_currentDetailDataSource->removeCurrentDetail();
+		writeCurrentDetailInBoardAndRemove();
 	}
 	else
 	{
@@ -102,6 +125,13 @@ bool CurrentDetailController::checkCollisionForDetail(TetraminoDetail *aDetail)
 	return (collisionWithBorders == true || collisionWithOtherTetraminos == true);
 }
 
+void CurrentDetailController::writeCurrentDetailInBoardAndRemove()
+{
+	TetraminoDetail *currentDetail = getCurrentDetail();
+	_tetraminoDetailLocatorDelegate->writeTetraminoDetailInBoard(currentDetail);
+	_currentDetailDataSource->removeCurrentDetail();
+}
+
 void CurrentDetailController::setNewDetailPosition(GamePositionOnBoard aNewDetailPosition)
 {
 	TetraminoDetail *currentDetail = getCurrentDetail();
@@ -119,3 +149,10 @@ GamePositionOnBoard CurrentDetailController::getCurrentDetailPosition()
 	return currentDetail->getDetailPosition();
 }
 
+void CurrentDetailController::makeOperationWithCurrentDetail(function<void()> aOperation)
+{
+	if (_currentDetailDataSource->currentDetailAvailable())
+	{
+		aOperation();
+	}
+}

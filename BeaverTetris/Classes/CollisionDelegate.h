@@ -27,6 +27,7 @@ private:
 	bool checkCollisionWithDetailRow(int detailRow ,TetraminoDetail *aDetail);
 	bool collisionWithPositionInDetail(GamePositionOnBoard aPosition, TetraminoDetail *aDetail);
 	bool tetraminoInDetailOutBoard(GamePositionOnBoard aTetraminoAbsolutePosition, TetraminoDetail *aDetail);
+	bool checkCollisionWithDetailsAndBorders(TetraminoDetail *aDetail);
 
 };
 

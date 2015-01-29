@@ -3,6 +3,7 @@
 #include "ServiceInterface.h"
 #include "GameSystemInterface.h"
 #include "GameStructures.h"
+#include <functional>
 
 class GameBoard;
 class CollisionDelegate;
@@ -20,6 +21,7 @@ public:
 	void moveLeftDetail(void);
 	void moveRightDetail(void);
 	void rotateDetail(void);
+	void throwDetailOnGameBoard();
 
 	virtual void updateSystem(float deltaTime);
 
@@ -37,5 +39,9 @@ private:
 	bool checkCollisionForCurrentDetailWithNewPosition(GamePositionOnBoard aNewDetailPosition);
 	bool checkCollisionForDetail(TetraminoDetail *aDetail);
 	void setNewDetailPosition(GamePositionOnBoard aNewDetailPosition);
+
+	void makeOperationWithCurrentDetail(std::function<void()> aOperation);
+	void writeCurrentDetailInBoardAndRemove();
+
 };
 

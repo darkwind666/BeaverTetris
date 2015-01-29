@@ -153,26 +153,28 @@ bool CollisionDelegate::positionInBoard(GamePositionOnBoard aPosition)
 GamePositionOnBoard CollisionDelegate::getCollisionPositionWithBoardForDetail(TetraminoDetail *aDetail)
 {
 	GamePositionOnBoard detailPosition = aDetail->getDetailPosition();
-	GamePositionOnBoard detailCollisionPosition = detailPosition;
+	TetraminoDetail *detailWithNewPosition = new TetraminoDetail(*aDetail);
 
-	for (int heightIndex = detailPosition.yPosition; heightIndex <= 0; heightIndex--)
+	int tetraminoHeight = aDetail->getDetailHeight();
+	for (int heightIndex = detailPosition.yPosition; heightIndex >  (-tetraminoHeight); heightIndex--)
 	{
-		detailCollisionPosition.yPosition = heightIndex;
-		TetraminoDetail *detailWithNewPosition = new TetraminoDetail(*aDetail);
-		detailWithNewPosition->setDetailPosition(detailCollisionPosition);
+		detailPosition.yPosition = heightIndex;
+		detailWithNewPosition->setDetailPosition(detailPosition);
 
-		bool collision = checkCollisionDetailWithOtherTetraminos(detailWithNewPosition);
-		if (collision)
+		if (checkCollisionWithDetailsAndBorders(detailWithNewPosition))
 		{
-			delete detailWithNewPosition;
+			detailPosition.yPosition = detailPosition.yPosition + 1;
 			break;
 		}
-		else
-		{
-			delete detailWithNewPosition;
-			detailPosition = detailCollisionPosition;
-		}
-		
 	}
+
+ 	delete detailWithNewPosition;
 	return detailPosition;
+}
+
+bool CollisionDelegate::checkCollisionWithDetailsAndBorders(TetraminoDetail *aDetail)
+{
+	bool collision = checkCollisionDetailWithOtherTetraminos(aDetail);
+	bool collisionWithBoard = checkCollisionDetailWithGameBorders(aDetail);
+	return (collision || collisionWithBoard);
 }

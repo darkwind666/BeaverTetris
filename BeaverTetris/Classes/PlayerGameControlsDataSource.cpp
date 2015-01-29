@@ -63,7 +63,7 @@ vector<PlayerControllInformation> PlayerGameControlsDataSource::getPlayerControl
 	PlayerControllInformation accelerateDetail;
 	accelerateDetail.imageKey = accelerateDetailControlKey;
 	accelerateDetail.keyboardKey = (int)EventKeyboard::KeyCode::KEY_DOWN_ARROW;
-	accelerateDetail.callback = [](){log("%i", EventKeyboard::KeyCode::KEY_DOWN_ARROW);};
+	accelerateDetail.callback = [this](){_currentDetailController->throwDetailOnGameBoard();};
 	playerControls.push_back(accelerateDetail);
 
 	PlayerControllInformation moveDetailLeft;
