@@ -177,6 +177,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameViewInformationFactory.cpp" />
     <ClCompile Include="..\Classes\GameViewStyleHelper.cpp" />
+    <ClCompile Include="..\Classes\GameWorldAnimationController.cpp" />
     <ClCompile Include="..\Classes\GameWorldBackgroundController.cpp" />
     <ClCompile Include="..\Classes\GameWorldController.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
@@ -471,6 +472,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameViewInformationFactory.h" />
     <ClInclude Include="..\Classes\GameViewStyleHelper.h" />
     <ClInclude Include="..\Classes\GameViewSuffixes.h" />
+    <ClInclude Include="..\Classes\GameWorldAnimationController.h" />
     <ClInclude Include="..\Classes\GameWorldBackgroundController.h" />
     <ClInclude Include="..\Classes\GameWorldController.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />

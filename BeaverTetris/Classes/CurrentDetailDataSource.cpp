@@ -20,6 +20,11 @@ TetraminoDetail* CurrentDetailDataSource::getCurrentDetail()
 	return _currentDetail;
 }
 
+GamePositionOnBoard CurrentDetailDataSource::getCurrentDetailPosition()
+{
+	return _currentDetail->getDetailPosition();
+}
+
 void CurrentDetailDataSource::makeNewDetail(void)
 {
 	//_currentDetail = _detailsFactory->getNewDetail();

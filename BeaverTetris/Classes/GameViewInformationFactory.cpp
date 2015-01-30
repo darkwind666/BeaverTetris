@@ -270,14 +270,17 @@ void GameViewInformationFactory::makeMainGameWorldData()
 	mainGameBackground.elementZOrder = kMainGameBackgroundZOrder;
 	_elementsInformation[mainGameBackgroundControllerKey] = mainGameBackground;
 
+	int gameBoardOffsetX = 12;
+	int gameBoardOffsetY = 12;
+
 	ViewElementInformation mainGameBoard;
-	mainGameBoard.elementPosition = Vec2(12, 12);
-	mainGameBoard.elementOffset = Vec2(24, 24);
+	mainGameBoard.elementPosition = Vec2(gameBoardOffsetX, gameBoardOffsetY);
+	mainGameBoard.elementOffset = Vec2(gameBoardOffsetX * 2, gameBoardOffsetY * 2);
 	mainGameBoard.elementZOrder = kMainGameBoardZOrder;
 	_elementsInformation[mainGameBoardControllerKey] = mainGameBoard;
 
 	ViewElementInformation mainGameAnimation;
-	mainGameAnimation.elementPosition = Vec2(0, 0);
+	mainGameAnimation.elementPosition = Vec2(gameBoardOffsetX, gameBoardOffsetY);
 	mainGameAnimation.elementZOrder = kMainGameAnimationZOrder;
 	_elementsInformation[mainGameAnimationControllerKey] = mainGameAnimation;
 

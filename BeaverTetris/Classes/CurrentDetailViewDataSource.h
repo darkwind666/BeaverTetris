@@ -20,6 +20,8 @@ public:
 	cocos2d::Vec2 getTetraminoPositionForIndex(int aIndex);
 	bool availableTetraminoOnIndex(int aIndex);
 
+	cocos2d::Vec2 getTetraminosViewOffset();
+
 	TetraminoType getTetraminoTypeOnPositionInCurrentDetail(GamePositionOnBoard aPosition);
 
 private:

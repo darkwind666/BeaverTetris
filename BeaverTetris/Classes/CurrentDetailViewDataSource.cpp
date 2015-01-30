@@ -42,8 +42,8 @@ Vec2 CurrentDetailViewDataSource::getTetraminoPositionForIndex(int aIndex)
 {
 	Vec2 tetraminoOffset = GameElementsDataHelper::getElementOffsetForKey(mainGameBoardControllerKey);
 	GamePositionOnBoard tetraminoPosition = getCurrentDetail()->getPositionForIndex(aIndex);
-	float xPosition = (-tetraminoOffset.x / 2) + tetraminoPosition.xPosition * tetraminoOffset.x;
-	float yPosition = (-tetraminoOffset.y / 2) + tetraminoPosition.yPosition * tetraminoOffset.y;
+	float xPosition = tetraminoPosition.xPosition * tetraminoOffset.x;
+	float yPosition = tetraminoPosition.yPosition * tetraminoOffset.y;
 	return Vec2(xPosition, yPosition);
 }
 
@@ -56,6 +56,12 @@ bool CurrentDetailViewDataSource::availableTetraminoOnIndex(int aIndex)
 		availableTetramino = false;
 	}
 	return availableTetramino;
+}
+
+Vec2 CurrentDetailViewDataSource::getTetraminosViewOffset()
+{
+	Vec2 tetraminoOffset = GameElementsDataHelper::getElementOffsetForKey(mainGameBoardControllerKey);
+	return tetraminoOffset;
 }
 
 TetraminoType CurrentDetailViewDataSource::getTetraminoTypeOnPositionInCurrentDetail(GamePositionOnBoard aPosition)

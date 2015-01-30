@@ -7,6 +7,7 @@
 
 #include "GameWorldBackgroundController.h"
 #include "GameBoardController.h"
+#include "GameWorldAnimationController.h"
 #include "GameTimeStepController.h"
 
 GameWorldController::GameWorldController(void)
@@ -25,6 +26,9 @@ void GameWorldController::makeControllerView()
 {
 	GameWorldBackgroundController *backgroundController = new GameWorldBackgroundController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(backgroundController, this, mainGameBackgroundControllerKey);
+
+	GameWorldAnimationController *animationController = new GameWorldAnimationController(_gameBoardController);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(animationController, this, mainGameAnimationControllerKey);
 
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_gameBoardController, this, mainGameBoardControllerKey);
 }

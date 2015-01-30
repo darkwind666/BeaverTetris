@@ -70,6 +70,12 @@ GamePositionOnBoard GameBoard::getPositionForIndex(int aIndex)
 	return positionOnBoard;
 }
 
+int GameBoard::getIndexForPosition(GamePositionOnBoard aPosition)
+{
+	int positionIndex = aPosition.xPosition  + aPosition.yPosition * _gameBoardWidth;
+	return positionIndex;
+}
+
 void GameBoard::setTetraminoXYposition(Tetramino *aTetramino, int xPosition, int yPosition)
 {
 	_tetramins[yPosition][xPosition] = aTetramino;

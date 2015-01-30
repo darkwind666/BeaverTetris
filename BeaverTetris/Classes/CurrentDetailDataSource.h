@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ServiceInterface.h"
+#include "GameStructures.h"
 
 class TetraminoDetail;
 class TetraminisDetailsFactory;
@@ -16,6 +17,8 @@ public:
 	void makeNewDetail();
 	void removeCurrentDetail();
 	bool currentDetailAvailable();
+
+	GamePositionOnBoard getCurrentDetailPosition();
 
 private:
 

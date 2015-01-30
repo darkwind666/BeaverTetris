@@ -6,6 +6,7 @@
 
 class GameBoardViewDataSource;
 class TetraminoColorsDataSource;
+class GameTimeStepController;
 
 class GameBoardController : public cocos2d::Node
 {
@@ -13,18 +14,15 @@ public:
 	GameBoardController(void);
 	~GameBoardController(void);
 
-	void setRedrawAvailable(bool redrawAvailable);
 	void drawTetraminoTextureOnIndex(std::string aTetraminoTextureKey, int aTetraminoIndex);
 	void cleanTetraminoOnIndex(int aTetraminoIndex);
 
 	void redrawGameBoard();
 
-	bool getRedrawAvailable();
-
 private:
 
 	GameBoardViewDataSource *_gameBoardViewDataSource;
-	bool _redrawAvailable;
+	GameTimeStepController *_gameTimeStepController;
 	std::vector<cocos2d::Sprite*> _tetraminosViews;
 	TetraminoColorsDataSource *_tetraminoColorsDataSource;
 

@@ -1,6 +1,9 @@
 #include "GameBoardController.h"
 #include "GameBoardViewDataSource.h"
 #include "TetraminoColorsDataSource.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameTimeStepController.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -8,7 +11,7 @@ using namespace cocos2d;
 GameBoardController::GameBoardController(void)
 {
 	_gameBoardViewDataSource = new GameBoardViewDataSource();
-	_redrawAvailable = true;
+	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 	_tetraminoColorsDataSource = new TetraminoColorsDataSource();
 	_tetraminosViews = getTetraminosViews();
 	addTetraminoViewsToController();
@@ -46,7 +49,7 @@ void GameBoardController::addTetraminoViewsToController()
 
 void GameBoardController::redrawGameBoard()
 {
-	if (_redrawAvailable)
+	if (_gameTimeStepController->getUpdataAvailable())
 	{
 		updateTetraminoViews();
 	}
@@ -93,19 +96,8 @@ void GameBoardController::drawTetraminoTextureOnIndex(std::string aTetraminoText
 	tetraminoView->setColor(tetraminoColor);
 }
 
-
-void GameBoardController::setRedrawAvailable(bool redrawAvailable)
-{
-	_redrawAvailable = redrawAvailable;
-}
-
 void GameBoardController::cleanTetraminoOnIndex(int aTetraminoIndex)
 {
 	Sprite *tetraminoView = _tetraminosViews[aTetraminoIndex];
 	tetraminoView->setVisible(false);
-}
-
-bool GameBoardController::getRedrawAvailable()
-{
-	return _redrawAvailable;
 }
