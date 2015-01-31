@@ -10,6 +10,7 @@ public:
 	~GameViewStyleHelper(void);
 
 	static void runStandardButtonActionWithCallback(cocos2d::CCNode *aButton, std::function<void()> aCallback);
+	static cocos2d::LabelTTF* getStandardLabel();
 
 };
 

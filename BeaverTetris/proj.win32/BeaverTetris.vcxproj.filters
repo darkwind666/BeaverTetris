@@ -531,6 +531,9 @@
     <ClCompile Include="..\Classes\GameWorldAnimationController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MainGamePlayerScoreController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1002,6 +1005,9 @@
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameWorldAnimationController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGamePlayerScoreController.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>

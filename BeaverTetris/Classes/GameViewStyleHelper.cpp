@@ -14,11 +14,16 @@ GameViewStyleHelper::~GameViewStyleHelper(void)
 }
 
 
-void GameViewStyleHelper::runStandardButtonActionWithCallback(CCNode *aButton, function<void()> aCallback)
+void GameViewStyleHelper::runStandardButtonActionWithCallback(Node *aButton, function<void()> aCallback)
 {
-	CCActionInterval *scaleOut = CCScaleTo::create(standardButtonActionDuration, aButton->getScaleX() * standardButtonScaleForAction , aButton->getScaleY() * standardButtonScaleForAction);
-	CCActionInterval *scaleIn = CCScaleTo::create(standardButtonActionDuration, aButton->getScaleX(), aButton->getScaleY());
-	CCCallFunc *callback = CCCallFunc::create(aCallback);
-	CCSequence *sequence = CCSequence::create(scaleOut, scaleIn, callback, NULL);
+	ActionInterval *scaleOut = ScaleTo::create(standardButtonActionDuration, aButton->getScaleX() * standardButtonScaleForAction , aButton->getScaleY() * standardButtonScaleForAction);
+	ActionInterval *scaleIn = ScaleTo::create(standardButtonActionDuration, aButton->getScaleX(), aButton->getScaleY());
+	CallFunc *callback = CallFunc::create(aCallback);
+	Sequence *sequence = Sequence::create(scaleOut, scaleIn, callback, NULL);
 	aButton->runAction(sequence);
+}
+
+LabelTTF* GameViewStyleHelper::getStandardLabel()
+{
+	return LabelTTF::create("", "Helvetica", 120);
 }

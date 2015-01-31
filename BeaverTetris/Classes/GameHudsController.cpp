@@ -2,6 +2,7 @@
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
 #include "PlayerActionControllerFactory.h"
+#include "MainGamePlayerScoreController.h"
 
 using namespace cocos2d;
 
@@ -24,4 +25,7 @@ void GameHudsController::makeView()
 	PlayerActionControllerFactory playerActionControllerFactory;
 	Node *playerActionController = playerActionControllerFactory.getPlayerActionControllerForCurrentPlatform();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerActionController, this, playerActionControllerKey);
+
+	MainGamePlayerScoreController *playerScoreController = new MainGamePlayerScoreController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerScoreController, this, playerScoreControllerKey);
 }

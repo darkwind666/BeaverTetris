@@ -63,4 +63,11 @@ enum MainGameHudsZOrders
 {
 	kMainGameHudsBackgroundZOrder,
 	kMainGamePlayerActionControllerZOrder,
+	kMainGamePlayerScoreControllerZOrder,
+};
+
+enum MainGamePlayerScoreControllerZOrders
+{
+	kMainGamePlayerScoreBackgroundZOrder,
+	kMainGamePlayerScoreCountZOrder,
 };

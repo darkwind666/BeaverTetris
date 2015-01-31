@@ -23,7 +23,6 @@ private:
 	cocos2d::LabelTTF* _playerScore;
 	PlayerStatusDelegateInterface *_delegate;
 
-	cocos2d::LabelTTF* getStandardLabel();
 	cocos2d::Node* getPlayerStatusPad();
 	void placeAllViewParts();
 

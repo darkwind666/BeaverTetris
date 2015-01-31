@@ -2,6 +2,7 @@
 #include "PlayerStatusDataSource.h"
 #include "GameElementsDataHelper.h"
 #include "CocosNodesHelper.h"
+#include "GameViewStyleHelper.h"
 #include "GameViewElementsKeys.h"
 #include "GameAnimationActionsConstants.h"
 
@@ -11,8 +12,8 @@ SelectLevelPlayerStatusController::SelectLevelPlayerStatusController(void)
 {
 	_playerStatusDataSource = new PlayerStatusDataSource();
 	_delegate = NULL;
-	_playerName = getStandardLabel();
-	_playerScore = getStandardLabel();
+	_playerName = GameViewStyleHelper::getStandardLabel();
+	_playerScore = GameViewStyleHelper::getStandardLabel();
 	_playerStatusView = getPlayerStatusPad();
 	placeAllViewParts();
 }
@@ -20,11 +21,6 @@ SelectLevelPlayerStatusController::SelectLevelPlayerStatusController(void)
 
 SelectLevelPlayerStatusController::~SelectLevelPlayerStatusController(void)
 {
-}
-
-LabelTTF* SelectLevelPlayerStatusController::getStandardLabel()
-{
-	return LabelTTF::create("", "Helvetica", 120);
 }
 
 Node* SelectLevelPlayerStatusController::getPlayerStatusPad()

@@ -29,6 +29,7 @@ private:
 	void makeMainGameWorldData();
 	void makeMainGameHudsData();
 	void makeMainGamePlayerControllersData();
+	void makeMainGamePlayerScoreControllersData();
 	void makeRecordsScreenData();
 	void makeDevelopersScreenData();
 

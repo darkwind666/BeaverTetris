@@ -188,6 +188,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\LoadingGameDataSource.cpp" />
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\MainGameBackgroundDataSource.cpp" />
+    <ClCompile Include="..\Classes\MainGamePlayerScoreController.cpp" />
     <ClCompile Include="..\Classes\MainGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\PlayerActionControllerDesktop.cpp" />
     <ClCompile Include="..\Classes\PlayerActionControllerFactory.cpp" />
@@ -481,6 +482,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\LoadingGameDataSource.h" />
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h" />
     <ClInclude Include="..\Classes\MainGameBackgroundDataSource.h" />
+    <ClInclude Include="..\Classes\MainGamePlayerScoreController.h" />
     <ClInclude Include="..\Classes\MainGameSceneFactory.h" />
     <ClInclude Include="..\Classes\PlayerActionControllerDesktop.h" />
     <ClInclude Include="..\Classes\PlayerActionControllerFactory.h" />

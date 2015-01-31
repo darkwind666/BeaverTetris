@@ -300,6 +300,13 @@ void GameViewInformationFactory::makeMainGameHudsData()
 
 	makeMainGamePlayerControllersData();
 
+	ViewElementInformation mainGamePlayerScoreController;
+	mainGamePlayerScoreController.elementPosition =  Vec2(280, 440);
+	mainGamePlayerScoreController.elementZOrder = kMainGamePlayerScoreControllerZOrder;
+	_elementsInformation[playerScoreControllerKey] = mainGamePlayerScoreController;
+
+	makeMainGamePlayerScoreControllersData();
+
 }
 
 void GameViewInformationFactory::makeMainGamePlayerControllersData()
@@ -335,6 +342,19 @@ void GameViewInformationFactory::makeMainGamePlayerControllersData()
 	pauseGameControl.elementPosition = Vec2(controllerOffset, controllerOffset);
 	pauseGameControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[pauseGameControlKey] = pauseGameControl;
+}
+
+void GameViewInformationFactory::makeMainGamePlayerScoreControllersData()
+{
+	ViewElementInformation scoreControllerBackground;
+	scoreControllerBackground.elementPosition =  Vec2(0, 0);
+	scoreControllerBackground.elementZOrder = kMainGamePlayerScoreBackgroundZOrder;
+	_elementsInformation[playerScoreControllerBackgroundKey] = scoreControllerBackground;
+
+	ViewElementInformation scoreControllerCountLabel;
+	scoreControllerCountLabel.elementPosition =  Vec2(0, 0);
+	scoreControllerCountLabel.elementZOrder = kMainGamePlayerScoreCountZOrder;
+	_elementsInformation[playerScoreControllerCountKey] = scoreControllerCountLabel;
 }
 
 void GameViewInformationFactory::makeRecordsScreenData()
