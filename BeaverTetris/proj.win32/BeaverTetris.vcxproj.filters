@@ -135,9 +135,6 @@
     <ClCompile Include="MoveSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="ScoreSystem.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
     <ClCompile Include="WinGameSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
@@ -240,9 +237,6 @@
     <ClCompile Include="WinBossCondition.cpp">
       <Filter>Models\VictoryConditions</Filter>
     </ClCompile>
-    <ClCompile Include="AwardForTetraminoDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="CurrentBossDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
@@ -302,9 +296,6 @@
     </ClCompile>
     <ClCompile Include="CurrentLevelDataSourceObserver.cpp">
       <Filter>Observers</Filter>
-    </ClCompile>
-    <ClCompile Include="FullLineCombination.cpp">
-      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClCompile>
     <ClCompile Include="SimilarTetraminosCombination.cpp">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
@@ -534,6 +525,15 @@
     <ClCompile Include="..\Classes\MainGamePlayerScoreController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetrisLogicSystem.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FullLineCombination.cpp">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -579,9 +579,6 @@
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
     <ClInclude Include="MoveSystem.h">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="ScoreSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
     <ClInclude Include="WinGameSystem.h">
@@ -686,9 +683,6 @@
     <ClInclude Include="WinBossCondition.h">
       <Filter>Models\VictoryConditions</Filter>
     </ClInclude>
-    <ClInclude Include="AwardForTetraminoDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
     <ClInclude Include="CurrentBossDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
@@ -748,9 +742,6 @@
     </ClInclude>
     <ClInclude Include="CurrentLevelDataSourceObserver.h">
       <Filter>Observers</Filter>
-    </ClInclude>
-    <ClInclude Include="FullLineCombination.h">
-      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClInclude>
     <ClInclude Include="SimilarTetraminosCombination.h">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
@@ -1009,6 +1000,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MainGamePlayerScoreController.h">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetrisLogicSystem.h">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FullLineCombination.h">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h">
+      <Filter>Models\DataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

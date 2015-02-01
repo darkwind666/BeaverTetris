@@ -7,6 +7,7 @@
 #include "GameTimeStepController.h"
 #include "CurrentDetailDataSource.h"
 #include "CurrentDetailController.h"
+#include "TetrisLogicSystem.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -31,5 +32,8 @@ void GameLogicLoader::loadResources()
 	CurrentDetailController *currentDetailController = new CurrentDetailController(gameBoard, currentDetailDataSource);
 	gameTimeStepController->addSystem(currentDetailController);
 	ServiceLocator::setServiceForKey(currentDetailController, currentDetailControllerKey);
+
+	TetrisLogicSystem *tetrisLogicSystem = new TetrisLogicSystem(gameBoard);
+	gameTimeStepController->addSystem(tetrisLogicSystem);
 
 }

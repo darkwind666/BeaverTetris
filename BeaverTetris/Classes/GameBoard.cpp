@@ -46,8 +46,21 @@ void GameBoard::replaceTetraminoXYposition(Tetramino *aTetramino, int xPosition,
 void GameBoard::removeTetraminoForXYposition(int xPosition, int yPosition)
 {
 	Tetramino *newTetramino = new Tetramino();
-	_gameBoardObserver->tetraminoRemoving(_tetramins[yPosition][xPosition]);
+	if (_gameBoardObserver)
+	{
+		_gameBoardObserver->tetraminoRemoving(_tetramins[yPosition][xPosition]);
+	}
 	_tetramins[yPosition][xPosition] = newTetramino;
+}
+
+void GameBoard::removeTetraminoForXYpositionIfItHasNoLives(int xPosition, int yPosition)
+{
+	Tetramino *tetraminoInBoard = getTetraminoForXYposition(xPosition, yPosition);
+	if (tetraminoInBoard->getTetraminoLivesCount() <= 0)
+	{
+		removeTetraminoForXYposition(xPosition, yPosition);
+		delete tetraminoInBoard;
+	}
 }
 
 void GameBoard::removeTetraminos(std::vector <GamePositionOnBoard> aNeedToRemoveTetraminos)

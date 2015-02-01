@@ -5,6 +5,7 @@
 #include "CurrentPlayerDataSource.h"
 #include "GameLevelsDataSource.h"
 #include "KeysForEnumsDataSource.h"
+#include "AwardForTetraminoDataSource.h"
 
 GameDataLoader::GameDataLoader(void)
 {
@@ -25,5 +26,8 @@ void GameDataLoader::loadResources()
 
 	KeysForEnumsDataSource *keysForEnumsDataSource = new KeysForEnumsDataSource();
 	ServiceLocator::setServiceForKey(keysForEnumsDataSource, keysForEnumsDataSourceKey);
+
+	AwardForTetraminoDataSource *awardForTetraminoDataSource = new AwardForTetraminoDataSource();
+	ServiceLocator::setServiceForKey(awardForTetraminoDataSource, awardForTetraminoDataSourceKey);
 
 }

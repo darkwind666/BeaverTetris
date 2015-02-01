@@ -29,6 +29,7 @@ public:
 	std::vector <GamePositionOnBoard> getTetraminosForType(TetraminoType aTetraminoType);
 
 	void removeTetraminoForXYposition(int xPosition, int yPosition);
+	void removeTetraminoForXYpositionIfItHasNoLives(int xPosition, int yPosition);
 	void removeTetraminos(std::vector <GamePositionOnBoard> aNeedToRemoveTetraminos);
 	
 	void addObserver(GameBoardObserverInterface *aGameBoardObserver);
