@@ -1,4 +1,6 @@
 #include "DetailsFromBoardDataSource.h"
+#include "GameBoard.h"
+#include "Tetramino.h"
 
 using namespace std;
 
@@ -28,10 +30,8 @@ vector < vector <GamePositionOnBoard> > DetailsFromBoardDataSource::getTetramino
 			Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex, yIndex);
 			Tetramino *tetraminoInExtractedDetailsData = extractedDetailsData->getTetraminoForXYposition(xIndex, yIndex);
 
-
 			if ((tetraminoInBoard->getTetraminoType() > kTetraminoEmpty) && (tetraminoInExtractedDetailsData->getTetraminoType() == kTetraminoEmpty))
 			{
-
 				vector <GamePositionOnBoard> detailElements = getDetailFromStartPosition(xIndex, yIndex);
 				detailsInGameBoard.push_back(detailElements);
 				setDetailsInExtractedDetailsData(detailElements, extractedDetailsData);
@@ -80,14 +80,16 @@ void DetailsFromBoardDataSource::fillTetraminoChainWithPositionXY(std::vector <G
 	else
 	{
 
-		if (xPosition >= 0 && xPosition <= _gameBoard->getGameBoardWidth() && yPosition >= 0 && yPosition <= _gameBoard->getGameBoardHeight())
+		if (xPosition >= 0 && xPosition < _gameBoard->getGameBoardWidth() && yPosition >= 0 && yPosition < _gameBoard->getGameBoardHeight())
 		{
 
 			Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xPosition, yPosition);
 			GamePositionOnBoard *lastChainElement = aTetraminoChain->back();
 			Tetramino *lastTetramino = _gameBoard->getTetraminoForXYposition(lastChainElement->xPosition, lastChainElement->yPosition);
 			
-			if (lastTetramino->getTetraminoType() == tetraminoInBoard->getTetraminoType())
+			bool positionInChainYet = checkPositionInChain(tetraminoPosition, aTetraminoChain);
+
+			if (lastTetramino->getTetraminoType() == tetraminoInBoard->getTetraminoType() && positionInChainYet == false)
 			{
 				GamePositionOnBoard *chainElement = new GamePositionOnBoard;
 				*chainElement = tetraminoPosition;
@@ -110,12 +112,29 @@ void DetailsFromBoardDataSource::fillTetraminoChainWithPositionXY(std::vector <G
 
 }
 
+bool DetailsFromBoardDataSource::checkPositionInChain(GamePositionOnBoard aPosition, std::vector <GamePositionOnBoard*> *aTetraminoChain)
+{
+	bool inChain = false;
+
+	vector <GamePositionOnBoard*>::iterator tetraminoChainIterator;
+	for (tetraminoChainIterator = aTetraminoChain->begin(); tetraminoChainIterator != aTetraminoChain->end(); tetraminoChainIterator++)
+	{
+		GamePositionOnBoard *chainElement = *tetraminoChainIterator;
+		bool positionInChain = (chainElement->xPosition == aPosition.xPosition && chainElement->yPosition == aPosition.yPosition);
+		if (positionInChain)
+		{
+			inChain = true;
+			break;
+		}
+	}
+	return inChain;
+}
+
 void DetailsFromBoardDataSource::goToNewDirection(vector <GamePositionOnBoard*> *aTetraminoChain, int xPosition, int yPosition)
 {
 
-	for (int direction = kTopDirection; direction < kEndDirection; direction ++)
+	for (int direction = kTopDirection; direction < kEndDirection; direction++)
 	{
-
 		DirectionType directionType = (DirectionType)direction;
 
 		switch (directionType)
@@ -150,7 +169,7 @@ void DetailsFromBoardDataSource::setDetailsInExtractedDetailsData(vector <GamePo
 	for (detailElementsIterator = aDetailElements.begin(); detailElementsIterator != aDetailElements.end(); detailElementsIterator++)
 	{
 		GamePositionOnBoard detailPosition = *detailElementsIterator;
-		Tetramino *tetraminoMarkInExtractedDetailsData = new Tetramino();
+		Tetramino *tetraminoMarkInExtractedDetailsData = new Tetramino(kTetraminoBlack);
 		aExtractedDetailsData->setTetraminoXYposition(tetraminoMarkInExtractedDetailsData, detailPosition.xPosition, detailPosition.yPosition);
 	}
 

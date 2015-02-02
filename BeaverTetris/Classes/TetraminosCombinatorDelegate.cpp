@@ -1,4 +1,6 @@
 #include "TetraminosCombinatorDelegate.h"
+#include "TetraminoDetail.h"
+#include "GameBoard.h"
 
 using namespace std;
 
@@ -11,17 +13,6 @@ TetraminosCombinatorDelegate::TetraminosCombinatorDelegate(GameBoard *aGameBoard
 
 TetraminosCombinatorDelegate::~TetraminosCombinatorDelegate(void)
 {
-}
-
-TetraminoDetail* TetraminosCombinatorDelegate::combineTetraminosInDetail(vector <GamePositionOnBoard> aDetailElements)
-{
-	
-	GamePositionOnBoard maxDetailPosition = getMaxDetailPositionFromDetailsElements(aDetailElements);
-	GamePositionOnBoard minDetailPosition = getMinDetailPositionFromDetailsElements(aDetailElements);
-	GamePositionOnBoard detailSize = getDetailSizeFromMaxAndMinPosition(maxDetailPosition, minDetailPosition);
-	
-	TetraminoDetail *detailFromTetraminos = getDetailWithMaxMinDetailPositionAndDetailSize(aDetailElements, maxDetailPosition, minDetailPosition, detailSize);
-	return detailFromTetraminos;
 }
 
 vector <TetraminoDetail*> TetraminosCombinatorDelegate::combineTetraminosInDetails(vector < vector <GamePositionOnBoard> > aTetraminoDetailsInGame)
@@ -39,6 +30,17 @@ vector <TetraminoDetail*> TetraminosCombinatorDelegate::combineTetraminosInDetai
 	return tetraminosDetails;
 }
 
+TetraminoDetail* TetraminosCombinatorDelegate::combineTetraminosInDetail(vector <GamePositionOnBoard> aDetailElements)
+{
+	
+	GamePositionOnBoard maxDetailPosition = getMaxDetailPositionFromDetailsElements(aDetailElements);
+	GamePositionOnBoard minDetailPosition = getMinDetailPositionFromDetailsElements(aDetailElements);
+	GamePositionOnBoard detailSize = getDetailSizeFromMaxAndMinPosition(maxDetailPosition, minDetailPosition);
+	
+	TetraminoDetail *detailFromTetraminos = getDetailWithMaxMinDetailPositionAndDetailSize(aDetailElements, maxDetailPosition, minDetailPosition, detailSize);
+	return detailFromTetraminos;
+}
+
 GamePositionOnBoard TetraminosCombinatorDelegate::getMaxDetailPositionFromDetailsElements(vector <GamePositionOnBoard> aDetailElements)
 {
 	GamePositionOnBoard maxDetailPosition = aDetailElements.front();
@@ -47,10 +49,16 @@ GamePositionOnBoard TetraminosCombinatorDelegate::getMaxDetailPositionFromDetail
 
 	for (detailElementsIterator = aDetailElements.begin(); detailElementsIterator != aDetailElements.end(); detailElementsIterator++)
 	{
-		if (maxDetailPosition.xPosition > detailElementsIterator->xPosition && maxDetailPosition.yPosition > detailElementsIterator->yPosition)
+		if (detailElementsIterator->xPosition > maxDetailPosition.xPosition)
 		{
-			maxDetailPosition = *detailElementsIterator;
+			maxDetailPosition.xPosition = detailElementsIterator->xPosition;
 		}
+
+		if (detailElementsIterator->yPosition > maxDetailPosition.yPosition)
+		{
+			maxDetailPosition.yPosition = detailElementsIterator->yPosition;
+		}
+
 	}
 
 	return maxDetailPosition;
@@ -58,18 +66,23 @@ GamePositionOnBoard TetraminosCombinatorDelegate::getMaxDetailPositionFromDetail
 
 GamePositionOnBoard TetraminosCombinatorDelegate::getMinDetailPositionFromDetailsElements(vector <GamePositionOnBoard> aDetailElements)
 {
-	GamePositionOnBoard minDetailPosition;
+	GamePositionOnBoard minDetailPosition = aDetailElements.front();
 
 	vector <GamePositionOnBoard>::iterator detailElementsIterator;
 
 	for (detailElementsIterator = aDetailElements.begin(); detailElementsIterator != aDetailElements.end(); detailElementsIterator++)
 	{
-		if (minDetailPosition.xPosition < detailElementsIterator->xPosition && minDetailPosition.yPosition < detailElementsIterator->yPosition)
+
+		if (detailElementsIterator->xPosition < minDetailPosition.xPosition)
 		{
-			GamePositionOnBoard detailElement = *detailElementsIterator;
-			minDetailPosition.xPosition = detailElement.xPosition;
-			minDetailPosition.yPosition = detailElement.yPosition;
+			minDetailPosition.xPosition = detailElementsIterator->xPosition;
 		}
+
+		if (detailElementsIterator->yPosition < minDetailPosition.yPosition)
+		{
+			minDetailPosition.yPosition = detailElementsIterator->yPosition;
+		}
+
 	}
 
 	return minDetailPosition;
@@ -79,8 +92,8 @@ GamePositionOnBoard TetraminosCombinatorDelegate::getMinDetailPositionFromDetail
 GamePositionOnBoard TetraminosCombinatorDelegate::getDetailSizeFromMaxAndMinPosition(GamePositionOnBoard aMaxDetailPosition, GamePositionOnBoard aMinDetailPosition)
 {
 	GamePositionOnBoard detailSize;
-	detailSize.xPosition = aMaxDetailPosition.xPosition - aMinDetailPosition.xPosition;
-	detailSize.yPosition = aMaxDetailPosition.yPosition - aMinDetailPosition.yPosition;
+	detailSize.xPosition = aMaxDetailPosition.xPosition - aMinDetailPosition.xPosition + 1;
+	detailSize.yPosition = aMaxDetailPosition.yPosition - aMinDetailPosition.yPosition + 1;
 	return detailSize;
 }
 
@@ -95,9 +108,8 @@ TetraminoDetail* TetraminosCombinatorDelegate::getDetailWithMaxMinDetailPosition
 	{
 		GamePositionOnBoard tetraminoPosition = *detailElementsIterator;
 		Tetramino *tetraminoForDetail = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
-		int tetraminoPositionXInDetail = aMinDetailPosition.xPosition - detailElementsIterator->xPosition;
-		int tetraminoPositionYInDetail = aMinDetailPosition.yPosition - detailElementsIterator->yPosition;
-		detailFromTetraminos->setTetraminoForXY(tetraminoForDetail, tetraminoPositionXInDetail, tetraminoPositionYInDetail);
+		GamePositionOnBoard tetraminoPositionInDetail = detailFromTetraminos->convertAbsolutePositionToPositionInDetail(tetraminoPosition);
+		detailFromTetraminos->setTetraminoForXY(tetraminoForDetail, tetraminoPositionInDetail.xPosition, tetraminoPositionInDetail.yPosition);
 	}
 	
 	return detailFromTetraminos;

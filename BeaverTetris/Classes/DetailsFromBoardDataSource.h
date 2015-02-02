@@ -2,7 +2,8 @@
 
 #include <vector>
 #include "GameStructures.h"
-#include "GameBoard.h"
+
+class GameBoard;
 
 class DetailsFromBoardDataSource
 {
@@ -19,6 +20,7 @@ private:
 	std::vector <GamePositionOnBoard> getDetailFromStartPosition(int xPosition, int yPosition);
 	void setDetailsInExtractedDetailsData(std::vector <GamePositionOnBoard> aDetailElements, GameBoard *aExtractedDetailsData);
 	void fillTetraminoChainWithPositionXY(std::vector <GamePositionOnBoard*> *aTetraminoChain, int xPosition, int yPosition);
+	bool checkPositionInChain(GamePositionOnBoard aPosition, std::vector <GamePositionOnBoard*> *aTetraminoChain);
 	void goToNewDirection(std::vector <GamePositionOnBoard*> *aTetraminoChain, int xPosition, int yPosition);
 
 };

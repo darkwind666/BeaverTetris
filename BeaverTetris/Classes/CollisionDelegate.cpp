@@ -176,5 +176,5 @@ bool CollisionDelegate::checkCollisionWithDetailsAndBorders(TetraminoDetail *aDe
 {
 	bool collision = checkCollisionDetailWithOtherTetraminos(aDetail);
 	bool collisionWithBoard = checkCollisionDetailWithGameBorders(aDetail);
-	return (collision || collisionWithBoard);
+	return (collision == true || collisionWithBoard == true);
 }

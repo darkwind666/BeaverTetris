@@ -156,9 +156,6 @@
     <ClCompile Include="TetraminisDetailsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="DetailsFromBoardDataSource.cpp">
-      <Filter>Models\GameLogic</Filter>
-    </ClCompile>
     <ClCompile Include="VictoryConditionViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
@@ -170,9 +167,6 @@
     </ClCompile>
     <ClCompile Include="SpellsViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="TetraminosCombinatorDelegate.cpp">
-      <Filter>Models\GameLogic</Filter>
     </ClCompile>
     <ClCompile Include="AIMovementStrategy.cpp">
       <Filter>Models\AIStrateges</Filter>
@@ -215,9 +209,6 @@
     </ClCompile>
     <ClCompile Include="TimeAccelerationEvent.cpp">
       <Filter>Models\GameEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="FillingGapInBoardSystem.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
     <ClCompile Include="VictoryConditionInterface.cpp">
       <Filter>Models\VictoryConditions</Filter>
@@ -534,6 +525,15 @@
     <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FillingGapInBoardDelegate.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DetailsFromBoardDataSource.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -605,9 +605,6 @@
     <ClInclude Include="TetraminisDetailsFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
-    <ClInclude Include="DetailsFromBoardDataSource.h">
-      <Filter>Models\GameLogic</Filter>
-    </ClInclude>
     <ClInclude Include="VictoryConditionViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
@@ -616,9 +613,6 @@
     </ClInclude>
     <ClInclude Include="EndGameViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="TetraminosCombinatorDelegate.h">
-      <Filter>Models\GameLogic</Filter>
     </ClInclude>
     <ClInclude Include="AIMovementStrategy.h">
       <Filter>Models\AIStrateges</Filter>
@@ -661,9 +655,6 @@
     </ClInclude>
     <ClInclude Include="TimeAccelerationEvent.h">
       <Filter>Models\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="FillingGapInBoardSystem.h">
-      <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
     <ClInclude Include="VictoryConditionInterface.h">
       <Filter>Models\VictoryConditions</Filter>
@@ -1009,6 +1000,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h">
       <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FillingGapInBoardDelegate.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DetailsFromBoardDataSource.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h">
+      <Filter>Models\GameLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

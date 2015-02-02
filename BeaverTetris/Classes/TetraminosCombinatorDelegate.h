@@ -1,8 +1,10 @@
 #pragma once
 
 #include <vector>
-#include "TetraminoDetail.h"
-#include "GameBoard.h"
+#include "GameStructures.h"
+
+class TetraminoDetail;
+class GameBoard;
 
 class TetraminosCombinatorDelegate
 {
