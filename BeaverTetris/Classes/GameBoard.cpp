@@ -18,7 +18,7 @@ GameBoard::GameBoard(int width, int height)
 
 GameBoard::~GameBoard(void)
 {
-	
+	delete _tetraminosSourceDelegate;
 }
 
 void GameBoard::cleanGameBoard(void)
@@ -33,7 +33,6 @@ void GameBoard::cleanGameBoard(void)
 		}
 		_tetramins.push_back(tetraminosLine);
 	}
-
 }
 
 void GameBoard::replaceTetraminoXYposition(Tetramino *aTetramino, int xPosition, int yPosition)
@@ -70,6 +69,18 @@ void GameBoard::removeTetraminos(std::vector <GamePositionOnBoard> aNeedToRemove
 	{
 		GamePositionOnBoard tetraminoPosition = *detailElementsIterator;
 		removeTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+	}
+}
+
+void GameBoard::deleteAllTetraminos()
+{
+	for (int heightIndex = 0; heightIndex < _gameBoardHeight; heightIndex++)
+	{
+		for (int widthIndex = 0; widthIndex < _gameBoardWidth; widthIndex++)
+		{
+			Tetramino *tetraminoInBoard = getTetraminoForXYposition(widthIndex, heightIndex);
+			delete tetraminoInBoard;
+		}
 	}
 }
 
