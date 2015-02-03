@@ -75,6 +75,7 @@ vector <GamePositionOnBoard> DetailsFromBoardDataSource::getDetailFromStartPosit
 	startPosition.yPosition = yPosition;
 	fillTetraminoChainWithPosition(tetraminoChain, startPosition);
 	vector <GamePositionOnBoard> tetraminoDetailElements = getDetailElementsFromChain(tetraminoChain);
+	delete tetraminoChain;
 	return tetraminoDetailElements;
 }
 

@@ -22,7 +22,8 @@ private:
 	GamePositionOnBoard getMaxDetailPositionFromDetailsElements(std::vector <GamePositionOnBoard> aDetailElements);
 	GamePositionOnBoard getMinDetailPositionFromDetailsElements(std::vector <GamePositionOnBoard> aDetailElements);
 	GamePositionOnBoard getDetailSizeFromMaxAndMinPosition(GamePositionOnBoard aMaxDetailPosition, GamePositionOnBoard aMinDetailPosition);
-	TetraminoDetail* getDetailWithMaxMinDetailPositionAndDetailSize(std::vector <GamePositionOnBoard> aDetailElements, GamePositionOnBoard aMaxDetailPosition, GamePositionOnBoard aMinDetailPosition, GamePositionOnBoard aDetailSize);
+	TetraminoDetail* getDetailWithMaxAndMinPosition(std::vector <GamePositionOnBoard> aDetailElements, GamePositionOnBoard aMaxPosition, GamePositionOnBoard aMinPosition);
+	void fillDetailWithTetraminos(TetraminoDetail *aDetail, std::vector <GamePositionOnBoard> aDetailElements);
 
 };
 
