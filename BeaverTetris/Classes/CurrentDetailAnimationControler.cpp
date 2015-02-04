@@ -9,8 +9,7 @@
 #include "GameTimeStepController.h"
 #include "CurrentDetailController.h"
 #include "GameBoard.h"
-
-const float fallActionDurationPerTetramino = 0.015f;
+#include "GameAnimationActionsConstants.h"
 
 using namespace cocos2d;
 

@@ -14,14 +14,14 @@ DetailsFromBoardDataSource::~DetailsFromBoardDataSource(void)
 {
 }
 
-map<DirectionType, function<void(GamePositionOnBoard&)> > DetailsFromBoardDataSource::makeWaveAlgoritmDirections()
+map<DirectionType, function<void(GamePositionOnBoard*)> > DetailsFromBoardDataSource::makeWaveAlgoritmDirections()
 {
-	map<DirectionType, function<void(GamePositionOnBoard&)> > waveAlgoritmDirections;
+	map<DirectionType, function<void(GamePositionOnBoard*)> > waveAlgoritmDirections;
 
-	waveAlgoritmDirections[kTopDirection] = [](GamePositionOnBoard &aPositon){aPositon.yPosition = aPositon.yPosition + 1;};
-	waveAlgoritmDirections[kRightDirection] = [](GamePositionOnBoard &aPositon){aPositon.xPosition = aPositon.xPosition + 1;};
-	waveAlgoritmDirections[kBottomDirection] = [](GamePositionOnBoard &aPositon){aPositon.yPosition = aPositon.yPosition - 1;};
-	waveAlgoritmDirections[kLeftDirection] = [](GamePositionOnBoard &aPositon){aPositon.xPosition = aPositon.xPosition - 1;};
+	waveAlgoritmDirections[kTopDirection] = [](GamePositionOnBoard *aPositon){aPositon->yPosition = aPositon->yPosition + 1;};
+	waveAlgoritmDirections[kRightDirection] = [](GamePositionOnBoard *aPositon){aPositon->xPosition = aPositon->xPosition + 1;};
+	waveAlgoritmDirections[kBottomDirection] = [](GamePositionOnBoard *aPositon){aPositon->yPosition = aPositon->yPosition - 1;};
+	waveAlgoritmDirections[kLeftDirection] = [](GamePositionOnBoard *aPositon){aPositon->xPosition = aPositon->xPosition - 1;};
 
 	return waveAlgoritmDirections;
 }
@@ -145,8 +145,8 @@ void DetailsFromBoardDataSource::goToNewDirection(vector <GamePositionOnBoard> *
 	{
 		DirectionType directionType = (DirectionType)direction;
 		GamePositionOnBoard newTetraminoPosition = aPosition;
-		function<void(GamePositionOnBoard)> positionForDirectionMaker = _waveAlgoritmdirections[directionType];
-		positionForDirectionMaker(newTetraminoPosition);
+		function<void(GamePositionOnBoard*)> positionForDirectionMaker = _waveAlgoritmdirections[directionType];
+		positionForDirectionMaker(&newTetraminoPosition);
 		fillTetraminoChainWithPosition(aTetraminoChain, newTetraminoPosition);
 	}
 }

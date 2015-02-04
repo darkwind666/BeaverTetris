@@ -153,6 +153,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\DetailsFromBoardDataSource.cpp" />
     <ClCompile Include="..\Classes\FillingGapInBoardDelegate.cpp" />
     <ClCompile Include="..\Classes\FullLineCombination.cpp" />
+    <ClCompile Include="..\Classes\FullLineCombinationAnimationController.cpp" />
+    <ClCompile Include="..\Classes\FullLineCombinationDelegate.cpp" />
     <ClCompile Include="..\Classes\GameBackgroundSoundRegulator.cpp" />
     <ClCompile Include="..\Classes\GameBoard.cpp" />
     <ClCompile Include="..\Classes\GameBoardController.cpp" />
@@ -430,6 +432,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\DetailsFromBoardDataSource.h" />
     <ClInclude Include="..\Classes\FillingGapInBoardDelegate.h" />
     <ClInclude Include="..\Classes\FullLineCombination.h" />
+    <ClInclude Include="..\Classes\FullLineCombinationAnimationController.h" />
+    <ClInclude Include="..\Classes\FullLineCombinationDelegate.h" />
     <ClInclude Include="..\Classes\GameAnimationActionsConstants.h" />
     <ClInclude Include="..\Classes\GameBackgroundSoundRegulator.h" />
     <ClInclude Include="..\Classes\GameBoard.h" />

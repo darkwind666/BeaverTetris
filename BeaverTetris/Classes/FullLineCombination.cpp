@@ -6,17 +6,25 @@
 #include "GameServicesKeys.h"
 #include "Tetramino.h"
 #include "GameDesignConstants.h"
+#include "FullLineCombinationDelegate.h"
+
+using namespace std;
 
 FullLineCombination::FullLineCombination(GameBoard *aGameBoard)
 {
 	_gameBoard = aGameBoard;
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_awardForTetraminoDataSource = (AwardForTetraminoDataSource*)ServiceLocator::getServiceForKey(awardForTetraminoDataSourceKey);
+	_delegate = NULL;
 }
-
 
 FullLineCombination::~FullLineCombination(void)
 {
+}
+
+void FullLineCombination::setDelegate(FullLineCombinationDelegate *aDelegate)
+{
+	_delegate = aDelegate;
 }
 
 void FullLineCombination::checkFullLineCombination()
@@ -32,8 +40,9 @@ void FullLineCombination::checkFullLineInBoardRow(int aRow)
 {
 	if (fullLineCheck(aRow))
 	{
-		int playerAwardForLine = getPlayerAwardForLine(aRow);
-		addAwardToPlayerScore(playerAwardForLine);
+		reduceTetraminosLifesInLine(aRow);
+		sendMessagesToDelegateAccordingToLine(aRow);
+		setUpPlayerScoreWithAwardFromLine(aRow);
 		removeKilledTetraminosFromBoardOnLine(aRow);
 	}
 }
@@ -49,9 +58,37 @@ bool FullLineCombination::fullLineCheck(int lineIndex)
 			fullLine = false;	
 			break;	
 		}	
-
 	}	
 	return fullLine;	
+}
+
+void FullLineCombination::reduceTetraminosLifesInLine(int aLine)
+{
+	for (int xIndex = 0; xIndex < _gameBoard->getGameBoardWidth(); xIndex++)
+	{
+		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,aLine);
+		tetraminoInBoard->reduceLive();
+	}
+}
+
+void FullLineCombination::sendMessagesToDelegateAccordingToLine(int aLine)
+{
+	if (_delegate)
+	{
+		_delegate->blowUpLine(aLine);
+		sendDelegateKilledTetraminosFromBoardOnLine(aLine);
+		int playerAwardForLine = getPlayerAwardForLine(aLine);
+		sendDelegatePlayerAward(playerAwardForLine);
+	}
+}
+
+void FullLineCombination::setUpPlayerScoreWithAwardFromLine(int aLine)
+{
+	if (_delegate == NULL)
+	{
+		int playerAwardForLine = getPlayerAwardForLine(aLine);
+		addAwardToPlayerScore(playerAwardForLine);
+	}
 }
 
 int FullLineCombination::getPlayerAwardForLine(int aIndex)
@@ -60,10 +97,8 @@ int FullLineCombination::getPlayerAwardForLine(int aIndex)
 	for (int xIndex = 0; xIndex < _gameBoard->getGameBoardWidth(); xIndex++)
 	{
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xIndex,aIndex);
-		tetraminoInBoard->reduceLive();
 		int award = getAwardForTetramino(tetraminoInBoard);
 		playerAwardForLine += award;
-	
 	}
 	return  playerAwardForLine;
 }
@@ -84,7 +119,8 @@ void FullLineCombination::addAwardToPlayerScore(int aAward)
 {
 	int playerAwardForLine = playerPrizeForLine + aAward;
 	int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
-	_currentPlayerDataSource->setPlayerScore(currentPlayerScore + playerAwardForLine);
+	int newPlayerScore = currentPlayerScore + playerAwardForLine;
+	_currentPlayerDataSource->setPlayerScore(newPlayerScore);
 }
 
 void FullLineCombination::removeKilledTetraminosFromBoardOnLine(int aLine)
@@ -94,4 +130,25 @@ void FullLineCombination::removeKilledTetraminosFromBoardOnLine(int aLine)
 	{
 		_gameBoard->removeTetraminoForXYpositionIfItHasNoLives(widthIndex, aLine);
 	}
+}
+
+void FullLineCombination::sendDelegateKilledTetraminosFromBoardOnLine(int aLine)
+{
+	int boardWidth = _gameBoard->getGameBoardWidth();
+	for (int widthIndex = 0; widthIndex < boardWidth; widthIndex++)
+	{
+		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(widthIndex, aLine);
+		if (tetraminoInBoard->getTetraminoLivesCount() <= 0)
+		{
+			_delegate->removeTetraminoOnPositionXY(widthIndex, aLine);
+		}
+	}
+}
+
+void FullLineCombination::sendDelegatePlayerAward(int aPlayerAward)
+{
+	function<void()> callback = [this, aPlayerAward](){
+			addAwardToPlayerScore(aPlayerAward);
+		};
+	_delegate->setCallback(callback);
 }

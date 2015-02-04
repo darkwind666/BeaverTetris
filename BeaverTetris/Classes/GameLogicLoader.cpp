@@ -7,6 +7,7 @@
 #include "GameTimeStepController.h"
 #include "CurrentDetailDataSource.h"
 #include "CurrentDetailController.h"
+#include "FullLineCombination.h"
 #include "TetrisLogicSystem.h"
 
 GameLogicLoader::GameLogicLoader(void)
@@ -32,6 +33,9 @@ void GameLogicLoader::loadResources()
 	CurrentDetailController *currentDetailController = new CurrentDetailController(gameBoard, currentDetailDataSource);
 	gameTimeStepController->addSystem(currentDetailController);
 	ServiceLocator::setServiceForKey(currentDetailController, currentDetailControllerKey);
+
+	FullLineCombination *fullLineCombinationModel = new FullLineCombination(gameBoard);
+	ServiceLocator::setServiceForKey(fullLineCombinationModel, fullLineCombinationModelKey);
 
 	TetrisLogicSystem *tetrisLogicSystem = new TetrisLogicSystem(gameBoard);
 	gameTimeStepController->addSystem(tetrisLogicSystem);

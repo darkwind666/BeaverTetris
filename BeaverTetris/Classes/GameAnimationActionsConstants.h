@@ -20,3 +20,8 @@ const float playerStatusPadActionDuration = 0.6f;
 
 const float createPlayerControllerAppearDuration = 0.6f;
 const float createPlayerControllerDisapperDuration = 0.3f;
+
+const float fallActionDurationPerTetramino = 0.015f;
+
+const float tetraminosExplosionDuration = 0.6f;
+const float tetraminoDisappearDuration = 0.1f;

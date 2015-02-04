@@ -21,9 +21,9 @@ private:
 	GameBoard *_gameBoard;
 	GameBoard *_extractedDetailsData;
 
-	std::map<DirectionType, std::function<void(GamePositionOnBoard&)> > _waveAlgoritmdirections;
+	std::map<DirectionType, std::function<void(GamePositionOnBoard*)> > _waveAlgoritmdirections;
 
-	std::map<DirectionType, std::function<void(GamePositionOnBoard&)> > makeWaveAlgoritmDirections();
+	std::map<DirectionType, std::function<void(GamePositionOnBoard*)> > makeWaveAlgoritmDirections();
 
 	std::vector < std::vector <GamePositionOnBoard> > getAvailableDetailsFromGameBoard();
 	void setAvailableDetailsFromGameBoardRowInCollection(int aRow, std::vector < std::vector <GamePositionOnBoard> > *detailsInGameBoard);
