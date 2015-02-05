@@ -2,13 +2,14 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "GameBoard.h"
-#include "CurrentDetailViewDataSource.h"
+#include "DetailViewDataSource.h"
 #include "KeysForEnumsDataSource.h"
 #include "GameFileExtensionMaker.h"
 #include "Tetramino.h"
 #include "GameElementsDataHelper.h"
 #include "GameViewElementsKeys.h"
 #include "CurrentDetailTetraminosChecker.h"
+#include "CurrentDetailDataSource.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -16,11 +17,20 @@ using namespace cocos2d;
 GameBoardViewDataSource::GameBoardViewDataSource()
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
-	_currentDetailViewDataSource = new CurrentDetailViewDataSource();
+	_currentDetailViewDataSource = getDetailViewDataSource();
 	_keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
 	_currentDetailTetraminosChecker = new CurrentDetailTetraminosChecker();
 }
 
+DetailViewDataSource* GameBoardViewDataSource::getDetailViewDataSource()
+{
+	function<TetraminoDetail*()> detailDataSource = [](){
+		CurrentDetailDataSource *currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
+		return currentDetailDataSource->getCurrentDetail();
+	};
+	DetailViewDataSource *detailViewDataSource = new DetailViewDataSource(detailDataSource);
+	return detailViewDataSource;
+}
 
 GameBoardViewDataSource::~GameBoardViewDataSource(void)
 {

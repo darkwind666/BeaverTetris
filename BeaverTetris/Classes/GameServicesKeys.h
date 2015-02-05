@@ -18,6 +18,7 @@ const string gameTimeStepControllerKey = string("GameTimeStepController");
 const string currentDetailDataSourceKey = string("CurrentDetailDataSource");
 const string currentDetailControllerKey = string("CurrentDetailController");
 const string fullLineCombinationModelKey = string("FullLineCombination");
+const string fillingGapInBoardSystemKey = string("FillingGapInBoardSystem");
 
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");

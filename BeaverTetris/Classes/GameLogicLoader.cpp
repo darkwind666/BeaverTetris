@@ -9,6 +9,7 @@
 #include "CurrentDetailController.h"
 #include "FullLineCombination.h"
 #include "TetrisLogicSystem.h"
+#include "FillingGapInBoardSystem.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -36,6 +37,9 @@ void GameLogicLoader::loadResources()
 
 	FullLineCombination *fullLineCombinationModel = new FullLineCombination(gameBoard);
 	ServiceLocator::setServiceForKey(fullLineCombinationModel, fullLineCombinationModelKey);
+
+	FillingGapInBoardSystem *fillingGapInBoardSystem = new FillingGapInBoardSystem(gameBoard);
+	ServiceLocator::setServiceForKey(fillingGapInBoardSystem, fillingGapInBoardSystemKey);
 
 	TetrisLogicSystem *tetrisLogicSystem = new TetrisLogicSystem(gameBoard);
 	gameTimeStepController->addSystem(tetrisLogicSystem);

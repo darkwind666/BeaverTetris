@@ -1,19 +1,19 @@
 #pragma once
 
 #include "GameStructures.h"
+#include "FuctionsTypedefs.h"
 #include "cocos2d.h"
 #include <string>
 
-class CurrentDetailDataSource;
 class KeysForEnumsDataSource;
 class TetraminoDetail;
 class Tetramino;
 
-class CurrentDetailViewDataSource
+class DetailViewDataSource
 {
 public:
-	CurrentDetailViewDataSource(void);
-	~CurrentDetailViewDataSource(void);
+	DetailViewDataSource(std::function<TetraminoDetail*()> aDetailDataSource);
+	~DetailViewDataSource(void);
 
 	int getTetraminosCount();
 	std::string getTetraminoImageForIndex(int aIndex);
@@ -21,15 +21,20 @@ public:
 	bool availableTetraminoOnIndex(int aIndex);
 
 	cocos2d::Vec2 getTetraminosViewOffset();
-
+	cocos2d::Vec2 getDetailPositionOnView();
+	cocos2d::Vec2 getPositionOnView(GamePositionOnBoard aPosition);
 	TetraminoType getTetraminoTypeOnPositionInCurrentDetail(GamePositionOnBoard aPosition);
+	GamePositionOnBoard getTetraminoPositionInBoardForIndex(int aIndex);
+
+	void cleanDetailWithCleanerCallback(DetailCleaner aCleanerCallback);
 
 private:
 
-	CurrentDetailDataSource *_currentDetailDataSource;
+	std::function<TetraminoDetail*()> _detailDataSource;
 	KeysForEnumsDataSource *_keysForEnumsDataSource;
 
 	Tetramino* getTetraminoOnIndex(int aIndex);
+	void cleanTetraminoWithCleanerForXY(DetailCleaner aCleanerCallback, int xPosition, int yPosition);
 	TetraminoDetail* getCurrentDetail(); 
 
 };

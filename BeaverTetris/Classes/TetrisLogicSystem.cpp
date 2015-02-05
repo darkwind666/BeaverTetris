@@ -5,7 +5,7 @@
 #include "GameServicesKeys.h"
 #include "FullLineCombination.h"
 //#include "SimilarTetraminosCombination.h"
-#include "FillingGapInBoardDelegate.h"
+#include "FillingGapInBoardSystem.h"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ TetrisLogicSystem::TetrisLogicSystem(GameBoard *aGameBoard)
 {
 	_fullLineCombination = (FullLineCombination*)ServiceLocator::getServiceForKey(fullLineCombinationModelKey);
 	//_similarTetraminosCombination = new SimilarTetraminosCombination(aGameBoard,aCurrentPlayerDataSource);
-	_fillingGapInBoardDelegate = new FillingGapInBoardDelegate(aGameBoard);
+	_fillingGapInBoardDelegate = (FillingGapInBoardSystem*)ServiceLocator::getServiceForKey(fillingGapInBoardSystemKey);
 }
 
 
