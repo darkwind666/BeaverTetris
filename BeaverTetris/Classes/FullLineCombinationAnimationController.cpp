@@ -8,19 +8,20 @@
 #include "TetraminoColorsDataSource.h"
 #include <string>
 #include "GameAnimationActionsConstants.h"
+#include "AnimationSynchonizer.h"
 
 using namespace cocos2d;
 using namespace std;
 
-FullLineCombinationAnimationController::FullLineCombinationAnimationController(GameBoardController *aGameBoardController)
+FullLineCombinationAnimationController::FullLineCombinationAnimationController(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer)
 {
 	FullLineCombination *fullLineCombinationModel = (FullLineCombination*)ServiceLocator::getServiceForKey(fullLineCombinationModelKey);
 	fullLineCombinationModel->setDelegate(this);
+	_animationSynchonizer = aAnimationSynchonizer;
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_gameBoardViewDataSource = new GameBoardViewDataSource();
 	_gameBoardController = aGameBoardController;
 	_tetraminoColorsDataSource = new TetraminoColorsDataSource();
-	_sequence = NULL;
 }
 
 FullLineCombinationAnimationController::~FullLineCombinationAnimationController(void)
@@ -32,7 +33,7 @@ void FullLineCombinationAnimationController::blowUpLine(int aLineIndex)
 	FiniteTimeAction *tetraminosLineExplosionAnimation = getTetraminosLineExplosionAnimation(aLineIndex);
 	FiniteTimeAction *delay = DelayTime::create(tetraminosExplosionDuration);
 	FiniteTimeAction *sequence = Sequence::create(tetraminosLineExplosionAnimation, delay, NULL);
-	_sequence = sequence;
+	_animationSynchonizer->addAnimationToQueue(sequence);
 }
 
 FiniteTimeAction* FullLineCombinationAnimationController::getTetraminosLineExplosionAnimation(int aLineIndex)
@@ -105,8 +106,7 @@ void FullLineCombinationAnimationController::addExplosionsToView(vector<Node*> a
 void FullLineCombinationAnimationController::removeTetraminoOnPositionXY(int xPosition, int yPosition)
 {
 	FiniteTimeAction *actionWithTetraminoView = getRemoveTetraminoAnimationOnPositionXY(xPosition, yPosition);
-	Sequence *newSequence =  Sequence::create(_sequence, actionWithTetraminoView, NULL);
-	_sequence = newSequence;
+	_animationSynchonizer->addAnimationToQueue(actionWithTetraminoView);
 }
 
 FiniteTimeAction* FullLineCombinationAnimationController::getRemoveTetraminoAnimationOnPositionXY(int xPosition, int yPosition)
@@ -153,9 +153,7 @@ FiniteTimeAction* FullLineCombinationAnimationController::getRemoveTetraminoAnim
 
 void FullLineCombinationAnimationController::setCallback(std::function<void()> aCallback)
 {
-
 	FiniteTimeAction *endCallback = CallFunc::create(aCallback);
-	Sequence *newSequence =  Sequence::create(_sequence, endCallback, NULL);
-	this->runAction(newSequence);
+	_animationSynchonizer->addAnimationToQueue(endCallback);
 }
 

@@ -90,7 +90,7 @@ FiniteTimeAction* FallenDetailAnimationFactory::getDetailAnimationWithFinalPosit
 	Vec2 finalDetailPosition = getPositionOnViewWithTetraminoOffset(aFinalPosition);
 	float animationDuration = getAnimationDurationWithFinalPosition(aFinalPosition);
 	FiniteTimeAction *moveDetail = MoveTo::create(animationDuration, finalDetailPosition);
-	function<void(Node*)> callbackFunction = getAnimationEndCallback();
+	function<void(Node*)> callbackFunction = getAnimationEndCallbackWithFinalPosition(aFinalPosition);
 	FiniteTimeAction *callback = CallFuncN::create(callbackFunction);
 	FiniteTimeAction *sequence = Sequence::create(moveDetail,callback, NULL);
 	return sequence;
@@ -105,10 +105,13 @@ float FallenDetailAnimationFactory::getAnimationDurationWithFinalPosition(GamePo
 	return animationDuration;
 }
 
-function<void(Node*)>  FallenDetailAnimationFactory::getAnimationEndCallback()
+function<void(Node*)>  FallenDetailAnimationFactory::getAnimationEndCallbackWithFinalPosition(GamePositionOnBoard aFinalPosition)
 {
+	GamePositionOnBoard detailPositionDifference = getPositionDifferenceWithFinalPosition(aFinalPosition);
+	int gameBoardWidth = _gameBoard->getGameBoardWidth();
 	GameBoardController *gameBoardController = _gameBoardController;
-	function<void(Node*)> callback = [gameBoardController](Node *sender){
+
+	function<void(Node*)> callback = [gameBoardController, detailPositionDifference, gameBoardWidth](Node *sender){
 
 		Vector<Node*> children = sender->getChildren();
 		Vector<Node*>::iterator childrenIterator;
@@ -116,11 +119,21 @@ function<void(Node*)>  FallenDetailAnimationFactory::getAnimationEndCallback()
 		{
 			Node *child = *childrenIterator;
 			int childTag = child->getTag();
+			int index = childTag + (detailPositionDifference.yPosition * gameBoardWidth) + detailPositionDifference.xPosition;
 			string childName = child->getName();
-			gameBoardController->drawTetraminoTextureOnIndex(childName, childTag);
+			gameBoardController->drawTetraminoTextureOnIndex(childName, index);
 		}
 		sender->removeFromParentAndCleanup(true);
 
 	};
 	return callback;
+}
+
+GamePositionOnBoard FallenDetailAnimationFactory::getPositionDifferenceWithFinalPosition(GamePositionOnBoard aFinalPosition)
+{
+	GamePositionOnBoard currentDetailPosition = _dataSource->getDetailPositionOnBoard();
+	GamePositionOnBoard detailPositionDifference;
+	detailPositionDifference.xPosition = aFinalPosition.xPosition - currentDetailPosition.xPosition;
+	detailPositionDifference.yPosition = aFinalPosition.yPosition - currentDetailPosition.yPosition;
+	return detailPositionDifference;
 }

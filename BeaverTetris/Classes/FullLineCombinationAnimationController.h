@@ -9,11 +9,12 @@ class GameBoardViewDataSource;
 class GameBoardController;
 class GameBoard;
 class TetraminoColorsDataSource;
+class AnimationSynchonizer;
 
 class FullLineCombinationAnimationController : public cocos2d::Node, public FullLineCombinationDelegate
 {
 public:
-	FullLineCombinationAnimationController(GameBoardController *aGameBoardController);
+	FullLineCombinationAnimationController(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer);
 	~FullLineCombinationAnimationController(void);
 
 	virtual void blowUpLine(int aLineIndex);
@@ -23,10 +24,10 @@ public:
 private:
 
 	GameBoardController *_gameBoardController;
+	AnimationSynchonizer *_animationSynchonizer;
 	GameBoardViewDataSource *_gameBoardViewDataSource;
 	GameBoard *_gameBoard;
 	TetraminoColorsDataSource *_tetraminoColorsDataSource;
-	cocos2d::FiniteTimeAction *_sequence;
 
 	cocos2d::FiniteTimeAction* getTetraminosLineExplosionAnimation(int aLineIndex);
 	std::vector<cocos2d::Node*> getExplosionsInLine(int aLineIndex);

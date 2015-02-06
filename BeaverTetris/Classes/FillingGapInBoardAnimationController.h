@@ -5,12 +5,12 @@
 
 class GameBoardController;
 class FallenDetailAnimationFactory;
-class GameTimeStepController;
+class AnimationSynchonizer;
 
 class FillingGapInBoardAnimationController : public cocos2d::Node, public FillingGapInBoardDelegate
 {
 public:
-	FillingGapInBoardAnimationController(GameBoardController *aGameBoardController);
+	FillingGapInBoardAnimationController(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer);
 	~FillingGapInBoardAnimationController(void);
 
 	virtual void replaceDetailToPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition);
@@ -18,7 +18,7 @@ public:
 private:
 
 	GameBoardController *_gameBoardController;
-	GameTimeStepController *_gameTimeStepController;
+	AnimationSynchonizer *_animationSynchonizer;
 
 	FallenDetailAnimationFactory* getFallenDetailAnimationFactoryWithDetail(TetraminoDetail *aDetail);
 

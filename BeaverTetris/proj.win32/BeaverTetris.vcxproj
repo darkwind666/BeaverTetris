@@ -138,6 +138,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\AnimationSynchonizer.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp" />
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
@@ -420,6 +421,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\AnimationSynchonizer.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h" />
     <ClInclude Include="..\Classes\CocosNodesHelper.h" />

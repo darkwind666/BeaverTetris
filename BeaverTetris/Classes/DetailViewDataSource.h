@@ -25,6 +25,7 @@ public:
 	cocos2d::Vec2 getPositionOnView(GamePositionOnBoard aPosition);
 	TetraminoType getTetraminoTypeOnPositionInCurrentDetail(GamePositionOnBoard aPosition);
 	GamePositionOnBoard getTetraminoPositionInBoardForIndex(int aIndex);
+	GamePositionOnBoard getDetailPositionOnBoard();
 
 	void cleanDetailWithCleanerCallback(DetailCleaner aCleanerCallback);
 

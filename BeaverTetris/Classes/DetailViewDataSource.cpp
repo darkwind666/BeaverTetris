@@ -85,6 +85,12 @@ GamePositionOnBoard DetailViewDataSource::getTetraminoPositionInBoardForIndex(in
 	return positionInBoard;
 }
 
+GamePositionOnBoard DetailViewDataSource::getDetailPositionOnBoard()
+{
+	TetraminoDetail *currentDetail = getCurrentDetail();
+	return currentDetail->getDetailPosition();
+}
+
 TetraminoType DetailViewDataSource::getTetraminoTypeOnPositionInCurrentDetail(GamePositionOnBoard aPosition)
 {
 	GamePositionOnBoard tetraminoPositionInDetail = getCurrentDetail()->convertAbsolutePositionToPositionInDetail(aPosition);
@@ -120,8 +126,14 @@ void DetailViewDataSource::cleanTetraminoWithCleanerForXY(DetailCleaner aCleaner
 	GamePositionOnBoard positionInDetail;
 	positionInDetail.xPosition = xPosition;
 	positionInDetail.yPosition = yPosition;
-	GamePositionOnBoard absolutePosition = currentDetail->convertPositionInDetailToAbsolutePosition(positionInDetail);
-	aCleanerCallback(absolutePosition);
+
+	Tetramino *tetraminoInDetail = currentDetail->getTetraminoForXY(xPosition, yPosition);
+
+	if (tetraminoInDetail->getTetraminoType() > kTetraminoEmpty)
+	{
+		GamePositionOnBoard absolutePosition = currentDetail->convertPositionInDetailToAbsolutePosition(positionInDetail);
+		aCleanerCallback(absolutePosition);
+	}
 }
 
 TetraminoDetail* DetailViewDataSource::getCurrentDetail()

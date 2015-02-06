@@ -1,4 +1,5 @@
 #include "GameWorldAnimationController.h"
+#include "AnimationSynchonizer.h"
 #include "CurrentDetailAnimationControler.h"
 #include "FullLineCombinationAnimationController.h"
 #include "FillingGapInBoardAnimationController.h"
@@ -6,6 +7,7 @@
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
 	_gameBoardController = aGameBoardController;
+	_animationSynchonizer = new AnimationSynchonizer();
 	makeAnimationControllers();
 }
 
@@ -16,12 +18,20 @@ GameWorldAnimationController::~GameWorldAnimationController(void)
 
 void GameWorldAnimationController::makeAnimationControllers()
 {
-	CurrentDetailAnimationControler *currentDetailAnimationControler = new CurrentDetailAnimationControler(_gameBoardController);
+	this->addChild(_animationSynchonizer);
+
+	CurrentDetailAnimationControler *currentDetailAnimationControler = new CurrentDetailAnimationControler(_gameBoardController, _animationSynchonizer);
 	this->addChild(currentDetailAnimationControler);
 
-	FullLineCombinationAnimationController *fullLineCombinationAnimationController = new FullLineCombinationAnimationController(_gameBoardController);
+	FullLineCombinationAnimationController *fullLineCombinationAnimationController = new FullLineCombinationAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(fullLineCombinationAnimationController);
 
-	FillingGapInBoardAnimationController *fillingGapInBoardAnimationController = new FillingGapInBoardAnimationController(_gameBoardController);
+	FillingGapInBoardAnimationController *fillingGapInBoardAnimationController = new FillingGapInBoardAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(fillingGapInBoardAnimationController);
+
+}
+
+void GameWorldAnimationController::updateAnimation()
+{
+	_animationSynchonizer->updateSynchonizer();
 }

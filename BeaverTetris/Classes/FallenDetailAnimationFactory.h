@@ -32,7 +32,8 @@ private:
 	int getTetraminoTagForIndex(int aIndex);
 	float getAnimationDurationWithFinalPosition(GamePositionOnBoard aFinalPosition);
 	
-	std::function<void(cocos2d::Node*)>  getAnimationEndCallback();
+	std::function<void(cocos2d::Node*)>  getAnimationEndCallbackWithFinalPosition(GamePositionOnBoard aFinalPosition);
+	GamePositionOnBoard getPositionDifferenceWithFinalPosition(GamePositionOnBoard aFinalPosition);
 
 };
 

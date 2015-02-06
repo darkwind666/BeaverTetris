@@ -549,6 +549,9 @@
     <ClCompile Include="..\Classes\FallenDetailAnimationFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\AnimationSynchonizer.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1042,6 +1045,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FallenDetailAnimationFactory.h">
       <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AnimationSynchonizer.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

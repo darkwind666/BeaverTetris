@@ -6,12 +6,12 @@
 class GameBoardController;
 class FallenDetailAnimationFactory;
 class DetailViewDataSource;
-class GameTimeStepController;
+class AnimationSynchonizer;
 
 class CurrentDetailAnimationControler : public cocos2d::Node, public CurrentDetailControllerDelegate
 {
 public:
-	CurrentDetailAnimationControler(GameBoardController *aGameBoardController);
+	CurrentDetailAnimationControler(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer);
 	~CurrentDetailAnimationControler(void);
 
 	virtual void throwCurrentDetailOnPosition(GamePositionOnBoard aPosition);
@@ -19,7 +19,7 @@ public:
 private:
 
 	FallenDetailAnimationFactory *_fallenDetailAnimationFactory;
-	GameTimeStepController *_gameTimeStepController;
+	AnimationSynchonizer *_animationSynchonizer;
 
 	DetailViewDataSource* getDetailViewDataSource();
 

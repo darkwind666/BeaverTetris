@@ -4,6 +4,7 @@
 
 class GameBoardController;
 class GameTimeStepController;
+class GameWorldAnimationController;
 
 class GameWorldController : public cocos2d::Node
 {
@@ -18,6 +19,7 @@ private:
 
 	GameBoardController *_gameBoardController;
 	GameTimeStepController *_gameTimeStepController;
+	GameWorldAnimationController *_gameWorldAnimationController;
 
 	void makeControllerView();
 

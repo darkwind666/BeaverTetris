@@ -2,22 +2,20 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "CurrentDetailDataSource.h"
-#include "GameTimeStepController.h"
+#include "AnimationSynchonizer.h"
 #include "CurrentDetailController.h"
-
-#include "FuctionsTypedefs.h"
 #include "DetailViewDataSource.h"
 #include "FallenDetailAnimationFactory.h"
 
 using namespace cocos2d;
 using namespace std;
 
-CurrentDetailAnimationControler::CurrentDetailAnimationControler(GameBoardController *aGameBoardController)
+CurrentDetailAnimationControler::CurrentDetailAnimationControler(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer)
 {
 
 	DetailViewDataSource *currentDetailViewDataSource = getDetailViewDataSource();
 	_fallenDetailAnimationFactory = new FallenDetailAnimationFactory(currentDetailViewDataSource, aGameBoardController);
-	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
+	_animationSynchonizer = aAnimationSynchonizer;
 
 	CurrentDetailController *currentDetailController = (CurrentDetailController*)ServiceLocator::getServiceForKey(currentDetailControllerKey);
 	currentDetailController->setDelegate(this);
@@ -39,13 +37,10 @@ CurrentDetailAnimationControler::~CurrentDetailAnimationControler(void)
 
 void CurrentDetailAnimationControler::throwCurrentDetailOnPosition(GamePositionOnBoard aPosition)
 {
-	_gameTimeStepController->setUpdateAvailable(false);
 	_fallenDetailAnimationFactory->cleanDetailViewOnBoard();
 	Node *follenDetail = _fallenDetailAnimationFactory->getCurrentDetailView();
 	this->addChild(follenDetail);
 	FiniteTimeAction *moveDetail = _fallenDetailAnimationFactory->getDetailAnimationWithFinalPosition(aPosition);
 	FiniteTimeAction *actionWithDetail = TargetedAction::create(follenDetail, moveDetail);
-	FiniteTimeAction *callback = CallFunc::create([this](){_gameTimeStepController->setUpdateAvailable(true);});
-	Action *sequence = Sequence::create(actionWithDetail, callback, NULL);
-	this->runAction(sequence);
+	_animationSynchonizer->addAnimationToQueue(actionWithDetail);
 }
