@@ -4,7 +4,8 @@
 #include "FillingGapInBoardDelegate.h"
 
 class GameBoardController;
-class TetraminoColorsDataSource;
+class FallenDetailAnimationFactory;
+class GameTimeStepController;
 
 class FillingGapInBoardAnimationController : public cocos2d::Node, public FillingGapInBoardDelegate
 {
@@ -17,7 +18,9 @@ public:
 private:
 
 	GameBoardController *_gameBoardController;
-	TetraminoColorsDataSource *_tetraminoColorsDataSource;
+	GameTimeStepController *_gameTimeStepController;
+
+	FallenDetailAnimationFactory* getFallenDetailAnimationFactoryWithDetail(TetraminoDetail *aDetail);
 
 };
 

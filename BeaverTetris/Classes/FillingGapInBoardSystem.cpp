@@ -90,8 +90,8 @@ void  FillingGapInBoardSystem::sendDelegateDetailAndCollisionPosition(TetraminoD
 
 bool FillingGapInBoardSystem::checkPositionsEquality(GamePositionOnBoard aFirstPosition, GamePositionOnBoard aSecondPosition)
 {
-	bool equalX = (aFirstPosition.xPosition =- aSecondPosition.xPosition);
-	bool equalY = (aFirstPosition.yPosition =- aSecondPosition.yPosition);
+	bool equalX = (aFirstPosition.xPosition == aSecondPosition.xPosition);
+	bool equalY = (aFirstPosition.yPosition == aSecondPosition.yPosition);
 	return (equalX == true && equalY == true);
 }
 

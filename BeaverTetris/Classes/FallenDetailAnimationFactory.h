@@ -2,6 +2,7 @@
 
 #include "cocos2d.h"
 #include "GameStructures.h"
+#include <functional>
 
 class DetailViewDataSource;
 class TetraminoColorsDataSource;
@@ -31,7 +32,7 @@ private:
 	int getTetraminoTagForIndex(int aIndex);
 	float getAnimationDurationWithFinalPosition(GamePositionOnBoard aFinalPosition);
 	
-	void animationEndCallback(cocos2d::Node *sender);
+	std::function<void(cocos2d::Node*)>  getAnimationEndCallback();
 
 };
 

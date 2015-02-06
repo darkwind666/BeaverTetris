@@ -67,6 +67,7 @@ Node* FallenDetailAnimationFactory::getCurrentDetailTetraminoViewOnIndex(int aIn
 	tetraminoView->setColor(tetraminoColor);
 	int tetraminoTag = getTetraminoTagForIndex(aIndex);
 	tetraminoView->setTag(tetraminoTag);
+	tetraminoView->setName(tetraminoTexture);
 	return tetraminoView;
 }
 
@@ -89,7 +90,8 @@ FiniteTimeAction* FallenDetailAnimationFactory::getDetailAnimationWithFinalPosit
 	Vec2 finalDetailPosition = getPositionOnViewWithTetraminoOffset(aFinalPosition);
 	float animationDuration = getAnimationDurationWithFinalPosition(aFinalPosition);
 	FiniteTimeAction *moveDetail = MoveTo::create(animationDuration, finalDetailPosition);
-	FiniteTimeAction *callback = CallFuncN::create(CC_CALLBACK_1(FallenDetailAnimationFactory::animationEndCallback, this));
+	function<void(Node*)> callbackFunction = getAnimationEndCallback();
+	FiniteTimeAction *callback = CallFuncN::create(callbackFunction);
 	FiniteTimeAction *sequence = Sequence::create(moveDetail,callback, NULL);
 	return sequence;
 }
@@ -103,17 +105,22 @@ float FallenDetailAnimationFactory::getAnimationDurationWithFinalPosition(GamePo
 	return animationDuration;
 }
 
-void FallenDetailAnimationFactory::animationEndCallback(Node *sender)
+function<void(Node*)>  FallenDetailAnimationFactory::getAnimationEndCallback()
 {
-	Vector<Node*> children = sender->getChildren();
+	GameBoardController *gameBoardController = _gameBoardController;
+	function<void(Node*)> callback = [gameBoardController](Node *sender){
 
-	Vector<Node*>::iterator childrenIterator;
-	for (childrenIterator = children.begin(); childrenIterator != children.end(); childrenIterator++)
-	{
-		Node *child = *childrenIterator;
-		int childTag = child->getTag();
-		_gameBoardController->cleanTetraminoOnIndex(childTag);
-	}
+		Vector<Node*> children = sender->getChildren();
+		Vector<Node*>::iterator childrenIterator;
+		for (childrenIterator = children.begin(); childrenIterator != children.end(); childrenIterator++)
+		{
+			Node *child = *childrenIterator;
+			int childTag = child->getTag();
+			string childName = child->getName();
+			gameBoardController->drawTetraminoTextureOnIndex(childName, childTag);
+		}
+		sender->removeFromParentAndCleanup(true);
 
-	sender->removeFromParentAndCleanup(true);
+	};
+	return callback;
 }

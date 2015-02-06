@@ -1,6 +1,7 @@
 #include "GameWorldAnimationController.h"
 #include "CurrentDetailAnimationControler.h"
 #include "FullLineCombinationAnimationController.h"
+#include "FillingGapInBoardAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -20,4 +21,7 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	FullLineCombinationAnimationController *fullLineCombinationAnimationController = new FullLineCombinationAnimationController(_gameBoardController);
 	this->addChild(fullLineCombinationAnimationController);
+
+	FillingGapInBoardAnimationController *fillingGapInBoardAnimationController = new FillingGapInBoardAnimationController(_gameBoardController);
+	this->addChild(fillingGapInBoardAnimationController);
 }

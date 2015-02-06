@@ -98,6 +98,9 @@ void GameBoardController::drawTetraminoTextureOnIndex(std::string aTetraminoText
 
 void GameBoardController::cleanTetraminoOnIndex(int aTetraminoIndex)
 {
-	Sprite *tetraminoView = _tetraminosViews[aTetraminoIndex];
-	tetraminoView->setVisible(false);
+	if (aTetraminoIndex >= 0 && aTetraminoIndex < _tetraminosViews.size())
+	{
+		Sprite *tetraminoView = _tetraminosViews[aTetraminoIndex];
+		tetraminoView->setVisible(false);
+	}
 }
