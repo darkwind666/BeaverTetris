@@ -13,12 +13,14 @@ const string gameLevelsDataSourceKey = string("GameLevelsDataSource");
 const string keysForEnumsDataSourceKey = string("KeysForEnumsDataSource");
 const string awardForTetraminoDataSourceKey = string("AwardForTetraminoDataSource");
 
+
 const string gameBoardKey = string("GameBoard");
 const string gameTimeStepControllerKey = string("GameTimeStepController");
 const string currentDetailDataSourceKey = string("CurrentDetailDataSource");
 const string currentDetailControllerKey = string("CurrentDetailController");
 const string fullLineCombinationModelKey = string("FullLineCombination");
 const string fillingGapInBoardSystemKey = string("FillingGapInBoardSystem");
+const string currentLevelDataSourceKey = string("CurrentLevelDataSource");
 
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");

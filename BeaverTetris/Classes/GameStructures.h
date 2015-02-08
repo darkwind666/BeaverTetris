@@ -38,6 +38,18 @@ struct ViewElementInformation
 
 };
 
+struct TetraminoDetailInformation
+{
+	bool rotateble;
+	std::vector< std::vector<int> > tetraminoElements;
+};
+
+struct NewTetraminoDetailRequest
+{
+	TetraminoDetailType tetraminoDetailType; 
+	TetraminoType tetraminoType;
+};
+
 struct PlayerInformation
 {
 	std::string playerName;

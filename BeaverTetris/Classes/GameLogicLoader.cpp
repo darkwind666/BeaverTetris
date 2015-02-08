@@ -10,6 +10,7 @@
 #include "FullLineCombination.h"
 #include "TetrisLogicSystem.h"
 #include "FillingGapInBoardSystem.h"
+#include "CurrentLevelDataSource.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -24,6 +25,9 @@ void GameLogicLoader::loadResources()
 {
 	GameBoard *gameBoard = new GameBoard(tetrisBlocksWidth, tetrisBlocksHeight);
 	ServiceLocator::setServiceForKey(gameBoard, gameBoardKey);
+
+	CurrentLevelDataSource *currentLevelDataSource = new CurrentLevelDataSource();
+	ServiceLocator::setServiceForKey(currentLevelDataSource, currentLevelDataSourceKey);
 
 	GameTimeStepController *gameTimeStepController = new GameTimeStepController();
 	ServiceLocator::setServiceForKey(gameTimeStepController, gameTimeStepControllerKey);

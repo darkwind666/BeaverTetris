@@ -4,7 +4,7 @@
 #include "GameStructures.h"
 
 class TetraminoDetail;
-class TetraminisDetailsFactory;
+class NewTetraminoDetailDataSource;
 
 class CurrentDetailDataSource : public ServiceInterface
 {
@@ -14,19 +14,17 @@ public:
 
 	TetraminoDetail* getCurrentDetail();
 
-	void makeNewDetail();
 	void removeCurrentDetail();
 	bool currentDetailAvailable();
+	void makeNewDetail(void);
 
 	GamePositionOnBoard getCurrentDetailPosition();
 
 private:
 
-	TetraminisDetailsFactory *_detailsFactory;
+	NewTetraminoDetailDataSource *_newTetraminoDetailDataSource;
 	TetraminoDetail *_currentDetail;
 	bool _currentDetailAvailable;
-
-	TetraminoDetail* makeNewTetraminoDetail();
 
 };
 
