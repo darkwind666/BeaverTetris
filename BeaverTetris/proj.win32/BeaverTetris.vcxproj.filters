@@ -135,9 +135,6 @@
     <ClCompile Include="MoveSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="WinGameSystem.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
     <ClCompile Include="SpellBox.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
@@ -555,6 +552,9 @@
     <ClCompile Include="..\Classes\GameFlowSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\WinGameSystem.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -600,9 +600,6 @@
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
     <ClInclude Include="MoveSystem.h">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="WinGameSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
     <ClInclude Include="SpellBox.h">
@@ -1053,6 +1050,9 @@
       <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameFlowSystem.h">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WinGameSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
   </ItemGroup>

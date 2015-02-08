@@ -1,7 +1,8 @@
 #pragma once
 
-#include "GameBoard.h"
-#include "TetraminoDetail.h"
+class Tetramino;
+class GameBoard;
+class TetraminoDetail;
 
 class TetraminoDetailLocatorDelegate
 {
@@ -16,6 +17,7 @@ private:
 	GameBoard *_gameBoard;
 
 	void writeTetraminoRowFromDetail(int aRow, TetraminoDetail *aTetraminoDetail);
+	bool checkTetraminoForPlacingInBoardRow(Tetramino *aTetramino, int aRow, TetraminoDetail *aTetraminoDetail);
 
 };
 

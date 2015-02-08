@@ -1,5 +1,7 @@
 #include "TetraminoDetailLocatorDelegate.h"
 #include "Tetramino.h"
+#include "GameBoard.h"
+#include "TetraminoDetail.h"
 
 TetraminoDetailLocatorDelegate::TetraminoDetailLocatorDelegate(GameBoard *aGameBoard)
 {
@@ -24,7 +26,7 @@ void TetraminoDetailLocatorDelegate::writeTetraminoRowFromDetail(int aRow, Tetra
 	for (int xIndex = 0; xIndex < aTetraminoDetail->getDetailWidth(); xIndex++)
 	{			
 		Tetramino *tetraminoInDetail = aTetraminoDetail->getTetraminoForXY(xIndex,aRow);
-		if (tetraminoInDetail->getTetraminoType() > kTetraminoEmpty)
+		if (checkTetraminoForPlacingInBoardRow(tetraminoInDetail, aRow, aTetraminoDetail))
 		{			
 			GamePositionOnBoard detailPosition = aTetraminoDetail->getDetailPosition();						
 			_gameBoard->replaceTetraminoXYposition(tetraminoInDetail ,detailPosition.xPosition + xIndex, detailPosition.yPosition + aRow);
@@ -34,4 +36,11 @@ void TetraminoDetailLocatorDelegate::writeTetraminoRowFromDetail(int aRow, Tetra
 			delete tetraminoInDetail;
 		}
 	}			
+}
+
+bool TetraminoDetailLocatorDelegate::checkTetraminoForPlacingInBoardRow(Tetramino *aTetramino, int aRow, TetraminoDetail *aTetraminoDetail)
+{
+	GamePositionOnBoard detailPosition = aTetraminoDetail->getDetailPosition();	
+	bool tetraminoInBoard = (detailPosition.yPosition + aRow) < _gameBoard->getGameBoardHeight();
+	return (aTetramino->getTetraminoType() > kTetraminoEmpty && tetraminoInBoard == true);
 }

@@ -86,14 +86,17 @@ void GameBoardController::updateGameBoardView()
 
 void GameBoardController::drawTetraminoTextureOnIndex(std::string aTetraminoTextureKey, int aTetraminoIndex)
 {
-	Sprite *tetraminoView = _tetraminosViews[aTetraminoIndex];
-	tetraminoView->setVisible(true);
-	tetraminoView->setTexture("HelloWorld.png");
-	tetraminoView->setScaleX(0.05f);
-	tetraminoView->setScaleY(0.08f);
-	
-	Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(aTetraminoTextureKey);
-	tetraminoView->setColor(tetraminoColor);
+	if (aTetraminoIndex < _tetraminosViews.size())
+	{
+		Sprite *tetraminoView = _tetraminosViews[aTetraminoIndex];
+		tetraminoView->setVisible(true);
+		tetraminoView->setTexture("HelloWorld.png");
+		tetraminoView->setScaleX(0.05f);
+		tetraminoView->setScaleY(0.08f);
+		
+		Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(aTetraminoTextureKey);
+		tetraminoView->setColor(tetraminoColor);
+	}
 }
 
 void GameBoardController::cleanTetraminoOnIndex(int aTetraminoIndex)
