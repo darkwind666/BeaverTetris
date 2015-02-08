@@ -18,6 +18,7 @@ public:
 	FillingGapInBoardSystem(GameBoard *aGameBoard);
 	~FillingGapInBoardSystem(void);
 
+	bool availableGapInBoard();
 	void filOutGapInBoard();
 	void setDelegate(FillingGapInBoardDelegate *aDelegate);
 
@@ -29,6 +30,10 @@ private:
 	TetraminoDetailLocatorDelegate *_tetraminoDetailLocatorDelegate;
 	CollisionDelegate *_collisionDelegate;
 	FillingGapInBoardDelegate *_delegate;
+
+	bool getAvailableGapInBetweeneDetails(std::vector<TetraminoDetail*> *aDetails);
+	bool checkGapUnderDetail(TetraminoDetail *aDetail);
+	GamePositionOnBoard getDetailCollisionPosition(TetraminoDetail *aDetail);
 
 	void fillGapsInBoardWithDetails(std::vector<TetraminoDetail*> *aDetails);
 	void sendDelegateDetailAndCollisionPosition(TetraminoDetail *aDetail, GamePositionOnBoard aCollisionPosition);

@@ -25,6 +25,46 @@ FillingGapInBoardSystem::~FillingGapInBoardSystem(void)
 {
 }
 
+bool FillingGapInBoardSystem::availableGapInBoard()
+{
+	vector < vector <GamePositionOnBoard> > tetraminoDetailsInGame = _detailsFromBoardDataSource->getTetraminoDetailsInGame();
+	vector <TetraminoDetail*> tetraminoDetailsInBoard = _tetraminosCombinatorDelegate->combineTetraminosInDetails(tetraminoDetailsInGame);
+	bool availableGapInBoard = getAvailableGapInBetweeneDetails(&tetraminoDetailsInBoard);
+	removeDetails(&tetraminoDetailsInBoard);
+	return availableGapInBoard;
+}
+
+bool FillingGapInBoardSystem::getAvailableGapInBetweeneDetails(std::vector<TetraminoDetail*> *aDetails)
+{
+	bool availableGapInBoard = false;
+	vector<TetraminoDetail*>::iterator detailsIterator;
+	for (detailsIterator = aDetails->begin(); detailsIterator != aDetails->end(); detailsIterator++)
+	{
+		TetraminoDetail *detailInBoard = *detailsIterator;
+		if (checkGapUnderDetail(detailInBoard))
+		{
+			availableGapInBoard = true;
+			break;
+		}
+	}
+	return availableGapInBoard;
+}
+
+bool FillingGapInBoardSystem::checkGapUnderDetail(TetraminoDetail *aDetail)
+{
+	GamePositionOnBoard detailCollisionPosition = getDetailCollisionPosition(aDetail);
+	bool positionsEqual = checkPositionsEquality(aDetail->getDetailPosition(), detailCollisionPosition);
+	return !positionsEqual;
+}
+
+GamePositionOnBoard FillingGapInBoardSystem::getDetailCollisionPosition(TetraminoDetail *aDetail)
+{
+	cleanDetailFromGameBoard(aDetail);
+	GamePositionOnBoard detailCollisionPosition = _collisionDelegate->getCollisionPositionWithBoardForDetail(aDetail);
+	_tetraminoDetailLocatorDelegate->writeTetraminoDetailInBoard(aDetail);
+	return detailCollisionPosition;
+}
+
 void FillingGapInBoardSystem::filOutGapInBoard()
 {
 	vector < vector <GamePositionOnBoard> > tetraminoDetailsInGame = _detailsFromBoardDataSource->getTetraminoDetailsInGame();
