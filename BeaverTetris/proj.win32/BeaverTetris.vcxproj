@@ -168,6 +168,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameDataLoader.cpp" />
     <ClCompile Include="..\Classes\GameElementsDataHelper.cpp" />
     <ClCompile Include="..\Classes\GameFileExtensionMaker.cpp" />
+    <ClCompile Include="..\Classes\GameFlowSystem.cpp" />
     <ClCompile Include="..\Classes\GameGraphicsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameGraphicsLoader.cpp" />
     <ClCompile Include="..\Classes\GameHelper.cpp" />
@@ -306,9 +307,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GameEventsFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GameFlowSystem.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GamePlayersDatabase.cpp">
@@ -450,6 +448,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameElementsDataHelper.h" />
     <ClInclude Include="..\Classes\GameEnums.h" />
     <ClInclude Include="..\Classes\GameFileExtensionMaker.h" />
+    <ClInclude Include="..\Classes\GameFlowSystem.h" />
     <ClInclude Include="..\Classes\GameGraphicsDataSource.h" />
     <ClInclude Include="..\Classes\GameGraphicsLoader.h" />
     <ClInclude Include="..\Classes\GameHelper.h" />
@@ -545,7 +544,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameEventInterface.h" />
     <ClInclude Include="CurrentGameEventsDataSource.h" />
     <ClInclude Include="GameEventsFactory.h" />
-    <ClInclude Include="GameFlowSystem.h" />
     <ClInclude Include="GamePlayersDatabase.h" />
     <ClInclude Include="GameRecordsSceneFactory.h" />
     <ClInclude Include="GameResourcesExtension.h" />

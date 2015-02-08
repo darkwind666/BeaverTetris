@@ -195,9 +195,6 @@
     <ClCompile Include="DamageToPlayerSpell.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
-    <ClCompile Include="GameFlowSystem.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminosFallEvent.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
@@ -555,6 +552,9 @@
     <ClCompile Include="..\Classes\NewTetraminoDetailDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameFlowSystem.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -661,9 +661,6 @@
     </ClInclude>
     <ClInclude Include="DamageToPlayerSpell.h">
       <Filter>Models\Spells</Filter>
-    </ClInclude>
-    <ClInclude Include="GameFlowSystem.h">
-      <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
     <ClInclude Include="TetraminosFallEvent.h">
       <Filter>Models\GameEvents</Filter>
@@ -1054,6 +1051,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\NewTetraminoDetailDataSource.h">
       <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameFlowSystem.h">
+      <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

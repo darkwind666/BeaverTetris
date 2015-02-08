@@ -6,8 +6,8 @@
 CurrentDetailDataSource::CurrentDetailDataSource(void)
 {
 	_newTetraminoDetailDataSource = new NewTetraminoDetailDataSource();
-	_currentDetailAvailable = true;
-	_currentDetail = _newTetraminoDetailDataSource->getNewDetail();
+	_currentDetail = NULL;
+	_currentDetailAvailable = false;
 }
 
 
@@ -27,14 +27,15 @@ GamePositionOnBoard CurrentDetailDataSource::getCurrentDetailPosition()
 
 void CurrentDetailDataSource::makeNewDetail(void)
 {
-	
+	_currentDetail = _newTetraminoDetailDataSource->getNewDetail();
+	_currentDetailAvailable = true;
 }
 
 void CurrentDetailDataSource::removeCurrentDetail()
 {
 	delete(_currentDetail);
-	_currentDetail = _newTetraminoDetailDataSource->getNewDetail();
-	_currentDetailAvailable = true;
+	_currentDetail = NULL;
+	_currentDetailAvailable = false;
 }
 
 bool CurrentDetailDataSource::currentDetailAvailable()

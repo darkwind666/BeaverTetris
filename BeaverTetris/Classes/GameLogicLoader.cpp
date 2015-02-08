@@ -11,6 +11,7 @@
 #include "TetrisLogicSystem.h"
 #include "FillingGapInBoardSystem.h"
 #include "CurrentLevelDataSource.h"
+#include "GameFlowSystem.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -38,6 +39,9 @@ void GameLogicLoader::loadResources()
 	CurrentDetailController *currentDetailController = new CurrentDetailController(gameBoard, currentDetailDataSource);
 	gameTimeStepController->addSystem(currentDetailController);
 	ServiceLocator::setServiceForKey(currentDetailController, currentDetailControllerKey);
+
+	GameFlowSystem *gameFlowSystem = new GameFlowSystem();
+	gameTimeStepController->addSystem(gameFlowSystem);
 
 	FullLineCombination *fullLineCombinationModel = new FullLineCombination(gameBoard);
 	ServiceLocator::setServiceForKey(fullLineCombinationModel, fullLineCombinationModelKey);
