@@ -4,6 +4,7 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "FullLineCombination.h"
+#include "SimilarTetraminosCombination.h"
 #include "FillingGapInBoardSystem.h"
 
 using namespace std;
@@ -11,6 +12,7 @@ using namespace std;
 TetrisLogicSystem::TetrisLogicSystem(GameBoard *aGameBoard)
 {
 	_fullLineCombination = (FullLineCombination*)ServiceLocator::getServiceForKey(fullLineCombinationModelKey);
+	_similarTetraminosCombination = (SimilarTetraminosCombination*)ServiceLocator::getServiceForKey(similarTetraminosCombinationModelKey);
 	_fillingGapInBoardDelegate = (FillingGapInBoardSystem*)ServiceLocator::getServiceForKey(fillingGapInBoardSystemKey);
 }
 
@@ -23,11 +25,13 @@ void TetrisLogicSystem::updateSystem(float deltaTime)
 {
 	
 	_fullLineCombination->checkFullLineCombination();
+	_similarTetraminosCombination->checkSimilarTetraminosCombination();
 	
 	while (_fillingGapInBoardDelegate->availableGapInBoard())
 	{
 		_fillingGapInBoardDelegate->filOutGapInBoard();
 		_fullLineCombination->checkFullLineCombination();
+		_similarTetraminosCombination->checkSimilarTetraminosCombination();
 	}
 
 }

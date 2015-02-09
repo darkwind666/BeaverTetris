@@ -5,6 +5,7 @@
 class GameBoard;
 class FullLineCombination;
 class FillingGapInBoardSystem;
+class SimilarTetraminosCombination;
 
 class TetrisLogicSystem :public GameSystemInterface
 {
@@ -18,6 +19,7 @@ private:
 
 
 	FullLineCombination *_fullLineCombination;
+	SimilarTetraminosCombination *_similarTetraminosCombination;
 	FillingGapInBoardSystem *_fillingGapInBoardDelegate;
 
 };

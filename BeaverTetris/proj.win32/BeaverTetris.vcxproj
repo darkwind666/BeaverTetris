@@ -215,6 +215,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp" />
+    <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetrisLogicSystem.cpp" />
@@ -335,9 +336,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="RemovingDeadTetraminosSystem.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="SimilarTetraminosCombination.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="VictoryConditionsFactory.cpp">
@@ -495,6 +493,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SceneFactory.h" />
     <ClInclude Include="..\Classes\ScenesFactory.h" />
     <ClInclude Include="..\Classes\ScenesTransitionsFactory.h" />
+    <ClInclude Include="..\Classes\SimilarTetraminosCombination.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetrisLogicSystem.h" />
@@ -553,7 +552,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RemainSomeTimeCondition.h" />
     <ClInclude Include="RemoveSomeTetraminosCondition.h" />
     <ClInclude Include="RemovingDeadTetraminosSystem.h" />
-    <ClInclude Include="SimilarTetraminosCombination.h" />
     <ClInclude Include="VictoryConditionsFactory.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="MoveSystem.h" />

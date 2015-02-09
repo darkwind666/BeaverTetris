@@ -8,6 +8,7 @@
 #include "CurrentDetailDataSource.h"
 #include "CurrentDetailController.h"
 #include "FullLineCombination.h"
+#include "SimilarTetraminosCombination.h"
 #include "TetrisLogicSystem.h"
 #include "FillingGapInBoardSystem.h"
 #include "CurrentLevelDataSource.h"
@@ -49,6 +50,9 @@ void GameLogicLoader::loadResources()
 
 	FullLineCombination *fullLineCombinationModel = new FullLineCombination(gameBoard);
 	ServiceLocator::setServiceForKey(fullLineCombinationModel, fullLineCombinationModelKey);
+
+	SimilarTetraminosCombination *similarTetraminosCombinationModel = new SimilarTetraminosCombination(gameBoard);
+	ServiceLocator::setServiceForKey(similarTetraminosCombinationModel, similarTetraminosCombinationModelKey);
 
 	FillingGapInBoardSystem *fillingGapInBoardSystem = new FillingGapInBoardSystem(gameBoard);
 	ServiceLocator::setServiceForKey(fillingGapInBoardSystem, fillingGapInBoardSystemKey);

@@ -273,9 +273,6 @@
     <ClCompile Include="CurrentLevelDataSourceObserver.cpp">
       <Filter>Observers</Filter>
     </ClCompile>
-    <ClCompile Include="SimilarTetraminosCombination.cpp">
-      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp">
       <Filter>CocosStartClasses</Filter>
     </ClCompile>
@@ -555,6 +552,9 @@
     <ClCompile Include="..\Classes\WinGameSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -739,9 +739,6 @@
     </ClInclude>
     <ClInclude Include="CurrentLevelDataSourceObserver.h">
       <Filter>Observers</Filter>
-    </ClInclude>
-    <ClInclude Include="SimilarTetraminosCombination.h">
-      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CocosViewConfigurator.h">
       <Filter>CocosStartClasses</Filter>
@@ -1054,6 +1051,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\WinGameSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SimilarTetraminosCombination.h">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

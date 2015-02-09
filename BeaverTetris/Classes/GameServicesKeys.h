@@ -19,6 +19,7 @@ const string gameTimeStepControllerKey = string("GameTimeStepController");
 const string currentDetailDataSourceKey = string("CurrentDetailDataSource");
 const string currentDetailControllerKey = string("CurrentDetailController");
 const string fullLineCombinationModelKey = string("FullLineCombination");
+const string similarTetraminosCombinationModelKey = string("SimilarTetraminosCombination");
 const string fillingGapInBoardSystemKey = string("FillingGapInBoardSystem");
 const string currentLevelDataSourceKey = string("CurrentLevelDataSource");
 
