@@ -9,6 +9,7 @@
 #include "TetraminosCombinatorDelegate.h"
 #include "DetailsFromBoardDataSource.h"
 #include "GameDesignConstants.h"
+#include "SimilarTetraminosCombinationDelegate.h"
 
 using namespace std;
 
@@ -19,6 +20,7 @@ SimilarTetraminosCombination::SimilarTetraminosCombination(GameBoard *aGameBoard
 	_awardForTetraminoDataSource = (AwardForTetraminoDataSource*)ServiceLocator::getServiceForKey(awardForTetraminoDataSourceKey);
 	_detailsFromBoardDataSource = new DetailsFromBoardDataSource(aGameBoard);
 	_tetraminosCombinatorDelegate = new TetraminosCombinatorDelegate(aGameBoard);
+	_delegate = NULL;
 }
 
 
@@ -37,9 +39,8 @@ void SimilarTetraminosCombination::checkSimilarTetraminosCombination()
 		TetraminoDetail *detailFromElements = _tetraminosCombinatorDelegate->combineTetraminosInDetail(*detailsInGameIterator);
 		if (checkChainInDetail(detailFromElements))
 		{
-			int awardForChain = getAwardForChainForTetraminos(*detailsInGameIterator);
-			int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
-			_currentPlayerDataSource->setPlayerScore(currentPlayerScore + awardForChain);
+			sendMassageToDelegateWithTetraminos(*detailsInGameIterator);
+			setAwardToPlayerFromTetraminos(*detailsInGameIterator);
 			removeTetraminosWithPositions(*detailsInGameIterator);
 		}
 		delete detailFromElements;
@@ -131,6 +132,21 @@ int SimilarTetraminosCombination::getChainInDetailVertical(TetraminoDetail *aDet
 	return chainCount;
 }
 
+void SimilarTetraminosCombination::setAwardToPlayerFromTetraminos(vector<GamePositionOnBoard> aTetraminos)
+{
+	if (_delegate == NULL)
+	{
+		setTetraminosAward(aTetraminos);
+	}
+}
+
+void SimilarTetraminosCombination::setTetraminosAward(std::vector<GamePositionOnBoard> aTetraminos)
+{
+	int awardForChain = getAwardForChainForTetraminos(aTetraminos);
+	int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
+	_currentPlayerDataSource->setPlayerScore(currentPlayerScore + awardForChain);
+}
+
 int SimilarTetraminosCombination::getAwardForChainForTetraminos(vector<GamePositionOnBoard> aTetraminos)
 {
 	int award = 0;
@@ -154,4 +170,37 @@ void SimilarTetraminosCombination::removeTetraminosWithPositions(vector<GamePosi
 		_gameBoard->removeTetraminoForXYposition(tetraminoPosition.xPosition,tetraminoPosition.yPosition);
 		delete tetraminoInBoard;
 	}
+}
+
+void SimilarTetraminosCombination::setDelegate(SimilarTetraminosCombinationDelegate *aDelegate)
+{
+	_delegate = aDelegate;
+}
+
+void SimilarTetraminosCombination::sendMassageToDelegateWithTetraminos(vector<GamePositionOnBoard> aTetraminos)
+{
+	if (_delegate)
+	{
+		_delegate->blowUpTetraminosForPositions(aTetraminos);
+		sendRemoveTetraminosMassagesToDelegate(aTetraminos);
+		sendCallbackWithAwardForTetraminosToDelegate(aTetraminos);
+	}
+}
+
+void SimilarTetraminosCombination::sendRemoveTetraminosMassagesToDelegate(vector<GamePositionOnBoard> aTetraminos)
+{
+	vector<GamePositionOnBoard>::iterator tetraminosIterator;
+	for (tetraminosIterator = aTetraminos.begin(); tetraminosIterator != aTetraminos.end(); tetraminosIterator++)
+	{
+		GamePositionOnBoard tetraminoPosition = *tetraminosIterator;
+		_delegate->removeTetraminoOnPositionXY(tetraminoPosition.xPosition,tetraminoPosition.yPosition);
+	}
+}
+
+void SimilarTetraminosCombination::sendCallbackWithAwardForTetraminosToDelegate(vector<GamePositionOnBoard> aTetraminos)
+{
+	function<void()> callback = [this, aTetraminos](){
+			setTetraminosAward(aTetraminos);
+		};
+	_delegate->setCallback(callback);
 }

@@ -216,6 +216,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ScenesFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp" />
     <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp" />
+    <ClCompile Include="..\Classes\SimilarTetraminosCombinationDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetrisLogicSystem.cpp" />
@@ -494,6 +495,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ScenesFactory.h" />
     <ClInclude Include="..\Classes\ScenesTransitionsFactory.h" />
     <ClInclude Include="..\Classes\SimilarTetraminosCombination.h" />
+    <ClInclude Include="..\Classes\SimilarTetraminosCombinationDelegate.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetrisLogicSystem.h" />

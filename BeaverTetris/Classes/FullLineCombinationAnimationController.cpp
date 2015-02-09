@@ -31,6 +31,7 @@ FullLineCombinationAnimationController::~FullLineCombinationAnimationController(
 void FullLineCombinationAnimationController::blowUpLine(int aLineIndex)
 {
 	FiniteTimeAction *tetraminosLineExplosionAnimation = getTetraminosLineExplosionAnimation(aLineIndex);
+
 	FiniteTimeAction *delay = DelayTime::create(tetraminosExplosionDuration);
 	FiniteTimeAction *sequence = Sequence::create(tetraminosLineExplosionAnimation, delay, NULL);
 	_animationSynchonizer->addAnimationToQueue(sequence);
@@ -56,6 +57,13 @@ vector<Node*> FullLineCombinationAnimationController::getExplosionsInLine(int aL
 	}
 	return explosions;
 }
+
+
+
+
+
+
+
 
 Node* FullLineCombinationAnimationController::getExplosionForOnPositionXY(int xPosition, int yPosition)
 {
