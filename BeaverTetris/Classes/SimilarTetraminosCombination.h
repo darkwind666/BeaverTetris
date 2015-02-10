@@ -20,6 +20,7 @@ public:
 	~SimilarTetraminosCombination(void);
 
 	void checkSimilarTetraminosCombination();
+	void setDelegate(SimilarTetraminosCombinationDelegate *aDelegate);
 
 private:
 
@@ -41,7 +42,6 @@ private:
 	int getAwardForChainForTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
 	void removeTetraminosWithPositions(std::vector<GamePositionOnBoard> aTetraminos);
 
-	void setDelegate(SimilarTetraminosCombinationDelegate *aDelegate);
 	void sendMassageToDelegateWithTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
 	void sendRemoveTetraminosMassagesToDelegate(std::vector<GamePositionOnBoard> aTetraminos);
 	void sendCallbackWithAwardForTetraminosToDelegate(std::vector<GamePositionOnBoard> aTetraminos);

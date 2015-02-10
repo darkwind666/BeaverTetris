@@ -2,6 +2,7 @@
 #include "AnimationSynchonizer.h"
 #include "CurrentDetailAnimationControler.h"
 #include "FullLineCombinationAnimationController.h"
+#include "SimilarTetraminosAnimationController.h"
 #include "FillingGapInBoardAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
@@ -25,6 +26,9 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	FullLineCombinationAnimationController *fullLineCombinationAnimationController = new FullLineCombinationAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(fullLineCombinationAnimationController);
+
+	SimilarTetraminosAnimationController *similarTetraminosAnimationController = new SimilarTetraminosAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(similarTetraminosAnimationController);
 
 	FillingGapInBoardAnimationController *fillingGapInBoardAnimationController = new FillingGapInBoardAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(fillingGapInBoardAnimationController);
