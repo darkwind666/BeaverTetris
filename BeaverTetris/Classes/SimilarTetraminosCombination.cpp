@@ -36,101 +36,133 @@ void SimilarTetraminosCombination::checkSimilarTetraminosCombination()
 	vector < vector <GamePositionOnBoard> >::iterator detailsInGameIterator;
 	for (detailsInGameIterator = detailsInGame.begin(); detailsInGameIterator != detailsInGame.end(); detailsInGameIterator++)
 	{
-		TetraminoDetail *detailFromElements = _tetraminosCombinatorDelegate->combineTetraminosInDetail(*detailsInGameIterator);
-		if (checkChainInDetail(detailFromElements))
-		{
-			sendMassageToDelegateWithTetraminos(*detailsInGameIterator);
-			setAwardToPlayerFromTetraminos(*detailsInGameIterator);
-			removeTetraminosWithPositions(*detailsInGameIterator);
-		}
-		delete detailFromElements;
+		checkChainInDetailElements(*detailsInGameIterator);
 	}
 }
 
-bool SimilarTetraminosCombination::checkChainInDetail(TetraminoDetail *aDetail)
+void SimilarTetraminosCombination::checkChainInDetailElements(vector<GamePositionOnBoard> aTetraminos)
 {
-	bool chainInHorizontal = checkChainInDetailHorisontals(aDetail);
-	bool chainInVertical = checkChainInDetailVerticals(aDetail);
-	return (chainInHorizontal == true || chainInVertical == true);
+	checkChainInDetailHorisontals(aTetraminos);
+	checkChainInDetailVerticals(aTetraminos);
 }
 
-bool SimilarTetraminosCombination::checkChainInDetailHorisontals(TetraminoDetail *aDetail)
+
+
+
+
+void SimilarTetraminosCombination::checkChainInDetailHorisontals(vector<GamePositionOnBoard> aTetraminos)
 {
-	bool chain = false;
-	for (int yIndex = 0; yIndex < aDetail->getDetailHeight(); yIndex++)
+	TetraminoDetail *detailFromElements = _tetraminosCombinatorDelegate->combineTetraminosInDetail(aTetraminos);
+	for (int yIndex = 0; yIndex < detailFromElements->getDetailHeight(); yIndex++)
 	{
-		int chainCountInHorisontal = getChainInDetailHorisontal(aDetail, yIndex);
-		if (chainCountInHorisontal >= tetraminosInChainCount)
+		vector<GamePositionOnBoard> chainElements = getChainInDetailHorisontal(detailFromElements, yIndex);
+		if (chainElements.size() >= tetraminosInChainCount)
 		{
-			chain = true;
-			break;
+			cleanChain(chainElements);
 		}
 	}
+	delete detailFromElements;
+}
+
+vector<GamePositionOnBoard> SimilarTetraminosCombination::getChainInDetailHorisontal(TetraminoDetail *aDetail, int yPosition)
+{
+	vector<GamePositionOnBoard> tetraminosPositions;
+	for (int xIndex = 0; xIndex < aDetail->getDetailWidth(); xIndex++)
+	{
+		GamePositionOnBoard positionInDetail;
+		positionInDetail.xPosition = xIndex;
+		positionInDetail.yPosition = yPosition;
+		tetraminosPositions.push_back(positionInDetail);
+	}
+	vector<GamePositionOnBoard> chain = getChainFromTetraminosPositions(tetraminosPositions, aDetail);
 	return chain;
 }
 
-int SimilarTetraminosCombination::getChainInDetailHorisontal(TetraminoDetail *aDetail, int yPosition)
-{
-	vector<Tetramino*> tetraminos;
-	for (int xIndex = 0; xIndex < aDetail->getDetailWidth(); xIndex++)
-	{
-		Tetramino *tetraminoInDetail = aDetail->getTetraminoForXY(xIndex, yPosition);
-		tetraminos.push_back(tetraminoInDetail);
-	}
-	int chainCount = getChainCountFromTetraminos(tetraminos);
-	return chainCount;
-}
 
-int SimilarTetraminosCombination::getChainCountFromTetraminos(vector<Tetramino*> aTetraminos)
+
+
+
+
+vector<GamePositionOnBoard> SimilarTetraminosCombination::getChainFromTetraminosPositions(vector<GamePositionOnBoard> aPositions, TetraminoDetail *aDetail)
 {
-	int maxChainCount = 0;
-	int chainCount = 0;
-	vector<Tetramino*>::iterator tetraminosIterator;
-	for (tetraminosIterator = aTetraminos.begin(); tetraminosIterator != aTetraminos.end(); tetraminosIterator++)
+	vector< vector<GamePositionOnBoard> > chains;
+	vector<GamePositionOnBoard> chain;
+	vector<GamePositionOnBoard>::iterator tetraminosIterator;
+	for (tetraminosIterator = aPositions.begin(); tetraminosIterator != aPositions.end(); tetraminosIterator++)
 	{
-		Tetramino *tetraminoInDetail = *tetraminosIterator;
+		GamePositionOnBoard tetraminoPosition = *tetraminosIterator;
+		Tetramino *tetraminoInDetail = aDetail->getTetraminoForXY(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
 		if (tetraminoInDetail->getTetraminoType() > kTetraminoEmpty)
 		{
-			chainCount++;
-			if (chainCount > maxChainCount)
-			{
-				maxChainCount = chainCount;
-			}
+			GamePositionOnBoard absoluteTetraminoPosition = aDetail->convertPositionInDetailToAbsolutePosition(tetraminoPosition);
+			chain.push_back(absoluteTetraminoPosition);
 		}
 		else
 		{
-			chainCount = 0;
+			vector<GamePositionOnBoard> chainFromPositions = chain;
+			chains.push_back(chainFromPositions);
+			chain.clear();
 		}
 	}
-	return maxChainCount;
+	chains.push_back(chain);
+	sortChains(chains);
+	return chains[0];
 }
 
-bool SimilarTetraminosCombination::checkChainInDetailVerticals(TetraminoDetail *aDetail)
+void SimilarTetraminosCombination::sortChains(std::vector< std::vector<GamePositionOnBoard> > &aChains)
 {
-	bool chain = false;
-	for (int xIndex = 0; xIndex < aDetail->getDetailWidth(); xIndex++)
+	sort(aChains.begin(), aChains.end(), [](vector<GamePositionOnBoard> &chainA, vector<GamePositionOnBoard> &chainB){
+		return (chainA.size() > chainB.size());
+	});
+}
+
+
+
+
+
+
+
+void SimilarTetraminosCombination::checkChainInDetailVerticals(vector<GamePositionOnBoard> aTetraminos)
+{
+	TetraminoDetail *detailFromElements = _tetraminosCombinatorDelegate->combineTetraminosInDetail(aTetraminos);
+	for (int xIndex = 0; xIndex < detailFromElements->getDetailWidth(); xIndex++)
 	{
-		int chainCountInHorisontal = getChainInDetailVertical(aDetail, xIndex);
-		if (chainCountInHorisontal >= tetraminosInChainCount)
+		vector<GamePositionOnBoard> chainElements = getChainInDetailVertical(detailFromElements, xIndex);
+		if (chainElements.size() >= tetraminosInChainCount)
 		{
-			chain = true;
-			break;
+			cleanChain(chainElements);
 		}
 	}
+	delete detailFromElements;
+}
+
+vector<GamePositionOnBoard> SimilarTetraminosCombination::getChainInDetailVertical(TetraminoDetail *aDetail, int xPosition)
+{
+	vector<GamePositionOnBoard> tetraminosPositions;
+	for (int yIndex = 0; yIndex < aDetail->getDetailHeight(); yIndex++)
+	{
+		GamePositionOnBoard positionInDetail;
+		positionInDetail.xPosition = xPosition;
+		positionInDetail.yPosition = yIndex;
+		tetraminosPositions.push_back(positionInDetail);
+	}
+	vector<GamePositionOnBoard> chain = getChainFromTetraminosPositions(tetraminosPositions, aDetail);
 	return chain;
 }
 
-int SimilarTetraminosCombination::getChainInDetailVertical(TetraminoDetail *aDetail, int xPosition)
+
+
+
+
+
+
+void SimilarTetraminosCombination::cleanChain(vector<GamePositionOnBoard> aPositions)
 {
-	vector<Tetramino*> tetraminos;
-	for (int yIndex = 0; yIndex < aDetail->getDetailHeight(); yIndex++)
-	{
-		Tetramino *tetraminoInDetail = aDetail->getTetraminoForXY(xPosition, yIndex);
-		tetraminos.push_back(tetraminoInDetail);
-	}
-	int chainCount = getChainCountFromTetraminos(tetraminos);
-	return chainCount;
+	sendMassageToDelegateWithTetraminos(aPositions);
+	setAwardToPlayerFromTetraminos(aPositions);
+	removeTetraminosWithPositions(aPositions);
 }
+
 
 void SimilarTetraminosCombination::setAwardToPlayerFromTetraminos(vector<GamePositionOnBoard> aTetraminos)
 {

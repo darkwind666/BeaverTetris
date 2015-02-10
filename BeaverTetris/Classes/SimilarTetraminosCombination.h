@@ -31,12 +31,16 @@ private:
 	DetailsFromBoardDataSource *_detailsFromBoardDataSource;
 	SimilarTetraminosCombinationDelegate *_delegate;
 
-	bool checkChainInDetail(TetraminoDetail *aDetail);
-	bool checkChainInDetailHorisontals(TetraminoDetail *aDetail);
-	int getChainInDetailHorisontal(TetraminoDetail *aDetail, int yPosition);
-	int getChainCountFromTetraminos(std::vector<Tetramino*> aTetraminos);
-	bool checkChainInDetailVerticals(TetraminoDetail *aDetail);
-	int getChainInDetailVertical(TetraminoDetail *aDetail, int xPosition);
+	void checkChainInDetailElements(std::vector<GamePositionOnBoard> aTetraminos);
+	void checkChainInDetailHorisontals(std::vector<GamePositionOnBoard> aTetraminos);
+	std::vector<GamePositionOnBoard> getChainInDetailHorisontal(TetraminoDetail *aDetail, int yPosition);
+	std::vector<GamePositionOnBoard> getChainFromTetraminosPositions(std::vector<GamePositionOnBoard> aPositions, TetraminoDetail *aDetail);
+	void sortChains(std::vector< std::vector<GamePositionOnBoard> > &aChains);
+	void cleanChain(std::vector<GamePositionOnBoard> aPositions);
+
+	void checkChainInDetailVerticals(std::vector<GamePositionOnBoard> aTetraminos);
+	std::vector<GamePositionOnBoard> getChainInDetailVertical(TetraminoDetail *aDetail, int xPosition);
+
 	void setAwardToPlayerFromTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
 	void setTetraminosAward(std::vector<GamePositionOnBoard> aTetraminos);
 	int getAwardForChainForTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
