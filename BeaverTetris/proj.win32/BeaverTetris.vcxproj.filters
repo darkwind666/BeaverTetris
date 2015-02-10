@@ -558,6 +558,12 @@
     <ClCompile Include="..\Classes\SimilarTetraminosCombinationDelegate.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SimilarTetraminosAnimationController.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1059,6 +1065,12 @@
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\SimilarTetraminosCombinationDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminoExplosionFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SimilarTetraminosAnimationController.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>

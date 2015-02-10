@@ -215,9 +215,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp" />
+    <ClCompile Include="..\Classes\SimilarTetraminosAnimationController.cpp" />
     <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp" />
     <ClCompile Include="..\Classes\SimilarTetraminosCombinationDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
+    <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetrisLogicSystem.cpp" />
     <ClCompile Include="..\Classes\ScreenPopUp.cpp" />
@@ -494,9 +496,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SceneFactory.h" />
     <ClInclude Include="..\Classes\ScenesFactory.h" />
     <ClInclude Include="..\Classes\ScenesTransitionsFactory.h" />
+    <ClInclude Include="..\Classes\SimilarTetraminosAnimationController.h" />
     <ClInclude Include="..\Classes\SimilarTetraminosCombination.h" />
     <ClInclude Include="..\Classes\SimilarTetraminosCombinationDelegate.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
+    <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetrisLogicSystem.h" />
     <ClInclude Include="..\Classes\ScreenPopUp.h" />
