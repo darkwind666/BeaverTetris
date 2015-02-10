@@ -141,6 +141,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\AnimationSynchonizer.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp" />
+    <ClCompile Include="..\Classes\ChainFromTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
     <ClCompile Include="..\Classes\CollisionDelegate.cpp" />
@@ -196,6 +197,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\Classes\HorisontalChainChecker.cpp" />
     <ClCompile Include="..\Classes\KeysForEnumsDataSource.cpp" />
     <ClCompile Include="..\Classes\LoadGameController.cpp" />
     <ClCompile Include="..\Classes\LoadingGameDataSource.cpp" />
@@ -220,6 +222,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SimilarTetraminosCombinationDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
+    <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetrisLogicSystem.cpp" />
     <ClCompile Include="..\Classes\ScreenPopUp.cpp" />
@@ -240,6 +243,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminoDetailLocatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminoObserverInterface.cpp" />
     <ClCompile Include="..\Classes\TetraminosPositionsDelegate.cpp" />
+    <ClCompile Include="..\Classes\VerticalChainChecker.cpp" />
     <ClCompile Include="..\Classes\WinGameSystem.cpp" />
     <ClCompile Include="ActiveDetails.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -416,6 +420,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AnimationSynchonizer.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h" />
+    <ClInclude Include="..\Classes\ChainFromTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CocosNodesHelper.h" />
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />
     <ClInclude Include="..\Classes\CollisionDelegate.h" />
@@ -477,6 +482,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameWorldBackgroundController.h" />
     <ClInclude Include="..\Classes\GameWorldController.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\HorisontalChainChecker.h" />
     <ClInclude Include="..\Classes\KeysForEnumsDataSource.h" />
     <ClInclude Include="..\Classes\LoadGameController.h" />
     <ClInclude Include="..\Classes\LoadingGameDataSource.h" />
@@ -501,6 +507,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SimilarTetraminosCombinationDelegate.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />
+    <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetrisLogicSystem.h" />
     <ClInclude Include="..\Classes\ScreenPopUp.h" />
@@ -521,6 +528,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminoDetailLocatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminoObserverInterface.h" />
     <ClInclude Include="..\Classes\TetraminosPositionsDelegate.h" />
+    <ClInclude Include="..\Classes\VerticalChainChecker.h" />
     <ClInclude Include="..\Classes\WinGameSystem.h" />
     <ClInclude Include="ActiveDetails.h" />
     <ClInclude Include="AddLineToBoardBottomSpell.h" />

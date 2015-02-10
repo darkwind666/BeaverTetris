@@ -564,6 +564,18 @@
     <ClCompile Include="..\Classes\SimilarTetraminosAnimationController.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ChainFromTetraminosChecker.cpp">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HorisontalChainChecker.cpp">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VerticalChainChecker.cpp">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1072,6 +1084,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\SimilarTetraminosAnimationController.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ChainFromTetraminosChecker.h">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HorisontalChainChecker.h">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VerticalChainChecker.h">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminosChainCleaner.h">
+      <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

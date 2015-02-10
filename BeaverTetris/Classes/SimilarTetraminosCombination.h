@@ -5,13 +5,12 @@
 #include "GameStructures.h"
 
 class GameBoard;
-class TetraminoDetail;
-class Tetramino;
-class CurrentPlayerDataSource;
-class AwardForTetraminoDataSource;
-class TetraminosCombinatorDelegate;
 class DetailsFromBoardDataSource;
 class SimilarTetraminosCombinationDelegate;
+class TetraminosChainCleaner;
+class ChainFromTetraminosChecker;
+class HorisontalChainChecker;
+class VerticalChainChecker;
 
 class SimilarTetraminosCombination : public ServiceInterface
 {
@@ -24,31 +23,13 @@ public:
 
 private:
 
-	GameBoard *_gameBoard;
-	AwardForTetraminoDataSource *_awardForTetraminoDataSource;
-	CurrentPlayerDataSource *_currentPlayerDataSource;
-	TetraminosCombinatorDelegate *_tetraminosCombinatorDelegate;
+	TetraminosChainCleaner *_tetraminosChainCleaner;
+	ChainFromTetraminosChecker *_chainFromTetraminosChecker;
+	HorisontalChainChecker *_horisontalChainChecker;
+	VerticalChainChecker *_verticalChainChecker;
 	DetailsFromBoardDataSource *_detailsFromBoardDataSource;
-	SimilarTetraminosCombinationDelegate *_delegate;
 
 	void checkChainInDetailElements(std::vector<GamePositionOnBoard> aTetraminos);
-	void checkChainInDetailHorisontals(std::vector<GamePositionOnBoard> aTetraminos);
-	std::vector<GamePositionOnBoard> getChainInDetailHorisontal(TetraminoDetail *aDetail, int yPosition);
-	std::vector<GamePositionOnBoard> getChainFromTetraminosPositions(std::vector<GamePositionOnBoard> aPositions, TetraminoDetail *aDetail);
-	void sortChains(std::vector< std::vector<GamePositionOnBoard> > &aChains);
-	void cleanChain(std::vector<GamePositionOnBoard> aPositions);
-
-	void checkChainInDetailVerticals(std::vector<GamePositionOnBoard> aTetraminos);
-	std::vector<GamePositionOnBoard> getChainInDetailVertical(TetraminoDetail *aDetail, int xPosition);
-
-	void setAwardToPlayerFromTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
-	void setTetraminosAward(std::vector<GamePositionOnBoard> aTetraminos);
-	int getAwardForChainForTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
-	void removeTetraminosWithPositions(std::vector<GamePositionOnBoard> aTetraminos);
-
-	void sendMassageToDelegateWithTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
-	void sendRemoveTetraminosMassagesToDelegate(std::vector<GamePositionOnBoard> aTetraminos);
-	void sendCallbackWithAwardForTetraminosToDelegate(std::vector<GamePositionOnBoard> aTetraminos);
 
 };
 
