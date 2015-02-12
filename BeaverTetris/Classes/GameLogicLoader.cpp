@@ -13,6 +13,7 @@
 #include "FillingGapInBoardSystem.h"
 #include "CurrentLevelDataSource.h"
 #include "GameFlowSystem.h"
+#include "CurrentVictoryConditionDataSource.h"
 #include "WinGameSystem.h"
 
 GameLogicLoader::GameLogicLoader(void)
@@ -45,7 +46,10 @@ void GameLogicLoader::loadResources()
 	gameTimeStepController->addSystem(currentDetailController);
 	ServiceLocator::setServiceForKey(currentDetailController, currentDetailControllerKey);
 
-	WinGameSystem *winGameSystem = new WinGameSystem(gameBoard);
+	CurrentVictoryConditionDataSource *currentVictoryConditionDataSource = new CurrentVictoryConditionDataSource();
+	ServiceLocator::setServiceForKey(currentDetailController, currentVictoryConditionDataSourceKey);
+
+	WinGameSystem *winGameSystem = new WinGameSystem(gameBoard, currentVictoryConditionDataSource);
 	gameTimeStepController->addSystem(winGameSystem);
 
 	FullLineCombination *fullLineCombinationModel = new FullLineCombination(gameBoard);

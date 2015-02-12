@@ -150,9 +150,6 @@
     <ClCompile Include="GameRecordsSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
-    <ClCompile Include="VictoryConditionViewDataSource.cpp">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClCompile>
     <ClCompile Include="GameControllViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
@@ -198,9 +195,6 @@
     <ClCompile Include="TimeAccelerationEvent.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
-    <ClCompile Include="VictoryConditionInterface.cpp">
-      <Filter>Models\VictoryConditions</Filter>
-    </ClCompile>
     <ClCompile Include="VictoryConditionsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
@@ -213,9 +207,6 @@
     <ClCompile Include="RemoveSomeTetraminosCondition.cpp">
       <Filter>Models\VictoryConditions</Filter>
     </ClCompile>
-    <ClCompile Include="WinBossCondition.cpp">
-      <Filter>Models\VictoryConditions</Filter>
-    </ClCompile>
     <ClCompile Include="CurrentBossDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
@@ -226,9 +217,6 @@
       <Filter>Models\DataSources</Filter>
     </ClCompile>
     <ClCompile Include="CurrentLevelWinResultDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentVictoryConditionDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
     <ClCompile Include="DevelopersDataSource.cpp">
@@ -576,6 +564,18 @@
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CurrentVictoryConditionDataSource.cpp">
+      <Filter>Models\GameLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VictoryConditionInterface.cpp">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WinBossCondition.cpp">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VictoryConditionViewDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -641,9 +641,6 @@
     <ClInclude Include="GameResourcesExtension.h">
       <Filter>Constants</Filter>
     </ClInclude>
-    <ClInclude Include="VictoryConditionViewDataSource.h">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
     <ClInclude Include="GameControllViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
@@ -686,9 +683,6 @@
     <ClInclude Include="TimeAccelerationEvent.h">
       <Filter>Models\GameEvents</Filter>
     </ClInclude>
-    <ClInclude Include="VictoryConditionInterface.h">
-      <Filter>Models\VictoryConditions</Filter>
-    </ClInclude>
     <ClInclude Include="VictoryConditionsFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
@@ -701,9 +695,6 @@
     <ClInclude Include="RemoveSomeTetraminosCondition.h">
       <Filter>Models\VictoryConditions</Filter>
     </ClInclude>
-    <ClInclude Include="WinBossCondition.h">
-      <Filter>Models\VictoryConditions</Filter>
-    </ClInclude>
     <ClInclude Include="CurrentBossDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
@@ -714,9 +705,6 @@
       <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="CurrentLevelWinResultDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentVictoryConditionDataSource.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="DevelopersDataSource.h">
@@ -1096,6 +1084,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentVictoryConditionDataSource.h">
+      <Filter>Models\GameLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VictoryConditionInterface.h">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WinBossCondition.h">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VictoryConditionViewDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

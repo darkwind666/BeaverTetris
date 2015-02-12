@@ -64,10 +64,17 @@ enum MainGameHudsZOrders
 	kMainGameHudsBackgroundZOrder,
 	kMainGamePlayerActionControllerZOrder,
 	kMainGamePlayerScoreControllerZOrder,
+	kMainGamePlayerVictoryConditionZOrder,
 };
 
 enum MainGamePlayerScoreControllerZOrders
 {
 	kMainGamePlayerScoreBackgroundZOrder,
 	kMainGamePlayerScoreCountZOrder,
+};
+
+enum MainGamePlayerVictoryConditionZOrders
+{
+	kVictoryConditionHudImageZOrder,
+	kVictoryConditionStateZOrder,
 };

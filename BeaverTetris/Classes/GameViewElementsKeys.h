@@ -13,6 +13,13 @@ const string startGameBeaverKey = string("startGameBeaver");
 const string startGameBeaverClockKey = string("startGameBeaverClock");
 const string startGameMenuKey = string("startGameMenu");
 
+const string gameElement1Key = string("gameElement1");
+const string gameElement2Key = string("gameElement2");
+const string gameElement3Key = string("gameElement3");
+const string gameElement4Key = string("gameElement4");
+const string gameElement5Key = string("gameElement5");
+const string gameElement6Key = string("gameElement6");
+
 const string startGameRegulateSoundPopUpKey = string("startGameRegulateSoundPopUp");
 const string startGameRegulateSoundPadKey = string("startGameRegulateSoundPad");
 const string startGameRegulateSoundSliderKey = string("startGameRegulateSoundSlider");
@@ -73,12 +80,9 @@ const string playerScoreControllerKey = string("playerScoreController");
 const string playerScoreControllerBackgroundKey = string("playerScoreControllerBackground");
 const string playerScoreControllerCountKey = string("playerScoreControllerCount");
 
-const string gameElement1Key = string("gameElement1");
-const string gameElement2Key = string("gameElement2");
-const string gameElement3Key = string("gameElement3");
-const string gameElement4Key = string("gameElement4");
-const string gameElement5Key = string("gameElement5");
-const string gameElement6Key = string("gameElement6");
+const string victoryConditionHudControllerKey = string("victoryConditionHudController");
+const string victoryConditionHudImageKey = string("victoryConditionHudImage");
+const string victoryConditionHudStateKey = string("victoryConditionHudState");
 
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");

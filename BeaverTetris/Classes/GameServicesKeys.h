@@ -22,6 +22,7 @@ const string fullLineCombinationModelKey = string("FullLineCombination");
 const string similarTetraminosCombinationModelKey = string("SimilarTetraminosCombination");
 const string fillingGapInBoardSystemKey = string("FillingGapInBoardSystem");
 const string currentLevelDataSourceKey = string("CurrentLevelDataSource");
+const string currentVictoryConditionDataSourceKey = string("CurrentVictoryConditionDataSource");
 
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");

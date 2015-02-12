@@ -4,12 +4,15 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "GameTimeStepController.h"
+#include "CurrentVictoryConditionDataSource.h"
+#include "VictoryConditionInterface.h"
 
 using namespace std;
 
-WinGameSystem::WinGameSystem(GameBoard *aGameBoard)
+WinGameSystem::WinGameSystem(GameBoard *aGameBoard, CurrentVictoryConditionDataSource *currentVictoryConditionDataSource)
 {
 	_gameBoard = aGameBoard;
+	_currentVictoryCondition = currentVictoryConditionDataSource->getCurrentVictoryCondition();
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 }
 
@@ -20,6 +23,25 @@ WinGameSystem::~WinGameSystem(void)
 
 
 void WinGameSystem::updateSystem(float deltaTime)
+{
+	checkWinGameState();
+	checkLoseGameState();
+}
+
+void WinGameSystem::checkWinGameState()
+{
+	if (_currentVictoryCondition->playerWin())
+	{
+		_gameTimeStepController->setUpdateAvailable(false);
+		cocos2d::log("Win game");
+	}
+	else
+	{
+		_currentVictoryCondition->update();
+	}
+}
+
+void WinGameSystem::checkLoseGameState()
 {
 	if (loseGameChecker())
 	{

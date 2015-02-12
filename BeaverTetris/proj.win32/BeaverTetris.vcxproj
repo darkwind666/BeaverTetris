@@ -151,6 +151,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CurrentDetailDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CurrentLevelDataSource.cpp" />
+    <ClCompile Include="..\Classes\CurrentVictoryConditionDataSource.cpp" />
     <ClCompile Include="..\Classes\DetailViewDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentPlayerDataSource.cpp" />
     <ClCompile Include="..\Classes\DetailsFromBoardDataSource.cpp" />
@@ -244,6 +245,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminoObserverInterface.cpp" />
     <ClCompile Include="..\Classes\TetraminosPositionsDelegate.cpp" />
     <ClCompile Include="..\Classes\VerticalChainChecker.cpp" />
+    <ClCompile Include="..\Classes\VictoryConditionInterface.cpp" />
+    <ClCompile Include="..\Classes\VictoryConditionViewDataSource.cpp" />
+    <ClCompile Include="..\Classes\WinBossCondition.cpp" />
     <ClCompile Include="..\Classes\WinGameSystem.cpp" />
     <ClCompile Include="ActiveDetails.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -279,9 +283,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="CurrentLevelDataSourceObserver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="CurrentVictoryConditionDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="DamageToPlayerSpell.cpp">
@@ -400,16 +401,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="TimeAccelerationEvent.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="VictoryConditionInterface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="VictoryConditionViewDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="CurrentLevelWinResultDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="WinBossCondition.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="WinGamesDataSource.cpp">
@@ -430,6 +422,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CurrentDetailDataSource.h" />
     <ClInclude Include="..\Classes\CurrentDetailTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CurrentLevelDataSource.h" />
+    <ClInclude Include="..\Classes\CurrentVictoryConditionDataSource.h" />
     <ClInclude Include="..\Classes\DetailViewDataSource.h" />
     <ClInclude Include="..\Classes\CurrentPlayerDataSource.h" />
     <ClInclude Include="..\Classes\DetailsFromBoardDataSource.h" />
@@ -529,6 +522,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminoObserverInterface.h" />
     <ClInclude Include="..\Classes\TetraminosPositionsDelegate.h" />
     <ClInclude Include="..\Classes\VerticalChainChecker.h" />
+    <ClInclude Include="..\Classes\VictoryConditionInterface.h" />
+    <ClInclude Include="..\Classes\VictoryConditionViewDataSource.h" />
+    <ClInclude Include="..\Classes\WinBossCondition.h" />
     <ClInclude Include="..\Classes\WinGameSystem.h" />
     <ClInclude Include="ActiveDetails.h" />
     <ClInclude Include="AddLineToBoardBottomSpell.h" />
@@ -542,7 +538,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="CurrentBossDataSource.h" />
     <ClInclude Include="CurrentLevelAwardDataSource.h" />
     <ClInclude Include="CurrentLevelDataSourceObserver.h" />
-    <ClInclude Include="CurrentVictoryConditionDataSource.h" />
     <ClInclude Include="DamageToPlayerSpell.h" />
     <ClInclude Include="DevelopersDataSource.h" />
     <ClInclude Include="DevelopersSceneFactory.h" />
@@ -585,10 +580,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="TetraminosFallEvent.h" />
     <ClInclude Include="TetrominosFactory.h" />
     <ClInclude Include="TimeAccelerationEvent.h" />
-    <ClInclude Include="VictoryConditionInterface.h" />
-    <ClInclude Include="VictoryConditionViewDataSource.h" />
     <ClInclude Include="CurrentLevelWinResultDataSource.h" />
-    <ClInclude Include="WinBossCondition.h" />
     <ClInclude Include="WinGamesDataSource.h" />
   </ItemGroup>
   <ItemGroup>
