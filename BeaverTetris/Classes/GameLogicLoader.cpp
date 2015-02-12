@@ -47,7 +47,7 @@ void GameLogicLoader::loadResources()
 	ServiceLocator::setServiceForKey(currentDetailController, currentDetailControllerKey);
 
 	CurrentVictoryConditionDataSource *currentVictoryConditionDataSource = new CurrentVictoryConditionDataSource();
-	ServiceLocator::setServiceForKey(currentDetailController, currentVictoryConditionDataSourceKey);
+	ServiceLocator::setServiceForKey(currentVictoryConditionDataSource, currentVictoryConditionDataSourceKey);
 
 	WinGameSystem *winGameSystem = new WinGameSystem(gameBoard, currentVictoryConditionDataSource);
 	gameTimeStepController->addSystem(winGameSystem);

@@ -576,6 +576,9 @@
     <ClCompile Include="..\Classes\VictoryConditionViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MainGameVictoryConditionController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1096,6 +1099,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\VictoryConditionViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGameVictoryConditionController.h">
+      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

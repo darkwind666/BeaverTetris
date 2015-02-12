@@ -3,6 +3,7 @@
 #include "GameViewElementsKeys.h"
 #include "PlayerActionControllerFactory.h"
 #include "MainGamePlayerScoreController.h"
+#include "MainGameVictoryConditionController.h"
 
 using namespace cocos2d;
 
@@ -28,4 +29,7 @@ void GameHudsController::makeView()
 
 	MainGamePlayerScoreController *playerScoreController = new MainGamePlayerScoreController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerScoreController, this, playerScoreControllerKey);
+
+	MainGameVictoryConditionController *victoryConditionController = new MainGameVictoryConditionController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(victoryConditionController, this, victoryConditionHudControllerKey);
 }

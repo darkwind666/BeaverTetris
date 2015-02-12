@@ -50,6 +50,12 @@ struct NewTetraminoDetailRequest
 	TetraminoType tetraminoType;
 };
 
+struct VictoryConditionViewElements
+{
+	cocos2d::Sprite* image; 
+	cocos2d::LabelTTF* label;
+};
+
 struct PlayerInformation
 {
 	std::string playerName;

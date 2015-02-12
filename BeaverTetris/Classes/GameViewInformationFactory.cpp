@@ -308,7 +308,7 @@ void GameViewInformationFactory::makeMainGameHudsData()
 	makeMainGamePlayerScoreControllersData();
 
 	ViewElementInformation victoryConditionHudController;
-	victoryConditionHudController.elementPosition =  Vec2(280, 440);
+	victoryConditionHudController.elementPosition =  Vec2(280, 350);
 	victoryConditionHudController.elementZOrder = kMainGamePlayerVictoryConditionZOrder;
 	_elementsInformation[victoryConditionHudControllerKey] = victoryConditionHudController;
 
@@ -366,18 +366,19 @@ void GameViewInformationFactory::makeMainGamePlayerScoreControllersData()
 
 void GameViewInformationFactory::makeMainGameVictoryConditionData()
 {
+	int padLength = 100;
+
 	ViewElementInformation victoryConditionHudImage;
-	victoryConditionHudImage.elementPosition =  Vec2(0, 0);
-	victoryConditionHudImage.elementOffset = Vec2(0, 0);
+	victoryConditionHudImage.elementPosition =  Vec2(-(padLength/2), 30);
+	victoryConditionHudImage.elementOffset = Vec2(padLength, 0);
 	victoryConditionHudImage.elementZOrder = kVictoryConditionHudImageZOrder;
 	_elementsInformation[victoryConditionHudImageKey] = victoryConditionHudImage;
 
 	ViewElementInformation victoryConditionState;
-	victoryConditionState.elementPosition =  Vec2(0, 0);
-	victoryConditionState.elementOffset = Vec2(0, 0);
+	victoryConditionState.elementPosition =  Vec2(-(padLength/2), 0);
+	victoryConditionState.elementOffset = Vec2(padLength, 0);
 	victoryConditionState.elementZOrder = kVictoryConditionStateZOrder;
 	_elementsInformation[victoryConditionHudStateKey] = victoryConditionState;
-
 }
 
 void GameViewInformationFactory::makeRecordsScreenData()

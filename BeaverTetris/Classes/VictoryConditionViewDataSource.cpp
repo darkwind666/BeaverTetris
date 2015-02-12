@@ -11,9 +11,10 @@
 using namespace std;
 using namespace cocos2d;
 
-VictoryConditionViewDataSource::VictoryConditionViewDataSource(CurrentVictoryConditionDataSource *currentVictoryConditionDataSource)
+VictoryConditionViewDataSource::VictoryConditionViewDataSource()
 {
-	_currentVictoryCondition = currentVictoryConditionDataSource->getCurrentVictoryCondition();
+	CurrentVictoryConditionDataSource *victory = (CurrentVictoryConditionDataSource*)ServiceLocator::getServiceForKey(currentVictoryConditionDataSourceKey);
+	_currentVictoryCondition = victory->getCurrentVictoryCondition();
 	_gameViewElementsDataSource = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
 }
 
@@ -39,7 +40,7 @@ Vec2 VictoryConditionViewDataSource::getVictoryConditionIconImagePositionForInde
 	Vec2 startImagePosition = _gameViewElementsDataSource->getElementPositionForKey(victoryConditionHudImageKey);
 	Vec2 offset = GameElementsDataHelper::getElementOffsetForKey(victoryConditionHudImageKey);
 	float lengthPart = offset.x / (getVictoryConditionsCount() + 1);
-	Vec2 imagePosition = Vec2(startImagePosition.x + (lengthPart * aIndex),  startImagePosition.y);
+	Vec2 imagePosition = Vec2(startImagePosition.x + (lengthPart * (aIndex + 1)),  startImagePosition.y);
 	return imagePosition;
 }
 
@@ -55,6 +56,6 @@ Vec2 VictoryConditionViewDataSource::getVictoryConditionInformationPositionForIn
 	Vec2 startPosition = _gameViewElementsDataSource->getElementPositionForKey(victoryConditionHudStateKey);
 	Vec2 offset = GameElementsDataHelper::getElementOffsetForKey(victoryConditionHudStateKey);
 	float lengthPart = offset.x / (getVictoryConditionsCount() + 1);
-	Vec2 stateInformationPosition = Vec2(startPosition.x + (lengthPart * aIndex),  startPosition.y);
+	Vec2 stateInformationPosition = Vec2(startPosition.x + (lengthPart * (aIndex + 1)),  startPosition.y);
 	return stateInformationPosition;
 }

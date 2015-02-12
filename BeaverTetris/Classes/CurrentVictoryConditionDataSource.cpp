@@ -27,5 +27,6 @@ VictoryConditionInterface* CurrentVictoryConditionDataSource::getCurrentVictoryC
 VictoryConditionInterface* CurrentVictoryConditionDataSource::getVictoryCondition()
 {
 	GameLevelInformation levelInformation = _currentLevelDataSource->getCurrentLevelData();
-	return new WinBossCondition(levelInformation);
+	VictoryConditionInterface *victoryCondition = new WinBossCondition(levelInformation);
+	return victoryCondition;
 }

@@ -3,14 +3,13 @@
 #include <string>
 #include "cocos2d.h"
 
-class CurrentVictoryConditionDataSource;
 class GameViewElementsDataSource;
 class VictoryConditionInterface;
 
 class VictoryConditionViewDataSource
 {
 public:
-	VictoryConditionViewDataSource(CurrentVictoryConditionDataSource *currentVictoryConditionDataSource);
+	VictoryConditionViewDataSource();
 	~VictoryConditionViewDataSource(void);
 
 	int getVictoryConditionsCount(void);
