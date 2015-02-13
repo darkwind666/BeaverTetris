@@ -5,6 +5,8 @@
 #include <vector>
 #include "KeysForEnumsDataSource.h"
 
+class BossInterface;
+
 class WinBossCondition :public VictoryConditionInterface
 {
 public:
@@ -17,6 +19,10 @@ public:
 	
 	virtual bool playerWin(void);
 	virtual void update(void);
+
+private:
+
+	BossInterface *_currentBoss;
 
 };
 

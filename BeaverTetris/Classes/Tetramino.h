@@ -8,6 +8,7 @@ class Tetramino
 public:
 	Tetramino(void);
 	Tetramino(TetraminoType aType);
+	Tetramino(TetraminoType aType, int aLivesCount);
 	~Tetramino(void);
 
 	TetraminoType getTetraminoType(void);

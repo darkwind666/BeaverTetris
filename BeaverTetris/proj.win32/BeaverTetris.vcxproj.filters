@@ -91,6 +91,9 @@
     <Filter Include="Models\GameLogic\Systems\GameBoard">
       <UniqueIdentifier>{5f9502a4-ceec-4750-b3c5-f64a61613936}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Models\Bosses">
+      <UniqueIdentifier>{fbffd790-c664-47ca-be98-2ff61a8174c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -581,6 +584,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\BossEnvironmentFactory.cpp">
       <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BossInterface.cpp">
+      <Filter>Models\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QueenBoss.cpp">
+      <Filter>Models\Bosses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1108,6 +1117,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\BossEnvironmentFactory.h">
       <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BossInterface.h">
+      <Filter>Models\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QueenBoss.h">
+      <Filter>Models\Bosses</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

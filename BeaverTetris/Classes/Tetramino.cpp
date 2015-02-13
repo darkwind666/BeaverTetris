@@ -12,8 +12,15 @@ Tetramino::Tetramino(TetraminoType aType)
 {
 	_tetraminoType = aType;
 	_tetraminoObserver = NULL;
+	_tetraminoLivesCount = 1;
 }
 
+Tetramino::Tetramino(TetraminoType aType, int aLivesCount)
+{
+	_tetraminoType = aType;
+	_tetraminoLivesCount = aLivesCount;
+	_tetraminoObserver = NULL;
+}
 
 Tetramino::~Tetramino(void)
 {

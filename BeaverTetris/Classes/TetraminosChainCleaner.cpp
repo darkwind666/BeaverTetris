@@ -15,7 +15,7 @@ TetraminosChainCleaner::TetraminosChainCleaner(GameBoard *aGameBoard)
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_awardForTetraminoDataSource = (AwardForTetraminoDataSource*)ServiceLocator::getServiceForKey(awardForTetraminoDataSourceKey);
 	_gameBoard = aGameBoard;
-	_delegate == NULL;
+	_delegate = NULL;
 }
 
 
