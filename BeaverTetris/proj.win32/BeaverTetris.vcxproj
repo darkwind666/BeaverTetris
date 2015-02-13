@@ -141,6 +141,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\AnimationSynchonizer.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp" />
+    <ClCompile Include="..\Classes\BossEnvironmentFactory.cpp" />
     <ClCompile Include="..\Classes\ChainFromTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
@@ -413,6 +414,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AnimationSynchonizer.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h" />
+    <ClInclude Include="..\Classes\BossEnvironmentFactory.h" />
     <ClInclude Include="..\Classes\ChainFromTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CocosNodesHelper.h" />
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />

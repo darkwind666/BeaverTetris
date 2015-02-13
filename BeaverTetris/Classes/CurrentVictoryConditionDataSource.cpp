@@ -5,6 +5,7 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "CurrentLevelDataSource.h"
+#include "BossEnvironmentFactory.h"
 
 using namespace std;
 
@@ -26,6 +27,9 @@ VictoryConditionInterface* CurrentVictoryConditionDataSource::getCurrentVictoryC
 
 VictoryConditionInterface* CurrentVictoryConditionDataSource::getVictoryCondition()
 {
+	BossEnvironmentFactory bossEnvironmentFactory;
+	bossEnvironmentFactory.makeBossEnvironment();
+
 	GameLevelInformation levelInformation = _currentLevelDataSource->getCurrentLevelData();
 	VictoryConditionInterface *victoryCondition = new WinBossCondition(levelInformation);
 	return victoryCondition;
