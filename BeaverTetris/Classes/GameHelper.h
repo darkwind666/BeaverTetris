@@ -1,4 +1,5 @@
 #pragma once
+
 class GameHelper
 {
 public:
@@ -6,6 +7,5 @@ public:
 	~GameHelper(void);
 
 	static int getRandomNumberFromUpInterval(int aUpInterval);
-
 };
 

@@ -17,11 +17,11 @@ private:
 
 	GameBoard *_gameBoard;
 
-	void makeLineForIndex(int aLineIndex);
-	std::vector<TetraminoType> getTetraminoTypesInLine(int aLineIndex);
-	void cleanFullLineInTetraminosTypes(std::vector<TetraminoType> &aTetraminosInLine);
-	void cleanTetraminosChainsInTetraminosTypes(std::vector<TetraminoType> &aTetraminosInLine);
-	void writeTetraminosInBoardLine(std::vector<TetraminoType> aTetraminosInLine, int aLineIndex);
+	std::vector< std::vector<int> > getBoardTetraminosTemplate();
+    std::vector< std::vector<int> > convertMasiveToVector(int *aSourceMassive);
+	std::vector<int> getTetraminosElementsLineFromSource(int yIndex, int *aSourceMassive);
+	void fillBoardWithTetraminos(std::vector< std::vector<int> > aTetraminoElements);
+	void fillBoardLineWithTetraminos(int aLineIndex, std::vector<int> aTetraminoElements);
 
 };
 

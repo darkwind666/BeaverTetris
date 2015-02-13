@@ -4,7 +4,6 @@
 #include "GameBoard.h"
 #include "GameDesignConstants.h"
 #include "Tetramino.h"
-#include "GameHelper.h"
 
 using namespace std;
 
@@ -22,92 +21,63 @@ BossEnvironmentFactory::~BossEnvironmentFactory(void)
 
 void BossEnvironmentFactory::makeBossEnvironment()
 {
-	srand(time(0));
-	for (int lineIndex = 0; lineIndex < bossEnvironmentLinesCount; lineIndex++)
+	vector< vector<int> > tetraminoElements = getBoardTetraminosTemplate();
+	fillBoardWithTetraminos(tetraminoElements);
+}
+
+vector< vector<int> > BossEnvironmentFactory::getBoardTetraminosTemplate()
+{
+	int tetraminoElementsInBoard[standartDetailHeight][tetrisBlocksWidth] = {
+		{0,0,2,2,1,1,1,4,0,0},
+		{1,1,2,2,3,0,4,4,1,1},
+		{0,1,1,3,3,3,0,4,1,1},
+	};
+	vector< vector<int> > tetraminoElements = convertMasiveToVector(&tetraminoElementsInBoard[0][0]);
+	return tetraminoElements;
+}
+
+vector< vector<int> > BossEnvironmentFactory::convertMasiveToVector(int *aSourceMassive)
+{
+	vector< vector<int> > tetraminoElements;
+	for (int yIndex = 0; yIndex < standartDetailHeight; yIndex++)
 	{
-		makeLineForIndex(lineIndex);
+		vector<int> tetraminoElementsLine = getTetraminosElementsLineFromSource(yIndex, aSourceMassive);
+		tetraminoElements.push_back(tetraminoElementsLine);
+	}
+	return tetraminoElements;
+}
+
+vector<int> BossEnvironmentFactory::getTetraminosElementsLineFromSource(int yIndex, int *aSourceMassive)
+{
+	vector<int> tetraminoElementsLine;
+	for (int xIndex = 0; xIndex < tetrisBlocksWidth; xIndex++)
+	{
+		int tetraminoTag = aSourceMassive[yIndex * tetrisBlocksWidth + xIndex];
+		tetraminoElementsLine.push_back(tetraminoTag);
+	}
+	return tetraminoElementsLine;
+}
+
+void BossEnvironmentFactory::fillBoardWithTetraminos(vector< vector<int> > aTetraminoElements)
+{
+	vector< vector<int> >::iterator linesIterator;
+	for (linesIterator = aTetraminoElements.begin(); linesIterator != aTetraminoElements.end(); linesIterator++)
+	{
+		int lineIndex = distance(aTetraminoElements.begin(), linesIterator);
+		vector<int> tetraminosRow = *linesIterator;
+		fillBoardLineWithTetraminos(lineIndex, tetraminosRow);
 	}
 }
 
-void BossEnvironmentFactory::makeLineForIndex(int aLineIndex)
+void BossEnvironmentFactory::fillBoardLineWithTetraminos(int aLineIndex, vector<int> aTetraminoElements)
 {
-	vector<TetraminoType> tetraminosInLine = getTetraminoTypesInLine(aLineIndex);
-	cleanFullLineInTetraminosTypes(tetraminosInLine);
-	cleanTetraminosChainsInTetraminosTypes(tetraminosInLine);
-	writeTetraminosInBoardLine(tetraminosInLine, aLineIndex);
-}
-
-vector<TetraminoType> BossEnvironmentFactory::getTetraminoTypesInLine(int aLineIndex)
-{
-	vector<TetraminoType> tetraminosInLine;
-	int boardWidth = _gameBoard->getGameBoardWidth();
-	for (int widthIndex = 0; widthIndex < boardWidth; widthIndex++)
+	vector<int>::iterator rowIterator;
+	for (rowIterator = aTetraminoElements.begin(); rowIterator != aTetraminoElements.end(); rowIterator++)
 	{
-		TetraminoType type = (TetraminoType)GameHelper::getRandomNumberFromUpInterval(kTetraminoBossQueen);
-		tetraminosInLine.push_back(type);
-	}
-	return tetraminosInLine;
-}
-
-void BossEnvironmentFactory::cleanFullLineInTetraminosTypes(vector<TetraminoType> &aTetraminosInLine)
-{
-	vector<TetraminoType>::iterator emptyTetramino;
-	emptyTetramino = find(aTetraminosInLine.begin(), aTetraminosInLine.end(), kTetraminoEmpty);
-	if (emptyTetramino == aTetraminosInLine.end())
-	{
-		int randomTetraminoIndex = GameHelper::getRandomNumberFromUpInterval(aTetraminosInLine.size());
-		aTetraminosInLine[randomTetraminoIndex] = kTetraminoEmpty;
-	}
-}
-
-void BossEnvironmentFactory::cleanTetraminosChainsInTetraminosTypes(vector<TetraminoType> &aTetraminosInLine)
-{
-	vector<TetraminoType> chain;
-
-	vector<TetraminoType>::iterator tetraminosIterator;
-	for (tetraminosIterator = aTetraminosInLine.begin(); tetraminosIterator != aTetraminosInLine.end(); tetraminosIterator++)
-	{
-		TetraminoType type = *tetraminosIterator;
-		
-		if (chain.size() == 0)
-		{
-			if (type != kTetraminoEmpty)
-			{
-				chain.push_back(type);
-			}
-			continue;
-		}
-
-		if (type == chain[0])
-		{
-			chain.push_back(type);
-			if (chain.size() >= tetraminosInChainCount)
-			{
-				int index = distance(aTetraminosInLine.begin(), tetraminosIterator);
-				TetraminoType type = (TetraminoType)GameHelper::getRandomNumberFromUpInterval(kTetraminoBossQueen);
-				while (type != chain[0]  && type != kTetraminoEmpty)
-				{
-					type = (TetraminoType)GameHelper::getRandomNumberFromUpInterval(kTetraminoBossQueen);
-				}
-				aTetraminosInLine[(index - 1)] = type;
-			}
-		}
-		else
-		{
-			chain.clear();
-			chain.push_back(type);
-		}
-	}
-}
-
-void BossEnvironmentFactory::writeTetraminosInBoardLine(vector<TetraminoType> aTetraminosInLine, int aLineIndex)
-{
-	vector<TetraminoType>::iterator tetraminosIterator;
-	for (tetraminosIterator = aTetraminosInLine.begin(); tetraminosIterator != aTetraminosInLine.end(); tetraminosIterator++)
-	{
-		TetraminoType type = *tetraminosIterator;
-		Tetramino *newTetramino = new Tetramino(type);
-		int widthIndex = distance(aTetraminosInLine.begin(), tetraminosIterator);
-		_gameBoard->replaceTetraminoXYposition(newTetramino, widthIndex, aLineIndex);
+		int rowIndex = distance(aTetraminoElements.begin(), rowIterator);
+		int tetraminoTypeTag = *rowIterator;
+		TetraminoType type = (TetraminoType)tetraminoTypeTag;
+		Tetramino *tetraminoFromTemplate = new Tetramino(type);
+		_gameBoard->replaceTetraminoXYposition(tetraminoFromTemplate, rowIndex, (standartDetailHeight - aLineIndex - 1));
 	}
 }
