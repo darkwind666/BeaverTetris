@@ -162,9 +162,6 @@
     <ClCompile Include="SpellsViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
-    <ClCompile Include="AIMovementStrategy.cpp">
-      <Filter>Models\AIStrateges</Filter>
-    </ClCompile>
     <ClCompile Include="AISpellCastsStrategy.cpp">
       <Filter>Models\AIStrateges</Filter>
     </ClCompile>
@@ -591,6 +588,12 @@
     <ClCompile Include="..\Classes\QueenBoss.cpp">
       <Filter>Models\Bosses</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\PrincessBoss.cpp">
+      <Filter>Models\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AIMovementStrategy.cpp">
+      <Filter>Models\AIStrateges</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -661,9 +664,6 @@
     </ClInclude>
     <ClInclude Include="EndGameViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="AIMovementStrategy.h">
-      <Filter>Models\AIStrateges</Filter>
     </ClInclude>
     <ClInclude Include="AISpellCastsStrategy.h">
       <Filter>Models\AIStrateges</Filter>
@@ -1123,6 +1123,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\QueenBoss.h">
       <Filter>Models\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PrincessBoss.h">
+      <Filter>Models\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AIMovementStrategy.h">
+      <Filter>Models\AIStrateges</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

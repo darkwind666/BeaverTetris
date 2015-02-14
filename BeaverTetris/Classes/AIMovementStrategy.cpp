@@ -19,7 +19,8 @@ AIMovementStrategy::~AIMovementStrategy(void)
 
 void AIMovementStrategy::updateAI()
 {
-	_currentUpdateState++;
+
+	/*_currentUpdateState++;
 
 	if (_currentUpdateState >= tetraminoBossTimeIntervalConstant)
 	{
@@ -28,7 +29,7 @@ void AIMovementStrategy::updateAI()
 		GamePositionOnBoard newBossPosition = getNewBossPosition();
 		placeBossOnNewPosition(newBossPosition);
 
-	}
+	}*/
 
 }
 

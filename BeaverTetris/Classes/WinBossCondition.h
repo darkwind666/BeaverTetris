@@ -3,6 +3,8 @@
 #include "VictoryConditionInterface.h"
 #include "GameStructures.h"
 #include <vector>
+#include <map>
+#include <functional>
 #include "KeysForEnumsDataSource.h"
 
 class BossInterface;
@@ -23,6 +25,9 @@ public:
 private:
 
 	BossInterface *_currentBoss;
+
+	BossInterface* getCurrentBossFromLevelInformation(GameLevelInformation aLevelInformation);
+	std::map< TetraminoType, std::function<BossInterface*()> > getBossesFactoriesWithLevelData(GameLevelInformation aLevelInformation);
 
 };
 

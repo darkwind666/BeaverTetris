@@ -1,12 +1,11 @@
 #pragma once
 
-#include "AIStrategyInterface.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
 #include "GameStructures.h"
 #include "GameEnums.h"
 
-class AIMovementStrategy :public AIStrategyInterface
+class AIMovementStrategy
 {
 public:
 	AIMovementStrategy(GameBoard *aGameBoard, Tetramino *aTetramino);

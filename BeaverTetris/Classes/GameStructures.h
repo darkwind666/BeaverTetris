@@ -56,6 +56,15 @@ struct VictoryConditionViewElements
 	cocos2d::LabelTTF* label;
 };
 
+class AIMovementStrategy;
+class Tetramino;
+
+struct PrincessBossInformation
+{
+	Tetramino *bossTetramino;
+	AIMovementStrategy *bossMovementStrategy;
+};
+
 struct PlayerInformation
 {
 	std::string playerName;

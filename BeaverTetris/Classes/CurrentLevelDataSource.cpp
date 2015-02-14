@@ -39,6 +39,12 @@ GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
 
 	gameLevelInformation.availableTetraminoDetails = availableTetraminoDetails;
 
+	TetraminoBossesInformation availableBosses;
+	availableBosses.aBossType = kTetraminoBossPrincess;
+	availableBosses.bossesCount = 2;
+
+	gameLevelInformation.availableBosses = availableBosses;
+
 	return gameLevelInformation;
 }
 

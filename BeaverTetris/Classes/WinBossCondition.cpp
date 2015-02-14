@@ -2,6 +2,7 @@
 #include "BossEnvironmentFactory.h"
 #include "BossInterface.h"
 #include "QueenBoss.h"
+#include "PrincessBoss.h"
 
 using namespace std;
 
@@ -9,13 +10,39 @@ WinBossCondition::WinBossCondition(GameLevelInformation aLevelInformation)
 {
 	BossEnvironmentFactory bossEnvironmentFactory;
 	bossEnvironmentFactory.makeBossEnvironment();
-	_currentBoss = new QueenBoss();
+	_currentBoss = getCurrentBossFromLevelInformation(aLevelInformation);
 }
 
 
 WinBossCondition::~WinBossCondition(void)
 {
 	delete _currentBoss;
+}
+
+BossInterface* WinBossCondition::getCurrentBossFromLevelInformation(GameLevelInformation aLevelInformation)
+{
+	TetraminoType bossType = aLevelInformation.availableBosses.aBossType;
+	map< TetraminoType, function<BossInterface*()> > bossesFactories = getBossesFactoriesWithLevelData(aLevelInformation);
+	function<BossInterface*()> bossFactory = bossesFactories[bossType];
+	BossInterface *currentBoss = bossFactory();
+	return currentBoss;
+}
+
+map< TetraminoType, function<BossInterface*()> > WinBossCondition::getBossesFactoriesWithLevelData(GameLevelInformation aLevelInformation)
+{
+	map< TetraminoType, function<BossInterface*()> > bossesFactories;
+
+	bossesFactories[kTetraminoBossQueen] = [](){
+		BossInterface *queenBoss = new QueenBoss();
+		return queenBoss;
+	};
+
+	bossesFactories[kTetraminoBossPrincess] = [aLevelInformation](){
+		BossInterface *princessBoss = new PrincessBoss(aLevelInformation);
+		return princessBoss;
+	};
+
+	return bossesFactories;
 }
 
 int WinBossCondition::getVictoryStateInformationCount(void)

@@ -2,7 +2,6 @@
 
 #include "BossInterface.h"
 #include "TetraminoObserverInterface.h"
-#include <string>
 
 class Tetramino;
 
@@ -19,13 +18,14 @@ public:
 	virtual bool playerWin(void);
 	virtual void update(void);
 
+	virtual void tetraminoRemoving(Tetramino *aTetramino);
+
 private:
 
 	Tetramino *_bossTetramino;
 	bool _bossKilled;
 	std::string _bossKey;
 
-	virtual void tetraminoRemoving(Tetramino *aTetramino);
 	int getBossStateInformation();
 	bool getBossWin();
 
