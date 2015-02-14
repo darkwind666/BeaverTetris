@@ -16,7 +16,6 @@ PrincessBoss::PrincessBoss(GameLevelInformation aLevelInformation)
 
 	KeysForEnumsDataSource *keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
 	_bossKey = keysForEnumsDataSource->getKeyForTetraminoType(kTetraminoBossPrincess);
-
 }
 
 
@@ -40,11 +39,13 @@ vector<PrincessBossInformation> PrincessBoss::makePrincessWithLevelData(GameLeve
 
 Tetramino* PrincessBoss::makeBossTetraminoWithIndexAndBossCount(int aBossIndex, int aBossCount)
 {
-	Tetramino* boss = new Tetramino(kTetraminoBossPrincess, 4);
+	Tetramino* boss = new Tetramino(kTetraminoBossPrincess, 2);
 	boss->addObserver(this);
 
 	int xOffset = tetrisBlocksWidth / (aBossCount + 1);
-	_gameBoard->replaceTetraminoXYposition(boss,(xOffset * (aBossIndex + 1)), (standartDetailHeight/2));
+	int xPosition = (xOffset * (aBossIndex + 1));
+	int yPosition = standartDetailHeight/2;
+	_gameBoard->replaceTetraminoXYposition(boss, xPosition, yPosition);
 	return boss;
 }
 
@@ -87,6 +88,7 @@ bool PrincessBoss::playerWin(void)
 
 void PrincessBoss::update(void)
 {
+	srand(time(0));
 	vector<PrincessBossInformation>::iterator bossIterator;
 	for (bossIterator = _princessBosses.begin(); bossIterator != _princessBosses.end(); bossIterator++)
 	{

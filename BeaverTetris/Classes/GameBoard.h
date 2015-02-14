@@ -25,6 +25,8 @@ public:
 	GamePositionOnBoard getPositionForIndex(int aIndex);
 	int getIndexForPosition(GamePositionOnBoard aPosition);
 
+	bool positionInBoard(GamePositionOnBoard aPosition);
+
 	std::vector <GamePositionOnBoard> getAvailableTetraminis();
 	std::vector <GamePositionOnBoard> getTetraminosForType(TetraminoType aTetraminoType);
 

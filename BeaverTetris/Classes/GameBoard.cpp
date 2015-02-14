@@ -100,6 +100,13 @@ int GameBoard::getIndexForPosition(GamePositionOnBoard aPosition)
 	return positionIndex;
 }
 
+bool GameBoard::positionInBoard(GamePositionOnBoard aPosition)
+{
+	bool boardWidthPossibility = aPosition.xPosition < _gameBoardWidth && aPosition.xPosition >= 0;
+	bool boardHeightPossibility = aPosition.yPosition < _gameBoardHeight && aPosition.yPosition >= 0;
+	return (boardWidthPossibility == true && boardHeightPossibility == true);
+}
+
 void GameBoard::setTetraminoXYposition(Tetramino *aTetramino, int xPosition, int yPosition)
 {
 	_tetramins[yPosition][xPosition] = aTetramino;

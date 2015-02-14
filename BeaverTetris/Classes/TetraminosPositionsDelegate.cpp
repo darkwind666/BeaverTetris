@@ -83,26 +83,30 @@ GamePositionOnBoard TetraminosPositionsDelegate::getTetraminoPosition(Tetramino 
 
 bool TetraminosPositionsDelegate::checkTetraminoInRow(Tetramino *aTetramino, int xPosition)
 {
+	bool inRow = false;
 	for (int yPosition = 0; yPosition < _gameBoardWidth; yPosition++)
 	{
 		Tetramino *tetramino = getTetraminoForXYposition(xPosition,yPosition);
 		if (tetramino == aTetramino)
 		{
-			return true;
+			inRow = true;
+			break;
 		}
 	
 	}
+	return inRow;
 }
 
 GamePositionOnBoard TetraminosPositionsDelegate::getTetraminoPositionInRow(Tetramino *aTetramino, int xPosition)
 {
+	GamePositionOnBoard position;
+	position.xPosition = xPosition;
+	position.yPosition = 0;
 	for (int yPosition = 0; yPosition < _gameBoardWidth; yPosition++)
 	{
 		Tetramino *tetramino = getTetraminoForXYposition(xPosition,yPosition);
 		if (tetramino == aTetramino)
 		{
-			GamePositionOnBoard position;
-			position.xPosition = xPosition;
 			position.yPosition = yPosition;
 			return position;
 		}

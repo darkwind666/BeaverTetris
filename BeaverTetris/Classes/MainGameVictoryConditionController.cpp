@@ -25,7 +25,7 @@ void MainGameVictoryConditionController::onEnterTransitionDidFinish()
 void MainGameVictoryConditionController::update(float delta)
 {
 	int victoryConditionsCount = _victoryConditionViewDataSource->getVictoryConditionsCount();
-	if (victoryConditionsCount > _viewElements.size())
+	if (victoryConditionsCount != _viewElements.size())
 	{
 		vector<VictoryConditionViewElements> viewElements = makeViewElements();
 		addViewElements(viewElements);

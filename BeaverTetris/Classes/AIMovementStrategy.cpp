@@ -10,123 +10,91 @@ AIMovementStrategy::AIMovementStrategy(GameBoard *aGameBoard, Tetramino *aTetram
 	_bossTetramino = aTetramino;
 	_currentUpdateState = 0;
 	_lastTetraminoInBossPlace = new Tetramino();
+	_bossDirections = getBossDirections();
 }
-
 
 AIMovementStrategy::~AIMovementStrategy(void)
 {
+	delete _lastTetraminoInBossPlace;
+}
+
+map<BossMovementType, function<void(GamePositionOnBoard&)> > AIMovementStrategy::getBossDirections()
+{
+	map<BossMovementType, function<void(GamePositionOnBoard&)> > bossDirections;
+	bossDirections[kTurnLeftMovement] = [](GamePositionOnBoard &position){
+		position.xPosition = position.xPosition - 1;
+	};
+	bossDirections[kTurnRightMovement] = [](GamePositionOnBoard &position){
+		position.xPosition = position.xPosition + 1;
+	};
+	bossDirections[kTurnUpMovement] = [](GamePositionOnBoard &position){
+		position.yPosition = position.yPosition + 1;
+	};
+	bossDirections[kTurnDownMovement] = [](GamePositionOnBoard &position){
+		position.yPosition = position.yPosition - 1;
+	};
+	return bossDirections;
 }
 
 void AIMovementStrategy::updateAI()
 {
-
-	/*_currentUpdateState++;
-
-	if (_currentUpdateState >= tetraminoBossTimeIntervalConstant)
+	_currentUpdateState++;
+	if (_currentUpdateState >= 10)
 	{
 		_currentUpdateState = 0;
-
 		GamePositionOnBoard newBossPosition = getNewBossPosition();
 		placeBossOnNewPosition(newBossPosition);
-
-	}*/
-
+	}
 }
 
 
 GamePositionOnBoard AIMovementStrategy::getNewBossPosition()
 {
-	GamePositionOnBoard newBossPosition;
-	
-	while (1)
+	BossMovementType newMovementDirection = (BossMovementType)GameHelper::getRandomNumberFromUpInterval(kTurnDownMovement);
+	GamePositionOnBoard newBossPosition = getNewBossPositionForDirectionType(newMovementDirection);
+	while (checkPossitionPossibility(newBossPosition) == false)
 	{
-		BossMovementType newMovementDirection = (BossMovementType)GameHelper::getRandomNumberFromUpInterval(kTurnDownMovement);
+		newMovementDirection = (BossMovementType)GameHelper::getRandomNumberFromUpInterval(kIdleMovement);
 		newBossPosition = getNewBossPositionForDirectionType(newMovementDirection);
-		if (checkPossitionPossibility(newBossPosition))
-		{
-			break;
-		}
 	}
-
 	return newBossPosition;
 }
 
 
 GamePositionOnBoard AIMovementStrategy::getNewBossPositionForDirectionType(BossMovementType aMovementType)
 {
-
-	GamePositionOnBoard currentBossPosition = _gameBoard->getTetraminoPosition(_bossTetramino);
-	GamePositionOnBoard newBossPosition = currentBossPosition;
-
-	switch (aMovementType)
-	{
-	case kIdleMovement:
-		break;
-	case kTurnLeftMovement:
-		newBossPosition.xPosition = newBossPosition.xPosition - 1;
-		break;
-	case kTurnRightMovement:
-		newBossPosition.xPosition = newBossPosition.xPosition + 1;
-		break;
-	case kTurnUpMovement:
-		newBossPosition.yPosition = newBossPosition.yPosition + 1;
-		break;
-	case kTurnDownMovement:
-		newBossPosition.yPosition = newBossPosition.yPosition - 1;
-		break;
-	default:
-		break;
-	}
-
+	GamePositionOnBoard newBossPosition = _gameBoard->getTetraminoPosition(_bossTetramino);
+	function<void(GamePositionOnBoard&)> directionFactory = _bossDirections[aMovementType];
+	directionFactory(newBossPosition);
 	return newBossPosition;
-
 }
 
 bool AIMovementStrategy::checkPossitionPossibility(GamePositionOnBoard aPossiblePosition)
 {
-	bool possitionPossibility = true;
-	bool boardWidthPossibility = aPossiblePosition.xPosition > _gameBoard->getGameBoardWidth() ||aPossiblePosition.xPosition < 0;
-	bool boardHeightPossibility = aPossiblePosition.yPosition > _gameBoard->getGameBoardWidth() ||aPossiblePosition.xPosition < 0;
-	
-	if (!boardWidthPossibility && !boardHeightPossibility)
+	bool possitionPossibility = false;
+	if (_gameBoard->positionInBoard(aPossiblePosition))
 	{
-		
-		if (aPossiblePosition.yPosition < _gameBoard->getGameBoardHeight() && aPossiblePosition.yPosition > 0)
+		Tetramino *tetraminoOnPosition  = _gameBoard->getTetraminoForXYposition(aPossiblePosition.xPosition, aPossiblePosition.yPosition);
+		if (bossTypeEqualTetraminoType(tetraminoOnPosition) == false)
 		{
-			Tetramino *tetraminoOnNewPosition = _gameBoard->getTetraminoForXYposition(aPossiblePosition.xPosition, aPossiblePosition.yPosition);
-			Tetramino *tetraminoOnUpNewPosition = _gameBoard->getTetraminoForXYposition(aPossiblePosition.xPosition, aPossiblePosition.yPosition + 1);
-			Tetramino *tetraminoOnDownNewPosition = _gameBoard->getTetraminoForXYposition(aPossiblePosition.xPosition, aPossiblePosition.yPosition - 1);
-
-			if (tetraminoOnNewPosition->getTetraminoType() == kTetraminoEmpty && tetraminoOnDownNewPosition == _bossTetramino)
-			{
-				possitionPossibility = false;
-			}
-
-			if (tetraminoOnNewPosition->getTetraminoType() == kTetraminoEmpty && tetraminoOnDownNewPosition->getTetraminoType() == kTetraminoEmpty)
-			{
-				possitionPossibility = false;
-			}
-
+			possitionPossibility = true;
 		}
-
-	}
-	else
-	{
-		possitionPossibility = false;
 	}
 	return possitionPossibility;
 }
 
+bool AIMovementStrategy::bossTypeEqualTetraminoType(Tetramino *aTetramino)
+{
+	TetraminoType bossType = _bossTetramino->getTetraminoType();
+	TetraminoType tetraminoOnPositionType = aTetramino->getTetraminoType();
+	return (bossType == tetraminoOnPositionType);
+}
+
 void AIMovementStrategy::placeBossOnNewPosition(GamePositionOnBoard newBossPosition)
 {
-
 	Tetramino *tetraminoOnNewPosition = _gameBoard->getTetraminoForXYposition(newBossPosition.xPosition, newBossPosition.yPosition);
-
-	if (_bossTetramino != tetraminoOnNewPosition)
-	{
-		GamePositionOnBoard currentBossPosition = _gameBoard->getTetraminoPosition(_bossTetramino);
-		_gameBoard->setTetraminoXYposition(_lastTetraminoInBossPlace, currentBossPosition.xPosition, currentBossPosition.yPosition);
-		_gameBoard->setTetraminoXYposition(_bossTetramino, newBossPosition.xPosition, newBossPosition.yPosition);
-		_lastTetraminoInBossPlace = tetraminoOnNewPosition;
-	}
+	GamePositionOnBoard currentBossPosition = _gameBoard->getTetraminoPosition(_bossTetramino);
+	_gameBoard->setTetraminoXYposition(_lastTetraminoInBossPlace, currentBossPosition.xPosition, currentBossPosition.yPosition);
+	_gameBoard->setTetraminoXYposition(_bossTetramino, newBossPosition.xPosition, newBossPosition.yPosition);
+	_lastTetraminoInBossPlace = tetraminoOnNewPosition;
 }

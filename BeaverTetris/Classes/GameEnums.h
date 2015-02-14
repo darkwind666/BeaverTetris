@@ -107,9 +107,9 @@ enum PlayerActionInGameType
 
 enum BossMovementType
 {
-	kIdleMovement,
 	kTurnLeftMovement,
 	kTurnRightMovement,
 	kTurnUpMovement,
 	kTurnDownMovement,
+	kIdleMovement,
 };

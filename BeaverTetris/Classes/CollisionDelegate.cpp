@@ -130,7 +130,7 @@ bool CollisionDelegate::checkCollisionColumnWithOtherTetraminos(int aColumn, Tet
 bool CollisionDelegate::checkCollisionDetailWithOtherTetraminosOnPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition)
 {
 	bool collision = false;
-	if (positionInBoard(aPosition))
+	if (_gameBoard->positionInBoard(aPosition))
 	{
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(aPosition.xPosition, aPosition.yPosition);
 		GamePositionOnBoard positionInTetramino = aDetail->convertAbsolutePositionToPositionInDetail(aPosition);
@@ -141,13 +141,6 @@ bool CollisionDelegate::checkCollisionDetailWithOtherTetraminosOnPosition(Tetram
 		}
 	}
 	return collision;
-}
-
-bool CollisionDelegate::positionInBoard(GamePositionOnBoard aPosition)
-{
-	bool inWidthInterval = (aPosition.xPosition >= 0 && aPosition.xPosition < _gameBoard->getGameBoardWidth());
-	bool inHeightInterval = (aPosition.yPosition >= 0 && aPosition.yPosition < _gameBoard->getGameBoardHeight());
-	return (inWidthInterval == true && inHeightInterval == true);
 }
 
 GamePositionOnBoard CollisionDelegate::getCollisionPositionWithBoardForDetail(TetraminoDetail *aDetail)
