@@ -138,6 +138,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\AddLineToBoardBottomSpell.cpp" />
     <ClCompile Include="..\Classes\AIMovementStrategy.cpp" />
     <ClCompile Include="..\Classes\AISpellCastsStrategy.cpp" />
     <ClCompile Include="..\Classes\AnimationSynchonizer.cpp" />
@@ -260,9 +261,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\WinBossCondition.cpp" />
     <ClCompile Include="..\Classes\WinGameSystem.cpp" />
     <ClCompile Include="ActiveDetails.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="AddLineToBoardBottomSpell.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="AIStrategyInterface.cpp">
@@ -410,6 +408,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\AddLineToBoardBottomSpell.h" />
     <ClInclude Include="..\Classes\AIMovementStrategy.h" />
     <ClInclude Include="..\Classes\AISpellCastsStrategy.h" />
     <ClInclude Include="..\Classes\AnimationSynchonizer.h" />
@@ -538,7 +537,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\WinBossCondition.h" />
     <ClInclude Include="..\Classes\WinGameSystem.h" />
     <ClInclude Include="ActiveDetails.h" />
-    <ClInclude Include="AddLineToBoardBottomSpell.h" />
     <ClInclude Include="AIStrategyInterface.h" />
     <ClInclude Include="AiSystem.h" />
     <ClInclude Include="BossesFactory.h" />

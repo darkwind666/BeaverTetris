@@ -3,6 +3,7 @@
 #include "GameEnums.h"
 #include "GameHelper.h"
 #include "SpellInterface.h"
+#include "AddLineToBoardBottomSpell.h"
 
 using namespace std;
 
@@ -20,7 +21,7 @@ AISpellCastsStrategy::~AISpellCastsStrategy(void)
 void AISpellCastsStrategy::updateAI()
 {
 	_currentUpdateState++;
-	if (_currentUpdateState >= tetraminoBossTimeIntervalSpellCastConstant)
+	if (_currentUpdateState >= 60)
 	{
 		_currentUpdateState = 0;
 		castSpell();
@@ -29,8 +30,8 @@ void AISpellCastsStrategy::updateAI()
 
 void AISpellCastsStrategy::castSpell()
 {
-	int randomSpellIndex = GameHelper::getRandomNumberFromUpInterval(_spells.size());
-	SpellInterface *spell = _spells[randomSpellIndex];
+	//int randomSpellIndex = GameHelper::getRandomNumberFromUpInterval(_spells.size() - 1);
+	SpellInterface *spell = _spells[0];
 	if (spell->spellAvailable())
 	{
 		spell->castSpell();
@@ -40,6 +41,9 @@ void AISpellCastsStrategy::castSpell()
 vector<SpellInterface*> AISpellCastsStrategy::getSpells()
 {
 	vector<SpellInterface*> spells;
+
+	SpellInterface *addLineToBoardBottomSpell = new AddLineToBoardBottomSpell();
+	spells.push_back(addLineToBoardBottomSpell);
 
 	return spells;
 }
