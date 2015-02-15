@@ -594,6 +594,9 @@
     <ClCompile Include="..\Classes\AIMovementStrategy.cpp">
       <Filter>Models\AIStrateges</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\BossWithOneTetraminoDelegate.cpp">
+      <Filter>Models\Bosses</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1129,6 +1132,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\AIMovementStrategy.h">
       <Filter>Models\AIStrateges</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BossWithOneTetraminoDelegate.h">
+      <Filter>Models\Bosses</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

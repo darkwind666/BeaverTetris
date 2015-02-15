@@ -4,6 +4,7 @@
 #include "TetraminoObserverInterface.h"
 
 class Tetramino;
+class BossWithOneTetraminoDelegate;
 
 class QueenBoss : public BossInterface, public TetraminoObserverInterface
 {
@@ -22,12 +23,7 @@ public:
 
 private:
 
-	Tetramino *_bossTetramino;
-	bool _bossKilled;
-	std::string _bossKey;
-
-	int getBossStateInformation();
-	bool getBossWin();
+	BossWithOneTetraminoDelegate *_bossWithOneTetraminoDelegate;
 
 };
 

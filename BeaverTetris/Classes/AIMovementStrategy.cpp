@@ -39,7 +39,7 @@ map<BossMovementType, function<void(GamePositionOnBoard&)> > AIMovementStrategy:
 void AIMovementStrategy::updateAI()
 {
 	_currentUpdateState++;
-	if (_currentUpdateState >= 10)
+	if (_currentUpdateState >= tetraminoBossMoveTimeIntervalConstant)
 	{
 		_currentUpdateState = 0;
 		GamePositionOnBoard newBossPosition = getNewBossPosition();
