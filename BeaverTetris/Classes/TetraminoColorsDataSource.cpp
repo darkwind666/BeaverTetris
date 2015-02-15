@@ -25,7 +25,7 @@ map<string, Color3B> TetraminoColorsDataSource::getTetraminosColors()
 	tetraminosColors[blackTetraminoKey] = Color3B::BLACK;
 	tetraminosColors[queenTetraminoKey] = Color3B::MAGENTA;
 	tetraminosColors[princessTetraminoKey] = Color3B::GRAY;
-	tetraminosColors[kingTetraminoKey] = Color3B::WHITE;
+	tetraminosColors[kingTetraminoKey] = Color3B::ORANGE;
 
 	return tetraminosColors;
 }

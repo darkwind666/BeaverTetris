@@ -204,6 +204,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     </ClCompile>
     <ClCompile Include="..\Classes\HorisontalChainChecker.cpp" />
     <ClCompile Include="..\Classes\KeysForEnumsDataSource.cpp" />
+    <ClCompile Include="..\Classes\KingBoss.cpp" />
     <ClCompile Include="..\Classes\LoadGameController.cpp" />
     <ClCompile Include="..\Classes\LoadingGameDataSource.cpp" />
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp" />
@@ -485,6 +486,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\HorisontalChainChecker.h" />
     <ClInclude Include="..\Classes\KeysForEnumsDataSource.h" />
+    <ClInclude Include="..\Classes\KingBoss.h" />
     <ClInclude Include="..\Classes\LoadGameController.h" />
     <ClInclude Include="..\Classes\LoadingGameDataSource.h" />
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h" />

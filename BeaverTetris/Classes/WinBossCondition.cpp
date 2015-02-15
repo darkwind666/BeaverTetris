@@ -3,6 +3,7 @@
 #include "BossInterface.h"
 #include "QueenBoss.h"
 #include "PrincessBoss.h"
+#include "KingBoss.h"
 
 using namespace std;
 
@@ -40,6 +41,11 @@ map< TetraminoType, function<BossInterface*()> > WinBossCondition::getBossesFact
 	bossesFactories[kTetraminoBossPrincess] = [aLevelInformation](){
 		BossInterface *princessBoss = new PrincessBoss(aLevelInformation);
 		return princessBoss;
+	};
+
+	bossesFactories[kTetraminoBossKing] = [aLevelInformation](){
+		BossInterface *kingBoss = new KingBoss();
+		return kingBoss;
 	};
 
 	return bossesFactories;
