@@ -141,9 +141,6 @@
     <ClCompile Include="SpellBox.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
-    <ClCompile Include="SpellInterface.cpp">
-      <Filter>Models\Spells</Filter>
-    </ClCompile>
     <ClCompile Include="GameEventInterface.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
@@ -161,9 +158,6 @@
     </ClCompile>
     <ClCompile Include="SpellsViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="AISpellCastsStrategy.cpp">
-      <Filter>Models\AIStrateges</Filter>
     </ClCompile>
     <ClCompile Include="AIStrategyInterface.cpp">
       <Filter>Models\AIStrateges</Filter>
@@ -600,6 +594,12 @@
     <ClCompile Include="..\Classes\KingBoss.cpp">
       <Filter>Models\Bosses</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\AISpellCastsStrategy.cpp">
+      <Filter>Models\AIStrateges</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SpellInterface.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -650,9 +650,6 @@
     <ClInclude Include="SpellBox.h">
       <Filter>Models\Spells</Filter>
     </ClInclude>
-    <ClInclude Include="SpellInterface.h">
-      <Filter>Models\Spells</Filter>
-    </ClInclude>
     <ClInclude Include="GameEventInterface.h">
       <Filter>Models\GameEvents</Filter>
     </ClInclude>
@@ -670,9 +667,6 @@
     </ClInclude>
     <ClInclude Include="EndGameViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="AISpellCastsStrategy.h">
-      <Filter>Models\AIStrateges</Filter>
     </ClInclude>
     <ClInclude Include="AIStrategyInterface.h">
       <Filter>Models\AIStrateges</Filter>
@@ -1141,6 +1135,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\KingBoss.h">
       <Filter>Models\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AISpellCastsStrategy.h">
+      <Filter>Models\AIStrateges</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpellInterface.h">
+      <Filter>Models\Spells</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

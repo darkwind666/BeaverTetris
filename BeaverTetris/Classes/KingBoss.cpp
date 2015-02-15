@@ -5,6 +5,7 @@
 #include "GameServicesKeys.h"
 #include "GameBoard.h"
 #include "AIMovementStrategy.h"
+#include "AISpellCastsStrategy.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ KingBoss::KingBoss(void)
 
 	GameBoard *gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_movementStrategy = new AIMovementStrategy(gameBoard, bossTetramino);
+	_spellCastsStrategy = new AISpellCastsStrategy();
 }
 
 KingBoss::~KingBoss(void)
@@ -47,6 +49,7 @@ bool KingBoss::playerWin(void)
 void KingBoss::update(void)
 {
 	_movementStrategy->updateAI();
+	_spellCastsStrategy->updateAI();
 }
 
 void KingBoss::tetraminoRemoving(Tetramino *aTetramino)

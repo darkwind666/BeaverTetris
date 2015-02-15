@@ -139,6 +139,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AIMovementStrategy.cpp" />
+    <ClCompile Include="..\Classes\AISpellCastsStrategy.cpp" />
     <ClCompile Include="..\Classes\AnimationSynchonizer.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp" />
@@ -229,6 +230,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SimilarTetraminosAnimationController.cpp" />
     <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp" />
     <ClCompile Include="..\Classes\SimilarTetraminosCombinationDelegate.cpp" />
+    <ClCompile Include="..\Classes\SpellInterface.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
@@ -261,9 +263,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="AddLineToBoardBottomSpell.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="AISpellCastsStrategy.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="AIStrategyInterface.cpp">
@@ -376,9 +375,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="SpellBox.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="SpellInterface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="SpellsFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -415,6 +411,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AIMovementStrategy.h" />
+    <ClInclude Include="..\Classes\AISpellCastsStrategy.h" />
     <ClInclude Include="..\Classes\AnimationSynchonizer.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h" />
@@ -511,6 +508,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SimilarTetraminosAnimationController.h" />
     <ClInclude Include="..\Classes\SimilarTetraminosCombination.h" />
     <ClInclude Include="..\Classes\SimilarTetraminosCombinationDelegate.h" />
+    <ClInclude Include="..\Classes\SpellInterface.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
@@ -541,7 +539,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\WinGameSystem.h" />
     <ClInclude Include="ActiveDetails.h" />
     <ClInclude Include="AddLineToBoardBottomSpell.h" />
-    <ClInclude Include="AISpellCastsStrategy.h" />
     <ClInclude Include="AIStrategyInterface.h" />
     <ClInclude Include="AiSystem.h" />
     <ClInclude Include="BossesFactory.h" />
@@ -582,7 +579,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RandomExplosionsSpell.h" />
     <ClInclude Include="RocketSpell.h" />
     <ClInclude Include="SpellBox.h" />
-    <ClInclude Include="SpellInterface.h" />
     <ClInclude Include="SpellsFactory.h" />
     <ClInclude Include="SpellsViewDataSource.h" />
     <ClInclude Include="PlayerSelectionDataSource.h" />

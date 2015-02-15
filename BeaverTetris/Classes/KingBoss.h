@@ -6,6 +6,7 @@
 class Tetramino;
 class BossWithOneTetraminoDelegate;
 class AIMovementStrategy;
+class AISpellCastsStrategy;
 
 class KingBoss : public BossInterface, public TetraminoObserverInterface
 {
@@ -26,6 +27,7 @@ private:
 
 	BossWithOneTetraminoDelegate *_bossWithOneTetraminoDelegate;
 	AIMovementStrategy *_movementStrategy;
+	AISpellCastsStrategy *_spellCastsStrategy;
 
 };
 
