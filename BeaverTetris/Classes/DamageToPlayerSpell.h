@@ -1,7 +1,10 @@
 #pragma once
 
 #include "SpellInterface.h"
-#include "GameBoard.h"
+#include <vector>
+#include "GameStructures.h"
+
+class GameBoard;
 
 class DamageToPlayerSpell :public SpellInterface
 {

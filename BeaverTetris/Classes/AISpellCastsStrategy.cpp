@@ -4,6 +4,7 @@
 #include "GameHelper.h"
 #include "SpellInterface.h"
 #include "AddLineToBoardBottomSpell.h"
+#include "DamageToPlayerSpell.h"
 
 using namespace std;
 
@@ -30,8 +31,8 @@ void AISpellCastsStrategy::updateAI()
 
 void AISpellCastsStrategy::castSpell()
 {
-	//int randomSpellIndex = GameHelper::getRandomNumberFromUpInterval(_spells.size() - 1);
-	SpellInterface *spell = _spells[0];
+	int randomSpellIndex = GameHelper::getRandomNumberFromUpInterval(_spells.size() - 1);
+	SpellInterface *spell = _spells[randomSpellIndex];
 	if (spell->spellAvailable())
 	{
 		spell->castSpell();
@@ -44,6 +45,9 @@ vector<SpellInterface*> AISpellCastsStrategy::getSpells()
 
 	SpellInterface *addLineToBoardBottomSpell = new AddLineToBoardBottomSpell();
 	spells.push_back(addLineToBoardBottomSpell);
+
+	SpellInterface *damageToPlayerSpell = new DamageToPlayerSpell();
+	spells.push_back(damageToPlayerSpell);
 
 	return spells;
 }

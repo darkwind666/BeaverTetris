@@ -177,9 +177,6 @@
     <ClCompile Include="RocketSpell.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
-    <ClCompile Include="DamageToPlayerSpell.cpp">
-      <Filter>Models\Spells</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminosFallEvent.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
@@ -600,6 +597,9 @@
     <ClCompile Include="..\Classes\AddLineToBoardBottomSpell.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\DamageToPlayerSpell.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -684,9 +684,6 @@
       <Filter>Models\Spells</Filter>
     </ClInclude>
     <ClInclude Include="RocketSpell.h">
-      <Filter>Models\Spells</Filter>
-    </ClInclude>
-    <ClInclude Include="DamageToPlayerSpell.h">
       <Filter>Models\Spells</Filter>
     </ClInclude>
     <ClInclude Include="TetraminosFallEvent.h">
@@ -1140,6 +1137,9 @@
       <Filter>Models\Spells</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AddLineToBoardBottomSpell.h">
+      <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DamageToPlayerSpell.h">
       <Filter>Models\Spells</Filter>
     </ClInclude>
   </ItemGroup>
