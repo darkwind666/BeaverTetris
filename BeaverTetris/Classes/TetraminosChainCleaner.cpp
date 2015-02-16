@@ -1,5 +1,5 @@
 #include "TetraminosChainCleaner.h"
-#include "SimilarTetraminosCombinationDelegate.h"
+#include "ExplosionAnimationDelegate.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "CurrentPlayerDataSource.h"
@@ -23,7 +23,7 @@ TetraminosChainCleaner::~TetraminosChainCleaner(void)
 {
 }
 
-void TetraminosChainCleaner::setDelegate(SimilarTetraminosCombinationDelegate *aDelegate)
+void TetraminosChainCleaner::setDelegate(ExplosionAnimationDelegate *aDelegate)
 {
 	_delegate = aDelegate;
 }

@@ -6,7 +6,7 @@
 #include "GameServicesKeys.h"
 #include "Tetramino.h"
 #include "GameDesignConstants.h"
-#include "FullLineCombinationDelegate.h"
+#include "ExplosionAnimationDelegate.h"
 
 using namespace std;
 
@@ -22,7 +22,7 @@ FullLineCombination::~FullLineCombination(void)
 {
 }
 
-void FullLineCombination::setDelegate(FullLineCombinationDelegate *aDelegate)
+void FullLineCombination::setDelegate(ExplosionAnimationDelegate *aDelegate)
 {
 	_delegate = aDelegate;
 }

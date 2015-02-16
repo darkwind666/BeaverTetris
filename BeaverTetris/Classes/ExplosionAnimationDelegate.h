@@ -2,13 +2,15 @@
 
 #include <vector>
 #include <functional>
+#include "GameStructures.h"
 
-class FullLineCombinationDelegate
+class ExplosionAnimationDelegate
 {
 public:
-	FullLineCombinationDelegate(void);
-	virtual ~FullLineCombinationDelegate(void);
+	ExplosionAnimationDelegate(void);
+	~ExplosionAnimationDelegate(void);
 
+	virtual void blowUpTetraminosForPositions(std::vector<GamePositionOnBoard> tetraminosPositions) = 0;
 	virtual void blowUpLine(int aLineIndex) = 0;
 	virtual void removeTetraminoOnPositionXY(int xPosition, int yPosition) = 0;
 	virtual void setCallback(std::function<void()> aCallback) = 0;

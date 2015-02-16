@@ -486,12 +486,6 @@
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\FullLineCombinationAnimationController.cpp">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FullLineCombinationDelegate.cpp">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\FillingGapInBoardSystem.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
@@ -531,14 +525,8 @@
     <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\SimilarTetraminosCombinationDelegate.cpp">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp">
       <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\SimilarTetraminosAnimationController.cpp">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\ChainFromTetraminosChecker.cpp">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
@@ -600,10 +588,10 @@
     <ClCompile Include="..\Classes\DamageToPlayerSpell.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\DamageToPlayerSpellDelegate.cpp">
+    <ClCompile Include="..\Classes\ExplosionAnimationController.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\DamageToPlayerSpellAnimationController.cpp">
+    <ClCompile Include="..\Classes\ExplosionAnimationDelegate.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1031,12 +1019,6 @@
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h">
       <Filter>Models\GameLogic</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\FullLineCombinationAnimationController.h">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\FullLineCombinationDelegate.h">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\FillingGapInBoardSystem.h">
       <Filter>Models\GameLogic</Filter>
     </ClInclude>
@@ -1079,14 +1061,8 @@
     <ClInclude Include="..\Classes\SimilarTetraminosCombination.h">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\SimilarTetraminosCombinationDelegate.h">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h">
       <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\SimilarTetraminosAnimationController.h">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ChainFromTetraminosChecker.h">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
@@ -1148,10 +1124,10 @@
     <ClInclude Include="..\Classes\DamageToPlayerSpell.h">
       <Filter>Models\Spells</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\DamageToPlayerSpellDelegate.h">
+    <ClInclude Include="..\Classes\ExplosionAnimationController.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\DamageToPlayerSpellAnimationController.h">
+    <ClInclude Include="..\Classes\ExplosionAnimationDelegate.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>

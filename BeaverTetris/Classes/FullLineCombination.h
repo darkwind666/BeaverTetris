@@ -6,7 +6,7 @@ class GameBoard;
 class CurrentPlayerDataSource;
 class AwardForTetraminoDataSource;
 class Tetramino;
-class FullLineCombinationDelegate;
+class ExplosionAnimationDelegate;
 
 class FullLineCombination : public ServiceInterface
 {
@@ -15,14 +15,14 @@ public:
 	~FullLineCombination(void);
 
 	void checkFullLineCombination();
-	void setDelegate(FullLineCombinationDelegate *aDelegate);
+	void setDelegate(ExplosionAnimationDelegate *aDelegate);
 
 private:
 
 	GameBoard *_gameBoard;
 	AwardForTetraminoDataSource *_awardForTetraminoDataSource;
 	CurrentPlayerDataSource *_currentPlayerDataSource;
-	FullLineCombinationDelegate *_delegate;
+	ExplosionAnimationDelegate *_delegate;
 
 	void checkFullLineInBoardRow(int aRow);
 	bool fullLineCheck(int lineIndex);

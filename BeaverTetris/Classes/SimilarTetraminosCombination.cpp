@@ -43,7 +43,7 @@ void SimilarTetraminosCombination::checkChainInDetailElements(vector<GamePositio
 	 _verticalChainChecker->checkChainInDetailVerticals(aTetraminos);
 }
 
-void SimilarTetraminosCombination::setDelegate(SimilarTetraminosCombinationDelegate *aDelegate)
+void SimilarTetraminosCombination::setDelegate(ExplosionAnimationDelegate *aDelegate)
 {
 	_tetraminosChainCleaner->setDelegate(aDelegate);
 }

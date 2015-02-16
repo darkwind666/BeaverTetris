@@ -6,7 +6,7 @@
 #include "GameStructures.h"
 
 class GameBoard;
-class DamageToPlayerSpellDelegate;
+class ExplosionAnimationDelegate;
 
 class DamageToPlayerSpell :public SpellInterface, public ServiceInterface
 {
@@ -17,13 +17,13 @@ public:
 	virtual bool spellAvailable(void);
 	virtual void castSpell();
 
-	void setDelegate(DamageToPlayerSpellDelegate *aDelegate);
+	void setDelegate(ExplosionAnimationDelegate *aDelegate);
 
 private:
 
 	GameBoard *_gameBoard;
 	bool _someTetraminosWasRemoved;
-	DamageToPlayerSpellDelegate *_delegate;
+	ExplosionAnimationDelegate *_delegate;
 
 	std::vector<GamePositionOnBoard> getTetraminosForRemovingInLines(std::vector<int> aLines);
 	void fillTetraminosRemovingWithTetraminosFromLine(std::vector<GamePositionOnBoard> &aPositions, int aLine);

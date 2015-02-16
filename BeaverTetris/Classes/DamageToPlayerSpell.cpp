@@ -6,7 +6,7 @@
 #include "GameEnums.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
-#include "DamageToPlayerSpellDelegate.h"
+#include "ExplosionAnimationDelegate.h"
 
 using namespace std;
 
@@ -132,7 +132,7 @@ void DamageToPlayerSpell::removeTetramninos(std::vector<GamePositionOnBoard> aPo
 	}
 }
 
-void DamageToPlayerSpell::setDelegate(DamageToPlayerSpellDelegate *aDelegate)
+void DamageToPlayerSpell::setDelegate(ExplosionAnimationDelegate *aDelegate)
 {
 	_delegate = aDelegate;
 }

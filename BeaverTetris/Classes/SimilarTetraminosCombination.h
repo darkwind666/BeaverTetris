@@ -6,7 +6,7 @@
 
 class GameBoard;
 class DetailsFromBoardDataSource;
-class SimilarTetraminosCombinationDelegate;
+class ExplosionAnimationDelegate;
 class TetraminosChainCleaner;
 class ChainFromTetraminosChecker;
 class HorisontalChainChecker;
@@ -19,7 +19,7 @@ public:
 	~SimilarTetraminosCombination(void);
 
 	void checkSimilarTetraminosCombination();
-	void setDelegate(SimilarTetraminosCombinationDelegate *aDelegate);
+	void setDelegate(ExplosionAnimationDelegate *aDelegate);
 
 private:
 

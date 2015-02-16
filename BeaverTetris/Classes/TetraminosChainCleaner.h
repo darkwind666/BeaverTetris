@@ -3,7 +3,7 @@
 #include <vector>
 #include "GameStructures.h"
 
-class SimilarTetraminosCombinationDelegate;
+class ExplosionAnimationDelegate;
 class CurrentPlayerDataSource;
 class GameBoard;
 class AwardForTetraminoDataSource;
@@ -15,11 +15,11 @@ public:
 	~TetraminosChainCleaner(void);
 
 	void cleanChain(std::vector<GamePositionOnBoard> aPositions);
-	void setDelegate(SimilarTetraminosCombinationDelegate *aDelegate);
+	void setDelegate(ExplosionAnimationDelegate *aDelegate);
 
 private:
 
-	SimilarTetraminosCombinationDelegate *_delegate;
+	ExplosionAnimationDelegate *_delegate;
 	CurrentPlayerDataSource *_currentPlayerDataSource;
 	GameBoard *_gameBoard;
 	AwardForTetraminoDataSource *_awardForTetraminoDataSource;

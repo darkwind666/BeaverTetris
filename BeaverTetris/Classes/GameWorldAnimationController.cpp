@@ -1,10 +1,8 @@
 #include "GameWorldAnimationController.h"
 #include "AnimationSynchonizer.h"
 #include "CurrentDetailAnimationControler.h"
-#include "FullLineCombinationAnimationController.h"
-#include "SimilarTetraminosAnimationController.h"
 #include "FillingGapInBoardAnimationController.h"
-#include "DamageToPlayerSpellAnimationController.h"
+#include "ExplosionAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -25,17 +23,11 @@ void GameWorldAnimationController::makeAnimationControllers()
 	CurrentDetailAnimationControler *currentDetailAnimationControler = new CurrentDetailAnimationControler(_gameBoardController, _animationSynchonizer);
 	this->addChild(currentDetailAnimationControler);
 
-	FullLineCombinationAnimationController *fullLineCombinationAnimationController = new FullLineCombinationAnimationController(_gameBoardController, _animationSynchonizer);
-	this->addChild(fullLineCombinationAnimationController);
-
-	SimilarTetraminosAnimationController *similarTetraminosAnimationController = new SimilarTetraminosAnimationController(_gameBoardController, _animationSynchonizer);
-	this->addChild(similarTetraminosAnimationController);
-
 	FillingGapInBoardAnimationController *fillingGapInBoardAnimationController = new FillingGapInBoardAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(fillingGapInBoardAnimationController);
 
-	DamageToPlayerSpellAnimationController *damageToPlayerSpellAnimationController = new DamageToPlayerSpellAnimationController(_gameBoardController, _animationSynchonizer);
-	this->addChild(damageToPlayerSpellAnimationController);
+	ExplosionAnimationController *explosionAnimationController = new ExplosionAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(explosionAnimationController);
 
 }
 
