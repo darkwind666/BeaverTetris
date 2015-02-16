@@ -22,7 +22,7 @@ AISpellCastsStrategy::~AISpellCastsStrategy(void)
 void AISpellCastsStrategy::updateAI()
 {
 	_currentUpdateState++;
-	if (_currentUpdateState >= 60)
+	if (_currentUpdateState >= 40)
 	{
 		_currentUpdateState = 0;
 		castSpell();
@@ -31,7 +31,8 @@ void AISpellCastsStrategy::updateAI()
 
 void AISpellCastsStrategy::castSpell()
 {
-	int randomSpellIndex = GameHelper::getRandomNumberFromUpInterval(_spells.size() - 1);
+	srand(time(0));
+	int randomSpellIndex = GameHelper::getRandomNumberFromUpInterval(_spells.size());
 	SpellInterface *spell = _spells[randomSpellIndex];
 	if (spell->spellAvailable())
 	{

@@ -6,12 +6,14 @@
 #include "GameEnums.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
+#include "DamageToPlayerSpellDelegate.h"
 
 using namespace std;
 
 DamageToPlayerSpell::DamageToPlayerSpell(void)
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	_delegate = NULL;
 }
 
 
@@ -64,22 +66,73 @@ vector<GamePositionOnBoard> DamageToPlayerSpell::getUnEmptyAndNoBossesTetraminos
 void DamageToPlayerSpell::castSpell()
 {
 	vector<int> linesWithUnpeacefulCount = getLinesWithUnpeacefulCount();
+	vector<GamePositionOnBoard> tetraminosForRemoving = getTetraminosForRemovingInLines(linesWithUnpeacefulCount);
+	sendMessagesToDelegateWithTetraminosPositions(tetraminosForRemoving);
+	removeTetramninos(tetraminosForRemoving);
+}
+
+vector<GamePositionOnBoard> DamageToPlayerSpell::getTetraminosForRemovingInLines(std::vector<int> aLines)
+{
+	vector<GamePositionOnBoard> tetraminosForRemoving;
 	vector<int>::iterator linesIterator;
-	for (linesIterator = linesWithUnpeacefulCount.begin(); linesIterator != linesWithUnpeacefulCount.end(); linesIterator++)
+	for (linesIterator = aLines.begin(); linesIterator != aLines.end(); linesIterator++)
 	{
-		makeReductionInLine(*linesIterator);
+		fillTetraminosRemovingWithTetraminosFromLine(tetraminosForRemoving, *linesIterator);
+	}
+	return tetraminosForRemoving;
+}
+
+void DamageToPlayerSpell::fillTetraminosRemovingWithTetraminosFromLine(vector<GamePositionOnBoard> &aPositions, int aLine)
+{
+	vector<GamePositionOnBoard> tetraminos = getTetraminosForRemovingInLine(aLine);
+	vector<GamePositionOnBoard>::iterator tetraminosIterator;
+	for (tetraminosIterator = tetraminos.begin(); tetraminosIterator != tetraminos.end(); tetraminosIterator++)
+	{
+		GamePositionOnBoard tetraminoPosition = *tetraminosIterator;
+		aPositions.push_back(tetraminoPosition);
 	}
 }
 
-void DamageToPlayerSpell::makeReductionInLine(int aLine)
+vector<GamePositionOnBoard> DamageToPlayerSpell::getTetraminosForRemovingInLine(int aLine)
 {
+	vector<GamePositionOnBoard> tetraminos;
 	vector<GamePositionOnBoard> unEmptyAndNoBossesTetraminos = getUnEmptyAndNoBossesTetraminosInLine(aLine);
 	int reductionCount = unEmptyAndNoBossesTetraminos.size() - minPeacefulNonEmptyTetraminosCount;
 	for (int reductionIndex = 0; reductionIndex <= reductionCount; reductionIndex++)
 	{
 		int reductionElementIndex = GameHelper::getRandomNumberFromUpInterval(unEmptyAndNoBossesTetraminos.size());
 		GamePositionOnBoard tetraminoPosition = unEmptyAndNoBossesTetraminos[reductionElementIndex];
-		_gameBoard->removeTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+		tetraminos.push_back(tetraminoPosition);
 		unEmptyAndNoBossesTetraminos.erase(unEmptyAndNoBossesTetraminos.begin() + reductionElementIndex);
 	}
+	return tetraminos;
+}
+
+void DamageToPlayerSpell::sendMessagesToDelegateWithTetraminosPositions(std::vector<GamePositionOnBoard> aPositions)
+{
+	if (_delegate)
+	{
+		_delegate->blowUpTetraminosForPositions(aPositions);
+		vector<GamePositionOnBoard>::iterator tetraminosIterator;
+		for (tetraminosIterator = aPositions.begin(); tetraminosIterator != aPositions.end(); tetraminosIterator++)
+		{
+			GamePositionOnBoard tetraminoPosition = *tetraminosIterator;
+			_delegate->removeTetraminoOnPositionXY(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+		}
+	}
+}
+
+void DamageToPlayerSpell::removeTetramninos(std::vector<GamePositionOnBoard> aPositions)
+{
+	vector<GamePositionOnBoard>::iterator tetraminosIterator;
+	for (tetraminosIterator = aPositions.begin(); tetraminosIterator != aPositions.end(); tetraminosIterator++)
+	{
+		GamePositionOnBoard tetraminoPosition = *tetraminosIterator;
+		_gameBoard->removeTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+	}
+}
+
+void DamageToPlayerSpell::setDelegate(DamageToPlayerSpellDelegate *aDelegate)
+{
+	_delegate = aDelegate;
 }
