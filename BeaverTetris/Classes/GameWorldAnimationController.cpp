@@ -4,6 +4,7 @@
 #include "FullLineCombinationAnimationController.h"
 #include "SimilarTetraminosAnimationController.h"
 #include "FillingGapInBoardAnimationController.h"
+#include "DamageToPlayerSpellAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -32,6 +33,9 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	FillingGapInBoardAnimationController *fillingGapInBoardAnimationController = new FillingGapInBoardAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(fillingGapInBoardAnimationController);
+
+	DamageToPlayerSpellAnimationController *damageToPlayerSpellAnimationController = new DamageToPlayerSpellAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(damageToPlayerSpellAnimationController);
 
 }
 

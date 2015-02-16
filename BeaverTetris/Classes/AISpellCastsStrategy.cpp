@@ -6,6 +6,9 @@
 #include "AddLineToBoardBottomSpell.h"
 #include "DamageToPlayerSpell.h"
 
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+
 using namespace std;
 
 AISpellCastsStrategy::AISpellCastsStrategy()
@@ -22,7 +25,7 @@ AISpellCastsStrategy::~AISpellCastsStrategy(void)
 void AISpellCastsStrategy::updateAI()
 {
 	_currentUpdateState++;
-	if (_currentUpdateState >= 40)
+	if (_currentUpdateState >= tetraminoBossTimeIntervalSpellCastConstant)
 	{
 		_currentUpdateState = 0;
 		castSpell();
@@ -47,7 +50,8 @@ vector<SpellInterface*> AISpellCastsStrategy::getSpells()
 	SpellInterface *addLineToBoardBottomSpell = new AddLineToBoardBottomSpell();
 	spells.push_back(addLineToBoardBottomSpell);
 
-	SpellInterface *damageToPlayerSpell = new DamageToPlayerSpell();
+	DamageToPlayerSpell *damageToPlayerSpell = new DamageToPlayerSpell();
+	ServiceLocator::setServiceForKey(damageToPlayerSpell, damageToPlayerSpellModelKey);
 	spells.push_back(damageToPlayerSpell);
 
 	return spells;

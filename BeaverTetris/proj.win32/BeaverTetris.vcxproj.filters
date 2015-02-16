@@ -603,6 +603,9 @@
     <ClCompile Include="..\Classes\DamageToPlayerSpellDelegate.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\DamageToPlayerSpellAnimationController.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1146,6 +1149,9 @@
       <Filter>Models\Spells</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\DamageToPlayerSpellDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DamageToPlayerSpellAnimationController.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>

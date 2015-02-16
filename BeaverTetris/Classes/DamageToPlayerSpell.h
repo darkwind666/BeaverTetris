@@ -1,13 +1,14 @@
 #pragma once
 
 #include "SpellInterface.h"
+#include "ServiceInterface.h"
 #include <vector>
 #include "GameStructures.h"
 
 class GameBoard;
 class DamageToPlayerSpellDelegate;
 
-class DamageToPlayerSpell :public SpellInterface
+class DamageToPlayerSpell :public SpellInterface, public ServiceInterface
 {
 public:
 	DamageToPlayerSpell(void);

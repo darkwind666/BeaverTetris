@@ -7,7 +7,8 @@ const int normalUpdateInterval = 30;
 const int acceleratedUpdateInterval = 30;
 
 const int tetraminoBossMoveTimeIntervalConstant = 10;
-const int tetraminoBossTimeIntervalSpellCastConstant = 100;
+const int tetraminoBossTimeIntervalSpellCastConstant = 20;
+const int minPeacefulNonEmptyTetraminosCount = 8;
 
 const int standartDetailWidth = 3;
 const int standartDetailHeight = 3;
@@ -20,7 +21,7 @@ const int randomExplosionsCount = 10;
 const int meteorsCount = 10;
 const int meteorAreaExplosionLength = 1;
 const int minEmptyTetraminoForCohesionCount = 10;
-const int minPeacefulNonEmptyTetraminosCount = 6;
+
 
 const int tetraminosFallEventTimeIntervalConstant = 100;
 const int tetraminosFallEventDetailsCountConstant = 3;
