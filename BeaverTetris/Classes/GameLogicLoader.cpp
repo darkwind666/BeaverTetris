@@ -39,18 +39,18 @@ void GameLogicLoader::loadResources()
 	CurrentDetailDataSource *currentDetailDataSource = new CurrentDetailDataSource();
 	ServiceLocator::setServiceForKey(currentDetailDataSource, currentDetailDataSourceKey);
 
-	GameFlowSystem *gameFlowSystem = new GameFlowSystem();
-	gameTimeStepController->addSystem(gameFlowSystem);
-
-	CurrentDetailController *currentDetailController = new CurrentDetailController(gameBoard, currentDetailDataSource);
-	gameTimeStepController->addSystem(currentDetailController);
-	ServiceLocator::setServiceForKey(currentDetailController, currentDetailControllerKey);
-
 	CurrentVictoryConditionDataSource *currentVictoryConditionDataSource = new CurrentVictoryConditionDataSource();
 	ServiceLocator::setServiceForKey(currentVictoryConditionDataSource, currentVictoryConditionDataSourceKey);
 
+	GameFlowSystem *gameFlowSystem = new GameFlowSystem();
+	gameTimeStepController->addSystem(gameFlowSystem);
+
 	WinGameSystem *winGameSystem = new WinGameSystem(gameBoard, currentVictoryConditionDataSource);
 	gameTimeStepController->addSystem(winGameSystem);
+
+	CurrentDetailController *currentDetailController = new CurrentDetailController(gameBoard, currentDetailDataSource, gameTimeStepController);
+	gameTimeStepController->addSystem(currentDetailController);
+	ServiceLocator::setServiceForKey(currentDetailController, currentDetailControllerKey);
 
 	FullLineCombination *fullLineCombinationModel = new FullLineCombination(gameBoard);
 	ServiceLocator::setServiceForKey(fullLineCombinationModel, fullLineCombinationModelKey);

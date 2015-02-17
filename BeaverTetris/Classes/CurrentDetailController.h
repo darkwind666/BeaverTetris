@@ -11,11 +11,12 @@ class TetraminoDetailLocatorDelegate;
 class CurrentDetailDataSource;
 class TetraminoDetail;
 class CurrentDetailControllerDelegate;
+class GameTimeStepController;
 
 class CurrentDetailController : public GameSystemInterface, public ServiceInterface
 {
 public:
-	CurrentDetailController(GameBoard *aGameBoard, CurrentDetailDataSource *aDetailDataSource);
+	CurrentDetailController(GameBoard *aGameBoard, CurrentDetailDataSource *aDetailDataSource, GameTimeStepController *aGameTimeStepController);
 	~CurrentDetailController(void);
 
 	void moveLeftDetail(void);
@@ -34,6 +35,7 @@ private:
 	TetraminoDetailLocatorDelegate *_tetraminoDetailLocatorDelegate;
 	CurrentDetailDataSource *_currentDetailDataSource;
 	CurrentDetailControllerDelegate *_delegate;
+	GameTimeStepController *_gameTimeStepController;
 
 	TetraminoDetail* getCurrentDetail();
 	GamePositionOnBoard getCurrentDetailPosition();
