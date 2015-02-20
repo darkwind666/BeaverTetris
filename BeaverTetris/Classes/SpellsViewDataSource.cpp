@@ -65,7 +65,7 @@ string SpellsViewDataSource::getSpellIconImageOnIndex(int aIndex)
 	string spellImage = string();
 	PlayerControllInformation spell = _spellsInformation[aIndex];
 	string spellKey = spell.imageKey;
-	if (_spellBox->spellAvailableForKey(spellKey))
+	if (spellAvailableForIndex(aIndex))
 	{
 		spellImage = GameFileExtensionMaker::getGraphicWithExtension(spellKey);
 	}
@@ -76,6 +76,18 @@ string SpellsViewDataSource::getSpellIconImageOnIndex(int aIndex)
 	}
 
 	return spellImage;
+}
+
+bool SpellsViewDataSource::spellAvailableForIndex(int aIndex)
+{
+	PlayerControllInformation spell = _spellsInformation[aIndex];
+	string spellKey = spell.imageKey;
+	int spellCost = _spellBox->getSpellCostForKey(spellKey);
+	int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
+
+	bool spellAvailable = _spellBox->spellAvailableForKey(spellKey);
+	bool enoughMoney = currentPlayerScore >= spellCost;
+	return (enoughMoney == true && spellAvailable == true);
 }
 
 Vec2 SpellsViewDataSource::getSpellPositionOnIndex(int aIndex)
@@ -97,10 +109,7 @@ void SpellsViewDataSource::useSpellOnIndex(int aIndex)
 	string spellKey = spell.imageKey;
 	int spellCost = _spellBox->getSpellCostForKey(spellKey);
 	int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
-
-	bool spellAvailable = _spellBox->spellAvailableForKey(spellKey);
-
-	if (currentPlayerScore >= spellCost && aIndex <= _availableSpellsCount && spellAvailable == true)
+	if (spellAvailableForIndex(aIndex))
 	{
 		_currentPlayerDataSource->setPlayerScore(currentPlayerScore - spellCost);
 		_spellBox->useSpellForKey(spellKey);

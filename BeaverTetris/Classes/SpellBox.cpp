@@ -53,7 +53,8 @@ void SpellBox::useSpellForKey(string aKey)
 bool SpellBox::spellAvailableForKey(string aKey)
 {
 	SpellInterface *spell = _spellsInformations[aKey].spell;
-	return spell->spellAvailable();
+	//return spell->spellAvailable();
+	return true;
 }
 	
 

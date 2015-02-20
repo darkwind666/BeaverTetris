@@ -31,6 +31,7 @@ private:
 	std::vector<PlayerControllInformation> _spellsInformation;
 
 	std::vector<PlayerControllInformation> makeSpellsInformation();
+	bool spellAvailableForIndex(int aIndex);
 
 };
 
