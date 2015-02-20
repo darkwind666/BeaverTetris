@@ -15,6 +15,7 @@
 #include "GameFlowSystem.h"
 #include "CurrentVictoryConditionDataSource.h"
 #include "WinGameSystem.h"
+#include "SpellBox.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -63,5 +64,8 @@ void GameLogicLoader::loadResources()
 
 	TetrisLogicSystem *tetrisLogicSystem = new TetrisLogicSystem(gameBoard);
 	gameTimeStepController->addSystem(tetrisLogicSystem);
+
+	SpellBox *spellBox = new SpellBox();
+	ServiceLocator::setServiceForKey(spellBox, spellBoxKey);
 
 }

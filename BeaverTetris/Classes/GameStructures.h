@@ -65,6 +65,14 @@ struct PrincessBossInformation
 	AIMovementStrategy *bossMovementStrategy;
 };
 
+class SpellInterface;
+
+struct SpellInformation
+{
+	SpellInterface *spell;
+	int spellCost;
+};
+
 struct PlayerInformation
 {
 	std::string playerName;
@@ -140,12 +148,7 @@ struct GameLevelInformation
 	std::vector<TetraminosForWinInformation> tetraminosCollectionForWin;
 };
 
-struct SpellInformation
-{
-	SpellType spellType;
-	std::string spellName;
-	int spellCost;
-};
+
 
 
 
