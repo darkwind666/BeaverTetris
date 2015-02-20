@@ -156,9 +156,6 @@
     <ClCompile Include="EndGameViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
-    <ClCompile Include="SpellsViewDataSource.cpp">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClCompile>
     <ClCompile Include="AIStrategyInterface.cpp">
       <Filter>Models\AIStrateges</Filter>
     </ClCompile>
@@ -600,6 +597,9 @@
     <ClCompile Include="..\Classes\PlayerSpellsControllerDesktop.cpp">
       <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SpellsViewDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -856,9 +856,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GamePopUpsController.h">
       <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="SpellsViewDataSource.h">
-      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\StartGameMenuDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
@@ -1141,6 +1138,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\PlayerSpellsControllerDesktop.h">
       <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpellsViewDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

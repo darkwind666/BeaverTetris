@@ -79,3 +79,9 @@ enum MainGamePlayerVictoryConditionZOrders
 	kVictoryConditionHudImageZOrder,
 	kVictoryConditionStateZOrder,
 };
+
+enum SpellViewZOrders
+{
+	kSpellIconImageZOrder,
+	kSpellCostLabelZOrder,
+};

@@ -233,6 +233,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp" />
     <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp" />
     <ClCompile Include="..\Classes\SpellInterface.cpp" />
+    <ClCompile Include="..\Classes\SpellsViewDataSource.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
@@ -374,9 +375,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="SpellsFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="SpellsViewDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="PlayerSelectionDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -507,6 +505,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ScenesTransitionsFactory.h" />
     <ClInclude Include="..\Classes\SimilarTetraminosCombination.h" />
     <ClInclude Include="..\Classes\SpellInterface.h" />
+    <ClInclude Include="..\Classes\SpellsViewDataSource.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
@@ -576,7 +575,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RocketSpell.h" />
     <ClInclude Include="SpellBox.h" />
     <ClInclude Include="SpellsFactory.h" />
-    <ClInclude Include="SpellsViewDataSource.h" />
     <ClInclude Include="PlayerSelectionDataSource.h" />
     <ClInclude Include="RecordsDataSource.h" />
     <ClInclude Include="SceneGraphFactory.h" />

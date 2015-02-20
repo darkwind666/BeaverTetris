@@ -31,6 +31,7 @@ private:
 	void makeMainGamePlayerControllersData();
 	void makeMainGamePlayerScoreControllersData();
 	void makeMainGameVictoryConditionData();
+	void makeMainGameSpellsIconsData();
 	void makeRecordsScreenData();
 	void makeDevelopersScreenData();
 

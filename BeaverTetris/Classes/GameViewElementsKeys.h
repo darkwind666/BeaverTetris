@@ -85,6 +85,13 @@ const string victoryConditionHudImageKey = string("victoryConditionHudImage");
 const string victoryConditionHudStateKey = string("victoryConditionHudState");
 
 const string playerSpellsControllerKey = string("playerSpellsController");
+const string playerSpellImageKey = string("playerSpellImage");
+const string playerSpellCostLabelKey = string("playerSpellCostLabel");
+
+const string removeCurrentDetailSpellKey = string("removeCurrentDetailSpell");
+const string removeRandomTetraminosSpellKey = string("removeRandomTetraminosSpell");
+const string firestormSpellKey = string("firestormSpell");
+const string cohesionSpellKey = string("cohesionSpell");
 
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");

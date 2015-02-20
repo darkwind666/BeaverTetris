@@ -316,8 +316,11 @@ void GameViewInformationFactory::makeMainGameHudsData()
 
 	ViewElementInformation mainGamePlayerSpellsController;
 	mainGamePlayerSpellsController.elementPosition =  Vec2(280, 350);
+	mainGamePlayerSpellsController.elementOffset = Vec2(0, 40);
 	mainGamePlayerSpellsController.elementZOrder = kMainGamePlayerSpellsControllerZOrder;
 	_elementsInformation[playerSpellsControllerKey] = mainGamePlayerSpellsController;
+
+	makeMainGameSpellsIconsData();
 
 }
 
@@ -384,6 +387,19 @@ void GameViewInformationFactory::makeMainGameVictoryConditionData()
 	victoryConditionState.elementOffset = Vec2(padLength, 0);
 	victoryConditionState.elementZOrder = kVictoryConditionStateZOrder;
 	_elementsInformation[victoryConditionHudStateKey] = victoryConditionState;
+}
+
+void GameViewInformationFactory::makeMainGameSpellsIconsData()
+{
+	ViewElementInformation spellIcon;
+	spellIcon.elementPosition =  Vec2(0, 30);
+	spellIcon.elementZOrder = kSpellIconImageZOrder;
+	_elementsInformation[playerSpellImageKey] = spellIcon;
+
+	ViewElementInformation spellCost;
+	spellCost.elementPosition =  Vec2(0, 0);
+	spellCost.elementZOrder = kSpellCostLabelZOrder;
+	_elementsInformation[playerSpellCostLabelKey] = spellCost;
 }
 
 void GameViewInformationFactory::makeRecordsScreenData()
