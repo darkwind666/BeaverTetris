@@ -314,6 +314,11 @@ void GameViewInformationFactory::makeMainGameHudsData()
 
 	makeMainGameVictoryConditionData();
 
+	ViewElementInformation mainGamePlayerSpellsController;
+	mainGamePlayerSpellsController.elementPosition =  Vec2(280, 350);
+	mainGamePlayerSpellsController.elementZOrder = kMainGamePlayerSpellsControllerZOrder;
+	_elementsInformation[playerSpellsControllerKey] = mainGamePlayerSpellsController;
+
 }
 
 void GameViewInformationFactory::makeMainGamePlayerControllersData()

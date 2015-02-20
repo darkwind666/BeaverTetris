@@ -220,6 +220,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\PlayerActionControllerFactory.cpp" />
     <ClCompile Include="..\Classes\PlayerCreatorController.cpp" />
     <ClCompile Include="..\Classes\PlayerGameControlsDataSource.cpp" />
+    <ClCompile Include="..\Classes\PlayerSpellsControllerDesktop.cpp" />
+    <ClCompile Include="..\Classes\PlayerSpellsControllerFactory.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDataSource.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDelegateInterface.cpp" />
     <ClCompile Include="..\Classes\PrincessBoss.cpp" />
@@ -492,6 +494,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\PlayerActionControllerFactory.h" />
     <ClInclude Include="..\Classes\PlayerCreatorController.h" />
     <ClInclude Include="..\Classes\PlayerGameControlsDataSource.h" />
+    <ClInclude Include="..\Classes\PlayerSpellsControllerDesktop.h" />
+    <ClInclude Include="..\Classes\PlayerSpellsControllerFactory.h" />
     <ClInclude Include="..\Classes\PlayerStatusDataSource.h" />
     <ClInclude Include="..\Classes\PlayerStatusDelegateInterface.h" />
     <ClInclude Include="..\Classes\PrincessBoss.h" />

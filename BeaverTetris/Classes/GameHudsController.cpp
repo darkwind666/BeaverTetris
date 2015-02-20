@@ -4,6 +4,7 @@
 #include "PlayerActionControllerFactory.h"
 #include "MainGamePlayerScoreController.h"
 #include "MainGameVictoryConditionController.h"
+#include "PlayerSpellsControllerFactory.h"
 
 using namespace cocos2d;
 
@@ -32,4 +33,8 @@ void GameHudsController::makeView()
 
 	MainGameVictoryConditionController *victoryConditionController = new MainGameVictoryConditionController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(victoryConditionController, this, victoryConditionHudControllerKey);
+
+	PlayerSpellsControllerFactory playerSpellsControllerFactory;
+	Node *playerSpellsController = playerSpellsControllerFactory.getPlayerSpellsControllerForCurrentPlatform();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerSpellsController, this, playerSpellsControllerKey);
 }

@@ -84,6 +84,8 @@ const string victoryConditionHudControllerKey = string("victoryConditionHudContr
 const string victoryConditionHudImageKey = string("victoryConditionHudImage");
 const string victoryConditionHudStateKey = string("victoryConditionHudState");
 
+const string playerSpellsControllerKey = string("playerSpellsController");
+
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");
 

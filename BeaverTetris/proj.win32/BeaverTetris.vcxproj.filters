@@ -594,6 +594,12 @@
     <ClCompile Include="..\Classes\ExplosionAnimationDelegate.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\PlayerSpellsControllerFactory.cpp">
+      <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PlayerSpellsControllerDesktop.cpp">
+      <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1129,6 +1135,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ExplosionAnimationDelegate.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerSpellsControllerFactory.h">
+      <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerSpellsControllerDesktop.h">
+      <Filter>Controllers\ViewControllers\PlayerActionsControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

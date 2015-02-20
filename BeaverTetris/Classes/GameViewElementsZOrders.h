@@ -65,6 +65,7 @@ enum MainGameHudsZOrders
 	kMainGamePlayerActionControllerZOrder,
 	kMainGamePlayerScoreControllerZOrder,
 	kMainGamePlayerVictoryConditionZOrder,
+	kMainGamePlayerSpellsControllerZOrder,
 };
 
 enum MainGamePlayerScoreControllerZOrders
