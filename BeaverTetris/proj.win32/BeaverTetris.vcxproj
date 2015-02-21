@@ -228,6 +228,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\QueenBoss.cpp" />
     <ClCompile Include="..\Classes\RegulateSoundPopUp.cpp" />
     <ClCompile Include="..\Classes\ResourcesLoader.cpp" />
+    <ClCompile Include="..\Classes\RocketSpell.cpp" />
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp" />
@@ -367,9 +368,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="RandomExplosionsSpell.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="RocketSpell.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="SpellsFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -498,6 +496,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\QueenBoss.h" />
     <ClInclude Include="..\Classes\RegulateSoundPopUp.h" />
     <ClInclude Include="..\Classes\ResourcesLoader.h" />
+    <ClInclude Include="..\Classes\RocketSpell.h" />
     <ClInclude Include="..\Classes\SceneFactory.h" />
     <ClInclude Include="..\Classes\ScenesFactory.h" />
     <ClInclude Include="..\Classes\ScenesTransitionsFactory.h" />
@@ -571,7 +570,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="PlayerInputController.h" />
     <ClInclude Include="PlayerScoreDataSource.h" />
     <ClInclude Include="RandomExplosionsSpell.h" />
-    <ClInclude Include="RocketSpell.h" />
     <ClInclude Include="SpellsFactory.h" />
     <ClInclude Include="PlayerSelectionDataSource.h" />
     <ClInclude Include="RecordsDataSource.h" />

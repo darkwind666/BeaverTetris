@@ -1,6 +1,9 @@
 #include "PlayerActionControllerDesktop.h"
 #include "PlayerGameControlsDataSource.h"
 #include "GameViewStyleHelper.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameTimeStepController.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -8,6 +11,7 @@ using namespace std;
 PlayerActionControllerDesktop::PlayerActionControllerDesktop(void)
 {
 	_playerGameControlsDataSource = new PlayerGameControlsDataSource();
+	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 	setUpKeyboard();
 	_controllersViews = makeControllersViews();
 	addViewsToController(_controllersViews);
@@ -62,7 +66,7 @@ void PlayerActionControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode a
 {
 	map<EventKeyboard::KeyCode, Node*>::iterator viewsIterator; 
 	viewsIterator = _controllersViews.find(aKeyCode);
-	if (viewsIterator != _controllersViews.end())
+	if (viewsIterator != _controllersViews.end() && _gameTimeStepController->getUpdataAvailable() == true)
 	{
 		Node* controllerView = _controllersViews[aKeyCode];
 		int controllerViewIndex = controllerView->getTag();

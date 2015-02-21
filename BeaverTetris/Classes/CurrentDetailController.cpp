@@ -7,18 +7,16 @@
 #include "GameBoard.h"
 #include <vector>
 #include "cocos2d.h"
-#include "GameTimeStepController.h"
 
 using namespace std;
 
-CurrentDetailController::CurrentDetailController(GameBoard *aGameBoard, CurrentDetailDataSource *aDetailDataSource, GameTimeStepController *aGameTimeStepController)
+CurrentDetailController::CurrentDetailController(GameBoard *aGameBoard, CurrentDetailDataSource *aDetailDataSource)
 {
 	_gameBoard = aGameBoard;
 	_currentDetailDataSource = aDetailDataSource;
 	_collisionDelegate = new CollisionDelegate(aGameBoard);
 	_tetraminoDetailLocatorDelegate = new TetraminoDetailLocatorDelegate(aGameBoard);
 	_delegate = NULL;
-	_gameTimeStepController = aGameTimeStepController;
 }
 
 
@@ -164,7 +162,7 @@ GamePositionOnBoard CurrentDetailController::getCurrentDetailPosition()
 
 void CurrentDetailController::makeOperationWithCurrentDetail(function<void()> aOperation)
 {
-	if (_currentDetailDataSource->currentDetailAvailable() && _gameTimeStepController->getUpdataAvailable() == true)
+	if (_currentDetailDataSource->currentDetailAvailable())
 	{
 		aOperation();
 	}

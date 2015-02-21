@@ -4,6 +4,7 @@
 #include <vector>
 
 class SpellsViewDataSource;
+class GameTimeStepController;
 
 class PlayerSpellsControllerDesktop : public cocos2d::Node
 {
@@ -19,6 +20,7 @@ public:
 private:
 
 	SpellsViewDataSource *_spellsViewDataSource;
+	GameTimeStepController *_gameTimeStepController;
 	std::vector<cocos2d::Sprite*> _spellsIcons;
 
 	std::vector<cocos2d::Sprite*> makeSpellsIcons();

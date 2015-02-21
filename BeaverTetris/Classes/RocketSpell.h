@@ -1,7 +1,8 @@
 #pragma once
 
 #include "SpellInterface.h"
-#include "CurrentDetailController.h"
+
+class CurrentDetailDataSource;
 
 class RocketSpell :public SpellInterface
 {
@@ -14,7 +15,7 @@ public:
 
 private:
 
-	CurrentDetailController *_currentDetailController;
+	CurrentDetailDataSource *_currentDetailDataSource;
 
 };
 

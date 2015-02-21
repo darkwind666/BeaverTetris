@@ -4,6 +4,7 @@
 #include <map>
 
 class PlayerGameControlsDataSource;
+class GameTimeStepController;
 
 class PlayerActionControllerDesktop : public cocos2d::Node
 {
@@ -16,6 +17,7 @@ public:
 private:
 
 	PlayerGameControlsDataSource *_playerGameControlsDataSource;
+	GameTimeStepController *_gameTimeStepController;
 	std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::Node*> _controllersViews;
 
 	std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::Node*> makeControllersViews();

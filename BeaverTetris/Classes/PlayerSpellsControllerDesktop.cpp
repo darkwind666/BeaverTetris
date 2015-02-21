@@ -4,6 +4,9 @@
 #include "GameViewElementsKeys.h"
 #include "GameViewStyleHelper.h"
 #include "GameViewSuffixes.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameTimeStepController.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -11,6 +14,7 @@ using namespace std;
 PlayerSpellsControllerDesktop::PlayerSpellsControllerDesktop(void)
 {
 	_spellsViewDataSource = new SpellsViewDataSource();
+	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 	_spellsIcons = makeSpellsIcons();
 	vector<Node*> spellsViews = makeSpellsViewsWithIcons(_spellsIcons);
 	addViewsToController(spellsViews);
@@ -86,7 +90,7 @@ void PlayerSpellsControllerDesktop::setUpKeyboard()
 void PlayerSpellsControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
 {
 	int viewIndex = getViewIndexForKeyboardKey((int)aKeyCode);
-	if (viewIndex >= 0)
+	if (viewIndex >= 0 && _gameTimeStepController->getUpdataAvailable() == true)
 	{
 		Node* controllerView = _spellsIcons[viewIndex];
 		function<void()> callback = [this, viewIndex](){_spellsViewDataSource->useSpellOnIndex(viewIndex);};
