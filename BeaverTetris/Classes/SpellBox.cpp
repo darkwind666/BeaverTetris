@@ -2,6 +2,8 @@
 #include "GameEnums.h"
 #include "SpellInterface.h"
 #include "GameViewElementsKeys.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
 #include "AddLineToBoardBottomSpell.h"
 #include "RocketSpell.h"
 
@@ -24,7 +26,9 @@ map<string, SpellInformation> SpellBox::getSpellsInformation()
 
 	SpellInformation removeCurrentDetail;
 	removeCurrentDetail.spellCost = 100;
-	removeCurrentDetail.spell = new RocketSpell();
+	RocketSpell *rocketSpell = new RocketSpell();
+	removeCurrentDetail.spell = rocketSpell;
+	ServiceLocator::setServiceForKey(rocketSpell, rocketSpellModelKey);
 	spellInformation[removeCurrentDetailSpellKey] = removeCurrentDetail;
 
 	SpellInformation  removeRandomTetraminos;

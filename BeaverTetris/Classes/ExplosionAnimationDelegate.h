@@ -8,7 +8,7 @@ class ExplosionAnimationDelegate
 {
 public:
 	ExplosionAnimationDelegate(void);
-	~ExplosionAnimationDelegate(void);
+	virtual ~ExplosionAnimationDelegate(void);
 
 	virtual void blowUpTetraminosForPositions(std::vector<GamePositionOnBoard> tetraminosPositions) = 0;
 	virtual void blowUpLine(int aLineIndex) = 0;

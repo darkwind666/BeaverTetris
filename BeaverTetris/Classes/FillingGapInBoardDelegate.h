@@ -8,7 +8,7 @@ class FillingGapInBoardDelegate
 {
 public:
 	FillingGapInBoardDelegate(void);
-	~FillingGapInBoardDelegate(void);
+	virtual ~FillingGapInBoardDelegate(void);
 
 	virtual void replaceDetailToPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition) = 0;
 

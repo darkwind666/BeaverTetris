@@ -600,6 +600,9 @@
     <ClCompile Include="..\Classes\RocketSpell.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\RocketSpellDelegate.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1141,6 +1144,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\RocketSpell.h">
       <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RocketSpellDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,10 +2,12 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "CurrentDetailDataSource.h"
+#include "RocketSpellDelegate.h"
 
 RocketSpell::RocketSpell(void)
 {
 	_currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
+	_delegate = NULL;
 }
 
 
@@ -20,5 +22,14 @@ bool RocketSpell::spellAvailable()
 
 void RocketSpell::castSpell()
 {
+	if (_delegate)
+	{
+		_delegate->removeCurrentDetail();
+	}
 	_currentDetailDataSource->removeCurrentDetail();
+}
+
+void RocketSpell::setDelegate(RocketSpellDelegate *aDelegate)
+{
+	_delegate = aDelegate;
 }
