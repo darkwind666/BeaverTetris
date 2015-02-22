@@ -26,6 +26,7 @@ const string currentVictoryConditionDataSourceKey = string("CurrentVictoryCondit
 const string damageToPlayerSpellModelKey = string("DamageToPlayerSpell");
 const string spellBoxKey = string("SpellBox");
 const string rocketSpellModelKey = string("RocketSpell");
+const string randomExplosionsSpellModelKey = string("RandomExplosionsSpell");
 
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");

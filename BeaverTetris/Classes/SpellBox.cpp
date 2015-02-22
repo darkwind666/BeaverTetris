@@ -33,8 +33,10 @@ map<string, SpellInformation> SpellBox::getSpellsInformation()
 	spellInformation[removeCurrentDetailSpellKey] = removeCurrentDetail;
 
 	SpellInformation  removeRandomTetraminos;
-	removeRandomTetraminos.spell = new RandomExplosionsSpell();
 	removeRandomTetraminos.spellCost = 200;
+	RandomExplosionsSpell *randomExplosionsSpell = new RandomExplosionsSpell();
+	removeRandomTetraminos.spell = randomExplosionsSpell;
+	ServiceLocator::setServiceForKey(randomExplosionsSpell, randomExplosionsSpellModelKey);
 	spellInformation[removeRandomTetraminosSpellKey] = removeRandomTetraminos;
 
 	SpellInformation firestorm;

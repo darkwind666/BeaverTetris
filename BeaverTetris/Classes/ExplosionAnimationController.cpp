@@ -8,6 +8,7 @@
 #include "DamageToPlayerSpell.h"
 #include "SimilarTetraminosCombination.h"
 #include "FullLineCombination.h"
+#include "RandomExplosionsSpell.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -40,6 +41,9 @@ void ExplosionAnimationController::setUpDelegates()
 
 	FullLineCombination *fullLineCombinationModel = (FullLineCombination*)ServiceLocator::getServiceForKey(fullLineCombinationModelKey);
 	fullLineCombinationModel->setDelegate(this);
+
+	RandomExplosionsSpell *randomExplosionsSpellModel = (RandomExplosionsSpell*)ServiceLocator::getServiceForKey(randomExplosionsSpellModelKey);
+	randomExplosionsSpellModel->setDelegate(this);
 }
 
 void ExplosionAnimationController::blowUpTetraminosForPositions(vector<GamePositionOnBoard> tetraminosPositions)
