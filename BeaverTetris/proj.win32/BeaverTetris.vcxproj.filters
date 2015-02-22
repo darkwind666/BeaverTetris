@@ -603,6 +603,9 @@
     <ClCompile Include="..\Classes\RocketSpellDelegate.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\RocketSpellAnimationController.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1146,6 +1149,9 @@
       <Filter>Models\Spells</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\RocketSpellDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RocketSpellAnimationController.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>

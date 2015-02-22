@@ -8,6 +8,7 @@
 #include "TetraminoColorsDataSource.h"
 
 using namespace cocos2d;
+using namespace std;
 
 TetraminoExplosionFactory::TetraminoExplosionFactory(GameBoardController *aGameBoardController)
 {
@@ -122,9 +123,26 @@ FiniteTimeAction* TetraminoExplosionFactory::getCallbackAction(std::function<voi
 	return endCallback;
 }
 
-FiniteTimeAction* TetraminoExplosionFactory::getTetraminosExplosionAnimationWithAction(FiniteTimeAction* aAction)
+FiniteTimeAction* TetraminoExplosionFactory::getTetraminosExplosionsAnimationWithPositions(vector<GamePositionOnBoard> aPositions)
 {
+	FiniteTimeAction *tetraminosLineExplosionAnimation = CallFunc::create([this, aPositions](){
+		vector<Node*> explosions = getExplosionsFromPositions(aPositions);
+		addExplosionsToView(explosions);
+	});
 	FiniteTimeAction *delay = DelayTime::create(tetraminosExplosionDuration);
-	FiniteTimeAction *sequence = Sequence::create(aAction, delay, NULL);
+	FiniteTimeAction *sequence = Sequence::create(tetraminosLineExplosionAnimation, delay, NULL);
 	return sequence;
+}
+
+vector<Node*> TetraminoExplosionFactory::getExplosionsFromPositions(vector<GamePositionOnBoard> tetraminosPositions)
+{
+	vector<Node*> explosions;
+	vector<GamePositionOnBoard>::iterator positionIterator;
+	for (positionIterator = tetraminosPositions.begin(); positionIterator != tetraminosPositions.end(); positionIterator++)
+	{
+		GamePositionOnBoard tetraminoPosition = *positionIterator;
+		Node *explosion = getExplosionForOnPositionXY(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+		explosions.push_back(explosion);
+	}
+	return explosions;
 }

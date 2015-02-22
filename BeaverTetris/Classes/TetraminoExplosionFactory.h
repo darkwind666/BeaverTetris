@@ -18,7 +18,7 @@ public:
 
 	cocos2d::Node* getExplosionForOnPositionXY(int xPosition, int yPosition);
 	void addExplosionsToView(std::vector<cocos2d::Node*> aExplosions);
-	cocos2d::FiniteTimeAction* getTetraminosExplosionAnimationWithAction(cocos2d::FiniteTimeAction* aAction);
+	cocos2d::FiniteTimeAction* getTetraminosExplosionsAnimationWithPositions(std::vector<GamePositionOnBoard> aPositions);
 	cocos2d::FiniteTimeAction* getRemoveTetraminoActionOnPositionXY(int xPosition, int yPosition);
 	cocos2d::FiniteTimeAction* getCallbackAction(std::function<void()> aCallback);
 
@@ -37,6 +37,8 @@ private:
 	void removeTetraminoFromBoardOnPosition(GamePositionOnBoard aPosition);
 	cocos2d::Node* getTetraminoViewOnPosition(GamePositionOnBoard aPosition);
 	cocos2d::FiniteTimeAction* getRemoveTetraminoAnimationWithView(cocos2d::Node *aView);
+
+	std::vector<cocos2d::Node*> getExplosionsFromPositions(std::vector<GamePositionOnBoard> tetraminosPositions);
 
 };
 

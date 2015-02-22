@@ -322,6 +322,10 @@ void GameViewInformationFactory::makeMainGameHudsData()
 
 	makeMainGameSpellsIconsData();
 
+	ViewElementInformation rocketForRemoveDetail;
+	rocketForRemoveDetail.elementPosition =  Vec2(280, 280);
+	rocketForRemoveDetail.elementZOrder = 0;
+	_elementsInformation[rocketForRemoveCurrentDetailSpellKey] = rocketForRemoveDetail;
 }
 
 void GameViewInformationFactory::makeMainGamePlayerControllersData()

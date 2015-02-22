@@ -93,6 +93,8 @@ const string removeRandomTetraminosSpellKey = string("removeRandomTetraminosSpel
 const string firestormSpellKey = string("firestormSpell");
 const string cohesionSpellKey = string("cohesionSpell");
 
+const string rocketForRemoveCurrentDetailSpellKey = string("RocketForRemoveCurrentDetailSpell");
+
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");
 

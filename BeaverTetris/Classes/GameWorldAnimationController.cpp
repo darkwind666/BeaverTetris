@@ -3,6 +3,7 @@
 #include "CurrentDetailAnimationControler.h"
 #include "FillingGapInBoardAnimationController.h"
 #include "ExplosionAnimationController.h"
+#include "RocketSpellAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -28,6 +29,9 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	ExplosionAnimationController *explosionAnimationController = new ExplosionAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(explosionAnimationController);
+
+	RocketSpellAnimationController *rocketSpellAnimationController = new RocketSpellAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(rocketSpellAnimationController);
 
 }
 

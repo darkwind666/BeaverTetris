@@ -29,8 +29,6 @@ private:
 	GameBoard *_gameBoard;
 
 	void setUpDelegates();
-	cocos2d::FiniteTimeAction* getTetraminosExplosionsAnimation(std::vector<GamePositionOnBoard> tetraminosPositions);
-	std::vector<cocos2d::Node*> getExplosionsFromPositions(std::vector<GamePositionOnBoard> tetraminosPositions);
 	std::vector<GamePositionOnBoard> getTetraminosPositionsInLine(int aLineIndex);
 
 };

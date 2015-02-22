@@ -78,13 +78,6 @@ int FallenDetailAnimationFactory::getTetraminoTagForIndex(int aIndex)
 	return tetraminoTag;
 }
 
-Vec2 FallenDetailAnimationFactory::getPositionOnViewWithTetraminoOffset(GamePositionOnBoard aPosition)
-{
-	Vec2 tetraminosOffset = _dataSource->getTetraminosViewOffset();
-	Vec2 position = Vec2(aPosition.xPosition * tetraminosOffset.x, aPosition.yPosition * tetraminosOffset.y);
-	return position;
-}
-
 FiniteTimeAction* FallenDetailAnimationFactory::getDetailAnimationWithFinalPosition(GamePositionOnBoard aFinalPosition)
 {
 	Vec2 finalDetailPosition = getPositionOnViewWithTetraminoOffset(aFinalPosition);
@@ -94,6 +87,13 @@ FiniteTimeAction* FallenDetailAnimationFactory::getDetailAnimationWithFinalPosit
 	FiniteTimeAction *callback = CallFuncN::create(callbackFunction);
 	FiniteTimeAction *sequence = Sequence::create(moveDetail,callback, NULL);
 	return sequence;
+}
+
+Vec2 FallenDetailAnimationFactory::getPositionOnViewWithTetraminoOffset(GamePositionOnBoard aPosition)
+{
+	Vec2 tetraminosOffset = _dataSource->getTetraminosViewOffset();
+	Vec2 position = Vec2(aPosition.xPosition * tetraminosOffset.x, aPosition.yPosition * tetraminosOffset.y);
+	return position;
 }
 
 float FallenDetailAnimationFactory::getAnimationDurationWithFinalPosition(GamePositionOnBoard aFinalPosition)

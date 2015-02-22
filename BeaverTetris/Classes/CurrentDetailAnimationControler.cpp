@@ -12,7 +12,6 @@ using namespace std;
 
 CurrentDetailAnimationControler::CurrentDetailAnimationControler(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer)
 {
-
 	DetailViewDataSource *currentDetailViewDataSource = getDetailViewDataSource();
 	_fallenDetailAnimationFactory = new FallenDetailAnimationFactory(currentDetailViewDataSource, aGameBoardController);
 	_animationSynchonizer = aAnimationSynchonizer;

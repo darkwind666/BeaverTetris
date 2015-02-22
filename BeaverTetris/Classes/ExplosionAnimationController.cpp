@@ -44,31 +44,8 @@ void ExplosionAnimationController::setUpDelegates()
 
 void ExplosionAnimationController::blowUpTetraminosForPositions(vector<GamePositionOnBoard> tetraminosPositions)
 {
-	FiniteTimeAction *tetraminosLineExplosionAnimation = getTetraminosExplosionsAnimation(tetraminosPositions);
-	FiniteTimeAction *sequence = _tetraminoExplosionFactory->getTetraminosExplosionAnimationWithAction(tetraminosLineExplosionAnimation);
-	_animationSynchonizer->addAnimationToQueue(sequence);
-}
-
-FiniteTimeAction* ExplosionAnimationController::getTetraminosExplosionsAnimation(vector<GamePositionOnBoard> tetraminosPositions)
-{
-	FiniteTimeAction *tetraminosLineExplosionAnimation = CallFunc::create([this, tetraminosPositions](){
-		vector<Node*> explosions = getExplosionsFromPositions(tetraminosPositions);
-		_tetraminoExplosionFactory->addExplosionsToView(explosions);
-	});
-	return tetraminosLineExplosionAnimation;
-}
-
-vector<Node*> ExplosionAnimationController::getExplosionsFromPositions(vector<GamePositionOnBoard> tetraminosPositions)
-{
-	vector<Node*> explosions;
-	vector<GamePositionOnBoard>::iterator positionIterator;
-	for (positionIterator = tetraminosPositions.begin(); positionIterator != tetraminosPositions.end(); positionIterator++)
-	{
-		GamePositionOnBoard tetraminoPosition = *positionIterator;
-		Node *explosion = _tetraminoExplosionFactory->getExplosionForOnPositionXY(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
-		explosions.push_back(explosion);
-	}
-	return explosions;
+	FiniteTimeAction *tetraminosLineExplosionAnimation = _tetraminoExplosionFactory->getTetraminosExplosionsAnimationWithPositions(tetraminosPositions);
+	_animationSynchonizer->addAnimationToQueue(tetraminosLineExplosionAnimation);
 }
 
 void ExplosionAnimationController::blowUpLine(int aLineIndex)
