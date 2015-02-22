@@ -321,11 +321,8 @@ void GameViewInformationFactory::makeMainGameHudsData()
 	_elementsInformation[playerSpellsControllerKey] = mainGamePlayerSpellsController;
 
 	makeMainGameSpellsIconsData();
-
-	ViewElementInformation rocketForRemoveDetail;
-	rocketForRemoveDetail.elementPosition =  Vec2(280, 280);
-	rocketForRemoveDetail.elementZOrder = 0;
-	_elementsInformation[rocketForRemoveCurrentDetailSpellKey] = rocketForRemoveDetail;
+	makeRemoveCurrentDetailSpellData();
+	
 }
 
 void GameViewInformationFactory::makeMainGamePlayerControllersData()
@@ -404,6 +401,23 @@ void GameViewInformationFactory::makeMainGameSpellsIconsData()
 	spellCost.elementPosition =  Vec2(0, 0);
 	spellCost.elementZOrder = kSpellCostLabelZOrder;
 	_elementsInformation[playerSpellCostLabelKey] = spellCost;
+}
+
+void GameViewInformationFactory::makeRemoveCurrentDetailSpellData()
+{
+	ViewElementInformation rocketForRemoveDetail;
+	rocketForRemoveDetail.elementPosition =  Vec2(280, 280);
+	rocketForRemoveDetail.elementZOrder = kRocketForRemoveDetailZOrder;
+	_elementsInformation[rocketForRemoveCurrentDetailSpellKey] = rocketForRemoveDetail;
+
+	ViewElementInformation detailForRemoveDetail;
+	detailForRemoveDetail.elementZOrder = kDetailForRemoveCurrentDetailZOrder;
+	_elementsInformation[detailForRemoveCurrentDetailSpellKey] = detailForRemoveDetail;
+
+	ViewElementInformation explosionsForRemoveDetail;
+	explosionsForRemoveDetail.elementPosition =  Vec2(0, 0);
+	explosionsForRemoveDetail.elementZOrder = kExplosionsForRemoveDetailZOrder;
+	_elementsInformation[explosionsForRemoveCurrentDetailSpellKey] = explosionsForRemoveDetail;
 }
 
 void GameViewInformationFactory::makeRecordsScreenData()

@@ -29,8 +29,13 @@ private:
 	CurrentDetailDataSource *_currentDetailDataSource;
 
 	DetailViewDataSource* getDetailViewDataSourceWithDetailData(CurrentDetailDataSource *aData);
+	cocos2d::FiniteTimeAction* getRemoveDetailAnimationWithDetailView(cocos2d::Node *aView);
+	cocos2d::FiniteTimeAction* getRocketLaunchAnimationWithTarget(cocos2d::Node *aTarget);
+	cocos2d::Vec2 getDetailViewCentrePosition(cocos2d::Node *aView);
 	cocos2d::FiniteTimeAction* getDetailExplosionAnimation();
 	std::vector<GamePositionOnBoard> getExplosionsPositions();
+	void fillExplosionsPositionsFromLine(std::vector<GamePositionOnBoard> &explosionsPositions, int aLine);
+	void fillExplosionsPositionsFromXY(std::vector<GamePositionOnBoard> &explosionsPositions, int xPosition, int yPosition);
 
 };
 

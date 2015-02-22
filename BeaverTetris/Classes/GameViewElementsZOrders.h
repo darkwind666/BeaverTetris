@@ -85,3 +85,10 @@ enum SpellViewZOrders
 	kSpellIconImageZOrder,
 	kSpellCostLabelZOrder,
 };
+
+enum RemoveCurrentDetailSpellViewZOrders
+{
+	kRocketForRemoveDetailZOrder,
+	kDetailForRemoveCurrentDetailZOrder,
+	kExplosionsForRemoveDetailZOrder,
+};

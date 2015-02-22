@@ -94,6 +94,8 @@ const string firestormSpellKey = string("firestormSpell");
 const string cohesionSpellKey = string("cohesionSpell");
 
 const string rocketForRemoveCurrentDetailSpellKey = string("RocketForRemoveCurrentDetailSpell");
+const string explosionsForRemoveCurrentDetailSpellKey = string("ExplosionsForRemoveCurrentDetailSpell");
+const string detailForRemoveCurrentDetailSpellKey = string("DetailForRemoveCurrentDetailSpell");
 
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");

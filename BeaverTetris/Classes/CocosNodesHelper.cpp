@@ -24,6 +24,14 @@ void CocosNodesHelper::addChildNodeToParentNodeWithKey(CCNode *aChildNode, CCNod
 	aParentNode->addChild(aChildNode);
 }
 
+void CocosNodesHelper::addChildNodeToParentNodeWithZOrderFromKey(CCNode *aChildNode, CCNode *aParentNode, std::string aKey)
+{
+	GameViewElementsDataSource *elementsData = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
+	int nodeZOrder = elementsData->getElementZOrderForKey(aKey);
+	aChildNode->setZOrder(nodeZOrder);
+	aParentNode->addChild(aChildNode);
+}
+
 void CocosNodesHelper::addButtonToParentNodeWithKey(cocos2d::CCMenuItem *aButton, cocos2d::CCNode *aParentNode, std::string aKey)
 {
 	GameViewElementsDataSource *elementsData = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
