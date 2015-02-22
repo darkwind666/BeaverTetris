@@ -1,8 +1,10 @@
 #pragma once
 
 #include "SpellInterface.h"
-#include "GameBoard.h"
 #include <vector>
+#include "GameStructures.h"
+
+class GameBoard;
 
 class RandomExplosionsSpell :public SpellInterface
 {
@@ -16,7 +18,6 @@ public:
 private:
 
 	GameBoard *_gameBoard;
-	bool _someTetraminosWasRemoved;
 
 	void removeRandomTetraminoInAvailableTetraminos(std::vector <GamePositionOnBoard> &availableTetraminos);
 	void removeDeathTetraminos();

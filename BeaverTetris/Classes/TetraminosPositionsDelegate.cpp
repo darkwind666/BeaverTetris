@@ -3,11 +3,11 @@
 
 using namespace std;
 
-TetraminosPositionsDelegate::TetraminosPositionsDelegate(std::vector< std::vector<Tetramino*> > *tetraminos)
+TetraminosPositionsDelegate::TetraminosPositionsDelegate(vector< vector<Tetramino*> > *tetraminos)
 {
 	_tetraminos = tetraminos;
-	_gameBoardHeight = _tetraminos->size();
-	_gameBoardWidth = _tetraminos[0].size();
+	_gameBoardHeight = tetraminos->size();
+	_gameBoardWidth = (*tetraminos)[0].size();
 }
 
 TetraminosPositionsDelegate::~TetraminosPositionsDelegate(void)
@@ -39,20 +39,18 @@ vector <GamePositionOnBoard> TetraminosPositionsDelegate::getTetraminosForType(T
 vector <GamePositionOnBoard> TetraminosPositionsDelegate::findAllTetraminisForPredicate(function<bool(Tetramino *aTetramino)> aPredicateFunction)
 {
 	vector <GamePositionOnBoard> tetraminisForType = vector <GamePositionOnBoard>();
-	
-	for (int xPosition = 0; xPosition < _gameBoardHeight; xPosition++)
+	for (int yPosition = 0; yPosition < _gameBoardHeight; yPosition++)
 	{
-		vector <GamePositionOnBoard> tetraminisForTypeInRow = getTetraminosInRowWithPredicate(xPosition, aPredicateFunction);
+		vector <GamePositionOnBoard> tetraminisForTypeInRow = getTetraminosInRowWithPredicate(yPosition, aPredicateFunction);
 		tetraminisForType.insert(tetraminisForType.end(), tetraminisForTypeInRow.begin(), tetraminisForTypeInRow.end());
 	}
-	
 	return tetraminisForType;
 }
 
-vector <GamePositionOnBoard> TetraminosPositionsDelegate::getTetraminosInRowWithPredicate(int xPosition, function<bool(Tetramino *aTetramino)> aPredicateFunction)
+vector <GamePositionOnBoard> TetraminosPositionsDelegate::getTetraminosInRowWithPredicate(int yPosition, function<bool(Tetramino *aTetramino)> aPredicateFunction)
 {
 	vector <GamePositionOnBoard> tetraminisForTypeInRow = vector <GamePositionOnBoard>();
-	for (int yPosition = 0; yPosition < _gameBoardWidth; yPosition++)
+	for (int xPosition = 0; xPosition < _gameBoardWidth; xPosition++)
 	{
 		Tetramino *tetramino = getTetraminoForXYposition(xPosition,yPosition);
 		if (aPredicateFunction(tetramino))

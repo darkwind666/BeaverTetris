@@ -9,7 +9,7 @@ CurrentPlayerDataSource::CurrentPlayerDataSource()
 
 	PlayerInformation newPlayer;
 	newPlayer.playerName = "sasha";
-	newPlayer.playerScore = 0;
+	newPlayer.playerScore = 1000;
 	_playerData = newPlayer;
 	_isThereCurentPlayer = true;
 

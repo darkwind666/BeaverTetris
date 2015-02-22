@@ -6,6 +6,7 @@
 #include "GameServicesKeys.h"
 #include "AddLineToBoardBottomSpell.h"
 #include "RocketSpell.h"
+#include "RandomExplosionsSpell.h"
 
 using namespace std;
 
@@ -32,7 +33,7 @@ map<string, SpellInformation> SpellBox::getSpellsInformation()
 	spellInformation[removeCurrentDetailSpellKey] = removeCurrentDetail;
 
 	SpellInformation  removeRandomTetraminos;
-	removeRandomTetraminos.spell = new AddLineToBoardBottomSpell();
+	removeRandomTetraminos.spell = new RandomExplosionsSpell();
 	removeRandomTetraminos.spellCost = 200;
 	spellInformation[removeRandomTetraminosSpellKey] = removeRandomTetraminos;
 

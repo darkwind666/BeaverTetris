@@ -26,7 +26,7 @@ private:
 	int _gameBoardWidth;
 
 	std::vector <GamePositionOnBoard> findAllTetraminisForPredicate(std::function<bool(Tetramino *aTetramino)> aPredicateFunction);
-	std::vector <GamePositionOnBoard> getTetraminosInRowWithPredicate(int xPosition, std::function<bool(Tetramino *aTetramino)> aPredicateFunction);
+	std::vector <GamePositionOnBoard> getTetraminosInRowWithPredicate(int yPosition, std::function<bool(Tetramino *aTetramino)> aPredicateFunction);
 
 	bool checkTetraminoInRow(Tetramino *aTetramino, int xPosition);
 	GamePositionOnBoard getTetraminoPositionInRow(Tetramino *aTetramino, int xPosition);
