@@ -3,8 +3,10 @@
 #include "GameServicesKeys.h"
 #include "GameDesignConstants.h"
 #include "GameHelper.h"
-#include "ActiveDetails.h"
+#include "GameBoard.h"
+#include "Tetramino.h"
 
+using namespace std;
 
 FirestromSpell::FirestromSpell(void)
 {
@@ -17,10 +19,8 @@ FirestromSpell::~FirestromSpell(void)
 
 bool FirestromSpell::spellAvailable(void)
 {
-	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis();
-
 	bool spellAvailable = true;
-
+	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis();
 	if (availableTetraminos.size() <= 0)
 	{
 		spellAvailable = false;
@@ -39,53 +39,44 @@ void FirestromSpell::castSpell()
 
 void FirestromSpell::runFireballWithXPosition(int positionX)
 {
-	bool wasExplosion = false;
-	
-	for (int heightIndex = _gameBoard->getGameBoardHeight(); heightIndex < 0; heightIndex--)
+	int explosionHeight = 0;
+	int gameBoardHeight = _gameBoard->getGameBoardHeight();
+	for (int heightIndex = (gameBoardHeight - 1); heightIndex > 0; heightIndex--)
 	{
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(positionX, heightIndex);
-	
 		if (tetraminoInBoard->getTetraminoType() > kTetraminoEmpty)
 		{
-			makeExplosionOnPositionXY(positionX, heightIndex);
-			wasExplosion = true;
+			explosionHeight = heightIndex + 1;
 			break;
 		}
-	
 	}
-	
-	if (!wasExplosion)
-	{
-		makeExplosionOnPositionXY(positionX, 0);
-	}
+	makeExplosionOnPositionXY(positionX, explosionHeight);
 }
 
 void FirestromSpell::makeExplosionOnPositionXY(int positionX, int positionY)
 {
-	int upWidth = positionX + meteorAreaExplosionLength;
-	int downWidth = positionX - meteorAreaExplosionLength;
 	int upHeight = positionY + meteorAreaExplosionLength;
 	int downHeight = positionY - meteorAreaExplosionLength;
-
 	for (int heightIndex = downHeight; heightIndex <= upHeight; heightIndex++)
 	{
-
-		bool availableHeight = (heightIndex >= 0 && heightIndex <= _gameBoard->getGameBoardHeight());
-
-		for (int widthIndex = downWidth; widthIndex <= upWidth; widthIndex++)
-		{
-
-			bool availableWidth = (widthIndex >= 0 && widthIndex <= _gameBoard->getGameBoardWidth());
-
-			if (availableHeight && availableWidth)
-			{
-				Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(widthIndex, heightIndex);
-				tetraminoInBoard->reduceLive();
-
-			}
-
-		}
-
+		makeExplosionInRowAndExplosionX(heightIndex, positionX);
 	}
+}
 
+void FirestromSpell::makeExplosionInRowAndExplosionX(int aRow, int explosionX)
+{
+	int upWidth = explosionX + meteorAreaExplosionLength;
+	int downWidth = explosionX - meteorAreaExplosionLength;
+	for (int widthIndex = downWidth; widthIndex <= upWidth; widthIndex++)
+	{
+		GamePositionOnBoard explosionPosition;
+		explosionPosition.xPosition = widthIndex;
+		explosionPosition.yPosition = aRow;
+		if (_gameBoard->positionInBoard(explosionPosition))
+		{
+			Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(widthIndex, aRow);
+			tetraminoInBoard->reduceLive();
+			_gameBoard->removeTetraminoForXYpositionIfItHasNoLives(widthIndex, aRow);
+		}
+	}
 }

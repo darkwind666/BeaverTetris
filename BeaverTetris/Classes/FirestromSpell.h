@@ -1,7 +1,8 @@
 #pragma once
 
 #include "SpellInterface.h"
-#include "GameBoard.h"
+
+class GameBoard;
 
 class FirestromSpell :public SpellInterface
 {
@@ -9,17 +10,19 @@ public:
 	FirestromSpell(void);
 	~FirestromSpell(void);
 
-	bool spellAvailable(void);
-	void castSpell();
+	virtual bool spellAvailable(void);
+	virtual void castSpell();
 
 private:
 
 	GameBoard *_gameBoard;
-	bool _someTetraminosWasRemoved;
 
 	void makeExplosionOnPositionXY(int positionX, int positionY);
 	void runFireballWithXPosition(int positionX);
+	void makeExplosionInRowAndExplosionX(int aRow, int explosionX);
 	void removeDeathTetraminos();
+
+
 
 };
 

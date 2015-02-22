@@ -7,6 +7,7 @@
 #include "AddLineToBoardBottomSpell.h"
 #include "RocketSpell.h"
 #include "RandomExplosionsSpell.h"
+#include "FirestromSpell.h"
 
 using namespace std;
 
@@ -40,7 +41,7 @@ map<string, SpellInformation> SpellBox::getSpellsInformation()
 	spellInformation[removeRandomTetraminosSpellKey] = removeRandomTetraminos;
 
 	SpellInformation firestorm;
-	firestorm.spell = new AddLineToBoardBottomSpell();
+	firestorm.spell = new FirestromSpell();
 	firestorm.spellCost = 300;
 	spellInformation[firestormSpellKey] = firestorm;
 

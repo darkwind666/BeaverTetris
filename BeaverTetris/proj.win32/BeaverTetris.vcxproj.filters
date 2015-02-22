@@ -162,9 +162,6 @@
     <ClCompile Include="CohesionSpell.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
-    <ClCompile Include="FirestromSpell.cpp">
-      <Filter>Models\Spells</Filter>
-    </ClCompile>
     <ClCompile Include="TetraminosFallEvent.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
@@ -606,6 +603,9 @@
     <ClCompile Include="..\Classes\RandomExplosionsSpell.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FirestromSpell.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -678,9 +678,6 @@
       <Filter>Factories</Filter>
     </ClInclude>
     <ClInclude Include="CohesionSpell.h">
-      <Filter>Models\Spells</Filter>
-    </ClInclude>
-    <ClInclude Include="FirestromSpell.h">
       <Filter>Models\Spells</Filter>
     </ClInclude>
     <ClInclude Include="TetraminosFallEvent.h">
@@ -1152,6 +1149,9 @@
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\RandomExplosionsSpell.h">
+      <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FirestromSpell.h">
       <Filter>Models\Spells</Filter>
     </ClInclude>
   </ItemGroup>
