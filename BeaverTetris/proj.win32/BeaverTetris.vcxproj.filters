@@ -606,6 +606,9 @@
     <ClCompile Include="..\Classes\FirestromSpell.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FirestormSpellDelegate.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1153,6 +1156,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FirestromSpell.h">
       <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FirestormSpellDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

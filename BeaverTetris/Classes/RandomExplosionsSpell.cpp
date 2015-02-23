@@ -33,6 +33,7 @@ bool RandomExplosionsSpell::spellAvailable(void)
 
 void RandomExplosionsSpell::castSpell()
 {
+	srand(time(0));
 	vector <GamePositionOnBoard> explosionTetraminos = getTetraminosForExplosion();
 	reduceLivesInTetraminos(explosionTetraminos);
 	sendMessageToDelegateWithTetraminos(explosionTetraminos);

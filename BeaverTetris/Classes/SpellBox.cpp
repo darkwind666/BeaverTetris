@@ -41,8 +41,10 @@ map<string, SpellInformation> SpellBox::getSpellsInformation()
 	spellInformation[removeRandomTetraminosSpellKey] = removeRandomTetraminos;
 
 	SpellInformation firestorm;
-	firestorm.spell = new FirestromSpell();
 	firestorm.spellCost = 300;
+	FirestromSpell *firestromSpell = new FirestromSpell();
+	firestorm.spell = firestromSpell;
+	ServiceLocator::setServiceForKey(firestromSpell, firestormSpellModelKey);
 	spellInformation[firestormSpellKey] = firestorm;
 
 	SpellInformation cohesion;
