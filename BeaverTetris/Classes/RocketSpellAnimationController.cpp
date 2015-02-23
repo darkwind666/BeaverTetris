@@ -5,7 +5,6 @@
 #include "AnimationSynchonizer.h"
 #include "FallenDetailAnimationFactory.h"
 #include "DetailViewDataSource.h"
-#include "FallenDetailAnimationFactory.h"
 #include "RocketSpell.h"
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
@@ -76,7 +75,7 @@ FiniteTimeAction* RocketSpellAnimationController::getRocketLaunchAnimationWithTa
 	Vec2 rocketFinalPosition = getDetailViewCentrePosition(aTarget);
 	float actionDuration = ccpDistance(rocketFinalPosition, rocket->getPosition()) * rocketLaunchActionDurationPerPoint;
 	FiniteTimeAction *moveRocket = MoveTo::create(actionDuration, rocketFinalPosition);
-	FiniteTimeAction *callback = CallFuncN::create([this](Node *sender){sender->removeFromParentAndCleanup(true);});
+	FiniteTimeAction *callback = CallFuncN::create([](Node *sender){sender->removeFromParentAndCleanup(true);});
 	FiniteTimeAction *sequence = Sequence::create(moveRocket, callback, NULL);
 	FiniteTimeAction *actionWithRocket = TargetedAction::create(rocket, sequence);
 	return actionWithRocket;

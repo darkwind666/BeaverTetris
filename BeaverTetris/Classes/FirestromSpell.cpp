@@ -143,7 +143,7 @@ void FirestromSpell::sendDelegateKilledTetraminos(vector <  vector<GamePositionO
 {
 	OperationWithPosition sendDelegateKilledTetraminoOperation = [this](GamePositionOnBoard aPosition){
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(aPosition.xPosition, aPosition.yPosition);
-		if (tetraminoInBoard->getTetraminoLivesCount() <= 0)
+		if (tetraminoInBoard->getTetraminoLivesCount() <= 0 && tetraminoInBoard->getTetraminoType() > kTetraminoEmpty)
 		{
 			_delegate->removeTetraminoOnPositionXY(aPosition.xPosition, aPosition.yPosition);
 		}

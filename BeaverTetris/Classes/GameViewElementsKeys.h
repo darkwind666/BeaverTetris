@@ -97,6 +97,8 @@ const string rocketForRemoveCurrentDetailSpellKey = string("RocketForRemoveCurre
 const string explosionsForRemoveCurrentDetailSpellKey = string("ExplosionsForRemoveCurrentDetailSpell");
 const string detailForRemoveCurrentDetailSpellKey = string("DetailForRemoveCurrentDetailSpell");
 
+const string meteorForFirestormSpellKey = string("MeteorForFirestormSpell");
+
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");
 

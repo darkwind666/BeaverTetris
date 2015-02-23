@@ -18,7 +18,7 @@ const int prizeForChainConstant = 30;
 const int playerPrizeForLine = 100;
 
 const int randomExplosionsCount = 10;
-const int meteorsCount = 10;
+const int meteorsCount = 5;
 const int meteorAreaExplosionLength = 1;
 const int minEmptyTetraminoForCohesionCount = 10;
 

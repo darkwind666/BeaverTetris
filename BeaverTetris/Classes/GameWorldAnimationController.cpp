@@ -4,6 +4,7 @@
 #include "FillingGapInBoardAnimationController.h"
 #include "ExplosionAnimationController.h"
 #include "RocketSpellAnimationController.h"
+#include "FirestormSpellAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -32,6 +33,9 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	RocketSpellAnimationController *rocketSpellAnimationController = new RocketSpellAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(rocketSpellAnimationController);
+
+	FirestormSpellAnimationController *firestormSpellAnimationController = new FirestormSpellAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(firestormSpellAnimationController);
 
 }
 

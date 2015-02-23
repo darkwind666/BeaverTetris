@@ -322,6 +322,11 @@ void GameViewInformationFactory::makeMainGameHudsData()
 
 	makeMainGameSpellsIconsData();
 	makeRemoveCurrentDetailSpellData();
+
+	ViewElementInformation meteorForFirestormSpell;
+	meteorForFirestormSpell.elementPosition =  Vec2(0, 600);
+	meteorForFirestormSpell.elementZOrder = 0;
+	_elementsInformation[meteorForFirestormSpellKey] = meteorForFirestormSpell;
 	
 }
 
