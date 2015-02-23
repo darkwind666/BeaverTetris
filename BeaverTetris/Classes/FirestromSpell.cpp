@@ -33,29 +33,15 @@ bool FirestromSpell::spellAvailable(void)
 void FirestromSpell::castSpell()
 {
 	srand(time(0));
-	vector <  vector<GamePositionOnBoard> > explosionsZones = getExplosionsZones();
-	reduceLivesInExplosionsZones(explosionsZones);
-	sendMassegeToDelegateWithExplosionsZones(explosionsZones);
-	removeKilledTetraminosFromExplosionsZones(explosionsZones);
-}
-
-vector <  vector<GamePositionOnBoard> > FirestromSpell::getExplosionsZones()
-{
-	vector <  vector<GamePositionOnBoard> > explosionsZones;
 	for (int meteorIndex = 0; meteorIndex <= meteorsCount; meteorIndex++)
 	{
 		int randomMeteorPositionX = GameHelper::getRandomNumberFromUpInterval(_gameBoard->getGameBoardWidth());
-		vector<GamePositionOnBoard> explosionsZone = getExplosionsZonesWithXPosition(randomMeteorPositionX);
-		explosionsZones.push_back(explosionsZone);
+		GamePositionOnBoard explosionPosition = getExplosionPositionFromMeteorX(randomMeteorPositionX);
+		vector<GamePositionOnBoard> explosionZone = getExplosionZoneOnPosition(explosionPosition);
+		reduceLivesInExplosionsZone(explosionZone);
+		sendMassegeToDelegateWithExplosionsZoneAndPosition(explosionZone, explosionPosition);
+		removeKilledTetraminosFromExplosionsZone(explosionZone);
 	}
-	return explosionsZones;
-}
-
-vector<GamePositionOnBoard> FirestromSpell::getExplosionsZonesWithXPosition(int xPosition)
-{
-	GamePositionOnBoard explosionPosition = getExplosionPositionFromMeteorX(xPosition);
-	vector<GamePositionOnBoard> explosionZone = getExplosionZoneOnPosition(explosionPosition);
-	return explosionZone;
 }
 
 GamePositionOnBoard FirestromSpell::getExplosionPositionFromMeteorX(int xPosition)
@@ -111,35 +97,25 @@ void FirestromSpell::fillExplosionZoneRowWithPosition(vector<GamePositionOnBoard
 	}
 }
 
-void FirestromSpell::reduceLivesInExplosionsZones(vector <  vector<GamePositionOnBoard> > aExplosionsZones)
+void FirestromSpell::reduceLivesInExplosionsZone(vector<GamePositionOnBoard> aExplosionZone)
 {
 	OperationWithPosition reduceTetraminoLivesOperation = [this](GamePositionOnBoard aPosition){
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(aPosition.xPosition, aPosition.yPosition);
 		tetraminoInBoard->reduceLive();
 	};
-	makeOperationWithZonesPositions(aExplosionsZones, reduceTetraminoLivesOperation);
+	makeOperationWithZonePositions(aExplosionZone, reduceTetraminoLivesOperation);
 }
 
-void FirestromSpell::sendMassegeToDelegateWithExplosionsZones(vector <  vector<GamePositionOnBoard> > aExplosionsZones)
+void FirestromSpell::sendMassegeToDelegateWithExplosionsZoneAndPosition(vector<GamePositionOnBoard> aExplosionsZone, GamePositionOnBoard aExplosionPosition)
 {
 	if (_delegate)
 	{
-		sendDelegateExplosionPositions(aExplosionsZones);
-		sendDelegateKilledTetraminos(aExplosionsZones);
+		_delegate->blowUpTetraminosAreaOnPosition(aExplosionsZone, aExplosionPosition);
+		sendDelegateKilledTetraminos(aExplosionsZone);
 	}
 }
 
-void FirestromSpell::sendDelegateExplosionPositions(vector <  vector<GamePositionOnBoard> > aExplosionsZones)
-{
-	vector <  vector<GamePositionOnBoard> >::iterator zonesIterator;
-	for (zonesIterator = aExplosionsZones.begin(); zonesIterator != aExplosionsZones.end(); zonesIterator++)
-	{
-		vector<GamePositionOnBoard> zone = *zonesIterator;
-		_delegate->blowUpTetraminosForPositions(zone);
-	}
-}
-
-void FirestromSpell::sendDelegateKilledTetraminos(vector <  vector<GamePositionOnBoard> > aExplosionsZones)
+void FirestromSpell::sendDelegateKilledTetraminos(vector<GamePositionOnBoard> aExplosionsZone)
 {
 	OperationWithPosition sendDelegateKilledTetraminoOperation = [this](GamePositionOnBoard aPosition){
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(aPosition.xPosition, aPosition.yPosition);
@@ -148,25 +124,15 @@ void FirestromSpell::sendDelegateKilledTetraminos(vector <  vector<GamePositionO
 			_delegate->removeTetraminoOnPositionXY(aPosition.xPosition, aPosition.yPosition);
 		}
 	};
-	makeOperationWithZonesPositions(aExplosionsZones, sendDelegateKilledTetraminoOperation);
+	makeOperationWithZonePositions(aExplosionsZone, sendDelegateKilledTetraminoOperation);
 }
 
-void FirestromSpell::removeKilledTetraminosFromExplosionsZones(vector <  vector<GamePositionOnBoard> > aExplosionsZones)
+void FirestromSpell::removeKilledTetraminosFromExplosionsZone(vector<GamePositionOnBoard> aExplosionsZone)
 {
 	OperationWithPosition removeKilledTetraminosOperation = [this](GamePositionOnBoard aPosition){
 		_gameBoard->removeTetraminoForXYpositionIfItHasNoLives(aPosition.xPosition, aPosition.yPosition);
 	};
-	makeOperationWithZonesPositions(aExplosionsZones, removeKilledTetraminosOperation);
-}
-
-void FirestromSpell::makeOperationWithZonesPositions(vector <  vector<GamePositionOnBoard> > &aZones, OperationWithPosition aOperation)
-{
-	vector <  vector<GamePositionOnBoard> >::iterator zonesIterator;
-	for (zonesIterator = aZones.begin(); zonesIterator != aZones.end(); zonesIterator++)
-	{
-		vector<GamePositionOnBoard> zone = *zonesIterator;
-		makeOperationWithZonePositions(zone, aOperation);
-	}
+	makeOperationWithZonePositions(aExplosionsZone, removeKilledTetraminosOperation);
 }
 
 void FirestromSpell::makeOperationWithZonePositions(vector<GamePositionOnBoard> &aPositions, OperationWithPosition aOperation)

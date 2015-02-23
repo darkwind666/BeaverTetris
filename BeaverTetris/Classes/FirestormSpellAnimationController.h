@@ -13,7 +13,7 @@ public:
 	FirestormSpellAnimationController(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer);
 	~FirestormSpellAnimationController(void);
 
-	virtual void blowUpTetraminosForPositions(std::vector<GamePositionOnBoard> tetraminosPositions);
+	virtual void blowUpTetraminosAreaOnPosition(std::vector<GamePositionOnBoard> tetraminosPositions, GamePositionOnBoard aPosition);
 	virtual void removeTetraminoOnPositionXY(int xPosition, int yPosition);
 
 private:
@@ -21,8 +21,8 @@ private:
 	AnimationSynchonizer *_animationSynchonizer;
 	TetraminoExplosionFactory *_tetraminoExplosionFactory;
 
-	cocos2d::FiniteTimeAction* getMeteorAnimationForPositions(std::vector<GamePositionOnBoard> tetraminosPositions);
-	cocos2d::Vec2 getMeteorFinalPositionFromPositions(std::vector<GamePositionOnBoard> &tetraminosPositions);
+	cocos2d::FiniteTimeAction* getMeteorAnimationForFinalPosition(GamePositionOnBoard aPosition);
+	cocos2d::Vec2 getMeteorFinalPositionFromPosition(GamePositionOnBoard aPosition);
 	cocos2d::Node* getMeteorWithFinalPosition(cocos2d::Vec2 aPosition);
 
 };

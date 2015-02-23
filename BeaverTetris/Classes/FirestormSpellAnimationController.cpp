@@ -27,17 +27,17 @@ FirestormSpellAnimationController::~FirestormSpellAnimationController(void)
 {
 }
 
-void FirestormSpellAnimationController::blowUpTetraminosForPositions(vector<GamePositionOnBoard> tetraminosPositions)
+void FirestormSpellAnimationController::blowUpTetraminosAreaOnPosition(vector<GamePositionOnBoard> tetraminosPositions, GamePositionOnBoard aPosition)
 {
-	FiniteTimeAction *meteorAnimation = getMeteorAnimationForPositions(tetraminosPositions);
+	FiniteTimeAction *meteorAnimation = getMeteorAnimationForFinalPosition(aPosition);
 	FiniteTimeAction *tetraminosLineExplosionAnimation = _tetraminoExplosionFactory->getTetraminosExplosionsAnimationWithPositions(tetraminosPositions);
 	FiniteTimeAction *sequence = Sequence::create(meteorAnimation, tetraminosLineExplosionAnimation, NULL);
 	_animationSynchonizer->addAnimationToQueue(sequence);
 }
 
-FiniteTimeAction* FirestormSpellAnimationController::getMeteorAnimationForPositions(vector<GamePositionOnBoard> tetraminosPositions)
+FiniteTimeAction* FirestormSpellAnimationController::getMeteorAnimationForFinalPosition(GamePositionOnBoard aPosition)
 {
-	Vec2 meteorFinalPosition = getMeteorFinalPositionFromPositions(tetraminosPositions);
+	Vec2 meteorFinalPosition = getMeteorFinalPositionFromPosition(aPosition);
 	Node *meteor = getMeteorWithFinalPosition(meteorFinalPosition);
 	float actionDuration = ccpDistance(meteorFinalPosition, meteor->getPosition()) * meteorActionDurationPerPoint;
 	FiniteTimeAction *moveRocket = MoveTo::create(actionDuration, meteorFinalPosition);
@@ -47,12 +47,10 @@ FiniteTimeAction* FirestormSpellAnimationController::getMeteorAnimationForPositi
 	return actionWithRocket;
 }
 
-Vec2 FirestormSpellAnimationController::getMeteorFinalPositionFromPositions(vector<GamePositionOnBoard> &tetraminosPositions)
+Vec2 FirestormSpellAnimationController::getMeteorFinalPositionFromPosition(GamePositionOnBoard aPosition)
 {
 	Vec2 tetraminoOffset = GameElementsDataHelper::getElementOffsetForKey(mainGameBoardControllerKey);
-	int middleIndex = tetraminosPositions.size() / 2;
-	GamePositionOnBoard middleTetraminoPosition = tetraminosPositions[middleIndex];
-	Vec2 meteorFinalPosition = Vec2(middleTetraminoPosition.xPosition * tetraminoOffset.x, middleTetraminoPosition.yPosition * tetraminoOffset.y);
+	Vec2 meteorFinalPosition = Vec2(aPosition.xPosition * tetraminoOffset.x, aPosition.yPosition * tetraminoOffset.y);
 	return meteorFinalPosition;
 }
 

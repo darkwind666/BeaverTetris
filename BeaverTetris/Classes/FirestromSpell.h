@@ -23,19 +23,16 @@ private:
 	GameBoard *_gameBoard;
 	FirestormSpellDelegate *_delegate;
 
-	std::vector <  std::vector<GamePositionOnBoard> > getExplosionsZones();
-	std::vector<GamePositionOnBoard> getExplosionsZonesWithXPosition(int xPosition);
 	GamePositionOnBoard getExplosionPositionFromMeteorX(int xPosition);
 	int getExplosionHeightFromExplosionX(int xPosition);
 	std::vector<GamePositionOnBoard> getExplosionZoneOnPosition(GamePositionOnBoard aExplosionPosition);
 	void fillExplosionZoneRowWithPosition(std::vector<GamePositionOnBoard> &explosionZone, int row, GamePositionOnBoard aExplosionPosition);
-	void reduceLivesInExplosionsZones(std::vector <  std::vector<GamePositionOnBoard> > aExplosionsZones);
-	void sendMassegeToDelegateWithExplosionsZones(std::vector <  std::vector<GamePositionOnBoard> > aExplosionsZones);
-	void sendDelegateExplosionPositions(std::vector <  std::vector<GamePositionOnBoard> > aExplosionsZones);
-	void sendDelegateKilledTetraminos(std::vector <  std::vector<GamePositionOnBoard> > aExplosionsZones);
-	void removeKilledTetraminosFromExplosionsZones(std::vector <  std::vector<GamePositionOnBoard> > aExplosionsZones);
+	void reduceLivesInExplosionsZone(std::vector<GamePositionOnBoard> aExplosionsZone);
+	void sendMassegeToDelegateWithExplosionsZoneAndPosition(std::vector<GamePositionOnBoard> aExplosionsZone, GamePositionOnBoard aExplosionPosition);
+	void sendDelegateExplosionPositions(std::vector<GamePositionOnBoard> aExplosionsZone);
+	void sendDelegateKilledTetraminos(std::vector<GamePositionOnBoard> aExplosionsZone);
+	void removeKilledTetraminosFromExplosionsZone(std::vector<GamePositionOnBoard> aExplosionsZone);
 
-	void makeOperationWithZonesPositions(std::vector <  std::vector<GamePositionOnBoard> > &aZones, OperationWithPosition aOperation);
 	void makeOperationWithZonePositions(std::vector<GamePositionOnBoard> &aPositions, OperationWithPosition aOperation);
 
 };
