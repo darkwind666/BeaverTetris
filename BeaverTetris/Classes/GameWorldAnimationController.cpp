@@ -5,6 +5,7 @@
 #include "ExplosionAnimationController.h"
 #include "RocketSpellAnimationController.h"
 #include "FirestormSpellAnimationController.h"
+#include "CohesionSpellAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -36,6 +37,9 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	FirestormSpellAnimationController *firestormSpellAnimationController = new FirestormSpellAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(firestormSpellAnimationController);
+
+	CohesionSpellAnimationController *cohesionSpellAnimationController = new CohesionSpellAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(cohesionSpellAnimationController);
 
 }
 
