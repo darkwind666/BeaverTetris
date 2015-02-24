@@ -5,12 +5,14 @@
 #include "GameHelper.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
+#include "CohesionSpellDelegate.h"
 
 using namespace std;
 
 CohesionSpell::CohesionSpell(void)
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	_delegate = NULL;
 }
 
 CohesionSpell::~CohesionSpell(void)
@@ -37,6 +39,7 @@ void CohesionSpell::castSpell()
 		int randomEmptyTetraminoIndex = GameHelper::getRandomNumberFromUpInterval(emptyTetraminosForCohesion.size());
 		GamePositionOnBoard emptyTetraminoPosition = emptyTetraminosForCohesion[randomEmptyTetraminoIndex];
 		setNewTetraminoForPosition(emptyTetraminoPosition);
+		sendMessageToDelegateWithTetraminoPosition(emptyTetraminoPosition);
 		emptyTetraminosForCohesion.erase(emptyTetraminosForCohesion.begin() + randomEmptyTetraminoIndex);
 	}
 }
@@ -166,4 +169,17 @@ TetraminoType CohesionSpell::getRandomTetraminoType()
 {
 	TetraminoType newType = (TetraminoType)(GameHelper::getRandomNumberFromUpInterval(kTetraminoBlack) + kTetraminoRed);
 	return newType;
+}
+
+void  CohesionSpell::setDelegate(CohesionSpellDelegate *aDelegate)
+{
+	_delegate = aDelegate;
+}
+
+void CohesionSpell::sendMessageToDelegateWithTetraminoPosition(GamePositionOnBoard aPosition)
+{
+	if (_delegate)
+	{
+		_delegate->makeTetraminoOnPosition(aPosition);
+	}
 }

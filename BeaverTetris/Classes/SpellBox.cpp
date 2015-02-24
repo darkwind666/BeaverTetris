@@ -49,8 +49,10 @@ map<string, SpellInformation> SpellBox::getSpellsInformation()
 	spellInformation[firestormSpellKey] = firestorm;
 
 	SpellInformation cohesion;
-	cohesion.spell = new CohesionSpell();
 	cohesion.spellCost = 400;
+	CohesionSpell *cohesionSpell = new CohesionSpell();
+	cohesion.spell = cohesionSpell;
+	ServiceLocator::setServiceForKey(cohesionSpell, cohesionSpellModelKey);
 	spellInformation[cohesionSpellKey] = cohesion;
 
 	return spellInformation;

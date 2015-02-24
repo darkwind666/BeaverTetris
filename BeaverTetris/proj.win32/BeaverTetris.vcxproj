@@ -151,6 +151,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
     <ClCompile Include="..\Classes\CohesionSpell.cpp" />
+    <ClCompile Include="..\Classes\CohesionSpellDelegate.cpp" />
     <ClCompile Include="..\Classes\CollisionDelegate.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailAnimationControler.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailController.cpp" />
@@ -411,6 +412,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CocosNodesHelper.h" />
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />
     <ClInclude Include="..\Classes\CohesionSpell.h" />
+    <ClInclude Include="..\Classes\CohesionSpellDelegate.h" />
     <ClInclude Include="..\Classes\CollisionDelegate.h" />
     <ClInclude Include="..\Classes\CurrentDetailAnimationControler.h" />
     <ClInclude Include="..\Classes\CurrentDetailController.h" />

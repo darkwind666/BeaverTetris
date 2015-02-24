@@ -612,6 +612,9 @@
     <ClCompile Include="..\Classes\CohesionSpell.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CohesionSpellDelegate.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1165,6 +1168,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CohesionSpell.h">
       <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CohesionSpellDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

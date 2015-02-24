@@ -28,6 +28,7 @@ const string spellBoxKey = string("SpellBox");
 const string rocketSpellModelKey = string("RocketSpell");
 const string randomExplosionsSpellModelKey = string("RandomExplosionsSpell");
 const string firestormSpellModelKey = string("FirestromSpell");
+const string cohesionSpellModelKey = string("CohesionSpell");
 
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");

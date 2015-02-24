@@ -1,12 +1,14 @@
 #pragma once
 
 #include "SpellInterface.h"
+#include "ServiceInterface.h"
 #include <vector>
 #include "GameStructures.h"
 
 class GameBoard;
+class CohesionSpellDelegate;
 
-class CohesionSpell :public SpellInterface
+class CohesionSpell :public SpellInterface, public ServiceInterface
 {
 public:
 	CohesionSpell(void);
@@ -15,9 +17,12 @@ public:
 	virtual bool spellAvailable(void);
 	virtual void castSpell();
 
+	void setDelegate(CohesionSpellDelegate *aDelegate);
+
 private:
 
 	GameBoard *_gameBoard;
+	CohesionSpellDelegate *_delegate;
 
 	std::vector<GamePositionOnBoard> getEmptyTetraminosForCohesion();
 
@@ -33,6 +38,8 @@ private:
 	TetraminoType getRandomTetraminoType();
 	void setNewTetraminoForPosition(GamePositionOnBoard aPosition);
 	void setNewTetraminoForIndexInEmptyTetraminos(int tetraminoIndex, std::vector<GamePositionOnBoard> &emptyTetraminosForCohesion);
+
+	void sendMessageToDelegateWithTetraminoPosition(GamePositionOnBoard aPosition);
 
 };
 
