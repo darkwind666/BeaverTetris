@@ -8,6 +8,7 @@
 #include "RocketSpell.h"
 #include "RandomExplosionsSpell.h"
 #include "FirestromSpell.h"
+#include "CohesionSpell.h"
 
 using namespace std;
 
@@ -48,7 +49,7 @@ map<string, SpellInformation> SpellBox::getSpellsInformation()
 	spellInformation[firestormSpellKey] = firestorm;
 
 	SpellInformation cohesion;
-	cohesion.spell = new AddLineToBoardBottomSpell();
+	cohesion.spell = new CohesionSpell();
 	cohesion.spellCost = 400;
 	spellInformation[cohesionSpellKey] = cohesion;
 

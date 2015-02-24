@@ -150,6 +150,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ChainFromTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp" />
+    <ClCompile Include="..\Classes\CohesionSpell.cpp" />
     <ClCompile Include="..\Classes\CollisionDelegate.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailAnimationControler.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailController.cpp" />
@@ -282,9 +283,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="BossesFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="CohesionSpell.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="CollisionSystem.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -412,6 +410,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ChainFromTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CocosNodesHelper.h" />
     <ClInclude Include="..\Classes\CocosViewConfigurator.h" />
+    <ClInclude Include="..\Classes\CohesionSpell.h" />
     <ClInclude Include="..\Classes\CollisionDelegate.h" />
     <ClInclude Include="..\Classes\CurrentDetailAnimationControler.h" />
     <ClInclude Include="..\Classes\CurrentDetailController.h" />
@@ -542,7 +541,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="AIStrategyInterface.h" />
     <ClInclude Include="AiSystem.h" />
     <ClInclude Include="BossesFactory.h" />
-    <ClInclude Include="CohesionSpell.h" />
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="CurrentBossDataSource.h" />
     <ClInclude Include="CurrentLevelAwardDataSource.h" />
