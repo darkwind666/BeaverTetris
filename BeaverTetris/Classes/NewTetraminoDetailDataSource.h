@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ServiceInterface.h"
 #include "GameEnums.h"
 #include "GameStructures.h"
 #include <map>
@@ -8,7 +9,7 @@ class CurrentLevelDataSource;
 class TetraminoDetail;
 class Tetramino;
 
-class NewTetraminoDetailDataSource
+class NewTetraminoDetailDataSource : public ServiceInterface
 {
 public:
 	NewTetraminoDetailDataSource(void);

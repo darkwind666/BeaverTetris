@@ -23,7 +23,7 @@ const int meteorAreaExplosionLength = 1;
 const int minEmptyTetraminoForCohesionCount = 10;
 const int cohesionCount = 10;
 
-const int tetraminosFallEventTimeIntervalConstant = 100;
+const int tetraminosFallEventTimeIntervalConstant = 30;
 const int tetraminosFallEventDetailsCountConstant = 3;
 
 const int timeAccelerationEventTimeIntervalConstant = 100;

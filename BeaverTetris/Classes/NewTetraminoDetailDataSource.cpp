@@ -32,7 +32,6 @@ TetraminoDetail* NewTetraminoDetailDataSource::getNewDetail()
 
 NewTetraminoDetailRequest NewTetraminoDetailDataSource::getTetraminoDetailRequest()
 {
-	srand(time(0));
 	TetraminoType tetraminoType = getRandomTetraminoType();
 	TetraminoDetailType detailType = getRandomTetraminoDetailType();
 

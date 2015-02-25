@@ -1,30 +1,32 @@
 #pragma once
 
-#include "GameEventInterface.h"
-#include "GameBoard.h"
 #include <vector>
-#include "TetraminisDetailsFactory.h"
-#include "TetraminoDetailLocatorDelegate.h"
 
-class TetraminosFallEvent :public GameEventInterface
+class GameBoard;
+class NewTetraminoDetailDataSource;
+class TetraminoDetailLocatorDelegate;
+class CollisionDelegate;
+class TetraminoDetail;
+
+class TetraminosFallEvent
 {
 public:
 	TetraminosFallEvent(void);
 	~TetraminosFallEvent(void);
 
-	bool eventTime(void);
-	void runEvent(void);
 	void updateEvent(void);
 
 private:
 
 	int _currentUpdateState;
 	GameBoard *_gameBoard;
-	TetraminisDetailsFactory *_tetraminisDetailsFactory;
+	NewTetraminoDetailDataSource *_newTetraminoDetailDataSource;
+	CollisionDelegate *_collisionDelegate;
 	TetraminoDetailLocatorDelegate *_tetraminoDetailLocatorDelegate;
 
 	std::vector<TetraminoDetail*> getTetraminoDetailsForFalling();
-	TetraminoDetail* getNewDetailFromWidthIndex(int aWidthIndex);
+	TetraminoDetail* getNewDetail();
+	void setDetailPosition(TetraminoDetail *aDetail);
 	void placeDetailsOnGameBoard(std::vector<TetraminoDetail*> aTetraminoDetails);
 
 };

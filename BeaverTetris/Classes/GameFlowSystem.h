@@ -4,6 +4,7 @@
 
 class CurrentDetailDataSource;
 class GameTimeStepController;
+class TetraminosFallEvent;
 
 class GameFlowSystem: public GameSystemInterface
 {
@@ -17,6 +18,9 @@ private:
 
 	CurrentDetailDataSource *_currentDetailDataSource;
 	GameTimeStepController *_gameTimeStepController;
+	TetraminosFallEvent *_tetraminosFallEvent;
+
+	void updateGameFlow();
 
 };
 

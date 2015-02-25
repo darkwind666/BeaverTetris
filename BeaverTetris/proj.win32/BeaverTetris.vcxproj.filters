@@ -159,9 +159,6 @@
     <ClCompile Include="BossesFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="TetraminosFallEvent.cpp">
-      <Filter>Models\GameEvents</Filter>
-    </ClCompile>
     <ClCompile Include="TimeAccelerationEvent.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
@@ -618,6 +615,9 @@
     <ClCompile Include="..\Classes\CohesionSpellAnimationController.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetraminosFallEvent.cpp">
+      <Filter>Models\GameEvents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -688,9 +688,6 @@
     </ClInclude>
     <ClInclude Include="BossesFactory.h">
       <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="TetraminosFallEvent.h">
-      <Filter>Models\GameEvents</Filter>
     </ClInclude>
     <ClInclude Include="TimeAccelerationEvent.h">
       <Filter>Models\GameEvents</Filter>
@@ -1177,6 +1174,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CohesionSpellAnimationController.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminosFallEvent.h">
+      <Filter>Models\GameEvents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

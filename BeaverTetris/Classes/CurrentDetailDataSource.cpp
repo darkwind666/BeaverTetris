@@ -1,11 +1,13 @@
 #include "CurrentDetailDataSource.h"
 #include "TetraminoDetail.h"
 #include "Tetramino.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
 #include "NewTetraminoDetailDataSource.h"
 
 CurrentDetailDataSource::CurrentDetailDataSource(void)
 {
-	_newTetraminoDetailDataSource = new NewTetraminoDetailDataSource();
+	_newTetraminoDetailDataSource = (NewTetraminoDetailDataSource*)ServiceLocator::getServiceForKey(newTetraminoDetailDataSourceKey);
 	_currentDetail = NULL;
 	_currentDetailAvailable = false;
 }

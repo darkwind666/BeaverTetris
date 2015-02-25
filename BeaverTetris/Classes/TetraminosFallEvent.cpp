@@ -4,13 +4,19 @@
 #include "GameDesignConstants.h"
 #include "TetraminoDetail.h"
 #include "CollisionDelegate.h"
+#include "NewTetraminoDetailDataSource.h"
+#include "TetraminoDetailLocatorDelegate.h"
+#include "GameBoard.h"
+#include "GameHelper.h"
+
 
 using namespace std;
 
 TetraminosFallEvent::TetraminosFallEvent(void)
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
-	_tetraminisDetailsFactory = (TetraminisDetailsFactory*)ServiceLocator::getServiceForKey(tetraminisDetailsFactoryKey);
+	_newTetraminoDetailDataSource = (NewTetraminoDetailDataSource*)ServiceLocator::getServiceForKey(newTetraminoDetailDataSourceKey);
+	_collisionDelegate = new CollisionDelegate(_gameBoard);
 	_tetraminoDetailLocatorDelegate = new TetraminoDetailLocatorDelegate(_gameBoard);
 	_currentUpdateState = 0;
 }
@@ -20,66 +26,53 @@ TetraminosFallEvent::~TetraminosFallEvent(void)
 {
 }
 
-bool TetraminosFallEvent::eventTime(void)
-{
-	bool eventTime = false;
-
-	if (_currentUpdateState >= tetraminosFallEventTimeIntervalConstant)
-	{
-		eventTime = true;
-	}
-	return eventTime;
-}
-
-void TetraminosFallEvent::runEvent(void)
-{
-	vector<TetraminoDetail*> tetraminoDetails = getTetraminoDetailsForFalling();
-	placeDetailsOnGameBoard(tetraminoDetails);
-	_currentUpdateState = 0;
-
-}
-
 void TetraminosFallEvent::updateEvent(void)
 {
 	_currentUpdateState++;
+	if (_currentUpdateState >= tetraminosFallEventTimeIntervalConstant)
+	{
+		vector<TetraminoDetail*> tetraminoDetails = getTetraminoDetailsForFalling();
+		placeDetailsOnGameBoard(tetraminoDetails);
+		_currentUpdateState = 0;
+	}
 }
 
 vector<TetraminoDetail*> TetraminosFallEvent::getTetraminoDetailsForFalling()
 {
 	vector<TetraminoDetail*> tetraminoDetails;
-
 	for (int detailIndex = 0; detailIndex <= tetraminosFallEventDetailsCountConstant; detailIndex++)
 	{
-		TetraminoDetail *newDetail = getNewDetailFromWidthIndex(detailIndex);
+		TetraminoDetail *newDetail = getNewDetail();
 		tetraminoDetails.push_back(newDetail);
-		
 	}
 	return tetraminoDetails;
 }
 
-TetraminoDetail* TetraminosFallEvent::getNewDetailFromWidthIndex(int aWidthIndex)
+TetraminoDetail* TetraminosFallEvent::getNewDetail()
 {
-	TetraminoDetail *newDetail = _tetraminisDetailsFactory->getNewDetail();
-
-	GamePositionOnBoard detailPosition;
-	detailPosition.yPosition = _gameBoard->getGameBoardHeight() - newDetail->getDetailHeight();
-	detailPosition.xPosition = newDetail->getDetailWidth() * aWidthIndex;
-
-	newDetail->setDetailPosition(detailPosition);
+	TetraminoDetail *newDetail = _newTetraminoDetailDataSource->getNewDetail();
+	setDetailPosition(newDetail);
 	return newDetail;
+}
+
+void TetraminosFallEvent::setDetailPosition(TetraminoDetail *aDetail)
+{
+	GamePositionOnBoard detailPosition = aDetail->getDetailPosition();
+	int gameBoardWidth = _gameBoard->getGameBoardWidth();
+	int detailWidth = aDetail->getDetailWidth();
+	int detailXPosition = GameHelper::getRandomNumberFromUpInterval(gameBoardWidth - detailWidth);
+	detailPosition.xPosition = detailXPosition;
+	aDetail->setDetailPosition(detailPosition);
 }
 
 void TetraminosFallEvent::placeDetailsOnGameBoard(vector<TetraminoDetail*> aTetraminoDetails)
 {
-	CollisionDelegate *collisionDelegate = new CollisionDelegate(_gameBoard);
-
 	vector<TetraminoDetail*>::iterator detailsIterator;
 	for (detailsIterator = aTetraminoDetails.begin(); detailsIterator != aTetraminoDetails.end(); detailsIterator++)
 	{
 		TetraminoDetail *tetraminoDetail = *detailsIterator;
-		GamePositionOnBoard detailCollisionPosition = collisionDelegate->getCollisionPositionWithBoardForDetail(tetraminoDetail);
+		GamePositionOnBoard detailCollisionPosition = _collisionDelegate->getCollisionPositionWithBoardForDetail(tetraminoDetail);
 		tetraminoDetail->setDetailPosition(detailCollisionPosition);
 		_tetraminoDetailLocatorDelegate->writeTetraminoDetailInBoard(tetraminoDetail);
 	}
-
 }

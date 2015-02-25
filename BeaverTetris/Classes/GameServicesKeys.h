@@ -29,6 +29,7 @@ const string rocketSpellModelKey = string("RocketSpell");
 const string randomExplosionsSpellModelKey = string("RandomExplosionsSpell");
 const string firestormSpellModelKey = string("FirestromSpell");
 const string cohesionSpellModelKey = string("CohesionSpell");
+const string newTetraminoDetailDataSourceKey = string("NewTetraminoDetailDataSource");
 
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");

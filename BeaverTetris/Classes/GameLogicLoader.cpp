@@ -16,6 +16,7 @@
 #include "CurrentVictoryConditionDataSource.h"
 #include "WinGameSystem.h"
 #include "SpellBox.h"
+#include "NewTetraminoDetailDataSource.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -33,6 +34,9 @@ void GameLogicLoader::loadResources()
 
 	CurrentLevelDataSource *currentLevelDataSource = new CurrentLevelDataSource();
 	ServiceLocator::setServiceForKey(currentLevelDataSource, currentLevelDataSourceKey);
+
+	NewTetraminoDetailDataSource *newTetraminoDetailDataSource = new NewTetraminoDetailDataSource();
+	ServiceLocator::setServiceForKey(newTetraminoDetailDataSource, newTetraminoDetailDataSourceKey);
 
 	GameTimeStepController *gameTimeStepController = new GameTimeStepController();
 	ServiceLocator::setServiceForKey(gameTimeStepController, gameTimeStepControllerKey);

@@ -249,6 +249,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
+    <ClCompile Include="..\Classes\TetraminosFallEvent.cpp" />
     <ClCompile Include="..\Classes\TetrisLogicSystem.cpp" />
     <ClCompile Include="..\Classes\ScreenPopUp.cpp" />
     <ClCompile Include="..\Classes\SelectGameLevelController.cpp" />
@@ -383,9 +384,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="TetraminosCharacteristicsDataSource.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="TetraminosFallEvent.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="TetrominosFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -517,6 +515,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
+    <ClInclude Include="..\Classes\TetraminosFallEvent.h" />
     <ClInclude Include="..\Classes\TetrisLogicSystem.h" />
     <ClInclude Include="..\Classes\ScreenPopUp.h" />
     <ClInclude Include="..\Classes\SelectGameLevelController.h" />
@@ -581,7 +580,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RecordsDataSource.h" />
     <ClInclude Include="SceneGraphFactory.h" />
     <ClInclude Include="TetraminosCharacteristicsDataSource.h" />
-    <ClInclude Include="TetraminosFallEvent.h" />
     <ClInclude Include="TetrominosFactory.h" />
     <ClInclude Include="TimeAccelerationEvent.h" />
     <ClInclude Include="CurrentLevelWinResultDataSource.h" />
