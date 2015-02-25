@@ -11,7 +11,9 @@ GameFlowSystem::GameFlowSystem()
 {
 	_currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
-	_tetraminosFallEvent = new TetraminosFallEvent();
+	TetraminosFallEvent *tetraminosFallEvent = new TetraminosFallEvent();
+	_tetraminosFallEvent = tetraminosFallEvent;
+	ServiceLocator::setServiceForKey(tetraminosFallEvent, tetraminosFallEventModelKey);
 }
 
 
@@ -22,7 +24,6 @@ GameFlowSystem::~GameFlowSystem(void)
 
 void GameFlowSystem::updateSystem(float deltaTime)
 {
-	srand(time(0));
 	if (_gameTimeStepController->getUpdataAvailable() == true)
 	{
 		updateGameFlow();
@@ -31,6 +32,7 @@ void GameFlowSystem::updateSystem(float deltaTime)
 
 void GameFlowSystem::updateGameFlow()
 {
+	srand(time(0));
 	if (_currentDetailDataSource->currentDetailAvailable() == false)
 	{
 		_currentDetailDataSource->makeNewDetail();

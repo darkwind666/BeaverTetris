@@ -250,6 +250,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminosFallEvent.cpp" />
+    <ClCompile Include="..\Classes\TetraminosFallEventDelegate.cpp" />
     <ClCompile Include="..\Classes\TetrisLogicSystem.cpp" />
     <ClCompile Include="..\Classes\ScreenPopUp.cpp" />
     <ClCompile Include="..\Classes\SelectGameLevelController.cpp" />
@@ -516,6 +517,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminosFallEvent.h" />
+    <ClInclude Include="..\Classes\TetraminosFallEventDelegate.h" />
     <ClInclude Include="..\Classes\TetrisLogicSystem.h" />
     <ClInclude Include="..\Classes\ScreenPopUp.h" />
     <ClInclude Include="..\Classes\SelectGameLevelController.h" />

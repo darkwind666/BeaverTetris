@@ -8,7 +8,7 @@
 #include "TetraminoDetailLocatorDelegate.h"
 #include "GameBoard.h"
 #include "GameHelper.h"
-
+#include "TetraminosFallEventDelegate.h"
 
 using namespace std;
 
@@ -19,6 +19,7 @@ TetraminosFallEvent::TetraminosFallEvent(void)
 	_collisionDelegate = new CollisionDelegate(_gameBoard);
 	_tetraminoDetailLocatorDelegate = new TetraminoDetailLocatorDelegate(_gameBoard);
 	_currentUpdateState = 0;
+	_delegate = NULL;
 }
 
 
@@ -72,7 +73,21 @@ void TetraminosFallEvent::placeDetailsOnGameBoard(vector<TetraminoDetail*> aTetr
 	{
 		TetraminoDetail *tetraminoDetail = *detailsIterator;
 		GamePositionOnBoard detailCollisionPosition = _collisionDelegate->getCollisionPositionWithBoardForDetail(tetraminoDetail);
+		sendMessageToDelegateWithDetailAndCollisionPosition(tetraminoDetail, detailCollisionPosition);
 		tetraminoDetail->setDetailPosition(detailCollisionPosition);
 		_tetraminoDetailLocatorDelegate->writeTetraminoDetailInBoard(tetraminoDetail);
 	}
+}
+
+void TetraminosFallEvent::sendMessageToDelegateWithDetailAndCollisionPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition)
+{
+	if (_delegate)
+	{
+		_delegate->placeNewDetailToPosition(aDetail, aPosition);
+	}
+}
+
+void TetraminosFallEvent::setDelegate(TetraminosFallEventDelegate *aDelegate)
+{
+	_delegate = aDelegate;
 }
