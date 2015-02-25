@@ -131,7 +131,8 @@ FiniteTimeAction* TetraminoExplosionFactory::getTetraminosExplosionsAnimationWit
 	});
 	FiniteTimeAction *delay = DelayTime::create(tetraminosExplosionDuration);
 	FiniteTimeAction *sequence = Sequence::create(tetraminosLineExplosionAnimation, delay, NULL);
-	return sequence;
+	FiniteTimeAction *blowUpAnimation = TargetedAction::create(this, sequence);
+	return blowUpAnimation;
 }
 
 vector<Node*> TetraminoExplosionFactory::getExplosionsFromPositions(vector<GamePositionOnBoard> tetraminosPositions)

@@ -6,6 +6,7 @@
 #include "RocketSpellAnimationController.h"
 #include "FirestormSpellAnimationController.h"
 #include "CohesionSpellAnimationController.h"
+#include "TetraminosFallEventAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -40,6 +41,9 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	CohesionSpellAnimationController *cohesionSpellAnimationController = new CohesionSpellAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(cohesionSpellAnimationController);
+
+	TetraminosFallEventAnimationController *tetraminosFallEventAnimationController = new TetraminosFallEventAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(tetraminosFallEventAnimationController);
 
 }
 

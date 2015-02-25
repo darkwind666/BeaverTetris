@@ -621,6 +621,9 @@
     <ClCompile Include="..\Classes\TetraminosFallEventDelegate.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetraminosFallEventAnimationController.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1182,6 +1185,9 @@
       <Filter>Models\GameEvents</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\TetraminosFallEventDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminosFallEventAnimationController.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>
