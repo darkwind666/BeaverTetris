@@ -30,7 +30,7 @@ TetraminosFallEvent::~TetraminosFallEvent(void)
 void TetraminosFallEvent::updateEvent(void)
 {
 	_currentUpdateState++;
-	if (_currentUpdateState >= 10)
+	if (_currentUpdateState >= tetraminosFallEventTimeIntervalConstant)
 	{
 		vector<TetraminoDetail*> tetraminoDetails = getTetraminoDetailsForFalling();
 		placeDetailsOnGameBoard(tetraminoDetails);

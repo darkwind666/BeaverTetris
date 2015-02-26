@@ -4,10 +4,9 @@
 #include "cocos2d.h"
 
 class GameBoardController;
-class FallenDetailAnimationFactory;
 class DetailViewDataSource;
 class AnimationSynchonizer;
-class TetrisLogicSystem;
+class FallenDetailAnimationDelegate;
 
 class FallenDetailAnimationController : public FallenDetailDelegate, public cocos2d::Node
 {
@@ -23,16 +22,9 @@ private:
 
 	GameBoardController *_gameBoardController;
 	AnimationSynchonizer *_animationSynchonizer;
-	TetrisLogicSystem *_tetrisLogicSystem;
+	FallenDetailAnimationDelegate *_fallenDetailAnimationDelegate;
 
 	void setUpDelegates();
-
-	DetailViewDataSource* getCurrentDetailViewDataSource();
-	DetailViewDataSource* getDetailViewDataSource(TetraminoDetail *aDetail);
-
-	cocos2d::FiniteTimeAction* getAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition);
-	cocos2d::FiniteTimeAction* getNewDetailAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition);
-
 	void placeDetainOnNewPositionWithDataSource(GamePositionOnBoard aPosition, DetailViewDataSource *aDataSource);
 
 };

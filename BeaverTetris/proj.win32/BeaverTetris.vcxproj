@@ -166,6 +166,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ExplosionAnimationController.cpp" />
     <ClCompile Include="..\Classes\ExplosionAnimationDelegate.cpp" />
     <ClCompile Include="..\Classes\FallenDetailAnimationController.cpp" />
+    <ClCompile Include="..\Classes\FallenDetailAnimationDelegate.cpp" />
     <ClCompile Include="..\Classes\FallenDetailAnimationFactory.cpp" />
     <ClCompile Include="..\Classes\FallenDetailDelegate.cpp" />
     <ClCompile Include="..\Classes\FillingGapInBoardSystem.cpp" />
@@ -424,6 +425,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ExplosionAnimationController.h" />
     <ClInclude Include="..\Classes\ExplosionAnimationDelegate.h" />
     <ClInclude Include="..\Classes\FallenDetailAnimationController.h" />
+    <ClInclude Include="..\Classes\FallenDetailAnimationDelegate.h" />
     <ClInclude Include="..\Classes\FallenDetailAnimationFactory.h" />
     <ClInclude Include="..\Classes\FallenDetailDelegate.h" />
     <ClInclude Include="..\Classes\FillingGapInBoardSystem.h" />

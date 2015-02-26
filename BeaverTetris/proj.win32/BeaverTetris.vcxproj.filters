@@ -612,6 +612,9 @@
     <ClCompile Include="..\Classes\FallenDetailDelegate.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FallenDetailAnimationDelegate.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1164,6 +1167,9 @@
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\FallenDetailDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FallenDetailAnimationDelegate.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>
