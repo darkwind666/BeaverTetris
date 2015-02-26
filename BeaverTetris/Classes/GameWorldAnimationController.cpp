@@ -1,12 +1,11 @@
 #include "GameWorldAnimationController.h"
 #include "AnimationSynchonizer.h"
-#include "CurrentDetailAnimationControler.h"
-#include "FillingGapInBoardAnimationController.h"
+
 #include "ExplosionAnimationController.h"
 #include "RocketSpellAnimationController.h"
 #include "FirestormSpellAnimationController.h"
 #include "CohesionSpellAnimationController.h"
-#include "TetraminosFallEventAnimationController.h"
+#include "FallenDetailAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -24,12 +23,6 @@ void GameWorldAnimationController::makeAnimationControllers()
 {
 	this->addChild(_animationSynchonizer);
 
-	CurrentDetailAnimationControler *currentDetailAnimationControler = new CurrentDetailAnimationControler(_gameBoardController, _animationSynchonizer);
-	this->addChild(currentDetailAnimationControler);
-
-	FillingGapInBoardAnimationController *fillingGapInBoardAnimationController = new FillingGapInBoardAnimationController(_gameBoardController, _animationSynchonizer);
-	this->addChild(fillingGapInBoardAnimationController);
-
 	ExplosionAnimationController *explosionAnimationController = new ExplosionAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(explosionAnimationController);
 
@@ -42,9 +35,8 @@ void GameWorldAnimationController::makeAnimationControllers()
 	CohesionSpellAnimationController *cohesionSpellAnimationController = new CohesionSpellAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(cohesionSpellAnimationController);
 
-	TetraminosFallEventAnimationController *tetraminosFallEventAnimationController = new TetraminosFallEventAnimationController(_gameBoardController, _animationSynchonizer);
-	this->addChild(tetraminosFallEventAnimationController);
-
+	FallenDetailAnimationController *fallenDetailAnimationController = new FallenDetailAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(fallenDetailAnimationController);
 }
 
 void GameWorldAnimationController::updateAnimation()

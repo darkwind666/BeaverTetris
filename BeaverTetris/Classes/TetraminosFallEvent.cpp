@@ -8,7 +8,7 @@
 #include "TetraminoDetailLocatorDelegate.h"
 #include "GameBoard.h"
 #include "GameHelper.h"
-#include "TetraminosFallEventDelegate.h"
+#include "FallenDetailDelegate.h"
 
 using namespace std;
 
@@ -87,7 +87,7 @@ void TetraminosFallEvent::sendMessageToDelegateWithDetailAndCollisionPosition(Te
 	}
 }
 
-void TetraminosFallEvent::setDelegate(TetraminosFallEventDelegate *aDelegate)
+void TetraminosFallEvent::setDelegate(FallenDetailDelegate *aDelegate)
 {
 	_delegate = aDelegate;
 }

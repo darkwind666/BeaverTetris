@@ -1,7 +1,7 @@
 #include "CurrentDetailController.h"
 #include "CollisionDelegate.h"
 #include "TetraminoDetailLocatorDelegate.h"
-#include "CurrentDetailControllerDelegate.h"
+#include "FallenDetailDelegate.h"
 #include "CurrentDetailDataSource.h"
 #include "TetraminoDetail.h"
 #include "GameBoard.h"
@@ -91,7 +91,7 @@ void CurrentDetailController::throwDetailOnGameBoard()
 	makeOperationWithCurrentDetail(throwDetail);
 }
 
-void CurrentDetailController::setDelegate(CurrentDetailControllerDelegate *aDelegate)
+void CurrentDetailController::setDelegate(FallenDetailDelegate *aDelegate)
 {
 	_delegate = aDelegate;
 }

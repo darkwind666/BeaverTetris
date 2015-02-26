@@ -9,7 +9,7 @@ class NewTetraminoDetailDataSource;
 class TetraminoDetailLocatorDelegate;
 class CollisionDelegate;
 class TetraminoDetail;
-class TetraminosFallEventDelegate;
+class FallenDetailDelegate;
 
 class TetraminosFallEvent : public ServiceInterface
 {
@@ -18,7 +18,7 @@ public:
 	~TetraminosFallEvent(void);
 
 	void updateEvent(void);
-	void setDelegate(TetraminosFallEventDelegate *aDelegate);
+	void setDelegate(FallenDetailDelegate *aDelegate);
 
 private:
 
@@ -27,7 +27,7 @@ private:
 	NewTetraminoDetailDataSource *_newTetraminoDetailDataSource;
 	CollisionDelegate *_collisionDelegate;
 	TetraminoDetailLocatorDelegate *_tetraminoDetailLocatorDelegate;
-	TetraminosFallEventDelegate *_delegate;
+	FallenDetailDelegate *_delegate;
 
 	std::vector<TetraminoDetail*> getTetraminoDetailsForFalling();
 	TetraminoDetail* getNewDetail();

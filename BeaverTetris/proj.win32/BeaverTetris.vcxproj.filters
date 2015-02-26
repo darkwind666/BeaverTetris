@@ -432,12 +432,6 @@
     <ClCompile Include="..\Classes\PlayerGameControlsDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CurrentDetailControllerDelegate.cpp">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CurrentDetailAnimationControler.cpp">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\CurrentDetailTetraminosChecker.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
@@ -467,12 +461,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\FillingGapInBoardSystem.cpp">
       <Filter>Models\GameLogic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FillingGapInBoardDelegate.cpp">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FillingGapInBoardAnimationController.cpp">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\DetailViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
@@ -618,10 +606,10 @@
     <ClCompile Include="..\Classes\TetraminosFallEvent.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TetraminosFallEventDelegate.cpp">
+    <ClCompile Include="..\Classes\FallenDetailAnimationController.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TetraminosFallEventAnimationController.cpp">
+    <ClCompile Include="..\Classes\FallenDetailDelegate.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -995,12 +983,6 @@
     <ClInclude Include="..\Classes\PlayerGameControlsDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CurrentDetailControllerDelegate.h">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CurrentDetailAnimationControler.h">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\CurrentDetailTetraminosChecker.h">
       <Filter>Models\GameLogic</Filter>
     </ClInclude>
@@ -1030,12 +1012,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FillingGapInBoardSystem.h">
       <Filter>Models\GameLogic</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\FillingGapInBoardDelegate.h">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\FillingGapInBoardAnimationController.h">
-      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\DetailViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
@@ -1184,10 +1160,10 @@
     <ClInclude Include="..\Classes\TetraminosFallEvent.h">
       <Filter>Models\GameEvents</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TetraminosFallEventDelegate.h">
+    <ClInclude Include="..\Classes\FallenDetailAnimationController.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TetraminosFallEventAnimationController.h">
+    <ClInclude Include="..\Classes\FallenDetailDelegate.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>

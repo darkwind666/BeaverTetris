@@ -154,9 +154,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CohesionSpellAnimationController.cpp" />
     <ClCompile Include="..\Classes\CohesionSpellDelegate.cpp" />
     <ClCompile Include="..\Classes\CollisionDelegate.cpp" />
-    <ClCompile Include="..\Classes\CurrentDetailAnimationControler.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailController.cpp" />
-    <ClCompile Include="..\Classes\CurrentDetailControllerDelegate.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CurrentLevelDataSource.cpp" />
@@ -167,9 +165,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\DetailsFromBoardDataSource.cpp" />
     <ClCompile Include="..\Classes\ExplosionAnimationController.cpp" />
     <ClCompile Include="..\Classes\ExplosionAnimationDelegate.cpp" />
+    <ClCompile Include="..\Classes\FallenDetailAnimationController.cpp" />
     <ClCompile Include="..\Classes\FallenDetailAnimationFactory.cpp" />
-    <ClCompile Include="..\Classes\FillingGapInBoardAnimationController.cpp" />
-    <ClCompile Include="..\Classes\FillingGapInBoardDelegate.cpp" />
+    <ClCompile Include="..\Classes\FallenDetailDelegate.cpp" />
     <ClCompile Include="..\Classes\FillingGapInBoardSystem.cpp" />
     <ClCompile Include="..\Classes\FirestormSpellAnimationController.cpp" />
     <ClCompile Include="..\Classes\FirestormSpellDelegate.cpp" />
@@ -250,8 +248,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminosFallEvent.cpp" />
-    <ClCompile Include="..\Classes\TetraminosFallEventAnimationController.cpp" />
-    <ClCompile Include="..\Classes\TetraminosFallEventDelegate.cpp" />
     <ClCompile Include="..\Classes\TetrisLogicSystem.cpp" />
     <ClCompile Include="..\Classes\ScreenPopUp.cpp" />
     <ClCompile Include="..\Classes\SelectGameLevelController.cpp" />
@@ -416,9 +412,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CohesionSpellAnimationController.h" />
     <ClInclude Include="..\Classes\CohesionSpellDelegate.h" />
     <ClInclude Include="..\Classes\CollisionDelegate.h" />
-    <ClInclude Include="..\Classes\CurrentDetailAnimationControler.h" />
     <ClInclude Include="..\Classes\CurrentDetailController.h" />
-    <ClInclude Include="..\Classes\CurrentDetailControllerDelegate.h" />
     <ClInclude Include="..\Classes\CurrentDetailDataSource.h" />
     <ClInclude Include="..\Classes\CurrentDetailTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CurrentLevelDataSource.h" />
@@ -429,9 +423,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\DetailsFromBoardDataSource.h" />
     <ClInclude Include="..\Classes\ExplosionAnimationController.h" />
     <ClInclude Include="..\Classes\ExplosionAnimationDelegate.h" />
+    <ClInclude Include="..\Classes\FallenDetailAnimationController.h" />
     <ClInclude Include="..\Classes\FallenDetailAnimationFactory.h" />
-    <ClInclude Include="..\Classes\FillingGapInBoardAnimationController.h" />
-    <ClInclude Include="..\Classes\FillingGapInBoardDelegate.h" />
+    <ClInclude Include="..\Classes\FallenDetailDelegate.h" />
     <ClInclude Include="..\Classes\FillingGapInBoardSystem.h" />
     <ClInclude Include="..\Classes\FirestormSpellAnimationController.h" />
     <ClInclude Include="..\Classes\FirestormSpellDelegate.h" />
@@ -518,8 +512,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminosFallEvent.h" />
-    <ClInclude Include="..\Classes\TetraminosFallEventAnimationController.h" />
-    <ClInclude Include="..\Classes\TetraminosFallEventDelegate.h" />
     <ClInclude Include="..\Classes\TetrisLogicSystem.h" />
     <ClInclude Include="..\Classes\ScreenPopUp.h" />
     <ClInclude Include="..\Classes\SelectGameLevelController.h" />

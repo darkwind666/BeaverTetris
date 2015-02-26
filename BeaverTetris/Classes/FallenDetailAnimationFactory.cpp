@@ -22,6 +22,7 @@ FallenDetailAnimationFactory::FallenDetailAnimationFactory(DetailViewDataSource 
 
 FallenDetailAnimationFactory::~FallenDetailAnimationFactory(void)
 {
+	delete _dataSource;
 }
 
 void FallenDetailAnimationFactory::cleanDetailViewOnBoard()

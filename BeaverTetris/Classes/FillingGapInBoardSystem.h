@@ -10,7 +10,7 @@ class TetraminosCombinatorDelegate;
 class TetraminoDetailLocatorDelegate;
 class CollisionDelegate;
 class TetraminoDetail;
-class FillingGapInBoardDelegate;
+class FallenDetailDelegate;
 
 class FillingGapInBoardSystem  : public ServiceInterface
 {
@@ -20,7 +20,7 @@ public:
 
 	bool availableGapInBoard();
 	void filOutGapInBoard();
-	void setDelegate(FillingGapInBoardDelegate *aDelegate);
+	void setDelegate(FallenDetailDelegate *aDelegate);
 
 private:
 
@@ -29,7 +29,7 @@ private:
 	TetraminosCombinatorDelegate *_tetraminosCombinatorDelegate;
 	TetraminoDetailLocatorDelegate *_tetraminoDetailLocatorDelegate;
 	CollisionDelegate *_collisionDelegate;
-	FillingGapInBoardDelegate *_delegate;
+	FallenDetailDelegate *_delegate;
 
 	bool getAvailableGapInBetweeneDetails(std::vector<TetraminoDetail*> *aDetails);
 	bool checkGapUnderDetail(TetraminoDetail *aDetail);

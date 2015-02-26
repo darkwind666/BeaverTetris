@@ -6,7 +6,7 @@
 #include "TetraminosCombinatorDelegate.h"
 #include "TetraminoDetailLocatorDelegate.h"
 #include "CollisionDelegate.h"
-#include "FillingGapInBoardDelegate.h"
+#include "FallenDetailDelegate.h"
 
 using namespace std;
 
@@ -145,7 +145,7 @@ void FillingGapInBoardSystem::removeDetails(std::vector<TetraminoDetail*> *aDeta
 	}
 }
 
-void FillingGapInBoardSystem::setDelegate(FillingGapInBoardDelegate *aDelegate)
+void FillingGapInBoardSystem::setDelegate(FallenDetailDelegate *aDelegate)
 {
 	_delegate = aDelegate;
 }
