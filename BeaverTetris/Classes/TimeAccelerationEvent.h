@@ -1,16 +1,13 @@
 #pragma once
 
-#include "GameEventInterface.h"
-#include "GameTimeStepController.h"
+class GameTimeStepController;
 
-class TimeAccelerationEvent :public GameEventInterface
+class TimeAccelerationEvent
 {
 public:
 	TimeAccelerationEvent(void);
 	~TimeAccelerationEvent(void);
 
-	bool eventTime(void);
-	void runEvent(void);
 	void updateEvent(void);
 
 private:
@@ -18,6 +15,10 @@ private:
 	int _currentUpdateState;
 	int _currentEventState;
 	GameTimeStepController *_gameTimeStepController;
+	bool _eventActive;
+
+	void stepEventActive();
+	void stepTimeInterval();
 
 };
 

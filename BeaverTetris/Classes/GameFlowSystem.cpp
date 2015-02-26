@@ -4,6 +4,7 @@
 #include "CurrentDetailDataSource.h"
 #include "GameTimeStepController.h"
 #include "TetraminosFallEvent.h"
+#include "TimeAccelerationEvent.h"
 
 using namespace std;
 
@@ -14,12 +15,13 @@ GameFlowSystem::GameFlowSystem()
 	TetraminosFallEvent *tetraminosFallEvent = new TetraminosFallEvent();
 	_tetraminosFallEvent = tetraminosFallEvent;
 	ServiceLocator::setServiceForKey(tetraminosFallEvent, tetraminosFallEventModelKey);
+	_timeAccelerationEvent = new TimeAccelerationEvent();
 }
 
 
 GameFlowSystem::~GameFlowSystem(void)
 {
-
+	delete _timeAccelerationEvent;
 }
 
 void GameFlowSystem::updateSystem(float deltaTime)
@@ -38,4 +40,5 @@ void GameFlowSystem::updateGameFlow()
 		_currentDetailDataSource->makeNewDetail();
 	}
 	_tetraminosFallEvent->updateEvent();
+	_timeAccelerationEvent->updateEvent();
 }
