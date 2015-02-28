@@ -5,8 +5,10 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "CurrentLevelDataSource.h"
+
 #include "WinBossCondition.h"
 #include "PlaceSomeDetailsCondition.h"
+#include "RemainSomeTimeCondition.h"
 
 using namespace std;
 
@@ -41,6 +43,11 @@ map< VictoryConditionType, function<VictoryConditionInterface*(GameLevelInformat
 
 	victoryConditions[kPlaceSomeDetailsCondition] = [](GameLevelInformation data){
 		VictoryConditionInterface *victoryCondition = new PlaceSomeDetailsCondition(data);
+		return victoryCondition;
+	};
+
+	victoryConditions[kRemainSomeTimeCondition] = [](GameLevelInformation data){
+		VictoryConditionInterface *victoryCondition = new RemainSomeTimeCondition(data);
 		return victoryCondition;
 	};
 

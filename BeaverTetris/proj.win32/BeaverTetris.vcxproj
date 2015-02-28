@@ -234,6 +234,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\QueenBoss.cpp" />
     <ClCompile Include="..\Classes\RandomExplosionsSpell.cpp" />
     <ClCompile Include="..\Classes\RegulateSoundPopUp.cpp" />
+    <ClCompile Include="..\Classes\RemainSomeTimeCondition.cpp" />
     <ClCompile Include="..\Classes\ResourcesLoader.cpp" />
     <ClCompile Include="..\Classes\RocketSpell.cpp" />
     <ClCompile Include="..\Classes\RocketSpellAnimationController.cpp" />
@@ -340,9 +341,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="PlayerSelectionObserver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="RemainSomeTimeCondition.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="RemoveSomeTetraminosCondition.cpp">
@@ -495,6 +493,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\QueenBoss.h" />
     <ClInclude Include="..\Classes\RandomExplosionsSpell.h" />
     <ClInclude Include="..\Classes\RegulateSoundPopUp.h" />
+    <ClInclude Include="..\Classes\RemainSomeTimeCondition.h" />
     <ClInclude Include="..\Classes\ResourcesLoader.h" />
     <ClInclude Include="..\Classes\RocketSpell.h" />
     <ClInclude Include="..\Classes\RocketSpellAnimationController.h" />
@@ -561,7 +560,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameSystemInterface.h" />
     <ClInclude Include="GameTransitionsController.h" />
     <ClInclude Include="PlayerSelectionObserver.h" />
-    <ClInclude Include="RemainSomeTimeCondition.h" />
     <ClInclude Include="RemoveSomeTetraminosCondition.h" />
     <ClInclude Include="RemovingDeadTetraminosSystem.h" />
     <ClInclude Include="VictoryConditionsFactory.h" />

@@ -9,12 +9,12 @@ public:
 	RemainSomeTimeCondition(GameLevelInformation aLevelInformation);
 	~RemainSomeTimeCondition(void);
 
-	int getVictoryStateInformationCount(void);
-	int getVictoryStateInformationForIndex(int aIndex);
-	std::string getVictoryStateIconImageForIndex(int aIndex);
+	virtual int getVictoryStateInformationCount(void);
+	virtual int getVictoryStateInformationForIndex(int aIndex);
+	virtual std::string getVictoryStateIconImageForIndex(int aIndex);
 	
-	bool playerWin(void);
-	void update(void);
+	virtual bool playerWin(void);
+	virtual void update(void);
 
 private:
 
