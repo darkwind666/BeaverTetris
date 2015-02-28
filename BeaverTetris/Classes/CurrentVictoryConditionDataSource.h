@@ -1,9 +1,13 @@
 #pragma once
 
 #include "ServiceInterface.h"
-#include "VictoryConditionInterface.h"
+#include <map>
+#include <functional>
+#include "GameEnums.h"
+#include "GameStructures.h"
 
 class CurrentLevelDataSource;
+class VictoryConditionInterface;
 
 class CurrentVictoryConditionDataSource : public ServiceInterface
 {
@@ -16,9 +20,8 @@ public:
 private:
 
 	VictoryConditionInterface *_currentVictoryCondition;
-	CurrentLevelDataSource *_currentLevelDataSource;
 
-	VictoryConditionInterface* getVictoryCondition();
-
+	VictoryConditionInterface* getVictoryConditionWithLevelData(GameLevelInformation data);
+	std::map< VictoryConditionType, std::function<VictoryConditionInterface*(GameLevelInformation)> > getVictoryConditions();
 };
 

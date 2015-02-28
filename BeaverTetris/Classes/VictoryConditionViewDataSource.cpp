@@ -7,6 +7,7 @@
 #include "GameViewConstants.h"
 #include "GameElementsDataHelper.h"
 #include "StringsSupporter.h"
+#include "VictoryConditionInterface.h"
 
 using namespace std;
 using namespace cocos2d;

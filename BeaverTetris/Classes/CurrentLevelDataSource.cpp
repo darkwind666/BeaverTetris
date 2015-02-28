@@ -44,6 +44,7 @@ GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
 	availableBosses.bossesCount = 1;
 
 	gameLevelInformation.availableBosses = availableBosses;
+	gameLevelInformation.victoryConditionType = kWinBossCondition;
 
 	return gameLevelInformation;
 }

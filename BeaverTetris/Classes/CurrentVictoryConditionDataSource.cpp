@@ -1,4 +1,5 @@
 #include "CurrentVictoryConditionDataSource.h"
+#include "VictoryConditionInterface.h"
 #include "StringsSupporter.h"
 #include "VictoryConditionInterface.h"
 #include "WinBossCondition.h"
@@ -10,8 +11,9 @@ using namespace std;
 
 CurrentVictoryConditionDataSource::CurrentVictoryConditionDataSource()
 {
-	_currentVictoryCondition = getVictoryCondition();
-	_currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
+	CurrentLevelDataSource *currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
+	GameLevelInformation levelData = currentLevelDataSource->getCurrentLevelData();
+	_currentVictoryCondition = getVictoryConditionWithLevelData(levelData);
 }
 
 
@@ -19,14 +21,27 @@ CurrentVictoryConditionDataSource::~CurrentVictoryConditionDataSource(void)
 {
 }
 
+VictoryConditionInterface* CurrentVictoryConditionDataSource::getVictoryConditionWithLevelData(GameLevelInformation data)
+{
+	map< VictoryConditionType, function<VictoryConditionInterface*(GameLevelInformation)> > victoryConditions = getVictoryConditions();
+	function<VictoryConditionInterface*(GameLevelInformation)> conditionFactory = victoryConditions[data.victoryConditionType];
+	VictoryConditionInterface *currentVictoryCondition = conditionFactory(data);
+	return currentVictoryCondition;
+}
+
+map< VictoryConditionType, function<VictoryConditionInterface*(GameLevelInformation)> > CurrentVictoryConditionDataSource::getVictoryConditions()
+{
+	map< VictoryConditionType, function<VictoryConditionInterface*(GameLevelInformation)> > victoryConditions;
+
+	victoryConditions[kWinBossCondition] = [](GameLevelInformation data){
+		VictoryConditionInterface *victoryCondition = new WinBossCondition(data);
+		return victoryCondition;
+	};
+
+	return victoryConditions;
+}
+
 VictoryConditionInterface* CurrentVictoryConditionDataSource::getCurrentVictoryCondition()
 {
 	return _currentVictoryCondition;
-}
-
-VictoryConditionInterface* CurrentVictoryConditionDataSource::getVictoryCondition()
-{
-	GameLevelInformation levelInformation = _currentLevelDataSource->getCurrentLevelData();
-	VictoryConditionInterface *victoryCondition = new WinBossCondition(levelInformation);
-	return victoryCondition;
 }
