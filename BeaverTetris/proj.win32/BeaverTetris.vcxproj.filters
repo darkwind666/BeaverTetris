@@ -162,9 +162,6 @@
     <ClCompile Include="VictoryConditionsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="PlaceSomeDetailsCondition.cpp">
-      <Filter>Models\VictoryConditions</Filter>
-    </ClCompile>
     <ClCompile Include="RemainSomeTimeCondition.cpp">
       <Filter>Models\VictoryConditions</Filter>
     </ClCompile>
@@ -615,6 +612,9 @@
     <ClCompile Include="..\Classes\TimeAccelerationEvent.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\PlaceSomeDetailsCondition.cpp">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -688,9 +688,6 @@
     </ClInclude>
     <ClInclude Include="VictoryConditionsFactory.h">
       <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="PlaceSomeDetailsCondition.h">
-      <Filter>Models\VictoryConditions</Filter>
     </ClInclude>
     <ClInclude Include="RemainSomeTimeCondition.h">
       <Filter>Models\VictoryConditions</Filter>
@@ -1171,6 +1168,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TimeAccelerationEvent.h">
       <Filter>Models\GameEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlaceSomeDetailsCondition.h">
+      <Filter>Models\VictoryConditions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

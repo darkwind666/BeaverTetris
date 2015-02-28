@@ -1,4 +1,5 @@
 #include "PlaceSomeDetailsCondition.h"
+#include "NewTetraminoDetailDataSource.h"
 #include "GameViewElementsKeys.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
@@ -8,8 +9,7 @@ using namespace std;
 PlaceSomeDetailsCondition::PlaceSomeDetailsCondition(GameLevelInformation aLevelInformation)
 {
 	_needToPlaceDetailsCount = aLevelInformation.needToPlaceDetailsCount;
-	_tetraminisDetailsFactory = (TetraminisDetailsFactory*)ServiceLocator::getServiceForKey(tetraminisDetailsFactoryKey);
-	update();
+	_newTetraminoDetailDataSource = (NewTetraminoDetailDataSource*)ServiceLocator::getServiceForKey(newTetraminoDetailDataSourceKey);
 }
 
 
@@ -24,7 +24,9 @@ int PlaceSomeDetailsCondition::getVictoryStateInformationCount(void)
 
 int PlaceSomeDetailsCondition::getVictoryStateInformationForIndex(int aIndex)
 {
-	 return _placedDetailsCount;
+	int placedDetailsCount = _newTetraminoDetailDataSource->getCreatedDetailsCount();
+	int remainDetailsCount = _needToPlaceDetailsCount - placedDetailsCount;
+	return remainDetailsCount;
 }
 
 string PlaceSomeDetailsCondition::getVictoryStateIconImageForIndex(int aIndex)
@@ -35,8 +37,8 @@ string PlaceSomeDetailsCondition::getVictoryStateIconImageForIndex(int aIndex)
 bool PlaceSomeDetailsCondition::playerWin(void)
 {
 	bool playerWin = false;
-
-	if (_placedDetailsCount >= _needToPlaceDetailsCount)
+	int placedDetailsCount = _newTetraminoDetailDataSource->getCreatedDetailsCount();
+	if (placedDetailsCount >= _needToPlaceDetailsCount)
 	{
 		playerWin = true;
 	}
@@ -45,5 +47,5 @@ bool PlaceSomeDetailsCondition::playerWin(void)
 
 void PlaceSomeDetailsCondition::update(void)
 {
-	_placedDetailsCount = _tetraminisDetailsFactory->getCreatedDetailsCount();
+	
 }

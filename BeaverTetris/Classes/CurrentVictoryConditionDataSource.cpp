@@ -2,10 +2,11 @@
 #include "VictoryConditionInterface.h"
 #include "StringsSupporter.h"
 #include "VictoryConditionInterface.h"
-#include "WinBossCondition.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "CurrentLevelDataSource.h"
+#include "WinBossCondition.h"
+#include "PlaceSomeDetailsCondition.h"
 
 using namespace std;
 
@@ -35,6 +36,11 @@ map< VictoryConditionType, function<VictoryConditionInterface*(GameLevelInformat
 
 	victoryConditions[kWinBossCondition] = [](GameLevelInformation data){
 		VictoryConditionInterface *victoryCondition = new WinBossCondition(data);
+		return victoryCondition;
+	};
+
+	victoryConditions[kPlaceSomeDetailsCondition] = [](GameLevelInformation data){
+		VictoryConditionInterface *victoryCondition = new PlaceSomeDetailsCondition(data);
 		return victoryCondition;
 	};
 

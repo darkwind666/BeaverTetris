@@ -221,6 +221,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\MainGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\MainGameVictoryConditionController.cpp" />
     <ClCompile Include="..\Classes\NewTetraminoDetailDataSource.cpp" />
+    <ClCompile Include="..\Classes\PlaceSomeDetailsCondition.cpp" />
     <ClCompile Include="..\Classes\PlayerActionControllerDesktop.cpp" />
     <ClCompile Include="..\Classes\PlayerActionControllerFactory.cpp" />
     <ClCompile Include="..\Classes\PlayerCreatorController.cpp" />
@@ -336,9 +337,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GameTransitionsController.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="PlaceSomeDetailsCondition.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="PlayerSelectionObserver.cpp">
@@ -484,6 +482,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\MainGameSceneFactory.h" />
     <ClInclude Include="..\Classes\MainGameVictoryConditionController.h" />
     <ClInclude Include="..\Classes\NewTetraminoDetailDataSource.h" />
+    <ClInclude Include="..\Classes\PlaceSomeDetailsCondition.h" />
     <ClInclude Include="..\Classes\PlayerActionControllerDesktop.h" />
     <ClInclude Include="..\Classes\PlayerActionControllerFactory.h" />
     <ClInclude Include="..\Classes\PlayerCreatorController.h" />
@@ -561,7 +560,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameResourcesExtension.h" />
     <ClInclude Include="GameSystemInterface.h" />
     <ClInclude Include="GameTransitionsController.h" />
-    <ClInclude Include="PlaceSomeDetailsCondition.h" />
     <ClInclude Include="PlayerSelectionObserver.h" />
     <ClInclude Include="RemainSomeTimeCondition.h" />
     <ClInclude Include="RemoveSomeTetraminosCondition.h" />
