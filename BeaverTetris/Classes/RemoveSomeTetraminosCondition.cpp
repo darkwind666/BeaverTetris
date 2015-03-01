@@ -2,13 +2,21 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "GameViewSuffixes.h"
+#include "GameBoard.h"
+#include "KeysForEnumsDataSource.h"
+#include "RocketSpell.h"
+#include "Tetramino.h"
 
 using namespace std;
 
 RemoveSomeTetraminosCondition::RemoveSomeTetraminosCondition(GameLevelInformation aLevelInformation)
 {
-	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
-	_gameBoard->addObserver(this);
+	 GameBoard *gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	 gameBoard->addObserver(this);
+
+	 RocketSpell *rocketSpellModel = (RocketSpell*)ServiceLocator::getServiceForKey(rocketSpellModelKey);
+	 rocketSpellModel->addObserver(this);
+
 	_tetraminosCollectionForWin = aLevelInformation.tetraminosCollectionForWin;
 	_keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
 }
@@ -16,7 +24,6 @@ RemoveSomeTetraminosCondition::RemoveSomeTetraminosCondition(GameLevelInformatio
 
 RemoveSomeTetraminosCondition::~RemoveSomeTetraminosCondition(void)
 {
-	_gameBoard->removeObserver(this);
 }
 
 int RemoveSomeTetraminosCondition::getVictoryStateInformationCount(void)
@@ -59,12 +66,45 @@ void RemoveSomeTetraminosCondition::tetraminoRemoving(Tetramino *aTetramino)
 	vector<TetraminosForWinInformation>::iterator tetraminosIterator;
 	for (tetraminosIterator = _tetraminosCollectionForWin.begin(); tetraminosIterator != _tetraminosCollectionForWin.end(); tetraminosIterator++)
 	{
-		TetraminosForWinInformation tetraminosForWin = *tetraminosIterator;
+		TetraminosForWinInformation &tetraminosForWin = *tetraminosIterator;
 		if (tetraminosForWin.tetraminoType == aTetramino->getTetraminoType())
 		{
 			tetraminosForWin.tetraminosCount = tetraminosForWin.tetraminosCount - 1;
 			break;
 		}
+	}
+	removeFilledCollections();
+}
+
+void RemoveSomeTetraminosCondition::removeFilledCollections()
+{
+	vector<int> indexesToRemove = getIndexesToRemove();
+	removeCollectionsForIndexes(indexesToRemove);
+}
+
+vector<int> RemoveSomeTetraminosCondition::getIndexesToRemove()
+{
+	vector<int> indexesToRemove;
+	vector<TetraminosForWinInformation>::iterator tetraminosIterator;
+	for (tetraminosIterator = _tetraminosCollectionForWin.begin(); tetraminosIterator != _tetraminosCollectionForWin.end(); tetraminosIterator++)
+	{
+		TetraminosForWinInformation tetraminosForWin = *tetraminosIterator;
+		if (tetraminosForWin.tetraminosCount <= 0)
+		{
+			int index = distance(_tetraminosCollectionForWin.begin(), tetraminosIterator);
+			indexesToRemove.push_back(index);
+		}
+	}
+	return indexesToRemove;
+}
+
+void RemoveSomeTetraminosCondition::removeCollectionsForIndexes(vector<int> aIndexes)
+{
+	vector<int>::iterator idexesIterator;
+	for (idexesIterator = aIndexes.begin(); idexesIterator != aIndexes.end(); idexesIterator++)
+	{
+		int index = *idexesIterator;
+		_tetraminosCollectionForWin.erase(_tetraminosCollectionForWin.begin() + index);
 	}
 }
 

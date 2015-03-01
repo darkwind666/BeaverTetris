@@ -52,6 +52,11 @@ void Tetramino::reduceLive(void)
 	_tetraminoLivesCount--;
 }
 
+void Tetramino::setLivesToZero()
+{
+	_tetraminoLivesCount = 0;
+}
+
 void Tetramino::addObserver(TetraminoObserverInterface *aTetraminoObserverInterface)
 {
 	_tetraminoObserver = aTetraminoObserverInterface;

@@ -1,7 +1,7 @@
 #include "GameBoard.h"
 #include "GameEnums.h"
 #include "Tetramino.h"
-#include "GameBoardObserverInterface.h"
+#include "TetraminoRemovingObserverInterface.h"
 #include "TetraminosPositionsDelegate.h"
 
 using namespace std;
@@ -10,7 +10,7 @@ GameBoard::GameBoard(int width, int height)
 {
 	_gameBoardWidth = width;
 	_gameBoardHeight = height;
-	_gameBoardObserver = NULL;
+	_observer = NULL;
 	_tetramins = vector< vector<Tetramino*> >();
 	cleanGameBoard();
 	_tetraminosSourceDelegate = new TetraminosPositionsDelegate(&_tetramins);
@@ -45,10 +45,6 @@ void GameBoard::replaceTetraminoXYposition(Tetramino *aTetramino, int xPosition,
 void GameBoard::removeTetraminoForXYposition(int xPosition, int yPosition)
 {
 	Tetramino *newTetramino = new Tetramino();
-	if (_gameBoardObserver)
-	{
-		_gameBoardObserver->tetraminoRemoving(_tetramins[yPosition][xPosition]);
-	}
 	_tetramins[yPosition][xPosition] = newTetramino;
 }
 
@@ -57,6 +53,10 @@ void GameBoard::removeTetraminoForXYpositionIfItHasNoLives(int xPosition, int yP
 	Tetramino *tetraminoInBoard = getTetraminoForXYposition(xPosition, yPosition);
 	if (tetraminoInBoard->getTetraminoLivesCount() <= 0)
 	{
+		if (_observer)
+		{
+			_observer->tetraminoRemoving(tetraminoInBoard);
+		}
 		removeTetraminoForXYposition(xPosition, yPosition);
 		delete tetraminoInBoard;
 	}
@@ -142,12 +142,7 @@ vector <GamePositionOnBoard> GameBoard::getTetraminosForType(TetraminoType aTetr
 	return _tetraminosSourceDelegate->getTetraminosForType(aTetraminoType);
 }
 
-void GameBoard::addObserver(GameBoardObserverInterface *aGameBoardObserver)
+void GameBoard::addObserver(TetraminoRemovingObserverInterface *aObserver)
 {
-	_gameBoardObserver = aGameBoardObserver;
-}
-
-void GameBoard::removeObserver(GameBoardObserverInterface *aGameBoardObserver)
-{
-	_gameBoardObserver = NULL;
+	_observer = aObserver;
 }

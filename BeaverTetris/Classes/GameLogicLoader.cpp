@@ -47,6 +47,9 @@ void GameLogicLoader::loadResources()
 	GameFlowSystem *gameFlowSystem = new GameFlowSystem();
 	gameTimeStepController->addSystem(gameFlowSystem);
 
+	SpellBox *spellBox = new SpellBox();
+	ServiceLocator::setServiceForKey(spellBox, spellBoxKey);
+
 	CurrentVictoryConditionDataSource *currentVictoryConditionDataSource = new CurrentVictoryConditionDataSource();
 	ServiceLocator::setServiceForKey(currentVictoryConditionDataSource, currentVictoryConditionDataSourceKey);
 
@@ -69,8 +72,5 @@ void GameLogicLoader::loadResources()
 	TetrisLogicSystem *tetrisLogicSystem = new TetrisLogicSystem(gameBoard);
 	gameTimeStepController->addSystem(tetrisLogicSystem);
 	ServiceLocator::setServiceForKey(tetrisLogicSystem, tetrisLogicSystemKey);
-
-	SpellBox *spellBox = new SpellBox();
-	ServiceLocator::setServiceForKey(spellBox, spellBoxKey);
 
 }

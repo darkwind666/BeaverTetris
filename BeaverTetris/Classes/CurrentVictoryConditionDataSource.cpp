@@ -9,6 +9,7 @@
 #include "WinBossCondition.h"
 #include "PlaceSomeDetailsCondition.h"
 #include "RemainSomeTimeCondition.h"
+#include "RemoveSomeTetraminosCondition.h"
 
 using namespace std;
 
@@ -48,6 +49,11 @@ map< VictoryConditionType, function<VictoryConditionInterface*(GameLevelInformat
 
 	victoryConditions[kRemainSomeTimeCondition] = [](GameLevelInformation data){
 		VictoryConditionInterface *victoryCondition = new RemainSomeTimeCondition(data);
+		return victoryCondition;
+	};
+
+	victoryConditions[kRemoveSomeTetraminosCondition] = [](GameLevelInformation data){
+		VictoryConditionInterface *victoryCondition = new RemoveSomeTetraminosCondition(data);
 		return victoryCondition;
 	};
 

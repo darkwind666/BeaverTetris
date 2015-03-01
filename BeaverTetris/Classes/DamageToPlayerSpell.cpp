@@ -128,7 +128,9 @@ void DamageToPlayerSpell::removeTetramninos(std::vector<GamePositionOnBoard> aPo
 	for (tetraminosIterator = aPositions.begin(); tetraminosIterator != aPositions.end(); tetraminosIterator++)
 	{
 		GamePositionOnBoard tetraminoPosition = *tetraminosIterator;
-		_gameBoard->removeTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+		tetraminoInBoard->setLivesToZero();
+		_gameBoard->removeTetraminoForXYpositionIfItHasNoLives(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
 	}
 }
 

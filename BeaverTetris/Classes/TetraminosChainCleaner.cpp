@@ -71,8 +71,8 @@ void TetraminosChainCleaner::removeTetraminosWithPositions(vector<GamePositionOn
 	{
 		GamePositionOnBoard tetraminoPosition = *tetraminosIterator;
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition,tetraminoPosition.yPosition);
-		_gameBoard->removeTetraminoForXYposition(tetraminoPosition.xPosition,tetraminoPosition.yPosition);
-		delete tetraminoInBoard;
+		tetraminoInBoard->setLivesToZero();
+		_gameBoard->removeTetraminoForXYpositionIfItHasNoLives(tetraminoPosition.xPosition,tetraminoPosition.yPosition);
 	}
 }
 

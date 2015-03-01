@@ -40,7 +40,7 @@ void SimilarTetraminosCombination::checkSimilarTetraminosCombination()
 void SimilarTetraminosCombination::checkChainInDetailElements(vector<GamePositionOnBoard> aTetraminos)
 {
 	_horisontalChainChecker->checkChainInDetailHorisontals(aTetraminos);
-	 _verticalChainChecker->checkChainInDetailVerticals(aTetraminos);
+	_verticalChainChecker->checkChainInDetailVerticals(aTetraminos);
 }
 
 void SimilarTetraminosCombination::setDelegate(ExplosionAnimationDelegate *aDelegate)

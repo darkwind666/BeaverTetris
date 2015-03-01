@@ -162,9 +162,6 @@
     <ClCompile Include="VictoryConditionsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="RemoveSomeTetraminosCondition.cpp">
-      <Filter>Models\VictoryConditions</Filter>
-    </ClCompile>
     <ClCompile Include="CurrentBossDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
@@ -380,9 +377,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Tetramino.cpp">
       <Filter>Models\GameLogic</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameBoardObserverInterface.cpp">
-      <Filter>Observers</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\TetraminosPositionsDelegate.cpp">
       <Filter>Models\GameLogic\Systems\GameBoard</Filter>
@@ -615,6 +609,12 @@
     <ClCompile Include="..\Classes\RemainSomeTimeCondition.cpp">
       <Filter>Models\VictoryConditions</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetraminoRemovingObserverInterface.cpp">
+      <Filter>Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RemoveSomeTetraminosCondition.cpp">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -688,9 +688,6 @@
     </ClInclude>
     <ClInclude Include="VictoryConditionsFactory.h">
       <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="RemoveSomeTetraminosCondition.h">
-      <Filter>Models\VictoryConditions</Filter>
     </ClInclude>
     <ClInclude Include="CurrentBossDataSource.h">
       <Filter>Models\DataSources</Filter>
@@ -935,9 +932,6 @@
     <ClInclude Include="..\Classes\Tetramino.h">
       <Filter>Models\GameLogic</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\GameBoardObserverInterface.h">
-      <Filter>Observers</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\TetraminosPositionsDelegate.h">
       <Filter>Models\GameLogic\Systems\GameBoard</Filter>
     </ClInclude>
@@ -1170,6 +1164,12 @@
       <Filter>Models\VictoryConditions</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\RemainSomeTimeCondition.h">
+      <Filter>Models\VictoryConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminoRemovingObserverInterface.h">
+      <Filter>Observers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RemoveSomeTetraminosCondition.h">
       <Filter>Models\VictoryConditions</Filter>
     </ClInclude>
   </ItemGroup>

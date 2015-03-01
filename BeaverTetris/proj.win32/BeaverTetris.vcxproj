@@ -177,7 +177,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameBackgroundSoundRegulator.cpp" />
     <ClCompile Include="..\Classes\GameBoard.cpp" />
     <ClCompile Include="..\Classes\GameBoardController.cpp" />
-    <ClCompile Include="..\Classes\GameBoardObserverInterface.cpp" />
     <ClCompile Include="..\Classes\GameBoardViewDataSource.cpp" />
     <ClCompile Include="..\Classes\GameDataLoader.cpp" />
     <ClCompile Include="..\Classes\GameElementsDataHelper.cpp" />
@@ -235,6 +234,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\RandomExplosionsSpell.cpp" />
     <ClCompile Include="..\Classes\RegulateSoundPopUp.cpp" />
     <ClCompile Include="..\Classes\RemainSomeTimeCondition.cpp" />
+    <ClCompile Include="..\Classes\RemoveSomeTetraminosCondition.cpp" />
     <ClCompile Include="..\Classes\ResourcesLoader.cpp" />
     <ClCompile Include="..\Classes\RocketSpell.cpp" />
     <ClCompile Include="..\Classes\RocketSpellAnimationController.cpp" />
@@ -248,6 +248,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SpellsViewDataSource.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
+    <ClCompile Include="..\Classes\TetraminoRemovingObserverInterface.cpp" />
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminosFallEvent.cpp" />
@@ -343,9 +344,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="PlayerSelectionObserver.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="RemoveSomeTetraminosCondition.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="RemovingDeadTetraminosSystem.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -432,7 +430,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameBackgroundSoundRegulator.h" />
     <ClInclude Include="..\Classes\GameBoard.h" />
     <ClInclude Include="..\Classes\GameBoardController.h" />
-    <ClInclude Include="..\Classes\GameBoardObserverInterface.h" />
     <ClInclude Include="..\Classes\GameBoardViewDataSource.h" />
     <ClInclude Include="..\Classes\GameDataLoader.h" />
     <ClInclude Include="..\Classes\GameDesignConstants.h" />
@@ -494,6 +491,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\RandomExplosionsSpell.h" />
     <ClInclude Include="..\Classes\RegulateSoundPopUp.h" />
     <ClInclude Include="..\Classes\RemainSomeTimeCondition.h" />
+    <ClInclude Include="..\Classes\RemoveSomeTetraminosCondition.h" />
     <ClInclude Include="..\Classes\ResourcesLoader.h" />
     <ClInclude Include="..\Classes\RocketSpell.h" />
     <ClInclude Include="..\Classes\RocketSpellAnimationController.h" />
@@ -507,6 +505,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SpellsViewDataSource.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />
+    <ClInclude Include="..\Classes\TetraminoRemovingObserverInterface.h" />
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminosFallEvent.h" />
@@ -560,7 +559,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameSystemInterface.h" />
     <ClInclude Include="GameTransitionsController.h" />
     <ClInclude Include="PlayerSelectionObserver.h" />
-    <ClInclude Include="RemoveSomeTetraminosCondition.h" />
     <ClInclude Include="RemovingDeadTetraminosSystem.h" />
     <ClInclude Include="VictoryConditionsFactory.h" />
     <ClInclude Include="main.h" />

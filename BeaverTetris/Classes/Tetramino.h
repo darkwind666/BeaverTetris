@@ -16,6 +16,7 @@ public:
 
 	int getTetraminoLivesCount(void);
 	void reduceLive(void);
+	void setLivesToZero();
 
 	void addObserver(TetraminoObserverInterface *aTetraminoObserverInterface);
 	void removeObserver(TetraminoObserverInterface *aTetraminoObserverInterface);

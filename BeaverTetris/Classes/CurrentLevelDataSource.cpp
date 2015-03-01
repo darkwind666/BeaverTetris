@@ -44,11 +44,29 @@ GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
 	availableBosses.bossesCount = 1;
 
 	gameLevelInformation.availableBosses = availableBosses;
-	gameLevelInformation.victoryConditionType = kRemainSomeTimeCondition;
+	gameLevelInformation.victoryConditionType = kRemoveSomeTetraminosCondition;
 
 	gameLevelInformation.needToPlaceDetailsCount = 10;
 
 	gameLevelInformation.remainTimes = 200;
+
+
+
+	std::vector<TetraminosForWinInformation> tetraminosCollectionForWin;
+
+	TetraminosForWinInformation tetraminoType1;
+	tetraminoType1.tetraminoType = kTetraminoRed;
+	tetraminoType1.tetraminosCount = 20;
+
+	TetraminosForWinInformation tetraminoType2;
+	tetraminoType2.tetraminoType = kTetraminoGreen;
+	tetraminoType2.tetraminosCount = 10;
+
+
+	tetraminosCollectionForWin.push_back(tetraminoType1);
+	tetraminosCollectionForWin.push_back(tetraminoType2);
+
+	gameLevelInformation.tetraminosCollectionForWin = tetraminosCollectionForWin;
 
 	return gameLevelInformation;
 }

@@ -5,8 +5,8 @@
 #include "GameStructures.h"
 
 class Tetramino;
-class GameBoardObserverInterface;
 class TetraminosPositionsDelegate;
+class TetraminoRemovingObserverInterface;
 
 class GameBoard : public ServiceInterface
 {
@@ -35,15 +35,14 @@ public:
 	void removeTetraminos(std::vector <GamePositionOnBoard> aNeedToRemoveTetraminos);
 	void deleteAllTetraminos();
 	
-	void addObserver(GameBoardObserverInterface *aGameBoardObserver);
-	void removeObserver(GameBoardObserverInterface *aGameBoardObserver);
+	void addObserver(TetraminoRemovingObserverInterface *aObserver);
 
 private:
 
 	int _gameBoardWidth;
 	int _gameBoardHeight;
 	std::vector< std::vector<Tetramino*> > _tetramins;
-	GameBoardObserverInterface *_gameBoardObserver;
+	TetraminoRemovingObserverInterface *_observer;
 	TetraminosPositionsDelegate *_tetraminosSourceDelegate;
 
 	void cleanGameBoard(void);
