@@ -6,6 +6,7 @@
 #include "FirestormSpellAnimationController.h"
 #include "CohesionSpellAnimationController.h"
 #include "FallenDetailAnimationController.h"
+#include "AddLineToBoardSpellAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -37,6 +38,9 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	FallenDetailAnimationController *fallenDetailAnimationController = new FallenDetailAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(fallenDetailAnimationController);
+
+	AddLineToBoardSpellAnimationController *addLineToBoardSpellAnimationController = new AddLineToBoardSpellAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(addLineToBoardSpellAnimationController);
 }
 
 void GameWorldAnimationController::updateAnimation()

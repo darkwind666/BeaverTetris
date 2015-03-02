@@ -28,9 +28,10 @@ bool AddLineToBoardBottomSpell::spellAvailable(void)
 
 void AddLineToBoardBottomSpell::castSpell()
 {
+	sendUpGameBoardMessageToDelegate();
 	riseAllTetraminos();
 	addRowToBottom();
-	sendMessageToDelegate();
+	sendAddLineMessageToDelegate();
 }
 
 void AddLineToBoardBottomSpell::riseAllTetraminos()
@@ -108,7 +109,15 @@ bool AddLineToBoardBottomSpell::checkEmptyTetraminosInBottom()
 	return emptyTetramino;
 }
 
-void AddLineToBoardBottomSpell::sendMessageToDelegate()
+void AddLineToBoardBottomSpell::sendUpGameBoardMessageToDelegate()
+{
+	if (_delegate)
+	{
+		_delegate->upGameBoard();
+	}
+}
+
+void AddLineToBoardBottomSpell::sendAddLineMessageToDelegate()
 {
 	if (_delegate)
 	{

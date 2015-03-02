@@ -18,7 +18,6 @@ public:
 private:
 
 	AnimationSynchonizer *_animationSynchonizer;
-	GameBoardController *_gameBoardController;
 	TetraminosAppearanceAnimationFactory *_tetraminosAppearanceAnimationFactory;
 };
 

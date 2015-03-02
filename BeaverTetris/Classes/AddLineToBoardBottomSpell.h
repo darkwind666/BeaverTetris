@@ -1,11 +1,12 @@
 #pragma once
 
 #include "SpellInterface.h"
+#include "ServiceInterface.h"
 
 class GameBoard;
 class AddLineToBoardBottomSpellDelegate;
 
-class AddLineToBoardBottomSpell :public SpellInterface
+class AddLineToBoardBottomSpell :public SpellInterface, public ServiceInterface
 {
 public:
 	AddLineToBoardBottomSpell(void);
@@ -30,7 +31,8 @@ private:
 	bool checkEmptyTetraminosInBottom();
 	void separateTetraminos();
 
-	void sendMessageToDelegate();
+	void sendUpGameBoardMessageToDelegate();
+	void sendAddLineMessageToDelegate();
 
 };
 

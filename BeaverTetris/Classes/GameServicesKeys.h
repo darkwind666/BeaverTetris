@@ -24,6 +24,7 @@ const string fillingGapInBoardSystemKey = string("FillingGapInBoardSystem");
 const string currentLevelDataSourceKey = string("CurrentLevelDataSource");
 const string currentVictoryConditionDataSourceKey = string("CurrentVictoryConditionDataSource");
 const string damageToPlayerSpellModelKey = string("DamageToPlayerSpell");
+const string addLineToBoardBottomSpellModelKey = string("AddLineToBoardBottomSpell");
 const string spellBoxKey = string("SpellBox");
 const string rocketSpellModelKey = string("RocketSpell");
 const string randomExplosionsSpellModelKey = string("RandomExplosionsSpell");

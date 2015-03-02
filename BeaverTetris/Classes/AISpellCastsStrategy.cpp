@@ -47,7 +47,8 @@ vector<SpellInterface*> AISpellCastsStrategy::getSpells()
 {
 	vector<SpellInterface*> spells;
 
-	SpellInterface *addLineToBoardBottomSpell = new AddLineToBoardBottomSpell();
+	AddLineToBoardBottomSpell *addLineToBoardBottomSpell = new AddLineToBoardBottomSpell();
+	ServiceLocator::setServiceForKey(addLineToBoardBottomSpell, addLineToBoardBottomSpellModelKey);
 	spells.push_back(addLineToBoardBottomSpell);
 
 	DamageToPlayerSpell *damageToPlayerSpell = new DamageToPlayerSpell();

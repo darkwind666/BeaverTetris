@@ -10,6 +10,11 @@ AddLineToBoardBottomSpellDelegate::~AddLineToBoardBottomSpellDelegate(void)
 {
 }
 
+void AddLineToBoardBottomSpellDelegate::upGameBoard()
+{
+
+}
+
 void AddLineToBoardBottomSpellDelegate::addLineToGameBoard()
 {
 

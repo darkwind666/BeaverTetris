@@ -2,14 +2,45 @@
 
 #include "cocos2d.h"
 #include "AddLineToBoardBottomSpellDelegate.h"
+#include <vector>
+#include <functional>
+#include "GameStructures.h"
+
+class GameBoardController;
+class AnimationSynchonizer;
+class TetraminosAppearanceAnimationFactory;
+class GameBoard;
+class GameBoardViewDataSource;
+class TetraminoColorsDataSource;
 
 class AddLineToBoardSpellAnimationController : public AddLineToBoardBottomSpellDelegate, public cocos2d::Node
 {
 public:
-	AddLineToBoardSpellAnimationController(void);
+	AddLineToBoardSpellAnimationController(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer);
 	~AddLineToBoardSpellAnimationController(void);
 
+	virtual void upGameBoard();
 	virtual void addLineToGameBoard();
+
+private:
+
+	AnimationSynchonizer *_animationSynchonizer;
+	TetraminosAppearanceAnimationFactory *_tetraminosAppearanceAnimationFactory;
+	GameBoard *_gameBoard;
+	GameBoardViewDataSource *_gameBoardViewDataSource;
+	GameBoardController *_gameBoardController;
+	TetraminoColorsDataSource *_tetraminoColorsDataSource;
+
+
+	cocos2d::Node* getGameBoardView();
+	void cleanAllTetraminosFromView();
+	void fillViewWithTetraminos(cocos2d::Node *aView);
+	cocos2d::FiniteTimeAction* getAnimationWithGameBoardView(cocos2d::Node *aView);
+	std::function<void(Node*)> getAnimationEndCallback();
+
+	std::vector<GamePositionOnBoard> getBottomLinePositions();
+	void setPositionWithIndexInCollection(int aWidthIndex, std::vector<GamePositionOnBoard> &aPositions);
+	void addAnimationWithPositions(std::vector<GamePositionOnBoard> &aPositions);
 
 };
 
