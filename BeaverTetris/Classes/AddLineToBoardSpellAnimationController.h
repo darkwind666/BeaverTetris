@@ -35,7 +35,10 @@ private:
 	cocos2d::Node* getGameBoardView();
 	void cleanAllTetraminosFromView();
 	void fillViewWithTetraminos(cocos2d::Node *aView);
+	void addTetraminoOnViewForIndex(cocos2d::Node *aView, int aIndex);
+	int getTetraminoViewTagForIndex(int aIndex);
 	cocos2d::FiniteTimeAction* getAnimationWithGameBoardView(cocos2d::Node *aView);
+	cocos2d::FiniteTimeAction* getMoveBoardAnimationWithView(cocos2d::Node *aView);
 	std::function<void(Node*)> getAnimationEndCallback();
 
 	std::vector<GamePositionOnBoard> getBottomLinePositions();
