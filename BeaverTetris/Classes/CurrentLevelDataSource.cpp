@@ -44,7 +44,7 @@ GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
 	availableBosses.bossesCount = 1;
 
 	gameLevelInformation.availableBosses = availableBosses;
-	gameLevelInformation.victoryConditionType = kRemoveSomeTetraminosCondition;
+	gameLevelInformation.victoryConditionType = kWinBossCondition;
 
 	gameLevelInformation.needToPlaceDetailsCount = 10;
 

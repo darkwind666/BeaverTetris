@@ -140,6 +140,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   <ItemGroup>
     <ClCompile Include="..\Classes\AddLineToBoardBottomSpell.cpp" />
     <ClCompile Include="..\Classes\AddLineToBoardBottomSpellDelegate.cpp" />
+    <ClCompile Include="..\Classes\AddLineToBoardSpellAnimationController.cpp" />
     <ClCompile Include="..\Classes\AIMovementStrategy.cpp" />
     <ClCompile Include="..\Classes\AISpellCastsStrategy.cpp" />
     <ClCompile Include="..\Classes\AnimationSynchonizer.cpp" />
@@ -250,6 +251,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoRemovingObserverInterface.cpp" />
+    <ClCompile Include="..\Classes\TetraminosAppearanceAnimationFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminosFallEvent.cpp" />
@@ -392,6 +394,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   <ItemGroup>
     <ClInclude Include="..\Classes\AddLineToBoardBottomSpell.h" />
     <ClInclude Include="..\Classes\AddLineToBoardBottomSpellDelegate.h" />
+    <ClInclude Include="..\Classes\AddLineToBoardSpellAnimationController.h" />
     <ClInclude Include="..\Classes\AIMovementStrategy.h" />
     <ClInclude Include="..\Classes\AISpellCastsStrategy.h" />
     <ClInclude Include="..\Classes\AnimationSynchonizer.h" />
@@ -508,6 +511,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />
     <ClInclude Include="..\Classes\TetraminoRemovingObserverInterface.h" />
+    <ClInclude Include="..\Classes\TetraminosAppearanceAnimationFactory.h" />
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminosFallEvent.h" />
