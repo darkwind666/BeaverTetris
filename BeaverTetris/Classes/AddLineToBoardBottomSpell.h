@@ -1,7 +1,9 @@
 #pragma once
 
 #include "SpellInterface.h"
-#include "GameBoard.h"
+
+class GameBoard;
+class AddLineToBoardBottomSpellDelegate;
 
 class AddLineToBoardBottomSpell :public SpellInterface
 {
@@ -9,12 +11,15 @@ public:
 	AddLineToBoardBottomSpell(void);
 	~AddLineToBoardBottomSpell(void);
 
-	bool spellAvailable(void);
-	void castSpell();
+	virtual bool spellAvailable(void);
+	virtual void castSpell();
+
+	void setDelegate(AddLineToBoardBottomSpellDelegate *aDelegate);
 
 private:
 
 	GameBoard *_gameBoard;
+	AddLineToBoardBottomSpellDelegate *_delegate;
 
 	void riseAllTetraminos();
 	void riseTetraminosLineInBoard(int aLineIndex);
@@ -24,6 +29,8 @@ private:
 	void makeGapInBottom();
 	bool checkEmptyTetraminosInBottom();
 	void separateTetraminos();
+
+	void sendMessageToDelegate();
 
 };
 

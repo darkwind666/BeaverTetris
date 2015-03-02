@@ -2,15 +2,18 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "GameDesignConstants.h"
+#include "GameBoard.h"
 #include "GameHelper.h"
 #include "Tetramino.h"
 #include "GameEnums.h"
+#include "AddLineToBoardBottomSpellDelegate.h"
 
 using namespace std;
 
 AddLineToBoardBottomSpell::AddLineToBoardBottomSpell(void)
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	_delegate = NULL;
 }
 
 
@@ -27,6 +30,7 @@ void AddLineToBoardBottomSpell::castSpell()
 {
 	riseAllTetraminos();
 	addRowToBottom();
+	sendMessageToDelegate();
 }
 
 void AddLineToBoardBottomSpell::riseAllTetraminos()
@@ -102,4 +106,17 @@ bool AddLineToBoardBottomSpell::checkEmptyTetraminosInBottom()
 		}
 	}
 	return emptyTetramino;
+}
+
+void AddLineToBoardBottomSpell::sendMessageToDelegate()
+{
+	if (_delegate)
+	{
+		_delegate->addLineToGameBoard();
+	}
+}
+
+void AddLineToBoardBottomSpell::setDelegate(AddLineToBoardBottomSpellDelegate *aDelegate)
+{
+	_delegate = aDelegate;
 }

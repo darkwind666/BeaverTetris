@@ -615,6 +615,9 @@
     <ClCompile Include="..\Classes\RemoveSomeTetraminosCondition.cpp">
       <Filter>Models\VictoryConditions</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\AddLineToBoardBottomSpellDelegate.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1171,6 +1174,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\RemoveSomeTetraminosCondition.h">
       <Filter>Models\VictoryConditions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AddLineToBoardBottomSpellDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
