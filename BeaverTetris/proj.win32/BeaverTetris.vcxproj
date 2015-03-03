@@ -148,6 +148,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp" />
     <ClCompile Include="..\Classes\BossEnvironmentFactory.cpp" />
     <ClCompile Include="..\Classes\BossInterface.cpp" />
+    <ClCompile Include="..\Classes\BossMovementDelegate.cpp" />
+    <ClCompile Include="..\Classes\BossMovementObserver.cpp" />
     <ClCompile Include="..\Classes\BossWithOneTetraminoDelegate.cpp" />
     <ClCompile Include="..\Classes\ChainFromTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp" />
@@ -402,6 +404,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h" />
     <ClInclude Include="..\Classes\BossEnvironmentFactory.h" />
     <ClInclude Include="..\Classes\BossInterface.h" />
+    <ClInclude Include="..\Classes\BossMovementDelegate.h" />
+    <ClInclude Include="..\Classes\BossMovementObserver.h" />
     <ClInclude Include="..\Classes\BossWithOneTetraminoDelegate.h" />
     <ClInclude Include="..\Classes\ChainFromTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CocosNodesHelper.h" />

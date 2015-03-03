@@ -3,14 +3,16 @@
 #include "GameHelper.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
+#include "BossMovementObserver.h"
 
 AIMovementStrategy::AIMovementStrategy(GameBoard *aGameBoard, Tetramino *aTetramino)
 {
 	_gameBoard = aGameBoard;
-	_bossTetramino = aTetramino;
+	_bossTetramino = aTetramino; 
 	_currentUpdateState = 0;
 	_lastTetraminoInBossPlace = new Tetramino();
 	_bossDirections = getBossDirections();
+	_observer = NULL;
 }
 
 AIMovementStrategy::~AIMovementStrategy(void)
@@ -43,10 +45,10 @@ void AIMovementStrategy::updateAI()
 	{
 		_currentUpdateState = 0;
 		GamePositionOnBoard newBossPosition = getNewBossPosition();
+		sendObserverMessageWithNewBossPosition(newBossPosition);
 		placeBossOnNewPosition(newBossPosition);
 	}
 }
-
 
 GamePositionOnBoard AIMovementStrategy::getNewBossPosition()
 {
@@ -97,4 +99,18 @@ void AIMovementStrategy::placeBossOnNewPosition(GamePositionOnBoard newBossPosit
 	_gameBoard->setTetraminoXYposition(_lastTetraminoInBossPlace, currentBossPosition.xPosition, currentBossPosition.yPosition);
 	_gameBoard->setTetraminoXYposition(_bossTetramino, newBossPosition.xPosition, newBossPosition.yPosition);
 	_lastTetraminoInBossPlace = tetraminoOnNewPosition;
+}
+
+void AIMovementStrategy::addObserver(BossMovementObserver *aObserver)
+{
+	_observer = aObserver;
+}
+
+void AIMovementStrategy::sendObserverMessageWithNewBossPosition(GamePositionOnBoard newBossPosition)
+{
+	if (_observer)
+	{
+		GamePositionOnBoard startBossPosition = _gameBoard->getTetraminoPosition(_bossTetramino);
+		_observer->moveBossFromStartPositionToFinal(startBossPosition, newBossPosition);
+	}
 }

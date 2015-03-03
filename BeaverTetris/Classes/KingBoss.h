@@ -29,5 +29,7 @@ private:
 	AIMovementStrategy *_movementStrategy;
 	AISpellCastsStrategy *_spellCastsStrategy;
 
+	AIMovementStrategy* getMovementStrategeWithTetramino(Tetramino *aTetramino);
+
 };
 

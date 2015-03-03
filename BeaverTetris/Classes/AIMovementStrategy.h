@@ -7,6 +7,8 @@
 #include <functional>
 #include <map>
 
+class BossMovementObserver;
+
 class AIMovementStrategy
 {
 public:
@@ -14,6 +16,7 @@ public:
 	~AIMovementStrategy(void);
 
 	void updateAI();
+	void addObserver(BossMovementObserver *aObserver);
 
 private:
 
@@ -22,6 +25,7 @@ private:
 	int _currentUpdateState;
 	Tetramino *_lastTetraminoInBossPlace;
 	std::map<BossMovementType, std::function<void(GamePositionOnBoard&)> > _bossDirections;
+	BossMovementObserver *_observer;
 
 	std::map<BossMovementType, std::function<void(GamePositionOnBoard&)> > getBossDirections();
 	GamePositionOnBoard getNewBossPosition();
@@ -29,6 +33,8 @@ private:
 	GamePositionOnBoard getNewBossPositionForDirectionType(BossMovementType aMovementType);
 	bool checkPossitionPossibility(GamePositionOnBoard aPossiblePosition);
 	bool bossTypeEqualTetraminoType(Tetramino *aTetramino);
+
+	void sendObserverMessageWithNewBossPosition(GamePositionOnBoard newBossPosition);
 
 };
 

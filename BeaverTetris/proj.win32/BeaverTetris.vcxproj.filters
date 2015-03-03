@@ -624,6 +624,12 @@
     <ClCompile Include="..\Classes\TetraminosAppearanceAnimationFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\BossMovementObserver.cpp">
+      <Filter>Observers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BossMovementDelegate.cpp">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1189,6 +1195,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TetraminosAppearanceAnimationFactory.h">
       <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BossMovementObserver.h">
+      <Filter>Observers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BossMovementDelegate.h">
+      <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

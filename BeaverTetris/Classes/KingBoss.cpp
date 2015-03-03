@@ -6,6 +6,7 @@
 #include "GameBoard.h"
 #include "AIMovementStrategy.h"
 #include "AISpellCastsStrategy.h"
+#include "BossMovementObserver.h"
 
 using namespace std;
 
@@ -14,9 +15,7 @@ KingBoss::KingBoss(void)
 	Tetramino *bossTetramino = new Tetramino(kTetraminoBossKing, 3);
 	bossTetramino->addObserver(this);
 	_bossWithOneTetraminoDelegate = new BossWithOneTetraminoDelegate(bossTetramino);
-
-	GameBoard *gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
-	_movementStrategy = new AIMovementStrategy(gameBoard, bossTetramino);
+	_movementStrategy = getMovementStrategeWithTetramino(bossTetramino);
 	_spellCastsStrategy = new AISpellCastsStrategy();
 }
 
@@ -24,6 +23,15 @@ KingBoss::~KingBoss(void)
 {
 	delete _bossWithOneTetraminoDelegate;
 	delete _movementStrategy;
+}
+
+AIMovementStrategy* KingBoss::getMovementStrategeWithTetramino(Tetramino *aTetramino)
+{
+	GameBoard *gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	AIMovementStrategy *movementStrategy = new AIMovementStrategy(gameBoard, aTetramino);
+	BossMovementObserver *bossMovementObserver = (BossMovementObserver*)ServiceLocator::getServiceForKey(bossMovementObserverKey);
+	movementStrategy->addObserver(bossMovementObserver);
+	return movementStrategy;
 }
 
 int KingBoss::getVictoryStateInformationCount(void)

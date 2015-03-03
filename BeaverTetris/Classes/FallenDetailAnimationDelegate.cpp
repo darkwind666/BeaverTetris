@@ -37,15 +37,6 @@ DetailViewDataSource* FallenDetailAnimationDelegate::getDetailViewDataSource(Tet
 	return detailViewDataSource;
 }
 
-FiniteTimeAction* FallenDetailAnimationDelegate::getAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition)
-{
-	Node *follenDetail = aFactory->getCurrentDetailView();
-	this->addChild(follenDetail);
-	FiniteTimeAction *moveDetail = aFactory->getDetailAnimationWithFinalPosition(aPosition);
-	FiniteTimeAction *actionWithDetail = TargetedAction::create(follenDetail, moveDetail);
-	return actionWithDetail;
-}
-
 FiniteTimeAction* FallenDetailAnimationDelegate::getNewDetailAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition)
 {
 	_tetrisLogicSystem->setUpdatable(false);
@@ -55,3 +46,13 @@ FiniteTimeAction* FallenDetailAnimationDelegate::getNewDetailAnimationWithFactor
 	FiniteTimeAction *fallenNewDetailAnimation = TargetedAction::create(this, sequence);
 	return fallenNewDetailAnimation;
 }
+
+FiniteTimeAction* FallenDetailAnimationDelegate::getAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition)
+{
+	Node *follenDetail = aFactory->getCurrentDetailView();
+	this->addChild(follenDetail);
+	FiniteTimeAction *moveDetail = aFactory->getDetailAnimationWithFinalPosition(aPosition);
+	FiniteTimeAction *actionWithDetail = TargetedAction::create(follenDetail, moveDetail);
+	return actionWithDetail;
+}
+

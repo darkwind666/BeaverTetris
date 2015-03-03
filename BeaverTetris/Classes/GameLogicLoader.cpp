@@ -17,6 +17,7 @@
 #include "WinGameSystem.h"
 #include "SpellBox.h"
 #include "NewTetraminoDetailDataSource.h"
+#include "BossMovementObserver.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -49,6 +50,9 @@ void GameLogicLoader::loadResources()
 
 	SpellBox *spellBox = new SpellBox();
 	ServiceLocator::setServiceForKey(spellBox, spellBoxKey);
+
+	BossMovementObserver *bossMovementObserver = new BossMovementObserver();
+	ServiceLocator::setServiceForKey(bossMovementObserver, bossMovementObserverKey);
 
 	CurrentVictoryConditionDataSource *currentVictoryConditionDataSource = new CurrentVictoryConditionDataSource();
 	ServiceLocator::setServiceForKey(currentVictoryConditionDataSource, currentVictoryConditionDataSourceKey);

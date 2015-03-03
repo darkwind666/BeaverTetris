@@ -6,6 +6,7 @@
 #include "GameDesignConstants.h"
 #include "KeysForEnumsDataSource.h"
 #include "AIMovementStrategy.h"
+#include "BossMovementObserver.h"
 
 using namespace std;
 
@@ -51,7 +52,9 @@ Tetramino* PrincessBoss::makeBossTetraminoWithIndexAndBossCount(int aBossIndex, 
 
 AIMovementStrategy* PrincessBoss::makeBossMovementWithTetramino(Tetramino *aTetramino)
 {
+	BossMovementObserver *bossMovementObserver = (BossMovementObserver*)ServiceLocator::getServiceForKey(bossMovementObserverKey);
 	AIMovementStrategy *bossMovement = new AIMovementStrategy(_gameBoard, aTetramino);
+	bossMovement->addObserver(bossMovementObserver);
 	return bossMovement;
 }
 
