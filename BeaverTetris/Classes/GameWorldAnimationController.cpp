@@ -7,6 +7,7 @@
 #include "CohesionSpellAnimationController.h"
 #include "FallenDetailAnimationController.h"
 #include "AddLineToBoardSpellAnimationController.h"
+#include "BossMovementAnimationController.h"
 
 GameWorldAnimationController::GameWorldAnimationController(GameBoardController *aGameBoardController)
 {
@@ -41,6 +42,9 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	AddLineToBoardSpellAnimationController *addLineToBoardSpellAnimationController = new AddLineToBoardSpellAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(addLineToBoardSpellAnimationController);
+
+	BossMovementAnimationController *bossMovementAnimationController = new BossMovementAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(bossMovementAnimationController);
 }
 
 void GameWorldAnimationController::updateAnimation()

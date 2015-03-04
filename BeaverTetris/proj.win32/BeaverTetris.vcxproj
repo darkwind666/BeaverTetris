@@ -148,6 +148,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp" />
     <ClCompile Include="..\Classes\BossEnvironmentFactory.cpp" />
     <ClCompile Include="..\Classes\BossInterface.cpp" />
+    <ClCompile Include="..\Classes\BossMovementAnimationController.cpp" />
     <ClCompile Include="..\Classes\BossMovementDelegate.cpp" />
     <ClCompile Include="..\Classes\BossMovementObserver.cpp" />
     <ClCompile Include="..\Classes\BossWithOneTetraminoDelegate.cpp" />
@@ -404,6 +405,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h" />
     <ClInclude Include="..\Classes\BossEnvironmentFactory.h" />
     <ClInclude Include="..\Classes\BossInterface.h" />
+    <ClInclude Include="..\Classes\BossMovementAnimationController.h" />
     <ClInclude Include="..\Classes\BossMovementDelegate.h" />
     <ClInclude Include="..\Classes\BossMovementObserver.h" />
     <ClInclude Include="..\Classes\BossWithOneTetraminoDelegate.h" />
