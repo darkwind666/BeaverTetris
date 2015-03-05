@@ -73,9 +73,6 @@ string* GameFileExtensionMaker::getConfigurationFilesWithExtension(std::string *
 	return newStringArray;
 }
 
-
-
-
 string* GameFileExtensionMaker::getFilesWithExtension(string *aGraphicsKeys, int arraySize, pointerToFunction aFunction) 
 {
 

@@ -23,7 +23,7 @@ public:
 	cocos2d::Vec2 getTetraminosViewOffset();
 	cocos2d::Vec2 getDetailPositionOnView();
 	cocos2d::Vec2 getPositionOnView(GamePositionOnBoard aPosition);
-	TetraminoType getTetraminoTypeOnPositionInCurrentDetail(GamePositionOnBoard aPosition);
+	std::string getTetraminoImageForAbsolutePosition(GamePositionOnBoard aPosition);
 	GamePositionOnBoard getTetraminoPositionInBoardForIndex(int aIndex);
 	GamePositionOnBoard getDetailPositionOnBoard();
 

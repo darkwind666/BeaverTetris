@@ -91,11 +91,12 @@ GamePositionOnBoard DetailViewDataSource::getDetailPositionOnBoard()
 	return currentDetail->getDetailPosition();
 }
 
-TetraminoType DetailViewDataSource::getTetraminoTypeOnPositionInCurrentDetail(GamePositionOnBoard aPosition)
+string DetailViewDataSource::getTetraminoImageForAbsolutePosition(GamePositionOnBoard aPosition)
 {
 	GamePositionOnBoard tetraminoPositionInDetail = getCurrentDetail()->convertAbsolutePositionToPositionInDetail(aPosition);
-	Tetramino *tetraminoInDetail = getCurrentDetail()->getTetraminoForXY(tetraminoPositionInDetail.xPosition, tetraminoPositionInDetail.yPosition);
-	return tetraminoInDetail->getTetraminoType();
+	int tetraminoIndex = getCurrentDetail()->getIndexForPosition(tetraminoPositionInDetail);
+	string tetraminoImage = getTetraminoImageForIndex(tetraminoIndex);
+	return tetraminoImage;
 }
 
 Tetramino* DetailViewDataSource::getTetraminoOnIndex(int aIndex)

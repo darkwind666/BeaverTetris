@@ -18,6 +18,7 @@ public:
 	Tetramino* getTetraminoForXY(int xPosition, int yPosition);
 	GamePositionOnBoard getDetailPosition();
 	GamePositionOnBoard getPositionForIndex(int aIndex);
+	int getIndexForPosition(GamePositionOnBoard aPosition);
 	std::vector<GamePositionOnBoard> getAvailableTetraminos();
 
 	void setTetraminoForXY(Tetramino *aTetramino, int xPosition, int yPosition);

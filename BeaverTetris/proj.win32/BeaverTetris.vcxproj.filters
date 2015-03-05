@@ -633,6 +633,9 @@
     <ClCompile Include="..\Classes\BossMovementAnimationController.cpp">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetraminosInGameBoardViewDataSource.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1207,6 +1210,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\BossMovementAnimationController.h">
       <Filter>Controllers\ViewControllers\AnimationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminosInGameBoardViewDataSource.h">
+      <Filter>Models\ViewsDataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

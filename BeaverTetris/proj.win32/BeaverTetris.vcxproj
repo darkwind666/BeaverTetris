@@ -67,6 +67,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
     <IncludePath>D:\Downloads\BeaverTetris\BeaverTetris\Classes;$(IncludePath)</IncludePath>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
@@ -85,6 +86,7 @@
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
@@ -258,6 +260,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminosFallEvent.cpp" />
+    <ClCompile Include="..\Classes\TetraminosInGameBoardViewDataSource.cpp" />
     <ClCompile Include="..\Classes\TetrisLogicSystem.cpp" />
     <ClCompile Include="..\Classes\ScreenPopUp.cpp" />
     <ClCompile Include="..\Classes\SelectGameLevelController.cpp" />
@@ -521,6 +524,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminosFallEvent.h" />
+    <ClInclude Include="..\Classes\TetraminosInGameBoardViewDataSource.h" />
     <ClInclude Include="..\Classes\TetrisLogicSystem.h" />
     <ClInclude Include="..\Classes\ScreenPopUp.h" />
     <ClInclude Include="..\Classes\SelectGameLevelController.h" />

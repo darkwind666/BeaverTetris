@@ -137,3 +137,8 @@ GamePositionOnBoard TetraminoDetail::getPositionForIndex(int aIndex)
 {
 	return _gameBoardTetraminos->getPositionForIndex(aIndex);
 }
+
+int TetraminoDetail::getIndexForPosition(GamePositionOnBoard aPosition)
+{
+	return _gameBoardTetraminos->getIndexForPosition(aPosition);
+}

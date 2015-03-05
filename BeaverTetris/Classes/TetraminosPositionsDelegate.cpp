@@ -67,6 +67,8 @@ vector <GamePositionOnBoard> TetraminosPositionsDelegate::getTetraminosInRowWith
 GamePositionOnBoard TetraminosPositionsDelegate::getTetraminoPosition(Tetramino *aTetramino)
 {
 	GamePositionOnBoard tetraminoPosition;
+	tetraminoPosition.xPosition = 0;
+	tetraminoPosition.yPosition = 0;
 	for (int xPosition = 0; xPosition < _gameBoardHeight; xPosition++)
 	{
 		bool inRow = checkTetraminoInRow(aTetramino, xPosition);

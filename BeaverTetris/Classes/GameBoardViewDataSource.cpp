@@ -3,23 +3,26 @@
 #include "GameServicesKeys.h"
 #include "GameBoard.h"
 #include "DetailViewDataSource.h"
-#include "KeysForEnumsDataSource.h"
-#include "GameFileExtensionMaker.h"
-#include "Tetramino.h"
-#include "GameElementsDataHelper.h"
-#include "GameViewElementsKeys.h"
 #include "CurrentDetailTetraminosChecker.h"
 #include "CurrentDetailDataSource.h"
+#include "TetraminosInGameBoardViewDataSource.h"
 
 using namespace std;
 using namespace cocos2d;
 
 GameBoardViewDataSource::GameBoardViewDataSource()
 {
+	_tetraminosInGameBoardViewDataSource = new TetraminosInGameBoardViewDataSource();
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_currentDetailViewDataSource = getDetailViewDataSource();
-	_keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
 	_currentDetailTetraminosChecker = new CurrentDetailTetraminosChecker();
+}
+
+GameBoardViewDataSource::~GameBoardViewDataSource(void)
+{
+	delete _tetraminosInGameBoardViewDataSource;
+	delete _currentDetailViewDataSource;
+	delete _currentDetailTetraminosChecker;
 }
 
 DetailViewDataSource* GameBoardViewDataSource::getDetailViewDataSource()
@@ -32,53 +35,38 @@ DetailViewDataSource* GameBoardViewDataSource::getDetailViewDataSource()
 	return detailViewDataSource;
 }
 
-GameBoardViewDataSource::~GameBoardViewDataSource(void)
-{
-}
-
 int GameBoardViewDataSource::getTetraminosCount()
 {
-	int gameBoardHeight = _gameBoard->getGameBoardHeight();
-	int gameBoardWidth = _gameBoard->getGameBoardWidth();
-	return (gameBoardHeight * gameBoardWidth);
+	return _tetraminosInGameBoardViewDataSource->getTetraminosCount();
 }
 
 string GameBoardViewDataSource::getTetraminoImageForIndex(int aIndex)
 {
-	GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
-	TetraminoType tetraminoType = getVisibleTetraminoTypeOnPosition(tetraminoPosition);
-	string tetraminoKey = _keysForEnumsDataSource->getKeyForTetraminoType(tetraminoType);
-	return GameFileExtensionMaker::getGraphicWithExtension(tetraminoKey);
-}
-
-TetraminoType GameBoardViewDataSource::getVisibleTetraminoTypeOnPosition(GamePositionOnBoard aPosition)
-{
-	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(aPosition.xPosition, aPosition.yPosition);
-	TetraminoType tetraminoType = tetraminoInBoard->getTetraminoType();
-	if (tetraminoInBoard->getTetraminoType() <= kTetraminoEmpty)
+	string tetraminoImage;
+	if (_tetraminosInGameBoardViewDataSource->availableTetraminoOnIndex(aIndex))
 	{
-		tetraminoType = _currentDetailViewDataSource->getTetraminoTypeOnPositionInCurrentDetail(aPosition);
+		tetraminoImage = _tetraminosInGameBoardViewDataSource->getTetraminoImageForIndex(aIndex);
 	}
-	return tetraminoType;
+	else
+	{
+		GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
+		tetraminoImage = _currentDetailViewDataSource->getTetraminoImageForAbsolutePosition(tetraminoPosition);
+	}
+	return tetraminoImage;
 }
 
 Vec2 GameBoardViewDataSource::getTetraminoPositionForIndex(int aIndex)
 {
-	cocos2d::Vec2 tetraminoOffset = GameElementsDataHelper::getElementOffsetForKey(mainGameBoardControllerKey);
-	GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
-	return Vec2(tetraminoPosition.xPosition * tetraminoOffset.x, tetraminoPosition.yPosition * tetraminoOffset.y);
+	return _tetraminosInGameBoardViewDataSource->getTetraminoPositionForIndex(aIndex);
 }
 
 bool GameBoardViewDataSource::availableTetraminoOnIndex(int aIndex)
 {
 	bool availableTetramino = true;
-	GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
-	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
-	
-	if (tetraminoInBoard->getTetraminoType() <= kTetraminoEmpty)
+	if (_tetraminosInGameBoardViewDataSource->availableTetraminoOnIndex(aIndex) == false)
 	{
+		GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
 		availableTetramino = _currentDetailTetraminosChecker->checkPositionInCurrentDetail(tetraminoPosition);
 	}
-	
 	return availableTetramino;
 }
