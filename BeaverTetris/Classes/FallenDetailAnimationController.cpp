@@ -48,7 +48,7 @@ void FallenDetailAnimationController::placeNewDetailToPosition(TetraminoDetail *
 {
 	DetailViewDataSource *detailViewDataSource = _fallenDetailAnimationDelegate->getDetailViewDataSource(aDetail);
 	FallenDetailAnimationFactory *fallenDetailAnimationFactory = new FallenDetailAnimationFactory(detailViewDataSource, _gameBoardController);
-	FiniteTimeAction *fallenNewDetailAnimation = _fallenDetailAnimationDelegate->getNewDetailAnimationWithFactoryAndPosition(fallenDetailAnimationFactory, aPosition);
+	FiniteTimeAction *fallenNewDetailAnimation = _fallenDetailAnimationDelegate->getAnimationWithFactoryAndPosition(fallenDetailAnimationFactory, aPosition);
 	delete fallenDetailAnimationFactory;
 	_animationSynchonizer->addAnimationToQueue(fallenNewDetailAnimation);
 }

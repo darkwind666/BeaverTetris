@@ -2,6 +2,7 @@
 
 #include "cocos2d.h"
 #include <map>
+#include <functional>
 
 class PlayerGameControlsDataSource;
 class GameTimeStepController;
@@ -23,6 +24,6 @@ private:
 	std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::Node*> makeControllersViews();
 	void setUpKeyboard();
 	void addViewsToController(std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::Node*> aViews);
-
+	std::function<void()> getCallbackWithButtonIndex(int aButtonIndex);
 };
 

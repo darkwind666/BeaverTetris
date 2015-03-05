@@ -6,7 +6,6 @@
 class DetailViewDataSource;
 class FallenDetailAnimationFactory;
 class TetraminoDetail;
-class TetrisLogicSystem;
 
 class FallenDetailAnimationDelegate : public cocos2d::Node
 {
@@ -18,11 +17,6 @@ public:
 	DetailViewDataSource* getDetailViewDataSource(TetraminoDetail *aDetail);
 	
 	cocos2d::FiniteTimeAction* getAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition);
-	cocos2d::FiniteTimeAction* getNewDetailAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition);
-
-private:
-
-	TetrisLogicSystem *_tetrisLogicSystem;
 
 };
 

@@ -15,7 +15,6 @@ public:
 	~TetrisLogicSystem(void);
 
 	virtual void updateSystem(float deltaTime);
-	void setUpdatable(bool aUpdatable);
 
 private:
 
@@ -23,9 +22,6 @@ private:
 	FullLineCombination *_fullLineCombination;
 	SimilarTetraminosCombination *_similarTetraminosCombination;
 	FillingGapInBoardSystem *_fillingGapInBoardDelegate;
-	bool _updatable;
-
-	void updateGameLogic();
 
 };
 

@@ -14,7 +14,6 @@ TetrisLogicSystem::TetrisLogicSystem(GameBoard *aGameBoard)
 	_fullLineCombination = (FullLineCombination*)ServiceLocator::getServiceForKey(fullLineCombinationModelKey);
 	_similarTetraminosCombination = (SimilarTetraminosCombination*)ServiceLocator::getServiceForKey(similarTetraminosCombinationModelKey);
 	_fillingGapInBoardDelegate = (FillingGapInBoardSystem*)ServiceLocator::getServiceForKey(fillingGapInBoardSystemKey);
-	_updatable = true;
 }
 
 
@@ -23,14 +22,6 @@ TetrisLogicSystem::~TetrisLogicSystem(void)
 }
 
 void TetrisLogicSystem::updateSystem(float deltaTime)
-{
-	if (_updatable)
-	{
-		updateGameLogic();
-	}
-}
-
-void TetrisLogicSystem::updateGameLogic()
 {
 	_fullLineCombination->checkFullLineCombination();
 	_similarTetraminosCombination->checkSimilarTetraminosCombination();
@@ -43,7 +34,4 @@ void TetrisLogicSystem::updateGameLogic()
 	}
 }
 
-void TetrisLogicSystem::setUpdatable(bool aUpdatable)
-{
-	_updatable = aUpdatable;
-}
+

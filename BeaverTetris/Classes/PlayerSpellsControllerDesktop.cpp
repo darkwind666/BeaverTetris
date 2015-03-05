@@ -87,17 +87,6 @@ void PlayerSpellsControllerDesktop::setUpKeyboard()
 	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardListner, this);
 }
 
-void PlayerSpellsControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
-{
-	int viewIndex = getViewIndexForKeyboardKey((int)aKeyCode);
-	if (viewIndex >= 0 && _gameTimeStepController->getUpdataAvailable() == true)
-	{
-		Node* controllerView = _spellsIcons[viewIndex];
-		function<void()> callback = [this, viewIndex](){_spellsViewDataSource->useSpellOnIndex(viewIndex);};
-		GameViewStyleHelper::runStandardButtonActionWithCallback(controllerView ,callback);
-	}
-}
-
 int PlayerSpellsControllerDesktop::getViewIndexForKeyboardKey(int aKeyboardKey)
 {
 	int viewIndex = -1;
@@ -142,4 +131,25 @@ void PlayerSpellsControllerDesktop::setColorInIconWithTexture(Node* aIcon, strin
 void PlayerSpellsControllerDesktop::onEnterTransitionDidFinish()
 {
 	this->scheduleUpdate();
+}
+
+void PlayerSpellsControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
+{
+	int viewIndex = getViewIndexForKeyboardKey((int)aKeyCode);
+	if (viewIndex >= 0 && _gameTimeStepController->getUpdataAvailable() == true)
+	{
+		_gameTimeStepController->setUpdateAvailable(false);
+		Node* controllerView = _spellsIcons[viewIndex];
+		function<void()> callback = getCallbackWithButtonIndex(viewIndex);
+		GameViewStyleHelper::runStandardButtonActionWithCallback(controllerView ,callback);
+	}
+}
+
+function<void()> PlayerSpellsControllerDesktop::getCallbackWithButtonIndex(int aButtonIndex)
+{
+	function<void()> callback = [this, aButtonIndex](){
+		_gameTimeStepController->setUpdateAvailable(true);
+		_spellsViewDataSource->useSpellOnIndex(aButtonIndex);
+	};
+	return callback;
 }

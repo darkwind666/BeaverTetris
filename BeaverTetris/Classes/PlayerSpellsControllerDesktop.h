@@ -2,6 +2,7 @@
 
 #include "cocos2d.h"
 #include <vector>
+#include <functional>
 
 class SpellsViewDataSource;
 class GameTimeStepController;
@@ -30,6 +31,6 @@ private:
 	void setUpKeyboard();
 	int getViewIndexForKeyboardKey(int aKeyboardKey);
 	void setColorInIconWithTexture(cocos2d::Node *aIcon, std::string aTexture);
-
+	std::function<void()> getCallbackWithButtonIndex(int aButtonIndex);
 };
 

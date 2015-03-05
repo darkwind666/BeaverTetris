@@ -4,6 +4,7 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "GameTimeStepController.h"
+#include "GameAnimationActionsConstants.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -68,9 +69,20 @@ void PlayerActionControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode a
 	viewsIterator = _controllersViews.find(aKeyCode);
 	if (viewsIterator != _controllersViews.end() && _gameTimeStepController->getUpdataAvailable() == true)
 	{
+		_gameTimeStepController->setUpdateAvailable(false);
 		Node* controllerView = _controllersViews[aKeyCode];
 		int controllerViewIndex = controllerView->getTag();
-		function<void()> callback = _playerGameControlsDataSource->getPlayerControlCallbackForIndex(controllerViewIndex);
-		GameViewStyleHelper::runStandardButtonActionWithCallback(controllerView ,callback);
+		function<void()> callback = getCallbackWithButtonIndex(controllerViewIndex);
+		GameViewStyleHelper::runButtonActionWithCallbackAndDuration(controllerView ,callback, gameControllButtonActionDuration);
 	}
+}
+
+function<void()> PlayerActionControllerDesktop::getCallbackWithButtonIndex(int aButtonIndex)
+{
+	function<void()> callback = [this, aButtonIndex](){
+		_gameTimeStepController->setUpdateAvailable(true);
+		function<void()> buttonCallback = _playerGameControlsDataSource->getPlayerControlCallbackForIndex(aButtonIndex);
+		buttonCallback();
+	};
+	return callback;
 }

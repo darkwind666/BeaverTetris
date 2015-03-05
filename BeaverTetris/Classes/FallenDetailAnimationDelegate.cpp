@@ -5,14 +5,12 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "CurrentDetailDataSource.h"
-#include "TetrisLogicSystem.h"
 
 using namespace cocos2d;
 using namespace std;
 
 FallenDetailAnimationDelegate::FallenDetailAnimationDelegate(void)
 {
-	_tetrisLogicSystem = (TetrisLogicSystem*)ServiceLocator::getServiceForKey(tetrisLogicSystemKey);
 }
 
 
@@ -35,16 +33,6 @@ DetailViewDataSource* FallenDetailAnimationDelegate::getDetailViewDataSource(Tet
 	};
 	DetailViewDataSource *detailViewDataSource = new DetailViewDataSource(detailDataSource);
 	return detailViewDataSource;
-}
-
-FiniteTimeAction* FallenDetailAnimationDelegate::getNewDetailAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition)
-{
-	_tetrisLogicSystem->setUpdatable(false);
-	FiniteTimeAction *actionWithDetail = getAnimationWithFactoryAndPosition(aFactory, aPosition);
-	FiniteTimeAction *callback = CallFunc::create([this](){_tetrisLogicSystem->setUpdatable(true);});
-	FiniteTimeAction *sequence = Sequence::create(actionWithDetail, callback, NULL);
-	FiniteTimeAction *fallenNewDetailAnimation = TargetedAction::create(this, sequence);
-	return fallenNewDetailAnimation;
 }
 
 FiniteTimeAction* FallenDetailAnimationDelegate::getAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition)
