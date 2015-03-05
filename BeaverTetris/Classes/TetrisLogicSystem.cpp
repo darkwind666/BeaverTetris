@@ -25,11 +25,8 @@ void TetrisLogicSystem::updateSystem(float deltaTime)
 {
 	_fullLineCombination->checkFullLineCombination();
 	_similarTetraminosCombination->checkSimilarTetraminosCombination();
-	
-	while (_fillingGapInBoardDelegate->availableGapInBoard())
+	if (_fillingGapInBoardDelegate->availableGapInBoard())
 	{
-		_fullLineCombination->checkFullLineCombination();
-		_similarTetraminosCombination->checkSimilarTetraminosCombination();
 		_fillingGapInBoardDelegate->filOutGapInBoard();
 	}
 }

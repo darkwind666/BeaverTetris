@@ -8,7 +8,6 @@
 #include "TetraminosFallEvent.h"
 #include "FillingGapInBoardSystem.h"
 
-
 using namespace cocos2d;
 
 FallenDetailAnimationController::FallenDetailAnimationController(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer)

@@ -45,7 +45,7 @@ int GameBoardViewDataSource::getTetraminosCount()
 
 string GameBoardViewDataSource::getTetraminoImageForIndex(int aIndex)
 {
-	GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);;
+	GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
 	TetraminoType tetraminoType = getVisibleTetraminoTypeOnPosition(tetraminoPosition);
 	string tetraminoKey = _keysForEnumsDataSource->getKeyForTetraminoType(tetraminoType);
 	return GameFileExtensionMaker::getGraphicWithExtension(tetraminoKey);
@@ -65,7 +65,7 @@ TetraminoType GameBoardViewDataSource::getVisibleTetraminoTypeOnPosition(GamePos
 Vec2 GameBoardViewDataSource::getTetraminoPositionForIndex(int aIndex)
 {
 	cocos2d::Vec2 tetraminoOffset = GameElementsDataHelper::getElementOffsetForKey(mainGameBoardControllerKey);
-	GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);;
+	GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
 	return Vec2(tetraminoPosition.xPosition * tetraminoOffset.x, tetraminoPosition.yPosition * tetraminoOffset.y);
 }
 
