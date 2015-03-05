@@ -46,7 +46,7 @@ GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
 	gameLevelInformation.availableBosses = availableBosses;
 	gameLevelInformation.victoryConditionType = kWinBossCondition;
 
-	gameLevelInformation.needToPlaceDetailsCount = 10;
+	gameLevelInformation.needToPlaceDetailsCount = 100;
 
 	gameLevelInformation.remainTimes = 200;
 

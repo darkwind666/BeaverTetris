@@ -16,8 +16,6 @@ public:
 	TetraminoExplosionFactory(GameBoardController *aGameBoardController);
 	~TetraminoExplosionFactory(void);
 
-	cocos2d::Node* getExplosionForOnPositionXY(int xPosition, int yPosition);
-	void addExplosionsToView(std::vector<cocos2d::Node*> aExplosions);
 	cocos2d::FiniteTimeAction* getTetraminosExplosionsAnimationWithPositions(std::vector<GamePositionOnBoard> aPositions);
 	cocos2d::FiniteTimeAction* getRemoveTetraminoActionOnPositionXY(int xPosition, int yPosition);
 	cocos2d::FiniteTimeAction* getCallbackAction(std::function<void()> aCallback);
@@ -28,6 +26,9 @@ private:
 	GameBoardViewDataSource *_gameBoardViewDataSource;
 	GameBoardController *_gameBoardController;
 	TetraminoColorsDataSource *_tetraminoColorsDataSource;
+
+	cocos2d::Node* getExplosionForOnPositionXY(int xPosition, int yPosition);
+	void addExplosionsToView(std::vector<cocos2d::Node*> aExplosions);
 
 	void setExplosionColors(cocos2d::ParticleSystem* aExplosion);
 	void setExplosionParticles(cocos2d::ParticleSystem* aExplosion);

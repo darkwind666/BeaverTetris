@@ -6,7 +6,7 @@ const int tetrisBlocksHeight = 20;
 const int normalUpdateInterval = 30;
 const int acceleratedUpdateInterval = 10;
 
-const int tetraminoBossMoveTimeIntervalConstant = 10;
+const int tetraminoBossMoveTimeIntervalConstant = 11;
 const int tetraminoBossTimeIntervalSpellCastConstant = 20;
 const int minPeacefulNonEmptyTetraminosCount = 8;
 

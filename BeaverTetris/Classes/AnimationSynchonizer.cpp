@@ -21,7 +21,6 @@ void AnimationSynchonizer::updateSynchonizer()
 	int actionsCount = this->getNumberOfRunningActions();
 	if (actionsCount == 0 && _animationsQueue != NULL)
 	{
-		_gameTimeStepController->setUpdateAvailable(false);
 		FiniteTimeAction *startGameUpdate = CallFunc::create([this](){
 			_gameTimeStepController->setUpdateAvailable(true);
 			_animationsQueue = NULL;
@@ -33,6 +32,7 @@ void AnimationSynchonizer::updateSynchonizer()
 
 void AnimationSynchonizer::addAnimationToQueue(cocos2d::FiniteTimeAction* aAnimation)
 {
+	_gameTimeStepController->setUpdateAvailable(false);
 	if (_animationsQueue)
 	{
 		FiniteTimeAction *sequence = Sequence::create(_animationsQueue, aAnimation, NULL);

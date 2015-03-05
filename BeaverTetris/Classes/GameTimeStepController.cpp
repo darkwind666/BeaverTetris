@@ -10,10 +10,17 @@ GameTimeStepController::GameTimeStepController(void)
 	_updateAvailable = true;
 	_currentTimeInterval = 0;
 	_systems = vector<GameSystemInterface*>();
+	setAllSystemsUpdated();
 }
 
 GameTimeStepController::~GameTimeStepController(void)
 {
+}
+
+void GameTimeStepController::setAllSystemsUpdated()
+{
+	_currentSystemIndex = 0;
+	_updateSystems = false;
 }
 
 void GameTimeStepController::setUpdateInterval(float aUpdateInterval)
@@ -41,7 +48,14 @@ void GameTimeStepController::update(float deltaTime)
 {
 	if (_updateAvailable)
 	{
-		countTimeStep(deltaTime);
+		if (_updateSystems)
+		{
+			updateNextSystem(deltaTime);
+		}
+		else
+		{
+			countTimeStep(deltaTime);
+		}
 	}
 }
 
@@ -63,7 +77,44 @@ void GameTimeStepController::updateSystems(float deltaTime)
 	{
 		GameSystemInterface *system = *systemsIterator;
 		system->updateSystem(deltaTime);
+		if (_updateAvailable == false)
+		{
+			_updateSystems = true;
+			_currentSystemIndex = distance(_systems.begin(), systemsIterator);
+			break;
+		}
 	}
 }
 
+void GameTimeStepController::updateNextSystem(float deltaTime)
+{
+	_currentSystemIndex++;
+	if (_currentSystemIndex < _systems.size())
+	{
+		stepNextSystems(deltaTime);
+	}
+	else
+	{
+		setAllSystemsUpdated();
+	}
+}
+
+void GameTimeStepController::stepNextSystems(float deltaTime)
+{
+	vector<GameSystemInterface*>::iterator systemsIterator;
+	for (systemsIterator = _systems.begin() + _currentSystemIndex; systemsIterator != _systems.end(); systemsIterator++)
+	{
+		GameSystemInterface *system = *systemsIterator;
+		system->updateSystem(deltaTime);
+		if (_updateAvailable == false)
+		{
+			_currentSystemIndex = distance(_systems.begin(), systemsIterator);
+			break;
+		}
+	}
+	if (systemsIterator == _systems.end())
+	{
+		setAllSystemsUpdated();
+	}
+}
 

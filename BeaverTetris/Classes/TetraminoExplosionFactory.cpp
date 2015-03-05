@@ -23,6 +23,32 @@ TetraminoExplosionFactory::~TetraminoExplosionFactory(void)
 {
 }
 
+
+FiniteTimeAction* TetraminoExplosionFactory::getTetraminosExplosionsAnimationWithPositions(vector<GamePositionOnBoard> aPositions)
+{
+	FiniteTimeAction *tetraminosLineExplosionAnimation = CallFunc::create([this, aPositions](){
+		vector<Node*> explosions = getExplosionsFromPositions(aPositions);
+		addExplosionsToView(explosions);
+	});
+	FiniteTimeAction *delay = DelayTime::create(tetraminosExplosionDuration);
+	FiniteTimeAction *sequence = Sequence::create(tetraminosLineExplosionAnimation, delay, NULL);
+	FiniteTimeAction *blowUpAnimation = TargetedAction::create(this, sequence);
+	return blowUpAnimation;
+}
+
+vector<Node*> TetraminoExplosionFactory::getExplosionsFromPositions(vector<GamePositionOnBoard> tetraminosPositions)
+{
+	vector<Node*> explosions;
+	vector<GamePositionOnBoard>::iterator positionIterator;
+	for (positionIterator = tetraminosPositions.begin(); positionIterator != tetraminosPositions.end(); positionIterator++)
+	{
+		GamePositionOnBoard tetraminoPosition = *positionIterator;
+		Node *explosion = getExplosionForOnPositionXY(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+		explosions.push_back(explosion);
+	}
+	return explosions;
+}
+
 Node* TetraminoExplosionFactory::getExplosionForOnPositionXY(int xPosition, int yPosition)
 {
 	ParticleSystem *explosion = ParticleExplosion::create();
@@ -108,7 +134,7 @@ Node* TetraminoExplosionFactory::getTetraminoViewOnPosition(GamePositionOnBoard 
 	return tetraminoView;
 }
 
-FiniteTimeAction* TetraminoExplosionFactory::getRemoveTetraminoAnimationWithView(cocos2d::Node *aView)
+FiniteTimeAction* TetraminoExplosionFactory::getRemoveTetraminoAnimationWithView(Node *aView)
 {
 	FiniteTimeAction *fadeOut = FadeOut::create(tetraminoDisappearDuration);
 	FiniteTimeAction *removeViewCallback = CallFunc::create([aView](){aView->removeFromParentAndCleanup(true);});
@@ -123,27 +149,3 @@ FiniteTimeAction* TetraminoExplosionFactory::getCallbackAction(std::function<voi
 	return endCallback;
 }
 
-FiniteTimeAction* TetraminoExplosionFactory::getTetraminosExplosionsAnimationWithPositions(vector<GamePositionOnBoard> aPositions)
-{
-	FiniteTimeAction *tetraminosLineExplosionAnimation = CallFunc::create([this, aPositions](){
-		vector<Node*> explosions = getExplosionsFromPositions(aPositions);
-		addExplosionsToView(explosions);
-	});
-	FiniteTimeAction *delay = DelayTime::create(tetraminosExplosionDuration);
-	FiniteTimeAction *sequence = Sequence::create(tetraminosLineExplosionAnimation, delay, NULL);
-	FiniteTimeAction *blowUpAnimation = TargetedAction::create(this, sequence);
-	return blowUpAnimation;
-}
-
-vector<Node*> TetraminoExplosionFactory::getExplosionsFromPositions(vector<GamePositionOnBoard> tetraminosPositions)
-{
-	vector<Node*> explosions;
-	vector<GamePositionOnBoard>::iterator positionIterator;
-	for (positionIterator = tetraminosPositions.begin(); positionIterator != tetraminosPositions.end(); positionIterator++)
-	{
-		GamePositionOnBoard tetraminoPosition = *positionIterator;
-		Node *explosion = getExplosionForOnPositionXY(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
-		explosions.push_back(explosion);
-	}
-	return explosions;
-}

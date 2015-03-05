@@ -24,8 +24,14 @@ private:
 	int _currentTimeInterval;
 	std::vector<GameSystemInterface*> _systems;
 
+	bool _updateSystems;
+	int _currentSystemIndex;
+
 	void countTimeStep(float deltaTime);
 	void updateSystems(float deltaTime);
+	void updateNextSystem(float deltaTime);
+	void stepNextSystems(float deltaTime);
+	void setAllSystemsUpdated();
 
 };
 

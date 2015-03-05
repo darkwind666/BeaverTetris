@@ -39,6 +39,6 @@ void GameFlowSystem::updateGameFlow()
 	{
 		_currentDetailDataSource->makeNewDetail();
 	}
-	_tetraminosFallEvent->updateEvent();
-	_timeAccelerationEvent->updateEvent();
+	//_tetraminosFallEvent->updateEvent();
+	//_timeAccelerationEvent->updateEvent();
 }
