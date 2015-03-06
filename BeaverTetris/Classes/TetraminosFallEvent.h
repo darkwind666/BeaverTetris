@@ -18,6 +18,8 @@ public:
 	~TetraminosFallEvent(void);
 
 	void updateEvent(void);
+	bool eventAvailable();
+	void runEvent();
 	void setDelegate(FallenDetailDelegate *aDelegate);
 
 private:

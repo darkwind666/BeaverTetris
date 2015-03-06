@@ -23,6 +23,8 @@ private:
 	TimeAccelerationEvent *_timeAccelerationEvent;
 
 	void updateGameFlow();
+	void runAvailableEvent();
+	void makeNewDetail();
 
 };
 

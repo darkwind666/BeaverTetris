@@ -35,10 +35,27 @@ void GameFlowSystem::updateSystem(float deltaTime)
 void GameFlowSystem::updateGameFlow()
 {
 	srand(time(0));
+	_tetraminosFallEvent->updateEvent();
+	_timeAccelerationEvent->updateEvent();
+	runAvailableEvent();
+}
+
+void GameFlowSystem::runAvailableEvent()
+{
+	if (_tetraminosFallEvent->eventAvailable() && _currentDetailDataSource->currentDetailAvailable() == false)
+	{
+		_tetraminosFallEvent->runEvent();
+	}
+	else
+	{
+		makeNewDetail();
+	}
+}
+
+void GameFlowSystem::makeNewDetail()
+{
 	if (_currentDetailDataSource->currentDetailAvailable() == false)
 	{
 		_currentDetailDataSource->makeNewDetail();
 	}
-	_tetraminosFallEvent->updateEvent();
-	_timeAccelerationEvent->updateEvent();
 }

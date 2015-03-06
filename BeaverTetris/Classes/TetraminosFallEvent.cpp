@@ -30,12 +30,23 @@ TetraminosFallEvent::~TetraminosFallEvent(void)
 void TetraminosFallEvent::updateEvent(void)
 {
 	_currentUpdateState++;
+}
+
+bool TetraminosFallEvent::eventAvailable()
+{
+	bool eventAvailable = false;
 	if (_currentUpdateState >= tetraminosFallEventTimeIntervalConstant)
 	{
-		vector<TetraminoDetail*> tetraminoDetails = getTetraminoDetailsForFalling();
-		placeDetailsOnGameBoard(tetraminoDetails);
-		_currentUpdateState = 0;
+		eventAvailable = true;
 	}
+	return eventAvailable;
+}
+
+void TetraminosFallEvent::runEvent()
+{
+	vector<TetraminoDetail*> tetraminoDetails = getTetraminoDetailsForFalling();
+	placeDetailsOnGameBoard(tetraminoDetails);
+	_currentUpdateState = 0;
 }
 
 vector<TetraminoDetail*> TetraminosFallEvent::getTetraminoDetailsForFalling()
