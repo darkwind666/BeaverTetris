@@ -7,7 +7,7 @@
 #include "GameBoard.h"
 #include "Tetramino.h"
 #include "GameBoardController.h"
-#include "GameBoardViewDataSource.h"
+#include "TetraminosInGameBoardViewDataSource.h"
 #include "TetraminoColorsDataSource.h"
 #include "GameAnimationActionsConstants.h"
 
@@ -20,7 +20,7 @@ AddLineToBoardSpellAnimationController::AddLineToBoardSpellAnimationController(G
 	_gameBoardController = aGameBoardController;
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_tetraminoColorsDataSource = new TetraminoColorsDataSource();
-	_gameBoardViewDataSource = new GameBoardViewDataSource();
+	_tetraminosInGameBoardViewDataSource = new TetraminosInGameBoardViewDataSource();
 	_tetraminosAppearanceAnimationFactory = new TetraminosAppearanceAnimationFactory(aGameBoardController);
 	this->addChild(_tetraminosAppearanceAnimationFactory);
 
@@ -36,7 +36,7 @@ AddLineToBoardSpellAnimationController::AddLineToBoardSpellAnimationController(G
 
 AddLineToBoardSpellAnimationController::~AddLineToBoardSpellAnimationController(void)
 {
-	delete _gameBoardViewDataSource;
+	delete _tetraminosInGameBoardViewDataSource;
 	delete _tetraminoColorsDataSource;
 }
 
@@ -49,29 +49,32 @@ void AddLineToBoardSpellAnimationController::upGameBoard()
 
 Node* AddLineToBoardSpellAnimationController::getGameBoardView()
 {
-	cleanAllTetraminosFromView();
+	cleanAllTetraminosFromGameBoardView();
 	Node *boardView = Node::create();
 	fillViewWithTetraminos(boardView);
 	this->addChild(boardView);
 	return boardView;
 }
 
-void AddLineToBoardSpellAnimationController::cleanAllTetraminosFromView()
+void AddLineToBoardSpellAnimationController::cleanAllTetraminosFromGameBoardView()
 {
-	int tetraminosCount = _gameBoardViewDataSource->getTetraminosCount();
+	int tetraminosCount = _tetraminosInGameBoardViewDataSource->getTetraminosCount();
 	for (int tetraminoIndex = 0; tetraminoIndex < tetraminosCount; tetraminoIndex++)
 	{
-		_gameBoardController->cleanTetraminoOnIndex(tetraminoIndex);
+		if (_tetraminosInGameBoardViewDataSource->availableTetraminoOnIndex(tetraminoIndex))
+		{
+			_gameBoardController->cleanTetraminoOnIndex(tetraminoIndex);
+		}
 	}
 }
 
 void AddLineToBoardSpellAnimationController::fillViewWithTetraminos(Node *aView)
 {
-	int tetraminosCount = _gameBoardViewDataSource->getTetraminosCount();
+	int tetraminosCount = _tetraminosInGameBoardViewDataSource->getTetraminosCount();
 	for (int tetraminoIndex = 0; tetraminoIndex < tetraminosCount; tetraminoIndex++)
 	{
 
-		if (_gameBoardViewDataSource->availableTetraminoOnIndex(tetraminoIndex))
+		if (_tetraminosInGameBoardViewDataSource->availableTetraminoOnIndex(tetraminoIndex))
 		{
 			addTetraminoOnViewForIndex(aView, tetraminoIndex);
 		}
@@ -81,11 +84,11 @@ void AddLineToBoardSpellAnimationController::fillViewWithTetraminos(Node *aView)
 void AddLineToBoardSpellAnimationController::addTetraminoOnViewForIndex(Node *aView, int aIndex)
 {
 	Sprite *tetraminoView = Sprite::create("HelloWorld.png");
-	Vec2 tetraminoViewPosition = _gameBoardViewDataSource->getTetraminoPositionForIndex(aIndex);
+	Vec2 tetraminoViewPosition = _tetraminosInGameBoardViewDataSource->getTetraminoPositionForIndex(aIndex);
 	tetraminoView->setPosition(tetraminoViewPosition);
 	tetraminoView->setScaleX(0.05f);
 	tetraminoView->setScaleY(0.08f);
-	string tetraminoTexture = _gameBoardViewDataSource->getTetraminoImageForIndex(aIndex);
+	string tetraminoTexture = _tetraminosInGameBoardViewDataSource->getTetraminoImageForIndex(aIndex);
 	Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(tetraminoTexture);
 	tetraminoView->setColor(tetraminoColor);
 	int tetraminoTag = getTetraminoViewTagForIndex(aIndex);
@@ -116,7 +119,7 @@ FiniteTimeAction* AddLineToBoardSpellAnimationController::getMoveBoardAnimationW
 {
 	int gameBoardWidth =  _gameBoard->getGameBoardWidth();
 	int finalBoardPositionIndex = gameBoardWidth;
-	Vec2 finalBoardPosition = _gameBoardViewDataSource->getTetraminoPositionForIndex(finalBoardPositionIndex);
+	Vec2 finalBoardPosition = _tetraminosInGameBoardViewDataSource->getTetraminoPositionForIndex(finalBoardPositionIndex);
 	Vec2 currentBoardPosition = aView->getPosition();
 	float yDifference = finalBoardPosition.y - currentBoardPosition.y;
 	float animationDuration = yDifference * fallActionDurationPerTetramino;
@@ -127,18 +130,23 @@ FiniteTimeAction* AddLineToBoardSpellAnimationController::getMoveBoardAnimationW
 function<void(Node*)> AddLineToBoardSpellAnimationController::getAnimationEndCallback()
 {
 	function<void(Node*)> callback = [this](Node *sender){
-		Vector<Node*> children = sender->getChildren();
-		Vector<Node*>::iterator childrenIterator;
-		for (childrenIterator = children.begin(); childrenIterator != children.end(); childrenIterator++)
-		{
-			Node *child = *childrenIterator;
-			int childTag = child->getTag();
-			string childName = child->getName();
-			_gameBoardController->drawTetraminoTextureOnIndex(childName, childTag);
-		}
+		cleanBoardViewChildren(sender);
 		sender->removeFromParentAndCleanup(true);
 	};
 	return callback;
+}
+
+void AddLineToBoardSpellAnimationController::cleanBoardViewChildren(Node *aView)
+{
+	Vector<Node*> children = aView->getChildren();
+	Vector<Node*>::iterator childrenIterator;
+	for (childrenIterator = children.begin(); childrenIterator != children.end(); childrenIterator++)
+	{
+		Node *child = *childrenIterator;
+		int childTag = child->getTag();
+		string childName = child->getName();
+		_gameBoardController->drawTetraminoTextureOnIndex(childName, childTag);
+	}
 }
 
 void AddLineToBoardSpellAnimationController::addLineToGameBoard()
