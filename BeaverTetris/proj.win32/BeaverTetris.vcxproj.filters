@@ -432,9 +432,6 @@
     <ClCompile Include="..\Classes\FullLineCombination.cpp">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\DetailsFromBoardDataSource.cpp">
       <Filter>Models\GameLogic</Filter>
     </ClCompile>
@@ -1006,9 +1003,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FullLineCombination.h">
       <Filter>Models\GameLogic\TetraminosCombinations</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h">
-      <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\DetailsFromBoardDataSource.h">
       <Filter>Models\GameLogic</Filter>

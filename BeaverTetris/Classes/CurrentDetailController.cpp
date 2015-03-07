@@ -7,15 +7,18 @@
 #include "GameBoard.h"
 #include <vector>
 #include "cocos2d.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
 
 using namespace std;
 
-CurrentDetailController::CurrentDetailController(GameBoard *aGameBoard, CurrentDetailDataSource *aDetailDataSource)
+CurrentDetailController::CurrentDetailController()
 {
-	_gameBoard = aGameBoard;
-	_currentDetailDataSource = aDetailDataSource;
-	_collisionDelegate = new CollisionDelegate(aGameBoard);
-	_tetraminoDetailLocatorDelegate = new TetraminoDetailLocatorDelegate(aGameBoard);
+	GameBoard *gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	_gameBoard = gameBoard;
+	_currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
+	_collisionDelegate = new CollisionDelegate(gameBoard);
+	_tetraminoDetailLocatorDelegate = new TetraminoDetailLocatorDelegate(gameBoard);
 	_delegate = NULL;
 }
 

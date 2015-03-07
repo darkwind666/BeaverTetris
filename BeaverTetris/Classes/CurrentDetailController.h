@@ -15,7 +15,7 @@ class FallenDetailDelegate;
 class CurrentDetailController : public GameSystemInterface, public ServiceInterface
 {
 public:
-	CurrentDetailController(GameBoard *aGameBoard, CurrentDetailDataSource *aDetailDataSource);
+	CurrentDetailController();
 	~CurrentDetailController(void);
 
 	void moveLeftDetail(void);

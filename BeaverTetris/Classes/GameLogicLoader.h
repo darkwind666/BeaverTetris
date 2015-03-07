@@ -10,5 +10,9 @@ public:
 
 	virtual void loadResources();
 
+private:
+
+	void setUpMainGameLogic();
+
 };
 

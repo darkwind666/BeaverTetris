@@ -2,8 +2,6 @@
 #include "VictoryConditionInterface.h"
 #include "StringsSupporter.h"
 #include "VictoryConditionInterface.h"
-#include "ServiceLocator.h"
-#include "GameServicesKeys.h"
 #include "CurrentLevelDataSource.h"
 
 #include "WinBossCondition.h"
@@ -13,9 +11,9 @@
 
 using namespace std;
 
-CurrentVictoryConditionDataSource::CurrentVictoryConditionDataSource()
+CurrentVictoryConditionDataSource::CurrentVictoryConditionDataSource(CurrentLevelDataSource *aCurrentLevelDataSource)
 {
-	CurrentLevelDataSource *currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
+	CurrentLevelDataSource *currentLevelDataSource = aCurrentLevelDataSource;
 	GameLevelInformation levelData = currentLevelDataSource->getCurrentLevelData();
 	_currentVictoryCondition = getVictoryConditionWithLevelData(levelData);
 }

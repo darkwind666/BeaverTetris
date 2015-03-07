@@ -11,9 +11,9 @@
 #include <ctime>
 #include "stdlib.h"
 
-NewTetraminoDetailDataSource::NewTetraminoDetailDataSource(void)
+NewTetraminoDetailDataSource::NewTetraminoDetailDataSource(CurrentLevelDataSource *aCurrentLevelDataSource)
 {
-	_currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
+	_currentLevelDataSource = aCurrentLevelDataSource;
 	_detailsTypesData = TetraminisDetailsFactory::getDetailsTypesData();
 	_createdDetailsCount = 0;
 	_tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);

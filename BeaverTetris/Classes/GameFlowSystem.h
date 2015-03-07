@@ -10,7 +10,7 @@ class TimeAccelerationEvent;
 class GameFlowSystem: public GameSystemInterface
 {
 public:
-	GameFlowSystem();
+	GameFlowSystem(GameTimeStepController *aGameTimeStepController);
 	~GameFlowSystem(void);
 
 	void updateSystem(float deltaTime);

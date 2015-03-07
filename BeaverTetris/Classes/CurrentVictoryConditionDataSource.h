@@ -12,7 +12,7 @@ class VictoryConditionInterface;
 class CurrentVictoryConditionDataSource : public ServiceInterface
 {
 public:
-	CurrentVictoryConditionDataSource();
+	CurrentVictoryConditionDataSource(CurrentLevelDataSource *aCurrentLevelDataSource);
 	~CurrentVictoryConditionDataSource(void);
 
 	VictoryConditionInterface* getCurrentVictoryCondition();

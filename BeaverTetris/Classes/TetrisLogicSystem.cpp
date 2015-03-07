@@ -9,11 +9,21 @@
 
 using namespace std;
 
-TetrisLogicSystem::TetrisLogicSystem(GameBoard *aGameBoard)
+TetrisLogicSystem::TetrisLogicSystem()
 {
-	_fullLineCombination = (FullLineCombination*)ServiceLocator::getServiceForKey(fullLineCombinationModelKey);
-	_similarTetraminosCombination = (SimilarTetraminosCombination*)ServiceLocator::getServiceForKey(similarTetraminosCombinationModelKey);
-	_fillingGapInBoardDelegate = (FillingGapInBoardSystem*)ServiceLocator::getServiceForKey(fillingGapInBoardSystemKey);
+	GameBoard *gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+
+	FullLineCombination *fullLineCombinationModel = new FullLineCombination(gameBoard);
+	ServiceLocator::setServiceForKey(fullLineCombinationModel, fullLineCombinationModelKey);
+	_fullLineCombination = fullLineCombinationModel;
+
+	SimilarTetraminosCombination *similarTetraminosCombinationModel = new SimilarTetraminosCombination(gameBoard);
+	ServiceLocator::setServiceForKey(similarTetraminosCombinationModel, similarTetraminosCombinationModelKey);
+	_similarTetraminosCombination = similarTetraminosCombinationModel;
+
+	FillingGapInBoardSystem *fillingGapInBoardSystem = new FillingGapInBoardSystem(gameBoard);
+	ServiceLocator::setServiceForKey(fillingGapInBoardSystem, fillingGapInBoardSystemKey);
+	_fillingGapInBoardDelegate = fillingGapInBoardSystem;
 }
 
 

@@ -4,13 +4,12 @@
 
 class GameBoard;
 class GameTimeStepController;
-class CurrentVictoryConditionDataSource;
 class VictoryConditionInterface;
 
 class WinGameSystem :public GameSystemInterface
 {
 public:
-	WinGameSystem(GameBoard *aGameBoard, CurrentVictoryConditionDataSource *currentVictoryConditionDataSource);
+	WinGameSystem();
 	~WinGameSystem(void);
 
 	void updateSystem(float deltaTime);

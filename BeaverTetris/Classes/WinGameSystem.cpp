@@ -9,10 +9,11 @@
 
 using namespace std;
 
-WinGameSystem::WinGameSystem(GameBoard *aGameBoard, CurrentVictoryConditionDataSource *currentVictoryConditionDataSource)
+WinGameSystem::WinGameSystem()
 {
-	_gameBoard = aGameBoard;
-	_currentVictoryCondition = currentVictoryConditionDataSource->getCurrentVictoryCondition();
+	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	CurrentVictoryConditionDataSource *victoryConditionDataSource = (CurrentVictoryConditionDataSource*)ServiceLocator::getServiceForKey(currentVictoryConditionDataSourceKey);
+	_currentVictoryCondition = victoryConditionDataSource->getCurrentVictoryCondition();
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 }
 

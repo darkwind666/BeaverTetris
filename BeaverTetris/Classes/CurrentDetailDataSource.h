@@ -9,7 +9,7 @@ class NewTetraminoDetailDataSource;
 class CurrentDetailDataSource : public ServiceInterface
 {
 public:
-	CurrentDetailDataSource(void);
+	CurrentDetailDataSource(NewTetraminoDetailDataSource *aNewTetraminoDetailDataSource);
 	~CurrentDetailDataSource(void);
 
 	TetraminoDetail* getCurrentDetail();

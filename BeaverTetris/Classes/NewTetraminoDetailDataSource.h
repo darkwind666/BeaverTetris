@@ -13,7 +13,7 @@ class TetraminosFactory;
 class NewTetraminoDetailDataSource : public ServiceInterface
 {
 public:
-	NewTetraminoDetailDataSource(void);
+	NewTetraminoDetailDataSource(CurrentLevelDataSource *aCurrentLevelDataSource);
 	~NewTetraminoDetailDataSource(void);
 
 	TetraminoDetail* getNewDetail();

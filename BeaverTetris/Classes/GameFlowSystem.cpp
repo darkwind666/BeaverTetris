@@ -1,6 +1,8 @@
 #include "GameFlowSystem.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
 #include "CurrentDetailDataSource.h"
 #include "GameTimeStepController.h"
 #include "TetraminosFallEvent.h"
@@ -8,10 +10,10 @@
 
 using namespace std;
 
-GameFlowSystem::GameFlowSystem()
+GameFlowSystem::GameFlowSystem(GameTimeStepController *aGameTimeStepController)
 {
 	_currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
-	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
+	_gameTimeStepController = aGameTimeStepController;
 	TetraminosFallEvent *tetraminosFallEvent = new TetraminosFallEvent();
 	_tetraminosFallEvent = tetraminosFallEvent;
 	ServiceLocator::setServiceForKey(tetraminosFallEvent, tetraminosFallEventModelKey);

@@ -147,7 +147,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\AISpellCastsStrategy.cpp" />
     <ClCompile Include="..\Classes\AnimationSynchonizer.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\AwardForTetraminoDataSource.cpp" />
     <ClCompile Include="..\Classes\BossEnvironmentFactory.cpp" />
     <ClCompile Include="..\Classes\BossInterface.cpp" />
     <ClCompile Include="..\Classes\BossMovementAnimationController.cpp" />
@@ -403,7 +402,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AISpellCastsStrategy.h" />
     <ClInclude Include="..\Classes\AnimationSynchonizer.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="..\Classes\AwardForTetraminoDataSource.h" />
     <ClInclude Include="..\Classes\BossEnvironmentFactory.h" />
     <ClInclude Include="..\Classes\BossInterface.h" />
     <ClInclude Include="..\Classes\BossMovementAnimationController.h" />
