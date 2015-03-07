@@ -42,6 +42,7 @@ struct TetraminoDetailInformation
 {
 	bool rotateble;
 	std::vector< std::vector<int> > tetraminoElements;
+	std::vector <  std::vector< std::vector<int> >  > detailForms;
 };
 
 struct NewTetraminoDetailRequest

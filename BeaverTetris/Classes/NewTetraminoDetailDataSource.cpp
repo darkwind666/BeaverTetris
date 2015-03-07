@@ -70,6 +70,9 @@ TetraminoDetail* NewTetraminoDetailDataSource::getNewDetailWithRequest(NewTetram
 
 void NewTetraminoDetailDataSource::setInDetailTetraminosWithRequest(TetraminoDetail* aDetail, NewTetraminoDetailRequest aRequest)
 {
+	aDetail->setDetailTetraminosType(aRequest.tetraminoType);
+	TetraminoDetailInformation newDetailInformation = _detailsTypesData[aRequest.tetraminoDetailType];
+	aDetail->setDetailForms(newDetailInformation.detailForms);
 	for (int yIndex = 0; yIndex < standartDetailHeight; yIndex++)
 	{
 		setInDetailTetraminosLineWithRequest(aDetail, yIndex, aRequest);
@@ -79,9 +82,10 @@ void NewTetraminoDetailDataSource::setInDetailTetraminosWithRequest(TetraminoDet
 void NewTetraminoDetailDataSource::setInDetailTetraminosLineWithRequest(TetraminoDetail* aDetail, int aLineIndex, NewTetraminoDetailRequest aRequest)
 {
 	TetraminoDetailInformation newDetailInformation = _detailsTypesData[aRequest.tetraminoDetailType];
+	vector< vector<int> > detailForm = newDetailInformation.detailForms[0];
 	for (int xIndex = 0; xIndex < standartDetailWidth; xIndex++)
 	{
-		int tetraminoFlag = newDetailInformation.tetraminoElements[aLineIndex][xIndex];
+		int tetraminoFlag = detailForm[aLineIndex][xIndex];
 		Tetramino *tertraminoInDetail = getTetraminoWithFlagAndType(tetraminoFlag, aRequest.tetraminoType);
 		aDetail->setTetraminoForXY(tertraminoInDetail, xIndex, aLineIndex);
 	}
@@ -104,8 +108,8 @@ Tetramino* NewTetraminoDetailDataSource::getTetraminoWithFlagAndType(int aTetram
 void NewTetraminoDetailDataSource::setDetailStartPosition(TetraminoDetail* aDetail)
 {
 	GamePositionOnBoard startDetailPosition;
-	startDetailPosition.xPosition = 7;
-	startDetailPosition.yPosition = 20;
+	startDetailPosition.xPosition = tetrisBlocksWidth / 2;
+	startDetailPosition.yPosition = tetrisBlocksHeight;
 	aDetail->setDetailPosition(startDetailPosition);
 }
 

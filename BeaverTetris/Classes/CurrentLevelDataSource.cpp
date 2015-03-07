@@ -36,6 +36,9 @@ GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
 	availableTetraminoDetails.push_back(kTetraminoDetail3);
 	availableTetraminoDetails.push_back(kTetraminoDetail4);
 	availableTetraminoDetails.push_back(kTetraminoDetail5);
+	availableTetraminoDetails.push_back(kTetraminoDetail6);
+	availableTetraminoDetails.push_back(kTetraminoDetail7);
+	availableTetraminoDetails.push_back(kTetraminoDetail8);
 
 	gameLevelInformation.availableTetraminoDetails = availableTetraminoDetails;
 

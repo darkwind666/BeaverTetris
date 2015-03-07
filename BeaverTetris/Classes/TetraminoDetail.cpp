@@ -16,6 +16,10 @@ TetraminoDetail::TetraminoDetail(int width, int height)
 	position.xPosition = width;
 	position.yPosition = height;
 	_position = position;
+
+	_tetraminosType = kTetraminoEmpty;
+	_detailForms = vector <  vector< vector<int> >  >();
+	_currentDetailFormIndex = 0;
 }
 
 TetraminoDetail::TetraminoDetail(TetraminoDetail &copy)
@@ -25,6 +29,9 @@ TetraminoDetail::TetraminoDetail(TetraminoDetail &copy)
 	copy.copyTetraminosInDetail(this);
 	_detailWidth = copy._detailWidth;
 	_detailHeight = copy._detailHeight;
+	_tetraminosType = copy._tetraminosType;
+	_detailForms = copy._detailForms;
+	_currentDetailFormIndex = copy._currentDetailFormIndex;
 }
 
 TetraminoDetail::~TetraminoDetail(void)
@@ -54,29 +61,62 @@ void TetraminoDetail::rotateDetail()
 
 void TetraminoDetail::rotateDetailBoard()
 {
-	GameBoard *newGameBoard = new GameBoard(_detailWidth,_detailHeight);
-	for (int xIndex = 0; xIndex < _detailWidth; xIndex++)
+	_currentDetailFormIndex++;
+	if (_currentDetailFormIndex >= _detailForms.size())
 	{
-		rotateColumnAndPlaceInNewBoard(xIndex, newGameBoard);
+		_currentDetailFormIndex = 0;
 	}
-	
-	delete _gameBoardTetraminos;
-	_gameBoardTetraminos = newGameBoard;
+	rotateDetailAccordingToFormIndex();
 }
 
-void TetraminoDetail::rotateColumnAndPlaceInNewBoard(int aColumn, GameBoard *aGameBoard)
+void TetraminoDetail::rotateDetailAccordingToFormIndex()
+{
+	vector<Tetramino*> emptyTetraminos = getTetraminosForType(kTetraminoEmpty);
+	vector<Tetramino*> nonEmptyTetraminos = getTetraminosForType(_tetraminosType);
+	fillTetraminosWithFlag(emptyTetraminos, 0);
+	fillTetraminosWithFlag(nonEmptyTetraminos, 1);
+}
+
+std::vector<Tetramino*> TetraminoDetail::getTetraminosForType(TetraminoType aType)
+{
+	vector<GamePositionOnBoard> positions = _gameBoardTetraminos->getTetraminosForType(aType);
+	vector<Tetramino*> tetraminos;
+	vector<GamePositionOnBoard>::iterator positionsIterator;
+	for (positionsIterator = positions.begin(); positionsIterator != positions.end(); positionsIterator++)
+	{
+		GamePositionOnBoard tetraminoPosition = *positionsIterator;
+		Tetramino *tetramino = _gameBoardTetraminos->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+		tetraminos.push_back(tetramino);
+	}
+	return tetraminos;
+}
+
+void TetraminoDetail::fillTetraminosWithFlag(vector<Tetramino*> &emptyTetraminos, int aFlag)
 {
 	for (int yIndex = 0; yIndex < _detailHeight; yIndex++)
 	{
-		Tetramino *rotatedTetramino = _gameBoardTetraminos->getTetraminoForXYposition(aColumn, yIndex);
-		aGameBoard->replaceTetraminoXYposition(rotatedTetramino, yIndex, aColumn);
+		fillTetraminosLineFromTetraminosWithFlag(yIndex, emptyTetraminos, aFlag);
+	}
+}
+
+void TetraminoDetail::fillTetraminosLineFromTetraminosWithFlag(int aLine, vector<Tetramino*> &emptyTetraminos, int aFlag)
+{
+	vector< vector<int> > detailForm = _detailForms[_currentDetailFormIndex];
+	for (int xIndex = 0; xIndex < _detailWidth; xIndex++)
+	{
+		int tetraminoFlag = detailForm[aLine][xIndex];
+		if (tetraminoFlag == aFlag)
+		{
+			Tetramino *tetramino = emptyTetraminos[0];
+			_gameBoardTetraminos->setTetraminoXYposition(tetramino, xIndex, aLine);
+			emptyTetraminos.erase(emptyTetraminos.begin());
+		}
 	}
 }
 
 GamePositionOnBoard TetraminoDetail::convertPositionInDetailToAbsolutePosition(GamePositionOnBoard aPosition)
 {
 	GamePositionOnBoard currentDetailPosition = this->getDetailPosition();
-	
 	GamePositionOnBoard tetraminoPositionInDetail;
 	tetraminoPositionInDetail.xPosition = currentDetailPosition.xPosition + aPosition.xPosition;
 	tetraminoPositionInDetail.yPosition = currentDetailPosition.yPosition + aPosition.yPosition;
@@ -141,4 +181,14 @@ GamePositionOnBoard TetraminoDetail::getPositionForIndex(int aIndex)
 int TetraminoDetail::getIndexForPosition(GamePositionOnBoard aPosition)
 {
 	return _gameBoardTetraminos->getIndexForPosition(aPosition);
+}
+
+void TetraminoDetail::setDetailTetraminosType(TetraminoType aType)
+{
+	_tetraminosType = aType;
+}
+
+void TetraminoDetail::setDetailForms(vector <  vector< vector<int> >  > aDetailForms)
+{
+	_detailForms = aDetailForms;
 }
