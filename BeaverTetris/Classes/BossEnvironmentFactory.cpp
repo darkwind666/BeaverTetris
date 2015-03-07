@@ -4,6 +4,7 @@
 #include "GameBoard.h"
 #include "GameDesignConstants.h"
 #include "Tetramino.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
@@ -12,6 +13,7 @@ const int bossEnvironmentLinesCount = 3;
 BossEnvironmentFactory::BossEnvironmentFactory(void)
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	_tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
 }
 
 
@@ -77,7 +79,7 @@ void BossEnvironmentFactory::fillBoardLineWithTetraminos(int aLineIndex, vector<
 		int rowIndex = distance(aTetraminoElements.begin(), rowIterator);
 		int tetraminoTypeTag = *rowIterator;
 		TetraminoType type = (TetraminoType)tetraminoTypeTag;
-		Tetramino *tetraminoFromTemplate = new Tetramino(type);
+		Tetramino *tetraminoFromTemplate = _tetraminosFactory->getNewTetraminoWithType(type);
 		_gameBoard->replaceTetraminoXYposition(tetraminoFromTemplate, rowIndex, (standartDetailHeight - aLineIndex - 1));
 	}
 }

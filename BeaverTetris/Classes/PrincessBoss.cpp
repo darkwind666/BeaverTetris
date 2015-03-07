@@ -7,6 +7,7 @@
 #include "KeysForEnumsDataSource.h"
 #include "AIMovementStrategy.h"
 #include "BossMovementObserver.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
@@ -40,7 +41,8 @@ vector<PrincessBossInformation> PrincessBoss::makePrincessWithLevelData(GameLeve
 
 Tetramino* PrincessBoss::makeBossTetraminoWithIndexAndBossCount(int aBossIndex, int aBossCount)
 {
-	Tetramino* boss = new Tetramino(kTetraminoBossPrincess, 2);
+	TetraminosFactory *tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
+	Tetramino *boss = tetraminosFactory->getNewTetraminoWithType(kTetraminoBossPrincess);
 	boss->addObserver(this);
 
 	int xOffset = tetrisBlocksWidth / (aBossCount + 1);

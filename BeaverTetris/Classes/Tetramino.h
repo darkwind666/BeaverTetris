@@ -9,12 +9,13 @@ public:
 	Tetramino(void);
 	Tetramino(TetraminoType aType);
 	Tetramino(TetraminoType aType, int aLivesCount);
+	Tetramino(TetraminoType aType, int aLivesCount, int aTetraminoCost);
 	~Tetramino(void);
 
 	TetraminoType getTetraminoType(void);
 	int getTetraminoCost(void);
-
 	int getTetraminoLivesCount(void);
+
 	void reduceLive(void);
 	void setLivesToZero();
 

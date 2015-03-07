@@ -14,7 +14,6 @@ struct ResoucesLoaderInformation
 	ResourcesLoader *resourcesLoader;
 };
 
-
 struct StartGameMenuItemInformation
 {
 	std::string imageKey;
@@ -59,7 +58,6 @@ struct VictoryConditionViewElements
 
 class AIMovementStrategy;
 class Tetramino;
-
 struct PrincessBossInformation
 {
 	Tetramino *bossTetramino;
@@ -67,11 +65,16 @@ struct PrincessBossInformation
 };
 
 class SpellInterface;
-
 struct SpellInformation
 {
 	SpellInterface *spell;
 	int spellCost;
+};
+
+struct TetraminoInformation
+{
+	int tetraminoLivesCount;
+	int tetraminoCost;
 };
 
 struct PlayerInformation

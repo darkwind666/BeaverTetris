@@ -7,6 +7,7 @@
 #include "GameEnums.h"
 
 class GameBoard;
+class TetraminosFactory;
 
 class DetailsFromBoardDataSource
 {
@@ -20,6 +21,7 @@ private:
 
 	GameBoard *_gameBoard;
 	GameBoard *_extractedDetailsData;
+	TetraminosFactory *_tetraminosFactory;
 
 	std::map<DirectionType, std::function<void(GamePositionOnBoard*)> > _waveAlgoritmdirections;
 

@@ -8,6 +8,7 @@
 class CurrentLevelDataSource;
 class TetraminoDetail;
 class Tetramino;
+class TetraminosFactory;
 
 class NewTetraminoDetailDataSource : public ServiceInterface
 {
@@ -23,6 +24,7 @@ private:
 	CurrentLevelDataSource *_currentLevelDataSource;
 	std::map<TetraminoDetailType, TetraminoDetailInformation> _detailsTypesData;
 	int _createdDetailsCount;
+	TetraminosFactory *_tetraminosFactory;
 
 	NewTetraminoDetailRequest getTetraminoDetailRequest();
 	TetraminoType getRandomTetraminoType();

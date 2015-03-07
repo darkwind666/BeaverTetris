@@ -1,12 +1,16 @@
 #include "QueenBoss.h"
 #include "Tetramino.h"
 #include "BossWithOneTetraminoDelegate.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
 QueenBoss::QueenBoss(void)
 {
-	Tetramino *bossTetramino = new Tetramino(kTetraminoBossQueen, 3);
+	TetraminosFactory *tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
+	Tetramino *bossTetramino = tetraminosFactory->getNewTetraminoWithType(kTetraminoBossQueen);
 	bossTetramino->addObserver(this);
 	_bossWithOneTetraminoDelegate = new BossWithOneTetraminoDelegate(bossTetramino);
 }

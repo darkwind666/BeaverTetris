@@ -4,7 +4,6 @@
 
 class GameBoard;
 class CurrentPlayerDataSource;
-class AwardForTetraminoDataSource;
 class Tetramino;
 class ExplosionAnimationDelegate;
 
@@ -20,7 +19,6 @@ public:
 private:
 
 	GameBoard *_gameBoard;
-	AwardForTetraminoDataSource *_awardForTetraminoDataSource;
 	CurrentPlayerDataSource *_currentPlayerDataSource;
 	ExplosionAnimationDelegate *_delegate;
 

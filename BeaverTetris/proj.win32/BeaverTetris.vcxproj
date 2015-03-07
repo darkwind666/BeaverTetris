@@ -280,6 +280,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminoDetailLocatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminoObserverInterface.cpp" />
     <ClCompile Include="..\Classes\TetraminosPositionsDelegate.cpp" />
+    <ClCompile Include="..\Classes\TetraminosFactory.cpp" />
     <ClCompile Include="..\Classes\TimeAccelerationEvent.cpp" />
     <ClCompile Include="..\Classes\VerticalChainChecker.cpp" />
     <ClCompile Include="..\Classes\VictoryConditionInterface.cpp" />
@@ -385,9 +386,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="TetraminosCharacteristicsDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="TetrominosFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="CurrentLevelWinResultDataSource.cpp">
@@ -544,6 +542,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminoDetailLocatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminoObserverInterface.h" />
     <ClInclude Include="..\Classes\TetraminosPositionsDelegate.h" />
+    <ClInclude Include="..\Classes\TetraminosFactory.h" />
     <ClInclude Include="..\Classes\TimeAccelerationEvent.h" />
     <ClInclude Include="..\Classes\VerticalChainChecker.h" />
     <ClInclude Include="..\Classes\VictoryConditionInterface.h" />
@@ -587,7 +586,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="RecordsDataSource.h" />
     <ClInclude Include="SceneGraphFactory.h" />
     <ClInclude Include="TetraminosCharacteristicsDataSource.h" />
-    <ClInclude Include="TetrominosFactory.h" />
     <ClInclude Include="CurrentLevelWinResultDataSource.h" />
     <ClInclude Include="WinGamesDataSource.h" />
   </ItemGroup>

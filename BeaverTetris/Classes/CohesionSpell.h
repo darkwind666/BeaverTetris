@@ -7,6 +7,7 @@
 
 class GameBoard;
 class CohesionSpellDelegate;
+class TetraminosFactory;
 
 class CohesionSpell :public SpellInterface, public ServiceInterface
 {
@@ -23,6 +24,7 @@ private:
 
 	GameBoard *_gameBoard;
 	CohesionSpellDelegate *_delegate;
+	TetraminosFactory *_tetraminosFactory;
 
 	std::vector<GamePositionOnBoard> getEmptyTetraminosForCohesion();
 

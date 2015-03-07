@@ -7,6 +7,7 @@
 #include "TetraminisDetailsFactory.h"
 #include "GameHelper.h"
 #include "GameDesignConstants.h"
+#include "TetraminosFactory.h"
 #include <ctime>
 #include "stdlib.h"
 
@@ -15,6 +16,7 @@ NewTetraminoDetailDataSource::NewTetraminoDetailDataSource(void)
 	_currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
 	_detailsTypesData = TetraminisDetailsFactory::getDetailsTypesData();
 	_createdDetailsCount = 0;
+	_tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
 }
 
 
@@ -96,11 +98,11 @@ Tetramino* NewTetraminoDetailDataSource::getTetraminoWithFlagAndType(int aTetram
 	Tetramino *tertraminoInDetail;
 	if (aTetraminoFlag > 0)
 	{
-		tertraminoInDetail = new Tetramino(aTetraminoType);
+		tertraminoInDetail = _tetraminosFactory->getNewTetraminoWithType(aTetraminoType);
 	}
 	else
 	{
-		tertraminoInDetail = new Tetramino();
+		tertraminoInDetail = _tetraminosFactory->getNewTetraminoWithType(kTetraminoEmpty);
 	}
 	return tertraminoInDetail;
 }

@@ -7,6 +7,7 @@
 class Tetramino;
 class TetraminosPositionsDelegate;
 class TetraminoRemovingObserverInterface;
+class TetraminosFactory;
 
 class GameBoard : public ServiceInterface
 {
@@ -44,6 +45,7 @@ private:
 	std::vector< std::vector<Tetramino*> > _tetramins;
 	TetraminoRemovingObserverInterface *_observer;
 	TetraminosPositionsDelegate *_tetraminosSourceDelegate;
+	TetraminosFactory *_tetraminosFactory;
 
 	void cleanGameBoard(void);
 

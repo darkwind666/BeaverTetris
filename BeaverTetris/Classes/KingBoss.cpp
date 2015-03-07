@@ -7,12 +7,14 @@
 #include "AIMovementStrategy.h"
 #include "AISpellCastsStrategy.h"
 #include "BossMovementObserver.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
 KingBoss::KingBoss(void)
 {
-	Tetramino *bossTetramino = new Tetramino(kTetraminoBossKing, 3);
+	TetraminosFactory *tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
+	Tetramino *bossTetramino = tetraminosFactory->getNewTetraminoWithType(kTetraminoBossKing);
 	bossTetramino->addObserver(this);
 	_bossWithOneTetraminoDelegate = new BossWithOneTetraminoDelegate(bossTetramino);
 	_movementStrategy = getMovementStrategeWithTetramino(bossTetramino);

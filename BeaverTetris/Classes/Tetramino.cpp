@@ -6,6 +6,7 @@ Tetramino::Tetramino(void)
 	_tetraminoType = kTetraminoEmpty;
 	_tetraminoObserver = NULL;
 	_tetraminoLivesCount = 0;
+	_tetraminoCost = 0;
 }
 
 Tetramino::Tetramino(TetraminoType aType)
@@ -13,6 +14,7 @@ Tetramino::Tetramino(TetraminoType aType)
 	_tetraminoType = aType;
 	_tetraminoObserver = NULL;
 	_tetraminoLivesCount = 1;
+	_tetraminoCost = 0;
 }
 
 Tetramino::Tetramino(TetraminoType aType, int aLivesCount)
@@ -20,6 +22,14 @@ Tetramino::Tetramino(TetraminoType aType, int aLivesCount)
 	_tetraminoType = aType;
 	_tetraminoLivesCount = aLivesCount;
 	_tetraminoObserver = NULL;
+}
+
+Tetramino::Tetramino(TetraminoType aType, int aLivesCount, int aTetraminoCost)
+{
+	_tetraminoType = aType;
+	_tetraminoObserver = NULL;
+	_tetraminoLivesCount = aLivesCount;
+	_tetraminoCost = aTetraminoCost;
 }
 
 Tetramino::~Tetramino(void)
@@ -68,5 +78,4 @@ void Tetramino::removeObserver(TetraminoObserverInterface *aTetraminoObserverInt
 	{
 		_tetraminoObserver = NULL;
 	}
-
 }

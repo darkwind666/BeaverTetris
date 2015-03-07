@@ -6,7 +6,6 @@
 class ExplosionAnimationDelegate;
 class CurrentPlayerDataSource;
 class GameBoard;
-class AwardForTetraminoDataSource;
 
 class TetraminosChainCleaner
 {
@@ -22,7 +21,6 @@ private:
 	ExplosionAnimationDelegate *_delegate;
 	CurrentPlayerDataSource *_currentPlayerDataSource;
 	GameBoard *_gameBoard;
-	AwardForTetraminoDataSource *_awardForTetraminoDataSource;
 
 	void setAwardToPlayerFromTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
 	void setTetraminosAward(std::vector<GamePositionOnBoard> aTetraminos);

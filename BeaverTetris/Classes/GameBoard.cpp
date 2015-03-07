@@ -3,6 +3,9 @@
 #include "Tetramino.h"
 #include "TetraminoRemovingObserverInterface.h"
 #include "TetraminosPositionsDelegate.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
@@ -12,6 +15,7 @@ GameBoard::GameBoard(int width, int height)
 	_gameBoardHeight = height;
 	_observer = NULL;
 	_tetramins = vector< vector<Tetramino*> >();
+	_tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
 	cleanGameBoard();
 	_tetraminosSourceDelegate = new TetraminosPositionsDelegate(&_tetramins);
 }
@@ -28,7 +32,7 @@ void GameBoard::cleanGameBoard(void)
 		vector<Tetramino*> tetraminosLine;
 		for (int widthIndex = 0; widthIndex < _gameBoardWidth; widthIndex++)
 		{
-			Tetramino *emptyTetramino = new Tetramino();
+			Tetramino *emptyTetramino = _tetraminosFactory->getNewTetraminoWithType(kTetraminoEmpty);
 			tetraminosLine.push_back(emptyTetramino);
 		}
 		_tetramins.push_back(tetraminosLine);
@@ -44,7 +48,7 @@ void GameBoard::replaceTetraminoXYposition(Tetramino *aTetramino, int xPosition,
 
 void GameBoard::removeTetraminoForXYposition(int xPosition, int yPosition)
 {
-	Tetramino *newTetramino = new Tetramino();
+	Tetramino *newTetramino =_tetraminosFactory->getNewTetraminoWithType(kTetraminoEmpty);
 	_tetramins[yPosition][xPosition] = newTetramino;
 }
 

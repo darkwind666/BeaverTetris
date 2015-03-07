@@ -117,9 +117,6 @@
     <ClCompile Include="SpellsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
-    <ClCompile Include="TetrominosFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
     <ClCompile Include="GameDataFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
@@ -636,6 +633,9 @@
     <ClCompile Include="..\Classes\TetraminosInGameBoardViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetraminosFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -657,9 +657,6 @@
       <Filter>Factories</Filter>
     </ClInclude>
     <ClInclude Include="SpellsFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="TetrominosFactory.h">
       <Filter>Factories</Filter>
     </ClInclude>
     <ClInclude Include="GameDataFactory.h">
@@ -1213,6 +1210,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TetraminosInGameBoardViewDataSource.h">
       <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminosFactory.h">
+      <Filter>Factories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,12 +1,16 @@
 #include "DetailsFromBoardDataSource.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
 DetailsFromBoardDataSource::DetailsFromBoardDataSource(GameBoard *aGameBoard)
 {
 	_gameBoard = aGameBoard;
+	_tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
 	_waveAlgoritmdirections = makeWaveAlgoritmDirections();
 }
 
@@ -169,7 +173,7 @@ void DetailsFromBoardDataSource::setDetailsInExtractedDetailsData(vector <GamePo
 	for (detailElementsIterator = aDetailElements.begin(); detailElementsIterator != aDetailElements.end(); detailElementsIterator++)
 	{
 		GamePositionOnBoard detailPosition = *detailElementsIterator;
-		Tetramino *tetraminoMarkInExtractedDetailsData = new Tetramino(kTetraminoBlack);
+		Tetramino *tetraminoMarkInExtractedDetailsData = _tetraminosFactory->getNewTetraminoWithType(kTetraminoBlack);
 		_extractedDetailsData->setTetraminoXYposition(tetraminoMarkInExtractedDetailsData, detailPosition.xPosition, detailPosition.yPosition);
 	}
 }

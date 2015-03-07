@@ -4,6 +4,7 @@
 #include "GameEnums.h"
 
 class GameBoard;
+class TetraminosFactory;
 
 class BossEnvironmentFactory
 {
@@ -16,6 +17,7 @@ public:
 private:
 
 	GameBoard *_gameBoard;
+	TetraminosFactory *_tetraminosFactory;
 
 	std::vector< std::vector<int> > getBoardTetraminosTemplate();
     std::vector< std::vector<int> > convertMasiveToVector(int *aSourceMassive);

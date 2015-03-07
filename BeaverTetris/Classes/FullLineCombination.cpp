@@ -1,7 +1,6 @@
 #include "FullLineCombination.h"
 #include "GameBoard.h"
 #include "CurrentPlayerDataSource.h"
-#include "AwardForTetraminoDataSource.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "Tetramino.h"
@@ -14,7 +13,6 @@ FullLineCombination::FullLineCombination(GameBoard *aGameBoard)
 {
 	_gameBoard = aGameBoard;
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
-	_awardForTetraminoDataSource = (AwardForTetraminoDataSource*)ServiceLocator::getServiceForKey(awardForTetraminoDataSourceKey);
 	_delegate = NULL;
 }
 
@@ -109,7 +107,7 @@ int FullLineCombination::getAwardForTetramino(Tetramino *aTetramino)
 	if (aTetramino->getTetraminoLivesCount() <= 0)
 	{
 		TetraminoType type = aTetramino->getTetraminoType();
-		int awardForTetramino = _awardForTetraminoDataSource->getAwardForTetraminoType(type);
+		int awardForTetramino = aTetramino->getTetraminoCost();
 		award += awardForTetramino;
 	}
 	return award;

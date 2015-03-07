@@ -6,12 +6,14 @@
 #include "GameBoard.h"
 #include "Tetramino.h"
 #include "CohesionSpellDelegate.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
 CohesionSpell::CohesionSpell(void)
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	_tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
 	_delegate = NULL;
 }
 
@@ -161,7 +163,7 @@ bool CohesionSpell::checkTetraminoPositionInPositions(GamePositionOnBoard aPosit
 void CohesionSpell::setNewTetraminoForPosition(GamePositionOnBoard aPosition)
 {
 	TetraminoType newTetraminoType = getRandomTetraminoType();
-	Tetramino *newTetramino = new Tetramino(newTetraminoType);
+	Tetramino *newTetramino = _tetraminosFactory->getNewTetraminoWithType(newTetraminoType);
 	_gameBoard->setTetraminoXYposition(newTetramino, aPosition.xPosition, aPosition.yPosition);
 }
 

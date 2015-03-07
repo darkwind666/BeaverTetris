@@ -5,7 +5,6 @@
 #include "CurrentPlayerDataSource.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
-#include "AwardForTetraminoDataSource.h"
 #include "GameDesignConstants.h"
 
 using namespace std;
@@ -13,7 +12,6 @@ using namespace std;
 TetraminosChainCleaner::TetraminosChainCleaner(GameBoard *aGameBoard)
 {
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
-	_awardForTetraminoDataSource = (AwardForTetraminoDataSource*)ServiceLocator::getServiceForKey(awardForTetraminoDataSourceKey);
 	_gameBoard = aGameBoard;
 	_delegate = NULL;
 }
@@ -59,7 +57,7 @@ int TetraminosChainCleaner::getAwardForChainForTetraminos(vector<GamePositionOnB
 	{
 		GamePositionOnBoard tetraminoPosition = *tetraminosIterator;
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition,tetraminoPosition.yPosition);
-		award += (_awardForTetraminoDataSource->getAwardForTetraminoType(tetraminoInBoard->getTetraminoType())) + prizeForChainConstant;
+		award += ((tetraminoInBoard->getTetraminoCost()) + prizeForChainConstant);
 	}
 	return award;
 }

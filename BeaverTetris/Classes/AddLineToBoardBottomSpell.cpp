@@ -7,6 +7,7 @@
 #include "Tetramino.h"
 #include "GameEnums.h"
 #include "AddLineToBoardBottomSpellDelegate.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ AddLineToBoardBottomSpell::AddLineToBoardBottomSpell(void)
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_delegate = NULL;
+	_tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
 }
 
 
@@ -78,7 +80,7 @@ void  AddLineToBoardBottomSpell::fillBottomWithRandomTetraminos()
 	for (int widthIndex = 0; widthIndex < boardWidth; widthIndex++)
 	{
 		TetraminoType randomTetraminoType = (TetraminoType)GameHelper::getRandomNumberFromUpInterval(kTetraminoBossQueen);
-		Tetramino *newTetramino = new Tetramino(randomTetraminoType);
+		Tetramino *newTetramino = _tetraminosFactory->getNewTetraminoWithType(randomTetraminoType);
 		_gameBoard->setTetraminoXYposition(newTetramino, widthIndex, 0);
 	}
 }
@@ -88,7 +90,7 @@ void AddLineToBoardBottomSpell::makeGapInBottom()
 	int boardWidth = _gameBoard->getGameBoardWidth();
 	if (checkEmptyTetraminosInBottom() == false)
 	{
-		Tetramino *emptyTetramino = new Tetramino(kTetraminoEmpty);
+		Tetramino *emptyTetramino = _tetraminosFactory->getNewTetraminoWithType(kTetraminoEmpty);
 		int randomIndex = GameHelper::getRandomNumberFromUpInterval(boardWidth);
 		_gameBoard->replaceTetraminoXYposition(emptyTetramino, randomIndex, 0);
 	}

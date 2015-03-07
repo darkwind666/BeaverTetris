@@ -4,13 +4,15 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "BossMovementObserver.h"
+#include "TetraminosFactory.h"
 
 AIMovementStrategy::AIMovementStrategy(GameBoard *aGameBoard, Tetramino *aTetramino)
 {
 	_gameBoard = aGameBoard;
 	_bossTetramino = aTetramino; 
 	_currentUpdateState = 0;
-	_lastTetraminoInBossPlace = new Tetramino();
+	TetraminosFactory *tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
+	_lastTetraminoInBossPlace = tetraminosFactory->getNewTetraminoWithType(kTetraminoEmpty);
 	_bossDirections = getBossDirections();
 	_observer = NULL;
 }

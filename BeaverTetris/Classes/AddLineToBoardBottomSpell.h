@@ -5,6 +5,7 @@
 
 class GameBoard;
 class AddLineToBoardBottomSpellDelegate;
+class TetraminosFactory;
 
 class AddLineToBoardBottomSpell :public SpellInterface, public ServiceInterface
 {
@@ -21,6 +22,7 @@ private:
 
 	GameBoard *_gameBoard;
 	AddLineToBoardBottomSpellDelegate *_delegate;
+	TetraminosFactory *_tetraminosFactory;
 
 	void riseAllTetraminos();
 	void riseTetraminosLineInBoard(int aLineIndex);
