@@ -633,6 +633,9 @@
     <ClCompile Include="..\Classes\TetraminosFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MainGamePauseViewController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1207,6 +1210,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TetraminosFactory.h">
       <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGamePauseViewController.h">
+      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

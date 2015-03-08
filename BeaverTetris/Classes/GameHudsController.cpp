@@ -5,6 +5,7 @@
 #include "MainGamePlayerScoreController.h"
 #include "MainGameVictoryConditionController.h"
 #include "PlayerSpellsControllerFactory.h"
+#include "MainGamePauseViewController.h"
 
 using namespace cocos2d;
 
@@ -37,4 +38,8 @@ void GameHudsController::makeView()
 	PlayerSpellsControllerFactory playerSpellsControllerFactory;
 	Node *playerSpellsController = playerSpellsControllerFactory.getPlayerSpellsControllerForCurrentPlatform();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerSpellsController, this, playerSpellsControllerKey);
+
+	MainGamePauseViewController *mainGamePauseViewController = new MainGamePauseViewController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(mainGamePauseViewController, this, pauseGameViewControllerKey);
+
 }

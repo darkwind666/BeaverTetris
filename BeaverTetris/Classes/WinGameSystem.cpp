@@ -12,6 +12,7 @@ using namespace std;
 WinGameSystem::WinGameSystem()
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
+	_gameEnded = false;
 	CurrentVictoryConditionDataSource *victoryConditionDataSource = (CurrentVictoryConditionDataSource*)ServiceLocator::getServiceForKey(currentVictoryConditionDataSourceKey);
 	_currentVictoryCondition = victoryConditionDataSource->getCurrentVictoryCondition();
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
@@ -35,6 +36,7 @@ void WinGameSystem::checkWinGameState()
 	{
 		_gameTimeStepController->setUpdateAvailable(false);
 		cocos2d::log("Win game");
+		_gameEnded = true;
 	}
 	else
 	{
@@ -48,6 +50,7 @@ void WinGameSystem::checkLoseGameState()
 	{
 		_gameTimeStepController->setUpdateAvailable(false);
 		cocos2d::log("Lose game");
+		_gameEnded = true;
 	}
 }
 
@@ -66,4 +69,9 @@ bool WinGameSystem::loseGameChecker()
 		}
 	}
 	return isThereTetraminoInLoseZone;
+}
+
+bool WinGameSystem::gameEnded()
+{
+	return _gameEnded;
 }

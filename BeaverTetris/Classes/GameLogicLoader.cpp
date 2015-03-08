@@ -65,6 +65,7 @@ void GameLogicLoader::setUpMainGameLogic()
 	
 	WinGameSystem *winGameSystem = new WinGameSystem();
 	gameTimeStepController->addSystem(winGameSystem);
+	ServiceLocator::setServiceForKey(winGameSystem, winGameSystemKey);
 	
 	CurrentDetailController *currentDetailController = new CurrentDetailController();
 	gameTimeStepController->addSystem(currentDetailController);

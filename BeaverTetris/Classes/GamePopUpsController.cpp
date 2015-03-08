@@ -28,7 +28,7 @@ void GamePopUpsController::subscribePopUpToMessage(ScreenPopUp *aPopUp, PopUpTyp
 
 void GamePopUpsController::unSubscribePupUpToMessage(ScreenPopUp *aPopUp, PopUpType aMessage)
 {
-	map<PopUpType, ScreenPopUp*>::iterator unSubscribePopUp ;
+	map<PopUpType, ScreenPopUp*>::iterator unSubscribePopUp;
 	unSubscribePopUp = _messageListnersPopUps.find(aMessage);
 	_messageListnersPopUps.erase(unSubscribePopUp);
 }

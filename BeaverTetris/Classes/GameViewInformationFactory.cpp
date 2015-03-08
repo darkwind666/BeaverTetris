@@ -327,6 +327,11 @@ void GameViewInformationFactory::makeMainGameHudsData()
 	meteorForFirestormSpell.elementPosition =  Vec2(0, 600);
 	meteorForFirestormSpell.elementZOrder = 0;
 	_elementsInformation[meteorForFirestormSpellKey] = meteorForFirestormSpell;
+
+	ViewElementInformation pauseGameViewController;
+	pauseGameViewController.elementPosition = Vec2(305, 65);
+	pauseGameViewController.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	_elementsInformation[pauseGameViewControllerKey] = pauseGameViewController;
 	
 }
 
@@ -357,12 +362,6 @@ void GameViewInformationFactory::makeMainGamePlayerControllersData()
 	moveDetailRightControl.elementPosition = Vec2(controllerOffset, 0);
 	moveDetailRightControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[moveDetailRightControlKey] = moveDetailRightControl;
-
-	ViewElementInformation pauseGameControl;
-	pauseGameControl.elementImage = getImageNameForKey(pauseGameControlKey);
-	pauseGameControl.elementPosition = Vec2(controllerOffset, controllerOffset);
-	pauseGameControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
-	_elementsInformation[pauseGameControlKey] = pauseGameControl;
 }
 
 void GameViewInformationFactory::makeMainGamePlayerScoreControllersData()

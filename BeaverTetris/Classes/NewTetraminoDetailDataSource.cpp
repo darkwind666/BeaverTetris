@@ -110,7 +110,7 @@ Tetramino* NewTetraminoDetailDataSource::getTetraminoWithFlagAndType(int aTetram
 void NewTetraminoDetailDataSource::setDetailStartPosition(TetraminoDetail* aDetail)
 {
 	GamePositionOnBoard startDetailPosition;
-	startDetailPosition.xPosition = tetrisBlocksWidth / 2;
+	startDetailPosition.xPosition = tetrisBlocksWidth / 2 - (aDetail->getDetailWidth()) / 2;
 	startDetailPosition.yPosition = tetrisBlocksHeight;
 	aDetail->setDetailPosition(startDetailPosition);
 }

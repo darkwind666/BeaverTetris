@@ -74,7 +74,6 @@ const string rotateDetailControlKey = string("rotateDetailControl");
 const string accelerateDetailControlKey = string("accelerateDetailControl");
 const string moveDetailLeftControlKey = string("moveDetailLeftControl");
 const string moveDetailRightControlKey = string("moveDetailRightControl");
-const string pauseGameControlKey = string("pauseGameControl");
 
 const string playerScoreControllerKey = string("playerScoreController");
 const string playerScoreControllerBackgroundKey = string("playerScoreControllerBackground");
@@ -101,6 +100,8 @@ const string meteorForFirestormSpellKey = string("MeteorForFirestormSpell");
 
 const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");
+
+const string pauseGameViewControllerKey = string("PauseGameViewController");
 
 const string gameResultKey = string("GameResult");
 const string loseGameKey = string("LoseGameImage");

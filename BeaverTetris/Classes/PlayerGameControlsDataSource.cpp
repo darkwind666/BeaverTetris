@@ -78,12 +78,6 @@ vector<PlayerControllInformation> PlayerGameControlsDataSource::getPlayerControl
 	moveDetailRight.callback = [this](){_currentDetailController->moveRightDetail();};
 	playerControls.push_back(moveDetailRight);
 
-	PlayerControllInformation pauseGame;
-	pauseGame.imageKey = pauseGameControlKey;
-	pauseGame.keyboardKey = (int)EventKeyboard::KeyCode::KEY_P;
-	pauseGame.callback = [](){log("%i", EventKeyboard::KeyCode::KEY_P);};
-	playerControls.push_back(pauseGame);
-
 	return playerControls;
 
 }
