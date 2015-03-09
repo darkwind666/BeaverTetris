@@ -261,6 +261,14 @@ void GameViewInformationFactory::makeMainGameScreenData()
 	_elementsInformation[gameHudControllerKey] = mainGameHudController;
 
 	makeMainGameHudsData();
+
+	ViewElementInformation mainGamePausePopUp;
+	mainGamePausePopUp.elementPosition = Vec2(0, 0);
+	mainGamePausePopUp.elementActionFinalPosition = getScreenCenter();
+	mainGamePausePopUp.elementZOrder = kMainGamePausePopUpZOrder;
+	_elementsInformation[mainGamePausePopUpKey] = mainGamePausePopUp;
+
+	makeMainGamePausePopUpData();
 }
 
 void GameViewInformationFactory::makeMainGameWorldData()
@@ -422,6 +430,40 @@ void GameViewInformationFactory::makeRemoveCurrentDetailSpellData()
 	explosionsForRemoveDetail.elementPosition =  Vec2(0, 0);
 	explosionsForRemoveDetail.elementZOrder = kExplosionsForRemoveDetailZOrder;
 	_elementsInformation[explosionsForRemoveCurrentDetailSpellKey] = explosionsForRemoveDetail;
+}
+
+void GameViewInformationFactory::makeMainGamePausePopUpData()
+{
+	ViewElementInformation mainGamePauseRegulateSoundPopUpPad;
+	mainGamePauseRegulateSoundPopUpPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
+	mainGamePauseRegulateSoundPopUpPad.elementPosition = Vec2(getScreenCenterX(), 650);
+	mainGamePauseRegulateSoundPopUpPad.elementActionFinalPosition = getScreenCenter();
+	mainGamePauseRegulateSoundPopUpPad.elementZOrder = kMainGamePausePopUpPadZOrder;
+	_elementsInformation[mainGamePausePadKey] = mainGamePauseRegulateSoundPopUpPad;
+	
+	ViewElementInformation mainGamePauseRegulateSoundSlider;
+	mainGamePauseRegulateSoundSlider.elementImage = getImageNameForKey(startGameRegulateSoundSliderKey);
+	mainGamePauseRegulateSoundSlider.elementPosition = Vec2(90, 160);
+	mainGamePauseRegulateSoundSlider.elementZOrder = kMainGamePauseRegulateSoundSliderZOrder;
+	_elementsInformation[mainGamePauseRegulateSoundSliderKey] = mainGamePauseRegulateSoundSlider;
+	
+	ViewElementInformation mainGamePauseRegulateSoundEffectsSlider;
+	mainGamePauseRegulateSoundEffectsSlider.elementImage = getImageNameForKey(startGameRegulateSoundEffectsSliderKey);
+	mainGamePauseRegulateSoundEffectsSlider.elementPosition = Vec2(90, 120);
+	mainGamePauseRegulateSoundEffectsSlider.elementZOrder = kMainGamePauseRegulateSoundEffectsSliderZOrder;
+	_elementsInformation[mainGamePauseRegulateSoundEffectsSliderKey] = mainGamePauseRegulateSoundEffectsSlider;
+	
+	ViewElementInformation mainGamePauseRegulateSoundCloseButton;
+	mainGamePauseRegulateSoundCloseButton.elementImage = getImageNameForKey(startGameRegulateSoundCloseButtonKey);
+	mainGamePauseRegulateSoundCloseButton.elementPosition = Vec2(150, 60);
+	mainGamePauseRegulateSoundCloseButton.elementZOrder = kMainGamePausePopUpCloseButtonZOrder;
+	_elementsInformation[mainGamePauseCloseButtonKey] = mainGamePauseRegulateSoundCloseButton;
+
+	ViewElementInformation mainGamePauseGoToSelectLevelButton;
+	mainGamePauseGoToSelectLevelButton.elementImage = getImageNameForKey(mainGamePauseGoToSelectLevelButtonKey);
+	mainGamePauseGoToSelectLevelButton.elementPosition = Vec2(150, 20);
+	mainGamePauseGoToSelectLevelButton.elementZOrder = kMainGamePauseGoToSelectLevelButtonZOrder;
+	_elementsInformation[mainGamePauseGoToSelectLevelButtonKey] = mainGamePauseGoToSelectLevelButton;
 }
 
 void GameViewInformationFactory::makeRecordsScreenData()

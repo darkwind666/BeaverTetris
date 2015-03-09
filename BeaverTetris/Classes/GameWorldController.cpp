@@ -43,3 +43,13 @@ void GameWorldController::update(float delta)
 	_gameWorldAnimationController->updateAnimation();
 	_gameBoardController->redrawGameBoard();
 }
+
+void GameWorldController::pauseGameWorld()
+{
+	unscheduleUpdate();
+}
+
+void GameWorldController::resumeGameWorld()
+{
+	scheduleUpdate();
+}

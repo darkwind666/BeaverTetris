@@ -5,6 +5,7 @@
 
 #include "GameWorldController.h"
 #include "GameHudsController.h"
+#include "MainGamePausePopUp.h"
 
 using namespace cocos2d;
 
@@ -29,6 +30,9 @@ Scene* MainGameSceneFactory::createScene()
 
 	GameHudsController *gameHudsController = new GameHudsController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameHudsController, mainGameScene, gameHudControllerKey);
+
+	MainGamePausePopUp *mainGamePausePopUp = new MainGamePausePopUp(gameWorldController);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(mainGamePausePopUp, mainGameScene, mainGamePausePopUpKey);
 
 	return mainGameScene;
 }

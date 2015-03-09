@@ -35,6 +35,8 @@ const string tetraminosFallEventModelKey = string("TetraminosFallEvent");
 const string tetrisLogicSystemKey = string("TetrisLogicSystem");
 const string bossMovementObserverKey = string("BossMovementObserver");
 const string winGameSystemKey = string("WinGameSystem");
+const string mainGamePauseDelegateKey = string("MainGamePauseDelegate");
+
 
 const string eventDispatcherKey = string("EventDispatcher");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");

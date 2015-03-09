@@ -50,6 +50,7 @@ enum MainGameScreenZOrders
 {
 	kWorldControllerZOrder,
 	kHudControllerZOrder,
+	kMainGamePausePopUpZOrder,
 };
 
 enum MainGameWorldZOrders
@@ -91,4 +92,13 @@ enum RemoveCurrentDetailSpellViewZOrders
 	kRocketForRemoveDetailZOrder,
 	kDetailForRemoveCurrentDetailZOrder,
 	kExplosionsForRemoveDetailZOrder,
+};
+
+enum MainGamePausePopUpZOrders
+{
+	kMainGamePausePopUpPadZOrder,
+	kMainGamePauseRegulateSoundSliderZOrder,
+	kMainGamePauseRegulateSoundEffectsSliderZOrder,
+	kMainGamePausePopUpCloseButtonZOrder,
+	kMainGamePauseGoToSelectLevelButtonZOrder,
 };

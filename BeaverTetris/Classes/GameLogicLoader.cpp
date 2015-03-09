@@ -18,6 +18,7 @@
 #include "SpellBox.h"
 #include "NewTetraminoDetailDataSource.h"
 #include "BossMovementObserver.h"
+#include "MainGamePauseDelegate.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -51,6 +52,9 @@ void GameLogicLoader::loadResources()
 
 	CurrentVictoryConditionDataSource *currentVictoryConditionDataSource = new CurrentVictoryConditionDataSource(currentLevelDataSource);
 	ServiceLocator::setServiceForKey(currentVictoryConditionDataSource, currentVictoryConditionDataSourceKey);
+
+	MainGamePauseDelegate *mainGamePauseDelegate = new MainGamePauseDelegate();
+	ServiceLocator::setServiceForKey(mainGamePauseDelegate, mainGamePauseDelegateKey);
 
 	setUpMainGameLogic();
 }

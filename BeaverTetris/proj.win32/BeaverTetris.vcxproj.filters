@@ -636,6 +636,15 @@
     <ClCompile Include="..\Classes\MainGamePauseViewController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MainGamePausePopUp.cpp">
+      <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainGamePauseDelegate.cpp">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainGamePauseEndObserver.cpp">
+      <Filter>Observers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1213,6 +1222,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MainGamePauseViewController.h">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGamePausePopUp.h">
+      <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGamePauseDelegate.h">
+      <Filter>Models\ViewsDataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGamePauseEndObserver.h">
+      <Filter>Observers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,8 @@
 #include "GameTimeStepController.h"
 #include "GameAnimationActionsConstants.h"
 #include "WinGameSystem.h"
+#include "MainGamePauseDelegate.h"
+#include "GameStatesHelper.h"
 
 using namespace cocos2d;
 
@@ -14,6 +16,9 @@ MainGamePauseViewController::MainGamePauseViewController(void)
 	_winGameSystem = (WinGameSystem*)ServiceLocator::getServiceForKey(winGameSystemKey);
 	setPauseView();
 	setUpKeyboard();
+
+	MainGamePauseDelegate *mainGamePauseDelegate = (MainGamePauseDelegate*)ServiceLocator::getServiceForKey(mainGamePauseDelegateKey);
+	mainGamePauseDelegate->addObserver(this);
 }
 
 
@@ -23,9 +28,10 @@ MainGamePauseViewController::~MainGamePauseViewController(void)
 
 void MainGamePauseViewController::setUpKeyboard()
 {
-	EventListenerKeyboard *keyboardListner = EventListenerKeyboard::create();
+	cocos2d::EventListenerKeyboard *keyboardListner = cocos2d::EventListenerKeyboard::create();
 	keyboardListner->onKeyPressed = CC_CALLBACK_2(MainGamePauseViewController::keyPressed, this);
 	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardListner, this);
+	_eventListenerKeyboard = keyboardListner;
 }
 
 void MainGamePauseViewController::setPauseView()
@@ -41,8 +47,14 @@ void MainGamePauseViewController::keyPressed(cocos2d::EventKeyboard::KeyCode aKe
 {
 	if (aKeyCode == EventKeyboard::KeyCode::KEY_P && _winGameSystem->gameEnded() == false)
 	{
+		_eventListenerKeyboard->setEnabled(false);
 		_gameTimeStepController->setUpdateAvailable(false);
-		function<void()> callback = [](){log("%i", EventKeyboard::KeyCode::KEY_P);};
+		function<void()> callback = [](){ GameStatesHelper::goToPopUp(kPauseGamePopUp);};
 		GameViewStyleHelper::runButtonActionWithCallbackAndDuration(this ,callback, gameControllButtonActionDuration);
 	}
+}
+
+void MainGamePauseViewController::pauseWasEnded()
+{
+	_eventListenerKeyboard->setEnabled(true);
 }

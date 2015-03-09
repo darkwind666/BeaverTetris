@@ -15,6 +15,9 @@ public:
 	virtual void onEnterTransitionDidFinish();
 	virtual void update(float delta);
 
+	void pauseGameWorld();
+	void resumeGameWorld();
+
 private:
 
 	GameBoardController *_gameBoardController;

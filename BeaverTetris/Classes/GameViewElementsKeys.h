@@ -102,6 +102,12 @@ const string placeDetailsIconKey = string("PlaceDetailsIcon");
 const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");
 
 const string pauseGameViewControllerKey = string("PauseGameViewController");
+const string mainGamePausePopUpKey = string("MainGamePausePopUp");
+const string mainGamePausePadKey = string("startGameRegulateSoundPad");
+const string mainGamePauseRegulateSoundSliderKey = string("mainGamePauseRegulateSoundSlider");
+const string mainGamePauseRegulateSoundEffectsSliderKey = string("mainGamePauseRegulateSoundEffectsSlider");
+const string mainGamePauseCloseButtonKey = string("mainGamePauseRegulateSoundCloseButton");
+const string mainGamePauseGoToSelectLevelButtonKey = string("mainGamePauseGoToSelectLevelButton");
 
 const string gameResultKey = string("GameResult");
 const string loseGameKey = string("LoseGameImage");
