@@ -651,6 +651,12 @@
     <ClCompile Include="..\Classes\EndGameMenuElementsFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\EndGameMenuElementsCollectionCreator.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\EndGameMenuElementCreator.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1242,6 +1248,12 @@
       <Filter>Controllers\ViewControllers\PopUps</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\EndGameMenuElementsFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EndGameMenuElementsCollectionCreator.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EndGameMenuElementCreator.h">
       <Filter>Factories</Filter>
     </ClInclude>
   </ItemGroup>
