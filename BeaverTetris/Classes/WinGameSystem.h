@@ -15,6 +15,7 @@ public:
 
 	void updateSystem(float deltaTime);
 	bool gameEnded();
+	bool playerWin();
 
 private:
 
@@ -22,6 +23,7 @@ private:
 	GameTimeStepController *_gameTimeStepController;
 	VictoryConditionInterface *_currentVictoryCondition;
 	bool _gameEnded;
+	bool _playerWin;
 
 	void checkWinGameState();
 	void checkLoseGameState();

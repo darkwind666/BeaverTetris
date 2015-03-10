@@ -14,7 +14,6 @@ public:
 	~PlayerSpellsControllerDesktop(void);
 
 	virtual void update(float delta);
-	virtual void onEnterTransitionDidFinish();
 
 	void keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent);
 

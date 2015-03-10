@@ -35,7 +35,7 @@ Scene* MainGameSceneFactory::createScene()
 	MainGamePausePopUp *mainGamePausePopUp = new MainGamePausePopUp(gameWorldController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(mainGamePausePopUp, mainGameScene, mainGamePausePopUpKey);
 
-	MainGameEndPopUp *mainGameEndPopUp = new MainGameEndPopUp();
+	MainGameEndPopUp *mainGameEndPopUp = new MainGameEndPopUp(gameWorldController, gameHudsController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(mainGameEndPopUp, mainGameScene, mainGameEndPopUpKey);
 
 	return mainGameScene;

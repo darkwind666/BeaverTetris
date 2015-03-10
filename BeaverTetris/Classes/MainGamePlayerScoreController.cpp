@@ -33,11 +33,6 @@ void MainGamePlayerScoreController::makeControllerView()
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_scoreView, this, playerScoreControllerCountKey);
 }
 
-void MainGamePlayerScoreController::onEnterTransitionDidFinish()
-{
-	this->scheduleUpdate();
-}
-
 void MainGamePlayerScoreController::update(float delta)
 {
 	int playerScoreCount = _currentPlayerDataSource->getPlayerScore();

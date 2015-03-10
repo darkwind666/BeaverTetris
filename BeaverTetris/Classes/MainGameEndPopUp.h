@@ -3,10 +3,13 @@
 #include "ScreenPopUp.h"
 #include "cocos2d.h"
 
+class GameWorldController;
+class GameHudsController;
+
 class MainGameEndPopUp : public cocos2d::CCNode,  public ScreenPopUp
 {
 public:
-	MainGameEndPopUp(void);
+	MainGameEndPopUp(GameWorldController *aGameWorldController, GameHudsController *aGameHudsController);
 	~MainGameEndPopUp(void);
 
 	virtual void showPopUp();
@@ -14,6 +17,8 @@ public:
 private:
 
 	cocos2d::CCNode* _popUpView;
+	GameWorldController *_gameWorldController;
+	GameHudsController *_gameHudsController;
 
 	cocos2d::CCNode* makePopUpView();
 	void fillViewWithElements();

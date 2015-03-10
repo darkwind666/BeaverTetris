@@ -12,7 +12,6 @@ public:
 	MainGameVictoryConditionController(void);
 	~MainGameVictoryConditionController(void);
 
-	virtual void onEnterTransitionDidFinish();
 	virtual void update(float delta);
 
 private:

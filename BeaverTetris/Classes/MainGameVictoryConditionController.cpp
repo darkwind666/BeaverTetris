@@ -17,11 +17,6 @@ MainGameVictoryConditionController::~MainGameVictoryConditionController(void)
 	delete _victoryConditionViewDataSource;
 }
 
-void MainGameVictoryConditionController::onEnterTransitionDidFinish()
-{
-	this->scheduleUpdate();
-}
-
 void MainGameVictoryConditionController::update(float delta)
 {
 	int victoryConditionsCount = _victoryConditionViewDataSource->getVictoryConditionsCount();

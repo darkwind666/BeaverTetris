@@ -10,16 +10,20 @@
 #include "GameViewElementsDataSource.h"
 #include <vector>
 #include "EndGameMenuElementsFactory.h"
+#include "GameWorldController.h"
+#include "GameHudsController.h"
 
 using namespace cocos2d;
 using namespace std;
 
-MainGameEndPopUp::MainGameEndPopUp(void)
+MainGameEndPopUp::MainGameEndPopUp(GameWorldController *aGameWorldController, GameHudsController *aGameHudsController)
 {
 	ScreenPopUp::subscribePopUpToMessage(this, kEndGamePopUp);
+	_gameWorldController = aGameWorldController;
+	_gameHudsController = aGameHudsController;
 	_popUpView = makePopUpView();
 }
-p
+
 
 MainGameEndPopUp::~MainGameEndPopUp(void)
 {
@@ -36,6 +40,8 @@ CCNode* MainGameEndPopUp::makePopUpView()
 
 void MainGameEndPopUp::showPopUp()
 {
+	_gameWorldController->pauseGameWorld();
+	_gameHudsController->pauseHuds();
 	fillViewWithElements();
 	Vec2 newControllerPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(mainGameEndPopUpPadKey);
 	CCActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartAppearDuration, newControllerPosition);

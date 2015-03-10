@@ -18,7 +18,6 @@ ServiceInterface* ServiceLocator::getServiceForKey(string aKey)
 
 void ServiceLocator::setServiceForKey(ServiceInterface *service, string aKey) 
 {
-
 	map <string, ServiceInterface*>::iterator needServiceIterator;
 	needServiceIterator = _services.find(aKey);
 	if (needServiceIterator != _services.end())
@@ -26,6 +25,5 @@ void ServiceLocator::setServiceForKey(ServiceInterface *service, string aKey)
 		delete needServiceIterator->second;
 		_services.erase(needServiceIterator);
 	}
-
 	_services[aKey] = service;
 }

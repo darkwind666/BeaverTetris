@@ -14,6 +14,7 @@ WinGameSystem::WinGameSystem()
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_gameEnded = false;
+	_playerWin = false;
 	CurrentVictoryConditionDataSource *victoryConditionDataSource = (CurrentVictoryConditionDataSource*)ServiceLocator::getServiceForKey(currentVictoryConditionDataSourceKey);
 	_currentVictoryCondition = victoryConditionDataSource->getCurrentVictoryCondition();
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
@@ -27,8 +28,17 @@ WinGameSystem::~WinGameSystem(void)
 
 void WinGameSystem::updateSystem(float deltaTime)
 {
+	_gameTimeStepController->setUpdateAvailable(false);
+	_gameEnded = true;
+	_playerWin = true;
+	GameStatesHelper::goToPopUp(kEndGamePopUp);
+	/*
 	checkWinGameState();
-	checkLoseGameState();
+	if (_gameEnded == false)
+	{
+		checkLoseGameState();
+	}
+	*/
 }
 
 void WinGameSystem::checkWinGameState()
@@ -38,6 +48,7 @@ void WinGameSystem::checkWinGameState()
 		_gameTimeStepController->setUpdateAvailable(false);
 		cocos2d::log("Win game");
 		_gameEnded = true;
+		_playerWin = true;
 		GameStatesHelper::goToPopUp(kEndGamePopUp);
 	}
 	else
@@ -77,4 +88,9 @@ bool WinGameSystem::loseGameChecker()
 bool WinGameSystem::gameEnded()
 {
 	return _gameEnded;
+}
+
+bool WinGameSystem::playerWin()
+{
+	return _playerWin;
 }

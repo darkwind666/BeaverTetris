@@ -485,7 +485,7 @@ void GameViewInformationFactory::makeMainGameEndPopUpData()
 	_elementsInformation[mainGameEndPopUpPadKey] = mainGameEndPopUpPad;
 
 	ViewElementInformation mainGameEndPopUpButton;
-	mainGameEndPopUpButton.elementPosition = Vec2(getScreenCenterX(), 650);
+	mainGameEndPopUpButton.elementPosition = Vec2(getScreenCenterX(), 180);
 	mainGameEndPopUpButton.elementOffset = Vec2(0, -40);
 	mainGameEndPopUpButton.elementZOrder = kMainGameEndPopUpPadButtonZOrder;
 	_elementsInformation[mainGameEndPopUpButtonKey] = mainGameEndPopUpButton;

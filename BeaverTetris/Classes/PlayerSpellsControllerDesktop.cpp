@@ -128,11 +128,6 @@ void PlayerSpellsControllerDesktop::setColorInIconWithTexture(Node* aIcon, strin
 	}
 }
 
-void PlayerSpellsControllerDesktop::onEnterTransitionDidFinish()
-{
-	this->scheduleUpdate();
-}
-
 void PlayerSpellsControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
 {
 	int viewIndex = getViewIndexForKeyboardKey((int)aKeyCode);

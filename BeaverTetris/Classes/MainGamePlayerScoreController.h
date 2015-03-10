@@ -10,7 +10,6 @@ public:
 	MainGamePlayerScoreController(void);
 	~MainGamePlayerScoreController(void);
 
-	virtual void onEnterTransitionDidFinish();
 	virtual void update(float delta);
 
 private:
