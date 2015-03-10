@@ -169,6 +169,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\DetailViewDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentPlayerDataSource.cpp" />
     <ClCompile Include="..\Classes\DetailsFromBoardDataSource.cpp" />
+    <ClCompile Include="..\Classes\EndGameMenuElementsFactory.cpp" />
     <ClCompile Include="..\Classes\ExplosionAnimationController.cpp" />
     <ClCompile Include="..\Classes\ExplosionAnimationDelegate.cpp" />
     <ClCompile Include="..\Classes\FallenDetailAnimationController.cpp" />
@@ -222,6 +223,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\LoadingGameDataSource.cpp" />
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\MainGameBackgroundDataSource.cpp" />
+    <ClCompile Include="..\Classes\MainGameEndPopUp.cpp" />
     <ClCompile Include="..\Classes\MainGamePauseDelegate.cpp" />
     <ClCompile Include="..\Classes\MainGamePauseEndObserver.cpp" />
     <ClCompile Include="..\Classes\MainGamePausePopUp.cpp" />
@@ -428,6 +430,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\DetailViewDataSource.h" />
     <ClInclude Include="..\Classes\CurrentPlayerDataSource.h" />
     <ClInclude Include="..\Classes\DetailsFromBoardDataSource.h" />
+    <ClInclude Include="..\Classes\EndGameMenuElementsFactory.h" />
     <ClInclude Include="..\Classes\ExplosionAnimationController.h" />
     <ClInclude Include="..\Classes\ExplosionAnimationDelegate.h" />
     <ClInclude Include="..\Classes\FallenDetailAnimationController.h" />
@@ -487,6 +490,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\LoadingGameDataSource.h" />
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h" />
     <ClInclude Include="..\Classes\MainGameBackgroundDataSource.h" />
+    <ClInclude Include="..\Classes\MainGameEndPopUp.h" />
     <ClInclude Include="..\Classes\MainGamePauseDelegate.h" />
     <ClInclude Include="..\Classes\MainGamePauseEndObserver.h" />
     <ClInclude Include="..\Classes\MainGamePausePopUp.h" />

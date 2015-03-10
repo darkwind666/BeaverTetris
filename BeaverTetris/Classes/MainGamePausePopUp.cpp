@@ -22,7 +22,6 @@ MainGamePausePopUp::MainGamePausePopUp(GameWorldController *aGameWorldController
 	_mainGamePauseDelegate = (MainGamePauseDelegate*)ServiceLocator::getServiceForKey(mainGamePauseDelegateKey);
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 	_popUpView = makePopUpView();
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(_popUpView,this,mainGamePausePadKey);
 	setUpKeyboard();
 }
 
@@ -54,6 +53,8 @@ CCNode* MainGamePausePopUp::makePopUpView()
 	goToSelectLevelItem->setScaleY(0.07f);
 	goToSelectLevelItem->setColor(ccColor3B::GREEN);
 	CocosNodesHelper::addButtonToParentNodeWithKey(goToSelectLevelItem,popUpPad,mainGamePauseGoToSelectLevelButtonKey);
+
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(popUpPad,this,mainGamePausePadKey);
 
 	return popUpPad;
 }

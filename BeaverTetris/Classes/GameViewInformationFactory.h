@@ -34,6 +34,7 @@ private:
 	void makeMainGameSpellsIconsData();
 	void makeRemoveCurrentDetailSpellData();
 	void makeMainGamePausePopUpData();
+	void makeMainGameEndPopUpData();
 	void makeRecordsScreenData();
 	void makeDevelopersScreenData();
 

@@ -51,6 +51,7 @@ enum MainGameScreenZOrders
 	kWorldControllerZOrder,
 	kHudControllerZOrder,
 	kMainGamePausePopUpZOrder,
+	kMainGameEndPopUpZOrder,
 };
 
 enum MainGameWorldZOrders
@@ -101,4 +102,10 @@ enum MainGamePausePopUpZOrders
 	kMainGamePauseRegulateSoundEffectsSliderZOrder,
 	kMainGamePausePopUpCloseButtonZOrder,
 	kMainGamePauseGoToSelectLevelButtonZOrder,
+};
+
+enum MainGameEndPopUpZOrders
+{
+	kMainGameEndPopUpPadZOrder,
+	kMainGameEndPopUpPadButtonZOrder,
 };

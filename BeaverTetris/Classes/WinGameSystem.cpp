@@ -6,6 +6,7 @@
 #include "GameTimeStepController.h"
 #include "CurrentVictoryConditionDataSource.h"
 #include "VictoryConditionInterface.h"
+#include "GameStatesHelper.h"
 
 using namespace std;
 
@@ -37,6 +38,7 @@ void WinGameSystem::checkWinGameState()
 		_gameTimeStepController->setUpdateAvailable(false);
 		cocos2d::log("Win game");
 		_gameEnded = true;
+		GameStatesHelper::goToPopUp(kEndGamePopUp);
 	}
 	else
 	{
@@ -51,6 +53,7 @@ void WinGameSystem::checkLoseGameState()
 		_gameTimeStepController->setUpdateAvailable(false);
 		cocos2d::log("Lose game");
 		_gameEnded = true;
+		GameStatesHelper::goToPopUp(kEndGamePopUp);
 	}
 }
 

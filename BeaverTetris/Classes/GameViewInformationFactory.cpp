@@ -269,6 +269,15 @@ void GameViewInformationFactory::makeMainGameScreenData()
 	_elementsInformation[mainGamePausePopUpKey] = mainGamePausePopUp;
 
 	makeMainGamePausePopUpData();
+
+	ViewElementInformation mainGameEndPopUp;
+	mainGameEndPopUp.elementPosition = Vec2(0, 0);
+	mainGameEndPopUp.elementActionFinalPosition = getScreenCenter();
+	mainGameEndPopUp.elementZOrder = kMainGameEndPopUpZOrder;
+	_elementsInformation[mainGameEndPopUpKey] = mainGameEndPopUp;
+
+	makeMainGameEndPopUpData();
+
 }
 
 void GameViewInformationFactory::makeMainGameWorldData()
@@ -464,6 +473,22 @@ void GameViewInformationFactory::makeMainGamePausePopUpData()
 	mainGamePauseGoToSelectLevelButton.elementPosition = Vec2(150, 20);
 	mainGamePauseGoToSelectLevelButton.elementZOrder = kMainGamePauseGoToSelectLevelButtonZOrder;
 	_elementsInformation[mainGamePauseGoToSelectLevelButtonKey] = mainGamePauseGoToSelectLevelButton;
+}
+
+void GameViewInformationFactory::makeMainGameEndPopUpData()
+{
+	ViewElementInformation mainGameEndPopUpPad;
+	mainGameEndPopUpPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
+	mainGameEndPopUpPad.elementPosition = Vec2(getScreenCenterX(), 650);
+	mainGameEndPopUpPad.elementActionFinalPosition = getScreenCenter();
+	mainGameEndPopUpPad.elementZOrder = kMainGameEndPopUpPadZOrder;
+	_elementsInformation[mainGameEndPopUpPadKey] = mainGameEndPopUpPad;
+
+	ViewElementInformation mainGameEndPopUpButton;
+	mainGameEndPopUpButton.elementPosition = Vec2(getScreenCenterX(), 650);
+	mainGameEndPopUpButton.elementOffset = Vec2(0, -40);
+	mainGameEndPopUpButton.elementZOrder = kMainGameEndPopUpPadButtonZOrder;
+	_elementsInformation[mainGameEndPopUpButtonKey] = mainGameEndPopUpButton;
 }
 
 void GameViewInformationFactory::makeRecordsScreenData()

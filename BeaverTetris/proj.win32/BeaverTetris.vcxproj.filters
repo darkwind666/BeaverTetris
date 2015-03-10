@@ -645,6 +645,12 @@
     <ClCompile Include="..\Classes\MainGamePauseEndObserver.cpp">
       <Filter>Observers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MainGameEndPopUp.cpp">
+      <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\EndGameMenuElementsFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1231,6 +1237,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MainGamePauseEndObserver.h">
       <Filter>Observers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGameEndPopUp.h">
+      <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EndGameMenuElementsFactory.h">
+      <Filter>Factories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

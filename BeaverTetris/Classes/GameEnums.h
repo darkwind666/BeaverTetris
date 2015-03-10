@@ -34,10 +34,8 @@ enum EventType
 enum PopUpType
 {
 	kRegulateSoundPopUp,
-	kWinGamePopUp,
-	kLoseGameUp,
-	kWinAllGamePopUp,
 	kPauseGamePopUp,
+	kEndGamePopUp,
 };
 
 enum TetraminoType
