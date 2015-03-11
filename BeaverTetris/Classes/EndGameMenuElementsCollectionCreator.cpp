@@ -26,8 +26,7 @@ vector<Node*> EndGameMenuElementsCollectionCreator::getFinalLevelElements()
 	Node *playerAwardLabel = _endGameMenuElementCreator->getPlayerAwardLabel();
 	finalLevelElements.push_back(playerAwardLabel);
 
-	function<void()> aCallback = [](){};
-	Node *goToRecordsScreenButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(aCallback, ccColor3B::GREEN);
+	Node *goToRecordsScreenButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(_endGameMenuElementCreator->getFinishGameCallback(), ccColor3B::GREEN);
 	finalLevelElements.push_back(goToRecordsScreenButton);
 
 	return finalLevelElements;

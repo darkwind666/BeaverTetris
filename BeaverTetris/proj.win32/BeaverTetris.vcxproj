@@ -202,7 +202,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameLevelsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameLevelsMenuDataSource.cpp" />
     <ClCompile Include="..\Classes\GameLogicLoader.cpp" />
+    <ClCompile Include="..\Classes\GamePlayersDatabase.cpp" />
     <ClCompile Include="..\Classes\GamePopUpsController.cpp" />
+    <ClCompile Include="..\Classes\GameResultDelegate.cpp" />
     <ClCompile Include="..\Classes\GameSoundDataSource.cpp" />
     <ClCompile Include="..\Classes\GameSoundEffectsRegulator.cpp" />
     <ClCompile Include="..\Classes\GameStatesHelper.cpp" />
@@ -346,9 +348,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameEventsFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="GamePlayersDatabase.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="GameRecordsSceneFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -467,7 +466,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameLevelsDataSource.h" />
     <ClInclude Include="..\Classes\GameLevelsMenuDataSource.h" />
     <ClInclude Include="..\Classes\GameLogicLoader.h" />
+    <ClInclude Include="..\Classes\GamePlayersDatabase.h" />
     <ClInclude Include="..\Classes\GamePopUpsController.h" />
+    <ClInclude Include="..\Classes\GameResultDelegate.h" />
     <ClInclude Include="..\Classes\GameServicesKeys.h" />
     <ClInclude Include="..\Classes\GameSoundDataSource.h" />
     <ClInclude Include="..\Classes\GameSoundEffectsRegulator.h" />
@@ -582,7 +583,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="GameEventInterface.h" />
     <ClInclude Include="CurrentGameEventsDataSource.h" />
     <ClInclude Include="GameEventsFactory.h" />
-    <ClInclude Include="GamePlayersDatabase.h" />
     <ClInclude Include="GameRecordsSceneFactory.h" />
     <ClInclude Include="GameResourcesExtension.h" />
     <ClInclude Include="GameSystemInterface.h" />

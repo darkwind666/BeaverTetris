@@ -174,9 +174,6 @@
     <ClCompile Include="DevelopersDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
-    <ClCompile Include="GamePlayersDatabase.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="NewGameTetraminoDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
@@ -657,6 +654,12 @@
     <ClCompile Include="..\Classes\EndGameMenuElementCreator.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameResultDelegate.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamePlayersDatabase.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -741,9 +744,6 @@
       <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="DevelopersDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="GamePlayersDatabase.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="NewGameTetraminoDataSource.h">
@@ -1255,6 +1255,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\EndGameMenuElementCreator.h">
       <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameResultDelegate.h">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamePlayersDatabase.h">
+      <Filter>Models\DataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

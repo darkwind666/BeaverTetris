@@ -23,7 +23,6 @@ public:
 	void completeLevel(std::string aCompletedLevelName);
 	void setSelectedGameLevelIndex(int aGameLevelIndex);
 
-	void sendPlayerResultToDatabase();
 	void cleanPlayer();
 
 private:

@@ -9,3 +9,8 @@ ResourcesLoader::ResourcesLoader(void)
 ResourcesLoader::~ResourcesLoader(void)
 {
 }
+
+void ResourcesLoader::loadResources()
+{
+
+}

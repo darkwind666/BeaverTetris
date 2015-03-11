@@ -12,6 +12,7 @@ const string currentPlayerDataSourceKey = string("CurrentPlayerDataSource");
 const string gameLevelsDataSourceKey = string("GameLevelsDataSource");
 const string keysForEnumsDataSourceKey = string("KeysForEnumsDataSource");
 const string tetrominosFactoryKey = string("TetraminosFactory");
+const string gamePlayersDatabaseKey = string("GamePlayersDatabase");
 
 
 const string gameBoardKey = string("GameBoard");
@@ -39,7 +40,6 @@ const string mainGamePauseDelegateKey = string("MainGamePauseDelegate");
 
 
 const string eventDispatcherKey = string("EventDispatcher");
-const string gamePlayersDatabaseKey = string("GamePlayersDatabase");
 const string tetraminosCharacteristicsDataSourceKey = string("TetraminosCharacteristicsDataSource");
 const string startGameMenuDataSourceKey = string("StartGameMenuDataSource");
 const string gameLevelsMenuDataSourceKey = string("GameLevelsMenuDataSource");

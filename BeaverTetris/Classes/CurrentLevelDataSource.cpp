@@ -3,6 +3,7 @@
 #include "GameServicesKeys.h"
 #include "CurrentPlayerDataSource.h"
 #include "GameLevelsDataSource.h"
+#include "GameViewElementsKeys.h"
 
 using namespace std;
 
@@ -20,6 +21,9 @@ CurrentLevelDataSource::~CurrentLevelDataSource(void)
 GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
 {
 	GameLevelInformation gameLevelInformation;
+
+	gameLevelInformation.levelName = gameLevel1Key;
+	gameLevelInformation.levelAward = 200;
 
 	vector<TetraminoType> availableTetraminos;
 

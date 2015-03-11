@@ -6,6 +6,7 @@
 class GameBoard;
 class GameTimeStepController;
 class VictoryConditionInterface;
+class GameResultDelegate;
 
 class WinGameSystem :public GameSystemInterface, public ServiceInterface
 {
@@ -22,6 +23,7 @@ private:
 	GameBoard *_gameBoard;
 	GameTimeStepController *_gameTimeStepController;
 	VictoryConditionInterface *_currentVictoryCondition;
+	GameResultDelegate *_gameResultDelegate;
 	bool _gameEnded;
 	bool _playerWin;
 

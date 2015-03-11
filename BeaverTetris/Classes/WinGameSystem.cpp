@@ -7,11 +7,13 @@
 #include "CurrentVictoryConditionDataSource.h"
 #include "VictoryConditionInterface.h"
 #include "GameStatesHelper.h"
+#include "GameResultDelegate.h"
 
 using namespace std;
 
 WinGameSystem::WinGameSystem()
 {
+	_gameResultDelegate = new GameResultDelegate(this);
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_gameEnded = false;
 	_playerWin = false;
@@ -23,6 +25,7 @@ WinGameSystem::WinGameSystem()
 
 WinGameSystem::~WinGameSystem(void)
 {
+	delete _gameResultDelegate;
 }
 
 
@@ -31,6 +34,7 @@ void WinGameSystem::updateSystem(float deltaTime)
 	_gameTimeStepController->setUpdateAvailable(false);
 	_gameEnded = true;
 	_playerWin = true;
+	_gameResultDelegate->gameWasEnded();
 	GameStatesHelper::goToPopUp(kEndGamePopUp);
 	/*
 	checkWinGameState();
@@ -46,9 +50,9 @@ void WinGameSystem::checkWinGameState()
 	if (_currentVictoryCondition->playerWin())
 	{
 		_gameTimeStepController->setUpdateAvailable(false);
-		cocos2d::log("Win game");
 		_gameEnded = true;
 		_playerWin = true;
+		_gameResultDelegate->gameWasEnded();
 		GameStatesHelper::goToPopUp(kEndGamePopUp);
 	}
 	else
@@ -62,8 +66,8 @@ void WinGameSystem::checkLoseGameState()
 	if (loseGameChecker())
 	{
 		_gameTimeStepController->setUpdateAvailable(false);
-		cocos2d::log("Lose game");
 		_gameEnded = true;
+		_gameResultDelegate->gameWasEnded();
 		GameStatesHelper::goToPopUp(kEndGamePopUp);
 	}
 }

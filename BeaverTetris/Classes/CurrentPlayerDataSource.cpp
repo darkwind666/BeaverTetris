@@ -20,9 +20,6 @@ CurrentPlayerDataSource::~CurrentPlayerDataSource()
 {
 }
 
-
-
-
 bool CurrentPlayerDataSource::isThereCurentPlayer()
 {
 	return _isThereCurentPlayer;
