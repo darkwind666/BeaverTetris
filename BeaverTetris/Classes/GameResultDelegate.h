@@ -22,7 +22,6 @@ private:
 
 	void giveResultToPlayer();
 	void writePlayerToDatabaseIfFinalLevel();
-	void saveGameData();
 
 };
 

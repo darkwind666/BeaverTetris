@@ -28,7 +28,7 @@ void GameResultDelegate::gameWasEnded()
 		giveResultToPlayer();
 		writePlayerToDatabaseIfFinalLevel();
 	}
-	saveGameData();
+	_currentPlayerDataSource->savePlayer();
 }
 
 void GameResultDelegate::giveResultToPlayer()
@@ -49,9 +49,4 @@ void GameResultDelegate::writePlayerToDatabaseIfFinalLevel()
 		int playerScore = _currentPlayerDataSource->getPlayerScore();
 		_gamePlayersDatabase->setPlayerResult(playerName, playerScore);
 	}
-}
-
-void GameResultDelegate::saveGameData()
-{
-
 }

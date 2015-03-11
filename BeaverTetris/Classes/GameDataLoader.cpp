@@ -19,11 +19,11 @@ GameDataLoader::~GameDataLoader(void)
 
 void GameDataLoader::loadResources()
 {
-	CurrentPlayerDataSource *currentPlayerDataSource = new CurrentPlayerDataSource();
-	ServiceLocator::setServiceForKey(currentPlayerDataSource, currentPlayerDataSourceKey);
-
 	GameLevelsDataSource *gameLevelsDataSource = new GameLevelsDataSource();
 	ServiceLocator::setServiceForKey(gameLevelsDataSource, gameLevelsDataSourceKey);
+
+	CurrentPlayerDataSource *currentPlayerDataSource = new CurrentPlayerDataSource(gameLevelsDataSource);
+	ServiceLocator::setServiceForKey(currentPlayerDataSource, currentPlayerDataSourceKey);
 
 	KeysForEnumsDataSource *keysForEnumsDataSource = new KeysForEnumsDataSource();
 	ServiceLocator::setServiceForKey(keysForEnumsDataSource, keysForEnumsDataSourceKey);

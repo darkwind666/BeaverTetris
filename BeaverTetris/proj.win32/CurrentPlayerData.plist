@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"/>
+
+<plist version="1.0">
+    <dict>
+        <key>PlayerAvailableSpellsCount</key>
+        <string>-858993460</string>
+        <key>PlayerName</key>
+        <string>sasha</string>
+        <key>PlayerScore</key>
+        <string>1200</string>
+        <key>PlayerCompletedLevelsCount</key>
+        <string>-858993460</string>
+    </dict>
+</plist>

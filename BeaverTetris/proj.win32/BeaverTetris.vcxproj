@@ -164,6 +164,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CurrentDetailDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CurrentLevelDataSource.cpp" />
+    <ClCompile Include="..\Classes\CurrentPlayerSerializer.cpp" />
     <ClCompile Include="..\Classes\CurrentVictoryConditionDataSource.cpp" />
     <ClCompile Include="..\Classes\DamageToPlayerSpell.cpp" />
     <ClCompile Include="..\Classes\DetailViewDataSource.cpp" />
@@ -426,6 +427,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CurrentDetailDataSource.h" />
     <ClInclude Include="..\Classes\CurrentDetailTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CurrentLevelDataSource.h" />
+    <ClInclude Include="..\Classes\CurrentPlayerSerializer.h" />
     <ClInclude Include="..\Classes\CurrentVictoryConditionDataSource.h" />
     <ClInclude Include="..\Classes\DamageToPlayerSpell.h" />
     <ClInclude Include="..\Classes\DetailViewDataSource.h" />

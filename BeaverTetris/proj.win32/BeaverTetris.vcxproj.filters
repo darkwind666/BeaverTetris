@@ -660,6 +660,9 @@
     <ClCompile Include="..\Classes\GamePlayersDatabase.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CurrentPlayerSerializer.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1260,6 +1263,9 @@
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GamePlayersDatabase.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentPlayerSerializer.h">
       <Filter>Models\DataSources</Filter>
     </ClInclude>
   </ItemGroup>

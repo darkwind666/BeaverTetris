@@ -11,18 +11,37 @@ CurrentLevelDataSource::CurrentLevelDataSource(void)
 {
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_gameLevelsDataSource = (GameLevelsDataSource*)ServiceLocator::getServiceForKey(gameLevelsDataSourceKey);
+	_levelsNames = getLevelsNames();
 }
-
 
 CurrentLevelDataSource::~CurrentLevelDataSource(void)
 {
+}
+
+vector<string> CurrentLevelDataSource::getLevelsNames()
+{
+	vector<string> levelsNames;
+
+	levelsNames.push_back(gameLevel1Key);
+	levelsNames.push_back(gameLevel2Key);
+	levelsNames.push_back(gameLevel3Key);
+	levelsNames.push_back(gameLevel4Key);
+	levelsNames.push_back(gameLevel5Key);
+	levelsNames.push_back(gameLevel6Key);
+	levelsNames.push_back(gameLevel7Key);
+	levelsNames.push_back(gameLevel8Key);
+	levelsNames.push_back(gameLevel9Key);
+	levelsNames.push_back(gameLevel10Key);
+
+	return levelsNames;
 }
 
 GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
 {
 	GameLevelInformation gameLevelInformation;
 
-	gameLevelInformation.levelName = gameLevel1Key;
+	int selectedGameLevelIndex = _currentPlayerDataSource->getSelectedGameLevelIndex();
+	gameLevelInformation.levelName = _levelsNames[selectedGameLevelIndex];
 	gameLevelInformation.levelAward = 200;
 
 	vector<TetraminoType> availableTetraminos;

@@ -81,6 +81,8 @@ struct PlayerInformation
 {
 	std::string playerName;
 	int playerScore;
+	int playerCompletedLevelsCount;
+	int playerAvailableSpellsCount;
 };
 
 struct GameEventInformation

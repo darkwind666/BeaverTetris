@@ -5,10 +5,13 @@
 #include <vector>
 #include "GameStructures.h"
 
+class CurrentPlayerSerializer;
+class GameLevelsDataSource;
+
 class CurrentPlayerDataSource :public ServiceInterface
 {
 public:
-	CurrentPlayerDataSource();
+	CurrentPlayerDataSource(GameLevelsDataSource *aGameLevelsDataSource);
 	~CurrentPlayerDataSource();
 
 	bool isThereCurentPlayer();
@@ -23,12 +26,20 @@ public:
 	void completeLevel(std::string aCompletedLevelName);
 	void setSelectedGameLevelIndex(int aGameLevelIndex);
 
+	void savePlayer();
 	void cleanPlayer();
 
 private:
+
 	std::vector <std::string> _completedLevelsNames;
 	bool _isThereCurentPlayer;
 	PlayerInformation _playerData;
 	int _selectedGameLevelIndex;
+	CurrentPlayerSerializer *_currentPlayerSerializer;
+	GameLevelsDataSource *_gameLevelsDataSource;
+
+	void setUpPlayer();
+	void fillCompletedLevelsNames();
+
 };
 
