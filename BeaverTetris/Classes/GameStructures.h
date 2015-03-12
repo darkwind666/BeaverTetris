@@ -85,6 +85,12 @@ struct PlayerInformation
 	int playerAvailableSpellsCount;
 };
 
+struct DatabaseInformation
+{
+	std::string playerName;
+	int playerScore;
+};
+
 struct GameEventInformation
 {
 	GameState gameState;

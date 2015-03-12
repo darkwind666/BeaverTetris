@@ -1,18 +1,21 @@
 #include "GamePlayersDatabase.h"
+#include "GamePlayersDatabaseSerializer.h"
+#include <algorithm>
 
 using namespace std;
-bool sortFunction(const PlayerInformation &left, const PlayerInformation &right);
+
+bool sortFunction(const DatabaseInformation &left, const DatabaseInformation &right);
 
 GamePlayersDatabase::GamePlayersDatabase(void)
 {
-	_players = vector <PlayerInformation>();
+	_gamePlayersDatabaseSerializer = new GamePlayersDatabaseSerializer();
+	_players = _gamePlayersDatabaseSerializer->getDatabaseData();
 }
-
 
 GamePlayersDatabase::~GamePlayersDatabase(void)
 {
+	delete _gamePlayersDatabaseSerializer;
 }
-
 
 int GamePlayersDatabase::getPlayersCount()
 {
@@ -21,32 +24,28 @@ int GamePlayersDatabase::getPlayersCount()
 
 string GamePlayersDatabase::getPlayerNameForIndex(int aIndex)
 {
-	PlayerInformation player = _players[aIndex];
+	DatabaseInformation player = _players[aIndex];
 	return player.playerName;
 }
 
 int GamePlayersDatabase::getPlayerScoreForIndex(int aIndex)
 {
-	PlayerInformation player = _players[aIndex];
+	DatabaseInformation player = _players[aIndex];
 	return player.playerScore;
 }
 
 
-
-void GamePlayersDatabase::setPlayerResult(std::string aPlayerName, int playerScore)
+void GamePlayersDatabase::setPlayerResult(string aPlayerName, int playerScore)
 {
-	PlayerInformation player;
+	DatabaseInformation player;
 	player.playerName = aPlayerName;
 	player.playerScore = playerScore;
 	_players.push_back(player);
+	std::sort(_players.begin(), _players.end(), sortFunction);
+	_gamePlayersDatabaseSerializer->saveDatabaseData(_players);
 }
 
-void GamePlayersDatabase::sortPlayers()
-{
-	sort(_players.begin(), _players.end(), sortFunction);
-}
-
-bool sortFunction(const PlayerInformation &left, const PlayerInformation &right)
+bool sortFunction(const DatabaseInformation &left, const DatabaseInformation &right)
 {
 	return (left.playerScore > right.playerScore);
 }

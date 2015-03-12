@@ -5,6 +5,8 @@
 #include <vector>
 #include "GameStructures.h"
 
+class GamePlayersDatabaseSerializer;
+
 class GamePlayersDatabase : public ServiceInterface
 {
 public:
@@ -18,11 +20,10 @@ public:
 
 	void setPlayerResult(std::string aPlayerName, int playerScore);
 
-	void sortPlayers();
-
 private:
 
-	std::vector <PlayerInformation> _players;
+	GamePlayersDatabaseSerializer *_gamePlayersDatabaseSerializer;
+	std::vector <DatabaseInformation> _players;
 
 };
 

@@ -17,7 +17,6 @@ public:
 private:
 
 	cocos2d::FileUtils *_fileUtils;
-	PlayerInformation _savedPlayer;
 
 	void createFile();
 

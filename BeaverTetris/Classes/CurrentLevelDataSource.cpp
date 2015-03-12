@@ -42,7 +42,7 @@ GameLevelInformation CurrentLevelDataSource::getCurrentLevelData()
 
 	int selectedGameLevelIndex = _currentPlayerDataSource->getSelectedGameLevelIndex();
 	gameLevelInformation.levelName = _levelsNames[selectedGameLevelIndex];
-	gameLevelInformation.levelAward = 200;
+	gameLevelInformation.levelAward = 500;
 
 	vector<TetraminoType> availableTetraminos;
 
