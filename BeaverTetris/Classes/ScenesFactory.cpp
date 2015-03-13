@@ -5,6 +5,7 @@
 #include "StartGameSceneFactory.h"
 #include "SelectGameLevelSceneFactory.h"
 #include "MainGameSceneFactory.h"
+#include "GameRecordsSceneFactory.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -33,6 +34,7 @@ std::map<GameState, SceneFactory*> ScenesFactory::getScenesFactories()
 	scenesFactories[kStartGame] = new StartGameSceneFactory();
 	scenesFactories[kSelectLevel] = new SelectGameLevelSceneFactory();
 	scenesFactories[kPlayGame] = new MainGameSceneFactory();
+	scenesFactories[kRecords] = new GameRecordsSceneFactory();
 
 	return scenesFactories;
 }

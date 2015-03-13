@@ -13,7 +13,25 @@
             </dict>
             <dict>
                 <key>PlayerName</key>
+                <string>Sasha3</string>
+                <key>PlayerScore</key>
+                <integer>5000</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
                 <string>Sasha</string>
+                <key>PlayerScore</key>
+                <integer>2000</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
+                <string>Sasha2</string>
+                <key>PlayerScore</key>
+                <integer>2000</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
+                <string>Sasha2</string>
                 <key>PlayerScore</key>
                 <integer>2000</integer>
             </dict>

@@ -113,6 +113,14 @@ const string mainGameEndPopUpKey = string("MainGameEndPopUp");
 const string mainGameEndPopUpPadKey = string("MainGameEndPad");
 const string mainGameEndPopUpButtonKey = string("MainGameEndButton");
 
+const string gameRecordsBackgroundKey = string("gameRecordsBackground");
+const string gameRecordsAnimationControllerKey = string("GameRecordsAnimationController");
+const string gameRecordsBoardControllerKey = string("GameRecordsBoardController");
+const string gameRecordsBoardPlayerNameLabelKey = string("gameRecordsBoardPlayerNameLabel");
+const string gameRecordsBoardPlayerScoreLabelKey = string("gameRecordsBoardPlayerScoreLabel");
+const string gameRecordsBeaverKey = string("gameRecordsBeaver");
+const string gameRecordsGoToMainMenuButtonKey = string("gameRecordsGoToMainMenuButton");
+
 const string gameResultKey = string("GameResult");
 const string loseGameKey = string("LoseGameImage");
 const string winGameKey = string("WinGameImage");

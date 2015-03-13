@@ -66,6 +66,7 @@ function<void()> EndGameMenuElementCreator::getFinishGameCallback()
 	function<void()> nextLevelCallback = [](){
 		CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 		currentPlayerDataSource->cleanPlayer();
+		GameStatesHelper::goToScene(kRecords);
 	};
 	return nextLevelCallback;
 }

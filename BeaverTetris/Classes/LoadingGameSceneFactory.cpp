@@ -26,7 +26,6 @@ CCScene* LoadingGameSceneFactory::createScene()
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(beaver,loadingScene,loadingGameBeaverKey);
 
 	return loadingScene;
-
 }
 
 CCNode* LoadingGameSceneFactory::getBeaverWithClock()

@@ -109,3 +109,16 @@ enum MainGameEndPopUpZOrders
 	kMainGameEndPopUpPadZOrder,
 	kMainGameEndPopUpPadButtonZOrder,
 };
+
+enum GameRecordsSreenZOrdes
+{
+	kGameRecordsBackgroundZOrder,
+	kGameRecordsAnimationControllerZOrder,
+	kGameRecordsGoToMainMenuButtonZOrder,
+};
+
+enum GameRecordsAnimationElementsZOrdes
+{
+	kGameRecordsBoardZOrder,
+	kGameRecordsBeaverZOrder,
+};

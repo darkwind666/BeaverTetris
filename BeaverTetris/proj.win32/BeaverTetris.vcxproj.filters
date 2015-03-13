@@ -141,9 +141,6 @@
     <ClCompile Include="DevelopersSceneFactory.cpp">
       <Filter>Factories\ScenesFactories</Filter>
     </ClCompile>
-    <ClCompile Include="GameRecordsSceneFactory.cpp">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClCompile>
     <ClCompile Include="GameControllViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
@@ -666,6 +663,15 @@
     <ClCompile Include="..\Classes\GamePlayersDatabaseSerializer.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameRecordsSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamesRecordsAnimationController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamesRecordsBoardController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -714,9 +720,6 @@
       <Filter>Models\GameEvents</Filter>
     </ClInclude>
     <ClInclude Include="DevelopersSceneFactory.h">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClInclude>
-    <ClInclude Include="GameRecordsSceneFactory.h">
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="GameResourcesExtension.h">
@@ -1273,6 +1276,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GamePlayersDatabaseSerializer.h">
       <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameRecordsSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamesRecordsAnimationController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamesRecordsBoardController.h">
+      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

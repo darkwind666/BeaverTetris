@@ -36,6 +36,7 @@ private:
 	void makeMainGamePausePopUpData();
 	void makeMainGameEndPopUpData();
 	void makeRecordsScreenData();
+	void makeGameRecordsAnimationData();
 	void makeDevelopersScreenData();
 
 	cocos2d::Vec2 getScreenCenter();

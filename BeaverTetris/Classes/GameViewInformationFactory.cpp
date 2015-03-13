@@ -493,6 +493,51 @@ void GameViewInformationFactory::makeMainGameEndPopUpData()
 
 void GameViewInformationFactory::makeRecordsScreenData()
 {
+	ViewElementInformation gameRecordsBackground;
+	gameRecordsBackground.elementImage = getImageNameForKey(gameRecordsBackgroundKey);
+	gameRecordsBackground.elementPosition = getScreenCenter();
+	gameRecordsBackground.elementZOrder = kGameRecordsBackgroundZOrder;
+	_elementsInformation[gameRecordsBackgroundKey] = gameRecordsBackground;
+	
+	ViewElementInformation gameRecordsAnimationController;
+	gameRecordsAnimationController.elementPosition = Vec2(0, 0);
+	gameRecordsAnimationController.elementZOrder = kGameRecordsAnimationControllerZOrder;
+	_elementsInformation[gameRecordsAnimationControllerKey] = gameRecordsAnimationController;
+
+	makeGameRecordsAnimationData();
+	
+	ViewElementInformation gameRecordsGoToMainMenuButton;
+	gameRecordsGoToMainMenuButton.elementImage = getImageNameForKey(gameRecordsGoToMainMenuButtonKey);
+	gameRecordsGoToMainMenuButton.elementPosition = Vec2(70, 40);
+	gameRecordsGoToMainMenuButton.elementZOrder = kGameRecordsGoToMainMenuButtonZOrder;
+	_elementsInformation[gameRecordsGoToMainMenuButtonKey] = gameRecordsGoToMainMenuButton;
+}
+
+void GameViewInformationFactory::makeGameRecordsAnimationData()
+{
+	ViewElementInformation gameRecordsBoardController;
+	gameRecordsBoardController.elementPosition = Vec2(90, 880);
+	gameRecordsBoardController.elementActionFinalPosition = Vec2(90, 440);
+	gameRecordsBoardController.elementOffset = Vec2(0, -80);
+	gameRecordsBoardController.elementZOrder = kGameRecordsBoardZOrder;
+	_elementsInformation[gameRecordsBoardControllerKey] = gameRecordsBoardController;
+
+	ViewElementInformation gameRecordsBoardPlayerLabelName;
+	gameRecordsBoardPlayerLabelName.elementPosition = Vec2(230, 180);
+	gameRecordsBoardPlayerLabelName.elementZOrder = 0;
+	_elementsInformation[gameRecordsBoardPlayerNameLabelKey] = gameRecordsBoardPlayerLabelName;
+
+	ViewElementInformation gameRecordsBoardPlayerLabelScore;
+	gameRecordsBoardPlayerLabelScore.elementPosition = Vec2(230, 80);
+	gameRecordsBoardPlayerLabelScore.elementZOrder = 0;
+	_elementsInformation[gameRecordsBoardPlayerScoreLabelKey] = gameRecordsBoardPlayerLabelScore;
+
+	ViewElementInformation gameRecordsBeaver;
+	gameRecordsBeaver.elementImage = getImageNameForKey(gameRecordsBeaverKey);
+	gameRecordsBeaver.elementPosition = Vec2(240, -150);
+	gameRecordsBeaver.elementActionFinalPosition = Vec2(240, 270);
+	gameRecordsBeaver.elementZOrder = kGameRecordsBeaverZOrder;
+	_elementsInformation[gameRecordsBeaverKey] = gameRecordsBeaver;
 
 }
 
