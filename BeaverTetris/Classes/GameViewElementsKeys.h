@@ -121,6 +121,16 @@ const string gameRecordsBoardPlayerScoreLabelKey = string("gameRecordsBoardPlaye
 const string gameRecordsBeaverKey = string("gameRecordsBeaver");
 const string gameRecordsGoToMainMenuButtonKey = string("gameRecordsGoToMainMenuButton");
 
+const string gameDevelopersBackgroundKey = string("gameDevelopersBackground");
+const string gameDevelopersAnimationControllerKey = string("GameDevelopersAnimationController");
+const string gameDevelopersBoardControllerKey = string("GameDevelopersBoardController");
+const string gameDeveloperProgrammerKey = string("gameDeveloperProgrammer");
+const string gameDeveloperDesignerKey = string("gameDeveloperDesigner");
+const string gameDevelopersFunctionLabelKey = string("gameDevelopersFunctionLabel");
+const string gameDevelopersNameLabelKey = string("gameDevelopersNameLabel");
+const string gameDevelopersBeaverKey = string("gameDevelopersBeaver");
+const string gameDevelopersGoToMainMenuButtonKey = string("gameDevelopersGoToMainMenuButton");
+
 const string gameResultKey = string("GameResult");
 const string loseGameKey = string("LoseGameImage");
 const string winGameKey = string("WinGameImage");

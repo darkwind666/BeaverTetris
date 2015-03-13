@@ -1,15 +1,10 @@
 #include "CurrentPlayerSerializer.h"
 #include <string>
 #include "StringsSupporter.h"
+#include "SerializersConstants.h"
 
 using namespace cocos2d;
 using namespace std;
-
-const string currentPlayerDataKey = string("CurrentPlayerData.plist");
-const string playerNameKey = string("PlayerName");
-const string playerScoreKey = string("PlayerScore");
-const string playerAvailableSpellsCountKey = string("PlayerAvailableSpellsCount");
-const string playerCompletedLevelsCountKey = string("PlayerCompletedLevelsCount");
 
 CurrentPlayerSerializer::CurrentPlayerSerializer(void)
 {

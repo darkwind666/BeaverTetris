@@ -1,12 +1,8 @@
 #include "GamePlayersDatabaseSerializer.h"
+#include "SerializersConstants.h"
 
 using namespace std;
 using namespace cocos2d;
-
-const string gamePlayersDatabaseDataKey = string("GamePlayersDatabaseData.plist");
-const string gamePlayersKey = string("Players");
-const string playerNameKey = string("PlayerName");
-const string playerScoreKey = string("PlayerScore");
 
 GamePlayersDatabaseSerializer::GamePlayersDatabaseSerializer(void)
 {

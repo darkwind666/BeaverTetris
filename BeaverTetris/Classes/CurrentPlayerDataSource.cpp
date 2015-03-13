@@ -118,7 +118,8 @@ int CurrentPlayerDataSource::getPlayerCompletedLevelsCount()
 
 int CurrentPlayerDataSource::getPlayerAvailableSpellsCount()
 {
-	return _playerData.playerAvailableSpellsCount;
+	//return _playerData.playerAvailableSpellsCount;
+	return 4;
 }
 
 int CurrentPlayerDataSource::getSelectedGameLevelIndex()

@@ -31,18 +31,11 @@ WinGameSystem::~WinGameSystem(void)
 
 void WinGameSystem::updateSystem(float deltaTime)
 {
-	_gameTimeStepController->setUpdateAvailable(false);
-	_gameEnded = true;
-	_playerWin = true;
-	_gameResultDelegate->gameWasEnded();
-	GameStatesHelper::goToPopUp(kEndGamePopUp);
-	/*
 	checkWinGameState();
 	if (_gameEnded == false)
 	{
 		checkLoseGameState();
 	}
-	*/
 }
 
 void WinGameSystem::checkWinGameState()

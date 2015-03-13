@@ -33,3 +33,6 @@ const float meteorActionDurationPerPoint = 0.0009f;
 
 const float gameRecordsBoardActionDuration = 1.5f;
 const float gameRecordsBeaverActionDuration = 1.5f;
+
+const float gameDevelopersBoardActionDuration = 1.5f;
+const float gameDevelopersBeaverActionDuration = 1.5f;

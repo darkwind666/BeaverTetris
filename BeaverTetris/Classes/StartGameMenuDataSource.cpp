@@ -58,8 +58,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 
 	StartGameMenuItemInformation menuItem5;
 	menuItem5.imageKey = gameElement5Key;
-	//menuItem5.callback = [](){GameStatesHelper::goToScene(kDevelopers);};
-	menuItem5.callback = [](){CCLOG("kDevelopers");};
+	menuItem5.callback = [](){GameStatesHelper::goToScene(kDevelopers);};
     menuItems.push_back(menuItem5);
 	
 	return menuItems;

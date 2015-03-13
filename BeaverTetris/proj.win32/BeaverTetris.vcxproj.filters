@@ -138,9 +138,6 @@
     <ClCompile Include="GameEventInterface.cpp">
       <Filter>Models\GameEvents</Filter>
     </ClCompile>
-    <ClCompile Include="DevelopersSceneFactory.cpp">
-      <Filter>Factories\ScenesFactories</Filter>
-    </ClCompile>
     <ClCompile Include="GameControllViewDataSource.cpp">
       <Filter>Models\ViewsDataSources</Filter>
     </ClCompile>
@@ -672,6 +669,15 @@
     <ClCompile Include="..\Classes\GamesRecordsBoardController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\DevelopersSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamesDevelopersAnimationController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GamesDevelopersBoardController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -718,9 +724,6 @@
     </ClInclude>
     <ClInclude Include="GameEventInterface.h">
       <Filter>Models\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="DevelopersSceneFactory.h">
-      <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="GameResourcesExtension.h">
       <Filter>Constants</Filter>
@@ -1285,6 +1288,21 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GamesRecordsBoardController.h">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DevelopersSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamesDevelopersAnimationController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GamesDevelopersBoardController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DevelopersNamesConstants.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SerializersConstants.h">
+      <Filter>Constants</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -122,3 +122,16 @@ enum GameRecordsAnimationElementsZOrdes
 	kGameRecordsBoardZOrder,
 	kGameRecordsBeaverZOrder,
 };
+
+enum GameDevelopersSreenZOrdes
+{
+	kGameDevelopersBackgroundZOrder,
+	kGameDevelopersAnimationControllerZOrder,
+	kGameDevelopersGoToMainMenuButtonZOrder,
+};
+
+enum GameDevelopersAnimationElementsZOrdes
+{
+	kGameDevelopersBoardZOrder,
+	kGameDevelopersBeaverZOrder,
+};

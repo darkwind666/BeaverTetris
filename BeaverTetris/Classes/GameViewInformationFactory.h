@@ -38,6 +38,8 @@ private:
 	void makeRecordsScreenData();
 	void makeGameRecordsAnimationData();
 	void makeDevelopersScreenData();
+	void makeGameDevelopersAnimationData();
+	void makeGameDevelopersBoardData();
 
 	cocos2d::Vec2 getScreenCenter();
 	float getScreenCenterX();

@@ -543,7 +543,67 @@ void GameViewInformationFactory::makeGameRecordsAnimationData()
 
 void GameViewInformationFactory::makeDevelopersScreenData()
 {
+	ViewElementInformation gameDevelopersBackground;
+	gameDevelopersBackground.elementImage = getImageNameForKey(gameDevelopersBackgroundKey);
+	gameDevelopersBackground.elementPosition = getScreenCenter();
+	gameDevelopersBackground.elementZOrder = kGameDevelopersBackgroundZOrder;
+	_elementsInformation[gameDevelopersBackgroundKey] = gameDevelopersBackground;
+	
+	ViewElementInformation gameDevelopersAnimationController;
+	gameDevelopersAnimationController.elementPosition = Vec2(0, 0);
+	gameDevelopersAnimationController.elementZOrder = kGameDevelopersAnimationControllerZOrder;
+	_elementsInformation[gameDevelopersAnimationControllerKey] = gameDevelopersAnimationController;
+	
+	makeGameDevelopersAnimationData();
+	
+	ViewElementInformation gameDevelopersGoToMainMenuButton;
+	gameDevelopersGoToMainMenuButton.elementImage = getImageNameForKey(gameDevelopersGoToMainMenuButtonKey);
+	gameDevelopersGoToMainMenuButton.elementPosition = Vec2(70, 40);
+	gameDevelopersGoToMainMenuButton.elementZOrder = kGameDevelopersGoToMainMenuButtonZOrder;
+	_elementsInformation[gameDevelopersGoToMainMenuButtonKey] = gameDevelopersGoToMainMenuButton;
 
+}
+
+void GameViewInformationFactory::makeGameDevelopersAnimationData()
+{
+	
+	ViewElementInformation gameDevelopersBoardController;
+	gameDevelopersBoardController.elementPosition = Vec2(110, 630);
+	gameDevelopersBoardController.elementActionFinalPosition = Vec2(110, 430);
+	gameDevelopersBoardController.elementZOrder = kGameDevelopersBoardZOrder;
+	_elementsInformation[gameDevelopersBoardControllerKey] = gameDevelopersBoardController;
+
+	makeGameDevelopersBoardData();
+
+	ViewElementInformation gameDevelopersBeaver;
+	gameDevelopersBeaver.elementImage = getImageNameForKey(gameDevelopersBeaverKey);
+	gameDevelopersBeaver.elementPosition = Vec2(380, 60);
+	gameDevelopersBeaver.elementActionFinalPosition = Vec2(210, 200);
+	gameDevelopersBeaver.elementZOrder = kGameDevelopersBeaverZOrder;
+	_elementsInformation[gameDevelopersBeaverKey] = gameDevelopersBeaver;
+}
+
+void GameViewInformationFactory::makeGameDevelopersBoardData()
+{
+	ViewElementInformation gameDeveloperProgrammer;
+	gameDeveloperProgrammer.elementPosition = Vec2(0, 0);
+	gameDeveloperProgrammer.elementZOrder = 0;
+	_elementsInformation[gameDeveloperProgrammerKey] = gameDeveloperProgrammer;
+	
+	ViewElementInformation gameDeveloperDesigner;
+	gameDeveloperDesigner.elementPosition = Vec2(0, -100);
+	gameDeveloperDesigner.elementZOrder = 0;
+	_elementsInformation[gameDeveloperDesignerKey] = gameDeveloperDesigner;
+	
+	ViewElementInformation gameDevelopersFunctionLabel;
+	gameDevelopersFunctionLabel.elementPosition = Vec2(240, 230);
+	gameDevelopersFunctionLabel.elementZOrder = 0;
+	_elementsInformation[gameDevelopersFunctionLabelKey] = gameDevelopersFunctionLabel;
+	
+	ViewElementInformation gameDevelopersNameLabel;
+	gameDevelopersNameLabel.elementPosition = Vec2(240, 140);
+	gameDevelopersNameLabel.elementZOrder = 0;
+	_elementsInformation[gameDevelopersNameLabelKey] = gameDevelopersNameLabel;
 }
 
 Vec2 GameViewInformationFactory::getScreenCenter()
