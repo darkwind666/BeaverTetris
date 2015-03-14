@@ -94,6 +94,9 @@
     <Filter Include="Models\Bosses">
       <UniqueIdentifier>{fbffd790-c664-47ca-be98-2ff61a8174c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameBalance">
+      <UniqueIdentifier>{4b5912c0-1656-4c75-a515-e8d7683db5a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -1309,5 +1312,10 @@
     <ResourceCompile Include="game.rc">
       <Filter>resource</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Resources\GameLevels.xml">
+      <Filter>GameBalance</Filter>
+    </Xml>
   </ItemGroup>
 </Project>
