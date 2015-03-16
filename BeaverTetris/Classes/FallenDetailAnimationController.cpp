@@ -33,8 +33,12 @@ void FallenDetailAnimationController::setUpDelegates()
 	CurrentDetailController *currentDetailController = (CurrentDetailController*)ServiceLocator::getServiceForKey(currentDetailControllerKey);
 	currentDetailController->setDelegate(this);
 
-	TetraminosFallEvent *tetraminosFallEvent = (TetraminosFallEvent*)ServiceLocator::getServiceForKey(tetraminosFallEventModelKey);
-	tetraminosFallEvent->setDelegate(this);
+	ServiceInterface *service = ServiceLocator::getServiceForKey(tetraminosFallEventModelKey);
+	if (service)
+	{
+		TetraminosFallEvent *tetraminosFallEvent = (TetraminosFallEvent*)service;
+		tetraminosFallEvent->setDelegate(this);
+	}
 }
 
 void FallenDetailAnimationController::throwCurrentDetailOnPosition(GamePositionOnBoard aPosition)

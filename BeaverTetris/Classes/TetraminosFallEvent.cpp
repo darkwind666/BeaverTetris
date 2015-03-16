@@ -12,8 +12,9 @@
 
 using namespace std;
 
-TetraminosFallEvent::TetraminosFallEvent(void)
+TetraminosFallEvent::TetraminosFallEvent(int aInterval)
 {
+	_eventInterval = aInterval;
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_newTetraminoDetailDataSource = (NewTetraminoDetailDataSource*)ServiceLocator::getServiceForKey(newTetraminoDetailDataSourceKey);
 	_collisionDelegate = new CollisionDelegate(_gameBoard);
@@ -35,7 +36,7 @@ void TetraminosFallEvent::updateEvent(void)
 bool TetraminosFallEvent::eventAvailable()
 {
 	bool eventAvailable = false;
-	if (_currentUpdateState >= tetraminosFallEventTimeIntervalConstant)
+	if (_currentUpdateState >= _eventInterval)
 	{
 		eventAvailable = true;
 	}

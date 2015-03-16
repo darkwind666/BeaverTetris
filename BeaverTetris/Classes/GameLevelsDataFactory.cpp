@@ -15,7 +15,6 @@ GameLevelsDataFactory::GameLevelsDataFactory(void)
 	_victoryDataFactories = getVictoryDataFactories();
 }
 
-
 GameLevelsDataFactory::~GameLevelsDataFactory(void)
 {
 }

@@ -14,7 +14,7 @@ class FallenDetailDelegate;
 class TetraminosFallEvent : public ServiceInterface
 {
 public:
-	TetraminosFallEvent(void);
+	TetraminosFallEvent(int aInterval);
 	~TetraminosFallEvent(void);
 
 	void updateEvent(void);
@@ -24,6 +24,7 @@ public:
 
 private:
 
+	int _eventInterval;
 	int _currentUpdateState;
 	GameBoard *_gameBoard;
 	NewTetraminoDetailDataSource *_newTetraminoDetailDataSource;

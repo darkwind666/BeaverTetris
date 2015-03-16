@@ -5,13 +5,14 @@ class GameTimeStepController;
 class TimeAccelerationEvent
 {
 public:
-	TimeAccelerationEvent(void);
+	TimeAccelerationEvent(int aInterval);
 	~TimeAccelerationEvent(void);
 
 	void updateEvent(void);
 
 private:
 
+	int _eventInterval;
 	int _currentUpdateState;
 	int _currentEventState;
 	GameTimeStepController *_gameTimeStepController;

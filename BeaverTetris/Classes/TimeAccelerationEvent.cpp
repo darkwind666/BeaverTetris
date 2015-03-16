@@ -4,8 +4,9 @@
 #include "GameDesignConstants.h"
 #include "GameTimeStepController.h"
 
-TimeAccelerationEvent::TimeAccelerationEvent(void)
+TimeAccelerationEvent::TimeAccelerationEvent(int aInterval)
 {
+	_eventInterval = aInterval;
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 	_currentUpdateState = 0;
 	_currentEventState = 0;
@@ -32,7 +33,7 @@ void TimeAccelerationEvent::updateEvent(void)
 void TimeAccelerationEvent::stepEventActive()
 {
 	_currentEventState++;
-	if (_currentEventState >= timeAccelerationEventActiveTimeConstant)
+	if (_currentEventState >= _eventInterval)
 	{
 		_currentEventState = 0;
 		_eventActive = false;
