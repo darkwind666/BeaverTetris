@@ -19,14 +19,14 @@ GameDataLoader::~GameDataLoader(void)
 
 void GameDataLoader::loadResources()
 {
+	KeysForEnumsDataSource *keysForEnumsDataSource = new KeysForEnumsDataSource();
+	ServiceLocator::setServiceForKey(keysForEnumsDataSource, keysForEnumsDataSourceKey);
+
 	GameLevelsDataSource *gameLevelsDataSource = new GameLevelsDataSource();
 	ServiceLocator::setServiceForKey(gameLevelsDataSource, gameLevelsDataSourceKey);
 
 	CurrentPlayerDataSource *currentPlayerDataSource = new CurrentPlayerDataSource(gameLevelsDataSource);
 	ServiceLocator::setServiceForKey(currentPlayerDataSource, currentPlayerDataSourceKey);
-
-	KeysForEnumsDataSource *keysForEnumsDataSource = new KeysForEnumsDataSource();
-	ServiceLocator::setServiceForKey(keysForEnumsDataSource, keysForEnumsDataSourceKey);
 
 	TetraminosFactory *tetrominosFactory = new TetraminosFactory();
 	ServiceLocator::setServiceForKey(tetrominosFactory, tetrominosFactoryKey);

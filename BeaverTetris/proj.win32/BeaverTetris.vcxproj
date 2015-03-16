@@ -254,6 +254,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\PlayerStatusDataSource.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDelegateInterface.cpp" />
     <ClCompile Include="..\Classes\PrincessBoss.cpp" />
+    <ClCompile Include="..\Classes\pugixml.cpp" />
     <ClCompile Include="..\Classes\QueenBoss.cpp" />
     <ClCompile Include="..\Classes\RandomExplosionsSpell.cpp" />
     <ClCompile Include="..\Classes\RegulateSoundPopUp.cpp" />
@@ -525,6 +526,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\PlayerStatusDataSource.h" />
     <ClInclude Include="..\Classes\PlayerStatusDelegateInterface.h" />
     <ClInclude Include="..\Classes\PrincessBoss.h" />
+    <ClInclude Include="..\Classes\pugiconfig.hpp" />
+    <ClInclude Include="..\Classes\pugixml.hpp" />
     <ClInclude Include="..\Classes\QueenBoss.h" />
     <ClInclude Include="..\Classes\RandomExplosionsSpell.h" />
     <ClInclude Include="..\Classes\RegulateSoundPopUp.h" />

@@ -97,6 +97,9 @@
     <Filter Include="GameBalance">
       <UniqueIdentifier>{4b5912c0-1656-4c75-a515-e8d7683db5a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="XMLParser">
+      <UniqueIdentifier>{d58fdfa0-8e89-40b3-800c-dbb0dec25868}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -680,6 +683,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\GamesDevelopersBoardController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\pugixml.cpp">
+      <Filter>XMLParser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1306,6 +1312,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\SerializersConstants.h">
       <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pugiconfig.hpp">
+      <Filter>XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\pugixml.hpp">
+      <Filter>XMLParser</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

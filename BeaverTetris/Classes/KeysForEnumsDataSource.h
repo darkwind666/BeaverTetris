@@ -12,12 +12,22 @@ public:
 	~KeysForEnumsDataSource(void);
 
 	std::string getKeyForTetraminoType(TetraminoType aTetraminoType);
+	SpellType getSpellTypeForKey(std::string aKey);
+	TetraminoType getTetraminoTypeForKey(std::string aKey);
+	VictoryConditionType getVictoryConditionTypeForKey(std::string aKey);
+	GameEventType getEventTypeForKey(std::string aKey);
 
 private:
 
 	std::map<TetraminoType, std::string> _tetraminoKeys;
+	std::map<std::string, SpellType> _spellsKeys;
+	std::map<std::string, VictoryConditionType> _victoryConditionKeys;
+	std::map<std::string, GameEventType> _gameEventsKeys;
 
 	std::map<TetraminoType, std::string> makeTetraminoKeys();
+	std::map<std::string, SpellType> makeSpellsKeys();
+	std::map<std::string, VictoryConditionType> makeVictoryConditionKeys();
+	std::map<std::string, GameEventType> makeGameEventsKeys();
 
 };
 

@@ -73,6 +73,7 @@ enum VictoryConditionType
 
 enum SpellType
 {
+	kZeroSpell,
 	kRocketSpell,
 	kRandomExplosionsSpell,
 	kFirestormSpell,
@@ -85,8 +86,8 @@ enum SpellType
 
 enum GameEventType
 {
-	kGameEvent1,
-	kGameEvent2,
+	kTetraminosFallEvent,
+	kTimeAccelerationEvent,
 };
 
 enum DirectionType

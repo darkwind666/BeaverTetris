@@ -91,41 +91,11 @@ struct DatabaseInformation
 	int playerScore;
 };
 
-struct GameEventInformation
-{
-	GameState gameState;
-	PopUpType popUp;
-	PlayerActionInGameType playerAction;
-};
-
-struct GameEvent
-{
-	EventType eventType;
-	GameEventInformation eventInformation;
-};
-
-struct MenuItemInformation
-{
-	std::string unselectedImage;
-	std::string selectedImage;
-	GameEvent gameEvent;
-};
-
 struct VictoryConditionInformation
 {
 	int detailsCount;
 	int time;
 	std::map <TetraminoType, int> gameTetraminos;
-};
-
-struct LevelInformation
-{
-	std::vector <TetraminoType> gameTetraminos;
-	VictoryConditionType victoryCondition;
-	VictoryConditionInformation victoryDetails;
-	int rewardSum;
-	SpellType addSpell;
-	
 };
 
 struct GamePositionOnBoard
@@ -147,17 +117,26 @@ struct TetraminosForWinInformation
 	int tetraminosCount;
 };
 
+struct GameEventInformation
+{
+	GameEventType eventType;
+	int eventInterval;
+};
+
 struct GameLevelInformation
 {
 	std::string levelName;
 	int levelAward;
 	std::vector<TetraminoType> availableTetraminos;
+	std::vector<GameEventInformation> availableEvents;
 	std::vector<TetraminoDetailType> availableTetraminoDetails;
 	TetraminoBossesInformation availableBosses;
 	VictoryConditionType victoryConditionType;
 	int needToPlaceDetailsCount;
 	int remainTimes;
 	std::vector<TetraminosForWinInformation> tetraminosCollectionForWin;
+	SpellType addSpell;
+
 };
 
 

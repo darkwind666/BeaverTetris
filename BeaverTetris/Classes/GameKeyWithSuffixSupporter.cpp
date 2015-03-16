@@ -15,12 +15,6 @@ GameKeyWithSuffixSupporter::~GameKeyWithSuffixSupporter(void)
 {
 }
 
-void GameKeyWithSuffixSupporter::passImagesToMenuItemInformationWithKey(MenuItemInformation &aMenuItemInformation, string aKey)
-{
-	aMenuItemInformation.selectedImage = makeSelectedImageForKey(aKey);
-	aMenuItemInformation.unselectedImage = makeUnselectedImageForKey(aKey);
-}
-
 string GameKeyWithSuffixSupporter::makeSelectedImageForKey(string aKey)
 {
 	return GameFileExtensionMaker::getGraphicWithExtension(aKey + selectedPrefix);

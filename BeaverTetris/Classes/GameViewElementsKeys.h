@@ -28,16 +28,16 @@ const string startGameRegulateSoundCloseButtonKey = string("startGameRegulateSou
 
 const string selectLevelMenuKey = string("selectLevelMenu");
 
-const string gameLevel1Key = string("gameLevel1");
-const string gameLevel2Key = string("gameLevel2");
-const string gameLevel3Key = string("gameLevel3");
-const string gameLevel4Key = string("gameLevel4");
-const string gameLevel5Key = string("gameLevel5");
-const string gameLevel6Key = string("gameLevel6");
-const string gameLevel7Key = string("gameLevel7");
-const string gameLevel8Key = string("gameLevel8");
-const string gameLevel9Key = string("gameLevel9");
-const string gameLevel10Key = string("gameLevel10");
+const string gameLevel1Key = string("StartLevel");
+const string gameLevel2Key = string("StartGoodTimeLevel");
+const string gameLevel3Key = string("StartBlockCollectionLevel");
+const string gameLevel4Key = string("StartBossLevel");
+const string gameLevel5Key = string("MiddleLevel");
+const string gameLevel6Key = string("MiddleGoodTimeLevel");
+const string gameLevel7Key = string("MiddleBossLevel");
+const string gameLevel8Key = string("EndBlockCollectionLevel");
+const string gameLevel9Key = string("EndLevel");
+const string gameLevel10Key = string("EndBossLevel");
 
 const string selectLevelScenePlayerStatusControllerKey = string("selectLevelScenePlayerStatusController");
 const string selectLevelScenePlayerStatusPadKey = string("selectLevelScenePlayerStatusPad");
@@ -55,14 +55,14 @@ const string gameWorldControllerKey = string("gameWorldController");
 const string mainGameBackgroundControllerKey = string("mainGameBackgroundController");
 const string mainGameBoardControllerKey = string("mainGameBoardController");
 
-const string redTetraminoKey = string("TetraminoRed");
-const string greenTetraminoKey = string("TetraminoGreen");
-const string blueTetraminoKey = string("TetraminoBlue");
-const string goldTetraminoKey = string("TetraminoGold");
-const string blackTetraminoKey = string("TetraminoBlack");
-const string queenTetraminoKey = string("TetraminoBossQueen");
-const string princessTetraminoKey = string("TetraminoBossPrincess");
-const string kingTetraminoKey = string("TetraminoBossKing");
+const string redTetraminoKey = string("redTetramino");
+const string greenTetraminoKey = string("greenTetramino");
+const string blueTetraminoKey = string("blueTetramino");
+const string goldTetraminoKey = string("goldTetramino");
+const string blackTetraminoKey = string("blackTetramino");
+const string queenTetraminoKey = string("queenBoss");
+const string princessTetraminoKey = string("princessesBoss");
+const string kingTetraminoKey = string("kingBoss");
 
 const string mainGameAnimationControllerKey = string("mainGameAnimationController");
 
@@ -87,8 +87,8 @@ const string playerSpellsControllerKey = string("playerSpellsController");
 const string playerSpellImageKey = string("playerSpellImage");
 const string playerSpellCostLabelKey = string("playerSpellCostLabel");
 
-const string removeCurrentDetailSpellKey = string("removeCurrentDetailSpell");
-const string removeRandomTetraminosSpellKey = string("removeRandomTetraminosSpell");
+const string removeCurrentDetailSpellKey = string("rocketSpell");
+const string removeRandomTetraminosSpellKey = string("randomExplosionsSpell");
 const string firestormSpellKey = string("firestormSpell");
 const string cohesionSpellKey = string("cohesionSpell");
 
@@ -98,8 +98,13 @@ const string detailForRemoveCurrentDetailSpellKey = string("DetailForRemoveCurre
 
 const string meteorForFirestormSpellKey = string("MeteorForFirestormSpell");
 
-const string placeDetailsIconKey = string("PlaceDetailsIcon");
-const string remainSomeTimeIconKey = string("RemainSomeTimeIcon");
+const string placeDetailsIconKey = string("PlaceDetails");
+const string remainSomeTimeIconKey = string("RemainTime");
+const string removeSomeTetraminosKey = string("RemoveTetraminos");
+const string killBossKey = string("Boss");
+
+const string accelerateEventKey = string("accelerateEvent");
+const string fallDetailsEventKey = string("fallDetailsEvent");
 
 const string pauseGameViewControllerKey = string("PauseGameViewController");
 const string mainGamePausePopUpKey = string("MainGamePausePopUp");

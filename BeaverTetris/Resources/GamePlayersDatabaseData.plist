@@ -7,6 +7,12 @@
         <array>
             <dict>
                 <key>PlayerName</key>
+                <string>Sasha4</string>
+                <key>PlayerScore</key>
+                <integer>7230</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
                 <string>Sasha2</string>
                 <key>PlayerScore</key>
                 <integer>5000</integer>

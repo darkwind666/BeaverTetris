@@ -19,11 +19,8 @@ public:
 
 private:
 
-	std::vector<std::string> _levelsNames;
 	CurrentPlayerDataSource *_currentPlayerDataSource;
 	GameLevelsDataSource *_gameLevelsDataSource;
-
-	std::vector<std::string> getLevelsNames();
 
 };
 
