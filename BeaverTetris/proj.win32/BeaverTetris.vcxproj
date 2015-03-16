@@ -201,6 +201,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\Classes\GameKeyWithSuffixSupporter.cpp" />
+    <ClCompile Include="..\Classes\GameLevelsDataFactory.cpp" />
     <ClCompile Include="..\Classes\GameLevelsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameLevelsMenuDataSource.cpp" />
     <ClCompile Include="..\Classes\GameLogicLoader.cpp" />
@@ -454,6 +455,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\FullLineCombination.h" />
     <ClInclude Include="..\Classes\GameAnimationActionsConstants.h" />
     <ClInclude Include="..\Classes\GameBackgroundSoundRegulator.h" />
+    <ClInclude Include="..\Classes\GameBalanceDataConstants.h" />
     <ClInclude Include="..\Classes\GameBoard.h" />
     <ClInclude Include="..\Classes\GameBoardController.h" />
     <ClInclude Include="..\Classes\GameBoardViewDataSource.h" />
@@ -469,6 +471,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameHudsController.h" />
     <ClInclude Include="..\Classes\GameInitiator.h" />
     <ClInclude Include="..\Classes\GameKeyWithSuffixSupporter.h" />
+    <ClInclude Include="..\Classes\GameLevelsDataFactory.h" />
     <ClInclude Include="..\Classes\GameLevelsDataSource.h" />
     <ClInclude Include="..\Classes\GameLevelsMenuDataSource.h" />
     <ClInclude Include="..\Classes\GameLogicLoader.h" />

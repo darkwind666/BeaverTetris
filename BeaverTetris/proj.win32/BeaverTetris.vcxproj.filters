@@ -687,6 +687,9 @@
     <ClCompile Include="..\Classes\pugixml.cpp">
       <Filter>XMLParser</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameLevelsDataFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1318,6 +1321,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\pugixml.hpp">
       <Filter>XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameLevelsDataFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBalanceDataConstants.h">
+      <Filter>Constants</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
