@@ -201,6 +201,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\Classes\GameKeyWithSuffixSupporter.cpp" />
+    <ClCompile Include="..\Classes\GameLevelsAttributesCreator.cpp" />
     <ClCompile Include="..\Classes\GameLevelsDataFactory.cpp" />
     <ClCompile Include="..\Classes\GameLevelsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameLevelsMenuDataSource.cpp" />
@@ -471,6 +472,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameHudsController.h" />
     <ClInclude Include="..\Classes\GameInitiator.h" />
     <ClInclude Include="..\Classes\GameKeyWithSuffixSupporter.h" />
+    <ClInclude Include="..\Classes\GameLevelsAttributesCreator.h" />
     <ClInclude Include="..\Classes\GameLevelsDataFactory.h" />
     <ClInclude Include="..\Classes\GameLevelsDataSource.h" />
     <ClInclude Include="..\Classes\GameLevelsMenuDataSource.h" />

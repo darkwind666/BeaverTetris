@@ -34,7 +34,7 @@ void TimeAccelerationEvent::updateEvent(void)
 void TimeAccelerationEvent::stepEventActive()
 {
 	_currentEventState++;
-	if (_currentEventState >= _eventInterval)
+	if (_currentEventState >= _eventDuration)
 	{
 		_currentEventState = 0;
 		_eventActive = false;
@@ -45,7 +45,7 @@ void TimeAccelerationEvent::stepEventActive()
 void TimeAccelerationEvent::stepTimeInterval()
 {
 	_currentUpdateState++;
-	if (_currentUpdateState >= _eventDuration)
+	if (_currentUpdateState >= _eventInterval)
 	{
 		_currentEventState = 0;
 		_eventActive = true;

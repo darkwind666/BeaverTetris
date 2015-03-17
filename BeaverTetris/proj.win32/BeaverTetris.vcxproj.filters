@@ -690,6 +690,9 @@
     <ClCompile Include="..\Classes\GameLevelsDataFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameLevelsAttributesCreator.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1327,6 +1330,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameBalanceDataConstants.h">
       <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameLevelsAttributesCreator.h">
+      <Filter>Factories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

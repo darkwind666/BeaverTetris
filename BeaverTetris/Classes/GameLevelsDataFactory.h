@@ -4,10 +4,9 @@
 #include "GameStructures.h"
 #include "pugixml.hpp"
 #include "GameEnums.h"
-#include <functional>
-#include <map>
 
 class KeysForEnumsDataSource;
+class GameLevelsAttributesCreator;
 
 class GameLevelsDataFactory
 {
@@ -20,15 +19,8 @@ public:
 private:
 
 	KeysForEnumsDataSource *_keysForEnumsDataSource;
-	std::map< VictoryConditionType, std::function<void(GameLevelInformation&, pugi::xml_node&)> > _victoryDataFactories;
-	std::map< GameEventType, std::function<void(GameEventInformation&, pugi::xml_node&)> > _eventsFactories;
-
-	std::map< VictoryConditionType, std::function<void(GameLevelInformation&, pugi::xml_node&)> > getVictoryDataFactories();
-	std::vector<TetraminosForWinInformation> getTetraminosForWinFromNode(pugi::xml_node &node);
-	TetraminoBossesInformation getBossDataForWinFromNode(pugi::xml_node &node);
-
-	std::map< GameEventType, std::function<void(GameEventInformation&, pugi::xml_node&)> > getEventsFactories();
-
+	GameLevelsAttributesCreator *_gameLevelsAttributesCreator;
+	
 	void fillLevelsInformation(std::vector<GameLevelInformation> &aLevelsInformation);
 	GameLevelInformation  getLevelFromNode(pugi::xml_node &node);
 	GameLevelInformation getDefaultLevel();
