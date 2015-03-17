@@ -88,8 +88,8 @@ const string playerSpellImageKey = string("playerSpellImage");
 const string playerSpellCostLabelKey = string("playerSpellCostLabel");
 
 const string removeCurrentDetailSpellKey = string("rocketSpell");
-const string removeRandomTetraminosSpellKey = string("randomExplosionsSpell");
 const string firestormSpellKey = string("firestormSpell");
+const string removeRandomTetraminosSpellKey = string("randomExplosionsSpell");
 const string cohesionSpellKey = string("cohesionSpell");
 
 const string rocketForRemoveCurrentDetailSpellKey = string("RocketForRemoveCurrentDetailSpell");

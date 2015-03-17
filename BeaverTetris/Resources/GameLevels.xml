@@ -5,7 +5,7 @@
       <detailsCount>30</detailsCount>
     </winCondition>
     <gameEvents>
-      <accelerateEvent eventInterval="160"/>
+      <accelerateEvent eventInterval="160" eventDuration="30"/>
     </gameEvents>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -37,7 +37,7 @@
       <tetraminoType>blackTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="130"/>
+      <accelerateEvent eventInterval="130" eventDuration="50"/>
     </gameEvents>
   </level>
   <level levelName="StartBossLevel" levelAward="420">
@@ -51,8 +51,8 @@
       <tetraminoType>blackTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="100"/>
-      <fallDetailsEvent eventInterval="151"/>
+      <accelerateEvent eventInterval="100" eventDuration="70"/>
+      <fallDetailsEvent eventInterval="151" detailsCount="4"/>
     </gameEvents>
     <spellType>firestormSpell</spellType>
   </level>
@@ -68,7 +68,7 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="70"/>
+      <accelerateEvent eventInterval="70" eventDuration="90"/>
     </gameEvents>
   </level>
   <level levelName="MiddleGoodTimeLevel" levelAward="740">
@@ -98,8 +98,8 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="70"/>
-      <fallDetailsEvent eventInterval="81"/>
+      <accelerateEvent eventInterval="70" eventDuration="100"/>
+      <fallDetailsEvent eventInterval="81" detailsCount="5"/>
     </gameEvents>
     <spellType>randomExplosionsSpell</spellType>
   </level>
@@ -117,8 +117,8 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="55"/>
-      <fallDetailsEvent eventInterval="61"/>
+      <accelerateEvent eventInterval="55" eventDuration="120"/>
+      <fallDetailsEvent eventInterval="61" detailsCount="6"/>
     </gameEvents>
   </level>
   <level levelName="EndLevel" levelAward="1620">
@@ -149,8 +149,8 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="35"/>
-      <fallDetailsEvent eventInterval="41"/>
+      <accelerateEvent eventInterval="35" eventDuration="140"/>
+      <fallDetailsEvent eventInterval="41" detailsCount="7"/>
     </gameEvents>
   </level>
 </levels>

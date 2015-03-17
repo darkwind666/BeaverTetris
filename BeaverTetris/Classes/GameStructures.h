@@ -121,6 +121,8 @@ struct GameEventInformation
 {
 	GameEventType eventType;
 	int eventInterval;
+	int eventDuration;
+	int detailsCount;
 };
 
 struct GameLevelInformation

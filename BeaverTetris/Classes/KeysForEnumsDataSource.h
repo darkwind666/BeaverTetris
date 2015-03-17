@@ -13,6 +13,7 @@ public:
 
 	std::string getKeyForTetraminoType(TetraminoType aTetraminoType);
 	SpellType getSpellTypeForKey(std::string aKey);
+	std::string getKeyForSpellType(SpellType aSpellType);
 	TetraminoType getTetraminoTypeForKey(std::string aKey);
 	VictoryConditionType getVictoryConditionTypeForKey(std::string aKey);
 	GameEventType getEventTypeForKey(std::string aKey);

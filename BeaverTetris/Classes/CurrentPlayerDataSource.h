@@ -25,6 +25,7 @@ public:
 	void setPlayerScore(int aPlayerScore);
 	void completeLevel(std::string aCompletedLevelName);
 	void setSelectedGameLevelIndex(int aGameLevelIndex);
+	void setNewSpellForKey(std::string aKey);
 
 	void savePlayer();
 	void cleanPlayer();
@@ -32,14 +33,18 @@ public:
 private:
 
 	std::vector <std::string> _completedLevelsNames;
+	std::vector <std::string> _availableSpellsNames;
+	std::vector <std::string> _allSpellsNames;
 	bool _isThereCurentPlayer;
 	PlayerInformation _playerData;
 	int _selectedGameLevelIndex;
 	CurrentPlayerSerializer *_currentPlayerSerializer;
 	GameLevelsDataSource *_gameLevelsDataSource;
 
+	std::vector <std::string> getAllSpellsNames();
 	void setUpPlayer();
 	void fillCompletedLevelsNames();
+	void fillAvailableSpells();
 
 };
 

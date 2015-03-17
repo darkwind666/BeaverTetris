@@ -1,6 +1,8 @@
 #include "CurrentPlayerDataSource.h"
 #include "CurrentPlayerSerializer.h"
 #include "GameLevelsDataSource.h"
+#include "GameViewElementsKeys.h"
+
 
 using namespace std;
 
@@ -8,7 +10,9 @@ CurrentPlayerDataSource::CurrentPlayerDataSource(GameLevelsDataSource *aGameLeve
 {
 	_gameLevelsDataSource = aGameLevelsDataSource;
 	_currentPlayerSerializer = new CurrentPlayerSerializer();
+	_allSpellsNames = getAllSpellsNames();
 	_completedLevelsNames = vector <string>();
+	_availableSpellsNames = vector <string>();
 	_selectedGameLevelIndex = 0;
 	_isThereCurentPlayer = false;
 	setUpPlayer();
@@ -20,6 +24,18 @@ CurrentPlayerDataSource::~CurrentPlayerDataSource()
 	delete _currentPlayerSerializer;
 }
 
+vector <string> CurrentPlayerDataSource::getAllSpellsNames()
+{
+	vector <string> allSpellsNames;
+
+	allSpellsNames.push_back(removeCurrentDetailSpellKey);
+	allSpellsNames.push_back(firestormSpellKey);
+	allSpellsNames.push_back(removeRandomTetraminosSpellKey);
+	allSpellsNames.push_back(cohesionSpellKey);
+
+	return allSpellsNames;
+}
+
 void CurrentPlayerDataSource::setUpPlayer()
 {
 	if (_currentPlayerSerializer->availablePlayer())
@@ -27,6 +43,7 @@ void CurrentPlayerDataSource::setUpPlayer()
 		_isThereCurentPlayer = true;
 		_playerData = _currentPlayerSerializer->getSavedPlayer();
 		fillCompletedLevelsNames();
+		fillAvailableSpells();
 	}
 }
 
@@ -37,6 +54,16 @@ void CurrentPlayerDataSource::fillCompletedLevelsNames()
 	{
 		string levelName = _gameLevelsDataSource->getLevelNameForIndex(levelIndex);
 		_completedLevelsNames.push_back(levelName);
+	}
+}
+
+void CurrentPlayerDataSource::fillAvailableSpells()
+{
+	int availableSpellsCount = _playerData.playerAvailableSpellsCount;
+	for (int spellIndex = 0; spellIndex < availableSpellsCount; spellIndex++)
+	{
+		string spellName = _allSpellsNames[spellIndex];
+		_availableSpellsNames.push_back(spellName);
 	}
 }
 
@@ -56,14 +83,21 @@ void CurrentPlayerDataSource::setNewPlayerWithName(string aNewPlayerName)
 void CurrentPlayerDataSource::completeLevel(string aCompletedLevelName)
 {
 	vector <string>::iterator it = find(_completedLevelsNames.begin(), _completedLevelsNames.end(), aCompletedLevelName);
-	vector <string>::iterator begin = _completedLevelsNames.begin();
-	vector <string>::iterator end = _completedLevelsNames.end();
 	if (it == _completedLevelsNames.end())
 	{
 		_completedLevelsNames.push_back(aCompletedLevelName);
 		_playerData.playerCompletedLevelsCount = _playerData.playerCompletedLevelsCount++;
 	}
+}
 
+void CurrentPlayerDataSource::setNewSpellForKey(string aKey)
+{
+	vector <string>::iterator it = find(_availableSpellsNames.begin(), _availableSpellsNames.end(), aKey);
+	if (it == _availableSpellsNames.end())
+	{
+		_availableSpellsNames.push_back(aKey);
+		_playerData.playerAvailableSpellsCount = _playerData.playerAvailableSpellsCount++;
+	}
 }
 
 void CurrentPlayerDataSource::cleanPlayer()
@@ -118,8 +152,7 @@ int CurrentPlayerDataSource::getPlayerCompletedLevelsCount()
 
 int CurrentPlayerDataSource::getPlayerAvailableSpellsCount()
 {
-	//return _playerData.playerAvailableSpellsCount;
-	return 4;
+	return _playerData.playerAvailableSpellsCount;
 }
 
 int CurrentPlayerDataSource::getSelectedGameLevelIndex()

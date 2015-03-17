@@ -19,6 +19,7 @@ private:
 
 	std::map<std::string, SpellInformation> _spellsInformations;
 
+	void setNewSpellsToPlayer();
 	std::map<std::string, SpellInformation> getSpellsInformation();
 
 };

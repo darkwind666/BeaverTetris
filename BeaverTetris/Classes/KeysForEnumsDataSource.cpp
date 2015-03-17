@@ -93,6 +93,22 @@ SpellType KeysForEnumsDataSource::getSpellTypeForKey(string aKey)
 	return _spellsKeys[aKey];
 }
 
+string KeysForEnumsDataSource::getKeyForSpellType(SpellType aSpellType)
+{
+	string spellKey = string();
+	map<string, SpellType>::iterator spellsIterator;
+	for (spellsIterator = _spellsKeys.begin(); spellsIterator != _spellsKeys.end(); spellsIterator++)
+	{
+		SpellType spellType = spellsIterator->second;
+		if (spellType == aSpellType)
+		{
+			spellKey = spellsIterator->first;
+			break;
+		}
+	}
+	return spellKey;
+}
+
 VictoryConditionType KeysForEnumsDataSource::getVictoryConditionTypeForKey(string aKey)
 {
 	return _victoryConditionKeys[aKey];

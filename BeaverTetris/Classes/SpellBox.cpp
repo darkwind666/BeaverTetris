@@ -8,17 +8,35 @@
 #include "RandomExplosionsSpell.h"
 #include "FirestromSpell.h"
 #include "CohesionSpell.h"
+#include "CurrentLevelDataSource.h"
+#include "CurrentPlayerDataSource.h"
+#include "KeysForEnumsDataSource.h"
 
 using namespace std;
 
 SpellBox::SpellBox()
 {
+	setNewSpellsToPlayer();
 	_spellsInformations = getSpellsInformation();
 }
 
 
 SpellBox::~SpellBox(void)
 {
+}
+
+void SpellBox::setNewSpellsToPlayer()
+{
+	CurrentLevelDataSource *currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
+	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
+	KeysForEnumsDataSource *keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
+	GameLevelInformation currentLevel = currentLevelDataSource->getCurrentLevelData();
+	SpellType currentLevelSpellType = currentLevel.addSpell;
+	if (currentLevelSpellType > kZeroSpell)
+	{
+		string spellKey = keysForEnumsDataSource->getKeyForSpellType(currentLevelSpellType);
+		currentPlayerDataSource->setNewSpellForKey(spellKey);
+	}
 }
 
 map<string, SpellInformation> SpellBox::getSpellsInformation()
@@ -33,19 +51,19 @@ map<string, SpellInformation> SpellBox::getSpellsInformation()
 	ServiceLocator::setServiceForKey(rocketSpell, rocketSpellModelKey);
 	spellInformation[removeCurrentDetailSpellKey] = removeCurrentDetail;
 
-	SpellInformation  removeRandomTetraminos;
-	removeRandomTetraminos.spellCost = 200;
-	RandomExplosionsSpell *randomExplosionsSpell = new RandomExplosionsSpell();
-	removeRandomTetraminos.spell = randomExplosionsSpell;
-	ServiceLocator::setServiceForKey(randomExplosionsSpell, randomExplosionsSpellModelKey);
-	spellInformation[removeRandomTetraminosSpellKey] = removeRandomTetraminos;
-
 	SpellInformation firestorm;
-	firestorm.spellCost = 300;
+	firestorm.spellCost = 200;
 	FirestromSpell *firestromSpell = new FirestromSpell();
 	firestorm.spell = firestromSpell;
 	ServiceLocator::setServiceForKey(firestromSpell, firestormSpellModelKey);
 	spellInformation[firestormSpellKey] = firestorm;
+
+	SpellInformation  removeRandomTetraminos;
+	removeRandomTetraminos.spellCost = 300;
+	RandomExplosionsSpell *randomExplosionsSpell = new RandomExplosionsSpell();
+	removeRandomTetraminos.spell = randomExplosionsSpell;
+	ServiceLocator::setServiceForKey(randomExplosionsSpell, randomExplosionsSpellModelKey);
+	spellInformation[removeRandomTetraminosSpellKey] = removeRandomTetraminos;
 
 	SpellInformation cohesion;
 	cohesion.spellCost = 400;
