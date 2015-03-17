@@ -12,9 +12,10 @@
 
 using namespace std;
 
-TetraminosFallEvent::TetraminosFallEvent(int aInterval)
+TetraminosFallEvent::TetraminosFallEvent(int aInterval, int aDetailsCount)
 {
 	_eventInterval = aInterval;
+	_detailsCount = aDetailsCount;
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_newTetraminoDetailDataSource = (NewTetraminoDetailDataSource*)ServiceLocator::getServiceForKey(newTetraminoDetailDataSourceKey);
 	_collisionDelegate = new CollisionDelegate(_gameBoard);
@@ -53,7 +54,7 @@ void TetraminosFallEvent::runEvent()
 vector<TetraminoDetail*> TetraminosFallEvent::getTetraminoDetailsForFalling()
 {
 	vector<TetraminoDetail*> tetraminoDetails;
-	for (int detailIndex = 0; detailIndex <= tetraminosFallEventDetailsCountConstant; detailIndex++)
+	for (int detailIndex = 0; detailIndex <= _detailsCount; detailIndex++)
 	{
 		TetraminoDetail *newDetail = getNewDetail();
 		tetraminoDetails.push_back(newDetail);

@@ -77,6 +77,8 @@ void CurrentPlayerDataSource::setNewPlayerWithName(string aNewPlayerName)
 
 	_playerData = newPlayer;
 	_isThereCurentPlayer = true;
+	_completedLevelsNames.clear();
+	_availableSpellsNames.clear();
 	savePlayer();
 }	
 
@@ -109,6 +111,8 @@ void CurrentPlayerDataSource::cleanPlayer()
 	zeroData.playerCompletedLevelsCount = 0;
 	_playerData = zeroData;
 	_isThereCurentPlayer = false;
+	_completedLevelsNames.clear();
+	_availableSpellsNames.clear();
 	if (_currentPlayerSerializer->availablePlayer())
 	{
 		_currentPlayerSerializer->cleanSavedPlayer();

@@ -4,12 +4,12 @@
 <plist version="1.0">
     <dict>
         <key>PlayerAvailableSpellsCount</key>
-        <integer>1</integer>
+        <integer>0</integer>
         <key>PlayerName</key>
-        <string>Sasha6</string>
+        <string>Sasha</string>
         <key>PlayerScore</key>
-        <integer>5200</integer>
+        <integer>0</integer>
         <key>PlayerCompletedLevelsCount</key>
-        <integer>3</integer>
+        <integer>0</integer>
     </dict>
 </plist>

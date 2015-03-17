@@ -22,3 +22,5 @@ const string levelWinBossTypeKey = string("type");
 const string levelWinBossCountKey = string("count");
 const string levelGameEventsKey = string("gameEvents");
 const string levelGameEventIntervalKey = string("eventInterval");
+const string levelGameEventDetailsCountKey = string("detailsCount");
+const string levelGameEventDurationKey = string("eventDuration");

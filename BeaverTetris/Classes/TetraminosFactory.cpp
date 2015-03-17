@@ -42,12 +42,12 @@ map<TetraminoType, TetraminoInformation> TetraminosFactory::getTetraminosData()
 	tetraminosData[kTetraminoBlack] = tetraminoBlackData;
 
 	TetraminoInformation tetraminoBossQueenData;
-	tetraminoBossQueenData.tetraminoLivesCount = 10;
+	tetraminoBossQueenData.tetraminoLivesCount = 3;
 	tetraminoBossQueenData.tetraminoCost = 70;
 	tetraminosData[kTetraminoBossQueen] = tetraminoBossQueenData;
 
 	TetraminoInformation tetraminoBossPrincessData;
-	tetraminoBossPrincessData.tetraminoLivesCount = 14;
+	tetraminoBossPrincessData.tetraminoLivesCount = 3;
 	tetraminoBossPrincessData.tetraminoCost = 60;
 	tetraminosData[kTetraminoBossPrincess] = tetraminoBossPrincessData;
 

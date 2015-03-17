@@ -12,11 +12,29 @@ using namespace pugi;
 GameLevelsDataFactory::GameLevelsDataFactory(void)
 {
 	_keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
+	_eventsFactories = getEventsFactories();
 	_victoryDataFactories = getVictoryDataFactories();
 }
 
 GameLevelsDataFactory::~GameLevelsDataFactory(void)
 {
+}
+
+map< GameEventType, function<void(GameEventInformation&, xml_node&)> > GameLevelsDataFactory::getEventsFactories()
+{
+	map< GameEventType, function<void(GameEventInformation&, xml_node&)> > eventsFactories;
+
+	eventsFactories[kTetraminosFallEvent] = [](GameEventInformation &event, xml_node &node){
+		int detailsCount = node.attribute(levelGameEventDetailsCountKey.c_str()).as_int();
+		event.detailsCount = detailsCount;
+	};
+
+	eventsFactories[kTimeAccelerationEvent] = [](GameEventInformation &event, xml_node &node){
+		int eventDuration = node.attribute(levelGameEventDurationKey.c_str()).as_int();
+		event.eventDuration = eventDuration;
+	};
+
+	return eventsFactories;
 }
 
 map< VictoryConditionType, function<void(GameLevelInformation&, xml_node&)> > GameLevelsDataFactory::getVictoryDataFactories()
@@ -178,9 +196,12 @@ vector<GameEventInformation> GameLevelsDataFactory::getAvailableEventsFromeNode(
 	for (event = events.first_child(); event; event = event.next_sibling())
 	{
 		string eventType = event.name();
+		GameEventType type = _keysForEnumsDataSource->getEventTypeForKey(eventType);
 		GameEventInformation eventData;
-		eventData.eventType = _keysForEnumsDataSource->getEventTypeForKey(eventType);
+		eventData.eventType = type;
 		eventData.eventInterval = event.attribute(levelGameEventIntervalKey.c_str()).as_int();
+		function<void(GameEventInformation&, xml_node&)> eventFactory = _eventsFactories[type];
+		eventFactory(eventData, event);
 		availableEvents.push_back(eventData);
 	}
 	return availableEvents;

@@ -46,7 +46,7 @@ void GameFlowSystem::makeFallDetailsEventWithData(vector<GameEventInformation> &
 	{
 		int eventIndex = getIndexForTypeInEvents(kTetraminosFallEvent, availableEvents);
 		GameEventInformation eventData = availableEvents[eventIndex];
-		TetraminosFallEvent *tetraminosFallEvent = new TetraminosFallEvent(eventData.eventInterval);
+		TetraminosFallEvent *tetraminosFallEvent = new TetraminosFallEvent(eventData.eventInterval, eventData.detailsCount);
 		_tetraminosFallEvent = tetraminosFallEvent;
 		ServiceLocator::setServiceForKey(tetraminosFallEvent, tetraminosFallEventModelKey);
 	}
@@ -58,7 +58,7 @@ void GameFlowSystem::makeAccelerationEventWithData(vector<GameEventInformation> 
 	{
 		int eventIndex = getIndexForTypeInEvents(kTimeAccelerationEvent, availableEvents);
 		GameEventInformation eventData = availableEvents[eventIndex];
-		_timeAccelerationEvent = new TimeAccelerationEvent(eventData.eventInterval);
+		_timeAccelerationEvent = new TimeAccelerationEvent(eventData.eventInterval, eventData.eventDuration);
 	}
 }
 
