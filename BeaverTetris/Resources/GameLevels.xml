@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <levels>
-  <level levelName="StartLevel" levelAward="100">
+  <level levelName="StartLevel" levelAward="45">
     <winCondition winType="PlaceDetails">
-      <detailsCount>30</detailsCount>
+      <detailsCount>40</detailsCount>
     </winCondition>
     <gameEvents>
-      <accelerateEvent eventInterval="160" eventDuration="30"/>
+      <accelerateEvent eventInterval="50" eventDuration="120"/>
     </gameEvents>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -13,10 +13,13 @@
       <tetraminoType>blueTetramino</tetraminoType>
     </tetraminosTypes>
   </level>
-  <level levelName="StartGoodTimeLevel" levelAward="180">
+  <level levelName="StartGoodTimeLevel" levelAward="107">
     <winCondition winType="RemainTime">
-      <timeCount>100</timeCount>
+      <timeCount>320</timeCount>
     </winCondition>
+    <gameEvents>
+      <fallDetailsEvent eventInterval="50" detailsCount="4"/>
+    </gameEvents>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
       <tetraminoType>greenTetramino</tetraminoType>
@@ -25,7 +28,7 @@
     </tetraminosTypes>
     <spellType>rocketSpell</spellType>
   </level>
-  <level levelName="StartBlockCollectionLevel" levelAward="300">
+  <level levelName="StartBlockCollectionLevel" levelAward="210">
     <winCondition winType="RemoveTetraminos">
         <tetraminos type="redTetramino" count="30"/>
         <tetraminos type="greenTetramino" count="30"/>
@@ -37,10 +40,11 @@
       <tetraminoType>blackTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="130" eventDuration="50"/>
+      <accelerateEvent eventInterval="50" eventDuration="320"/>
+      <fallDetailsEvent eventInterval="230" detailsCount="4"/>
     </gameEvents>
   </level>
-  <level levelName="StartBossLevel" levelAward="420">
+  <level levelName="StartBossLevel" levelAward="450">
     <winCondition winType="Boss">
       <boss type="queenBoss" count="1"/>
     </winCondition>
@@ -51,77 +55,12 @@
       <tetraminoType>blackTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="100" eventDuration="70"/>
-      <fallDetailsEvent eventInterval="151" detailsCount="4"/>
+      <accelerateEvent eventInterval="110" eventDuration="100"/>
+      <fallDetailsEvent eventInterval="220" detailsCount="4"/>
     </gameEvents>
     <spellType>firestormSpell</spellType>
   </level>
   <level levelName="MiddleLevel" levelAward="540">
-    <winCondition winType="PlaceDetails">
-      <detailsCount>60</detailsCount>
-    </winCondition>
-    <tetraminosTypes>
-      <tetraminoType>redTetramino</tetraminoType>
-      <tetraminoType>greenTetramino</tetraminoType>
-      <tetraminoType>blueTetramino</tetraminoType>
-      <tetraminoType>blackTetramino</tetraminoType>
-      <tetraminoType>goldTetramino</tetraminoType>
-    </tetraminosTypes>
-    <gameEvents>
-      <accelerateEvent eventInterval="70" eventDuration="90"/>
-    </gameEvents>
-  </level>
-  <level levelName="MiddleGoodTimeLevel" levelAward="740">
-    <winCondition winType="RemainTime">
-      <timeCount>200</timeCount>
-    </winCondition>
-    <tetraminosTypes>
-      <tetraminoType>redTetramino</tetraminoType>
-      <tetraminoType>greenTetramino</tetraminoType>
-      <tetraminoType>blueTetramino</tetraminoType>
-      <tetraminoType>blackTetramino</tetraminoType>
-      <tetraminoType>goldTetramino</tetraminoType>
-    </tetraminosTypes>
-    <gameEvents>
-      <fallDetailsEvent eventInterval="111"/>
-    </gameEvents>
-  </level>
-  <level levelName="MiddleBossLevel" levelAward="1020">
-    <winCondition winType="Boss">
-      <boss type="princessesBoss" count="2"/>
-    </winCondition>
-    <tetraminosTypes>
-      <tetraminoType>redTetramino</tetraminoType>
-      <tetraminoType>greenTetramino</tetraminoType>
-      <tetraminoType>blueTetramino</tetraminoType>
-      <tetraminoType>blackTetramino</tetraminoType>
-      <tetraminoType>goldTetramino</tetraminoType>
-    </tetraminosTypes>
-    <gameEvents>
-      <accelerateEvent eventInterval="70" eventDuration="100"/>
-      <fallDetailsEvent eventInterval="81" detailsCount="5"/>
-    </gameEvents>
-    <spellType>randomExplosionsSpell</spellType>
-  </level>
-  <level levelName="EndBlockCollectionLevel" levelAward="1320">
-    <winCondition winType="RemoveTetraminos">
-      <tetraminos type="blueTetramino" count="60"/>
-      <tetraminos type="greenTetramino" count="60"/>
-      <tetraminos type="blackTetramino" count="20"/>
-    </winCondition>
-    <tetraminosTypes>
-      <tetraminoType>redTetramino</tetraminoType>
-      <tetraminoType>greenTetramino</tetraminoType>
-      <tetraminoType>blueTetramino</tetraminoType>
-      <tetraminoType>blackTetramino</tetraminoType>
-      <tetraminoType>goldTetramino</tetraminoType>
-    </tetraminosTypes>
-    <gameEvents>
-      <accelerateEvent eventInterval="55" eventDuration="120"/>
-      <fallDetailsEvent eventInterval="61" detailsCount="6"/>
-    </gameEvents>
-  </level>
-  <level levelName="EndLevel" levelAward="1620">
     <winCondition winType="PlaceDetails">
       <detailsCount>90</detailsCount>
     </winCondition>
@@ -133,11 +72,76 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="45"/>
+      <accelerateEvent eventInterval="40" eventDuration="370"/>
+    </gameEvents>
+  </level>
+  <level levelName="MiddleGoodTimeLevel" levelAward="740">
+    <winCondition winType="RemainTime">
+      <timeCount>400</timeCount>
+    </winCondition>
+    <tetraminosTypes>
+      <tetraminoType>redTetramino</tetraminoType>
+      <tetraminoType>greenTetramino</tetraminoType>
+      <tetraminoType>blueTetramino</tetraminoType>
+      <tetraminoType>blackTetramino</tetraminoType>
+      <tetraminoType>goldTetramino</tetraminoType>
+    </tetraminosTypes>
+    <gameEvents>
+      <fallDetailsEvent eventInterval="40" detailsCount="5"/>
+    </gameEvents>
+  </level>
+  <level levelName="MiddleBossLevel" levelAward="1720">
+    <winCondition winType="Boss">
+      <boss type="princessesBoss" count="2"/>
+    </winCondition>
+    <tetraminosTypes>
+      <tetraminoType>redTetramino</tetraminoType>
+      <tetraminoType>greenTetramino</tetraminoType>
+      <tetraminoType>blueTetramino</tetraminoType>
+      <tetraminoType>blackTetramino</tetraminoType>
+      <tetraminoType>goldTetramino</tetraminoType>
+    </tetraminosTypes>
+    <gameEvents>
+      <accelerateEvent eventInterval="50" eventDuration="140"/>
+      <fallDetailsEvent eventInterval="100" detailsCount="5"/>
+    </gameEvents>
+    <spellType>randomExplosionsSpell</spellType>
+  </level>
+  <level levelName="EndBlockCollectionLevel" levelAward="2800">
+    <winCondition winType="RemoveTetraminos">
+      <tetraminos type="blueTetramino" count="60"/>
+      <tetraminos type="greenTetramino" count="60"/>
+      <tetraminos type="blackTetramino" count="30"/>
+    </winCondition>
+    <tetraminosTypes>
+      <tetraminoType>redTetramino</tetraminoType>
+      <tetraminoType>greenTetramino</tetraminoType>
+      <tetraminoType>blueTetramino</tetraminoType>
+      <tetraminoType>blackTetramino</tetraminoType>
+      <tetraminoType>goldTetramino</tetraminoType>
+    </tetraminosTypes>
+    <gameEvents>
+      <accelerateEvent eventInterval="80" eventDuration="140"/>
+      <fallDetailsEvent eventInterval="90" detailsCount="6"/>
+    </gameEvents>
+  </level>
+  <level levelName="EndLevel" levelAward="3600">
+    <winCondition winType="PlaceDetails">
+      <detailsCount>90</detailsCount>
+    </winCondition>
+    <tetraminosTypes>
+      <tetraminoType>redTetramino</tetraminoType>
+      <tetraminoType>greenTetramino</tetraminoType>
+      <tetraminoType>blueTetramino</tetraminoType>
+      <tetraminoType>blackTetramino</tetraminoType>
+      <tetraminoType>goldTetramino</tetraminoType>
+    </tetraminosTypes>
+    <gameEvents>
+      <accelerateEvent eventInterval="10" eventDuration="500"/>
     </gameEvents>
     <spellType>cohesionSpell</spellType>
   </level>
-  <level levelName="EndBossLevel" levelAward="2020">
+  <level levelName="EndBossLevel" levelAward="4700">
     <winCondition winType="Boss">
       <boss type="kingBoss" count="1"/>
     </winCondition>
@@ -149,8 +153,8 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="35" eventDuration="140"/>
-      <fallDetailsEvent eventInterval="41" detailsCount="7"/>
+      <accelerateEvent eventInterval="20" eventDuration="350"/>
+      <fallDetailsEvent eventInterval="70" detailsCount="7"/>
     </gameEvents>
   </level>
 </levels>

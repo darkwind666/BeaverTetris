@@ -45,28 +45,28 @@ map<string, SpellInformation> SpellBox::getSpellsInformation()
 	map<string, SpellInformation> spellInformation;
 
 	SpellInformation removeCurrentDetail;
-	removeCurrentDetail.spellCost = 100;
+	removeCurrentDetail.spellCost = 60;
 	RocketSpell *rocketSpell = new RocketSpell();
 	removeCurrentDetail.spell = rocketSpell;
 	ServiceLocator::setServiceForKey(rocketSpell, rocketSpellModelKey);
 	spellInformation[removeCurrentDetailSpellKey] = removeCurrentDetail;
 
 	SpellInformation firestorm;
-	firestorm.spellCost = 200;
+	firestorm.spellCost = 120;
 	FirestromSpell *firestromSpell = new FirestromSpell();
 	firestorm.spell = firestromSpell;
 	ServiceLocator::setServiceForKey(firestromSpell, firestormSpellModelKey);
 	spellInformation[firestormSpellKey] = firestorm;
 
 	SpellInformation  removeRandomTetraminos;
-	removeRandomTetraminos.spellCost = 300;
+	removeRandomTetraminos.spellCost = 260;
 	RandomExplosionsSpell *randomExplosionsSpell = new RandomExplosionsSpell();
 	removeRandomTetraminos.spell = randomExplosionsSpell;
 	ServiceLocator::setServiceForKey(randomExplosionsSpell, randomExplosionsSpellModelKey);
 	spellInformation[removeRandomTetraminosSpellKey] = removeRandomTetraminos;
 
 	SpellInformation cohesion;
-	cohesion.spellCost = 400;
+	cohesion.spellCost = 310;
 	CohesionSpell *cohesionSpell = new CohesionSpell();
 	cohesion.spell = cohesionSpell;
 	ServiceLocator::setServiceForKey(cohesionSpell, cohesionSpellModelKey);

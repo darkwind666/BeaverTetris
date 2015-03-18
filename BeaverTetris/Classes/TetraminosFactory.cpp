@@ -21,39 +21,44 @@ map<TetraminoType, TetraminoInformation> TetraminosFactory::getTetraminosData()
 	tetraminoEmptyData.tetraminoCost = 0;
 	tetraminosData[kTetraminoEmpty] = tetraminoEmptyData;
 
+	TetraminoInformation tetraminoRedData;
+	tetraminoRedData.tetraminoLivesCount = 1;
+	tetraminoRedData.tetraminoCost = 1;
+	tetraminosData[kTetraminoRed] = tetraminoRedData;
+
 	TetraminoInformation tetraminoGreenData;
 	tetraminoGreenData.tetraminoLivesCount = 1;
-	tetraminoGreenData.tetraminoCost = 10;
+	tetraminoGreenData.tetraminoCost = 1;
 	tetraminosData[kTetraminoGreen] = tetraminoGreenData;
 
 	TetraminoInformation tetraminoBlueData;
 	tetraminoBlueData.tetraminoLivesCount = 1;
-	tetraminoBlueData.tetraminoCost = 20;
+	tetraminoBlueData.tetraminoCost = 1;
 	tetraminosData[kTetraminoBlue] = tetraminoBlueData;
 
 	TetraminoInformation tetraminoGoldData;
 	tetraminoGoldData.tetraminoLivesCount = 1;
-	tetraminoGoldData.tetraminoCost = 40;
+	tetraminoGoldData.tetraminoCost = 5;
 	tetraminosData[kTetraminoGold] = tetraminoGoldData;
 
 	TetraminoInformation tetraminoBlackData;
 	tetraminoBlackData.tetraminoLivesCount = 3;
-	tetraminoBlackData.tetraminoCost = 30;
+	tetraminoBlackData.tetraminoCost = 3;
 	tetraminosData[kTetraminoBlack] = tetraminoBlackData;
 
 	TetraminoInformation tetraminoBossQueenData;
-	tetraminoBossQueenData.tetraminoLivesCount = 3;
-	tetraminoBossQueenData.tetraminoCost = 70;
+	tetraminoBossQueenData.tetraminoLivesCount = 15;
+	tetraminoBossQueenData.tetraminoCost = 170;
 	tetraminosData[kTetraminoBossQueen] = tetraminoBossQueenData;
 
 	TetraminoInformation tetraminoBossPrincessData;
-	tetraminoBossPrincessData.tetraminoLivesCount = 3;
-	tetraminoBossPrincessData.tetraminoCost = 60;
+	tetraminoBossPrincessData.tetraminoLivesCount = 15;
+	tetraminoBossPrincessData.tetraminoCost = 490;
 	tetraminosData[kTetraminoBossPrincess] = tetraminoBossPrincessData;
 
 	TetraminoInformation tetraminoBossKingData;
-	tetraminoBossKingData.tetraminoLivesCount = 3;
-	tetraminoBossKingData.tetraminoCost = 100;
+	tetraminoBossKingData.tetraminoLivesCount = 25;
+	tetraminoBossKingData.tetraminoCost = 400;
 	tetraminosData[kTetraminoBossKing] = tetraminoBossKingData;
 
 	return tetraminosData;
