@@ -12,6 +12,7 @@
 #include "MainGamePauseDelegate.h"
 #include "GameWorldController.h"
 #include "GameStatesHelper.h"
+#include "StartMainGamePlayerScoreDataSource.h"
 
 using namespace cocos2d;
 
@@ -86,7 +87,11 @@ void MainGamePausePopUp::closePopUp(CCObject* pSender)
 void MainGamePausePopUp::goToSelectLevelScreen(CCObject* pSender)
 {
 	CCNode *button = (CCNode*)pSender;
-	std::function<void()> buttonCallback = [](){GameStatesHelper::goToScene(kSelectLevel);};
+	std::function<void()> buttonCallback = [](){
+		StartMainGamePlayerScoreDataSource *startPlayerScoreDataSource = (StartMainGamePlayerScoreDataSource*)ServiceLocator::getServiceForKey(startMainGamePlayerScoreDataSourceKey);
+		startPlayerScoreDataSource->restorePlayerScore();
+		GameStatesHelper::goToScene(kSelectLevel);
+	};
 	GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);
 }
 

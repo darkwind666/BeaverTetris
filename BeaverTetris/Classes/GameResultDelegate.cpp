@@ -5,6 +5,7 @@
 #include "CurrentPlayerDataSource.h"
 #include "GamePlayersDatabase.h"
 #include "CurrentLevelDataSource.h"
+#include "StartMainGamePlayerScoreDataSource.h"
 
 using namespace std;
 
@@ -28,6 +29,10 @@ void GameResultDelegate::gameWasEnded()
 		giveResultToPlayer();
 		writePlayerToDatabaseIfFinalLevel();
 	}
+	else
+	{
+		restorePlayerScore();
+	}
 	_currentPlayerDataSource->savePlayer();
 }
 
@@ -49,4 +54,10 @@ void GameResultDelegate::writePlayerToDatabaseIfFinalLevel()
 		int playerScore = _currentPlayerDataSource->getPlayerScore();
 		_gamePlayersDatabase->setPlayerResult(playerName, playerScore);
 	}
+}
+
+void GameResultDelegate::restorePlayerScore()
+{
+	StartMainGamePlayerScoreDataSource *startPlayerScoreDataSource = (StartMainGamePlayerScoreDataSource*)ServiceLocator::getServiceForKey(startMainGamePlayerScoreDataSourceKey);
+	startPlayerScoreDataSource->restorePlayerScore();
 }

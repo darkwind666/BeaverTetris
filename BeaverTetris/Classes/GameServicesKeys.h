@@ -38,6 +38,7 @@ const string tetrisLogicSystemKey = string("TetrisLogicSystem");
 const string bossMovementObserverKey = string("BossMovementObserver");
 const string winGameSystemKey = string("WinGameSystem");
 const string mainGamePauseDelegateKey = string("MainGamePauseDelegate");
+const string startMainGamePlayerScoreDataSourceKey = string("StartMainGamePlayerScoreDataSource");
 
 
 const string eventDispatcherKey = string("EventDispatcher");

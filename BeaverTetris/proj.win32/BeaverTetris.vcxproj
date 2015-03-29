@@ -273,6 +273,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SpellBox.cpp" />
     <ClCompile Include="..\Classes\SpellInterface.cpp" />
     <ClCompile Include="..\Classes\SpellsViewDataSource.cpp" />
+    <ClCompile Include="..\Classes\StartMainGamePlayerScoreDataSource.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoRemovingObserverInterface.cpp" />
@@ -551,6 +552,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SpellBox.h" />
     <ClInclude Include="..\Classes\SpellInterface.h" />
     <ClInclude Include="..\Classes\SpellsViewDataSource.h" />
+    <ClInclude Include="..\Classes\StartMainGamePlayerScoreDataSource.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />
     <ClInclude Include="..\Classes\TetraminoRemovingObserverInterface.h" />

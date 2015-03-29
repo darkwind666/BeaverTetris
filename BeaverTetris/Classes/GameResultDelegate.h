@@ -22,6 +22,7 @@ private:
 
 	void giveResultToPlayer();
 	void writePlayerToDatabaseIfFinalLevel();
+	void restorePlayerScore();
 
 };
 

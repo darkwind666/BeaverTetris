@@ -696,6 +696,9 @@
     <ClCompile Include="..\Classes\TetraminoViewController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\StartMainGamePlayerScoreDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1339,6 +1342,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TetraminoViewController.h">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartMainGamePlayerScoreDataSource.h">
+      <Filter>Models\DataSources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -19,6 +19,7 @@
 #include "NewTetraminoDetailDataSource.h"
 #include "BossMovementObserver.h"
 #include "MainGamePauseDelegate.h"
+#include "StartMainGamePlayerScoreDataSource.h"
 
 GameLogicLoader::GameLogicLoader(void)
 {
@@ -55,6 +56,9 @@ void GameLogicLoader::loadResources()
 
 	MainGamePauseDelegate *mainGamePauseDelegate = new MainGamePauseDelegate();
 	ServiceLocator::setServiceForKey(mainGamePauseDelegate, mainGamePauseDelegateKey);
+
+	StartMainGamePlayerScoreDataSource *startMainGamePlayerScoreDataSource = new StartMainGamePlayerScoreDataSource();
+	ServiceLocator::setServiceForKey(startMainGamePlayerScoreDataSource, startMainGamePlayerScoreDataSourceKey);
 
 	setUpMainGameLogic();
 }
