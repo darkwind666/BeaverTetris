@@ -2,12 +2,12 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "DetailViewDataSource.h"
-#include "TetraminoColorsDataSource.h"
 #include "TetraminoDetail.h"
 #include "GameBoard.h"
 #include "GameAnimationActionsConstants.h"
 #include "FuctionsTypedefs.h"
 #include "GameBoardController.h"
+#include "TetraminoViewController.h"
 
 using namespace cocos2d;
 
@@ -15,7 +15,6 @@ FallenDetailAnimationFactory::FallenDetailAnimationFactory(DetailViewDataSource 
 {
 	_gameBoardController = aGameBoardController;
 	_dataSource = aDataSource;
-	_tetraminoColorsDataSource = new TetraminoColorsDataSource();
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 }
 
@@ -58,18 +57,26 @@ void FallenDetailAnimationFactory::fillDetailWithTetraminos(Node* aDetailView)
 
 Node* FallenDetailAnimationFactory::getCurrentDetailTetraminoViewOnIndex(int aIndex)
 {
-	Sprite *tetraminoView = Sprite::create("HelloWorld.png");
+	TetraminoViewController *tetraminoView = new TetraminoViewController();
 	Vec2 tetraminoViewPosition = _dataSource->getTetraminoPositionForIndex(aIndex);
 	tetraminoView->setPosition(tetraminoViewPosition);
-	tetraminoView->setScaleX(0.05f);
-	tetraminoView->setScaleY(0.08f);
 	string tetraminoTexture = _dataSource->getTetraminoImageForIndex(aIndex);
-	Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(tetraminoTexture);
-	tetraminoView->setColor(tetraminoColor);
+	tetraminoView->setTexture(tetraminoTexture);
 	int tetraminoTag = getTetraminoTagForIndex(aIndex);
 	tetraminoView->setTag(tetraminoTag);
-	tetraminoView->setName(tetraminoTexture);
+	setTetraminoLivesCountInViewForIndex(tetraminoView, aIndex);
 	return tetraminoView;
+}
+
+void FallenDetailAnimationFactory::setTetraminoLivesCountInViewForIndex(TetraminoViewController *aView, int aIndex)
+{
+	GamePositionOnBoard tetraminoPosition = _dataSource->getTetraminoPositionInBoardForIndex(aIndex);
+	string livesCount = string();
+	if (_dataSource->availableLevesCountOnIndexForAbsolutePosition(tetraminoPosition))
+	{
+		livesCount = _dataSource->getTetraminoLivesCountOnIndexForAbsolutePosition(tetraminoPosition);
+	}
+	aView->setLivesCount(livesCount);
 }
 
 int FallenDetailAnimationFactory::getTetraminoTagForIndex(int aIndex)
@@ -119,9 +126,10 @@ function<void(Node*)>  FallenDetailAnimationFactory::getAnimationEndCallbackWith
 		for (childrenIterator = children.begin(); childrenIterator != children.end(); childrenIterator++)
 		{
 			Node *child = *childrenIterator;
-			int childTag = child->getTag();
+			TetraminoViewController *view = (TetraminoViewController*)child;
+			int childTag = view->getTag();
 			int index = childTag + (detailPositionDifference.yPosition * gameBoardWidth) + detailPositionDifference.xPosition;
-			string childName = child->getName();
+			string childName = view->getTextureName();
 			gameBoardController->drawTetraminoTextureOnIndex(childName, index);
 		}
 		sender->removeFromParentAndCleanup(true);

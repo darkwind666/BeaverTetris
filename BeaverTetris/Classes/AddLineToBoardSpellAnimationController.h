@@ -11,7 +11,7 @@ class AnimationSynchonizer;
 class TetraminosAppearanceAnimationFactory;
 class GameBoard;
 class TetraminosInGameBoardViewDataSource;
-class TetraminoColorsDataSource;
+class TetraminoViewController;
 
 class AddLineToBoardSpellAnimationController : public AddLineToBoardBottomSpellDelegate, public cocos2d::Node
 {
@@ -29,14 +29,13 @@ private:
 	GameBoard *_gameBoard;
 	TetraminosInGameBoardViewDataSource *_tetraminosInGameBoardViewDataSource;
 	GameBoardController *_gameBoardController;
-	TetraminoColorsDataSource *_tetraminoColorsDataSource;
-
 
 	cocos2d::Node* getGameBoardView();
 	void cleanAllTetraminosFromGameBoardView();
 	void fillViewWithTetraminos(cocos2d::Node *aView);
 	void addTetraminoOnViewForIndex(cocos2d::Node *aView, int aIndex);
 	int getTetraminoViewTagForIndex(int aIndex);
+	void setTetraminoLivesCountInViewForIndex(TetraminoViewController *aView, int aIndex);
 	cocos2d::FiniteTimeAction* getAnimationWithGameBoardView(cocos2d::Node *aView);
 	cocos2d::FiniteTimeAction* getMoveBoardAnimationWithView(cocos2d::Node *aView);
 	std::function<void(Node*)> getAnimationEndCallback();

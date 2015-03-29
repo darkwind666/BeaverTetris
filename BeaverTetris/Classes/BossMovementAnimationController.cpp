@@ -6,8 +6,8 @@
 #include "GameBoard.h"
 #include "GameBoardController.h"
 #include "GameBoardViewDataSource.h"
-#include "TetraminoColorsDataSource.h"
 #include "GameAnimationActionsConstants.h"
+#include "TetraminoViewController.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -17,7 +17,6 @@ BossMovementAnimationController::BossMovementAnimationController(GameBoardContro
 	_animationSynchonizer = aAnimationSynchonizer;
 	_gameBoardController = aGameBoardController;
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
-	_tetraminoColorsDataSource = new TetraminoColorsDataSource();
 	_gameBoardViewDataSource = new GameBoardViewDataSource();
 
 	BossMovementObserver *bossMovementObserver = (BossMovementObserver*)ServiceLocator::getServiceForKey(bossMovementObserverKey);
@@ -38,17 +37,12 @@ void BossMovementAnimationController::moveBossFromStartPositionToFinal(GamePosit
 
 Node* BossMovementAnimationController::getBossViewWithStartPosition(GamePositionOnBoard aStartPosition)
 {
-	Sprite *tetraminoView = Sprite::create("HelloWorld.png");
+	TetraminoViewController *tetraminoView = new TetraminoViewController();
 	int tetraminoIndex = _gameBoard->getIndexForPosition(aStartPosition);
-	_gameBoardController->cleanTetraminoOnIndex(tetraminoIndex);
 	Vec2 tetraminoViewPosition = _gameBoardViewDataSource->getTetraminoPositionForIndex(tetraminoIndex);
 	tetraminoView->setPosition(tetraminoViewPosition);
-	tetraminoView->setScaleX(0.05f);
-	tetraminoView->setScaleY(0.08f);
 	string tetraminoTexture = _gameBoardViewDataSource->getTetraminoImageForIndex(tetraminoIndex);
-	Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(tetraminoTexture);
-	tetraminoView->setColor(tetraminoColor);
-	tetraminoView->setName(tetraminoTexture);
+	tetraminoView->setTexture(tetraminoTexture);
 	this->addChild(tetraminoView);
 	return tetraminoView;
 }
@@ -77,8 +71,9 @@ FiniteTimeAction* BossMovementAnimationController::getMoveBossAnimationWithViewA
 function<void(Node*)> BossMovementAnimationController::getAnimationEndCallbackWithFinalPosition(GamePositionOnBoard aFinalPosition)
 {
 	function<void(Node*)> callback = [this, aFinalPosition](Node *sender){
+		TetraminoViewController *view = (TetraminoViewController*)sender;
 		int bossTag = _gameBoard->getIndexForPosition(aFinalPosition);
-		string bossName = sender->getName();
+		string bossName = view->getTextureName();
 		_gameBoardController->drawTetraminoTextureOnIndex(bossName, bossTag);
 		sender->removeFromParentAndCleanup(true);
 	};

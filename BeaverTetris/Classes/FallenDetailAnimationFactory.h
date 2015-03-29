@@ -5,9 +5,9 @@
 #include <functional>
 
 class DetailViewDataSource;
-class TetraminoColorsDataSource;
 class GameBoardController;
 class GameBoard;
+class TetraminoViewController;
 
 class FallenDetailAnimationFactory
 {
@@ -23,12 +23,12 @@ private:
 
 	GameBoardController *_gameBoardController;
 	DetailViewDataSource *_dataSource;
-	TetraminoColorsDataSource *_tetraminoColorsDataSource;
 	GameBoard *_gameBoard;
 
 	void fillDetailWithTetraminos(cocos2d::Node* aDetailView);
 	cocos2d::Vec2 getPositionOnViewWithTetraminoOffset(GamePositionOnBoard aPosition);
 	cocos2d::Node* getCurrentDetailTetraminoViewOnIndex(int aIndex);
+	void setTetraminoLivesCountInViewForIndex(TetraminoViewController *aView, int aIndex);
 	int getTetraminoTagForIndex(int aIndex);
 	float getAnimationDurationWithFinalPosition(GamePositionOnBoard aFinalPosition);
 	

@@ -8,7 +8,6 @@ class GameBoardController;
 class AnimationSynchonizer;
 class GameBoard;
 class GameBoardViewDataSource;
-class TetraminoColorsDataSource;
 
 class BossMovementAnimationController : public BossMovementDelegate, public cocos2d::Node
 {
@@ -24,7 +23,6 @@ private:
 	AnimationSynchonizer *_animationSynchonizer;
 	GameBoard *_gameBoard;
 	GameBoardViewDataSource *_gameBoardViewDataSource;
-	TetraminoColorsDataSource *_tetraminoColorsDataSource;
 
 	cocos2d::Node* getBossViewWithStartPosition(GamePositionOnBoard aStartPosition);
 	cocos2d::FiniteTimeAction* getAnimationWithBossViewAndFinalPosition(cocos2d::Node *aView, GamePositionOnBoard aFinalPosition);

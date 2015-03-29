@@ -60,6 +60,21 @@ Vec2 GameBoardViewDataSource::getTetraminoPositionForIndex(int aIndex)
 	return _tetraminosInGameBoardViewDataSource->getTetraminoPositionForIndex(aIndex);
 }
 
+string GameBoardViewDataSource::getTetraminoLivesCountForIndex(int aIndex)
+{
+	string livesCount;
+	if (_tetraminosInGameBoardViewDataSource->availableTetraminoOnIndex(aIndex))
+	{
+		livesCount = _tetraminosInGameBoardViewDataSource->getTetraminoLivesCountForIndex(aIndex);
+	}
+	else
+	{
+		GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
+		livesCount = _currentDetailViewDataSource->getTetraminoLivesCountOnIndexForAbsolutePosition(tetraminoPosition);
+	}
+	return livesCount;
+}
+
 bool GameBoardViewDataSource::availableTetraminoOnIndex(int aIndex)
 {
 	bool availableTetramino = true;
@@ -69,4 +84,19 @@ bool GameBoardViewDataSource::availableTetraminoOnIndex(int aIndex)
 		availableTetramino = _currentDetailTetraminosChecker->checkPositionInCurrentDetail(tetraminoPosition);
 	}
 	return availableTetramino;
+}
+
+bool GameBoardViewDataSource::availableLevesCountOnIndex(int aIndex)
+{
+	bool availableLevesCount = false;
+	if (_tetraminosInGameBoardViewDataSource->availableTetraminoOnIndex(aIndex))
+	{
+		availableLevesCount = _tetraminosInGameBoardViewDataSource->availableLevesCountOnIndex(aIndex);
+	}
+	else
+	{
+		GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
+		availableLevesCount = _currentDetailViewDataSource->availableLevesCountOnIndexForAbsolutePosition(tetraminoPosition);
+	}
+	return availableLevesCount;
 }

@@ -693,6 +693,9 @@
     <ClCompile Include="..\Classes\GameLevelsAttributesCreator.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\TetraminoViewController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1333,6 +1336,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameLevelsAttributesCreator.h">
       <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminoViewController.h">
+      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

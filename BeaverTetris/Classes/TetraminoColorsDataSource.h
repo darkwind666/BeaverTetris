@@ -1,10 +1,11 @@
 #pragma once
 
+#include "ServiceInterface.h"
 #include "cocos2d.h"
 #include <string>
 #include <map>
 
-class TetraminoColorsDataSource
+class TetraminoColorsDataSource : public ServiceInterface
 {
 public:
 	TetraminoColorsDataSource(void);

@@ -54,6 +54,7 @@ const string selectLevelSceneBackButtonKey = string("selectLevelSceneBackButton"
 const string gameWorldControllerKey = string("gameWorldController");
 const string mainGameBackgroundControllerKey = string("mainGameBackgroundController");
 const string mainGameBoardControllerKey = string("mainGameBoardController");
+const string tetraminoLivesCountViewKey = string("tetraminoLivesCountView");
 
 const string redTetraminoKey = string("redTetramino");
 const string greenTetraminoKey = string("greenTetramino");

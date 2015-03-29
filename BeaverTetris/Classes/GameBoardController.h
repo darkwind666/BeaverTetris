@@ -5,8 +5,8 @@
 #include <vector>
 
 class GameBoardViewDataSource;
-class TetraminoColorsDataSource;
 class GameTimeStepController;
+class TetraminoViewController;
 
 class GameBoardController : public cocos2d::Node
 {
@@ -16,23 +16,21 @@ public:
 
 	void drawTetraminoTextureOnIndex(std::string aTetraminoTextureKey, int aTetraminoIndex);
 	void cleanTetraminoOnIndex(int aTetraminoIndex);
-
 	void redrawGameBoard();
 
 private:
 
 	GameBoardViewDataSource *_gameBoardViewDataSource;
 	GameTimeStepController *_gameTimeStepController;
-	std::vector<cocos2d::Sprite*> _tetraminosViews;
-	TetraminoColorsDataSource *_tetraminoColorsDataSource;
+	std::vector<TetraminoViewController*> _tetraminosViews;
 
 	void updateTetraminoViews();
 	void updateGameBoardView();
 
-	std::vector<cocos2d::Sprite*> getTetraminosViews();
+	std::vector<TetraminoViewController*> getTetraminosViews();
+	void setLivesCountInTetraminoViewForIndex(TetraminoViewController* aTetraminoView, int aTetraminoIndex);
 	void addTetraminoViewsToController();
 	void hideAllTetraminos();
-	
 
 };
 

@@ -5,7 +5,7 @@
 #include "GameBoard.h"
 #include "GameBoardViewDataSource.h"
 #include "GameBoardController.h"
-#include "TetraminoColorsDataSource.h"
+#include "TetraminoViewController.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -15,7 +15,6 @@ TetraminoExplosionFactory::TetraminoExplosionFactory(GameBoardController *aGameB
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_gameBoardViewDataSource = new GameBoardViewDataSource();
 	_gameBoardController = aGameBoardController;
-	_tetraminoColorsDataSource = new TetraminoColorsDataSource();
 }
 
 
@@ -122,15 +121,12 @@ void TetraminoExplosionFactory::removeTetraminoFromBoardOnPosition(GamePositionO
 
 Node* TetraminoExplosionFactory::getTetraminoViewOnPosition(GamePositionOnBoard aPosition)
 {
+	TetraminoViewController *tetraminoView = new TetraminoViewController();
 	int tetraminoIndex = _gameBoard->getIndexForPosition(aPosition);
-	Sprite *tetraminoView = Sprite::create("HelloWorld.png");
 	Vec2 tetraminoViewPosition = _gameBoardViewDataSource->getTetraminoPositionForIndex(tetraminoIndex);
 	tetraminoView->setPosition(tetraminoViewPosition);
-	tetraminoView->setScaleX(0.05f);
-	tetraminoView->setScaleY(0.08f);
 	string tetraminoTexture = _gameBoardViewDataSource->getTetraminoImageForIndex(tetraminoIndex);
-	Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(tetraminoTexture);
-	tetraminoView->setColor(tetraminoColor);
+	tetraminoView->setTexture(tetraminoTexture);
 	return tetraminoView;
 }
 

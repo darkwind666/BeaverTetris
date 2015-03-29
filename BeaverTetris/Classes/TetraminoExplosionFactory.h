@@ -8,7 +8,6 @@
 class GameBoard;
 class GameBoardViewDataSource;
 class GameBoardController;
-class TetraminoColorsDataSource;
 
 class TetraminoExplosionFactory : public cocos2d::Node
 {
@@ -25,7 +24,6 @@ private:
 	GameBoard *_gameBoard;
 	GameBoardViewDataSource *_gameBoardViewDataSource;
 	GameBoardController *_gameBoardController;
-	TetraminoColorsDataSource *_tetraminoColorsDataSource;
 
 	cocos2d::Node* getExplosionForOnPositionXY(int xPosition, int yPosition);
 	void addExplosionsToView(std::vector<cocos2d::Node*> aExplosions);

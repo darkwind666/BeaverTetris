@@ -4,8 +4,10 @@
 #include "GameBoard.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
-#include "TetraminoColorsDataSource.h"
 #include "GameAnimationActionsConstants.h"
+#include "Tetramino.h"
+#include "StringsSupporter.h"
+#include "TetraminoViewController.h"
 
 using namespace cocos2d;
 
@@ -14,7 +16,6 @@ TetraminosAppearanceAnimationFactory::TetraminosAppearanceAnimationFactory(GameB
 	_gameBoardController = aGameBoardController;
 	_gameBoardViewDataSource = new GameBoardViewDataSource();
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
-	_tetraminoColorsDataSource = new TetraminoColorsDataSource();
 }
 
 
@@ -31,24 +32,31 @@ FiniteTimeAction* TetraminosAppearanceAnimationFactory::getAnimationWithTetramin
 
 Node* TetraminosAppearanceAnimationFactory::getTetraminoViewFromPosition(GamePositionOnBoard aPosition)
 {
-	Sprite *tetraminoView = Sprite::create("HelloWorld.png");
+	TetraminoViewController *tetraminoView = new TetraminoViewController();
 	this->addChild(tetraminoView);
 	int positionIndex = _gameBoard->getIndexForPosition(aPosition);
-	setViewColorAndNameAndPositionWithIndex(tetraminoView, positionIndex);
+	string tetraminoTexture = _gameBoardViewDataSource->getTetraminoImageForIndex(positionIndex);
+	Vec2 tetraminoViewPosition = _gameBoardViewDataSource->getTetraminoPositionForIndex(positionIndex);
 	tetraminoView->setTag(positionIndex);
 	tetraminoView->setScale(0.0f);
 	tetraminoView->setOpacity(0.0f);
+	tetraminoView->setTexture(tetraminoTexture);
+	tetraminoView->setPosition(tetraminoViewPosition);
+	setLivesCountInViewWithTetraminoPosition(tetraminoView, aPosition);
 	return tetraminoView;
 }
 
-void TetraminosAppearanceAnimationFactory::setViewColorAndNameAndPositionWithIndex(Node *aView, int aIndex)
+void TetraminosAppearanceAnimationFactory::setLivesCountInViewWithTetraminoPosition(TetraminoViewController *aView, GamePositionOnBoard aPosition)
 {
-	string tetraminoTexture = _gameBoardViewDataSource->getTetraminoImageForIndex(aIndex);
-	Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(tetraminoTexture);
-	Vec2 tetraminoViewPosition = _gameBoardViewDataSource->getTetraminoPositionForIndex(aIndex);
-	aView->setPosition(tetraminoViewPosition);
-	aView->setColor(tetraminoColor);
-	aView->setName(tetraminoTexture);
+	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(aPosition.xPosition, aPosition.yPosition);
+	string lives = string();
+	TetraminoType type = tetraminoInBoard->getTetraminoType();
+	int livesCount = tetraminoInBoard->getTetraminoLivesCount();
+	if (type > kTetraminoEmpty && type < kTetraminoBossQueen && livesCount > 1)
+	{
+		lives = StringsSupporter::getStringFromNumber(livesCount);
+	}
+	aView->setLivesCount(lives);
 }
 
 FiniteTimeAction* TetraminosAppearanceAnimationFactory::getAnimationWithView(Node *aView)
@@ -62,7 +70,7 @@ FiniteTimeAction* TetraminosAppearanceAnimationFactory::getAnimationWithView(Nod
 
 FiniteTimeAction* TetraminosAppearanceAnimationFactory::getViewAnimation()
 {
-	FiniteTimeAction *scale = ScaleTo::create(tetraminoAppearDuration, 0.05f, 0.08f);
+	FiniteTimeAction *scale = ScaleTo::create(tetraminoAppearDuration, 1.0f);
 	FiniteTimeAction *appear = FadeIn::create(tetraminoAppearDuration);
 	FiniteTimeAction *spawn = Spawn::create(scale, appear, NULL);
 	return spawn;
@@ -71,8 +79,9 @@ FiniteTimeAction* TetraminosAppearanceAnimationFactory::getViewAnimation()
 FiniteTimeAction* TetraminosAppearanceAnimationFactory::getAnimationCallback()
 {
 	FiniteTimeAction *callback = CallFuncN::create([this](Node *sender){
+		TetraminoViewController *view = (TetraminoViewController*)sender;
 		int index = sender->getTag();
-		string childName = sender->getName();
+		string childName = view->getTextureName();
 		_gameBoardController->drawTetraminoTextureOnIndex(childName, index);
 		sender->removeFromParentAndCleanup(true);
 	});

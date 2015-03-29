@@ -7,6 +7,7 @@
 #include "Tetramino.h"
 #include "GameElementsDataHelper.h"
 #include "GameViewElementsKeys.h"
+#include "StringsSupporter.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -45,6 +46,14 @@ Vec2 TetraminosInGameBoardViewDataSource::getTetraminoPositionForIndex(int aInde
 	return Vec2(tetraminoPosition.xPosition * tetraminoOffset.x, tetraminoPosition.yPosition * tetraminoOffset.y);
 }
 
+string TetraminosInGameBoardViewDataSource::getTetraminoLivesCountForIndex(int aIndex)
+{
+	GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
+	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+	string livesCount = StringsSupporter::getStringFromNumber(tetraminoInBoard->getTetraminoLivesCount());
+	return livesCount;
+}
+
 bool TetraminosInGameBoardViewDataSource::availableTetraminoOnIndex(int aIndex)
 {
 	bool availableTetramino = true;
@@ -55,4 +64,16 @@ bool TetraminosInGameBoardViewDataSource::availableTetraminoOnIndex(int aIndex)
 		availableTetramino = false;
 	}
 	return availableTetramino;
+}
+
+bool TetraminosInGameBoardViewDataSource::availableLevesCountOnIndex(int aIndex)
+{
+	bool availableLevesCount = false;
+	GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
+	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition, tetraminoPosition.yPosition);
+	if (tetraminoInBoard->getTetraminoType() > kTetraminoEmpty && tetraminoInBoard->getTetraminoType() < kTetraminoBossQueen && tetraminoInBoard->getTetraminoLivesCount() > 1)
+	{
+		availableLevesCount = true;
+	}
+	return availableLevesCount;
 }

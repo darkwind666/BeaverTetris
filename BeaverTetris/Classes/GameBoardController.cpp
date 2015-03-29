@@ -1,9 +1,9 @@
 #include "GameBoardController.h"
 #include "GameBoardViewDataSource.h"
-#include "TetraminoColorsDataSource.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "GameTimeStepController.h"
+#include "TetraminoViewController.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -12,7 +12,6 @@ GameBoardController::GameBoardController(void)
 {
 	_gameBoardViewDataSource = new GameBoardViewDataSource();
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
-	_tetraminoColorsDataSource = new TetraminoColorsDataSource();
 	_tetraminosViews = getTetraminosViews();
 	addTetraminoViewsToController();
 	redrawGameBoard();
@@ -21,16 +20,17 @@ GameBoardController::GameBoardController(void)
 
 GameBoardController::~GameBoardController(void)
 {
+	delete _gameBoardViewDataSource;
 }
 
-vector<Sprite*> GameBoardController::getTetraminosViews()
+vector<TetraminoViewController*> GameBoardController::getTetraminosViews()
 {
-	vector<Sprite*> tetraminosViews;
+	vector<TetraminoViewController*> tetraminosViews;
 
 	int tetraminosCount = _gameBoardViewDataSource->getTetraminosCount();
 	for (int tetraminoIndex = 0; tetraminoIndex < tetraminosCount; tetraminoIndex++)
 	{
-		Sprite *tetraminoView = Sprite::create();
+		TetraminoViewController *tetraminoView = new TetraminoViewController();
 		Vec2 tetraminoViewPosition = _gameBoardViewDataSource->getTetraminoPositionForIndex(tetraminoIndex);
 		tetraminoView->setPosition(tetraminoViewPosition);
 		tetraminosViews.push_back(tetraminoView);
@@ -40,10 +40,11 @@ vector<Sprite*> GameBoardController::getTetraminosViews()
 
 void GameBoardController::addTetraminoViewsToController()
 {
-	vector<Sprite*>::iterator viewsIterator;
+	vector<TetraminoViewController*>::iterator viewsIterator;
 	for (viewsIterator = _tetraminosViews.begin(); viewsIterator != _tetraminosViews.end(); viewsIterator++)
 	{
-		this->addChild(*viewsIterator);
+		TetraminoViewController *view = *viewsIterator;
+		this->addChild(view);
 	}
 }
 
@@ -63,10 +64,10 @@ void GameBoardController::updateTetraminoViews()
 
 void GameBoardController::hideAllTetraminos()
 {
-	vector<Sprite*>::iterator viewsIterator;
+	vector<TetraminoViewController*>::iterator viewsIterator;
 	for (viewsIterator = _tetraminosViews.begin(); viewsIterator != _tetraminosViews.end(); viewsIterator++)
 	{
-		Sprite *tetraminoView = (*viewsIterator);
+		TetraminoViewController *tetraminoView = (*viewsIterator);
 		tetraminoView->setVisible(false);
 	}
 }
@@ -84,26 +85,33 @@ void GameBoardController::updateGameBoardView()
 	}
 }
 
-void GameBoardController::drawTetraminoTextureOnIndex(std::string aTetraminoTextureKey, int aTetraminoIndex)
+void GameBoardController::drawTetraminoTextureOnIndex(string aTetraminoTextureKey, int aTetraminoIndex)
 {
 	if (aTetraminoIndex < _tetraminosViews.size())
 	{
-		Sprite *tetraminoView = _tetraminosViews[aTetraminoIndex];
+		TetraminoViewController *tetraminoView = _tetraminosViews[aTetraminoIndex];
 		tetraminoView->setVisible(true);
-		tetraminoView->setTexture("HelloWorld.png");
-		tetraminoView->setScaleX(0.05f);
-		tetraminoView->setScaleY(0.08f);
-		
-		Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(aTetraminoTextureKey);
-		tetraminoView->setColor(tetraminoColor);
+		tetraminoView->setTexture(aTetraminoTextureKey);
+		setLivesCountInTetraminoViewForIndex(tetraminoView, aTetraminoIndex);
 	}
+}
+
+void GameBoardController::setLivesCountInTetraminoViewForIndex(TetraminoViewController* aTetraminoView, int aTetraminoIndex)
+{
+	string tetraminoLivesCount = string();
+	if (_gameBoardViewDataSource->availableLevesCountOnIndex(aTetraminoIndex))
+	{
+		tetraminoLivesCount = _gameBoardViewDataSource->getTetraminoLivesCountForIndex(aTetraminoIndex);
+	}
+	aTetraminoView->setLivesCount(tetraminoLivesCount);
 }
 
 void GameBoardController::cleanTetraminoOnIndex(int aTetraminoIndex)
 {
 	if (aTetraminoIndex >= 0 && aTetraminoIndex < _tetraminosViews.size())
 	{
-		Sprite *tetraminoView = _tetraminosViews[aTetraminoIndex];
+		TetraminoViewController *tetraminoView = _tetraminosViews[aTetraminoIndex];
 		tetraminoView->setVisible(false);
 	}
 }
+

@@ -37,7 +37,7 @@ map<TetraminoType, TetraminoInformation> TetraminosFactory::getTetraminosData()
 	tetraminosData[kTetraminoBlue] = tetraminoBlueData;
 
 	TetraminoInformation tetraminoGoldData;
-	tetraminoGoldData.tetraminoLivesCount = 1;
+	tetraminoGoldData.tetraminoLivesCount = 2;
 	tetraminoGoldData.tetraminoCost = 5;
 	tetraminosData[kTetraminoGold] = tetraminoGoldData;
 

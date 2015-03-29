@@ -7,6 +7,7 @@
 #include "KeysForEnumsDataSource.h"
 #include "TetraminosFactory.h"
 #include "GamePlayersDatabase.h"
+#include "TetraminoColorsDataSource.h"
 
 GameDataLoader::GameDataLoader(void)
 {
@@ -33,5 +34,8 @@ void GameDataLoader::loadResources()
 
 	GamePlayersDatabase *gamePlayersDatabase = new GamePlayersDatabase();
 	ServiceLocator::setServiceForKey(gamePlayersDatabase, gamePlayersDatabaseKey);
+
+	TetraminoColorsDataSource *tetraminoColorsDataSource = new TetraminoColorsDataSource();
+	ServiceLocator::setServiceForKey(tetraminoColorsDataSource, tetraminoColorsDataSourceKey);
 
 }

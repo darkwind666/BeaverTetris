@@ -24,6 +24,8 @@ public:
 	cocos2d::Vec2 getDetailPositionOnView();
 	cocos2d::Vec2 getPositionOnView(GamePositionOnBoard aPosition);
 	std::string getTetraminoImageForAbsolutePosition(GamePositionOnBoard aPosition);
+	std::string getTetraminoLivesCountOnIndexForAbsolutePosition(GamePositionOnBoard aPosition);
+	bool availableLevesCountOnIndexForAbsolutePosition(GamePositionOnBoard aPosition);
 	GamePositionOnBoard getTetraminoPositionInBoardForIndex(int aIndex);
 	GamePositionOnBoard getDetailPositionOnBoard();
 

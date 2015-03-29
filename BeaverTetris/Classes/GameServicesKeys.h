@@ -11,6 +11,7 @@ const string gamePopUpsControllerKey = string("GamePopUpsController");
 const string currentPlayerDataSourceKey = string("CurrentPlayerDataSource");
 const string gameLevelsDataSourceKey = string("GameLevelsDataSource");
 const string keysForEnumsDataSourceKey = string("KeysForEnumsDataSource");
+const string tetraminoColorsDataSourceKey = string("TetraminoColorsDataSource");
 const string tetrominosFactoryKey = string("TetraminosFactory");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");
 

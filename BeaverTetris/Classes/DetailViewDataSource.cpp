@@ -8,6 +8,7 @@
 
 #include "GameElementsDataHelper.h"
 #include "GameViewElementsKeys.h"
+#include "StringsSupporter.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -97,6 +98,29 @@ string DetailViewDataSource::getTetraminoImageForAbsolutePosition(GamePositionOn
 	int tetraminoIndex = getCurrentDetail()->getIndexForPosition(tetraminoPositionInDetail);
 	string tetraminoImage = getTetraminoImageForIndex(tetraminoIndex);
 	return tetraminoImage;
+}
+
+string DetailViewDataSource::getTetraminoLivesCountOnIndexForAbsolutePosition(GamePositionOnBoard aPosition)
+{
+	GamePositionOnBoard tetraminoPositionInDetail = getCurrentDetail()->convertAbsolutePositionToPositionInDetail(aPosition);
+	int tetraminoIndex = getCurrentDetail()->getIndexForPosition(tetraminoPositionInDetail);
+	Tetramino *tetraminoInDetail = getTetraminoOnIndex(tetraminoIndex);
+	string livesCount = StringsSupporter::getStringFromNumber(tetraminoInDetail->getTetraminoLivesCount());
+	return livesCount;
+}
+
+bool DetailViewDataSource::availableLevesCountOnIndexForAbsolutePosition(GamePositionOnBoard aPosition)
+{
+	GamePositionOnBoard tetraminoPositionInDetail = getCurrentDetail()->convertAbsolutePositionToPositionInDetail(aPosition);
+	int tetraminoIndex = getCurrentDetail()->getIndexForPosition(tetraminoPositionInDetail);
+	Tetramino *tetraminoInDetail = getTetraminoOnIndex(tetraminoIndex);
+	bool availableLevesCount = false;
+	TetraminoType tetraminoType = tetraminoInDetail->getTetraminoType();
+	if (tetraminoType > kTetraminoEmpty && tetraminoType < kTetraminoBossQueen  && tetraminoInDetail->getTetraminoLivesCount() > 1)
+	{
+		availableLevesCount = true;
+	}
+	return availableLevesCount;
 }
 
 Tetramino* DetailViewDataSource::getTetraminoOnIndex(int aIndex)

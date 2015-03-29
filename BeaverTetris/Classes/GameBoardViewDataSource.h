@@ -20,7 +20,9 @@ public:
 	int getTetraminosCount();
 	std::string getTetraminoImageForIndex(int aIndex);
 	cocos2d::Vec2 getTetraminoPositionForIndex(int aIndex);
+	std::string getTetraminoLivesCountForIndex(int aIndex);
 	bool availableTetraminoOnIndex(int aIndex);
+	bool availableLevesCountOnIndex(int aIndex);
 
 private:
 

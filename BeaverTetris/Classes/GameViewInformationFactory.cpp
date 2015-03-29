@@ -296,6 +296,11 @@ void GameViewInformationFactory::makeMainGameWorldData()
 	mainGameBoard.elementZOrder = kMainGameBoardZOrder;
 	_elementsInformation[mainGameBoardControllerKey] = mainGameBoard;
 
+	ViewElementInformation tetraminoLivesCountView;
+	tetraminoLivesCountView.elementPosition = Vec2(0, 0);
+	tetraminoLivesCountView.elementZOrder = 0;
+	_elementsInformation[tetraminoLivesCountViewKey] = tetraminoLivesCountView;
+
 	ViewElementInformation mainGameAnimation;
 	mainGameAnimation.elementPosition = Vec2(gameBoardOffsetX, gameBoardOffsetY);
 	mainGameAnimation.elementZOrder = kMainGameAnimationZOrder;
