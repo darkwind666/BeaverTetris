@@ -18,8 +18,10 @@ public:
 private:
 
 	std::map<std::string, SpellInformation> _spellsInformations;
+	std::map<std::string, int> _spellsCosts;
 
 	void setNewSpellsToPlayer();
+	std::map<std::string, int> getSpellsCosts();
 	std::map<std::string, SpellInformation> getSpellsInformation();
 
 };

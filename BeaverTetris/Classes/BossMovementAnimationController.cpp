@@ -39,6 +39,7 @@ Node* BossMovementAnimationController::getBossViewWithStartPosition(GamePosition
 {
 	TetraminoViewController *tetraminoView = new TetraminoViewController();
 	int tetraminoIndex = _gameBoard->getIndexForPosition(aStartPosition);
+	_gameBoardController->cleanTetraminoOnIndex(tetraminoIndex);
 	Vec2 tetraminoViewPosition = _gameBoardViewDataSource->getTetraminoPositionForIndex(tetraminoIndex);
 	tetraminoView->setPosition(tetraminoViewPosition);
 	string tetraminoTexture = _gameBoardViewDataSource->getTetraminoImageForIndex(tetraminoIndex);

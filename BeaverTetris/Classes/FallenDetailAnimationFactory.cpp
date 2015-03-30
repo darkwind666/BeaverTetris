@@ -127,7 +127,7 @@ function<void(Node*)>  FallenDetailAnimationFactory::getAnimationEndCallbackWith
 		{
 			Node *child = *childrenIterator;
 			TetraminoViewController *view = (TetraminoViewController*)child;
-			int childTag = view->getTag();
+			int childTag = child->getTag();
 			int index = childTag + (detailPositionDifference.yPosition * gameBoardWidth) + detailPositionDifference.xPosition;
 			string childName = view->getTextureName();
 			gameBoardController->drawTetraminoTextureOnIndex(childName, index);

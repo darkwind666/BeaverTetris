@@ -24,3 +24,18 @@ const string levelGameEventsKey = string("gameEvents");
 const string levelGameEventIntervalKey = string("eventInterval");
 const string levelGameEventDetailsCountKey = string("detailsCount");
 const string levelGameEventDurationKey = string("eventDuration");
+
+const string gameTetraminosFileKey = string("GameTetraminos.xml");
+const string gameTetraminosDataKey = string("tetraminosData");
+const string gameTetraminosKey = string("tetraminos");
+const string gameTetraminoTypeKey = string("type");
+const string gameTetraminoLivesCountKey = string("lives");
+const string gameTetraminoCostKey = string("cost");
+const string awardForFullTetraminosLineKey = string("awardForFullTetraminosLine");
+const string awardForElementInTetraminosChainKey = string("awardForElementInTetraminosChain");
+const string awardForCombinationKey = string("award");
+
+const string gameSpellsFileKey = string("GameSpells.xml");
+const string gameSpellsDataKey = string("spells");
+const string gameSpellTypeKey = string("type");
+const string gameSpellCostKey = string("cost");

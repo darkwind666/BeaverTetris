@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<spells>
+  <spell type="rocketSpell" cost="60"/>
+  <spell type="randomExplosionsSpell" cost="120"/>
+  <spell type="firestormSpell" cost="260"/>
+  <spell type="cohesionSpell" cost="310"/>
+</spells>

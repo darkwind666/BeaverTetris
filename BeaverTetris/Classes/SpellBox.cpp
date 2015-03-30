@@ -11,12 +11,16 @@
 #include "CurrentLevelDataSource.h"
 #include "CurrentPlayerDataSource.h"
 #include "KeysForEnumsDataSource.h"
+#include "pugixml.hpp"
+#include "GameBalanceDataConstants.h"
 
 using namespace std;
+using namespace pugi;
 
 SpellBox::SpellBox()
 {
 	setNewSpellsToPlayer();
+	_spellsCosts = getSpellsCosts();
 	_spellsInformations = getSpellsInformation();
 }
 
@@ -39,34 +43,53 @@ void SpellBox::setNewSpellsToPlayer()
 	}
 }
 
+map<string, int> SpellBox::getSpellsCosts()
+{
+	map<string, int> spellsCosts;
+	map<TetraminoType, TetraminoInformation> tetraminosData;
+	xml_document spellsFile;
+	xml_parse_result result = spellsFile.load_file(gameSpellsFileKey.c_str());
+	if (result)
+	{
+		xml_node spells = spellsFile.child(gameSpellsDataKey.c_str());
+		for (xml_node spell = spells.first_child(); spell; spell = spell.next_sibling())
+		{
+			string spellType = spell.attribute(gameSpellTypeKey.c_str()).as_string();
+			int spellCost = spell.attribute(gameSpellCostKey.c_str()).as_int();
+			spellsCosts[spellType] = spellCost;
+		}
+	}
+	return spellsCosts;
+}
+
 map<string, SpellInformation> SpellBox::getSpellsInformation()
 {
 
 	map<string, SpellInformation> spellInformation;
 
 	SpellInformation removeCurrentDetail;
-	removeCurrentDetail.spellCost = 60;
+	removeCurrentDetail.spellCost = _spellsCosts[removeCurrentDetailSpellKey];
 	RocketSpell *rocketSpell = new RocketSpell();
 	removeCurrentDetail.spell = rocketSpell;
 	ServiceLocator::setServiceForKey(rocketSpell, rocketSpellModelKey);
 	spellInformation[removeCurrentDetailSpellKey] = removeCurrentDetail;
 
 	SpellInformation firestorm;
-	firestorm.spellCost = 120;
+	firestorm.spellCost = _spellsCosts[firestormSpellKey];
 	FirestromSpell *firestromSpell = new FirestromSpell();
 	firestorm.spell = firestromSpell;
 	ServiceLocator::setServiceForKey(firestromSpell, firestormSpellModelKey);
 	spellInformation[firestormSpellKey] = firestorm;
 
 	SpellInformation  removeRandomTetraminos;
-	removeRandomTetraminos.spellCost = 260;
+	removeRandomTetraminos.spellCost = _spellsCosts[removeRandomTetraminosSpellKey];
 	RandomExplosionsSpell *randomExplosionsSpell = new RandomExplosionsSpell();
 	removeRandomTetraminos.spell = randomExplosionsSpell;
 	ServiceLocator::setServiceForKey(randomExplosionsSpell, randomExplosionsSpellModelKey);
 	spellInformation[removeRandomTetraminosSpellKey] = removeRandomTetraminos;
 
 	SpellInformation cohesion;
-	cohesion.spellCost = 310;
+	cohesion.spellCost = _spellsCosts[cohesionSpellKey];
 	CohesionSpell *cohesionSpell = new CohesionSpell();
 	cohesion.spell = cohesionSpell;
 	ServiceLocator::setServiceForKey(cohesionSpell, cohesionSpellModelKey);

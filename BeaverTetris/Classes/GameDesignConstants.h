@@ -14,8 +14,6 @@ const int standartDetailWidth = 3;
 const int standartDetailHeight = 3;
 
 const int tetraminosInChainCount = 4;
-const int prizeForChainConstant = 1;
-const int playerPrizeForLine = 4;
 
 const int randomExplosionsCount = 10;
 const int meteorsCount = 5;

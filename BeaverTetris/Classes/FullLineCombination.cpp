@@ -4,8 +4,8 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "Tetramino.h"
-#include "GameDesignConstants.h"
 #include "ExplosionAnimationDelegate.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
@@ -13,6 +13,8 @@ FullLineCombination::FullLineCombination(GameBoard *aGameBoard)
 {
 	_gameBoard = aGameBoard;
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
+	TetraminosFactory *tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
+	_playerPrizeForLine = tetraminosFactory->getAwardForFullTetraminosLine();
 	_delegate = NULL;
 }
 
@@ -115,7 +117,7 @@ int FullLineCombination::getAwardForTetramino(Tetramino *aTetramino)
 
 void FullLineCombination::addAwardToPlayerScore(int aAward)
 {
-	int playerAwardForLine = playerPrizeForLine + aAward;
+	int playerAwardForLine = _playerPrizeForLine + aAward;
 	int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
 	int newPlayerScore = currentPlayerScore + playerAwardForLine;
 	_currentPlayerDataSource->setPlayerScore(newPlayerScore);

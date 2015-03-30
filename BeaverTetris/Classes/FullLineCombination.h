@@ -21,6 +21,7 @@ private:
 	GameBoard *_gameBoard;
 	CurrentPlayerDataSource *_currentPlayerDataSource;
 	ExplosionAnimationDelegate *_delegate;
+	int _playerPrizeForLine;
 
 	void checkFullLineInBoardRow(int aRow);
 	bool fullLineCheck(int lineIndex);

@@ -1356,5 +1356,11 @@
     <Xml Include="..\Resources\GameLevels.xml">
       <Filter>GameBalance</Filter>
     </Xml>
+    <Xml Include="..\Resources\GameTetraminos.xml">
+      <Filter>GameBalance</Filter>
+    </Xml>
+    <Xml Include="..\Resources\GameSpells.xml">
+      <Filter>GameBalance</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

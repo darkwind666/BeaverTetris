@@ -17,7 +17,7 @@ private:
 	GameBoard *_gameBoard;
 
 	void writeTetraminoRowFromDetail(int aRow, TetraminoDetail *aTetraminoDetail);
-	bool checkTetraminoForPlacingInBoardRow(Tetramino *aTetramino, int aRow, TetraminoDetail *aTetraminoDetail);
+	bool checkTetraminoForPlacingInBoardRowAndColumn(Tetramino *aTetramino, int aRow, int aColumn, TetraminoDetail *aTetraminoDetail);
 
 };
 

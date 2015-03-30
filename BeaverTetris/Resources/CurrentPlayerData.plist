@@ -6,10 +6,10 @@
         <key>PlayerAvailableSpellsCount</key>
         <integer>4</integer>
         <key>PlayerName</key>
-        <string>в</string>
+        <string>а</string>
         <key>PlayerScore</key>
-        <integer>3000</integer>
+        <integer>13464</integer>
         <key>PlayerCompletedLevelsCount</key>
-        <integer>9</integer>
+        <integer>10</integer>
     </dict>
 </plist>

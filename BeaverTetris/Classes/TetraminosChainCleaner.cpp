@@ -5,7 +5,7 @@
 #include "CurrentPlayerDataSource.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
-#include "GameDesignConstants.h"
+#include "TetraminosFactory.h"
 
 using namespace std;
 
@@ -13,6 +13,8 @@ TetraminosChainCleaner::TetraminosChainCleaner(GameBoard *aGameBoard)
 {
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_gameBoard = aGameBoard;
+	TetraminosFactory *tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
+	_prizeForChainConstant = tetraminosFactory->getAwardForElementInTetraminosChain();
 	_delegate = NULL;
 }
 
@@ -38,13 +40,13 @@ void TetraminosChainCleaner::setAwardToPlayerFromTetraminos(vector<GamePositionO
 {
 	if (_delegate == NULL)
 	{
-		setTetraminosAward(aTetraminos);
+		int awardForChain = getAwardForChainForTetraminos(aTetraminos);
+		addAwardToPlayer(awardForChain);
 	}
 }
 
-void TetraminosChainCleaner::setTetraminosAward(std::vector<GamePositionOnBoard> aTetraminos)
+void TetraminosChainCleaner::addAwardToPlayer(int awardForChain)
 {
-	int awardForChain = getAwardForChainForTetraminos(aTetraminos);
 	int currentPlayerScore = _currentPlayerDataSource->getPlayerScore();
 	_currentPlayerDataSource->setPlayerScore(currentPlayerScore + awardForChain);
 }
@@ -57,7 +59,8 @@ int TetraminosChainCleaner::getAwardForChainForTetraminos(vector<GamePositionOnB
 	{
 		GamePositionOnBoard tetraminoPosition = *tetraminosIterator;
 		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(tetraminoPosition.xPosition,tetraminoPosition.yPosition);
-		award += ((tetraminoInBoard->getTetraminoCost()) + prizeForChainConstant);
+		int tetraminoCost = tetraminoInBoard->getTetraminoCost();
+		award += (tetraminoCost + _prizeForChainConstant);
 	}
 	return award;
 }
@@ -96,8 +99,9 @@ void TetraminosChainCleaner::sendRemoveTetraminosMassagesToDelegate(vector<GameP
 
 void TetraminosChainCleaner::sendCallbackWithAwardForTetraminosToDelegate(vector<GamePositionOnBoard> aTetraminos)
 {
-	function<void()> callback = [this, aTetraminos](){
-			setTetraminosAward(aTetraminos);
+	int awardForChain = getAwardForChainForTetraminos(aTetraminos);
+	function<void()> callback = [this, awardForChain](){
+			addAwardToPlayer(awardForChain);
 		};
 	_delegate->setCallback(callback);
 }

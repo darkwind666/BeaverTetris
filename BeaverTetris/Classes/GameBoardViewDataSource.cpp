@@ -96,7 +96,10 @@ bool GameBoardViewDataSource::availableLevesCountOnIndex(int aIndex)
 	else
 	{
 		GamePositionOnBoard tetraminoPosition = _gameBoard->getPositionForIndex(aIndex);
-		availableLevesCount = _currentDetailViewDataSource->availableLevesCountOnIndexForAbsolutePosition(tetraminoPosition);
+		if (_currentDetailTetraminosChecker->checkPositionInCurrentDetail(tetraminoPosition))
+		{
+			availableLevesCount = _currentDetailViewDataSource->availableLevesCountOnIndexForAbsolutePosition(tetraminoPosition);
+		}
 	}
 	return availableLevesCount;
 }

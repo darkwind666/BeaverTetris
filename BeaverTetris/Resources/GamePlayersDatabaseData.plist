@@ -7,9 +7,33 @@
         <array>
             <dict>
                 <key>PlayerName</key>
+                <string>а</string>
+                <key>PlayerScore</key>
+                <integer>13464</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
+                <string>в</string>
+                <key>PlayerScore</key>
+                <integer>12354</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
+                <string>в</string>
+                <key>PlayerScore</key>
+                <integer>12156</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
                 <string>ва</string>
                 <key>PlayerScore</key>
                 <integer>7915</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
+                <string>в</string>
+                <key>PlayerScore</key>
+                <integer>7441</integer>
             </dict>
             <dict>
                 <key>PlayerName</key>

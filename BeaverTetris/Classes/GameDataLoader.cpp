@@ -29,7 +29,7 @@ void GameDataLoader::loadResources()
 	CurrentPlayerDataSource *currentPlayerDataSource = new CurrentPlayerDataSource(gameLevelsDataSource);
 	ServiceLocator::setServiceForKey(currentPlayerDataSource, currentPlayerDataSourceKey);
 
-	TetraminosFactory *tetrominosFactory = new TetraminosFactory();
+	TetraminosFactory *tetrominosFactory = new TetraminosFactory(keysForEnumsDataSource);
 	ServiceLocator::setServiceForKey(tetrominosFactory, tetrominosFactoryKey);
 
 	GamePlayersDatabase *gamePlayersDatabase = new GamePlayersDatabase();

@@ -21,9 +21,10 @@ private:
 	ExplosionAnimationDelegate *_delegate;
 	CurrentPlayerDataSource *_currentPlayerDataSource;
 	GameBoard *_gameBoard;
+	int _prizeForChainConstant;
 
 	void setAwardToPlayerFromTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
-	void setTetraminosAward(std::vector<GamePositionOnBoard> aTetraminos);
+	void addAwardToPlayer(int awardForChain);
 	int getAwardForChainForTetraminos(std::vector<GamePositionOnBoard> aTetraminos);
 	void removeTetraminosWithPositions(std::vector<GamePositionOnBoard> aTetraminos);
 	
