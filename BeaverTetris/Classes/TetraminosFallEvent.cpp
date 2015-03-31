@@ -54,7 +54,7 @@ void TetraminosFallEvent::runEvent()
 vector<TetraminoDetail*> TetraminosFallEvent::getTetraminoDetailsForFalling()
 {
 	vector<TetraminoDetail*> tetraminoDetails;
-	for (int detailIndex = 0; detailIndex <= _detailsCount; detailIndex++)
+	for (int detailIndex = 0; detailIndex < _detailsCount; detailIndex++)
 	{
 		TetraminoDetail *newDetail = getNewDetail();
 		tetraminoDetails.push_back(newDetail);

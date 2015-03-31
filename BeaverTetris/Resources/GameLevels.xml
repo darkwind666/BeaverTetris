@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <levels>
-  <level levelName="StartLevel" levelAward="45">
+  <level levelName="StartLevel" levelAward="65">
     <winCondition winType="PlaceDetails">
       <detailsCount>40</detailsCount>
     </winCondition>
     <gameEvents>
-      <accelerateEvent eventInterval="50" eventDuration="120" fallingSpeed="5"/>
+      <accelerateEvent eventInterval="50" eventDuration="120" fallingSpeed="20"/>
     </gameEvents>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -13,12 +13,12 @@
       <tetraminoType>blueTetramino</tetraminoType>
     </tetraminosTypes>
   </level>
-  <level levelName="StartGoodTimeLevel" levelAward="107">
+  <level levelName="StartGoodTimeLevel" levelAward="137">
     <winCondition winType="RemainTime">
-      <timeCount>320</timeCount>
+      <timeCount>260</timeCount>
     </winCondition>
     <gameEvents>
-      <fallDetailsEvent eventInterval="50" detailsCount="4"/>
+      <fallDetailsEvent eventInterval="50" detailsCount="2"/>
     </gameEvents>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -30,10 +30,10 @@
       <spell type="rocketSpell"/>
     </spells>
   </level>
-  <level levelName="StartBlockCollectionLevel" levelAward="210">
+  <level levelName="StartBlockCollectionLevel" levelAward="280">
     <winCondition winType="RemoveTetraminos">
-        <tetraminos type="redTetramino" count="30"/>
-        <tetraminos type="greenTetramino" count="30"/>
+        <tetraminos type="redTetramino" count="17"/>
+        <tetraminos type="greenTetramino" count="17"/>
     </winCondition>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -42,11 +42,11 @@
       <tetraminoType>blackTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="50" eventDuration="320" fallingSpeed="5"/>
-      <fallDetailsEvent eventInterval="230" detailsCount="4"/>
+      <accelerateEvent eventInterval="50" eventDuration="250" fallingSpeed="20"/>
+      <fallDetailsEvent eventInterval="260" detailsCount="2"/>
     </gameEvents>
   </level>
-  <level levelName="StartBossLevel" levelAward="450">
+  <level levelName="StartBossLevel" levelAward="470">
     <winCondition winType="Boss">
       <boss type="queenBoss" count="1"/>
     </winCondition>
@@ -57,16 +57,16 @@
       <tetraminoType>blackTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="110" eventDuration="100" fallingSpeed="5"/>
-      <fallDetailsEvent eventInterval="220" detailsCount="4"/>
+      <accelerateEvent eventInterval="110" eventDuration="100" fallingSpeed="15"/>
+      <fallDetailsEvent eventInterval="220" detailsCount="3"/>
     </gameEvents>
     <spells>
-      <spell type="firestormSpell" count="5"/>
+      <spell type="randomExplosionsSpell" count="10"/>
     </spells>
   </level>
   <level levelName="MiddleLevel" levelAward="540">
     <winCondition winType="PlaceDetails">
-      <detailsCount>90</detailsCount>
+      <detailsCount>60</detailsCount>
     </winCondition>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -76,12 +76,15 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="40" eventDuration="370" fallingSpeed="5"/>
+      <accelerateEvent eventInterval="40" eventDuration="370" fallingSpeed="15"/>
     </gameEvents>
+    <spells>
+      <spell type="randomExplosionsSpell" count="14"/>
+    </spells>
   </level>
   <level levelName="MiddleGoodTimeLevel" levelAward="740">
     <winCondition winType="RemainTime">
-      <timeCount>400</timeCount>
+      <timeCount>360</timeCount>
     </winCondition>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -91,7 +94,7 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <fallDetailsEvent eventInterval="40" detailsCount="5"/>
+      <fallDetailsEvent eventInterval="40" detailsCount="4"/>
     </gameEvents>
   </level>
   <level levelName="MiddleBossLevel" levelAward="1720">
@@ -106,18 +109,19 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="50" eventDuration="140" fallingSpeed="5"/>
-      <fallDetailsEvent eventInterval="100" detailsCount="5"/>
+      <accelerateEvent eventInterval="50" eventDuration="140" fallingSpeed="10"/>
+      <fallDetailsEvent eventInterval="100" detailsCount="4"/>
     </gameEvents>
     <spells>
-      <spell type="randomExplosionsSpell" count="10"/>
+      <spell type="firestormSpell" count="4"/>
+      <spell type="randomExplosionsSpell" count="18"/>
     </spells>
   </level>
   <level levelName="EndBlockCollectionLevel" levelAward="2800">
     <winCondition winType="RemoveTetraminos">
-      <tetraminos type="blueTetramino" count="60"/>
-      <tetraminos type="greenTetramino" count="60"/>
-      <tetraminos type="blackTetramino" count="30"/>
+      <tetraminos type="blueTetramino" count="40"/>
+      <tetraminos type="greenTetramino" count="40"/>
+      <tetraminos type="blackTetramino" count="27"/>
     </winCondition>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -127,13 +131,17 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="80" eventDuration="140" fallingSpeed="5"/>
-      <fallDetailsEvent eventInterval="90" detailsCount="6"/>
+      <accelerateEvent eventInterval="80" eventDuration="140" fallingSpeed="10"/>
+      <fallDetailsEvent eventInterval="90" detailsCount="5"/>
     </gameEvents>
+    <spells>
+      <spell type="firestormSpell" count="6"/>
+      <spell type="randomExplosionsSpell" count="21"/>
+    </spells>
   </level>
   <level levelName="EndLevel" levelAward="3600">
     <winCondition winType="PlaceDetails">
-      <detailsCount>90</detailsCount>
+      <detailsCount>77</detailsCount>
     </winCondition>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -146,6 +154,7 @@
       <accelerateEvent eventInterval="10" eventDuration="500" fallingSpeed="5"/>
     </gameEvents>
     <spells>
+      <spell type="firestormSpell" count="8"/>
       <spell type="cohesionSpell" count="10"/>
     </spells>
   </level>
@@ -162,7 +171,11 @@
     </tetraminosTypes>
     <gameEvents>
       <accelerateEvent eventInterval="20" eventDuration="350" fallingSpeed="5"/>
-      <fallDetailsEvent eventInterval="70" detailsCount="7"/>
+      <fallDetailsEvent eventInterval="70" detailsCount="6"/>
     </gameEvents>
+    <spells>
+      <spell type="firestormSpell" count="9"/>
+      <spell type="cohesionSpell" count="16"/>
+    </spells>
   </level>
 </levels>
