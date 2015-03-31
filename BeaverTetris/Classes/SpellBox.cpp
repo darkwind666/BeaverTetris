@@ -10,7 +10,6 @@
 #include "CohesionSpell.h"
 #include "CurrentLevelDataSource.h"
 #include "CurrentPlayerDataSource.h"
-#include "KeysForEnumsDataSource.h"
 #include "pugixml.hpp"
 #include "GameBalanceDataConstants.h"
 
@@ -31,16 +30,23 @@ SpellBox::~SpellBox(void)
 
 void SpellBox::setNewSpellsToPlayer()
 {
-	CurrentLevelDataSource *currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
 	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
-	KeysForEnumsDataSource *keysForEnumsDataSource = (KeysForEnumsDataSource*)ServiceLocator::getServiceForKey(keysForEnumsDataSourceKey);
-	GameLevelInformation currentLevel = currentLevelDataSource->getCurrentLevelData();
-	SpellType currentLevelSpellType = currentLevel.addSpell;
-	if (currentLevelSpellType > kZeroSpell)
+	map<string, int> spellsData = getSpellsData();
+	map<string, int>::iterator spellsIterator;
+	for (spellsIterator = spellsData.begin(); spellsIterator != spellsData.end(); spellsIterator++)
 	{
-		string spellKey = keysForEnumsDataSource->getKeyForSpellType(currentLevelSpellType);
-		currentPlayerDataSource->setNewSpellForKey(spellKey);
+		string spellType = spellsIterator->first;
+		int spellCount = spellsIterator->second;
+		currentPlayerDataSource->setNewSpellCountForKey(spellCount, spellType);
 	}
+}
+
+map<string, int> SpellBox::getSpellsData()
+{
+	CurrentLevelDataSource *currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
+	GameLevelInformation currentLevel = currentLevelDataSource->getCurrentLevelData();
+	map<string, int> spellsData = currentLevel.spellsData;
+	return spellsData;
 }
 
 map<string, int> SpellBox::getSpellsCosts()

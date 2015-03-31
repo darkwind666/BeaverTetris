@@ -1,8 +1,6 @@
 #include "CurrentPlayerDataSource.h"
 #include "CurrentPlayerSerializer.h"
 #include "GameLevelsDataSource.h"
-#include "GameViewElementsKeys.h"
-
 
 using namespace std;
 
@@ -10,9 +8,7 @@ CurrentPlayerDataSource::CurrentPlayerDataSource(GameLevelsDataSource *aGameLeve
 {
 	_gameLevelsDataSource = aGameLevelsDataSource;
 	_currentPlayerSerializer = new CurrentPlayerSerializer();
-	_allSpellsNames = getAllSpellsNames();
 	_completedLevelsNames = vector <string>();
-	_availableSpellsNames = vector <string>();
 	_selectedGameLevelIndex = 0;
 	_isThereCurentPlayer = false;
 	setUpPlayer();
@@ -24,18 +20,6 @@ CurrentPlayerDataSource::~CurrentPlayerDataSource()
 	delete _currentPlayerSerializer;
 }
 
-vector <string> CurrentPlayerDataSource::getAllSpellsNames()
-{
-	vector <string> allSpellsNames;
-
-	allSpellsNames.push_back(removeCurrentDetailSpellKey);
-	allSpellsNames.push_back(firestormSpellKey);
-	allSpellsNames.push_back(removeRandomTetraminosSpellKey);
-	allSpellsNames.push_back(cohesionSpellKey);
-
-	return allSpellsNames;
-}
-
 void CurrentPlayerDataSource::setUpPlayer()
 {
 	if (_currentPlayerSerializer->availablePlayer())
@@ -43,7 +27,6 @@ void CurrentPlayerDataSource::setUpPlayer()
 		_isThereCurentPlayer = true;
 		_playerData = _currentPlayerSerializer->getSavedPlayer();
 		fillCompletedLevelsNames();
-		fillAvailableSpells();
 	}
 }
 
@@ -57,28 +40,17 @@ void CurrentPlayerDataSource::fillCompletedLevelsNames()
 	}
 }
 
-void CurrentPlayerDataSource::fillAvailableSpells()
-{
-	int availableSpellsCount = _playerData.playerAvailableSpellsCount;
-	for (int spellIndex = 0; spellIndex < availableSpellsCount; spellIndex++)
-	{
-		string spellName = _allSpellsNames[spellIndex];
-		_availableSpellsNames.push_back(spellName);
-	}
-}
-
 void CurrentPlayerDataSource::setNewPlayerWithName(string aNewPlayerName)
 {
 	PlayerInformation newPlayer;
 	newPlayer.playerName = aNewPlayerName;
 	newPlayer.playerScore = 0;
-	newPlayer.playerAvailableSpellsCount = 0;
+	newPlayer.spellsInformation = map<string, int>();
 	newPlayer.playerCompletedLevelsCount = 0;
 
 	_playerData = newPlayer;
 	_isThereCurentPlayer = true;
 	_completedLevelsNames.clear();
-	_availableSpellsNames.clear();
 	savePlayer();
 }	
 
@@ -92,13 +64,20 @@ void CurrentPlayerDataSource::completeLevel(string aCompletedLevelName)
 	}
 }
 
-void CurrentPlayerDataSource::setNewSpellForKey(string aKey)
+void CurrentPlayerDataSource::setNewSpellCountForKey(int spellCount, string aKey)
 {
-	vector <string>::iterator it = find(_availableSpellsNames.begin(), _availableSpellsNames.end(), aKey);
-	if (it == _availableSpellsNames.end())
+	map <string, int>::iterator it = _playerData.spellsInformation.find(aKey);
+	if (it == _playerData.spellsInformation.end())
 	{
-		_availableSpellsNames.push_back(aKey);
-		_playerData.playerAvailableSpellsCount = _playerData.playerAvailableSpellsCount++;
+		_playerData.spellsInformation[aKey] = spellCount;
+	}
+	else
+	{
+		int currentPlayerSpellCount = it->second;
+		if (currentPlayerSpellCount < spellCount)
+		{
+			_playerData.spellsInformation[aKey] = spellCount;
+		}
 	}
 }
 
@@ -107,12 +86,11 @@ void CurrentPlayerDataSource::cleanPlayer()
 	PlayerInformation zeroData;
 	zeroData.playerName = string("0");
 	zeroData.playerScore = 0;
-	zeroData.playerAvailableSpellsCount = 0;
+	zeroData.spellsInformation = map<string, int>();
 	zeroData.playerCompletedLevelsCount = 0;
 	_playerData = zeroData;
 	_isThereCurentPlayer = false;
 	_completedLevelsNames.clear();
-	_availableSpellsNames.clear();
 	if (_currentPlayerSerializer->availablePlayer())
 	{
 		_currentPlayerSerializer->cleanSavedPlayer();
@@ -156,10 +134,21 @@ int CurrentPlayerDataSource::getPlayerCompletedLevelsCount()
 
 int CurrentPlayerDataSource::getPlayerAvailableSpellsCount()
 {
-	return _playerData.playerAvailableSpellsCount;
+	return _playerData.spellsInformation.size();
 }
 
 int CurrentPlayerDataSource::getSelectedGameLevelIndex()
 {
 	return _selectedGameLevelIndex;
+}
+
+int CurrentPlayerDataSource::getSpellCountForKey(string aKey)
+{
+	int spellCount = 0;
+	map <string, int>::iterator it = _playerData.spellsInformation.find(aKey);
+	if (it != _playerData.spellsInformation.end())
+	{
+		spellCount = _playerData.spellsInformation[aKey];
+	}
+	return spellCount;
 }

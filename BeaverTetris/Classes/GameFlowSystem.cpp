@@ -58,7 +58,7 @@ void GameFlowSystem::makeAccelerationEventWithData(vector<GameEventInformation> 
 	{
 		int eventIndex = getIndexForTypeInEvents(kTimeAccelerationEvent, availableEvents);
 		GameEventInformation eventData = availableEvents[eventIndex];
-		_timeAccelerationEvent = new TimeAccelerationEvent(eventData.eventInterval, eventData.eventDuration);
+		_timeAccelerationEvent = new TimeAccelerationEvent(eventData.eventInterval, eventData.eventDuration, eventData.fallingSpeed);
 	}
 }
 

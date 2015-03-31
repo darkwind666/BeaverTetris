@@ -37,15 +37,15 @@ vector<PlayerControllInformation> SpellsViewDataSource::makeSpellsInformation()
 	removeCurrentDetail.keyboardKey = (int)EventKeyboard::KeyCode::KEY_1;
 	spellsInformation.push_back(removeCurrentDetail);
 
-	PlayerControllInformation firestormSpell;
-	firestormSpell.imageKey = firestormSpellKey;
-	firestormSpell.keyboardKey = (int)EventKeyboard::KeyCode::KEY_2;
-	spellsInformation.push_back(firestormSpell);
-
 	PlayerControllInformation removeRandomTetraminos;
 	removeRandomTetraminos.imageKey = removeRandomTetraminosSpellKey;
-	removeRandomTetraminos.keyboardKey = (int)EventKeyboard::KeyCode::KEY_3;
+	removeRandomTetraminos.keyboardKey = (int)EventKeyboard::KeyCode::KEY_2;
 	spellsInformation.push_back(removeRandomTetraminos);
+
+	PlayerControllInformation firestormSpell;
+	firestormSpell.imageKey = firestormSpellKey;
+	firestormSpell.keyboardKey = (int)EventKeyboard::KeyCode::KEY_3;
+	spellsInformation.push_back(firestormSpell);
 
 	PlayerControllInformation cohesionSpell;
 	cohesionSpell.imageKey = cohesionSpellKey;

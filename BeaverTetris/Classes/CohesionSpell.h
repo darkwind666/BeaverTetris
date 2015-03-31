@@ -25,6 +25,7 @@ private:
 	GameBoard *_gameBoard;
 	CohesionSpellDelegate *_delegate;
 	TetraminosFactory *_tetraminosFactory;
+	int _cohesionCount;
 
 	std::vector<GamePositionOnBoard> getEmptyTetraminosForCohesion();
 

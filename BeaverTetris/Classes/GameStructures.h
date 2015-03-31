@@ -82,7 +82,7 @@ struct PlayerInformation
 	std::string playerName;
 	int playerScore;
 	int playerCompletedLevelsCount;
-	int playerAvailableSpellsCount;
+	std::map<std::string, int> spellsInformation;
 };
 
 struct DatabaseInformation
@@ -123,6 +123,7 @@ struct GameEventInformation
 	int eventInterval;
 	int eventDuration;
 	int detailsCount;
+	int fallingSpeed;
 };
 
 struct GameLevelInformation
@@ -137,7 +138,7 @@ struct GameLevelInformation
 	int needToPlaceDetailsCount;
 	int remainTimes;
 	std::vector<TetraminosForWinInformation> tetraminosCollectionForWin;
-	SpellType addSpell;
+	std::map<std::string, int> spellsData;
 
 };
 

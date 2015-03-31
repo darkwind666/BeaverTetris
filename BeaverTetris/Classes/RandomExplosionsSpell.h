@@ -23,6 +23,7 @@ private:
 
 	GameBoard *_gameBoard;
 	ExplosionAnimationDelegate *_delegate;
+	int _randomExplosionsCount;
 
 	std::vector <GamePositionOnBoard> getTetraminosForExplosion();
 	void reduceLivesInTetraminos(std::vector <GamePositionOnBoard> aTetraminos);

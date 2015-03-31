@@ -11,7 +11,9 @@ public:
 
 	bool availablePlayer();
 	PlayerInformation getSavedPlayer();
+	std::map<std::string, int> getSpellsInformationFromData(cocos2d::ValueMap &aData);
 	void savePlayer(PlayerInformation aPlayer);
+	cocos2d::ValueMap getSpellsDataFromPlayer(PlayerInformation &aPlayer);
 	void cleanSavedPlayer();
 
 private:

@@ -1,11 +1,12 @@
 #include "RandomExplosionsSpell.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
-#include "GameDesignConstants.h"
 #include "GameHelper.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
 #include "ExplosionAnimationDelegate.h"
+#include "CurrentPlayerDataSource.h"
+#include "GameViewElementsKeys.h"
 
 using namespace std;
 
@@ -13,6 +14,8 @@ RandomExplosionsSpell::RandomExplosionsSpell(void)
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_delegate = NULL;
+	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
+	_randomExplosionsCount = currentPlayerDataSource->getSpellCountForKey(removeRandomTetraminosSpellKey);
 }
 
 
@@ -24,7 +27,7 @@ bool RandomExplosionsSpell::spellAvailable(void)
 {
 	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis();
 	bool spellAvailable = true;
-	if (availableTetraminos.size() < randomExplosionsCount)
+	if (availableTetraminos.size() < _randomExplosionsCount)
 	{
 		spellAvailable = false;
 	}
@@ -44,7 +47,7 @@ vector <GamePositionOnBoard> RandomExplosionsSpell::getTetraminosForExplosion()
 {
 	vector <GamePositionOnBoard> tetraminosForExplosion;
 	vector <GamePositionOnBoard> availableTetraminos = _gameBoard->getAvailableTetraminis();
-	for (int removeTetraminoIndex = 0; removeTetraminoIndex < randomExplosionsCount; removeTetraminoIndex++)
+	for (int removeTetraminoIndex = 0; removeTetraminoIndex < _randomExplosionsCount; removeTetraminoIndex++)
 	{
 		int randomTetramino = GameHelper::getRandomNumberFromUpInterval(availableTetraminos.size());
 		GamePositionOnBoard tetraminoPosition = availableTetraminos[randomTetramino];

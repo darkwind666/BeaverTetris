@@ -1,6 +1,8 @@
 #pragma once
 
 #include <vector>
+#include <map>
+#include <string>
 #include "GameStructures.h"
 #include "pugixml.hpp"
 #include "GameEnums.h"
@@ -24,7 +26,8 @@ private:
 	void fillLevelsInformation(std::vector<GameLevelInformation> &aLevelsInformation);
 	GameLevelInformation  getLevelFromNode(pugi::xml_node &node);
 	GameLevelInformation getDefaultLevel();
-	SpellType getSpellFromNode(pugi::xml_node &node);
+	std::map<std::string, int> getSpellsDataFromNode(pugi::xml_node &node);
+	std::map<std::string, int> getSpellsFromNode(pugi::xml_node &node);
 	std::vector<TetraminoType> getAvailableTetraminosFromNode(pugi::xml_node &node);
 	std::vector<TetraminoDetailType> getAvailableDetails();
 	std::vector<GameEventInformation> getAvailableEventsFromeNode(pugi::xml_node &node);

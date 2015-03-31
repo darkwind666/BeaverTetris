@@ -21,6 +21,7 @@ private:
 	std::map<std::string, int> _spellsCosts;
 
 	void setNewSpellsToPlayer();
+	std::map<std::string, int> getSpellsData();
 	std::map<std::string, int> getSpellsCosts();
 	std::map<std::string, SpellInformation> getSpellsInformation();
 

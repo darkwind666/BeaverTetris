@@ -5,7 +5,7 @@ const float standartTransitionDuration = 1.0f;
 const float onePercentActionDuration = 0.01;
 
 const float standardButtonActionDuration = 0.15f;
-const float gameControllButtonActionDuration = 0.1f;
+const float gameControllButtonActionDuration = 0.05f;
 const float standardButtonScaleForAction = 0.8f;
 
 const float startMenuActionDuration = 1.5f;
@@ -22,14 +22,14 @@ const float playerStatusPadActionDuration = 0.6f;
 const float createPlayerControllerAppearDuration = 0.6f;
 const float createPlayerControllerDisapperDuration = 0.3f;
 
-const float fallActionDurationPerTetramino = 0.0008f;
+const float fallActionDurationPerTetramino = 0.0006f;
 
-const float tetraminosExplosionDuration = 0.6f;
-const float tetraminoDisappearDuration = 0.1f;
-const float tetraminoAppearDuration = 0.3f;
+const float tetraminosExplosionDuration = 0.4f;
+const float tetraminoDisappearDuration = 0.04f;
+const float tetraminoAppearDuration = 0.04f;
 
 const float rocketLaunchActionDurationPerPoint = 0.002f;
-const float meteorActionDurationPerPoint = 0.0009f;
+const float meteorActionDurationPerPoint = 0.0005f;
 
 const float gameRecordsBoardActionDuration = 1.5f;
 const float gameRecordsBeaverActionDuration = 1.5f;

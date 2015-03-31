@@ -43,9 +43,23 @@ PlayerInformation CurrentPlayerSerializer::getSavedPlayer()
 	PlayerInformation player;
 	player.playerName = playerData[playerNameKey].asString();
 	player.playerScore = playerData[playerScoreKey].asInt();
-	player.playerAvailableSpellsCount = playerData[playerAvailableSpellsCountKey].asInt();
 	player.playerCompletedLevelsCount = playerData[playerCompletedLevelsCountKey].asInt();
+	player.spellsInformation = getSpellsInformationFromData(playerData);
 	return player;
+}
+
+map<string, int> CurrentPlayerSerializer::getSpellsInformationFromData(ValueMap &aData)
+{
+	map<string, int> spellsInformation;
+	ValueMap spellsData = aData[playerSpellsInformationKey].asValueMap();
+	ValueMap::iterator spellsIterator;
+	for (spellsIterator = spellsData.begin(); spellsIterator != spellsData.end(); spellsIterator++)
+	{
+		string spellKey = spellsIterator->first;
+		int spellCount = spellsIterator->second.asInt();
+		spellsInformation[spellKey] = spellCount;
+	}
+	return spellsInformation;
 }
 
 void CurrentPlayerSerializer::savePlayer(PlayerInformation aPlayer)
@@ -53,9 +67,24 @@ void CurrentPlayerSerializer::savePlayer(PlayerInformation aPlayer)
 	ValueMap playerData = ValueMap();
 	playerData[playerNameKey] = Value(aPlayer.playerName);
 	playerData[playerScoreKey] = Value(aPlayer.playerScore);
-	playerData[playerAvailableSpellsCountKey] = Value(aPlayer.playerAvailableSpellsCount);
 	playerData[playerCompletedLevelsCountKey] = Value(aPlayer.playerCompletedLevelsCount);
+	ValueMap playerSpellsData = getSpellsDataFromPlayer(aPlayer);
+	playerData[playerSpellsInformationKey] = Value(playerSpellsData);
 	_fileUtils->writeToFile(playerData ,currentPlayerDataKey);
+}
+
+ValueMap CurrentPlayerSerializer::getSpellsDataFromPlayer(PlayerInformation &aPlayer)
+{
+	ValueMap spellsData;
+	map<string, int> spellsInformation = aPlayer.spellsInformation;
+	map<string, int>::iterator spellsIterator;
+	for (spellsIterator = spellsInformation.begin(); spellsIterator != spellsInformation.end(); spellsIterator++)
+	{
+		string spellKey = spellsIterator->first;
+		int spellCount = spellsIterator->second;
+		spellsData[spellKey] = Value(spellCount);
+	}
+	return spellsData;
 }
 
 void CurrentPlayerSerializer::cleanSavedPlayer()

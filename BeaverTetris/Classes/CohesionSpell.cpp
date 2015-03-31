@@ -1,12 +1,15 @@
 #include "CohesionSpell.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
-#include "GameDesignConstants.h"
 #include "GameHelper.h"
 #include "GameBoard.h"
 #include "Tetramino.h"
 #include "CohesionSpellDelegate.h"
 #include "TetraminosFactory.h"
+#include "CurrentPlayerDataSource.h"
+#include "GameViewElementsKeys.h"
+#include "CurrentPlayerDataSource.h"
+#include "GameViewElementsKeys.h"
 
 using namespace std;
 
@@ -15,6 +18,8 @@ CohesionSpell::CohesionSpell(void)
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_tetraminosFactory = (TetraminosFactory*)ServiceLocator::getServiceForKey(tetrominosFactoryKey);
 	_delegate = NULL;
+	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
+	_cohesionCount = currentPlayerDataSource->getSpellCountForKey(cohesionSpellKey);
 }
 
 CohesionSpell::~CohesionSpell(void)
@@ -25,7 +30,7 @@ bool CohesionSpell::spellAvailable(void)
 {
 	bool spellAvailable = true;
 	vector<GamePositionOnBoard> emptyTetraminosForCohesion = getEmptyTetraminosForCohesion();
-	if (emptyTetraminosForCohesion.size() < minEmptyTetraminoForCohesionCount)
+	if (emptyTetraminosForCohesion.size() < _cohesionCount)
 	{
 		spellAvailable = false;
 	}
@@ -36,7 +41,7 @@ void CohesionSpell::castSpell()
 {
 	srand(time(0));
 	vector<GamePositionOnBoard> emptyTetraminosForCohesion = getEmptyTetraminosForCohesion();
-	for (int emptyTetraminosIndex = 0; emptyTetraminosIndex < cohesionCount; emptyTetraminosIndex++)
+	for (int emptyTetraminosIndex = 0; emptyTetraminosIndex < _cohesionCount; emptyTetraminosIndex++)
 	{
 		int randomEmptyTetraminoIndex = GameHelper::getRandomNumberFromUpInterval(emptyTetraminosForCohesion.size());
 		GamePositionOnBoard emptyTetraminoPosition = emptyTetraminosForCohesion[randomEmptyTetraminoIndex];

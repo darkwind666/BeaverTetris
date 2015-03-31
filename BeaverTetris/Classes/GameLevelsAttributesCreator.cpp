@@ -32,7 +32,9 @@ map< GameEventType, function<void(GameEventInformation&, xml_node&)> > GameLevel
 
 	eventsFactories[kTimeAccelerationEvent] = [](GameEventInformation &event, xml_node &node){
 		int eventDuration = node.attribute(levelGameEventDurationKey.c_str()).as_int();
+		int fallingSpeed = node.attribute(levelGameEventFallingSpeedKey.c_str()).as_int();
 		event.eventDuration = eventDuration;
+		event.fallingSpeed = fallingSpeed;
 	};
 
 	return eventsFactories;

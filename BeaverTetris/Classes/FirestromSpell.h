@@ -22,6 +22,7 @@ private:
 
 	GameBoard *_gameBoard;
 	FirestormSpellDelegate *_delegate;
+	int _meteorsCount;
 
 	GamePositionOnBoard getExplosionPositionFromMeteorX(int xPosition);
 	int getExplosionHeightFromExplosionX(int xPosition);

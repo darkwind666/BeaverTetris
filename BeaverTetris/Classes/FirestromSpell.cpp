@@ -6,6 +6,8 @@
 #include "GameBoard.h"
 #include "Tetramino.h"
 #include "FirestormSpellDelegate.h"
+#include "CurrentPlayerDataSource.h"
+#include "GameViewElementsKeys.h"
 
 using namespace std;
 
@@ -13,6 +15,8 @@ FirestromSpell::FirestromSpell(void)
 {
 	_gameBoard = (GameBoard*)ServiceLocator::getServiceForKey(gameBoardKey);
 	_delegate = NULL;
+	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
+	_meteorsCount = currentPlayerDataSource->getSpellCountForKey(firestormSpellKey);
 }
 
 FirestromSpell::~FirestromSpell(void)
@@ -33,7 +37,7 @@ bool FirestromSpell::spellAvailable(void)
 void FirestromSpell::castSpell()
 {
 	srand(time(0));
-	for (int meteorIndex = 0; meteorIndex <= meteorsCount; meteorIndex++)
+	for (int meteorIndex = 0; meteorIndex < _meteorsCount; meteorIndex++)
 	{
 		int randomMeteorPositionX = GameHelper::getRandomNumberFromUpInterval(_gameBoard->getGameBoardWidth());
 		GamePositionOnBoard explosionPosition = getExplosionPositionFromMeteorX(randomMeteorPositionX);
