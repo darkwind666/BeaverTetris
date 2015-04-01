@@ -6,20 +6,19 @@
         <key>PlayerName</key>
         <string>в</string>
         <key>PlayerScore</key>
-        <integer>90000</integer>
+        <integer>97509</integer>
         <key>PlayerCompletedLevelsCount</key>
-        <integer>1</integer>
+        <integer>10</integer>
         <key>PlayerSpellsInformation</key>
         <dict>
+            <key>cohesionSpell</key>
+            <integer>16</integer>
+            <key>firestormSpell</key>
+            <integer>9</integer>
+            <key>randomExplosionsSpell</key>
+            <integer>10</integer>
             <key>rocketSpell</key>
             <integer>0</integer>
-			<key>firestormSpell</key>
-            <integer>5</integer>
-			<key>randomExplosionsSpell</key>
-            <integer>10</integer>
-			<key>cohesionSpell</key>
-            <integer>7</integer>
         </dict>
     </dict>
-    <dict/>
 </plist>

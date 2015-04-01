@@ -2,6 +2,7 @@
 
 #include "SpellInterface.h"
 #include "ServiceInterface.h"
+#include "GameEnums.h"
 
 class GameBoard;
 class AddLineToBoardBottomSpellDelegate;
@@ -29,6 +30,7 @@ private:
 	void riseTetraminoInBoardOnXY(int xPosition, int yPosition);
 	void addRowToBottom();
 	void fillBottomWithRandomTetraminos();
+	TetraminoType getTetraminoTypeForXPosition(int xPosition);
 	void makeGapInBottom();
 	bool checkEmptyTetraminosInBottom();
 	void separateTetraminos();

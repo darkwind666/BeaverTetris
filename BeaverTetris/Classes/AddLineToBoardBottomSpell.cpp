@@ -79,10 +79,22 @@ void  AddLineToBoardBottomSpell::fillBottomWithRandomTetraminos()
 	int boardWidth = _gameBoard->getGameBoardWidth();
 	for (int widthIndex = 0; widthIndex < boardWidth; widthIndex++)
 	{
-		TetraminoType randomTetraminoType = (TetraminoType)GameHelper::getRandomNumberFromUpInterval(kTetraminoBossQueen);
+		TetraminoType randomTetraminoType = getTetraminoTypeForXPosition(widthIndex);
 		Tetramino *newTetramino = _tetraminosFactory->getNewTetraminoWithType(randomTetraminoType);
 		_gameBoard->setTetraminoXYposition(newTetramino, widthIndex, 0);
 	}
+}
+
+TetraminoType AddLineToBoardBottomSpell::getTetraminoTypeForXPosition(int xPosition)
+{
+	TetraminoType randomTetraminoType = (TetraminoType)GameHelper::getRandomNumberFromUpInterval(kTetraminoBossQueen);
+	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xPosition, 1);
+	TetraminoType tetraminoInBoardType = tetraminoInBoard->getTetraminoType();
+	while (tetraminoInBoardType == randomTetraminoType && tetraminoInBoardType != kTetraminoEmpty)
+	{
+		randomTetraminoType = (TetraminoType)GameHelper::getRandomNumberFromUpInterval(kTetraminoBossQueen);
+	}
+	return randomTetraminoType;
 }
 
 void AddLineToBoardBottomSpell::makeGapInBottom()
