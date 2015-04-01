@@ -32,6 +32,7 @@ public:
 	void rotateDetail();
 	GamePositionOnBoard convertPositionInDetailToAbsolutePosition(GamePositionOnBoard aPosition);
 	GamePositionOnBoard convertAbsolutePositionToPositionInDetail(GamePositionOnBoard aPosition);
+	bool absolutePositionInDetail(GamePositionOnBoard aPosition);
 
 private:
 

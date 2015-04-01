@@ -699,6 +699,9 @@
     <ClCompile Include="..\Classes\StartMainGamePlayerScoreDataSource.cpp">
       <Filter>Models\DataSources</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CurrentDetailExplosionFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1345,6 +1348,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\StartMainGamePlayerScoreDataSource.h">
       <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentDetailExplosionFactory.h">
+      <Filter>Factories</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

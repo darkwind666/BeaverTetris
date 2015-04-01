@@ -8,6 +8,11 @@
 #include "GameViewElementsKeys.h"
 #include "GameAnimationActionsConstants.h"
 #include "CocosNodesHelper.h"
+#include "CurrentDetailExplosionFactory.h"
+#include "FallenDetailAnimationFactory.h"
+#include "DetailViewDataSource.h"
+#include "TetraminoDetail.h"
+#include "CurrentDetailDataSource.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -18,6 +23,12 @@ FirestormSpellAnimationController::FirestormSpellAnimationController(GameBoardCo
 	_tetraminoExplosionFactory = new TetraminoExplosionFactory(aGameBoardController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_tetraminoExplosionFactory, this, explosionsForRemoveCurrentDetailSpellKey);
 
+	CurrentDetailExplosionFactory *currentDetailExplosionFactory = new CurrentDetailExplosionFactory(aGameBoardController);
+	_currentDetailExplosionFactory = currentDetailExplosionFactory;
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(currentDetailExplosionFactory, this, explosionsForRemoveCurrentDetailSpellKey); 
+
+	_fallenDetailAnimationFactory = getDetailFactoryWithGameBoardController(aGameBoardController);
+
 	FirestromSpell *firestromSpellModel = (FirestromSpell*)ServiceLocator::getServiceForKey(firestormSpellModelKey);
 	firestromSpellModel->setDelegate(this);
 }
@@ -25,6 +36,17 @@ FirestormSpellAnimationController::FirestormSpellAnimationController(GameBoardCo
 
 FirestormSpellAnimationController::~FirestormSpellAnimationController(void)
 {
+}
+
+FallenDetailAnimationFactory* FirestormSpellAnimationController::getDetailFactoryWithGameBoardController(GameBoardController *aGameBoardController)
+{
+	CurrentDetailDataSource *currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
+	function<TetraminoDetail*()> detailDataSource = [currentDetailDataSource](){
+		return currentDetailDataSource->getCurrentDetail();
+	};
+	DetailViewDataSource *detailViewDataSource = new DetailViewDataSource(detailDataSource);
+	FallenDetailAnimationFactory *detailFactory = new FallenDetailAnimationFactory(detailViewDataSource, aGameBoardController);
+	return detailFactory;
 }
 
 void FirestormSpellAnimationController::blowUpTetraminosAreaOnPosition(vector<GamePositionOnBoard> tetraminosPositions, GamePositionOnBoard aPosition)
@@ -66,4 +88,24 @@ void FirestormSpellAnimationController::removeTetraminoOnPositionXY(int xPositio
 {
 	FiniteTimeAction *actionWithTetraminoView = _tetraminoExplosionFactory->getRemoveTetraminoActionOnPositionXY(xPosition, yPosition);
 	_animationSynchonizer->addAnimationToQueue(actionWithTetraminoView);
+}
+
+void FirestormSpellAnimationController::removeCurrentDetailWithExplosionPosition(GamePositionOnBoard aPosition)
+{
+	FiniteTimeAction *meteorAnimation = getMeteorAnimationForFinalPosition(aPosition);
+	FiniteTimeAction *detailExplosion = _currentDetailExplosionFactory->getCurrentDetailExplosionAnimation();
+	FiniteTimeAction *removeEnimation = getCurrentDetailRemoveAnimation();
+	FiniteTimeAction *sequence = Sequence::create(meteorAnimation, detailExplosion, removeEnimation, NULL);
+	_animationSynchonizer->addAnimationToQueue(sequence);
+}
+
+cocos2d::FiniteTimeAction* FirestormSpellAnimationController::getCurrentDetailRemoveAnimation()
+{
+	 _fallenDetailAnimationFactory->cleanDetailViewOnBoard();
+	 Node *currentDetailView = _fallenDetailAnimationFactory->getCurrentDetailView();
+	 CocosNodesHelper::addChildNodeToParentNodeWithZOrderFromKey(currentDetailView, this, detailForRemoveCurrentDetailSpellKey);
+	 FiniteTimeAction *callback = CallFunc::create([currentDetailView](){
+	 	currentDetailView->removeFromParentAndCleanup(true);
+	 });
+	 return callback;
 }

@@ -10,12 +10,17 @@ FirestormSpellDelegate::~FirestormSpellDelegate(void)
 {
 }
 
-void blowUpTetraminosAreaOnPosition(std::vector<GamePositionOnBoard> tetraminosPositions, GamePositionOnBoard aPosition)
+void FirestormSpellDelegate::blowUpTetraminosAreaOnPosition(std::vector<GamePositionOnBoard> tetraminosPositions, GamePositionOnBoard aPosition)
 {
 
 }
 
-void removeTetraminoOnPositionXY(int xPosition, int yPosition)
+void FirestormSpellDelegate::removeTetraminoOnPositionXY(int xPosition, int yPosition)
+{
+
+}
+
+void FirestormSpellDelegate::removeCurrentDetailWithExplosionPosition(GamePositionOnBoard aPosition)
 {
 
 }

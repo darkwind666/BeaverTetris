@@ -162,6 +162,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CollisionDelegate.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailController.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailDataSource.cpp" />
+    <ClCompile Include="..\Classes\CurrentDetailExplosionFactory.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CurrentLevelDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentPlayerSerializer.cpp" />
@@ -431,6 +432,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CollisionDelegate.h" />
     <ClInclude Include="..\Classes\CurrentDetailController.h" />
     <ClInclude Include="..\Classes\CurrentDetailDataSource.h" />
+    <ClInclude Include="..\Classes\CurrentDetailExplosionFactory.h" />
     <ClInclude Include="..\Classes\CurrentDetailTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CurrentLevelDataSource.h" />
     <ClInclude Include="..\Classes\CurrentPlayerSerializer.h" />

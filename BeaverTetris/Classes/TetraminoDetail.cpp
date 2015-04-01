@@ -133,6 +133,13 @@ GamePositionOnBoard TetraminoDetail::convertAbsolutePositionToPositionInDetail(G
 	return tetraminoPositionInDetail;
 }
 
+bool TetraminoDetail::absolutePositionInDetail(GamePositionOnBoard aPosition)
+{
+	GamePositionOnBoard positionInDetail = convertAbsolutePositionToPositionInDetail(aPosition);
+	bool inDetail = _gameBoardTetraminos->positionInBoard(positionInDetail);
+	return inDetail;
+}
+
 int TetraminoDetail::getDetailWidth()
 {
 	return _detailWidth;

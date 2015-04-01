@@ -8,6 +8,8 @@
 #include "FirestormSpellDelegate.h"
 #include "CurrentPlayerDataSource.h"
 #include "GameViewElementsKeys.h"
+#include "CurrentDetailDataSource.h"
+#include "TetraminoDetail.h"
 
 using namespace std;
 
@@ -17,6 +19,7 @@ FirestromSpell::FirestromSpell(void)
 	_delegate = NULL;
 	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_meteorsCount = currentPlayerDataSource->getSpellCountForKey(firestormSpellKey);
+	_currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
 }
 
 FirestromSpell::~FirestromSpell(void)
@@ -41,10 +44,7 @@ void FirestromSpell::castSpell()
 	{
 		int randomMeteorPositionX = GameHelper::getRandomNumberFromUpInterval(_gameBoard->getGameBoardWidth());
 		GamePositionOnBoard explosionPosition = getExplosionPositionFromMeteorX(randomMeteorPositionX);
-		vector<GamePositionOnBoard> explosionZone = getExplosionZoneOnPosition(explosionPosition);
-		reduceLivesInExplosionsZone(explosionZone);
-		sendMassegeToDelegateWithExplosionsZoneAndPosition(explosionZone, explosionPosition);
-		removeKilledTetraminosFromExplosionsZone(explosionZone);
+		throwFireballOnPosition(explosionPosition);
 	}
 }
 
@@ -63,14 +63,95 @@ int FirestromSpell::getExplosionHeightFromExplosionX(int xPosition)
 	int gameBoardHeight = _gameBoard->getGameBoardHeight();
 	for (int heightIndex = (gameBoardHeight - 1); heightIndex > 0; heightIndex--)
 	{
-		Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xPosition, heightIndex);
-		if (tetraminoInBoard->getTetraminoType() > kTetraminoEmpty)
+		if (checkExplosionInCurrentDetailWithXYPosition(xPosition, heightIndex))
 		{
 			explosionHeight = heightIndex + 1;
 			break;
 		}
+		else
+		{
+			if (checkExplosionInBoardWithXYPosition(xPosition, heightIndex))
+			{
+				explosionHeight = heightIndex + 1;
+				break;
+			}
+		}
+
 	}
 	return explosionHeight;
+}
+
+bool FirestromSpell::checkExplosionInCurrentDetailWithXYPosition(int xPosition, int yPosition)
+{
+	bool inCurrentDetail = false;
+	if (_currentDetailDataSource->currentDetailAvailable())
+	{
+		GamePositionOnBoard absolutePosition;
+		absolutePosition.xPosition = xPosition;
+		absolutePosition.yPosition = yPosition;
+		inCurrentDetail = checkExplosionInCurrentDetailWithAbsolutePosition(absolutePosition);
+	}
+	return inCurrentDetail;
+}
+
+bool FirestromSpell::checkExplosionInCurrentDetailWithAbsolutePosition(GamePositionOnBoard aPosition)
+{
+	bool inCurrentDetail = false;
+	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
+	if (currentDetail->absolutePositionInDetail(aPosition))
+	{
+		GamePositionOnBoard positionInDetail = currentDetail->convertAbsolutePositionToPositionInDetail(aPosition);
+		Tetramino *tetraminoInCurrentDetail = currentDetail->getTetraminoForXY(positionInDetail.xPosition, positionInDetail.yPosition);
+		if (tetraminoInCurrentDetail->getTetraminoType() > kTetraminoEmpty)
+		{
+			inCurrentDetail = true;
+		}
+	}
+	return inCurrentDetail;
+}
+
+bool FirestromSpell::checkExplosionInBoardWithXYPosition(int xPosition, int yPosition)
+{
+	Tetramino *tetraminoInBoard = _gameBoard->getTetraminoForXYposition(xPosition, yPosition);
+	bool inBoard = (tetraminoInBoard->getTetraminoType() > kTetraminoEmpty);
+	return inBoard;
+}
+
+void FirestromSpell::throwFireballOnPosition(GamePositionOnBoard aExplosionPosition)
+{
+	if (explosionInCurrentDetailWithPosition(aExplosionPosition))
+	{
+		removeCurrentDetailWithPosition(aExplosionPosition);
+	}
+	else
+	{
+		vector<GamePositionOnBoard> explosionZone = getExplosionZoneOnPosition(aExplosionPosition);
+		reduceLivesInExplosionsZone(explosionZone);
+		sendMassegeToDelegateWithExplosionsZoneAndPosition(explosionZone, aExplosionPosition);
+		removeKilledTetraminosFromExplosionsZone(explosionZone);
+	}
+}
+
+bool FirestromSpell::explosionInCurrentDetailWithPosition(GamePositionOnBoard aExplosionPosition)
+{
+	GamePositionOnBoard realExplosionPosition = aExplosionPosition;
+	realExplosionPosition.yPosition = realExplosionPosition.yPosition - 1;
+	bool inCurrentDetail = checkExplosionInCurrentDetailWithXYPosition(realExplosionPosition.xPosition, realExplosionPosition.yPosition);
+	return inCurrentDetail;
+}
+
+void FirestromSpell::removeCurrentDetailWithPosition(GamePositionOnBoard aExplosionPosition)
+{
+	sendMassegeToDelegateToDeleteCurrentDetailWithPosition(aExplosionPosition);
+	_currentDetailDataSource->removeCurrentDetail();
+}
+
+void FirestromSpell::sendMassegeToDelegateToDeleteCurrentDetailWithPosition(GamePositionOnBoard aExplosionPosition)
+{
+	if (_delegate)
+	{
+		_delegate->removeCurrentDetailWithExplosionPosition(aExplosionPosition);
+	}
 }
 
 vector<GamePositionOnBoard> FirestromSpell::getExplosionZoneOnPosition(GamePositionOnBoard aExplosionPosition)
@@ -148,6 +229,8 @@ void FirestromSpell::makeOperationWithZonePositions(vector<GamePositionOnBoard> 
 		aOperation(tetraminoPosition);
 	}
 }
+
+
 
 void FirestromSpell::setDelegate(FirestormSpellDelegate *aDelegate)
 {

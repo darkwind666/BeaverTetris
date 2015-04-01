@@ -9,10 +9,7 @@
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
 #include "GameAnimationActionsConstants.h"
-#include "TetraminoExplosionFactory.h"
-#include "TetraminoDetail.h"
-#include "Tetramino.h"
-#include "CocosNodesHelper.h"
+#include "CurrentDetailExplosionFactory.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -20,16 +17,14 @@ using namespace std;
 RocketSpellAnimationController::RocketSpellAnimationController(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer)
 {
 	_animationSynchonizer = aAnimationSynchonizer;
-	CurrentDetailDataSource *currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
-	_currentDetailDataSource = currentDetailDataSource;
 
-	DetailViewDataSource *detailViewDataSource = getDetailViewDataSourceWithDetailData(currentDetailDataSource);
+	CurrentDetailExplosionFactory *currentDetailExplosionFactory = new CurrentDetailExplosionFactory(aGameBoardController);
+	_currentDetailExplosionFactory = currentDetailExplosionFactory;
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(currentDetailExplosionFactory, this, explosionsForRemoveCurrentDetailSpellKey);
+
+	DetailViewDataSource *detailViewDataSource = getCurrentDetailViewDataSource();
 	_detailViewDataSource = detailViewDataSource;
 	_fallenDetailAnimationFactory = new FallenDetailAnimationFactory(detailViewDataSource, aGameBoardController);
-
-	TetraminoExplosionFactory *tetraminoExplosionFactory = new TetraminoExplosionFactory(aGameBoardController);
-	_tetraminoExplosionFactory = tetraminoExplosionFactory;
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(tetraminoExplosionFactory, this, explosionsForRemoveCurrentDetailSpellKey);
 
 	RocketSpell *rocketSpellModel = (RocketSpell*)ServiceLocator::getServiceForKey(rocketSpellModelKey);
 	rocketSpellModel->setDelegate(this);
@@ -39,10 +34,11 @@ RocketSpellAnimationController::~RocketSpellAnimationController(void)
 {
 }
 
-DetailViewDataSource* RocketSpellAnimationController::getDetailViewDataSourceWithDetailData(CurrentDetailDataSource *aData)
+DetailViewDataSource* RocketSpellAnimationController::getCurrentDetailViewDataSource()
 {
-	function<TetraminoDetail*()> detailDataSource = [aData](){
-		return aData->getCurrentDetail();
+	CurrentDetailDataSource *currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
+	function<TetraminoDetail*()> detailDataSource = [currentDetailDataSource](){
+		return currentDetailDataSource->getCurrentDetail();
 	};
 	DetailViewDataSource *detailViewDataSource = new DetailViewDataSource(detailDataSource);
 	return detailViewDataSource;
@@ -60,7 +56,7 @@ void RocketSpellAnimationController::removeCurrentDetail()
 FiniteTimeAction* RocketSpellAnimationController::getRemoveDetailAnimationWithDetailView(Node *aView)
 {
 	FiniteTimeAction *rocketAnimation = getRocketLaunchAnimationWithTarget(aView);
-	FiniteTimeAction *detailExplosion = getDetailExplosionAnimation();
+	FiniteTimeAction *detailExplosion = _currentDetailExplosionFactory->getCurrentDetailExplosionAnimation();
 	FiniteTimeAction *callback = CallFunc::create([aView](){
 		aView->removeFromParentAndCleanup(true);
 	});
@@ -89,47 +85,4 @@ Vec2 RocketSpellAnimationController::getDetailViewCentrePosition(Node *aView)
 	Vec2 rocketFinalPositionInWorld = aView->convertToWorldSpace(tetraminoInMiddlePosition);
 	Vec2 rocketFinalPosition = this->convertToNodeSpace(rocketFinalPositionInWorld);
 	return rocketFinalPosition;
-}
-
-FiniteTimeAction* RocketSpellAnimationController::getDetailExplosionAnimation()
-{
-	vector<GamePositionOnBoard> explosionsPositions = getExplosionsPositions();
-	FiniteTimeAction *explosions = _tetraminoExplosionFactory->getTetraminosExplosionsAnimationWithPositions(explosionsPositions);
-	return explosions;
-}
-
-vector<GamePositionOnBoard> RocketSpellAnimationController::getExplosionsPositions()
-{
-	vector<GamePositionOnBoard> explosionsPositions;
-	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	int detailHeight = currentDetail->getDetailHeight();
-	for (int heightIndex = 0; heightIndex < detailHeight; heightIndex++)
-	{
-		fillExplosionsPositionsFromLine(explosionsPositions, heightIndex);
-	}
-	return explosionsPositions;
-}
-
-void RocketSpellAnimationController::fillExplosionsPositionsFromLine(vector<GamePositionOnBoard> &explosionsPositions, int aLine)
-{
-	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	int detailWidth = currentDetail->getDetailWidth();
-	for (int widthIndex = 0; widthIndex < detailWidth; widthIndex++)
-	{
-		Tetramino *tetraminoInDetail = currentDetail->getTetraminoForXY(widthIndex, aLine);
-		if (tetraminoInDetail->getTetraminoType() > kTetraminoEmpty)
-		{
-			fillExplosionsPositionsFromXY(explosionsPositions, widthIndex, aLine);
-		}
-	}
-}
-
-void RocketSpellAnimationController::fillExplosionsPositionsFromXY(vector<GamePositionOnBoard> &explosionsPositions, int xPosition, int yPosition)
-{
-	TetraminoDetail *currentDetail = _currentDetailDataSource->getCurrentDetail();
-	GamePositionOnBoard positionInDetail;
-	positionInDetail.xPosition = xPosition;
-	positionInDetail.yPosition = yPosition;
-	GamePositionOnBoard absolutePosition = currentDetail->convertPositionInDetailToAbsolutePosition(positionInDetail);
-	explosionsPositions.push_back(absolutePosition);
 }

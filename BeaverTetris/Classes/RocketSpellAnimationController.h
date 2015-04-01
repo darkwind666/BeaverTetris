@@ -2,15 +2,12 @@
 
 #include "cocos2d.h"
 #include "RocketSpellDelegate.h"
-#include "GameStructures.h"
-#include <vector>
 
 class GameBoardController;
 class AnimationSynchonizer;
 class FallenDetailAnimationFactory;
 class DetailViewDataSource;
-class TetraminoExplosionFactory;
-class CurrentDetailDataSource;
+class CurrentDetailExplosionFactory;
 
 class RocketSpellAnimationController : public RocketSpellDelegate, public cocos2d::Node
 {
@@ -24,18 +21,13 @@ private:
 
 	AnimationSynchonizer *_animationSynchonizer;
 	FallenDetailAnimationFactory *_fallenDetailAnimationFactory;
-	TetraminoExplosionFactory *_tetraminoExplosionFactory;
 	DetailViewDataSource *_detailViewDataSource;
-	CurrentDetailDataSource *_currentDetailDataSource;
+	CurrentDetailExplosionFactory *_currentDetailExplosionFactory;
 
-	DetailViewDataSource* getDetailViewDataSourceWithDetailData(CurrentDetailDataSource *aData);
+	DetailViewDataSource* getCurrentDetailViewDataSource();
 	cocos2d::FiniteTimeAction* getRemoveDetailAnimationWithDetailView(cocos2d::Node *aView);
 	cocos2d::FiniteTimeAction* getRocketLaunchAnimationWithTarget(cocos2d::Node *aTarget);
 	cocos2d::Vec2 getDetailViewCentrePosition(cocos2d::Node *aView);
-	cocos2d::FiniteTimeAction* getDetailExplosionAnimation();
-	std::vector<GamePositionOnBoard> getExplosionsPositions();
-	void fillExplosionsPositionsFromLine(std::vector<GamePositionOnBoard> &explosionsPositions, int aLine);
-	void fillExplosionsPositionsFromXY(std::vector<GamePositionOnBoard> &explosionsPositions, int xPosition, int yPosition);
 
 };
 
