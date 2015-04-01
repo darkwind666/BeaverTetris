@@ -25,6 +25,9 @@ void GameWorldAnimationController::makeAnimationControllers()
 {
 	this->addChild(_animationSynchonizer);
 
+	FallenDetailAnimationController *fallenDetailAnimationController = new FallenDetailAnimationController(_gameBoardController, _animationSynchonizer);
+	this->addChild(fallenDetailAnimationController);
+
 	ExplosionAnimationController *explosionAnimationController = new ExplosionAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(explosionAnimationController);
 
@@ -36,9 +39,6 @@ void GameWorldAnimationController::makeAnimationControllers()
 
 	CohesionSpellAnimationController *cohesionSpellAnimationController = new CohesionSpellAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(cohesionSpellAnimationController);
-
-	FallenDetailAnimationController *fallenDetailAnimationController = new FallenDetailAnimationController(_gameBoardController, _animationSynchonizer);
-	this->addChild(fallenDetailAnimationController);
 
 	AddLineToBoardSpellAnimationController *addLineToBoardSpellAnimationController = new AddLineToBoardSpellAnimationController(_gameBoardController, _animationSynchonizer);
 	this->addChild(addLineToBoardSpellAnimationController);

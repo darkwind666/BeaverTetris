@@ -2,7 +2,6 @@
 
 #include "SpellInterface.h"
 #include "ServiceInterface.h"
-#include <vector>
 #include "GameStructures.h"
 
 class GameBoard;
@@ -27,21 +26,11 @@ private:
 	TetraminosFactory *_tetraminosFactory;
 	int _cohesionCount;
 
-	std::vector<GamePositionOnBoard> getEmptyTetraminosForCohesion();
-
-	std::vector<GamePositionOnBoard> getEmptyTetraminosPositionsAroundPosition(GamePositionOnBoard aPosition);
-	std::vector<GamePositionOnBoard> getTetraminosAroundPosition(GamePositionOnBoard aPosition);
-	std::vector<GamePositionOnBoard> getEmptyTetraminosPositionsWithoutBorder(std::vector<GamePositionOnBoard> tetraminosPositions);
-	void setTetraminoPositionInPositions(GamePositionOnBoard aPosition, std::vector<GamePositionOnBoard> &tetraminosPositions);
-	void setTetraminosInTetraminosForCohesion(std::vector<GamePositionOnBoard> &tetraminosPositions, std::vector<GamePositionOnBoard> &tetraminosForCohesion);
-	void setPositionInTetraminosForCohesion(GamePositionOnBoard aPosition, std::vector<GamePositionOnBoard> &tetraminosForCohesion);
-	void setTetraminoPositionInTetraminosForCohesion(GamePositionOnBoard aPosition, std::vector<GamePositionOnBoard> &tetraminosForCohesion);
-	bool checkTetraminoPositionInPositions(GamePositionOnBoard aPosition, std::vector<GamePositionOnBoard> &aPositions);
-
-	TetraminoType getRandomTetraminoType();
+	void setNewTetraminoInBoard();
+	bool availablePlaceForTetraminoInLine(int aLine);
+	void placeNewTetraminoInLine(int aLine);
 	void setNewTetraminoForPosition(GamePositionOnBoard aPosition);
-	void setNewTetraminoForIndexInEmptyTetraminos(int tetraminoIndex, std::vector<GamePositionOnBoard> &emptyTetraminosForCohesion);
-
+	TetraminoType getRandomTetraminoType();
 	void sendMessageToDelegateWithTetraminoPosition(GamePositionOnBoard aPosition);
 
 };
