@@ -26,7 +26,7 @@ const float fallActionDurationPerTetramino = 0.0006f;
 
 const float tetraminosExplosionDuration = 0.4f;
 const float tetraminoDisappearDuration = 0.04f;
-const float tetraminoAppearDuration = 0.04f;
+const float tetraminoAppearDuration = 0.1f;
 
 const float rocketLaunchActionDurationPerPoint = 0.002f;
 const float meteorActionDurationPerPoint = 0.0005f;

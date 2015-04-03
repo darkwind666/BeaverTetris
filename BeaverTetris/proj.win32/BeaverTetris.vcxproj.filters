@@ -702,6 +702,15 @@
     <ClCompile Include="..\Classes\CurrentDetailExplosionFactory.cpp">
       <Filter>Factories</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\StartGameBackgroundController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SelectGameLevelBackgroundController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainGameEndPopUpSoundController.cpp">
+      <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1351,6 +1360,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CurrentDetailExplosionFactory.h">
       <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameSoundsKeys.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartGameBackgroundController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SelectGameLevelBackgroundController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainGameEndPopUpSoundController.h">
+      <Filter>Controllers\ViewControllers\PopUps</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

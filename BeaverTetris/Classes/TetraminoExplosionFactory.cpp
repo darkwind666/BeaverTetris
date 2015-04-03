@@ -6,6 +6,8 @@
 #include "GameBoardViewDataSource.h"
 #include "GameBoardController.h"
 #include "TetraminoViewController.h"
+#include "GameViewStyleHelper.h"
+#include "GameSoundsKeys.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -30,7 +32,8 @@ FiniteTimeAction* TetraminoExplosionFactory::getTetraminosExplosionsAnimationWit
 		addExplosionsToView(explosions);
 	});
 	FiniteTimeAction *delay = DelayTime::create(tetraminosExplosionDuration);
-	FiniteTimeAction *sequence = Sequence::create(tetraminosLineExplosionAnimation, delay, NULL);
+	FiniteTimeAction *soundAction = GameViewStyleHelper::getSoundActionWithKey(explosionSoundKey);
+	FiniteTimeAction *sequence = Sequence::create(tetraminosLineExplosionAnimation, delay, soundAction, NULL);
 	FiniteTimeAction *blowUpAnimation = TargetedAction::create(this, sequence);
 	return blowUpAnimation;
 }

@@ -4,6 +4,7 @@
 #include "CocosNodesHelper.h"
 #include "cocos-ext.h"
 #include "GameAnimationActionsConstants.h"
+#include "SelectGameLevelBackgroundController.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension; 
@@ -26,10 +27,9 @@ SelectGameLevelController::~SelectGameLevelController(void)
 
 void SelectGameLevelController::makeScrollableMenuWithBackground(Menu *aMenu)
 {
-
 	Layer *contentContainer = Layer::create();
-	LayerColor *background = LayerColor::create(Color4B::BLUE);
-	contentContainer->addChild(background);
+	SelectGameLevelBackgroundController *selectGameLevelBackgroundController = new SelectGameLevelBackgroundController();
+	contentContainer->addChild(selectGameLevelBackgroundController);
 	contentContainer->addChild(aMenu);
 
 	Node *scrollableMenu = makeScrollableMenuWithContent(contentContainer);

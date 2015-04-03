@@ -1,7 +1,6 @@
 #include "MainGameEndPopUp.h"
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
-
 #include "GameElementsDataHelper.h"
 #include "GameViewStyleHelper.h"
 #include "GameAnimationActionsConstants.h"
@@ -12,6 +11,7 @@
 #include "EndGameMenuElementsFactory.h"
 #include "GameWorldController.h"
 #include "GameHudsController.h"
+#include "MainGameEndPopUpSoundController.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -21,6 +21,7 @@ MainGameEndPopUp::MainGameEndPopUp(GameWorldController *aGameWorldController, Ga
 	ScreenPopUp::subscribePopUpToMessage(this, kEndGamePopUp);
 	_gameWorldController = aGameWorldController;
 	_gameHudsController = aGameHudsController;
+	_mainGameEndPopUpSoundController = new MainGameEndPopUpSoundController();
 	_popUpView = makePopUpView();
 }
 
@@ -28,6 +29,7 @@ MainGameEndPopUp::MainGameEndPopUp(GameWorldController *aGameWorldController, Ga
 MainGameEndPopUp::~MainGameEndPopUp(void)
 {
 	ScreenPopUp::unSubscribePupUpToMessage(this, kEndGamePopUp);
+	delete _mainGameEndPopUpSoundController;
 }
 
 CCNode* MainGameEndPopUp::makePopUpView()
@@ -47,6 +49,7 @@ void MainGameEndPopUp::showPopUp()
 	CCActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartAppearDuration, newControllerPosition);
 	Action *ease = CCEaseBackOut::create(moveController);
 	_popUpView->runAction(ease);
+	_mainGameEndPopUpSoundController->playEndGameSound();
 }
 
 void MainGameEndPopUp::fillViewWithElements()
@@ -71,4 +74,9 @@ Vec2 MainGameEndPopUp::getElementPositionForIndex(int aIndex)
 	Vec2 offset = viewElementsDataSource->getElementOffsetForKey(mainGameEndPopUpButtonKey);
 	Vec2 elementPosition = Vec2(startElementPosition.x, startElementPosition.y + offset.y * aIndex);
 	return elementPosition;
+}
+
+void MainGameEndPopUp::onExitTransitionDidStart()
+{
+	_mainGameEndPopUpSoundController->stopPlayingSound();
 }

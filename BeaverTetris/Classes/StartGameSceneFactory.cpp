@@ -3,6 +3,7 @@
 #include "GameViewElementsKeys.h"
 #include "StartGameAnimationController.h"
 #include "RegulateSoundPopUp.h"
+#include "StartGameBackgroundController.h"
 
 using namespace cocos2d;
 
@@ -19,9 +20,8 @@ CCScene* StartGameSceneFactory::createScene()
 {
 	CCScene *startGameScene = CCScene::create();
 
-	CCLayerColor *background = CCLayerColor::create(Color4B::GREEN);
-	background->ignoreAnchorPointForPosition(false);
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(background,startGameScene,startGameMenuBackgroundKey);
+	StartGameBackgroundController *startGameBackgroundController = new StartGameBackgroundController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(startGameBackgroundController,startGameScene,startGameMenuBackgroundKey);
 
 	StartGameAnimationController *startGameAnimationController = new StartGameAnimationController();
 	startGameScene->addChild(startGameAnimationController);

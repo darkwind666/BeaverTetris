@@ -23,6 +23,7 @@ private:
 	GameBoardController *_gameBoardController;
 	GameTimeStepController *_gameTimeStepController;
 	GameWorldAnimationController *_gameWorldAnimationController;
+	cocos2d::Node* _backgroundController;
 
 	void makeControllerView();
 

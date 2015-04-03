@@ -15,6 +15,7 @@ GameWorldController::GameWorldController(void)
 	_gameBoardController = new GameBoardController();
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 	_gameWorldAnimationController =  new GameWorldAnimationController(_gameBoardController);
+	_backgroundController = new GameWorldBackgroundController();
 	makeControllerView();
 }
 
@@ -25,15 +26,14 @@ GameWorldController::~GameWorldController(void)
 
 void GameWorldController::makeControllerView()
 {
-	GameWorldBackgroundController *backgroundController = new GameWorldBackgroundController();
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(backgroundController, this, mainGameBackgroundControllerKey);
-
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(_backgroundController, this, mainGameBackgroundControllerKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_gameWorldAnimationController, this, mainGameAnimationControllerKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_gameBoardController, this, mainGameBoardControllerKey);
 }
 
 void GameWorldController::onEnterTransitionDidFinish()
 {
+	_backgroundController->onEnterTransitionDidFinish();
 	scheduleUpdate();
 }
 

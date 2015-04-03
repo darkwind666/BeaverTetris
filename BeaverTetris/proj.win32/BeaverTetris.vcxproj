@@ -239,6 +239,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\LoadingGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\MainGameBackgroundDataSource.cpp" />
     <ClCompile Include="..\Classes\MainGameEndPopUp.cpp" />
+    <ClCompile Include="..\Classes\MainGameEndPopUpSoundController.cpp" />
     <ClCompile Include="..\Classes\MainGamePauseDelegate.cpp" />
     <ClCompile Include="..\Classes\MainGamePauseEndObserver.cpp" />
     <ClCompile Include="..\Classes\MainGamePausePopUp.cpp" />
@@ -270,10 +271,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SceneFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp" />
+    <ClCompile Include="..\Classes\SelectGameLevelBackgroundController.cpp" />
     <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp" />
     <ClCompile Include="..\Classes\SpellBox.cpp" />
     <ClCompile Include="..\Classes\SpellInterface.cpp" />
     <ClCompile Include="..\Classes\SpellsViewDataSource.cpp" />
+    <ClCompile Include="..\Classes\StartGameBackgroundController.cpp" />
     <ClCompile Include="..\Classes\StartMainGamePlayerScoreDataSource.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
@@ -491,6 +494,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameServicesKeys.h" />
     <ClInclude Include="..\Classes\GameSoundDataSource.h" />
     <ClInclude Include="..\Classes\GameSoundEffectsRegulator.h" />
+    <ClInclude Include="..\Classes\GameSoundsKeys.h" />
     <ClInclude Include="..\Classes\GamesRecordsAnimationController.h" />
     <ClInclude Include="..\Classes\GamesRecordsBoardController.h" />
     <ClInclude Include="..\Classes\GameStatesHelper.h" />
@@ -517,6 +521,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\LoadingGameSceneFactory.h" />
     <ClInclude Include="..\Classes\MainGameBackgroundDataSource.h" />
     <ClInclude Include="..\Classes\MainGameEndPopUp.h" />
+    <ClInclude Include="..\Classes\MainGameEndPopUpSoundController.h" />
     <ClInclude Include="..\Classes\MainGamePauseDelegate.h" />
     <ClInclude Include="..\Classes\MainGamePauseEndObserver.h" />
     <ClInclude Include="..\Classes\MainGamePausePopUp.h" />
@@ -549,11 +554,13 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SceneFactory.h" />
     <ClInclude Include="..\Classes\ScenesFactory.h" />
     <ClInclude Include="..\Classes\ScenesTransitionsFactory.h" />
+    <ClInclude Include="..\Classes\SelectGameLevelBackgroundController.h" />
     <ClInclude Include="..\Classes\SerializersConstants.h" />
     <ClInclude Include="..\Classes\SimilarTetraminosCombination.h" />
     <ClInclude Include="..\Classes\SpellBox.h" />
     <ClInclude Include="..\Classes\SpellInterface.h" />
     <ClInclude Include="..\Classes\SpellsViewDataSource.h" />
+    <ClInclude Include="..\Classes\StartGameBackgroundController.h" />
     <ClInclude Include="..\Classes\StartMainGamePlayerScoreDataSource.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />

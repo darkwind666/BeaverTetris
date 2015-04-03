@@ -16,5 +16,10 @@ private:
 
 	GameSoundDataSource *_gameSoundDataSource;
 
+	void loadEffects();
+	void loadEffectForIndex(int aSoundIndex);
+	void loadBackgroundMusic();
+	void loadBackgroundSoundIndexForIndex(int aBackgroundSoundIndex);
+
 };
 

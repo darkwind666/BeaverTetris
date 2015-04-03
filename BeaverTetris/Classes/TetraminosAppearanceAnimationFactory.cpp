@@ -8,6 +8,8 @@
 #include "Tetramino.h"
 #include "StringsSupporter.h"
 #include "TetraminoViewController.h"
+#include "GameViewStyleHelper.h"
+#include "GameSoundsKeys.h"
 
 using namespace cocos2d;
 
@@ -63,7 +65,8 @@ FiniteTimeAction* TetraminosAppearanceAnimationFactory::getAnimationWithView(Nod
 {
 	FiniteTimeAction *viewAnimation = getViewAnimation();
 	FiniteTimeAction *callback = getAnimationCallback();
-	FiniteTimeAction *sequence = Sequence::create(viewAnimation, callback, NULL);
+	FiniteTimeAction *soundAction = GameViewStyleHelper::getSoundActionWithKey(tetraminoAppearSoundKey);
+	FiniteTimeAction *sequence = Sequence::create(viewAnimation, callback, soundAction, NULL);
 	FiniteTimeAction *animationWithTetramino = TargetedAction::create(aView, sequence);
 	return animationWithTetramino;
 }

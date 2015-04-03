@@ -1,10 +1,11 @@
 #include "FallenDetailAnimationDelegate.h"
 #include "FallenDetailAnimationFactory.h"
 #include "DetailViewDataSource.h"
-
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "CurrentDetailDataSource.h"
+#include "GameViewStyleHelper.h"
+#include "GameSoundsKeys.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -40,7 +41,9 @@ FiniteTimeAction* FallenDetailAnimationDelegate::getAnimationWithFactoryAndPosit
 	Node *follenDetail = aFactory->getCurrentDetailView();
 	this->addChild(follenDetail);
 	FiniteTimeAction *moveDetail = aFactory->getDetailAnimationWithFinalPosition(aPosition);
-	FiniteTimeAction *actionWithDetail = TargetedAction::create(follenDetail, moveDetail);
+	FiniteTimeAction *soundAction = GameViewStyleHelper::getSoundActionWithKey(detailFallingSoundKey);
+	FiniteTimeAction *sequence = Sequence::create(moveDetail, soundAction, NULL);
+	FiniteTimeAction *actionWithDetail = TargetedAction::create(follenDetail, sequence);
 	return actionWithDetail;
 }
 

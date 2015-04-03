@@ -10,6 +10,8 @@
 #include "GameViewElementsKeys.h"
 #include "GameAnimationActionsConstants.h"
 #include "CurrentDetailExplosionFactory.h"
+#include "GameViewStyleHelper.h"
+#include "GameSoundsKeys.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -72,7 +74,8 @@ FiniteTimeAction* RocketSpellAnimationController::getRocketLaunchAnimationWithTa
 	float actionDuration = ccpDistance(rocketFinalPosition, rocket->getPosition()) * rocketLaunchActionDurationPerPoint;
 	FiniteTimeAction *moveRocket = MoveTo::create(actionDuration, rocketFinalPosition);
 	FiniteTimeAction *callback = CallFuncN::create([](Node *sender){sender->removeFromParentAndCleanup(true);});
-	FiniteTimeAction *sequence = Sequence::create(moveRocket, callback, NULL);
+	FiniteTimeAction *soundAction = GameViewStyleHelper::getSoundActionWithKey(rocketLaunchSoundKey);
+	FiniteTimeAction *sequence = Sequence::create(soundAction, moveRocket, callback, NULL);
 	FiniteTimeAction *actionWithRocket = TargetedAction::create(rocket, sequence);
 	return actionWithRocket;
 }
