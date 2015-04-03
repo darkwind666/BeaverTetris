@@ -44,7 +44,11 @@ void FallenDetailAnimationController::setUpDelegates()
 void FallenDetailAnimationController::throwCurrentDetailOnPosition(GamePositionOnBoard aPosition)
 {
 	DetailViewDataSource *currentDetailViewDataSource = _fallenDetailAnimationDelegate->getCurrentDetailViewDataSource();
-	placeDetainOnNewPositionWithDataSource(aPosition, currentDetailViewDataSource);
+	FallenDetailAnimationFactory *fallenDetailAnimationFactory = new FallenDetailAnimationFactory(currentDetailViewDataSource, _gameBoardController);
+	fallenDetailAnimationFactory->cleanDetailViewOnBoard();
+	FiniteTimeAction *actionWithDetail = _fallenDetailAnimationDelegate->getAnimationWithFactoryAndPosition(fallenDetailAnimationFactory, aPosition);
+	delete fallenDetailAnimationFactory;
+	_animationSynchonizer->addAnimationToQueue(actionWithDetail);
 }
 
 void FallenDetailAnimationController::placeNewDetailToPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition)
@@ -59,14 +63,10 @@ void FallenDetailAnimationController::placeNewDetailToPosition(TetraminoDetail *
 void FallenDetailAnimationController::replaceDetailToPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition)
 {
 	DetailViewDataSource *detailViewDataSource = _fallenDetailAnimationDelegate->getDetailViewDataSource(aDetail);
-	placeDetainOnNewPositionWithDataSource(aPosition, detailViewDataSource);
-}
-
-void FallenDetailAnimationController::placeDetainOnNewPositionWithDataSource(GamePositionOnBoard aPosition, DetailViewDataSource *aDataSource)
-{
-	FallenDetailAnimationFactory *fallenDetailAnimationFactory = new FallenDetailAnimationFactory(aDataSource, _gameBoardController);
+	FallenDetailAnimationFactory *fallenDetailAnimationFactory = new FallenDetailAnimationFactory(detailViewDataSource, _gameBoardController);
 	fallenDetailAnimationFactory->cleanDetailViewOnBoard();
-	FiniteTimeAction *actionWithDetail = _fallenDetailAnimationDelegate->getAnimationWithFactoryAndPosition(fallenDetailAnimationFactory, aPosition);
+	FiniteTimeAction *actionWithDetail = _fallenDetailAnimationDelegate->getReplaceDetailAnimationWithFactoryAndPosition(fallenDetailAnimationFactory, aPosition);
 	delete fallenDetailAnimationFactory;
 	_animationSynchonizer->addAnimationToQueue(actionWithDetail);
 }
+

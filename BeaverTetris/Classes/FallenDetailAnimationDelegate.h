@@ -17,6 +17,7 @@ public:
 	DetailViewDataSource* getDetailViewDataSource(TetraminoDetail *aDetail);
 	
 	cocos2d::FiniteTimeAction* getAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition);
+	cocos2d::FiniteTimeAction* getReplaceDetailAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition);
 
 };
 

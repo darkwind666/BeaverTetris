@@ -25,7 +25,6 @@ private:
 	FallenDetailAnimationDelegate *_fallenDetailAnimationDelegate;
 
 	void setUpDelegates();
-	void placeDetainOnNewPositionWithDataSource(GamePositionOnBoard aPosition, DetailViewDataSource *aDataSource);
 
 };
 

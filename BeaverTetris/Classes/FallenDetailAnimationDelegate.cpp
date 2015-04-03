@@ -38,12 +38,19 @@ DetailViewDataSource* FallenDetailAnimationDelegate::getDetailViewDataSource(Tet
 
 FiniteTimeAction* FallenDetailAnimationDelegate::getAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition)
 {
+	FiniteTimeAction *moveDetail = getReplaceDetailAnimationWithFactoryAndPosition(aFactory, aPosition);
+	FiniteTimeAction *soundAction = GameViewStyleHelper::getSoundActionWithKey(detailFallingSoundKey);
+	FiniteTimeAction *sequence = Sequence::create(moveDetail, soundAction, NULL);
+	FiniteTimeAction *actionWithDetail = TargetedAction::create(moveDetail->getTarget(), sequence);
+	return actionWithDetail;
+}
+
+FiniteTimeAction* FallenDetailAnimationDelegate::getReplaceDetailAnimationWithFactoryAndPosition(FallenDetailAnimationFactory *aFactory, GamePositionOnBoard aPosition)
+{
 	Node *follenDetail = aFactory->getCurrentDetailView();
 	this->addChild(follenDetail);
 	FiniteTimeAction *moveDetail = aFactory->getDetailAnimationWithFinalPosition(aPosition);
-	FiniteTimeAction *soundAction = GameViewStyleHelper::getSoundActionWithKey(detailFallingSoundKey);
-	FiniteTimeAction *sequence = Sequence::create(moveDetail, soundAction, NULL);
-	FiniteTimeAction *actionWithDetail = TargetedAction::create(follenDetail, sequence);
+	FiniteTimeAction *actionWithDetail = TargetedAction::create(follenDetail, moveDetail);
 	return actionWithDetail;
 }
 
