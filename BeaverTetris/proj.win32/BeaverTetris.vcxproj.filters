@@ -708,6 +708,9 @@
     <ClCompile Include="..\Classes\MainGameEndPopUpSoundController.cpp">
       <Filter>Controllers\ViewControllers\PopUps</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameSoundController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1366,6 +1369,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MainGameEndPopUpSoundController.h">
       <Filter>Controllers\ViewControllers\PopUps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameSoundController.h">
+      <Filter>Controllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

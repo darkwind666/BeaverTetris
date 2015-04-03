@@ -3,14 +3,13 @@
 #include "GameServicesKeys.h"
 #include "WinGameSystem.h"
 #include "CurrentLevelDataSource.h"
-#include "AudioEngine.h"
-#include "GameSoundsKeys.h"
 #include "GameFileExtensionMaker.h"
-#include "cocos2d.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameSoundController.h"
+#include "GameSoundsKeys.h"
 
 using namespace std;
-using namespace cocos2d;
-using namespace experimental;
 
 MainGameEndPopUpSoundController::MainGameEndPopUpSoundController(void)
 {
@@ -25,7 +24,8 @@ MainGameEndPopUpSoundController::~MainGameEndPopUpSoundController(void)
 
 void MainGameEndPopUpSoundController::playEndGameSound()
 {
-	AudioEngine::stopAll();
+	GameSoundController *gameSoundController = (GameSoundController*)ServiceLocator::getServiceForKey(gameSoundControllerKey);
+	gameSoundController->stopAllSounds();
 	playGameResultSound();
 }
 
@@ -55,11 +55,13 @@ void MainGameEndPopUpSoundController::playWinGameSound()
 
 void MainGameEndPopUpSoundController::playSoundWithKey(string aKey)
 {
-	string soundEffect = GameFileExtensionMaker::getSoundWithExtension(aKey);
-	AudioEngine::play2d(soundEffect, true);
+	string endGameSound = GameFileExtensionMaker::getSoundWithExtension(aKey);
+	GameSoundController *gameSoundController = (GameSoundController*)ServiceLocator::getServiceForKey(gameSoundControllerKey);
+	gameSoundController->playBackgroundSoundForKey(endGameSound);
 }
 
 void MainGameEndPopUpSoundController::stopPlayingSound()
 {
-	AudioEngine::stopAll();
+	GameSoundController *gameSoundController = (GameSoundController*)ServiceLocator::getServiceForKey(gameSoundControllerKey);
+	gameSoundController->stopAllSounds();
 }

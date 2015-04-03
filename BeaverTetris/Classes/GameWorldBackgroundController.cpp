@@ -1,12 +1,13 @@
 #include "GameWorldBackgroundController.h"
 #include "MainGameBackgroundDataSource.h"
-#include "AudioEngine.h"
-#include "GameSoundsKeys.h"
 #include "GameFileExtensionMaker.h"
 #include "GameHelper.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameSoundController.h"
+#include "GameSoundsKeys.h"
 
 using namespace cocos2d;
-using namespace experimental;
 
 GameWorldBackgroundController::GameWorldBackgroundController(void)
 {
@@ -30,7 +31,8 @@ void GameWorldBackgroundController::onEnterTransitionDidFinish()
 {
 	string soundName = getMainGameBackgroundMusicName();
 	string mainGameBackgroundMusicWithExtension = GameFileExtensionMaker::getSoundWithExtension(soundName);
-	AudioEngine::play2d(mainGameBackgroundMusicWithExtension, true);
+	GameSoundController *gameSoundController = (GameSoundController*)ServiceLocator::getServiceForKey(gameSoundControllerKey);
+	gameSoundController->playBackgroundSoundForKey(mainGameBackgroundMusicWithExtension);
 }
 
 string GameWorldBackgroundController::getMainGameBackgroundMusicName()
@@ -51,5 +53,6 @@ string GameWorldBackgroundController::getMainGameBackgroundMusicName()
 
 void GameWorldBackgroundController::onExitTransitionDidStart()
 {
-	AudioEngine::stopAll();
+	GameSoundController *gameSoundController = (GameSoundController*)ServiceLocator::getServiceForKey(gameSoundControllerKey);
+	gameSoundController->stopAllSounds();
 }

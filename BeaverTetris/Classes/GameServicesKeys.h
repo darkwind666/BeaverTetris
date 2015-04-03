@@ -8,6 +8,7 @@ const string gameViewElementsDataSourceKey = string("GameViewElementsDataSource"
 const string gameGraphicsLoaderKey = string("GameGraphicsLoader");
 const string gameTransitionsViewControllerKey = string("GameTransitionsViewController");
 const string gamePopUpsControllerKey = string("GamePopUpsController");
+const string gameSoundControllerKey = string("GameSoundController");
 const string currentPlayerDataSourceKey = string("CurrentPlayerDataSource");
 const string gameLevelsDataSourceKey = string("GameLevelsDataSource");
 const string keysForEnumsDataSourceKey = string("KeysForEnumsDataSource");

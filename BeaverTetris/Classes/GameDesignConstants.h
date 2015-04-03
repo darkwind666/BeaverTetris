@@ -3,6 +3,9 @@
 const int tetrisBlocksWidth = 10;
 const int tetrisBlocksHeight = 20;
 
+const float startSoundEffectsVolume = 0.5f;
+const float startBackgroundSoundVolume = 0.5f;
+
 const int normalUpdateInterval = 30;
 
 const int tetraminoBossMoveTimeIntervalConstant = 11;

@@ -1,10 +1,11 @@
 #include "SelectGameLevelBackgroundController.h"
-#include "AudioEngine.h"
-#include "GameSoundsKeys.h"
 #include "GameFileExtensionMaker.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameSoundController.h"
+#include "GameSoundsKeys.h"
 
 using namespace cocos2d;
-using namespace experimental;
 
 SelectGameLevelBackgroundController::SelectGameLevelBackgroundController(void)
 {
@@ -20,10 +21,12 @@ SelectGameLevelBackgroundController::~SelectGameLevelBackgroundController(void)
 void SelectGameLevelBackgroundController::onEnterTransitionDidFinish()
 {
 	string birdSoundEffect = GameFileExtensionMaker::getSoundWithExtension(birdInForestSoundKey);
-	AudioEngine::play2d(birdSoundEffect, true);
+	GameSoundController *gameSoundController = (GameSoundController*)ServiceLocator::getServiceForKey(gameSoundControllerKey);
+	gameSoundController->playBackgroundSoundForKey(birdSoundEffect);
 }
 
 void SelectGameLevelBackgroundController::onExitTransitionDidStart()
 {
-	AudioEngine::stopAll();
+	GameSoundController *gameSoundController = (GameSoundController*)ServiceLocator::getServiceForKey(gameSoundControllerKey);
+	gameSoundController->stopAllSounds();
 }
