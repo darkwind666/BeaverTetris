@@ -214,7 +214,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameResultDelegate.cpp" />
     <ClCompile Include="..\Classes\GamesDevelopersAnimationController.cpp" />
     <ClCompile Include="..\Classes\GamesDevelopersBoardController.cpp" />
-    <ClCompile Include="..\Classes\GameSoundDataSource.cpp" />
     <ClCompile Include="..\Classes\GameSoundEffectsRegulator.cpp" />
     <ClCompile Include="..\Classes\GamesRecordsAnimationController.cpp" />
     <ClCompile Include="..\Classes\GamesRecordsBoardController.cpp" />
@@ -492,7 +491,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GamesDevelopersAnimationController.h" />
     <ClInclude Include="..\Classes\GamesDevelopersBoardController.h" />
     <ClInclude Include="..\Classes\GameServicesKeys.h" />
-    <ClInclude Include="..\Classes\GameSoundDataSource.h" />
     <ClInclude Include="..\Classes\GameSoundEffectsRegulator.h" />
     <ClInclude Include="..\Classes\GameSoundsKeys.h" />
     <ClInclude Include="..\Classes\GamesRecordsAnimationController.h" />

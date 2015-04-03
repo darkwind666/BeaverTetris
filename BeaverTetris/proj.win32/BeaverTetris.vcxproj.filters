@@ -258,9 +258,6 @@
     <ClCompile Include="..\Classes\ResourcesLoader.cpp">
       <Filter>Controllers\Loaders</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\GameSoundDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\GameDataLoader.cpp">
       <Filter>Controllers\Loaders</Filter>
     </ClCompile>
@@ -889,9 +886,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ResourcesLoader.h">
       <Filter>Controllers\Loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameSoundDataSource.h">
-      <Filter>Models\DataSources</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameDataLoader.h">
       <Filter>Controllers\Loaders</Filter>

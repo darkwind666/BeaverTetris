@@ -3,12 +3,14 @@
 #include "GameServicesKeys.h"
 #include "WinGameSystem.h"
 #include "CurrentLevelDataSource.h"
-#include "SimpleAudioEngine.h"
+#include "AudioEngine.h"
 #include "GameSoundsKeys.h"
 #include "GameFileExtensionMaker.h"
+#include "cocos2d.h"
 
-using namespace CocosDenshion;
 using namespace std;
+using namespace cocos2d;
+using namespace experimental;
 
 MainGameEndPopUpSoundController::MainGameEndPopUpSoundController(void)
 {
@@ -23,8 +25,7 @@ MainGameEndPopUpSoundController::~MainGameEndPopUpSoundController(void)
 
 void MainGameEndPopUpSoundController::playEndGameSound()
 {
-	SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-	audioEngine->stopBackgroundMusic();
+	AudioEngine::stopAll();
 	playGameResultSound();
 }
 
@@ -54,13 +55,11 @@ void MainGameEndPopUpSoundController::playWinGameSound()
 
 void MainGameEndPopUpSoundController::playSoundWithKey(string aKey)
 {
-	string loseGameSoundEffect = GameFileExtensionMaker::getSoundWithExtension(aKey);
-	SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-	audioEngine->playEffect(loseGameSoundEffect.c_str(), true);
+	string soundEffect = GameFileExtensionMaker::getSoundWithExtension(aKey);
+	AudioEngine::play2d(soundEffect, true);
 }
 
 void MainGameEndPopUpSoundController::stopPlayingSound()
 {
-	SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-	audioEngine->stopAllEffects();
+	AudioEngine::stopAll();
 }

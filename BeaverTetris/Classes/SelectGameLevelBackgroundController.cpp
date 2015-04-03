@@ -1,10 +1,10 @@
 #include "SelectGameLevelBackgroundController.h"
-#include "SimpleAudioEngine.h"
+#include "AudioEngine.h"
 #include "GameSoundsKeys.h"
 #include "GameFileExtensionMaker.h"
 
 using namespace cocos2d;
-using namespace CocosDenshion;
+using namespace experimental;
 
 SelectGameLevelBackgroundController::SelectGameLevelBackgroundController(void)
 {
@@ -20,12 +20,10 @@ SelectGameLevelBackgroundController::~SelectGameLevelBackgroundController(void)
 void SelectGameLevelBackgroundController::onEnterTransitionDidFinish()
 {
 	string birdSoundEffect = GameFileExtensionMaker::getSoundWithExtension(birdInForestSoundKey);
-	SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-	audioEngine->playBackgroundMusic(birdSoundEffect.c_str(), true);
+	AudioEngine::play2d(birdSoundEffect, true);
 }
 
 void SelectGameLevelBackgroundController::onExitTransitionDidStart()
 {
-	SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-	audioEngine->stopBackgroundMusic();
+	AudioEngine::stopAll();
 }

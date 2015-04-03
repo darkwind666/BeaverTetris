@@ -1,10 +1,10 @@
 #include "StartGameBackgroundController.h"
-#include "SimpleAudioEngine.h"
+#include "AudioEngine.h"
 #include "GameSoundsKeys.h"
 #include "GameFileExtensionMaker.h"
 
 using namespace cocos2d;
-using namespace CocosDenshion;
+using namespace experimental;
 
 StartGameBackgroundController::StartGameBackgroundController(void)
 {
@@ -21,13 +21,11 @@ StartGameBackgroundController::~StartGameBackgroundController(void)
 void StartGameBackgroundController::onEnterTransitionDidFinish()
 {
 	string waterSoundEffect = GameFileExtensionMaker::getSoundWithExtension(waterSoundKey);
-	SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-	audioEngine->playBackgroundMusic(waterSoundEffect.c_str(), true);
+	AudioEngine::play2d(waterSoundEffect, true);
 }
 
 void StartGameBackgroundController::onExitTransitionDidStart()
 {
-	SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-	audioEngine->stopBackgroundMusic();
+	AudioEngine::stopAll();
 }
 

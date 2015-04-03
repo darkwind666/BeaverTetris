@@ -1,12 +1,12 @@
 #include "GameWorldBackgroundController.h"
 #include "MainGameBackgroundDataSource.h"
-#include "SimpleAudioEngine.h"
+#include "AudioEngine.h"
 #include "GameSoundsKeys.h"
 #include "GameFileExtensionMaker.h"
 #include "GameHelper.h"
 
 using namespace cocos2d;
-using namespace CocosDenshion;
+using namespace experimental;
 
 GameWorldBackgroundController::GameWorldBackgroundController(void)
 {
@@ -30,8 +30,7 @@ void GameWorldBackgroundController::onEnterTransitionDidFinish()
 {
 	string soundName = getMainGameBackgroundMusicName();
 	string mainGameBackgroundMusicWithExtension = GameFileExtensionMaker::getSoundWithExtension(soundName);
-	SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-	audioEngine->playBackgroundMusic(mainGameBackgroundMusicWithExtension.c_str(), true);
+	AudioEngine::play2d(mainGameBackgroundMusicWithExtension, true);
 }
 
 string GameWorldBackgroundController::getMainGameBackgroundMusicName()
@@ -52,6 +51,5 @@ string GameWorldBackgroundController::getMainGameBackgroundMusicName()
 
 void GameWorldBackgroundController::onExitTransitionDidStart()
 {
-	SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-	audioEngine->stopBackgroundMusic();
+	AudioEngine::stopAll();
 }

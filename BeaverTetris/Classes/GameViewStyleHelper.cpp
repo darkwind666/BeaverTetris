@@ -1,12 +1,12 @@
 #include "GameViewStyleHelper.h"
 #include "GameAnimationActionsConstants.h"
-#include "SimpleAudioEngine.h"
+#include "AudioEngine.h"
 #include "GameSoundsKeys.h"
 #include "GameFileExtensionMaker.h"
 
 using namespace std;
 using namespace cocos2d;
-using namespace CocosDenshion;
+using namespace experimental;
 
 GameViewStyleHelper::GameViewStyleHelper(void)
 {
@@ -37,8 +37,7 @@ FiniteTimeAction* GameViewStyleHelper::getSoundActionWithKey(string aKey)
 {
 	FiniteTimeAction *playSoundAction = CallFunc::create([aKey](){
 		string pressButtonSoundEffect = GameFileExtensionMaker::getSoundWithExtension(aKey);
-		SimpleAudioEngine *audioEngine = SimpleAudioEngine::sharedEngine();
-		audioEngine->playEffect(pressButtonSoundEffect.c_str());
+		AudioEngine::play2d(pressButtonSoundEffect);
 	});
 	return playSoundAction;
 }
