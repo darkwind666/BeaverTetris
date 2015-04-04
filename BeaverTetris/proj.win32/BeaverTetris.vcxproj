@@ -185,6 +185,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\FirestormSpellAnimationController.cpp" />
     <ClCompile Include="..\Classes\FirestormSpellDelegate.cpp" />
     <ClCompile Include="..\Classes\FirestromSpell.cpp" />
+    <ClCompile Include="..\Classes\FirestromSpellExplosionPositionDelegate.cpp" />
     <ClCompile Include="..\Classes\FullLineCombination.cpp" />
     <ClCompile Include="..\Classes\GameBackgroundSoundRegulator.cpp" />
     <ClCompile Include="..\Classes\GameBoard.cpp" />
@@ -459,6 +460,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\FirestormSpellAnimationController.h" />
     <ClInclude Include="..\Classes\FirestormSpellDelegate.h" />
     <ClInclude Include="..\Classes\FirestromSpell.h" />
+    <ClInclude Include="..\Classes\FirestromSpellExplosionPositionDelegate.h" />
     <ClInclude Include="..\Classes\FuctionsTypedefs.h" />
     <ClInclude Include="..\Classes\FullLineCombination.h" />
     <ClInclude Include="..\Classes\GameAnimationActionsConstants.h" />

@@ -711,6 +711,9 @@
     <ClCompile Include="..\Classes\GameSoundController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FirestromSpellExplosionPositionDelegate.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1372,6 +1375,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameSoundController.h">
       <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FirestromSpellExplosionPositionDelegate.h">
+      <Filter>Models\Spells</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
