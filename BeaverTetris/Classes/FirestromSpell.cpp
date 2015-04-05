@@ -93,6 +93,14 @@ void FirestromSpell::removeCurrentDetail()
 	}
 }
 
+void FirestromSpell::sendMassegeToDelegateToDeleteCurrentDetailWithPosition(GamePositionOnBoard aExplosionPosition)
+{
+	if (_delegate)
+	{
+		_delegate->removeCurrentDetailWithExplosionPosition(aExplosionPosition);
+	}
+}
+
 void FirestromSpell::throwFireballs(vector<FireballInformation> aFireballs)
 {
 	sendMassegeToDelegateWithFireballs(aFireballs);
@@ -103,14 +111,7 @@ void FirestromSpell::sendMassegeToDelegateWithFireballs(vector<FireballInformati
 {
 	if (_delegate)
 	{
-		vector<FireballInformation>::iterator fireballsIterator;
-		for (fireballsIterator = aFireballs.begin(); fireballsIterator != aFireballs.end(); fireballsIterator++)
-		{
-			FireballInformation fireball = *fireballsIterator;
-			vector<GamePositionOnBoard> explosionZone = fireball.explosionsZone;
-			_delegate->blowUpTetraminosAreaOnPosition(fireball.explosionsZone, fireball.explosionPosition);
-		}
-		//_delegate->throwFireballs(aFireballs);
+		_delegate->throwFireballs(aFireballs);
 	}
 }
 

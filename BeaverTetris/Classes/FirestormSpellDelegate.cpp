@@ -10,7 +10,7 @@ FirestormSpellDelegate::~FirestormSpellDelegate(void)
 {
 }
 
-void FirestormSpellDelegate::blowUpTetraminosAreaOnPosition(std::vector<GamePositionOnBoard> tetraminosPositions, GamePositionOnBoard aPosition)
+void FirestormSpellDelegate::throwFireballs(std::vector<FireballInformation> aFireballs)
 {
 
 }

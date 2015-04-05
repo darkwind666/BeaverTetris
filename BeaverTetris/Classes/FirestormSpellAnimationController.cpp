@@ -49,19 +49,34 @@ FallenDetailAnimationFactory* FirestormSpellAnimationController::getDetailFactor
 	return detailFactory;
 }
 
-void FirestormSpellAnimationController::blowUpTetraminosAreaOnPosition(vector<GamePositionOnBoard> tetraminosPositions, GamePositionOnBoard aPosition)
+void FirestormSpellAnimationController::throwFireballs(vector<FireballInformation> aFireballs)
 {
-	FiniteTimeAction *meteorAnimation = getMeteorAnimationForFinalPosition(aPosition);
-	FiniteTimeAction *tetraminosLineExplosionAnimation = _tetraminoExplosionFactory->getTetraminosExplosionsAnimationWithPositions(tetraminosPositions);
-	FiniteTimeAction *sequence = Sequence::create(meteorAnimation, tetraminosLineExplosionAnimation, NULL);
-	_animationSynchonizer->addAnimationToQueue(sequence);
+	FiniteTimeAction *meteorsAnimation = getMeteorsAnimationForFireballs(aFireballs);
+	_animationSynchonizer->addAnimationToQueue(meteorsAnimation);
 }
 
-FiniteTimeAction* FirestormSpellAnimationController::getMeteorAnimationForFinalPosition(GamePositionOnBoard aPosition)
+FiniteTimeAction* FirestormSpellAnimationController::getMeteorsAnimationForFireballs(vector<FireballInformation> aFireballs)
+{
+	Vector<FiniteTimeAction*> actions;
+	vector<FireballInformation>::iterator fireballsIterator;
+	for (fireballsIterator = aFireballs.begin(); fireballsIterator != aFireballs.end(); fireballsIterator++)
+	{
+		FireballInformation fireball = *fireballsIterator;
+		int index = distance(aFireballs.begin(), fireballsIterator);
+		FiniteTimeAction *meteorAnimation = getMeteorAnimationForFinalPositionAndIndex(fireball.explosionPosition, index + 1);
+		FiniteTimeAction *tetraminosExplosionAnimation = _tetraminoExplosionFactory->getTetraminosExplosionsAnimationWithPositions(fireball.explosionsZone);
+		FiniteTimeAction *sequence = Sequence::create(meteorAnimation, tetraminosExplosionAnimation, NULL);
+		actions.pushBack(sequence);
+	}
+	FiniteTimeAction *spawn = Spawn::create(actions);
+	return spawn;
+}
+
+FiniteTimeAction* FirestormSpellAnimationController::getMeteorAnimationForFinalPositionAndIndex(GamePositionOnBoard aPosition, int aIndex)
 {
 	Vec2 meteorFinalPosition = getMeteorFinalPositionFromPosition(aPosition);
 	Node *meteor = getMeteorWithFinalPosition(meteorFinalPosition);
-	float actionDuration = ccpDistance(meteorFinalPosition, meteor->getPosition()) * meteorActionDurationPerPoint;
+	float actionDuration = ccpDistance(meteorFinalPosition, meteor->getPosition()) * meteorActionDurationPerPoint * (float)aIndex;
 	FiniteTimeAction *moveRocket = MoveTo::create(actionDuration, meteorFinalPosition);
 	FiniteTimeAction *callback = CallFuncN::create([](Node *sender){sender->removeFromParentAndCleanup(true);});
 	FiniteTimeAction *sequence = Sequence::create(moveRocket, callback, NULL);
@@ -92,7 +107,7 @@ void FirestormSpellAnimationController::removeTetraminoOnPositionXY(int xPositio
 
 void FirestormSpellAnimationController::removeCurrentDetailWithExplosionPosition(GamePositionOnBoard aPosition)
 {
-	FiniteTimeAction *meteorAnimation = getMeteorAnimationForFinalPosition(aPosition);
+	FiniteTimeAction *meteorAnimation = getMeteorAnimationForFinalPositionAndIndex(aPosition, 1);
 	FiniteTimeAction *detailExplosion = _currentDetailExplosionFactory->getCurrentDetailExplosionAnimation();
 	FiniteTimeAction *removeEnimation = getCurrentDetailRemoveAnimation();
 	FiniteTimeAction *sequence = Sequence::create(meteorAnimation, detailExplosion, removeEnimation, NULL);

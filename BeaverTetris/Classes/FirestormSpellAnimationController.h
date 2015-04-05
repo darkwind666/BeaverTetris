@@ -15,7 +15,7 @@ public:
 	FirestormSpellAnimationController(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer);
 	~FirestormSpellAnimationController(void);
 
-	virtual void blowUpTetraminosAreaOnPosition(std::vector<GamePositionOnBoard> tetraminosPositions, GamePositionOnBoard aPosition);
+	virtual void throwFireballs(std::vector<FireballInformation> aFireballs);
 	virtual void removeTetraminoOnPositionXY(int xPosition, int yPosition);
 	virtual void removeCurrentDetailWithExplosionPosition(GamePositionOnBoard aPosition);
 
@@ -27,7 +27,8 @@ private:
 	FallenDetailAnimationFactory *_fallenDetailAnimationFactory;
 
 	FallenDetailAnimationFactory* getDetailFactoryWithGameBoardController(GameBoardController *aGameBoardController);
-	cocos2d::FiniteTimeAction* getMeteorAnimationForFinalPosition(GamePositionOnBoard aPosition);
+	cocos2d::FiniteTimeAction* getMeteorsAnimationForFireballs(std::vector<FireballInformation> aFireballs);
+	cocos2d::FiniteTimeAction* getMeteorAnimationForFinalPositionAndIndex(GamePositionOnBoard aPosition, int aIndex);
 	cocos2d::Vec2 getMeteorFinalPositionFromPosition(GamePositionOnBoard aPosition);
 	cocos2d::Node* getMeteorWithFinalPosition(cocos2d::Vec2 aPosition);
 	cocos2d::FiniteTimeAction* getCurrentDetailRemoveAnimation();
