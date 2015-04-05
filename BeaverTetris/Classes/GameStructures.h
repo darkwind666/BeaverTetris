@@ -56,12 +56,6 @@ struct VictoryConditionViewElements
 	cocos2d::LabelTTF* label;
 };
 
-struct FireballInformation
-{
-	GamePositionOnBoard explosionPosition; 
-	std::vector<GamePositionOnBoard> explosionsZone;
-};
-
 class AIMovementStrategy;
 class Tetramino;
 struct PrincessBossInformation
@@ -109,6 +103,12 @@ struct GamePositionOnBoard
 	int xPosition;
 	int yPosition;
 	
+};
+
+struct FireballInformation
+{
+	GamePositionOnBoard explosionPosition; 
+	std::vector<GamePositionOnBoard> explosionsZone;
 };
 
 struct TetraminoBossesInformation

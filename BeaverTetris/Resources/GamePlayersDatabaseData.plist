@@ -31,6 +31,12 @@
             </dict>
             <dict>
                 <key>PlayerName</key>
+                <string>верон дон дон</string>
+                <key>PlayerScore</key>
+                <integer>13944</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
                 <string>а</string>
                 <key>PlayerScore</key>
                 <integer>13464</integer>

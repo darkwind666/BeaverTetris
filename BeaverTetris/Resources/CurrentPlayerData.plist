@@ -4,11 +4,11 @@
 <plist version="1.0">
     <dict>
         <key>PlayerName</key>
-        <string>апа</string>
+        <string>верон дон дон</string>
         <key>PlayerScore</key>
-        <integer>16309</integer>
+        <integer>13944</integer>
         <key>PlayerCompletedLevelsCount</key>
-        <integer>9</integer>
+        <integer>10</integer>
         <key>PlayerSpellsInformation</key>
         <dict>
             <key>cohesionSpell</key>
@@ -16,7 +16,7 @@
             <key>firestormSpell</key>
             <integer>9</integer>
             <key>randomExplosionsSpell</key>
-            <integer>10</integer>
+            <integer>21</integer>
             <key>rocketSpell</key>
             <integer>0</integer>
         </dict>
