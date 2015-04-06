@@ -25,7 +25,6 @@ SpellsViewDataSource::SpellsViewDataSource()
 
 SpellsViewDataSource::~SpellsViewDataSource(void)
 {
-	delete _spellBox;
 }
 
 vector<PlayerControllInformation> SpellsViewDataSource::makeSpellsInformation()
@@ -62,20 +61,24 @@ int SpellsViewDataSource::getAvailableSpellsCount()
 
 string SpellsViewDataSource::getSpellIconImageOnIndex(int aIndex)
 {
-	string spellImage = string();
-	PlayerControllInformation spell = _spellsInformation[aIndex];
-	string spellKey = spell.imageKey;
-	if (spellAvailableForIndex(aIndex))
-	{
-		spellImage = GameFileExtensionMaker::getGraphicWithExtension(spellKey);
-	}
-	else
-	{
-		string lockedSpell = GameKeyWithSuffixSupporter::makeLockedImageForKey(spellKey);
-		spellImage = GameFileExtensionMaker::getGraphicWithExtension(lockedSpell);
-	}
-
+	string spellKey = _spellsInformation[aIndex].imageKey;
+	string spellImage = GameFileExtensionMaker::getGraphicWithExtension(spellKey);
 	return spellImage;
+}
+
+string SpellsViewDataSource::getSpellRechargedIconImageOnIndex(int aIndex)
+{
+	string spellKey = _spellsInformation[aIndex].imageKey;
+	string rechargedImage = GameKeyWithSuffixSupporter::makeRechargedImageForKey(spellKey);
+	string spellImage = GameFileExtensionMaker::getGraphicWithExtension(rechargedImage);
+	return spellImage;
+}
+
+float SpellsViewDataSource::getSpellRechargePercenOnIndex(int aIndex)
+{
+	PlayerControllInformation spell = _spellsInformation[aIndex];
+	float rechargePercent = _spellBox->getSpellRechargePercentForKey(spell.imageKey);
+	return rechargePercent;
 }
 
 bool SpellsViewDataSource::spellAvailableForIndex(int aIndex)

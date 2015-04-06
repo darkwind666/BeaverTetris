@@ -29,3 +29,8 @@ string GameKeyWithSuffixSupporter::makeLockedImageForKey(std::string aKey)
 {
 	return (aKey + lockedPrefix);
 }
+
+string GameKeyWithSuffixSupporter::makeRechargedImageForKey(string aKey)
+{
+	return (aKey + rechargedPrefix);
+}

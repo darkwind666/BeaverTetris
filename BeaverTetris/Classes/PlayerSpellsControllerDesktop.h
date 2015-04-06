@@ -21,15 +21,16 @@ private:
 
 	SpellsViewDataSource *_spellsViewDataSource;
 	GameTimeStepController *_gameTimeStepController;
-	std::vector<cocos2d::Sprite*> _spellsIcons;
+	std::vector<cocos2d::Node*> _spellsIcons;
 
-	std::vector<cocos2d::Sprite*> makeSpellsIcons();
-	std::vector<cocos2d::Node*> makeSpellsViewsWithIcons(std::vector<cocos2d::Sprite*> aIcons);
+	std::vector<cocos2d::Node*> makeSpellsIcons();
+	void setInSpellViewNormalIcon(cocos2d::Node* aView);
+	void setInSpellViewRechargedIcon(cocos2d::Node* aView);
+	std::vector<cocos2d::Node*> makeSpellsViewsWithIcons(std::vector<cocos2d::Node*> aIcons);
 	cocos2d::Node* getSpellCostLabelWithIndex(int aSpellIndex);
 	void addViewsToController(std::vector<cocos2d::Node*> aViews);
 	void setUpKeyboard();
 	int getViewIndexForKeyboardKey(int aKeyboardKey);
-	void setColorInIconWithTexture(cocos2d::Node *aIcon, std::string aTexture);
 	std::function<void()> getCallbackWithButtonIndex(int aButtonIndex);
 };
 

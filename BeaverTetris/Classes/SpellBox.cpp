@@ -110,6 +110,12 @@ int SpellBox::getSpellCostForKey(string aKey)
 	return _spellsInformations[aKey].spellCost;
 }
 
+float SpellBox::getSpellRechargePercentForKey(string aKey)
+{
+	SpellInterface *spell = _spellsInformations[aKey].spell;
+	return spell->getSpellRechargePercent();
+}
+
 void SpellBox::useSpellForKey(string aKey)
 {
 	SpellInterface *spell = _spellsInformations[aKey].spell;

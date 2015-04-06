@@ -16,6 +16,8 @@ public:
 
 	int getAvailableSpellsCount();
 	std::string getSpellIconImageOnIndex(int aIndex);
+	std::string getSpellRechargedIconImageOnIndex(int aIndex);
+	float getSpellRechargePercenOnIndex(int aIndex);
 	cocos2d::Vec2 getSpellPositionOnIndex(int aIndex);
 	std::string getSpellCostOnIndex(int aIndex);
 	int  getPlayerSpellKeyboardKeyOnIndex(int aIndex);

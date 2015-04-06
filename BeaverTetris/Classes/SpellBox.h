@@ -12,6 +12,7 @@ public:
 	~SpellBox(void);
 
 	int getSpellCostForKey(std::string aKey);
+	float getSpellRechargePercentForKey(std::string aKey);
 	void useSpellForKey(std::string aKey);
 	bool spellAvailableForKey(std::string aKey);
 	void updateAllSpells();

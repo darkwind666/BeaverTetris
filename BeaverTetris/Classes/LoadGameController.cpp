@@ -8,8 +8,8 @@ using namespace cocos2d;
 
 LoadGameController::LoadGameController(void)
 {
-	CCSprite *sourceView = CCSprite::create("HelloWorld.png");
-	_loadGameControllerView =  CCProgressTimer::create(sourceView);
+	Sprite *sourceView = Sprite::create("HelloWorld.png");
+	_loadGameControllerView =  ProgressTimer::create(sourceView);
 	_loadGameControllerView->setPercentage(0);
 	_loadGameControllerView->setScale(0.7f);
 	this->addChild(_loadGameControllerView);
@@ -56,8 +56,8 @@ void LoadGameController::runLoadingActionWithLoadingPercent(int aLoadingPercent)
 	int currentPercent = _loadGameControllerView->getPercentage();
 	float actionDuration = onePercentActionDuration * aLoadingPercent;
 	
-	CCFiniteTimeAction *progressAction = CCProgressFromTo::create(actionDuration, currentPercent, currentPercent + aLoadingPercent);
-	CCFiniteTimeAction *callback = CCCallFunc::create(this, CC_CALLFUNC_SELECTOR(LoadGameController::loadGameResource));
-	Action *sequence = CCSequence::create(progressAction, callback, NULL);
+	FiniteTimeAction *progressAction = ProgressFromTo::create(actionDuration, currentPercent, currentPercent + aLoadingPercent);
+	FiniteTimeAction *callback = CallFunc::create(this, CC_CALLFUNC_SELECTOR(LoadGameController::loadGameResource));
+	Action *sequence = Sequence::create(progressAction, callback, NULL);
 	_loadGameControllerView->runAction(sequence);
 }

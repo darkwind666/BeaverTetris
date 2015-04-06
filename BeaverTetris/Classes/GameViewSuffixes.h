@@ -9,3 +9,4 @@ const string selectedPrefix = string("Selected");
 const string unselectedPrefix = string("Unselected");
 
 const string lockedPrefix = string("Locked");
+const string rechargedPrefix = string("Recharged");

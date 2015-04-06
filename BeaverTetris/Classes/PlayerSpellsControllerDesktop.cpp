@@ -11,6 +11,8 @@
 using namespace cocos2d;
 using namespace std;
 
+const int spellRechargeViewTag = 1;
+
 PlayerSpellsControllerDesktop::PlayerSpellsControllerDesktop(void)
 {
 	_spellsViewDataSource = new SpellsViewDataSource();
@@ -27,26 +29,47 @@ PlayerSpellsControllerDesktop::~PlayerSpellsControllerDesktop(void)
 	delete _spellsViewDataSource;
 }
 
-vector<Sprite*> PlayerSpellsControllerDesktop::makeSpellsIcons()
+vector<Node*> PlayerSpellsControllerDesktop::makeSpellsIcons()
 {
-	vector<Sprite*> spellsIcons;
+	vector<Node*> spellsIcons;
 	int spellsCount = _spellsViewDataSource->getAvailableSpellsCount();
 	for (int spellIndex = 0; spellIndex < spellsCount; spellIndex++)
 	{
-		Sprite *spellIcon = Sprite::create("HelloWorld.png");
-	    spellIcon->setScaleY(0.08f);
-		spellIcon->setScaleX(0.06f);
+		Node *spellView = Node::create();
+		setInSpellViewNormalIcon(spellView);
+		setInSpellViewRechargedIcon(spellView);
 		int spellKeyboardKey = _spellsViewDataSource->getPlayerSpellKeyboardKeyOnIndex(spellIndex);
-		spellIcon->setTag(spellKeyboardKey);
-		spellsIcons.push_back(spellIcon);
+		spellView->setTag(spellKeyboardKey);
+		spellsIcons.push_back(spellView);
 	}
 	return spellsIcons;
 }
 
-vector<Node*> PlayerSpellsControllerDesktop::makeSpellsViewsWithIcons(vector<Sprite*> aIcons)
+void PlayerSpellsControllerDesktop::setInSpellViewNormalIcon(Node* aView)
+{
+	Sprite *spellIcon = Sprite::create("HelloWorld.png");
+	spellIcon->setScaleY(0.08f);
+	spellIcon->setScaleX(0.06f);
+	spellIcon->setColor(ccColor3B::GREEN);
+	aView->addChild(spellIcon);
+}
+
+void PlayerSpellsControllerDesktop::setInSpellViewRechargedIcon(Node* aView)
+{
+	Sprite *sourceView = Sprite::create("HelloWorld.png");
+	sourceView->setColor(ccColor3B::RED);
+	ProgressTimer *progress =  ProgressTimer::create(sourceView);
+	progress->setPercentage(0);
+	progress->setScaleY(0.08f);
+	progress->setScaleX(0.06f);
+	progress->setTag(spellRechargeViewTag);
+	aView->addChild(progress);
+}
+
+vector<Node*> PlayerSpellsControllerDesktop::makeSpellsViewsWithIcons(vector<Node*> aIcons)
 {
 	vector<Node*> spellsViews;
-	vector<Sprite*>::iterator iconsIterator;
+	vector<Node*>::iterator iconsIterator;
 	for (iconsIterator = aIcons.begin(); iconsIterator != aIcons.end(); iconsIterator++)
 	{
 		int iconIndex = distance(aIcons.begin(), iconsIterator);
@@ -87,44 +110,16 @@ void PlayerSpellsControllerDesktop::setUpKeyboard()
 	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardListner, this);
 }
 
-int PlayerSpellsControllerDesktop::getViewIndexForKeyboardKey(int aKeyboardKey)
-{
-	int viewIndex = -1;
-	vector<Sprite*>::iterator iconsIterator;
-	for (iconsIterator = _spellsIcons.begin(); iconsIterator != _spellsIcons.end(); iconsIterator++)
-	{
-		Sprite *spellIcon = *iconsIterator;
-		if (spellIcon->getTag() == aKeyboardKey)
-		{
-			viewIndex = distance(_spellsIcons.begin(), iconsIterator);
-			break;
-		}
-	}
-	return viewIndex;
-}
-
 void PlayerSpellsControllerDesktop::update(float delta)
 {
-	vector<Sprite*>::iterator iconsIterator;
+	vector<Node*>::iterator iconsIterator;
 	for (iconsIterator = _spellsIcons.begin(); iconsIterator != _spellsIcons.end(); iconsIterator++)
 	{
-		Sprite *spellIcon = *iconsIterator;
+		Node *spellIcon = *iconsIterator;
 		int spellIndex = distance(_spellsIcons.begin(), iconsIterator);
-		string spellIconTexture = _spellsViewDataSource->getSpellIconImageOnIndex(spellIndex);
-		setColorInIconWithTexture(spellIcon, spellIconTexture);
-	}
-}
-
-void PlayerSpellsControllerDesktop::setColorInIconWithTexture(Node* aIcon, string aTexture)
-{
-	int fileExtensionPosition = aTexture.find(lockedPrefix);
-	if (fileExtensionPosition >= 0)
-	{
-		aIcon->setColor(ccColor3B::RED);
-	}
-	else
-	{
-		aIcon->setColor(ccColor3B::GREEN);
+		float spellRechargePercent = _spellsViewDataSource->getSpellRechargePercenOnIndex(spellIndex);
+		ProgressTimer *spellRechargeView = (ProgressTimer*)spellIcon->getChildByTag(spellRechargeViewTag);
+		spellRechargeView->setPercentage(spellRechargePercent);
 	}
 }
 
@@ -138,6 +133,22 @@ void PlayerSpellsControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode a
 		function<void()> callback = getCallbackWithButtonIndex(viewIndex);
 		GameViewStyleHelper::runStandardButtonActionWithCallback(controllerView ,callback);
 	}
+}
+
+int PlayerSpellsControllerDesktop::getViewIndexForKeyboardKey(int aKeyboardKey)
+{
+	int viewIndex = -1;
+	vector<Node*>::iterator iconsIterator;
+	for (iconsIterator = _spellsIcons.begin(); iconsIterator != _spellsIcons.end(); iconsIterator++)
+	{
+		Node *spellIcon = *iconsIterator;
+		if (spellIcon->getTag() == aKeyboardKey)
+		{
+			viewIndex = distance(_spellsIcons.begin(), iconsIterator);
+			break;
+		}
+	}
+	return viewIndex;
 }
 
 function<void()> PlayerSpellsControllerDesktop::getCallbackWithButtonIndex(int aButtonIndex)
