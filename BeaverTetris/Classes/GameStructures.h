@@ -77,12 +77,18 @@ struct TetraminoInformation
 	int tetraminoCost;
 };
 
+struct LevelSpellInformation
+{
+	int spellCount;
+	int spellRechargeInterval;
+};
+
 struct PlayerInformation
 {
 	std::string playerName;
 	int playerScore;
 	int playerCompletedLevelsCount;
-	std::map<std::string, int> spellsInformation;
+	std::map<std::string, LevelSpellInformation> spellsInformation;
 };
 
 struct DatabaseInformation
@@ -144,7 +150,7 @@ struct GameLevelInformation
 	int needToPlaceDetailsCount;
 	int remainTimes;
 	std::vector<TetraminosForWinInformation> tetraminosCollectionForWin;
-	std::map<std::string, int> spellsData;
+	std::map<std::string, LevelSpellInformation> spellsData;
 
 };
 

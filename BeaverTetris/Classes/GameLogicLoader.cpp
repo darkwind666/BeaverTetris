@@ -15,6 +15,7 @@
 #include "GameFlowSystem.h"
 #include "CurrentVictoryConditionDataSource.h"
 #include "WinGameSystem.h"
+#include "SpellRechargeSystem.h"
 #include "SpellBox.h"
 #include "NewTetraminoDetailDataSource.h"
 #include "BossMovementObserver.h"
@@ -82,4 +83,8 @@ void GameLogicLoader::setUpMainGameLogic()
 	TetrisLogicSystem *tetrisLogicSystem = new TetrisLogicSystem();
 	gameTimeStepController->addSystem(tetrisLogicSystem);
 	ServiceLocator::setServiceForKey(tetrisLogicSystem, tetrisLogicSystemKey);
+
+	SpellRechargeSystem *spellRechargeSystem = new SpellRechargeSystem();
+	gameTimeStepController->addSystem(spellRechargeSystem);
+
 }

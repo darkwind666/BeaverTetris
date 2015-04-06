@@ -31,21 +31,22 @@ SpellBox::~SpellBox(void)
 void SpellBox::setNewSpellsToPlayer()
 {
 	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
-	map<string, int> spellsData = getSpellsData();
-	map<string, int>::iterator spellsIterator;
+	map<string, LevelSpellInformation> spellsData = getSpellsData();
+	map<string, LevelSpellInformation>::iterator spellsIterator;
 	for (spellsIterator = spellsData.begin(); spellsIterator != spellsData.end(); spellsIterator++)
 	{
 		string spellType = spellsIterator->first;
-		int spellCount = spellsIterator->second;
-		currentPlayerDataSource->setNewSpellCountForKey(spellCount, spellType);
+		LevelSpellInformation spellInformation = spellsIterator->second;
+		currentPlayerDataSource->setNewSpellCountForKey(spellInformation.spellCount, spellType);
+		currentPlayerDataSource->setNewSpellRechargeIntervalForKey(spellInformation.spellRechargeInterval, spellType);
 	}
 }
 
-map<string, int> SpellBox::getSpellsData()
+map<string, LevelSpellInformation> SpellBox::getSpellsData()
 {
 	CurrentLevelDataSource *currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
 	GameLevelInformation currentLevel = currentLevelDataSource->getCurrentLevelData();
-	map<string, int> spellsData = currentLevel.spellsData;
+	map<string, LevelSpellInformation> spellsData = currentLevel.spellsData;
 	return spellsData;
 }
 
@@ -119,6 +120,16 @@ bool SpellBox::spellAvailableForKey(string aKey)
 {
 	SpellInterface *spell = _spellsInformations[aKey].spell;
 	return spell->spellAvailable();
+}
+
+void SpellBox::updateAllSpells()
+{
+	map<string, SpellInformation>::iterator spellsIterator;
+	for (spellsIterator = _spellsInformations.begin(); spellsIterator != _spellsInformations.end(); spellsIterator++)
+	{
+		SpellInformation spellData = spellsIterator->second;
+		spellData.spell->updateSpell();
+	}
 }
 	
 

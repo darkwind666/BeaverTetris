@@ -61,7 +61,7 @@ GameLevelInformation GameLevelsDataFactory::getDefaultLevel()
 	GameLevelInformation levelInfornation;
 	levelInfornation.levelName = string();
 	levelInfornation.levelAward = 0;
-	levelInfornation.spellsData = map<string, int>();
+	levelInfornation.spellsData = map<string, LevelSpellInformation>();
 	levelInfornation.availableTetraminos = vector<TetraminoType>();
 	levelInfornation.availableTetraminoDetails = vector<TetraminoDetailType>();
 	levelInfornation.availableEvents = vector<GameEventInformation>();
@@ -75,9 +75,9 @@ GameLevelInformation GameLevelsDataFactory::getDefaultLevel()
 	return levelInfornation;
 }
 
-map<string, int> GameLevelsDataFactory::getSpellsDataFromNode(xml_node &node)
+map<string, LevelSpellInformation> GameLevelsDataFactory::getSpellsDataFromNode(xml_node &node)
 {
-	map<string, int> spellsData;
+	map<string, LevelSpellInformation> spellsData;
 	if (node.child(levelSpellsKey.c_str()))
 	{
 		xml_node spells = node.child(levelSpellsKey.c_str());
@@ -86,20 +86,28 @@ map<string, int> GameLevelsDataFactory::getSpellsDataFromNode(xml_node &node)
 	return spellsData;
 }
 
-map<string, int> GameLevelsDataFactory::getSpellsFromNode(xml_node &node)
+map<string, LevelSpellInformation> GameLevelsDataFactory::getSpellsFromNode(xml_node &node)
 {
-	map<string, int> spellsData;
+	map<string, LevelSpellInformation> spellsData;
 	for (xml_node spell = node.first_child(); spell; spell = spell.next_sibling())
 	{
 		string spellType = spell.attribute(levelSpellTypeKey.c_str()).as_string();
-		int spellCount = 0;
-		if (spell.attribute(levelSpellCountKey.c_str()))
-		{
-			spellCount = spell.attribute(levelSpellCountKey.c_str()).as_int();
-		}
-		spellsData[spellType] = spellCount;
+		LevelSpellInformation spellData;
+		spellData.spellCount = getSpellCountFromNode(spell);
+		spellData.spellRechargeInterval = spell.attribute(levelSpellRechargeIntervalKey.c_str()).as_int();
+		spellsData[spellType] = spellData;
 	}
 	return spellsData;
+}
+
+int GameLevelsDataFactory::getSpellCountFromNode(xml_node &node)
+{
+	int spellCount = 0;
+	if (node.attribute(levelSpellCountKey.c_str()))
+	{
+		spellCount = node.attribute(levelSpellCountKey.c_str()).as_int();
+	}
+	return spellCount;
 }
 
 vector<TetraminoType> GameLevelsDataFactory::getAvailableTetraminosFromNode(xml_node &node)

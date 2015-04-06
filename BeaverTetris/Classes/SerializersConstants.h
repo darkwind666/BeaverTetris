@@ -12,3 +12,5 @@ const string playerNameKey = string("PlayerName");
 const string playerScoreKey = string("PlayerScore");
 const string playerCompletedLevelsCountKey = string("PlayerCompletedLevelsCount");
 const string playerSpellsInformationKey = string("PlayerSpellsInformation");
+const string playerSpellCountKey = string("count");
+const string playerSpellRechargeIntervalKey = string("rechargeInterval");

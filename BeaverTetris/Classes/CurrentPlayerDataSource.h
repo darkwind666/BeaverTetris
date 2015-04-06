@@ -7,6 +7,7 @@
 
 class CurrentPlayerSerializer;
 class GameLevelsDataSource;
+class CurrentPlayerSpellsDelegate;
 
 class CurrentPlayerDataSource :public ServiceInterface
 {
@@ -20,13 +21,17 @@ public:
 	int getPlayerCompletedLevelsCount();
 	int getPlayerAvailableSpellsCount();
 	int getSelectedGameLevelIndex();
+	
 	int getSpellCountForKey(std::string aKey);
+	int getSpellRechargeIntervalForKey(std::string aKey);
 
 	void setNewPlayerWithName(std::string aNewPlayerName);
 	void setPlayerScore(int aPlayerScore);
 	void completeLevel(std::string aCompletedLevelName);
 	void setSelectedGameLevelIndex(int aGameLevelIndex);
+
 	void setNewSpellCountForKey(int spellCount, std::string aKey);
+	void setNewSpellRechargeIntervalForKey(int spellRechargeInterval, std::string aKey);
 
 	void savePlayer();
 	void cleanPlayer();
@@ -39,6 +44,7 @@ private:
 	int _selectedGameLevelIndex;
 	CurrentPlayerSerializer *_currentPlayerSerializer;
 	GameLevelsDataSource *_gameLevelsDataSource;
+	CurrentPlayerSpellsDelegate *_currentPlayerSpellsDelegate;
 
 	void setUpPlayer();
 	void fillCompletedLevelsNames();

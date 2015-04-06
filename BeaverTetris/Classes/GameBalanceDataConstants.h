@@ -12,6 +12,7 @@ const string levelSpellsKey = string("spells");
 const string levelSpellKey = string("spell");
 const string levelSpellTypeKey = string("type");
 const string levelSpellCountKey = string("count");
+const string levelSpellRechargeIntervalKey = string("rechargeInterval");
 const string levelTetraminosTypesKey = string("tetraminosTypes");
 const string levelWinConditionKey = string("winCondition");
 const string levelWinConditionTypeKey = string("winType");

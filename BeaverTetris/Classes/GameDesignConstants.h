@@ -18,3 +18,5 @@ const int standartDetailHeight = 3;
 const int tetraminosInChainCount = 4;
 
 const int meteorAreaExplosionLength = 1;
+
+const int maxSpellRechargeInterval = 10000;

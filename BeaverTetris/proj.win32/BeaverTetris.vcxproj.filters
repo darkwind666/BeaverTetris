@@ -135,9 +135,6 @@
     <ClCompile Include="CollisionSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
-    <ClCompile Include="GameSystemInterface.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
     <ClCompile Include="MoveSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
@@ -714,6 +711,15 @@
     <ClCompile Include="..\Classes\FirestromSpellExplosionPositionDelegate.cpp">
       <Filter>Models\Spells</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CurrentPlayerSpellsDelegate.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SpellRechargeDelegate.cpp">
+      <Filter>Models\Spells</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SpellRechargeSystem.cpp">
+      <Filter>Models\GameLogic\Systems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -750,9 +756,6 @@
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
     <ClInclude Include="CollisionSystem.h">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="GameSystemInterface.h">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
     <ClInclude Include="MoveSystem.h">
@@ -1378,6 +1381,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\FirestromSpellExplosionPositionDelegate.h">
       <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentPlayerSpellsDelegate.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpellRechargeDelegate.h">
+      <Filter>Models\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SpellRechargeSystem.h">
+      <Filter>Models\GameLogic\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

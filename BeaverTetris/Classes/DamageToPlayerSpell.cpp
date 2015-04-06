@@ -138,3 +138,13 @@ void DamageToPlayerSpell::setDelegate(ExplosionAnimationDelegate *aDelegate)
 {
 	_delegate = aDelegate;
 }
+
+void DamageToPlayerSpell::updateSpell()
+{
+	
+}
+
+float DamageToPlayerSpell::getSpellRechargePercent()
+{
+	return 0.0f;
+}

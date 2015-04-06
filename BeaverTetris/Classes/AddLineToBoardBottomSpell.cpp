@@ -143,3 +143,13 @@ void AddLineToBoardBottomSpell::setDelegate(AddLineToBoardBottomSpellDelegate *a
 {
 	_delegate = aDelegate;
 }
+
+void AddLineToBoardBottomSpell::updateSpell()
+{
+	
+}
+
+float AddLineToBoardBottomSpell::getSpellRechargePercent()
+{
+	return 0.0f;
+}

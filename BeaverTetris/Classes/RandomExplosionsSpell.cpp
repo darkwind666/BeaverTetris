@@ -7,6 +7,7 @@
 #include "ExplosionAnimationDelegate.h"
 #include "CurrentPlayerDataSource.h"
 #include "GameViewElementsKeys.h"
+#include "SpellRechargeDelegate.h"
 
 using namespace std;
 
@@ -16,11 +17,13 @@ RandomExplosionsSpell::RandomExplosionsSpell(void)
 	_delegate = NULL;
 	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_randomExplosionsCount = currentPlayerDataSource->getSpellCountForKey(removeRandomTetraminosSpellKey);
+	_spellRechargeDelegate = new SpellRechargeDelegate(removeRandomTetraminosSpellKey);
 }
 
 
 RandomExplosionsSpell::~RandomExplosionsSpell(void)
 {
+	delete _spellRechargeDelegate;
 }
 
 bool RandomExplosionsSpell::spellAvailable(void)
@@ -31,7 +34,8 @@ bool RandomExplosionsSpell::spellAvailable(void)
 	{
 		spellAvailable = false;
 	}
-	return spellAvailable;
+	bool recharged = _spellRechargeDelegate->spellRecharged();
+	return (spellAvailable && recharged);
 }
 
 void RandomExplosionsSpell::castSpell()
@@ -41,6 +45,7 @@ void RandomExplosionsSpell::castSpell()
 	reduceLivesInTetraminos(explosionTetraminos);
 	sendMessageToDelegateWithTetraminos(explosionTetraminos);
 	removeKilledTetraminos(explosionTetraminos);
+	_spellRechargeDelegate->spellWasCasted();
 }
 
 vector <GamePositionOnBoard> RandomExplosionsSpell::getTetraminosForExplosion()
@@ -105,4 +110,14 @@ void RandomExplosionsSpell::removeKilledTetraminos(std::vector <GamePositionOnBo
 void RandomExplosionsSpell::setDelegate(ExplosionAnimationDelegate *aDelegate)
 {
 	_delegate = aDelegate;
+}
+
+void RandomExplosionsSpell::updateSpell()
+{
+	_spellRechargeDelegate->updateSpell();
+}
+
+float RandomExplosionsSpell::getSpellRechargePercent()
+{
+	return _spellRechargeDelegate->getSpellRechargePercent();
 }

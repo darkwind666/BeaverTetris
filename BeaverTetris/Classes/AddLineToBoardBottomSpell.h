@@ -14,8 +14,10 @@ public:
 	AddLineToBoardBottomSpell(void);
 	~AddLineToBoardBottomSpell(void);
 
-	virtual bool spellAvailable(void);
+	virtual bool spellAvailable();
 	virtual void castSpell();
+	virtual void updateSpell();
+	virtual float getSpellRechargePercent();
 
 	void setDelegate(AddLineToBoardBottomSpellDelegate *aDelegate);
 

@@ -14,8 +14,10 @@ public:
 	DamageToPlayerSpell(void);
 	~DamageToPlayerSpell(void);
 
-	virtual bool spellAvailable(void);
+	virtual bool spellAvailable();
 	virtual void castSpell();
+	virtual void updateSpell();
+	virtual float getSpellRechargePercent();
 
 	void setDelegate(ExplosionAnimationDelegate *aDelegate);
 

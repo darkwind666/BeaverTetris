@@ -6,22 +6,29 @@
 #include "TetraminoRemovingObserverInterface.h"
 #include "TetraminoDetail.h"
 #include "Tetramino.h"
+#include "CurrentPlayerDataSource.h"
+#include "GameViewElementsKeys.h"
+#include "SpellRechargeDelegate.h"
 
 RocketSpell::RocketSpell(void)
 {
 	_currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
 	_delegate = NULL;
 	_observer = NULL;
+	_spellRechargeDelegate = new SpellRechargeDelegate(removeCurrentDetailSpellKey);
 }
 
 
 RocketSpell::~RocketSpell(void)
 {
+	delete _spellRechargeDelegate;
 }
 
 bool RocketSpell::spellAvailable()
 {
-	return _currentDetailDataSource->currentDetailAvailable();
+	bool currentDetailAvailable = _currentDetailDataSource->currentDetailAvailable();
+	bool recharged = _spellRechargeDelegate->spellRecharged();
+	return (currentDetailAvailable && recharged);
 }
 
 void RocketSpell::castSpell()
@@ -29,6 +36,7 @@ void RocketSpell::castSpell()
 	sendMessageToDelegate();
 	sendMessageToObserver();
 	_currentDetailDataSource->removeCurrentDetail();
+	_spellRechargeDelegate->spellWasCasted();
 }
 
 void RocketSpell::sendMessageToDelegate()
@@ -76,5 +84,15 @@ void RocketSpell::sendMessageToObserverWithDetailLine(int aLine)
 void RocketSpell::addObserver(TetraminoRemovingObserverInterface *aObserver)
 {
 	_observer = aObserver;
+}
+
+void RocketSpell::updateSpell()
+{
+	_spellRechargeDelegate->updateSpell();
+}
+
+float RocketSpell::getSpellRechargePercent()
+{
+	return _spellRechargeDelegate->getSpellRechargePercent();
 }
 

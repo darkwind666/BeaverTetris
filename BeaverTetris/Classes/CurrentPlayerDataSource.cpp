@@ -1,6 +1,7 @@
 #include "CurrentPlayerDataSource.h"
 #include "CurrentPlayerSerializer.h"
 #include "GameLevelsDataSource.h"
+#include "CurrentPlayerSpellsDelegate.h"
 
 using namespace std;
 
@@ -11,13 +12,14 @@ CurrentPlayerDataSource::CurrentPlayerDataSource(GameLevelsDataSource *aGameLeve
 	_completedLevelsNames = vector <string>();
 	_selectedGameLevelIndex = 0;
 	_isThereCurentPlayer = false;
+	_currentPlayerSpellsDelegate = new CurrentPlayerSpellsDelegate();
 	setUpPlayer();
 }
-
 
 CurrentPlayerDataSource::~CurrentPlayerDataSource()
 {
 	delete _currentPlayerSerializer;
+	delete _currentPlayerSpellsDelegate;
 }
 
 void CurrentPlayerDataSource::setUpPlayer()
@@ -26,6 +28,7 @@ void CurrentPlayerDataSource::setUpPlayer()
 	{
 		_isThereCurentPlayer = true;
 		_playerData = _currentPlayerSerializer->getSavedPlayer();
+		_currentPlayerSpellsDelegate->setNewPlayerSpells(_playerData.spellsInformation);
 		fillCompletedLevelsNames();
 	}
 }
@@ -45,12 +48,13 @@ void CurrentPlayerDataSource::setNewPlayerWithName(string aNewPlayerName)
 	PlayerInformation newPlayer;
 	newPlayer.playerName = aNewPlayerName;
 	newPlayer.playerScore = 0;
-	newPlayer.spellsInformation = map<string, int>();
+	newPlayer.spellsInformation = map<string, LevelSpellInformation>();
 	newPlayer.playerCompletedLevelsCount = 0;
 
 	_playerData = newPlayer;
 	_isThereCurentPlayer = true;
 	_completedLevelsNames.clear();
+	_currentPlayerSpellsDelegate->cleanPlayerSpells();
 	savePlayer();
 }	
 
@@ -64,33 +68,17 @@ void CurrentPlayerDataSource::completeLevel(string aCompletedLevelName)
 	}
 }
 
-void CurrentPlayerDataSource::setNewSpellCountForKey(int spellCount, string aKey)
-{
-	map <string, int>::iterator it = _playerData.spellsInformation.find(aKey);
-	if (it == _playerData.spellsInformation.end())
-	{
-		_playerData.spellsInformation[aKey] = spellCount;
-	}
-	else
-	{
-		int currentPlayerSpellCount = it->second;
-		if (currentPlayerSpellCount < spellCount)
-		{
-			_playerData.spellsInformation[aKey] = spellCount;
-		}
-	}
-}
-
 void CurrentPlayerDataSource::cleanPlayer()
 {
 	PlayerInformation zeroData;
 	zeroData.playerName = string("0");
 	zeroData.playerScore = 0;
-	zeroData.spellsInformation = map<string, int>();
+	zeroData.spellsInformation = map<string, LevelSpellInformation>();
 	zeroData.playerCompletedLevelsCount = 0;
 	_playerData = zeroData;
 	_isThereCurentPlayer = false;
 	_completedLevelsNames.clear();
+	_currentPlayerSpellsDelegate->cleanPlayerSpells();
 	if (_currentPlayerSerializer->availablePlayer())
 	{
 		_currentPlayerSerializer->cleanSavedPlayer();
@@ -109,6 +97,7 @@ void CurrentPlayerDataSource::setSelectedGameLevelIndex(int aGameLevelIndex)
 
 void CurrentPlayerDataSource::savePlayer()
 {
+	_playerData.spellsInformation = _currentPlayerSpellsDelegate->getPlayerSpells();
 	_currentPlayerSerializer->savePlayer(_playerData);
 }
 
@@ -134,7 +123,8 @@ int CurrentPlayerDataSource::getPlayerCompletedLevelsCount()
 
 int CurrentPlayerDataSource::getPlayerAvailableSpellsCount()
 {
-	return _playerData.spellsInformation.size();
+
+	return _currentPlayerSpellsDelegate->getPlayerSpells().size();
 }
 
 int CurrentPlayerDataSource::getSelectedGameLevelIndex()
@@ -144,11 +134,20 @@ int CurrentPlayerDataSource::getSelectedGameLevelIndex()
 
 int CurrentPlayerDataSource::getSpellCountForKey(string aKey)
 {
-	int spellCount = 0;
-	map <string, int>::iterator it = _playerData.spellsInformation.find(aKey);
-	if (it != _playerData.spellsInformation.end())
-	{
-		spellCount = _playerData.spellsInformation[aKey];
-	}
-	return spellCount;
+	return _currentPlayerSpellsDelegate->getSpellCountForKey(aKey);
+}
+
+int CurrentPlayerDataSource::getSpellRechargeIntervalForKey(string aKey)
+{
+	return _currentPlayerSpellsDelegate->getSpellRechargeIntervalForKey(aKey);
+}
+
+void CurrentPlayerDataSource::setNewSpellCountForKey(int spellCount, string aKey)
+{
+	_currentPlayerSpellsDelegate->setNewSpellCountForKey(spellCount, aKey);
+}
+
+void CurrentPlayerDataSource::setNewSpellRechargeIntervalForKey(int spellRechargeInterval, string aKey)
+{
+	_currentPlayerSpellsDelegate->setNewSpellRechargeIntervalForKey(spellRechargeInterval, aKey);
 }

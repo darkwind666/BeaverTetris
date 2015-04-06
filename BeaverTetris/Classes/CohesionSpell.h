@@ -7,6 +7,7 @@
 class GameBoard;
 class CohesionSpellDelegate;
 class TetraminosFactory;
+class SpellRechargeDelegate;
 
 class CohesionSpell :public SpellInterface, public ServiceInterface
 {
@@ -14,8 +15,10 @@ public:
 	CohesionSpell(void);
 	~CohesionSpell(void);
 
-	virtual bool spellAvailable(void);
+	virtual bool spellAvailable();
 	virtual void castSpell();
+	virtual void updateSpell();
+	virtual float getSpellRechargePercent();
 
 	void setDelegate(CohesionSpellDelegate *aDelegate);
 
@@ -25,6 +28,7 @@ private:
 	CohesionSpellDelegate *_delegate;
 	TetraminosFactory *_tetraminosFactory;
 	int _cohesionCount;
+	SpellRechargeDelegate *_spellRechargeDelegate;
 
 	void setNewTetraminoInBoard();
 	bool availablePlaceForTetraminoInLine(int aLine);

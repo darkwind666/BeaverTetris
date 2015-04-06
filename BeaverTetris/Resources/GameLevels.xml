@@ -27,7 +27,7 @@
       <tetraminoType>blackTetramino</tetraminoType>
     </tetraminosTypes>
     <spells>
-      <spell type="rocketSpell"/>
+      <spell type="rocketSpell" rechargeInterval="30"/>
     </spells>
   </level>
   <level levelName="StartBlockCollectionLevel" levelAward="280">
@@ -61,7 +61,7 @@
       <fallDetailsEvent eventInterval="220" detailsCount="3"/>
     </gameEvents>
     <spells>
-      <spell type="randomExplosionsSpell" count="10"/>
+      <spell type="randomExplosionsSpell" count="10" rechargeInterval="40"/>
     </spells>
   </level>
   <level levelName="MiddleLevel" levelAward="540">
@@ -113,8 +113,8 @@
       <fallDetailsEvent eventInterval="100" detailsCount="4"/>
     </gameEvents>
     <spells>
-      <spell type="firestormSpell" count="4"/>
-      <spell type="randomExplosionsSpell" count="18"/>
+      <spell type="firestormSpell" count="4" rechargeInterval="50"/>
+      <spell type="randomExplosionsSpell" count="18" rechargeInterval="30"/>
     </spells>
   </level>
   <level levelName="EndBlockCollectionLevel" levelAward="2800">
@@ -135,8 +135,8 @@
       <fallDetailsEvent eventInterval="90" detailsCount="5"/>
     </gameEvents>
     <spells>
-      <spell type="firestormSpell" count="6"/>
-      <spell type="randomExplosionsSpell" count="21"/>
+      <spell type="firestormSpell" count="6" rechargeInterval="40"/>
+      <spell type="randomExplosionsSpell" count="21" rechargeInterval="50"/>
     </spells>
   </level>
   <level levelName="EndLevel" levelAward="3600">
@@ -154,8 +154,8 @@
       <accelerateEvent eventInterval="10" eventDuration="500" fallingSpeed="5"/>
     </gameEvents>
     <spells>
-      <spell type="firestormSpell" count="8"/>
-      <spell type="cohesionSpell" count="10"/>
+      <spell type="firestormSpell" count="8" rechargeInterval="30"/>
+      <spell type="cohesionSpell" count="10" rechargeInterval="50"/>
     </spells>
   </level>
   <level levelName="EndBossLevel" levelAward="4700">
@@ -174,8 +174,8 @@
       <fallDetailsEvent eventInterval="70" detailsCount="6"/>
     </gameEvents>
     <spells>
-      <spell type="firestormSpell" count="9"/>
-      <spell type="cohesionSpell" count="16"/>
+      <spell type="firestormSpell" count="9" rechargeInterval="20"/>
+      <spell type="cohesionSpell" count="16" rechargeInterval="40"/>
     </spells>
   </level>
 </levels>

@@ -48,16 +48,19 @@ PlayerInformation CurrentPlayerSerializer::getSavedPlayer()
 	return player;
 }
 
-map<string, int> CurrentPlayerSerializer::getSpellsInformationFromData(ValueMap &aData)
+map<string, LevelSpellInformation> CurrentPlayerSerializer::getSpellsInformationFromData(ValueMap &aData)
 {
-	map<string, int> spellsInformation;
+	map<string, LevelSpellInformation> spellsInformation;
 	ValueMap spellsData = aData[playerSpellsInformationKey].asValueMap();
 	ValueMap::iterator spellsIterator;
 	for (spellsIterator = spellsData.begin(); spellsIterator != spellsData.end(); spellsIterator++)
 	{
 		string spellKey = spellsIterator->first;
-		int spellCount = spellsIterator->second.asInt();
-		spellsInformation[spellKey] = spellCount;
+		ValueMap spellData = spellsIterator->second.asValueMap();
+		LevelSpellInformation spellInformation;
+		spellInformation.spellCount = spellData[playerSpellCountKey].asInt();
+		spellInformation.spellRechargeInterval = spellData[playerSpellRechargeIntervalKey].asInt();
+		spellsInformation[spellKey] = spellInformation;
 	}
 	return spellsInformation;
 }
@@ -76,13 +79,16 @@ void CurrentPlayerSerializer::savePlayer(PlayerInformation aPlayer)
 ValueMap CurrentPlayerSerializer::getSpellsDataFromPlayer(PlayerInformation &aPlayer)
 {
 	ValueMap spellsData;
-	map<string, int> spellsInformation = aPlayer.spellsInformation;
-	map<string, int>::iterator spellsIterator;
+	map<string, LevelSpellInformation> spellsInformation = aPlayer.spellsInformation;
+	map<string, LevelSpellInformation>::iterator spellsIterator;
 	for (spellsIterator = spellsInformation.begin(); spellsIterator != spellsInformation.end(); spellsIterator++)
 	{
 		string spellKey = spellsIterator->first;
-		int spellCount = spellsIterator->second;
-		spellsData[spellKey] = Value(spellCount);
+		LevelSpellInformation spellInformation = spellsIterator->second;
+		ValueMap spellData;
+		spellData[playerSpellCountKey] = spellInformation.spellCount;
+		spellData[playerSpellRechargeIntervalKey] = spellInformation.spellRechargeInterval;
+		spellsData[spellKey] = Value(spellData);
 	}
 	return spellsData;
 }

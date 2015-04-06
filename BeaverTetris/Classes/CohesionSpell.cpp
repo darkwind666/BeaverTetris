@@ -8,6 +8,7 @@
 #include "TetraminosFactory.h"
 #include "CurrentPlayerDataSource.h"
 #include "GameViewElementsKeys.h"
+#include "SpellRechargeDelegate.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ CohesionSpell::CohesionSpell(void)
 	_delegate = NULL;
 	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_cohesionCount = currentPlayerDataSource->getSpellCountForKey(cohesionSpellKey);
+	_spellRechargeDelegate = new SpellRechargeDelegate(cohesionSpellKey);
 }
 
 CohesionSpell::~CohesionSpell(void)
@@ -26,7 +28,8 @@ CohesionSpell::~CohesionSpell(void)
 
 bool CohesionSpell::spellAvailable(void)
 {
-	return true;
+	bool recharged = _spellRechargeDelegate->spellRecharged();
+	return recharged;
 }
 
 void CohesionSpell::castSpell()
@@ -36,6 +39,7 @@ void CohesionSpell::castSpell()
 	{
 		setNewTetraminoInBoard();
 	}
+	_spellRechargeDelegate->spellWasCasted();
 }
 
 void CohesionSpell::setNewTetraminoInBoard()
@@ -109,6 +113,16 @@ void CohesionSpell::sendMessageToDelegateWithTetraminoPosition(GamePositionOnBoa
 	{
 		_delegate->makeTetraminoOnPosition(aPosition);
 	}
+}
+
+void CohesionSpell::updateSpell()
+{
+	_spellRechargeDelegate->updateSpell();
+}
+
+float CohesionSpell::getSpellRechargePercent()
+{
+	return _spellRechargeDelegate->getSpellRechargePercent();
 }
 
 

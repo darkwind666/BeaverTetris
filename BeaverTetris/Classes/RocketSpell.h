@@ -6,6 +6,7 @@
 class CurrentDetailDataSource;
 class RocketSpellDelegate;
 class TetraminoRemovingObserverInterface;
+class SpellRechargeDelegate;
 
 class RocketSpell :public SpellInterface, public ServiceInterface
 {
@@ -13,8 +14,11 @@ public:
 	RocketSpell(void);
 	~RocketSpell(void);
 
-	bool spellAvailable();
-	void castSpell();
+	virtual bool spellAvailable();
+	virtual void castSpell();
+	virtual void updateSpell();
+	virtual float getSpellRechargePercent();
+
 	void setDelegate(RocketSpellDelegate *aDelegate);
 	void addObserver(TetraminoRemovingObserverInterface *aObserver);
 
@@ -23,6 +27,7 @@ private:
 	CurrentDetailDataSource *_currentDetailDataSource;
 	RocketSpellDelegate *_delegate;
 	TetraminoRemovingObserverInterface *_observer;
+	SpellRechargeDelegate *_spellRechargeDelegate;
 
 	void sendMessageToDelegate();
 	void sendMessageToObserver();

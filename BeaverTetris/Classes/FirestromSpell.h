@@ -9,6 +9,7 @@ class GameBoard;
 class FirestormSpellDelegate;
 class CurrentDetailDataSource;
 class FirestromSpellExplosionPositionDelegate;
+class SpellRechargeDelegate;
 
 class FirestromSpell :public SpellInterface, public ServiceInterface
 {
@@ -16,8 +17,10 @@ public:
 	FirestromSpell(void);
 	~FirestromSpell(void);
 
-	virtual bool spellAvailable(void);
+	virtual bool spellAvailable();
 	virtual void castSpell();
+	virtual void updateSpell();
+	virtual float getSpellRechargePercent();
 
 	void setDelegate(FirestormSpellDelegate *aDelegate);
 
@@ -26,6 +29,7 @@ private:
 	GameBoard *_gameBoard;
 	FirestormSpellDelegate *_delegate;
 	int _meteorsCount;
+	SpellRechargeDelegate *_spellRechargeDelegate;
 	CurrentDetailDataSource *_currentDetailDataSource;
 	FirestromSpellExplosionPositionDelegate *_explosionPositionDelegate;
 	bool _removeCurrentDetail;

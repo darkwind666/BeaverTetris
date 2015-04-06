@@ -26,8 +26,9 @@ private:
 	void fillLevelsInformation(std::vector<GameLevelInformation> &aLevelsInformation);
 	GameLevelInformation  getLevelFromNode(pugi::xml_node &node);
 	GameLevelInformation getDefaultLevel();
-	std::map<std::string, int> getSpellsDataFromNode(pugi::xml_node &node);
-	std::map<std::string, int> getSpellsFromNode(pugi::xml_node &node);
+	std::map<std::string, LevelSpellInformation> getSpellsDataFromNode(pugi::xml_node &node);
+	std::map<std::string, LevelSpellInformation> getSpellsFromNode(pugi::xml_node &node);
+	int getSpellCountFromNode(pugi::xml_node &node);
 	std::vector<TetraminoType> getAvailableTetraminosFromNode(pugi::xml_node &node);
 	std::vector<TetraminoDetailType> getAvailableDetails();
 	std::vector<GameEventInformation> getAvailableEventsFromeNode(pugi::xml_node &node);

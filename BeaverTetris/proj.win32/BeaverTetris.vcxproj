@@ -166,6 +166,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CurrentDetailTetraminosChecker.cpp" />
     <ClCompile Include="..\Classes\CurrentLevelDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentPlayerSerializer.cpp" />
+    <ClCompile Include="..\Classes\CurrentPlayerSpellsDelegate.cpp" />
     <ClCompile Include="..\Classes\CurrentVictoryConditionDataSource.cpp" />
     <ClCompile Include="..\Classes\DamageToPlayerSpell.cpp" />
     <ClCompile Include="..\Classes\DetailViewDataSource.cpp" />
@@ -276,6 +277,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp" />
     <ClCompile Include="..\Classes\SpellBox.cpp" />
     <ClCompile Include="..\Classes\SpellInterface.cpp" />
+    <ClCompile Include="..\Classes\SpellRechargeDelegate.cpp" />
+    <ClCompile Include="..\Classes\SpellRechargeSystem.cpp" />
     <ClCompile Include="..\Classes\SpellsViewDataSource.cpp" />
     <ClCompile Include="..\Classes\StartGameBackgroundController.cpp" />
     <ClCompile Include="..\Classes\StartMainGamePlayerScoreDataSource.cpp" />
@@ -363,9 +366,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="GameEventsFactory.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="GameSystemInterface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="GameTransitionsController.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -440,6 +440,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CurrentDetailTetraminosChecker.h" />
     <ClInclude Include="..\Classes\CurrentLevelDataSource.h" />
     <ClInclude Include="..\Classes\CurrentPlayerSerializer.h" />
+    <ClInclude Include="..\Classes\CurrentPlayerSpellsDelegate.h" />
     <ClInclude Include="..\Classes\CurrentVictoryConditionDataSource.h" />
     <ClInclude Include="..\Classes\DamageToPlayerSpell.h" />
     <ClInclude Include="..\Classes\DetailViewDataSource.h" />
@@ -561,6 +562,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SimilarTetraminosCombination.h" />
     <ClInclude Include="..\Classes\SpellBox.h" />
     <ClInclude Include="..\Classes\SpellInterface.h" />
+    <ClInclude Include="..\Classes\SpellRechargeDelegate.h" />
+    <ClInclude Include="..\Classes\SpellRechargeSystem.h" />
     <ClInclude Include="..\Classes\SpellsViewDataSource.h" />
     <ClInclude Include="..\Classes\StartGameBackgroundController.h" />
     <ClInclude Include="..\Classes\StartMainGamePlayerScoreDataSource.h" />
@@ -618,7 +621,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="CurrentGameEventsDataSource.h" />
     <ClInclude Include="GameEventsFactory.h" />
     <ClInclude Include="GameResourcesExtension.h" />
-    <ClInclude Include="GameSystemInterface.h" />
     <ClInclude Include="GameTransitionsController.h" />
     <ClInclude Include="PlayerSelectionObserver.h" />
     <ClInclude Include="RemovingDeadTetraminosSystem.h" />

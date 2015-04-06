@@ -14,6 +14,7 @@ public:
 	int getSpellCostForKey(std::string aKey);
 	void useSpellForKey(std::string aKey);
 	bool spellAvailableForKey(std::string aKey);
+	void updateAllSpells();
 
 private:
 
@@ -21,7 +22,7 @@ private:
 	std::map<std::string, int> _spellsCosts;
 
 	void setNewSpellsToPlayer();
-	std::map<std::string, int> getSpellsData();
+	std::map<std::string, LevelSpellInformation> getSpellsData();
 	std::map<std::string, int> getSpellsCosts();
 	std::map<std::string, SpellInformation> getSpellsInformation();
 

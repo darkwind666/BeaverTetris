@@ -9,6 +9,7 @@
 #include "GameViewElementsKeys.h"
 #include "CurrentDetailDataSource.h"
 #include "FirestromSpellExplosionPositionDelegate.h"
+#include "SpellRechargeDelegate.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ FirestromSpell::FirestromSpell(void)
 	_delegate = NULL;
 	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_meteorsCount = currentPlayerDataSource->getSpellCountForKey(firestormSpellKey);
+	_spellRechargeDelegate = new SpellRechargeDelegate(firestormSpellKey);
 	_currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
 	_explosionPositionDelegate = new FirestromSpellExplosionPositionDelegate();
 	_removeCurrentDetail = false;
@@ -26,6 +28,7 @@ FirestromSpell::FirestromSpell(void)
 FirestromSpell::~FirestromSpell(void)
 {
 	delete _explosionPositionDelegate;
+	delete _spellRechargeDelegate;
 }
 
 bool FirestromSpell::spellAvailable(void)
@@ -36,7 +39,8 @@ bool FirestromSpell::spellAvailable(void)
 	{
 		spellAvailable = false;
 	}
-	return spellAvailable;
+	bool recharged = _spellRechargeDelegate->spellRecharged();
+	return (spellAvailable && recharged);
 }
 
 void FirestromSpell::castSpell()
@@ -46,6 +50,7 @@ void FirestromSpell::castSpell()
 	vector<FireballInformation> fireballs = getFireballs();
 	removeCurrentDetail();
 	throwFireballs(fireballs);
+	_spellRechargeDelegate->spellWasCasted();
 }
 
 vector<FireballInformation> FirestromSpell::getFireballs()
@@ -159,4 +164,14 @@ void FirestromSpell::sendDelegateKilledTetraminoOnPosition(GamePositionOnBoard a
 void FirestromSpell::setDelegate(FirestormSpellDelegate *aDelegate)
 {
 	_delegate = aDelegate;
+}
+
+void FirestromSpell::updateSpell()
+{
+	_spellRechargeDelegate->updateSpell();
+}
+
+float FirestromSpell::getSpellRechargePercent()
+{
+	return _spellRechargeDelegate->getSpellRechargePercent();
 }
