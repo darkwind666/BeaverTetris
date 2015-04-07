@@ -720,6 +720,9 @@
     <ClCompile Include="..\Classes\SpellRechargeSystem.cpp">
       <Filter>Models\GameLogic\Systems</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CurrentDetailAccelerationDelegate.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1390,6 +1393,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\SpellRechargeSystem.h">
       <Filter>Models\GameLogic\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CurrentDetailAccelerationDelegate.h">
+      <Filter>Controllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -54,3 +54,13 @@ void TimeAccelerationEvent::stepTimeInterval()
 		_currentUpdateState = 0;
 	}
 }
+
+bool TimeAccelerationEvent::eventActive()
+{
+	return _eventActive;
+}
+
+int TimeAccelerationEvent::getAcceleratedUpdateInterval()
+{
+	return _acceleratedUpdateInterval;
+}

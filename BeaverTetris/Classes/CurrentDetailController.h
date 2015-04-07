@@ -10,7 +10,7 @@ class CollisionDelegate;
 class TetraminoDetailLocatorDelegate;
 class CurrentDetailDataSource;
 class TetraminoDetail;
-class FallenDetailDelegate;
+class CurrentDetailAccelerationDelegate;
 
 class CurrentDetailController : public GameSystemInterface, public ServiceInterface
 {
@@ -23,8 +23,6 @@ public:
 	void rotateDetail(void);
 	void throwDetailOnGameBoard();
 
-	void setDelegate(FallenDetailDelegate *aDelegate);
-
 	virtual void updateSystem(float deltaTime);
 
 private:
@@ -33,7 +31,7 @@ private:
 	CollisionDelegate *_collisionDelegate;
 	TetraminoDetailLocatorDelegate *_tetraminoDetailLocatorDelegate;
 	CurrentDetailDataSource *_currentDetailDataSource;
-	FallenDetailDelegate *_delegate;
+	CurrentDetailAccelerationDelegate *_currentDetailAccelerationDelegate;
 
 	TetraminoDetail* getCurrentDetail();
 	GamePositionOnBoard getCurrentDetailPosition();

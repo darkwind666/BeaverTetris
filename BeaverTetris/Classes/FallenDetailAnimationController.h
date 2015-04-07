@@ -14,7 +14,6 @@ public:
 	FallenDetailAnimationController(GameBoardController *aGameBoardController, AnimationSynchonizer *aAnimationSynchonizer);
 	~FallenDetailAnimationController(void);
 
-	virtual void throwCurrentDetailOnPosition(GamePositionOnBoard aPosition);
 	virtual void placeNewDetailToPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition);
 	virtual void replaceDetailToPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition);
 

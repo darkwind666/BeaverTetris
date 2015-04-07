@@ -4,7 +4,6 @@
 #include "FallenDetailAnimationDelegate.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
-#include "CurrentDetailController.h"
 #include "TetraminosFallEvent.h"
 #include "FillingGapInBoardSystem.h"
 
@@ -30,25 +29,12 @@ void FallenDetailAnimationController::setUpDelegates()
 	FillingGapInBoardSystem *fillingGapInBoardSystem = (FillingGapInBoardSystem*)ServiceLocator::getServiceForKey(fillingGapInBoardSystemKey);
 	fillingGapInBoardSystem->setDelegate(this);
 
-	CurrentDetailController *currentDetailController = (CurrentDetailController*)ServiceLocator::getServiceForKey(currentDetailControllerKey);
-	currentDetailController->setDelegate(this);
-
 	ServiceInterface *service = ServiceLocator::getServiceForKey(tetraminosFallEventModelKey);
 	if (service)
 	{
 		TetraminosFallEvent *tetraminosFallEvent = (TetraminosFallEvent*)service;
 		tetraminosFallEvent->setDelegate(this);
 	}
-}
-
-void FallenDetailAnimationController::throwCurrentDetailOnPosition(GamePositionOnBoard aPosition)
-{
-	DetailViewDataSource *currentDetailViewDataSource = _fallenDetailAnimationDelegate->getCurrentDetailViewDataSource();
-	FallenDetailAnimationFactory *fallenDetailAnimationFactory = new FallenDetailAnimationFactory(currentDetailViewDataSource, _gameBoardController);
-	fallenDetailAnimationFactory->cleanDetailViewOnBoard();
-	FiniteTimeAction *actionWithDetail = _fallenDetailAnimationDelegate->getAnimationWithFactoryAndPosition(fallenDetailAnimationFactory, aPosition);
-	delete fallenDetailAnimationFactory;
-	_animationSynchonizer->addAnimationToQueue(actionWithDetail);
 }
 
 void FallenDetailAnimationController::placeNewDetailToPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition)

@@ -10,11 +10,6 @@ FallenDetailDelegate::~FallenDetailDelegate(void)
 {
 }
 
-void FallenDetailDelegate::throwCurrentDetailOnPosition(GamePositionOnBoard aPosition)
-{
-
-}
-
 void FallenDetailDelegate::placeNewDetailToPosition(TetraminoDetail *aDetail, GamePositionOnBoard aPosition)
 {
 

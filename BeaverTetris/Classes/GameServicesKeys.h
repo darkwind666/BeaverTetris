@@ -35,6 +35,7 @@ const string firestormSpellModelKey = string("FirestromSpell");
 const string cohesionSpellModelKey = string("CohesionSpell");
 const string newTetraminoDetailDataSourceKey = string("NewTetraminoDetailDataSource");
 const string tetraminosFallEventModelKey = string("TetraminosFallEvent");
+const string timeAccelerationEventModelKey = string("TimeAccelerationEvent");
 const string tetrisLogicSystemKey = string("TetrisLogicSystem");
 const string bossMovementObserverKey = string("BossMovementObserver");
 const string winGameSystemKey = string("WinGameSystem");

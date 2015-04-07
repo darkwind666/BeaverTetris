@@ -1,7 +1,6 @@
 #include "CurrentDetailController.h"
 #include "CollisionDelegate.h"
 #include "TetraminoDetailLocatorDelegate.h"
-#include "FallenDetailDelegate.h"
 #include "CurrentDetailDataSource.h"
 #include "TetraminoDetail.h"
 #include "GameBoard.h"
@@ -9,6 +8,7 @@
 #include "cocos2d.h"
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
+#include "CurrentDetailAccelerationDelegate.h"
 
 using namespace std;
 
@@ -19,12 +19,15 @@ CurrentDetailController::CurrentDetailController()
 	_currentDetailDataSource = (CurrentDetailDataSource*)ServiceLocator::getServiceForKey(currentDetailDataSourceKey);
 	_collisionDelegate = new CollisionDelegate(gameBoard);
 	_tetraminoDetailLocatorDelegate = new TetraminoDetailLocatorDelegate(gameBoard);
-	_delegate = NULL;
+	_currentDetailAccelerationDelegate = new CurrentDetailAccelerationDelegate();
 }
 
 
 CurrentDetailController::~CurrentDetailController(void)
 {
+	delete _collisionDelegate;
+	delete _tetraminoDetailLocatorDelegate;
+	delete _currentDetailAccelerationDelegate;
 }
 
 void CurrentDetailController::moveLeftDetail(void)
@@ -80,23 +83,9 @@ void CurrentDetailController::rotateDetail(void)
 void CurrentDetailController::throwDetailOnGameBoard()
 {
 	function<void()> throwDetail = [this](){
-
-		TetraminoDetail *currentDetail = getCurrentDetail();
-		GamePositionOnBoard finalCurrentDetailPositionOnBoard = _collisionDelegate->getCollisionPositionWithBoardForDetail(currentDetail);
-		if (_delegate)
-		{
-			_delegate->throwCurrentDetailOnPosition(finalCurrentDetailPositionOnBoard);
-		}
-		setNewDetailPosition(finalCurrentDetailPositionOnBoard);
-		writeCurrentDetailInBoardAndRemove();
-
+		_currentDetailAccelerationDelegate->accelerateCurrentDetail();
 	};
 	makeOperationWithCurrentDetail(throwDetail);
-}
-
-void CurrentDetailController::setDelegate(FallenDetailDelegate *aDelegate)
-{
-	_delegate = aDelegate;
 }
 
 void CurrentDetailController::updateSystem(float deltaTime)
@@ -105,6 +94,7 @@ void CurrentDetailController::updateSystem(float deltaTime)
 		CurrentDetailController::moveDownDetail();
 	};
 	makeOperationWithCurrentDetail(moveDownDetail);
+	_currentDetailAccelerationDelegate->update();
 }
 
 void CurrentDetailController::moveDownDetail()
@@ -144,6 +134,7 @@ void CurrentDetailController::writeCurrentDetailInBoardAndRemove()
 	TetraminoDetail *currentDetail = getCurrentDetail();
 	_tetraminoDetailLocatorDelegate->writeTetraminoDetailInBoard(currentDetail);
 	_currentDetailDataSource->removeCurrentDetail();
+	_currentDetailAccelerationDelegate->stopAcceleratingCurrentDetail();
 }
 
 void CurrentDetailController::setNewDetailPosition(GamePositionOnBoard aNewDetailPosition)

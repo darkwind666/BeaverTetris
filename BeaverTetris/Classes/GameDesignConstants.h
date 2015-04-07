@@ -7,6 +7,7 @@ const float startSoundEffectsVolume = 0.5f;
 const float startBackgroundSoundVolume = 0.5f;
 
 const int normalUpdateInterval = 30;
+const int acceleratedCurrentDetailUpdateInterval = 2;
 
 const int tetraminoBossMoveTimeIntervalConstant = 11;
 const int tetraminoBossTimeIntervalSpellCastConstant = 20;

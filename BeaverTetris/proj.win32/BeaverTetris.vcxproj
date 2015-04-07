@@ -160,6 +160,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CohesionSpellAnimationController.cpp" />
     <ClCompile Include="..\Classes\CohesionSpellDelegate.cpp" />
     <ClCompile Include="..\Classes\CollisionDelegate.cpp" />
+    <ClCompile Include="..\Classes\CurrentDetailAccelerationDelegate.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailController.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentDetailExplosionFactory.cpp" />
@@ -434,6 +435,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CohesionSpellAnimationController.h" />
     <ClInclude Include="..\Classes\CohesionSpellDelegate.h" />
     <ClInclude Include="..\Classes\CollisionDelegate.h" />
+    <ClInclude Include="..\Classes\CurrentDetailAccelerationDelegate.h" />
     <ClInclude Include="..\Classes\CurrentDetailController.h" />
     <ClInclude Include="..\Classes\CurrentDetailDataSource.h" />
     <ClInclude Include="..\Classes\CurrentDetailExplosionFactory.h" />
