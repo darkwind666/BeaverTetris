@@ -65,7 +65,8 @@ FiniteTimeAction* BossMovementAnimationController::getMoveBossAnimationWithViewA
 	Vec2 currentBoardPosition = aView->getPosition();
 	float yDifference = finalBoardPosition.y - currentBoardPosition.y;
 	float animationDuration = yDifference * fallActionDurationPerTetramino;
-	FiniteTimeAction *moveBoss = MoveTo::create(animationDuration, finalBoardPosition);
+	float absoluteDurationValue = abs(animationDuration);
+	FiniteTimeAction *moveBoss = MoveTo::create(absoluteDurationValue, finalBoardPosition);
 	return moveBoss;
 }
 

@@ -103,6 +103,12 @@
             </dict>
             <dict>
                 <key>PlayerName</key>
+                <string>sasha</string>
+                <key>PlayerScore</key>
+                <integer>3275</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
                 <string>Sasha</string>
                 <key>PlayerScore</key>
                 <integer>2000</integer>
@@ -124,6 +130,18 @@
                 <string>Sasha2</string>
                 <key>PlayerScore</key>
                 <integer>2000</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
+                <string>sasha</string>
+                <key>PlayerScore</key>
+                <integer>1854</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
+                <string>sasha</string>
+                <key>PlayerScore</key>
+                <integer>973</integer>
             </dict>
         </array>
     </dict>

@@ -659,7 +659,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <Xml Include="..\Resources\GameLevels.xml">
       <SubType>Designer</SubType>
     </Xml>
-    <Xml Include="..\Resources\GameSpells.xml" />
+    <Xml Include="..\Resources\GameSpells.xml">
+      <SubType>Designer</SubType>
+    </Xml>
     <Xml Include="..\Resources\GameTetraminos.xml">
       <SubType>Designer</SubType>
     </Xml>
