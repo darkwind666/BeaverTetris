@@ -97,13 +97,6 @@ struct DatabaseInformation
 	int playerScore;
 };
 
-struct VictoryConditionInformation
-{
-	int detailsCount;
-	int time;
-	std::map <TetraminoType, int> gameTetraminos;
-};
-
 struct GamePositionOnBoard
 {
 	int xPosition;
@@ -151,7 +144,6 @@ struct GameLevelInformation
 	int remainTimes;
 	std::vector<TetraminosForWinInformation> tetraminosCollectionForWin;
 	std::map<std::string, LevelSpellInformation> spellsData;
-
 };
 
 

@@ -6,7 +6,7 @@
 
 class GameLevelsMenuDataSource;
 
-class SelectGameLevelController : public cocos2d::CCNode, public PlayerStatusDelegateInterface
+class SelectGameLevelController : public cocos2d::Node, public PlayerStatusDelegateInterface
 {
 public:
 	SelectGameLevelController(void);
@@ -17,17 +17,17 @@ public:
 private:
 
 	GameLevelsMenuDataSource *_gameLevelsMenuDataSource;
-	cocos2d::CCMenu* _menuView;
+	cocos2d::Menu* _menuView;
 
-	void makeScrollableMenuWithBackground(cocos2d::CCMenu* aMenu);
-	cocos2d::CCNode* makeScrollableMenuWithContent(cocos2d::CCNode* aContentContainer);
+	void makeScrollableMenuWithBackground(cocos2d::Menu* aMenu);
+	cocos2d::Node* makeScrollableMenuWithContent(cocos2d::Node* aContentContainer);
 
-	std::vector<cocos2d::CCMenuItemImage*> makeLevelsIcons();
-	void addLevelIconsToMenu(std::vector<cocos2d::CCMenuItemImage*>  aLevelIcons);
-	cocos2d::CCAction* makeMenuAnimationWithIcons(std::vector<cocos2d::CCMenuItemImage*>  aLevelIcons);
-	cocos2d::Vector<cocos2d::FiniteTimeAction*> makeActionWithEachIcon(std::vector<cocos2d::CCMenuItemImage*>  aLevelIcons);
+	std::vector<cocos2d::MenuItemImage*> makeLevelsIcons();
+	void addLevelIconsToMenu(std::vector<cocos2d::MenuItemImage*>  aLevelIcons);
+	cocos2d::Action* makeMenuAnimationWithIcons(std::vector<cocos2d::MenuItemImage*>  aLevelIcons);
+	cocos2d::Vector<cocos2d::FiniteTimeAction*> makeActionWithEachIcon(std::vector<cocos2d::MenuItemImage*>  aLevelIcons);
 
-	void buttonWasPressed(cocos2d::CCObject* pSender);
+	void buttonWasPressed(cocos2d::Object* pSender);
 
 };
 

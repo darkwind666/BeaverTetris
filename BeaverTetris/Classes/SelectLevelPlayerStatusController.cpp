@@ -25,9 +25,9 @@ SelectLevelPlayerStatusController::~SelectLevelPlayerStatusController(void)
 
 Node* SelectLevelPlayerStatusController::getPlayerStatusPad()
 {
-	Sprite *padView = CCSprite::create("HelloWorld.png");
+	Sprite *padView = Sprite::create("HelloWorld.png");
 	padView->setScale(0.2f);
-	padView->setColor(ccColor3B::MAGENTA);
+	padView->setColor(Color3B::MAGENTA);
 	return padView;
 }
 

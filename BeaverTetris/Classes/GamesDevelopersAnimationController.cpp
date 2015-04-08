@@ -21,11 +21,11 @@ GamesDevelopersAnimationController::GamesDevelopersAnimationController(void)
 
 Node* GamesDevelopersAnimationController::getGameDevelopersBeaver()
 {
-	Sprite *beaver = CCSprite::create("HelloWorld.png");
+	Sprite *beaver = Sprite::create("HelloWorld.png");
 	beaver->setScaleX(0.2f);
 	beaver->setScaleY(0.2f);
 	beaver->setRotation(30);
-	beaver->setColor(ccColor3B::GREEN);
+	beaver->setColor(Color3B::GREEN);
 	return beaver;
 }
 

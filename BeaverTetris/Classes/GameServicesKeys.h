@@ -41,14 +41,3 @@ const string bossMovementObserverKey = string("BossMovementObserver");
 const string winGameSystemKey = string("WinGameSystem");
 const string mainGamePauseDelegateKey = string("MainGamePauseDelegate");
 const string startMainGamePlayerScoreDataSourceKey = string("StartMainGamePlayerScoreDataSource");
-
-
-const string eventDispatcherKey = string("EventDispatcher");
-const string tetraminosCharacteristicsDataSourceKey = string("TetraminosCharacteristicsDataSource");
-const string startGameMenuDataSourceKey = string("StartGameMenuDataSource");
-const string gameLevelsMenuDataSourceKey = string("GameLevelsMenuDataSource");
-const string activeDetailsKey = string("ActiveDetails");
-
-const string tetraminisDetailsFactoryKey = string("TetraminisDetailsFactory");
-
-const string spellsFactoryKey = string("SpellsFactory");

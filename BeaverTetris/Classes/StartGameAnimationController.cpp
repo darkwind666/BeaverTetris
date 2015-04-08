@@ -11,11 +11,11 @@ StartGameAnimationController::StartGameAnimationController(void)
 {
 	_startGameMenuController = new StartGameMenuController();
 
-	_beaver = CCSprite::create("HelloWorld.png");
+	_beaver = Sprite::create("HelloWorld.png");
 	_beaver->setScale(0.3f);
 	_beaver->setRotation(80);
 
-	_beaverClockArrow = CCSprite::create("HelloWorld.png");
+	_beaverClockArrow = Sprite::create("HelloWorld.png");
 	_beaverClockArrow->setScaleX(0.2f);
 	_beaverClockArrow->setScaleY(0.1f);
 	_beaverClockArrow->setAnchorPoint(Vec2(0.0f, 0.5f));

@@ -27,9 +27,9 @@ Node* EndGameMenuElementCreator::getGameStateLabelWithString(string stateLabelSt
 	return gameState;
 }
 
-Node* EndGameMenuElementCreator::getButtonWithCallbackAndColor(function<void()> aCallback, cocos2d::ccColor3B aColor)
+Node* EndGameMenuElementCreator::getButtonWithCallbackAndColor(function<void()> aCallback, cocos2d::Color3B aColor)
 {
-	CCMenuItemImage *button = CCMenuItemImage::create("HelloWorld.png","HelloWorld.png");
+	MenuItemImage *button = MenuItemImage::create("HelloWorld.png","HelloWorld.png");
 	button->setScaleX(0.2f);
 	button->setScaleY(0.07f);
 	button->setColor(aColor);
@@ -37,7 +37,7 @@ Node* EndGameMenuElementCreator::getButtonWithCallbackAndColor(function<void()> 
 		Node *button = (Node*)sender;
 		GameViewStyleHelper::runStandardButtonActionWithCallback(button, aCallback);
 	});
-	CCMenu *menuForButton = CCMenu::create();
+	Menu *menuForButton = Menu::create();
 	menuForButton->addChild(button);
 	return menuForButton;
 }

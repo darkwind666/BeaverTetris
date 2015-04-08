@@ -14,7 +14,7 @@ CocosNodesHelper::~CocosNodesHelper(void)
 {
 }
 
-void CocosNodesHelper::addChildNodeToParentNodeWithKey(CCNode *aChildNode, CCNode *aParentNode, std::string aKey)
+void CocosNodesHelper::addChildNodeToParentNodeWithKey(Node *aChildNode, Node *aParentNode, std::string aKey)
 {
 	GameViewElementsDataSource *elementsData = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
 	int nodeZOrder = elementsData->getElementZOrderForKey(aKey);
@@ -24,7 +24,7 @@ void CocosNodesHelper::addChildNodeToParentNodeWithKey(CCNode *aChildNode, CCNod
 	aParentNode->addChild(aChildNode);
 }
 
-void CocosNodesHelper::addChildNodeToParentNodeWithZOrderFromKey(CCNode *aChildNode, CCNode *aParentNode, std::string aKey)
+void CocosNodesHelper::addChildNodeToParentNodeWithZOrderFromKey(Node *aChildNode, Node *aParentNode, std::string aKey)
 {
 	GameViewElementsDataSource *elementsData = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
 	int nodeZOrder = elementsData->getElementZOrderForKey(aKey);
@@ -32,13 +32,13 @@ void CocosNodesHelper::addChildNodeToParentNodeWithZOrderFromKey(CCNode *aChildN
 	aParentNode->addChild(aChildNode);
 }
 
-void CocosNodesHelper::addButtonToParentNodeWithKey(cocos2d::CCMenuItem *aButton, cocos2d::CCNode *aParentNode, std::string aKey)
+void CocosNodesHelper::addButtonToParentNodeWithKey(cocos2d::MenuItem *aButton, cocos2d::Node *aParentNode, std::string aKey)
 {
 	GameViewElementsDataSource *elementsData = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
 	int nodeZOrder = elementsData->getElementZOrderForKey(aKey);
 	Vec2 nodePosition = elementsData->getElementPositionForKey(aKey);
 
-	CCMenu *menuForButton = CCMenu::create();
+	Menu *menuForButton = Menu::create();
 	menuForButton->addChild(aButton);
 
 	menuForButton->setPosition(nodePosition);

@@ -24,10 +24,10 @@ MainGamePlayerScoreController::~MainGamePlayerScoreController(void)
 
 void MainGamePlayerScoreController::makeControllerView()
 {
-	Sprite *background = CCSprite::create("HelloWorld.png");
+	Sprite *background = Sprite::create("HelloWorld.png");
 	background->setScaleX(0.13f);
 	background->setScaleY(0.1f);
-	background->setColor(ccColor3B::MAGENTA);
+	background->setColor(Color3B::MAGENTA);
 
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(background, this, playerScoreControllerBackgroundKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_scoreView, this, playerScoreControllerCountKey);

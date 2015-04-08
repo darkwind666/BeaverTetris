@@ -4,7 +4,7 @@
 #include <functional>
 #include "ui/CocosGUI.h"
 
-class GameSoundEffectsRegulator : public cocos2d::CCNode
+class GameSoundEffectsRegulator : public cocos2d::Node
 {
 public:
 	GameSoundEffectsRegulator(void);

@@ -58,7 +58,7 @@ Node* PlayerCreatorController::getPlayerCreatorInputHolder()
 	textBoxImage->setScaleX(0.4f);
 	textBoxImage->setScaleY(0.1f);
 	
-	CCSize inputBoxSize = textBoxImage->getBoundingBox().size;
+	Size inputBoxSize = textBoxImage->getBoundingBox().size;
 	
 	EditBox *createPlayerControllerInput = EditBox::create(inputBoxSize,textBoxImage);
 	createPlayerControllerInput->setPlaceHolder("Sasha");

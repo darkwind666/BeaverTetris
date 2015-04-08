@@ -1,5 +1,5 @@
 #include "GameFileExtensionMaker.h"
-#include "proj.win32\GameResourcesExtension.h"
+#include "GameResourcesExtension.h"
 #include <vector>
 
 using namespace std;

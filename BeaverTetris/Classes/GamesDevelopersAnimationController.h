@@ -16,8 +16,8 @@ private:
 	cocos2d::Node *_gamesDevelopersBeaver;
 
 	cocos2d::Node* getGameDevelopersBeaver();
-	cocos2d::CCFiniteTimeAction* getAnimationWithBoard();
-	cocos2d::CCFiniteTimeAction* getAnimationWithBeaver();
+	cocos2d::FiniteTimeAction* getAnimationWithBoard();
+	cocos2d::FiniteTimeAction* getAnimationWithBeaver();
 
 };
 

@@ -4,7 +4,7 @@
 
 class StartGameMenuDataSource;
 
-class StartGameMenuController : public cocos2d::CCNode
+class StartGameMenuController : public cocos2d::Node
 {
 public:
 	StartGameMenuController(void);
@@ -15,7 +15,7 @@ private :
 	StartGameMenuDataSource *_startGameViewDataSource;
 
 	void createStartMenu();
-	void buttonWasPressed(cocos2d::CCObject* pSender);
+	void buttonWasPressed(cocos2d::Object* pSender);
 
 };
 

@@ -52,7 +52,7 @@ Node* GamesRecordsBoardController::getRecordPadWithIndex(int aIndex)
 	Sprite *recordPad = Sprite::create("HelloWorld.png");
 	recordPad->setScaleX(0.3f);
 	recordPad->setScaleY(0.15f);
-	recordPad->setColor(ccColor3B::BLACK);
+	recordPad->setColor(Color3B::BLACK);
 	
 	Vec2 offset = GameElementsDataHelper::getElementOffsetForKey(gameRecordsBoardControllerKey);
 	Vec2 recordPadPosition = Vec2(0, offset.y * aIndex);

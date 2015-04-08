@@ -231,9 +231,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameWorldAnimationController.cpp" />
     <ClCompile Include="..\Classes\GameWorldBackgroundController.cpp" />
     <ClCompile Include="..\Classes\GameWorldController.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="..\Classes\HorisontalChainChecker.cpp" />
     <ClCompile Include="..\Classes\KeysForEnumsDataSource.cpp" />
     <ClCompile Include="..\Classes\KingBoss.cpp" />
@@ -318,100 +315,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\VictoryConditionViewDataSource.cpp" />
     <ClCompile Include="..\Classes\WinBossCondition.cpp" />
     <ClCompile Include="..\Classes\WinGameSystem.cpp" />
-    <ClCompile Include="ActiveDetails.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="AIStrategyInterface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="AiSystem.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="BossesFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="CollisionSystem.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="CurrentBossDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="CurrentLevelAwardDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="CurrentLevelDataSourceObserver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="DevelopersDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="EndGameController.cpp" />
-    <ClCompile Include="EndGameViewDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="EventDispatcher.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GameControllViewDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GameDataFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GameEventInterface.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="CurrentGameEventsDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GameEventsFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GameTransitionsController.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="PlayerSelectionObserver.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="RemovingDeadTetraminosSystem.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="VictoryConditionsFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="MoveSystem.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="NewGameTetraminoDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="PlayerInputController.cpp" />
-    <ClCompile Include="PlayerScoreDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="SpellsFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="PlayerSelectionDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="RecordsDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="SceneGraphFactory.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="TetraminosCharacteristicsDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="CurrentLevelWinResultDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="WinGamesDataSource.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -493,6 +398,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GamePlayersDatabaseSerializer.h" />
     <ClInclude Include="..\Classes\GamePopUpsController.h" />
     <ClInclude Include="..\Classes\GameRecordsSceneFactory.h" />
+    <ClInclude Include="..\Classes\GameResourcesExtension.h" />
     <ClInclude Include="..\Classes\GameResultDelegate.h" />
     <ClInclude Include="..\Classes\GamesDevelopersAnimationController.h" />
     <ClInclude Include="..\Classes\GamesDevelopersBoardController.h" />
@@ -517,7 +423,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameWorldAnimationController.h" />
     <ClInclude Include="..\Classes\GameWorldBackgroundController.h" />
     <ClInclude Include="..\Classes\GameWorldController.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\HorisontalChainChecker.h" />
     <ClInclude Include="..\Classes\KeysForEnumsDataSource.h" />
     <ClInclude Include="..\Classes\KingBoss.h" />
@@ -604,41 +509,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\VictoryConditionViewDataSource.h" />
     <ClInclude Include="..\Classes\WinBossCondition.h" />
     <ClInclude Include="..\Classes\WinGameSystem.h" />
-    <ClInclude Include="ActiveDetails.h" />
-    <ClInclude Include="AIStrategyInterface.h" />
-    <ClInclude Include="AiSystem.h" />
-    <ClInclude Include="BossesFactory.h" />
-    <ClInclude Include="CollisionSystem.h" />
-    <ClInclude Include="CurrentBossDataSource.h" />
-    <ClInclude Include="CurrentLevelAwardDataSource.h" />
-    <ClInclude Include="CurrentLevelDataSourceObserver.h" />
-    <ClInclude Include="DevelopersDataSource.h" />
-    <ClInclude Include="EndGameController.h" />
-    <ClInclude Include="EndGameViewDataSource.h" />
-    <ClInclude Include="EventDispatcher.h" />
-    <ClInclude Include="EventHandlerInterface.h" />
-    <ClInclude Include="GameControllViewDataSource.h" />
-    <ClInclude Include="GameDataFactory.h" />
-    <ClInclude Include="GameEventInterface.h" />
-    <ClInclude Include="CurrentGameEventsDataSource.h" />
-    <ClInclude Include="GameEventsFactory.h" />
-    <ClInclude Include="GameResourcesExtension.h" />
-    <ClInclude Include="GameTransitionsController.h" />
-    <ClInclude Include="PlayerSelectionObserver.h" />
-    <ClInclude Include="RemovingDeadTetraminosSystem.h" />
-    <ClInclude Include="VictoryConditionsFactory.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="MoveSystem.h" />
-    <ClInclude Include="NewGameTetraminoDataSource.h" />
-    <ClInclude Include="PlayerInputController.h" />
-    <ClInclude Include="PlayerScoreDataSource.h" />
-    <ClInclude Include="SpellsFactory.h" />
-    <ClInclude Include="PlayerSelectionDataSource.h" />
-    <ClInclude Include="RecordsDataSource.h" />
-    <ClInclude Include="SceneGraphFactory.h" />
-    <ClInclude Include="TetraminosCharacteristicsDataSource.h" />
-    <ClInclude Include="CurrentLevelWinResultDataSource.h" />
-    <ClInclude Include="WinGamesDataSource.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cocos2d\cocos\2d\libcocos2d.vcxproj">

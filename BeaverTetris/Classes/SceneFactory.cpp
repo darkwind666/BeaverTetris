@@ -12,8 +12,8 @@ SceneFactory::~SceneFactory(void)
 {
 }
 
-CCScene* SceneFactory::createScene()
+Scene* SceneFactory::createScene()
 {
-	CCScene *defaultScene = CCScene::create();
+	Scene *defaultScene = Scene::create();
 	return defaultScene;
 }

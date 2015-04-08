@@ -32,9 +32,9 @@ MainGameEndPopUp::~MainGameEndPopUp(void)
 	delete _mainGameEndPopUpSoundController;
 }
 
-CCNode* MainGameEndPopUp::makePopUpView()
+Node* MainGameEndPopUp::makePopUpView()
 {
-	CCLayerColor *popUpPad = CCLayerColor::create(Color4B::RED, 300, 200);
+	LayerColor *popUpPad = LayerColor::create(Color4B::RED, 300, 200);
 	popUpPad->ignoreAnchorPointForPosition(false);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(popUpPad,this,mainGameEndPopUpPadKey);
 	return popUpPad;
@@ -46,8 +46,8 @@ void MainGameEndPopUp::showPopUp()
 	_gameHudsController->pauseHuds();
 	fillViewWithElements();
 	Vec2 newControllerPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(mainGameEndPopUpPadKey);
-	CCActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartAppearDuration, newControllerPosition);
-	Action *ease = CCEaseBackOut::create(moveController);
+	ActionInterval *moveController = MoveTo::create(regulateSoundPopUpStartAppearDuration, newControllerPosition);
+	Action *ease = EaseBackOut::create(moveController);
 	_popUpView->runAction(ease);
 	_mainGameEndPopUpSoundController->playEndGameSound();
 }

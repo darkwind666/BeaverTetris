@@ -4,7 +4,7 @@
 #include <functional>
 #include "ui/CocosGUI.h"
 
-class GameBackgroundSoundRegulator : public cocos2d::CCNode
+class GameBackgroundSoundRegulator : public cocos2d::Node
 {
 public:
 	GameBackgroundSoundRegulator(void);

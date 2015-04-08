@@ -37,7 +37,7 @@ Node* GamesDevelopersBoardController::getDeveloperPadWithKey(string aPadKey)
 	Sprite *developerPad = Sprite::create("HelloWorld.png");
 	developerPad->setScaleX(0.4f);
 	developerPad->setScaleY(0.15f);
-	developerPad->setColor(ccColor3B::BLACK);
+	developerPad->setColor(Color3B::BLACK);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(developerPad, this, aPadKey);
 	return developerPad;
 }

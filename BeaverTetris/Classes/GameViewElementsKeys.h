@@ -136,8 +136,3 @@ const string gameDevelopersFunctionLabelKey = string("gameDevelopersFunctionLabe
 const string gameDevelopersNameLabelKey = string("gameDevelopersNameLabel");
 const string gameDevelopersBeaverKey = string("gameDevelopersBeaver");
 const string gameDevelopersGoToMainMenuButtonKey = string("gameDevelopersGoToMainMenuButton");
-
-const string gameResultKey = string("GameResult");
-const string loseGameKey = string("LoseGameImage");
-const string winGameKey = string("WinGameImage");
-const string gameAwardKey = string("GameAward");

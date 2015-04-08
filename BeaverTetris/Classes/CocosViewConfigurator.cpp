@@ -1,7 +1,6 @@
 #include "CocosViewConfigurator.h"
 #include "CCPlatformConfig.h"
 #include "GameViewConstants.h"
-#include <vector>
 
 using namespace std;
 using namespace cocos2d;
@@ -35,7 +34,6 @@ void CocosViewConfigurator::configurateScreenSize(cocos2d::GLView *aView)
 {
 	vector<int>::iterator operationSystemsIterator;
 	operationSystemsIterator = find(_standartResolutionOperationSystems.begin(), _standartResolutionOperationSystems.end(),CC_TARGET_PLATFORM);
-	
 	if (operationSystemsIterator != _standartResolutionOperationSystems.end())
 	{
 		aView->setFrameSize(designResolutionWidth, designResolutionHeight);
@@ -45,7 +43,7 @@ void CocosViewConfigurator::configurateScreenSize(cocos2d::GLView *aView)
 void CocosViewConfigurator::setScalingAndResourcesFolderForScreenSize(Size aScreenSize)
 {
 	FileUtils *fileUtils = FileUtils::getInstance();
-	CCDirector *director = CCDirector::getInstance();
+	Director *director = Director::getInstance();
 	
 	if (aScreenSize.height <= designResolutionHeight)
 	{

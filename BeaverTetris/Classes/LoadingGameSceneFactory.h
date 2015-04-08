@@ -9,11 +9,11 @@ public:
 	LoadingGameSceneFactory(void);
 	~LoadingGameSceneFactory(void);
 
-	virtual cocos2d::CCScene* createScene();
+	virtual cocos2d::Scene* createScene();
 
 private:
 
-	cocos2d::CCNode* getBeaverWithClock();
+	cocos2d::Node* getBeaverWithClock();
 
 };
 

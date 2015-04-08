@@ -26,7 +26,7 @@ vector<Node*> EndGameMenuElementsCollectionCreator::getFinalLevelElements()
 	Node *playerAwardLabel = _endGameMenuElementCreator->getPlayerAwardLabel();
 	finalLevelElements.push_back(playerAwardLabel);
 
-	Node *goToRecordsScreenButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(_endGameMenuElementCreator->getFinishGameCallback(), ccColor3B::GREEN);
+	Node *goToRecordsScreenButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(_endGameMenuElementCreator->getFinishGameCallback(), Color3B::GREEN);
 	finalLevelElements.push_back(goToRecordsScreenButton);
 
 	return finalLevelElements;
@@ -42,13 +42,13 @@ vector<Node*> EndGameMenuElementsCollectionCreator::getNextLevelElements()
 	Node *playerAwardLabel = _endGameMenuElementCreator->getPlayerAwardLabel();
 	nextLevelElements.push_back(playerAwardLabel);
 
-	Node *nextLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(_endGameMenuElementCreator->getNextLevelCallback(), ccColor3B::YELLOW);
+	Node *nextLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(_endGameMenuElementCreator->getNextLevelCallback(), Color3B::YELLOW);
 	nextLevelElements.push_back(nextLevelButton);
 
-	Node *replayLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(getGoToSceneCallback(kPlayGame), ccColor3B::GRAY);
+	Node *replayLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(getGoToSceneCallback(kPlayGame), Color3B::GRAY);
 	nextLevelElements.push_back(replayLevelButton);
 
-	Node *goToSelectLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(getGoToSceneCallback(kSelectLevel), ccColor3B::MAGENTA);
+	Node *goToSelectLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(getGoToSceneCallback(kSelectLevel), Color3B::MAGENTA);
 	nextLevelElements.push_back(goToSelectLevelButton);
 
 	return nextLevelElements;
@@ -61,10 +61,10 @@ vector<Node*> EndGameMenuElementsCollectionCreator::getLoseGameElements()
 	Node *gameStateLabel = _endGameMenuElementCreator->getGameStateLabelWithString(string("You lose!"));
 	loseGameElements.push_back(gameStateLabel);
 
-	Node *replayLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(getGoToSceneCallback(kPlayGame), ccColor3B::GRAY);
+	Node *replayLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(getGoToSceneCallback(kPlayGame), Color3B::GRAY);
 	loseGameElements.push_back(replayLevelButton);
 	
-	Node *goToSelectLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(getGoToSceneCallback(kSelectLevel), ccColor3B::MAGENTA);
+	Node *goToSelectLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndColor(getGoToSceneCallback(kSelectLevel), Color3B::MAGENTA);
 	loseGameElements.push_back(goToSelectLevelButton);
 
 	return loseGameElements;

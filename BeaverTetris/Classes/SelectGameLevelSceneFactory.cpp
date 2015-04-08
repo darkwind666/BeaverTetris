@@ -20,9 +20,9 @@ SelectGameLevelSceneFactory::~SelectGameLevelSceneFactory(void)
 {
 }
 
-CCScene* SelectGameLevelSceneFactory::createScene()
+Scene* SelectGameLevelSceneFactory::createScene()
 {
-	CCScene *selectGameLevelScene = CCScene::create();
+	Scene *selectGameLevelScene = Scene::create();
 
 	SelectGameLevelController *selectGameLevelController = new SelectGameLevelController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectGameLevelController,selectGameLevelScene,selectLevelMenuKey);
@@ -43,14 +43,14 @@ CCScene* SelectGameLevelSceneFactory::createScene()
 
 MenuItemImage* SelectGameLevelSceneFactory::getCloseButton()
 {
-	std::function<void(CCObject* pSender)> callback = [](CCObject* pSender){ 
-		CCNode *button = (CCNode*)pSender;
+	std::function<void(Object* pSender)> callback = [](Object* pSender){ 
+		Node *button = (Node*)pSender;
 		std::function<void()> buttonCallback = [](){GameStatesHelper::goToScene(kStartGame);};
 		GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);
 	};
 	
-	CCMenuItemImage *closeButtonItem = CCMenuItemImage::create("HelloWorld.png","HelloWorld.png",callback);
-	closeButtonItem->setColor(ccColor3B::ORANGE);
+	MenuItemImage *closeButtonItem = MenuItemImage::create("HelloWorld.png","HelloWorld.png",callback);
+	closeButtonItem->setColor(Color3B::ORANGE);
 	closeButtonItem->setScaleX(0.2f);
 	closeButtonItem->setScaleY(0.07f);
 	return closeButtonItem;

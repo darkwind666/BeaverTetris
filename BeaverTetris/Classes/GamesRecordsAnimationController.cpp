@@ -25,11 +25,11 @@ GamesRecordsAnimationController::~GamesRecordsAnimationController(void)
 
 Node* GamesRecordsAnimationController::getGameRecordsBeaver()
 {
-	Sprite *beaver = CCSprite::create("HelloWorld.png");
+	Sprite *beaver = Sprite::create("HelloWorld.png");
 	beaver->setScaleX(0.2f);
 	beaver->setScaleY(0.7f);
 	beaver->setRotation(0);
-	beaver->setColor(ccColor3B::BLUE);
+	beaver->setColor(Color3B::BLUE);
 	return beaver;
 }
 

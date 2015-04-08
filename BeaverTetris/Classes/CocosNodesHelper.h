@@ -8,8 +8,8 @@ public:
 	CocosNodesHelper(void);
 	~CocosNodesHelper(void);
 
-	static void addChildNodeToParentNodeWithKey(cocos2d::CCNode *aChildNode, cocos2d::CCNode *aParentNode, std::string aKey);
-	static void addChildNodeToParentNodeWithZOrderFromKey(cocos2d::CCNode *aChildNode, cocos2d::CCNode *aParentNode, std::string aKey);
-	static void addButtonToParentNodeWithKey(cocos2d::CCMenuItem *aButton, cocos2d::CCNode *aParentNode, std::string aKey);
+	static void addChildNodeToParentNodeWithKey(cocos2d::Node *aChildNode, cocos2d::Node *aParentNode, std::string aKey);
+	static void addChildNodeToParentNodeWithZOrderFromKey(cocos2d::Node *aChildNode, cocos2d::Node *aParentNode, std::string aKey);
+	static void addButtonToParentNodeWithKey(cocos2d::MenuItem *aButton, cocos2d::Node *aParentNode, std::string aKey);
 };
 

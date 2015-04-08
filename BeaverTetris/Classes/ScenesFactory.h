@@ -12,7 +12,7 @@ public:
 	ScenesFactory(void);
 	~ScenesFactory(void);
 
-	cocos2d::CCScene* getGameSceneForId(GameState aSceneId);
+	cocos2d::Scene* getGameSceneForId(GameState aSceneId);
 
 private:
 

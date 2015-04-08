@@ -8,7 +8,7 @@ class EventListenerKeyboard;
 class MainGamePauseDelegate;
 class GameWorldController;
 
-class MainGamePausePopUp : public cocos2d::CCNode,  public ScreenPopUp
+class MainGamePausePopUp : public cocos2d::Node,  public ScreenPopUp
 {
 public:
 	MainGamePausePopUp(GameWorldController *aGameWorldController);
@@ -19,16 +19,16 @@ public:
 private:
 
 	cocos2d::Vec2 _oldControllerPosition;
-	cocos2d::CCNode* _popUpView;
+	cocos2d::Node* _popUpView;
 	GameTimeStepController *_gameTimeStepController;
 	cocos2d::EventListenerKeyboard *_eventListenerKeyboard;
 	MainGamePauseDelegate *_mainGamePauseDelegate;
 	GameWorldController *_gameWorldController;
 	
 	void setUpKeyboard();
-	cocos2d::CCNode* makePopUpView();
-	void closePopUp(cocos2d::CCObject* pSender);
-	void goToSelectLevelScreen(cocos2d::CCObject* pSender);
+	cocos2d::Node* makePopUpView();
+	void closePopUp(cocos2d::Object* pSender);
+	void goToSelectLevelScreen(cocos2d::Object* pSender);
 	void keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent);
 	void hidePopUp();
 

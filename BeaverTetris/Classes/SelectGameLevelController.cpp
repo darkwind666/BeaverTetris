@@ -13,8 +13,8 @@ using namespace std;
 SelectGameLevelController::SelectGameLevelController(void)
 {
 	_gameLevelsMenuDataSource = new GameLevelsMenuDataSource();
-	vector<CCMenuItemImage*> levelsIcons = makeLevelsIcons();
-	_menuView = CCMenu::create();
+	vector<MenuItemImage*> levelsIcons = makeLevelsIcons();
+	_menuView = Menu::create();
 	_menuView->setPosition(Vec2(0,0));
 	makeScrollableMenuWithBackground(_menuView);
 }
@@ -51,20 +51,20 @@ Node* SelectGameLevelController::makeScrollableMenuWithContent(Node* aContentCon
 
 void SelectGameLevelController::showPlayerStatus()
 {
-	vector<CCMenuItemImage*> levelIcons = makeLevelsIcons();
+	vector<MenuItemImage*> levelIcons = makeLevelsIcons();
 	addLevelIconsToMenu(levelIcons);
 	Action *menuAnimation = makeMenuAnimationWithIcons(levelIcons);
 	this->runAction(menuAnimation);
 }
 
-vector<CCMenuItemImage*> SelectGameLevelController::makeLevelsIcons()
+vector<MenuItemImage*> SelectGameLevelController::makeLevelsIcons()
 {
-	vector<CCMenuItemImage*> levelIcons;
+	vector<MenuItemImage*> levelIcons;
 
 	int availableLevelsCount = _gameLevelsMenuDataSource->getLevelsCount();
 	for (int levelIndex = 0; levelIndex < availableLevelsCount; levelIndex++)
 	{
-		CCMenuItemImage *menuItem = CCMenuItemImage::create("HelloWorld.png","HelloWorld.png",CC_CALLBACK_1(SelectGameLevelController::buttonWasPressed, this));
+		MenuItemImage *menuItem = MenuItemImage::create("HelloWorld.png","HelloWorld.png",CC_CALLBACK_1(SelectGameLevelController::buttonWasPressed, this));
 		menuItem->setScale(0.0f);
 		menuItem->setTag(levelIndex);
 		menuItem->setPosition(_gameLevelsMenuDataSource->getLevelIconPositionForIndex(levelIndex));
@@ -73,40 +73,40 @@ vector<CCMenuItemImage*> SelectGameLevelController::makeLevelsIcons()
 	return levelIcons;
 }
 
-void SelectGameLevelController::addLevelIconsToMenu(vector<CCMenuItemImage*>  aLevelIcons)
+void SelectGameLevelController::addLevelIconsToMenu(vector<MenuItemImage*>  aLevelIcons)
 {
-	vector<CCMenuItemImage*>::iterator iconsIterator;
+	vector<MenuItemImage*>::iterator iconsIterator;
 	for (iconsIterator = aLevelIcons.begin(); iconsIterator != aLevelIcons.end(); iconsIterator++)
 	{
-		CCMenuItemImage *menuItem = *iconsIterator;
+		MenuItemImage *menuItem = *iconsIterator;
 		_menuView->addChild(menuItem);
 	}
 }
 
-Action*  SelectGameLevelController::makeMenuAnimationWithIcons(vector<CCMenuItemImage*>  aLevelIcons)
+Action*  SelectGameLevelController::makeMenuAnimationWithIcons(vector<MenuItemImage*>  aLevelIcons)
 {
 	Vector<FiniteTimeAction*> actions = makeActionWithEachIcon(aLevelIcons);
 	Action *sequence = Sequence::create(actions);
 	return sequence;
 }
 
-Vector<FiniteTimeAction*> SelectGameLevelController::makeActionWithEachIcon(vector<CCMenuItemImage*>  aLevelIcons)
+Vector<FiniteTimeAction*> SelectGameLevelController::makeActionWithEachIcon(vector<MenuItemImage*>  aLevelIcons)
 {
 	Vector<FiniteTimeAction*> actions;
-	vector<CCMenuItemImage*>::iterator iconsIterator;
+	vector<MenuItemImage*>::iterator iconsIterator;
 	for (iconsIterator = aLevelIcons.begin(); iconsIterator != aLevelIcons.end(); iconsIterator++)
 	{
-		CCNode *menuItem = *iconsIterator;
-		CCFiniteTimeAction *scaleUp = CCScaleTo::create(levelIconAppearActionDuration, 0.1f, 0.2f);
-		CCFiniteTimeAction *actionWithLevelIcon = CCTargetedAction::create(menuItem, scaleUp);
+		Node *menuItem = *iconsIterator;
+		FiniteTimeAction *scaleUp = ScaleTo::create(levelIconAppearActionDuration, 0.1f, 0.2f);
+		FiniteTimeAction *actionWithLevelIcon = TargetedAction::create(menuItem, scaleUp);
 		actions.pushBack(actionWithLevelIcon);
 	}
 	return actions;
 }
 
-void SelectGameLevelController::buttonWasPressed(CCObject* pSender)
+void SelectGameLevelController::buttonWasPressed(Object* pSender)
 {
-	CCNode *button = (CCNode*)pSender;
+	Node *button = (Node*)pSender;
 	int buttonTag = button->getTag();
 	std::function<void()> buttonCallback = [=](){_gameLevelsMenuDataSource->selectGameLevelForIndex(buttonTag);};
 	GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);

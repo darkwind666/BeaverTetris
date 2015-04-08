@@ -16,26 +16,26 @@ GameTransitionsViewController::~GameTransitionsViewController(void)
 
 void GameTransitionsViewController::goToInitialState(void)
 {
-	CCScene *sceneWithTransition = getSceneWithTransitionForId(kLoadGame);
-	CCDirector *director = CCDirector::getInstance();
+	Scene *sceneWithTransition = getSceneWithTransitionForId(kLoadGame);
+	Director *director = Director::getInstance();
 	director->runWithScene(sceneWithTransition);
 }
 
 void GameTransitionsViewController::changeOnNewState(GameState aNewGameState)
 {
-	CCScene *sceneWithTransition = getSceneWithTransitionForId(aNewGameState);
-	CCDirector *director = CCDirector::getInstance();
+	Scene *sceneWithTransition = getSceneWithTransitionForId(aNewGameState);
+	Director *director = Director::getInstance();
 	director->replaceScene(sceneWithTransition);
 }
 
-CCScene* GameTransitionsViewController::getSceneWithTransitionForId(GameState aSceneId)
+Scene* GameTransitionsViewController::getSceneWithTransitionForId(GameState aSceneId)
 {
-	CCScene *startScene = _scenesFactory->getGameSceneForId(aSceneId);
-	CCScene *sceneWithTransition = getSceneWithStandartTransition(startScene);
+	Scene *startScene = _scenesFactory->getGameSceneForId(aSceneId);
+	Scene *sceneWithTransition = getSceneWithStandartTransition(startScene);
 	return sceneWithTransition;
 }
 
-CCScene* GameTransitionsViewController::getSceneWithStandartTransition(CCScene* aScene)
+Scene* GameTransitionsViewController::getSceneWithStandartTransition(Scene* aScene)
 {
-	return CCTransitionFade::create(standartTransitionDuration, aScene);
+	return TransitionFade::create(standartTransitionDuration, aScene);
 }

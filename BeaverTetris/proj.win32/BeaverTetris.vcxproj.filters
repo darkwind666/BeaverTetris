@@ -10,9 +10,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Views">
-      <UniqueIdentifier>{f74156b7-6b77-4de5-9f41-b275329a7348}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Models">
       <UniqueIdentifier>{d8d055d0-6f5f-4f60-93f9-7d03a9080fe4}</UniqueIdentifier>
     </Filter>
@@ -30,9 +27,6 @@
     </Filter>
     <Filter Include="Factories">
       <UniqueIdentifier>{a3dbe40b-7841-4f54-b24e-9eb2e4782d82}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EventSystem">
-      <UniqueIdentifier>{9ca80150-17e2-4522-8cf6-7bad9c94e314}</UniqueIdentifier>
     </Filter>
     <Filter Include="Models\GameLogic">
       <UniqueIdentifier>{46bdaa44-2361-4f5b-8724-7249d3cd8136}</UniqueIdentifier>
@@ -107,105 +101,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>CocosStartClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>CocosStartClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGraphFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="EventDispatcher.cpp">
-      <Filter>EventSystem</Filter>
-    </ClCompile>
-    <ClCompile Include="GameEventsFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="SpellsFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="GameDataFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="ActiveDetails.cpp">
-      <Filter>Models\GameLogic</Filter>
-    </ClCompile>
-    <ClCompile Include="AiSystem.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="CollisionSystem.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="MoveSystem.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="GameEventInterface.cpp">
-      <Filter>Models\GameEvents</Filter>
-    </ClCompile>
-    <ClCompile Include="GameControllViewDataSource.cpp">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="EndGameViewDataSource.cpp">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="AIStrategyInterface.cpp">
-      <Filter>Models\AIStrateges</Filter>
-    </ClCompile>
-    <ClCompile Include="BossesFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="VictoryConditionsFactory.cpp">
-      <Filter>Factories</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentBossDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentGameEventsDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentLevelAwardDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentLevelWinResultDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="DevelopersDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="NewGameTetraminoDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerScoreDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerSelectionDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="RecordsDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="TetraminosCharacteristicsDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="WinGamesDataSource.cpp">
-      <Filter>Models\DataSources</Filter>
-    </ClCompile>
-    <ClCompile Include="RemovingDeadTetraminosSystem.cpp">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerInputController.cpp">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClCompile>
-    <ClCompile Include="GameTransitionsController.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="EndGameController.cpp">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerSelectionObserver.cpp">
-      <Filter>Observers</Filter>
-    </ClCompile>
-    <ClCompile Include="CurrentLevelDataSourceObserver.cpp">
-      <Filter>Observers</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CocosViewConfigurator.cpp">
       <Filter>CocosStartClasses</Filter>
@@ -730,111 +625,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>CocosStartClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>CocosStartClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGraphFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="EventDispatcher.h">
-      <Filter>EventSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="GameEventsFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="SpellsFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="GameDataFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="EventHandlerInterface.h">
-      <Filter>EventSystem</Filter>
-    </ClInclude>
-    <ClInclude Include="ActiveDetails.h">
-      <Filter>Models\GameLogic</Filter>
-    </ClInclude>
-    <ClInclude Include="AiSystem.h">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionSystem.h">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveSystem.h">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="GameEventInterface.h">
-      <Filter>Models\GameEvents</Filter>
-    </ClInclude>
-    <ClInclude Include="GameResourcesExtension.h">
-      <Filter>Constants</Filter>
-    </ClInclude>
-    <ClInclude Include="GameControllViewDataSource.h">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="EndGameViewDataSource.h">
-      <Filter>Models\ViewsDataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="AIStrategyInterface.h">
-      <Filter>Models\AIStrateges</Filter>
-    </ClInclude>
-    <ClInclude Include="BossesFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="VictoryConditionsFactory.h">
-      <Filter>Factories</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentBossDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentGameEventsDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentLevelAwardDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentLevelWinResultDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="DevelopersDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="NewGameTetraminoDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerScoreDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerSelectionDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="RecordsDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="TetraminosCharacteristicsDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="WinGamesDataSource.h">
-      <Filter>Models\DataSources</Filter>
-    </ClInclude>
-    <ClInclude Include="RemovingDeadTetraminosSystem.h">
-      <Filter>Models\GameLogic\Systems</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerInputController.h">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClInclude>
-    <ClInclude Include="GameTransitionsController.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="EndGameController.h">
-      <Filter>Controllers\ViewControllers</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerSelectionObserver.h">
-      <Filter>Observers</Filter>
-    </ClInclude>
-    <ClInclude Include="CurrentLevelDataSourceObserver.h">
-      <Filter>Observers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CocosViewConfigurator.h">
       <Filter>CocosStartClasses</Filter>
@@ -1396,6 +1186,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CurrentDetailAccelerationDelegate.h">
       <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameResourcesExtension.h">
+      <Filter>Constants</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

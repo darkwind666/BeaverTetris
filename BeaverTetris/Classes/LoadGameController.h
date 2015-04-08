@@ -4,7 +4,7 @@
 
 class LoadingGameDataSource;
 
-class LoadGameController : public cocos2d::CCNode
+class LoadGameController : public cocos2d::Node
 {
 public:
 	LoadGameController(void);
@@ -14,7 +14,7 @@ public:
 
 private:
 
-	cocos2d::CCProgressTimer *_loadGameControllerView;
+	cocos2d::ProgressTimer *_loadGameControllerView;
 	LoadingGameDataSource *_loadingGameDataSource;
 	int _loadedResourcesCount;
 

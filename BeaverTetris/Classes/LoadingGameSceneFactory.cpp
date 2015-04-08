@@ -14,23 +14,23 @@ LoadingGameSceneFactory::~LoadingGameSceneFactory(void)
 {
 }
 
-CCScene* LoadingGameSceneFactory::createScene()
+Scene* LoadingGameSceneFactory::createScene()
 {
-	CCScene *loadingScene = CCScene::create();
+	Scene *loadingScene = Scene::create();
 
-	CCLayerColor *background = CCLayerColor::create(Color4B::RED);
+	LayerColor *background = LayerColor::create(Color4B::RED);
 	background->ignoreAnchorPointForPosition(false);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(background,loadingScene,loadingGameBackgroundKey);
 
-	CCNode *beaver = getBeaverWithClock();
+	Node *beaver = getBeaverWithClock();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(beaver,loadingScene,loadingGameBeaverKey);
 
 	return loadingScene;
 }
 
-CCNode* LoadingGameSceneFactory::getBeaverWithClock()
+Node* LoadingGameSceneFactory::getBeaverWithClock()
 {
-	CCSprite *beaver = CCSprite::create("HelloWorld.png");
+	Sprite *beaver = Sprite::create("HelloWorld.png");
 	beaver->setScale(0.3f);
 	
 	LoadGameController *loadGameController = new LoadGameController();

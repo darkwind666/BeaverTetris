@@ -9,7 +9,7 @@ public:
 	DevelopersSceneFactory(void);
 	~DevelopersSceneFactory(void);
 
-	virtual cocos2d::CCScene* createScene();
+	virtual cocos2d::Scene* createScene();
 
 private:
 

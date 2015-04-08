@@ -16,9 +16,9 @@ StartGameSceneFactory::~StartGameSceneFactory(void)
 {
 }
 
-CCScene* StartGameSceneFactory::createScene()
+Scene* StartGameSceneFactory::createScene()
 {
-	CCScene *startGameScene = CCScene::create();
+	Scene *startGameScene = Scene::create();
 
 	StartGameBackgroundController *startGameBackgroundController = new StartGameBackgroundController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(startGameBackgroundController,startGameScene,startGameMenuBackgroundKey);

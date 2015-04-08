@@ -21,7 +21,7 @@ ScenesFactory::~ScenesFactory(void)
 {
 }
 
-CCScene* ScenesFactory::getGameSceneForId(GameState aSceneId)
+Scene* ScenesFactory::getGameSceneForId(GameState aSceneId)
 {
 	SceneFactory *sceneFactory = _scenesFactories[aSceneId];
 	return sceneFactory->createScene();

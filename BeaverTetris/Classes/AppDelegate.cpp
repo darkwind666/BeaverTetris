@@ -1,5 +1,4 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
 #include "CocosViewConfigurator.h"
 #include "GameInitiator.h"
 
@@ -45,9 +44,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	GameInitiator *gameInitiator = new GameInitiator();
 	gameInitiator->setInitialState();
 	delete gameInitiator;
-
-    /*auto scene = HelloWorld::createScene();
-	director->runWithScene(scene);*/
 
     return true;
 }

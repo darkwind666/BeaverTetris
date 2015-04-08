@@ -10,27 +10,6 @@ enum GameState
 	kRecords,
 };
 
-enum TransitionType
-{
-	kTransition1,
-	kTransition2,
-	kTransition3,
-	kTransition4,
-	kTransition5,
-	kTransition6,
-};
-
-enum EventType
-{
-	kGoToInitualSceneEvent,
-	kGoToSceneEvent,
-	kGoToPreviousSceneEvent,
-	kGoToNextLevelSceneEvent,
-	kGoToPopUp,
-	kClosePopUp,
-	kPlayerActionInGameEvent,
-};
-
 enum PopUpType
 {
 	kRegulateSoundPopUp,

@@ -26,15 +26,15 @@ void RegulateSoundPopUp::showPopUp()
 {
 	_oldControllerPosition = _popUpView->getPosition();
 	Vec2 newControllerPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(startGameRegulateSoundPadKey);
-	CCActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartAppearDuration, newControllerPosition);
+	ActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartAppearDuration, newControllerPosition);
 	Action *ease = CCEaseBackOut::create(moveController);
 	_popUpView->runAction(ease);
 }
 
-CCNode* RegulateSoundPopUp::makePopUpView()
+Node* RegulateSoundPopUp::makePopUpView()
 {
 
-	CCLayerColor *popUpPad = CCLayerColor::create(Color4B::RED, 300, 200);
+	LayerColor *popUpPad = LayerColor::create(Color4B::RED, 300, 200);
 	popUpPad->ignoreAnchorPointForPosition(false);
 
 	GameSoundEffectsRegulator *soundEffectsRegulator = new GameSoundEffectsRegulator();
@@ -43,7 +43,7 @@ CCNode* RegulateSoundPopUp::makePopUpView()
 	GameBackgroundSoundRegulator *backgroundSoundRegulator = new GameBackgroundSoundRegulator();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(backgroundSoundRegulator,popUpPad,startGameRegulateSoundSliderKey);
 
-	CCMenuItemImage *closeButtonItem = CCMenuItemImage::create("HelloWorld.png","HelloWorld.png",CC_CALLBACK_1(RegulateSoundPopUp::closePopUp, this));
+	MenuItemImage *closeButtonItem = MenuItemImage::create("HelloWorld.png","HelloWorld.png",CC_CALLBACK_1(RegulateSoundPopUp::closePopUp, this));
 	closeButtonItem->setScaleX(0.2f);
 	closeButtonItem->setScaleY(0.07f);
 	CocosNodesHelper::addButtonToParentNodeWithKey(closeButtonItem,popUpPad,startGameRegulateSoundCloseButtonKey);
@@ -52,11 +52,11 @@ CCNode* RegulateSoundPopUp::makePopUpView()
 
 }
 
-void RegulateSoundPopUp::closePopUp(CCObject* pSender)
+void RegulateSoundPopUp::closePopUp(Object* pSender)
 {
-	CCNode *button = (CCNode*)pSender;
+	Node *button = (Node*)pSender;
 	std::function<void()> buttonCallback = [this](){
-		CCActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartDisapperDuration, _oldControllerPosition);
+		ActionInterval *moveController = CCMoveTo::create(regulateSoundPopUpStartDisapperDuration, _oldControllerPosition);
 		_popUpView->runAction(moveController);
 	};
 	GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);

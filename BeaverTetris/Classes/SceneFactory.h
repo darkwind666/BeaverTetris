@@ -8,7 +8,7 @@ public:
 	SceneFactory(void);
 	virtual ~SceneFactory(void);
 
-	virtual cocos2d::CCScene* createScene() = 0;
+	virtual cocos2d::Scene* createScene() = 0;
 
 };
 

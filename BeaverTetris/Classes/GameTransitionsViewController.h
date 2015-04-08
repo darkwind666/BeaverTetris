@@ -23,10 +23,9 @@ public:
 private:
 
 	std::vector <GameState> _stateFactories;
-	std::vector < std::vector <TransitionType> > _transitions;
 	ScenesFactory *_scenesFactory;
 
-	cocos2d::CCScene* getSceneWithTransitionForId(GameState aSceneId);
-	cocos2d::CCScene* getSceneWithStandartTransition(cocos2d::CCScene* aScene);
+	cocos2d::Scene* getSceneWithTransitionForId(GameState aSceneId);
+	cocos2d::Scene* getSceneWithStandartTransition(cocos2d::Scene* aScene);
 
 };

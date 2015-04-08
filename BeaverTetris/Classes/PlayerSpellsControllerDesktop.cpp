@@ -50,14 +50,14 @@ void PlayerSpellsControllerDesktop::setInSpellViewNormalIcon(Node* aView)
 	Sprite *spellIcon = Sprite::create("HelloWorld.png");
 	spellIcon->setScaleY(0.08f);
 	spellIcon->setScaleX(0.06f);
-	spellIcon->setColor(ccColor3B::GREEN);
+	spellIcon->setColor(Color3B::GREEN);
 	aView->addChild(spellIcon);
 }
 
 void PlayerSpellsControllerDesktop::setInSpellViewRechargedIcon(Node* aView)
 {
 	Sprite *sourceView = Sprite::create("HelloWorld.png");
-	sourceView->setColor(ccColor3B::RED);
+	sourceView->setColor(Color3B::RED);
 	ProgressTimer *progress =  ProgressTimer::create(sourceView);
 	progress->setPercentage(0);
 	progress->setScaleY(0.08f);
