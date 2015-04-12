@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "CocosViewConfigurator.h"
 #include "GameInitiator.h"
+#include "GATrackerpp.h"
 
 USING_NS_CC;
 
@@ -44,6 +45,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	GameInitiator *gameInitiator = new GameInitiator();
 	gameInitiator->setInitialState();
 	delete gameInitiator;
+
+	GATrackerpp analyticHelper("UA-61796273-1", "71798b3b-97af-433e-a83a-fc95f95e50f1");
+	analyticHelper.sendEvent("Testing", "Sasha", true, false);
+	analyticHelper.sendEvent("SomeEvent", "Sasha2", true, false);
+	analyticHelper.sendAppView("MyDemoApp", "v1","Main screen");
 
     return true;
 }
