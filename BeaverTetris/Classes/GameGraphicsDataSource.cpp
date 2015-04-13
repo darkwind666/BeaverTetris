@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const string startGraphicName = string("StartGraphics");
+const string startGraphicName = string("LoadingScreenTextureAtlas");
 const string gameStartMenuGraphicName = string("StartGraphics");
 
 GameGraphicsDataSource::GameGraphicsDataSource(void)

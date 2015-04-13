@@ -1,6 +1,8 @@
 #include "LoadingGameSceneFactory.h"
 #include "LoadGameController.h"
+#include "LoadingGameWaveController.h"
 #include "CocosNodesHelper.h"
+#include "GameFileExtensionMaker.h"
 #include "GameViewElementsKeys.h"
 
 using namespace cocos2d;
@@ -17,22 +19,25 @@ LoadingGameSceneFactory::~LoadingGameSceneFactory(void)
 Scene* LoadingGameSceneFactory::createScene()
 {
 	Scene *loadingScene = Scene::create();
+	CocosNodesHelper::addSpriteToParentNodeWithKey(loadingScene, loadingGameBackgroundKey);
 
-	LayerColor *background = LayerColor::create(Color4B::RED);
-	background->ignoreAnchorPointForPosition(false);
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(background,loadingScene,loadingGameBackgroundKey);
+	Node *gameName = CocosNodesHelper::getSpriteWithKey(loadingGameNameKey);
+	gameName->setScale(0.9f);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameName,loadingScene,loadingGameNameKey);
 
 	Node *beaver = getBeaverWithClock();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(beaver,loadingScene,loadingGameBeaverKey);
+
+	LoadingGameWaveController *wave = new LoadingGameWaveController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(wave,loadingScene,loadingGameWaveKey);
+
 
 	return loadingScene;
 }
 
 Node* LoadingGameSceneFactory::getBeaverWithClock()
 {
-	Sprite *beaver = Sprite::create("HelloWorld.png");
-	beaver->setScale(0.3f);
-	
+	Sprite *beaver = CocosNodesHelper::getSpriteWithKey(loadingGameBeaverKey);
 	LoadGameController *loadGameController = new LoadGameController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(loadGameController,beaver,loadingGameClockKey);
 	return beaver;

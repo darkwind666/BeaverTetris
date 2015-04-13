@@ -14,6 +14,22 @@ CocosNodesHelper::~CocosNodesHelper(void)
 {
 }
 
+
+
+void CocosNodesHelper::addSpriteToParentNodeWithKey(Node *aParentNode, std::string aKey)
+{
+	Sprite *sourceView = getSpriteWithKey(aKey);
+	addChildNodeToParentNodeWithKey(sourceView, aParentNode, aKey);
+}
+
+Sprite* CocosNodesHelper::getSpriteWithKey(std::string aKey)
+{
+	GameViewElementsDataSource *elementsData = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
+	std::string spriteImageName = elementsData->getElementImageForKey(aKey);
+	Sprite *sourceView = Sprite::createWithSpriteFrameName(spriteImageName);
+	return sourceView;
+}
+
 void CocosNodesHelper::addChildNodeToParentNodeWithKey(Node *aChildNode, Node *aParentNode, std::string aKey)
 {
 	GameViewElementsDataSource *elementsData = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);

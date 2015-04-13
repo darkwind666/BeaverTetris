@@ -618,6 +618,9 @@
     <ClCompile Include="..\Classes\CurrentDetailAccelerationDelegate.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\LoadingGameWaveController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1189,6 +1192,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameResourcesExtension.h">
       <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LoadingGameWaveController.h">
+      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

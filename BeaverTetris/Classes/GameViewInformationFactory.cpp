@@ -44,16 +44,28 @@ void GameViewInformationFactory::makeLoadingScreenData()
 	loadingScreenBackground.elementPosition = getScreenCenter();
 	loadingScreenBackground.elementZOrder = kLoadingBackgroundZOrder;
 	_elementsInformation[loadingGameBackgroundKey] = loadingScreenBackground;
+
+	ViewElementInformation loadingGameWave;
+	loadingGameWave.elementImage = getImageNameForKey(loadingGameWaveKey);
+	loadingGameWave.elementPosition = Vec2(0, 40) + getScreenCenter();
+	loadingGameWave.elementZOrder = kLoadingGameWaveZOrder;
+	_elementsInformation[loadingGameWaveKey] = loadingGameWave;
 	
 	ViewElementInformation loadingBeaver;
 	loadingBeaver.elementImage = getImageNameForKey(loadingGameBeaverKey);
-	loadingBeaver.elementPosition = Vec2(130, 200);
+	loadingBeaver.elementPosition = Vec2(180, 190);
 	loadingBeaver.elementZOrder = kLoadingBeaverZOrder;
 	_elementsInformation[loadingGameBeaverKey] = loadingBeaver;
+
+	ViewElementInformation loadingGameName;
+	loadingGameName.elementImage = getImageNameForKey(loadingGameNameKey);
+	loadingGameName.elementPosition = Vec2(75, 410);
+	loadingGameName.elementZOrder = kLoadingGameNameZOrder;
+	_elementsInformation[loadingGameNameKey] = loadingGameName;
 	
 	ViewElementInformation loadingClock;
 	loadingClock.elementImage = getImageNameForKey(loadingGameClockKey);
-	loadingClock.elementPosition = Vec2(350, 630);
+	loadingClock.elementPosition = Vec2(230, 85);
 	loadingClock.elementZOrder = kLoadingClockZOrder;
 	_elementsInformation[loadingGameClockKey] = loadingClock;
 }

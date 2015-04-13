@@ -3,6 +3,8 @@
 enum LoadingSreenZOrdes
 {
 	kLoadingBackgroundZOrder,
+	kLoadingGameWaveZOrder,
+	kLoadingGameNameZOrder,
 	kLoadingBeaverZOrder,
 	kLoadingClockZOrder,
 };

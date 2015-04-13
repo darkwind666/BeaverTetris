@@ -4,9 +4,11 @@
 
 using namespace std;
 
-const string loadingGameBackgroundKey = string("loadingGameBackground");
-const string loadingGameBeaverKey = string("loadingGameBeaver");
-const string loadingGameClockKey = string("loadingGameClock");
+const string loadingGameBackgroundKey = string("LoadingScreenBackground");
+const string loadingGameBeaverKey = string("LoadingScreenBeaver");
+const string loadingGameClockKey = string("LoadingScreenClockCover");
+const string loadingGameNameKey = string("LoadingScreenGameName");
+const string loadingGameWaveKey = string("LoadingScreenWaves");
 
 const string startGameMenuBackgroundKey = string("startGameMenuBackground");
 const string startGameBeaverKey = string("startGameBeaver");
