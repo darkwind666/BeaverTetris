@@ -25,7 +25,7 @@ void GameGraphicsLoader::setInitialGraphic()
 void GameGraphicsLoader::loadResources()
 {
 	int graphicCount = getGraphicCount();
-	for (int graphicIndex = 0; graphicIndex <= graphicCount; graphicIndex++)
+	for (int graphicIndex = 0; graphicIndex < graphicCount; graphicIndex++)
 	{
 		loadGraphicForIndex(graphicIndex);
 	}
@@ -38,8 +38,8 @@ int GameGraphicsLoader::getGraphicCount()
 
 void GameGraphicsLoader::loadGraphicForIndex(int aIndex)
 {
-	string graphic = _gameGraphicsDataSource->getInitialGraphic();
-	string graphicFrame = _gameGraphicsDataSource->getInitialGraphicFrame();
+	string graphic = _gameGraphicsDataSource->getGraphicForIndex(aIndex);
+	string graphicFrame = _gameGraphicsDataSource->getGraphicFrameForIndex(aIndex);
 	setGraphicWithFrameAndFile(graphicFrame, graphic);
 }
 

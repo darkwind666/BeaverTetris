@@ -4,13 +4,14 @@
 #include "GameServicesKeys.h"
 #include "GameSoundController.h"
 #include "GameSoundsKeys.h"
+#include "CocosNodesHelper.h"
+#include "GameViewElementsKeys.h"
 
 using namespace cocos2d;
 
 StartGameBackgroundController::StartGameBackgroundController(void)
 {
-	LayerColor *background = LayerColor::create(Color4B::GREEN);
-	background->ignoreAnchorPointForPosition(false);
+	Sprite *background = CocosNodesHelper::getSpriteWithKey(startGameMenuBackgroundKey);
 	this->addChild(background);
 }
 

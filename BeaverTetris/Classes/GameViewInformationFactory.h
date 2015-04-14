@@ -20,6 +20,7 @@ private:
 
 	void makeLoadingScreenData();
 	void makeStartGameSreenData();
+	void makeStartGameMenuItemsData();
 	void makeStartGameRegulateSoundPopUpData();
 	void makeSelectGameLevelScreenData();
 	void makeSelectGameLevelMenuData();

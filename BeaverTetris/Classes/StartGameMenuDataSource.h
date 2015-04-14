@@ -15,7 +15,8 @@ public:
 	~StartGameMenuDataSource();
 
 	int getMenuItemsCount();
-	std::string getMenuImageForIndex(int aIndex);
+	std::string getMenuInactiveImageForIndex(int aIndex);
+	std::string getMenuActiveImageForIndex(int aIndex);
 	cocos2d::Vec2 getMenuItemPositionForIndex(int aIndex);
 	std::function<void()> getMenuItemCallbackForIndex(int aIndex);
 

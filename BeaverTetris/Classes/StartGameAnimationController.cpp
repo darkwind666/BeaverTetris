@@ -10,21 +10,9 @@ using namespace cocos2d;
 StartGameAnimationController::StartGameAnimationController(void)
 {
 	_startGameMenuController = new StartGameMenuController();
-
-	_beaver = Sprite::create("HelloWorld.png");
-	_beaver->setScale(0.3f);
-	_beaver->setRotation(80);
-
-	_beaverClockArrow = Sprite::create("HelloWorld.png");
-	_beaverClockArrow->setScaleX(0.2f);
-	_beaverClockArrow->setScaleY(0.1f);
-	_beaverClockArrow->setAnchorPoint(Vec2(0.0f, 0.5f));
-	_beaverClockArrow->setColor(Color3B::YELLOW);
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(_beaverClockArrow, _beaver, startGameBeaverClockKey);
-
+	_beaver = CocosNodesHelper::getSpriteWithKey(startGameBeaverKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_startGameMenuController, this, startGameMenuKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_beaver, this, startGameBeaverKey);
-	
 }
 
 
@@ -37,9 +25,8 @@ void StartGameAnimationController::onEnterTransitionDidFinish()
 	
 	FiniteTimeAction *actionWithMenu = getAnimationWithMenu();
 	FiniteTimeAction *actionWithBeaver = getAnimationWithBeaver();
-	FiniteTimeAction *actionWithClockArrow = getAnimationWithBeaverClockArrow();
 
-	Action *sequence = Sequence::create(actionWithMenu, actionWithBeaver, actionWithClockArrow, NULL);
+	Action *sequence = Sequence::create(actionWithMenu, actionWithBeaver, NULL);
 	this->runAction(sequence);
 }
 
@@ -59,14 +46,4 @@ FiniteTimeAction* StartGameAnimationController::getAnimationWithBeaver()
 	ActionInterval *beaverJump = JumpTo::create(beaverStartScreenActionDuration, finalBeaverPosition, beaverJumpOffset.y, 1);
 	FiniteTimeAction *actionWithBeaver = TargetedAction::create(_beaver, beaverJump);
 	return actionWithBeaver;
-}
-
-FiniteTimeAction* StartGameAnimationController::getAnimationWithBeaverClockArrow()
-{
-	FiniteTimeAction *actionWithClockArrow = CallFunc::create([this](){
-		ActionInterval *rotateActionUp = RotateBy::create(beaverClockArrowRotationSpeed, 90);
-		FiniteTimeAction *repeat = RepeatForever::create(rotateActionUp);
-		_beaverClockArrow->runAction(repeat);
-	});
-	return actionWithClockArrow;
 }

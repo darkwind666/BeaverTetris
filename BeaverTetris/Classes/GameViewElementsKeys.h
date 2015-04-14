@@ -10,17 +10,15 @@ const string loadingGameClockKey = string("LoadingScreenClockCover");
 const string loadingGameNameKey = string("LoadingScreenGameName");
 const string loadingGameWaveKey = string("LoadingScreenWaves");
 
-const string startGameMenuBackgroundKey = string("startGameMenuBackground");
-const string startGameBeaverKey = string("startGameBeaver");
-const string startGameBeaverClockKey = string("startGameBeaverClock");
-const string startGameMenuKey = string("startGameMenu");
+const string startGameMenuBackgroundKey = string("MenuScreenBackground");
+const string startGameBeaverKey = string("MenuScreenBeaver");
+const string startGameMenuKey = string("MenuScreenStaircase");
 
-const string gameElement1Key = string("gameElement1");
-const string gameElement2Key = string("gameElement2");
-const string gameElement3Key = string("gameElement3");
-const string gameElement4Key = string("gameElement4");
-const string gameElement5Key = string("gameElement5");
-const string gameElement6Key = string("gameElement6");
+const string createNewGameButtonKey = string("MenuScreenNewGame");
+const string selectGameLevelButtonKey = string("MenuScreenSelectLevel");
+const string goToGameRecordsButtonKey = string("MenuScreenRecords");
+const string getSoundRegulatorsButtonKey = string("MenuScreenSetting");
+const string goToDevelopersButtonKey = string("MenuScreenAuthors");
 
 const string startGameRegulateSoundPopUpKey = string("startGameRegulateSoundPopUp");
 const string startGameRegulateSoundPadKey = string("startGameRegulateSoundPad");

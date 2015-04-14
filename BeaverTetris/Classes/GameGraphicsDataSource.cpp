@@ -4,7 +4,7 @@
 using namespace std;
 
 const string startGraphicName = string("LoadingScreenTextureAtlas");
-const string gameStartMenuGraphicName = string("StartGraphics");
+const string gameStartMenuGraphicName = string("MenuScreenTextureAtlas");
 
 GameGraphicsDataSource::GameGraphicsDataSource(void)
 {
@@ -45,5 +45,8 @@ string GameGraphicsDataSource::getGraphicFrameForIndex(int aIndex)
 std::vector<std::string> GameGraphicsDataSource::getGraphicKeys()
 {
 	vector<string> graphicsKeys;
+
+	graphicsKeys.push_back(gameStartMenuGraphicName);
+
 	return graphicsKeys;
 }
