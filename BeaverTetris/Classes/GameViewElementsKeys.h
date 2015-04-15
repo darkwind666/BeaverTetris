@@ -12,8 +12,13 @@ const string loadingGameWaveKey = string("LoadingScreenWaves");
 
 const string startGameMenuBackgroundKey = string("MenuScreenBackground");
 const string startGameBeaverKey = string("MenuScreenBeaver");
-const string startGameMenuKey = string("MenuScreenStaircase");
 
+const string startGameFishesKey = string("startGameFishes");
+const string startGameFish1Key = string("MenuScreenFish");
+const string startGameFish2Key = string("MenuScreenFish2");
+const string startGameFish3Key = string("MenuScreenFish3");
+
+const string startGameMenuKey = string("MenuScreenStaircase");
 const string createNewGameButtonKey = string("MenuScreenNewGame");
 const string selectGameLevelButtonKey = string("MenuScreenSelectLevel");
 const string goToGameRecordsButtonKey = string("MenuScreenRecords");

@@ -281,6 +281,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SpellRechargeSystem.cpp" />
     <ClCompile Include="..\Classes\SpellsViewDataSource.cpp" />
     <ClCompile Include="..\Classes\StartGameBackgroundController.cpp" />
+    <ClCompile Include="..\Classes\StartGameFishesController.cpp" />
     <ClCompile Include="..\Classes\StartMainGamePlayerScoreDataSource.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
@@ -476,6 +477,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SpellRechargeSystem.h" />
     <ClInclude Include="..\Classes\SpellsViewDataSource.h" />
     <ClInclude Include="..\Classes\StartGameBackgroundController.h" />
+    <ClInclude Include="..\Classes\StartGameFishesController.h" />
     <ClInclude Include="..\Classes\StartMainGamePlayerScoreDataSource.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />

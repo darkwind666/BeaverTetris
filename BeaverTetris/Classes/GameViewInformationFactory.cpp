@@ -78,6 +78,13 @@ void GameViewInformationFactory::makeStartGameSreenData()
 	startGameScreenBackground.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[startGameMenuBackgroundKey] = startGameScreenBackground;
 
+	ViewElementInformation startGameFishes;
+	startGameFishes.elementPosition = Vec2(0, 0);
+	startGameFishes.elementZOrder = kStartGameFishesZOrder;
+	_elementsInformation[startGameFishesKey] = startGameFishes;
+
+	makeStartGameFishesData();
+
 	ViewElementInformation startGameMenu;
 	startGameMenu.elementImage = getImageNameForKey(startGameMenuKey);
 	startGameMenu.elementPosition = Vec2(80, -450);
@@ -102,6 +109,31 @@ void GameViewInformationFactory::makeStartGameSreenData()
 	_elementsInformation[startGameRegulateSoundPopUpKey] = startGameRegulateSoundPopUp;
 
 	makeStartGameRegulateSoundPopUpData();
+
+}
+
+void GameViewInformationFactory::makeStartGameFishesData()
+{
+	ViewElementInformation startGameFish1;
+	startGameFish1.elementImage = getImageNameForKey(startGameFish1Key);
+	startGameFish1.elementPosition = Vec2(320, 100);
+	startGameFish1.elementActionFinalPosition = Vec2(-20, 100);
+	startGameFish1.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
+	_elementsInformation[startGameFish1Key] = startGameFish1;
+
+	ViewElementInformation startGameFish2;
+	startGameFish2.elementImage = getImageNameForKey(startGameFish2Key);
+	startGameFish2.elementPosition = Vec2(-20, 30);
+	startGameFish2.elementActionFinalPosition = Vec2(290, 30);
+	startGameFish2.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
+	_elementsInformation[startGameFish2Key] = startGameFish2;
+
+	ViewElementInformation startGameFish3;
+	startGameFish3.elementImage = getImageNameForKey(startGameFish3Key);
+	startGameFish3.elementPosition = Vec2(-30, 90);
+	startGameFish3.elementActionFinalPosition = Vec2(290, 90);
+	startGameFish3.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
+	_elementsInformation[startGameFish3Key] = startGameFish3;
 
 }
 

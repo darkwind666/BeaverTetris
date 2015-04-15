@@ -14,6 +14,7 @@ enum StartGameSreenZOrdes
 	kStartGameBackgroundZOrder,
 	kStartGameBeaverZOrder,
 	kStartGameMenuZOrder,
+	kStartGameFishesZOrder,
 	kStartGameRegulateSoundPopUpZOrder,
 };
 

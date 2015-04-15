@@ -621,6 +621,9 @@
     <ClCompile Include="..\Classes\LoadingGameWaveController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\StartGameFishesController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1194,6 +1197,9 @@
       <Filter>Constants</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\LoadingGameWaveController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartGameFishesController.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
