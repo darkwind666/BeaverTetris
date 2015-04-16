@@ -38,6 +38,7 @@ vector<Node*> StartGameMenuController::getMenuItems()
 		Sprite *normalView = Sprite::createWithSpriteFrameName(unselectedImageName);
 		Sprite *selectedView = Sprite::createWithSpriteFrameName(selectedImageName);
 		MenuItemSprite *menuItem = MenuItemSprite::create(normalView, selectedView, CC_CALLBACK_1(StartGameMenuController::buttonWasPressed, this));
+		menuItem->setScale(0.9f);
 		menuItem->setTag(itemIndex);
 		menuItem->setPosition(_startGameViewDataSource->getMenuItemPositionForIndex(itemIndex));
 		menuItems.push_back(menuItem);

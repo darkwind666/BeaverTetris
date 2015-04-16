@@ -87,8 +87,8 @@ void GameViewInformationFactory::makeStartGameSreenData()
 
 	ViewElementInformation startGameMenu;
 	startGameMenu.elementImage = getImageNameForKey(startGameMenuKey);
-	startGameMenu.elementPosition = Vec2(80, -450);
-	startGameMenu.elementActionFinalPosition = Vec2(80, 260);
+	startGameMenu.elementPosition = Vec2(135, -450);
+	startGameMenu.elementActionFinalPosition = Vec2(135, 230);
 	startGameMenu.elementZOrder = kLoadingBackgroundZOrder;
 	_elementsInformation[startGameMenuKey] = startGameMenu;
 
@@ -96,8 +96,8 @@ void GameViewInformationFactory::makeStartGameSreenData()
 
 	ViewElementInformation startGameBeaver;
 	startGameBeaver.elementImage = getImageNameForKey(startGameBeaverKey);
-	startGameBeaver.elementPosition = Vec2(480, 0);
-	startGameBeaver.elementActionFinalPosition = Vec2(200, 200);
+	startGameBeaver.elementPosition = Vec2(480, 80);
+	startGameBeaver.elementActionFinalPosition = Vec2(220, 280);
 	startGameBeaver.elementOffset = Vec2(0, 200);
 	startGameBeaver.elementZOrder = kStartGameBeaverZOrder;
 	_elementsInformation[startGameBeaverKey] = startGameBeaver;
@@ -141,29 +141,29 @@ void GameViewInformationFactory::makeStartGameMenuItemsData()
 {
 
 	ViewElementInformation goToGameRecordsButton;
-	goToGameRecordsButton.elementPosition = Vec2(30, 120);
+	goToGameRecordsButton.elementPosition = Vec2(-40, 150);
 	goToGameRecordsButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[goToGameRecordsButtonKey] = goToGameRecordsButton;
 
 	ViewElementInformation getSoundRegulatorsButton;
-	getSoundRegulatorsButton.elementPosition = Vec2(30, 80);
+	getSoundRegulatorsButton.elementPosition = Vec2(-40, 110);
 	getSoundRegulatorsButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[getSoundRegulatorsButtonKey] = getSoundRegulatorsButton;
 
 
 	ViewElementInformation selectGameLevelButton;
-	selectGameLevelButton.elementPosition = Vec2(30, 30);
+	selectGameLevelButton.elementPosition = Vec2(-40, 60);
 	selectGameLevelButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[selectGameLevelButtonKey] = selectGameLevelButton;
 
 	ViewElementInformation goToDevelopersButton;
-	goToDevelopersButton.elementPosition = Vec2(30, -10);
+	goToDevelopersButton.elementPosition = Vec2(-40, 20);
 	goToDevelopersButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[goToDevelopersButtonKey] = goToDevelopersButton;
 
 
 	ViewElementInformation createNewGameButton;
-	createNewGameButton.elementPosition = Vec2(30, -70);
+	createNewGameButton.elementPosition = Vec2(-30, -40);
 	createNewGameButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[createNewGameButtonKey] = createNewGameButton;
 
