@@ -5,6 +5,7 @@
 #include "SelectGameLevelController.h"
 #include "SelectLevelPlayerStatusController.h"
 #include "PlayerCreatorController.h"
+#include "SelectGameLevelBeaverTalkController.h"
 #include "GameStatesHelper.h"
 #include "GameViewStyleHelper.h"
 #include "GameEnums.h"
@@ -24,7 +25,11 @@ Scene* SelectGameLevelSceneFactory::createScene()
 {
 	Scene *selectGameLevelScene = Scene::create();
 
+	SelectGameLevelBeaverTalkController *selectGameLevelBeaverTalkController = new SelectGameLevelBeaverTalkController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectGameLevelBeaverTalkController,selectGameLevelScene,selectLevelBeaverTalkKey);
+
 	SelectGameLevelController *selectGameLevelController = new SelectGameLevelController();
+	selectGameLevelController->setDelegate(selectGameLevelBeaverTalkController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectGameLevelController,selectGameLevelScene,selectLevelMenuKey);
 
 	SelectLevelPlayerStatusController *selectLevelPlayerStatusController = new SelectLevelPlayerStatusController();

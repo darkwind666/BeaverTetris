@@ -3,8 +3,9 @@
 
 using namespace std;
 
-const string startGraphicName = string("LoadingScreenTextureAtlas");
-const string gameStartMenuGraphicName = string("MenuScreenTextureAtlas");
+const string loadingScreenGraphicName = string("LoadingScreenTextureAtlas");
+const string startMenuGraphicName = string("MenuScreenTextureAtlas");
+const string selectLevelGraphicName = string("SelectLevelScreenTextureAtlas");
 
 GameGraphicsDataSource::GameGraphicsDataSource(void)
 {
@@ -17,12 +18,12 @@ GameGraphicsDataSource::~GameGraphicsDataSource(void)
 
 string GameGraphicsDataSource::getInitialGraphic() 
 {
-	return GameFileExtensionMaker::getGraphicWithExtension(startGraphicName);
+	return GameFileExtensionMaker::getGraphicWithExtension(loadingScreenGraphicName);
 }
 
 string GameGraphicsDataSource::getInitialGraphicFrame()
 {
-	return GameFileExtensionMaker::getGraphicFramesWithExtension(startGraphicName);
+	return GameFileExtensionMaker::getGraphicFramesWithExtension(loadingScreenGraphicName);
 }
 
 int GameGraphicsDataSource::getGraphicCount() 
@@ -46,7 +47,8 @@ std::vector<std::string> GameGraphicsDataSource::getGraphicKeys()
 {
 	vector<string> graphicsKeys;
 
-	graphicsKeys.push_back(gameStartMenuGraphicName);
+	graphicsKeys.push_back(startMenuGraphicName);
+	graphicsKeys.push_back(selectLevelGraphicName);
 
 	return graphicsKeys;
 }

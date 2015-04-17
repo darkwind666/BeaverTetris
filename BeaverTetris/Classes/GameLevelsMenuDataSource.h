@@ -18,7 +18,10 @@ public:
 
 	int getLevelsCount(void);
 	std::string getLevelIconImageForIndex(int aIndex);
+	std::string getCompletedLevelSignImage();
 	cocos2d::Vec2 getLevelIconPositionForIndex(int aIndex);
+	bool levelCompletedForIndex(int aIndex);
+	cocos2d::Vec2 getLevelCompletedSignPositionForIndex(int aIndex);
 	void selectGameLevelForIndex(int aIndex);
 
 private:

@@ -31,11 +31,17 @@ const string startGameRegulateSoundSliderKey = string("startGameRegulateSoundSli
 const string startGameRegulateSoundEffectsSliderKey = string("startGameRegulateSoundEffectsSlider");
 const string startGameRegulateSoundCloseButtonKey = string("startGameRegulateSoundCloseButton");
 
+const string selectLevelBackgroundKey = string("SelectLevelScreenBackground");
+const string selectLevelBackgroundRightKey = string("SelectLevelRightGround");
+const string selectLevelBackgroundLeftKey = string("SelectLevelLeftGround");
+
+const string selectLevelBeaverTalkKey = string("SelectLevelScreenTalk");
+
 const string selectLevelMenuKey = string("selectLevelMenu");
 
 const string gameLevel1Key = string("StartLevel");
-const string gameLevel2Key = string("StartGoodTimeLevel");
-const string gameLevel3Key = string("StartBlockCollectionLevel");
+const string gameLevel2Key = string("StartBlockCollectionLevel");
+const string gameLevel3Key = string("StartGoodTimeLevel");
 const string gameLevel4Key = string("StartBossLevel");
 const string gameLevel5Key = string("MiddleLevel");
 const string gameLevel6Key = string("MiddleGoodTimeLevel");
@@ -43,6 +49,9 @@ const string gameLevel7Key = string("MiddleBossLevel");
 const string gameLevel8Key = string("EndBlockCollectionLevel");
 const string gameLevel9Key = string("EndLevel");
 const string gameLevel10Key = string("EndBossLevel");
+
+const string levelCompletedSignKey = string("LevelCompletedSign");
+const string selectLevelBeaverOnRaftKey = string("SelectLevelScreeBeaverOnRaft");
 
 const string selectLevelScenePlayerStatusControllerKey = string("selectLevelScenePlayerStatusController");
 const string selectLevelScenePlayerStatusPadKey = string("selectLevelScenePlayerStatusPad");

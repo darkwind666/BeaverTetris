@@ -24,6 +24,7 @@ private:
 	void makeStartGameMenuItemsData();
 	void makeStartGameRegulateSoundPopUpData();
 	void makeSelectGameLevelScreenData();
+	void makeSelectGameLevelBackgroundData();
 	void makeSelectGameLevelMenuData();
 	void makeSelectGameLevelPlayerStatusData();
 	void makeSelectGameLevelPlayerCreatorControllerData();

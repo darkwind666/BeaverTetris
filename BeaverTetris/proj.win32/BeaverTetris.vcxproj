@@ -274,6 +274,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ScenesFactory.cpp" />
     <ClCompile Include="..\Classes\ScenesTransitionsFactory.cpp" />
     <ClCompile Include="..\Classes\SelectGameLevelBackgroundController.cpp" />
+    <ClCompile Include="..\Classes\SelectGameLevelBeaverOnRaftController.cpp" />
+    <ClCompile Include="..\Classes\SelectGameLevelBeaverTalkController.cpp" />
     <ClCompile Include="..\Classes\SimilarTetraminosCombination.cpp" />
     <ClCompile Include="..\Classes\SpellBox.cpp" />
     <ClCompile Include="..\Classes\SpellInterface.cpp" />
@@ -469,6 +471,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ScenesFactory.h" />
     <ClInclude Include="..\Classes\ScenesTransitionsFactory.h" />
     <ClInclude Include="..\Classes\SelectGameLevelBackgroundController.h" />
+    <ClInclude Include="..\Classes\SelectGameLevelBeaverOnRaftController.h" />
+    <ClInclude Include="..\Classes\SelectGameLevelBeaverTalkController.h" />
     <ClInclude Include="..\Classes\SerializersConstants.h" />
     <ClInclude Include="..\Classes\SimilarTetraminosCombination.h" />
     <ClInclude Include="..\Classes\SpellBox.h" />

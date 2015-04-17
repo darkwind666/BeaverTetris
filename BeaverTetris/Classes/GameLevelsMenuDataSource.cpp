@@ -2,9 +2,11 @@
 #include "GameFileExtensionMaker.h"
 #include "GameKeyWithSuffixSupporter.h"
 #include "GameStatesHelper.h"
+#include "GameElementsDataHelper.h"
 
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
+#include "GameViewElementsKeys.h"
 
 #include "CurrentPlayerDataSource.h"
 #include "GameLevelsDataSource.h"
@@ -46,6 +48,23 @@ vector <string> GameLevelsMenuDataSource::makeMenuItems()
 	return availableLevels;
 }
 
+int GameLevelsMenuDataSource::getAvailableLevelsCount()
+{
+	int allLevelsCount = _gameLevelsDataSource->getLevelsCount();
+	int completedLevelsCount = _currentPlayerDataSource->getPlayerCompletedLevelsCount();
+
+	int availableLevelsCount = 0;
+	
+	if (allLevelsCount == completedLevelsCount)
+	{
+		availableLevelsCount = completedLevelsCount;
+	}
+	else
+	{
+		availableLevelsCount = completedLevelsCount + 1;
+	}
+	return availableLevelsCount;
+}
 
 int GameLevelsMenuDataSource::getLevelsCount(void)
 {
@@ -70,6 +89,12 @@ string GameLevelsMenuDataSource::getLevelIconImageForIndex(int aIndex)
 	return levelImage;
 }
 
+string GameLevelsMenuDataSource::getCompletedLevelSignImage()
+{
+	string completedLevelSignImage = GameFileExtensionMaker::getGraphicWithExtension(levelCompletedSignKey);
+	return completedLevelSignImage;
+}
+
 Vec2 GameLevelsMenuDataSource::getLevelIconPositionForIndex(int aIndex)
 {
 	string levelKey = _menuItems[aIndex];
@@ -83,21 +108,22 @@ void GameLevelsMenuDataSource::selectGameLevelForIndex(int aIndex)
 	GameStatesHelper::goToScene(kPlayGame);
 }
 
-
-int GameLevelsMenuDataSource::getAvailableLevelsCount()
+bool GameLevelsMenuDataSource::levelCompletedForIndex(int aIndex)
 {
-	int allLevelsCount = _gameLevelsDataSource->getLevelsCount();
+	bool levelCompleted = false;
 	int completedLevelsCount = _currentPlayerDataSource->getPlayerCompletedLevelsCount();
+	if (aIndex < completedLevelsCount)
+	{
+		levelCompleted = true;
+	}
+	return levelCompleted;
+}
 
-	int availableLevelsCount = 0;
-	
-	if (allLevelsCount == completedLevelsCount)
-	{
-		availableLevelsCount = completedLevelsCount;
-	}
-	else
-	{
-		availableLevelsCount = completedLevelsCount + 1;
-	}
-	return availableLevelsCount;
+Vec2 GameLevelsMenuDataSource::getLevelCompletedSignPositionForIndex(int aIndex)
+{
+	string levelKey = _menuItems[aIndex];
+	Vec2 levelIconPosition = getLevelIconPositionForIndex(aIndex);
+	Vec2 offset = GameElementsDataHelper::getElementOffsetForKey(levelKey);
+	Vec2 levelCompletedSignPosition = levelIconPosition + offset;
+	return levelCompletedSignPosition;
 }

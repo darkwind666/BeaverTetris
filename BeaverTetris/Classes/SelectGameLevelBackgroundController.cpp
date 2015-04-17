@@ -4,13 +4,17 @@
 #include "GameServicesKeys.h"
 #include "GameSoundController.h"
 #include "GameSoundsKeys.h"
+#include "CocosNodesHelper.h"
+#include "GameViewElementsKeys.h"
 
 using namespace cocos2d;
 
 SelectGameLevelBackgroundController::SelectGameLevelBackgroundController(void)
 {
-	LayerColor *background = LayerColor::create(Color4B::BLUE);
-	this->addChild(background);
+	Sprite *background = CocosNodesHelper::getSpriteWithKey(selectLevelBackgroundKey);
+	CocosNodesHelper::addSpriteToParentNodeWithKey(background, selectLevelBackgroundRightKey);
+	CocosNodesHelper::addSpriteToParentNodeWithKey(background, selectLevelBackgroundLeftKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(background, this, selectLevelBackgroundKey);
 }
 
 

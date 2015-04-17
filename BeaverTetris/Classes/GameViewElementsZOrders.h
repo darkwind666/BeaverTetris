@@ -32,6 +32,7 @@ enum SelectGameLevelScreenZOrders
 	kSelectLevelScenePlayerStatusControllerZOrder,
 	kPlayerCreatorControllerZOrder,
 	kSelectLevelSceneBackButtonZOrder,
+	kSelectLevelSceneBeaverTalkZOrder,
 };
 
 enum SelectGameLevelPlayerStatusZOrders

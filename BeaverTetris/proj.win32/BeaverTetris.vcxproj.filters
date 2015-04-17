@@ -624,6 +624,12 @@
     <ClCompile Include="..\Classes\StartGameFishesController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\SelectGameLevelBeaverTalkController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SelectGameLevelBeaverOnRaftController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1200,6 +1206,12 @@
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\StartGameFishesController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SelectGameLevelBeaverTalkController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SelectGameLevelBeaverOnRaftController.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
