@@ -24,7 +24,6 @@ private:
 	std::vector<cocos2d::Node*> _spellsIcons;
 
 	std::vector<cocos2d::Node*> makeSpellsIcons();
-	void setInSpellViewNormalIcon(cocos2d::Node* aView);
 	void setInSpellViewRechargedIcon(cocos2d::Node* aView);
 	std::vector<cocos2d::Node*> makeSpellsViewsWithIcons(std::vector<cocos2d::Node*> aIcons);
 	cocos2d::Node* getSpellCostLabelWithIndex(int aSpellIndex);

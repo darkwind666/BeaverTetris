@@ -16,8 +16,8 @@ public:
 	~PlayerGameControlsDataSource(void);
 
 	int getPlayerControlsCount();
-	std::string getPlayerControlIconImageOnIndex(int aIndex);
 	cocos2d::Vec2 getPlayerControlPositionOnIndex(int aIndex);
+	float getPlayerControlRotationForIndex(int aIndex);
 	int  getPlayerControlKeyboardKeyOnIndex(int aIndex);
 	std::function<void()> getPlayerControlCallbackForIndex(int aIndex);
 

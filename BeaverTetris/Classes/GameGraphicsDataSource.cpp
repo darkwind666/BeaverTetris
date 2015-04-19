@@ -6,6 +6,7 @@ using namespace std;
 const string loadingScreenGraphicName = string("LoadingScreenTextureAtlas");
 const string startMenuGraphicName = string("MenuScreenTextureAtlas");
 const string selectLevelGraphicName = string("SelectLevelScreenTextureAtlas");
+const string mainGameGraphicName = string("MainGameScreenTextureAtlas");
 
 GameGraphicsDataSource::GameGraphicsDataSource(void)
 {
@@ -49,6 +50,7 @@ std::vector<std::string> GameGraphicsDataSource::getGraphicKeys()
 
 	graphicsKeys.push_back(startMenuGraphicName);
 	graphicsKeys.push_back(selectLevelGraphicName);
+	graphicsKeys.push_back(mainGameGraphicName);
 
 	return graphicsKeys;
 }

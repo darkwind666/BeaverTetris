@@ -6,6 +6,8 @@
 #include "GameServicesKeys.h"
 #include "GameSoundController.h"
 #include "GameSoundsKeys.h"
+#include "CocosNodesHelper.h"
+#include "GameViewElementsKeys.h"
 
 using namespace cocos2d;
 
@@ -22,9 +24,10 @@ GameWorldBackgroundController::~GameWorldBackgroundController(void)
 
 void GameWorldBackgroundController::makeControllerView()
 {
-	LayerColor *backgroundView = LayerColor::create(Color4B::ORANGE);
-	backgroundView->ignoreAnchorPointForPosition(false);
-	this->addChild(backgroundView);
+	Sprite *backgroundImage = CocosNodesHelper::getSpriteWithKey(mainGameBackgroundControllerKey);
+	Sprite *backgroundPadImage = CocosNodesHelper::getSpriteWithKey(mainGameBackgroundPadKey);
+	this->addChild(backgroundImage);
+	this->addChild(backgroundPadImage);
 }
 
 void GameWorldBackgroundController::onEnterTransitionDidFinish()

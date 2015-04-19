@@ -11,9 +11,7 @@ using namespace cocos2d;
 
 TetraminoViewController::TetraminoViewController(void)
 {
-	Sprite *tetraminoTexture = Sprite::create("HelloWorld.png");
-	tetraminoTexture->setScaleX(0.05f);
-	tetraminoTexture->setScaleY(0.08f);
+	Sprite *tetraminoTexture = Sprite::create();
 	tetraminoTexture->setName("");
 	_tetraminoTexture = tetraminoTexture;
 	this->addChild(tetraminoTexture);
@@ -29,11 +27,7 @@ TetraminoViewController::TetraminoViewController(void)
 
 TetraminoViewController::TetraminoViewController(string aTexture, string aLivesCount)
 {
-	Sprite *tetraminoTexture = Sprite::create("HelloWorld.png");
-	tetraminoTexture->setScaleX(0.05f);
-	tetraminoTexture->setScaleY(0.08f);
-	Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(aTexture);
-	tetraminoTexture->setColor(tetraminoColor);
+	Sprite *tetraminoTexture = Sprite::create(aTexture);
 	tetraminoTexture->setName(aTexture);
 	_tetraminoTexture = tetraminoTexture;
 	this->addChild(tetraminoTexture);
@@ -53,8 +47,8 @@ TetraminoViewController::~TetraminoViewController(void)
 
 void TetraminoViewController::setTexture(string aTexture)
 {
-	Color3B tetraminoColor = _tetraminoColorsDataSource->getColorForKey(aTexture);
-	_tetraminoTexture->setColor(tetraminoColor);
+	SpriteFrame *frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(aTexture);
+	_tetraminoTexture->setDisplayFrame(frame);
 	_tetraminoTexture->setName(aTexture);
 }
 

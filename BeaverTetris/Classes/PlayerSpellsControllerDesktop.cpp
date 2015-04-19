@@ -7,6 +7,7 @@
 #include "ServiceLocator.h"
 #include "GameServicesKeys.h"
 #include "GameTimeStepController.h"
+#include "GameViewElementsKeys.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -36,7 +37,9 @@ vector<Node*> PlayerSpellsControllerDesktop::makeSpellsIcons()
 	for (int spellIndex = 0; spellIndex < spellsCount; spellIndex++)
 	{
 		Node *spellView = Node::create();
-		setInSpellViewNormalIcon(spellView);
+		string normalSpellImage = _spellsViewDataSource->getSpellIconImageOnIndex(spellIndex);
+		Sprite *normalSpellView = Sprite::createWithSpriteFrameName(normalSpellImage);
+		spellView->addChild(normalSpellView);
 		setInSpellViewRechargedIcon(spellView);
 		int spellKeyboardKey = _spellsViewDataSource->getPlayerSpellKeyboardKeyOnIndex(spellIndex);
 		spellView->setTag(spellKeyboardKey);
@@ -45,23 +48,12 @@ vector<Node*> PlayerSpellsControllerDesktop::makeSpellsIcons()
 	return spellsIcons;
 }
 
-void PlayerSpellsControllerDesktop::setInSpellViewNormalIcon(Node* aView)
-{
-	Sprite *spellIcon = Sprite::create("HelloWorld.png");
-	spellIcon->setScaleY(0.08f);
-	spellIcon->setScaleX(0.06f);
-	spellIcon->setColor(Color3B::GREEN);
-	aView->addChild(spellIcon);
-}
-
 void PlayerSpellsControllerDesktop::setInSpellViewRechargedIcon(Node* aView)
 {
-	Sprite *sourceView = Sprite::create("HelloWorld.png");
-	sourceView->setColor(Color3B::RED);
+	Sprite *sourceView = CocosNodesHelper::getSpriteWithKey(playerSpellImageKey);
 	ProgressTimer *progress =  ProgressTimer::create(sourceView);
+	progress->setReverseDirection(true);
 	progress->setPercentage(0);
-	progress->setScaleY(0.08f);
-	progress->setScaleX(0.06f);
 	progress->setTag(spellRechargeViewTag);
 	aView->addChild(progress);
 }

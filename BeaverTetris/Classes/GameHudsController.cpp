@@ -23,6 +23,7 @@ void GameHudsController::makeView()
 {
 	LayerColor *hudBackground = LayerColor::create(Color4B::GRAY, 100, 480);
 	hudBackground->ignoreAnchorPointForPosition(false);
+	hudBackground->setOpacity(0.0f);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(hudBackground, this, gameHudBackgroundKey);
 
 	PlayerActionControllerFactory playerActionControllerFactory;

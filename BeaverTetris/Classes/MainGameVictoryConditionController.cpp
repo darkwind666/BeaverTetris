@@ -1,6 +1,8 @@
 #include "MainGameVictoryConditionController.h"
 #include "VictoryConditionViewDataSource.h"
 #include "GameViewStyleHelper.h"
+#include "CocosNodesHelper.h"
+#include "GameViewElementsKeys.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -9,6 +11,7 @@ MainGameVictoryConditionController::MainGameVictoryConditionController(void)
 {
 	_victoryConditionViewDataSource = new VictoryConditionViewDataSource();
 	_viewElements = vector<VictoryConditionViewElements>();
+	CocosNodesHelper::addSpriteToParentNodeWithKey(this, victoryConditionPadImageKey);
 }
 
 

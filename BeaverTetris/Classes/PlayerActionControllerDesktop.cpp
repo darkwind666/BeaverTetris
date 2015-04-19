@@ -5,6 +5,8 @@
 #include "GameServicesKeys.h"
 #include "GameTimeStepController.h"
 #include "GameAnimationActionsConstants.h"
+#include "CocosNodesHelper.h"
+#include "GameViewElementsKeys.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -30,51 +32,62 @@ void PlayerActionControllerDesktop::setUpKeyboard()
 	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardListner, this);
 }
 
-map<EventKeyboard::KeyCode, Node*> PlayerActionControllerDesktop::makeControllersViews()
+map<EventKeyboard::KeyCode, MenuItem*> PlayerActionControllerDesktop::makeControllersViews()
 {
-	map<EventKeyboard::KeyCode, Node*> controllersViews;
-
+	map<EventKeyboard::KeyCode, MenuItem*> controllersViews;
 	int controllersCount = _playerGameControlsDataSource->getPlayerControlsCount();
-
 	for (int controllerIndex = 0; controllerIndex < controllersCount; controllerIndex++)
 	{
-		Sprite *playerControllerView = Sprite::create("HelloWorld.png");
-	    playerControllerView->setScaleY(0.06f);
-		playerControllerView->setScaleX(0.04f);
-		playerControllerView->setColor(Color3B::GREEN);
+		MenuItem *playerControllerView = getPlayerControlView();
 		Vec2 viewPosition = _playerGameControlsDataSource->getPlayerControlPositionOnIndex(controllerIndex);
 		playerControllerView->setPosition(viewPosition);
+		float controllRotation = _playerGameControlsDataSource->getPlayerControlRotationForIndex(controllerIndex);
+		playerControllerView->setRotation(controllRotation);
 		playerControllerView->setTag(controllerIndex);
-
 		EventKeyboard::KeyCode keyCode = (EventKeyboard::KeyCode) _playerGameControlsDataSource->getPlayerControlKeyboardKeyOnIndex(controllerIndex);
 		controllersViews[keyCode] = playerControllerView;
 	}
-
 	return controllersViews;
 }
 
-void PlayerActionControllerDesktop::addViewsToController(map<EventKeyboard::KeyCode, Node*> aViews)
+MenuItem* PlayerActionControllerDesktop::getPlayerControlView()
 {
-	map<EventKeyboard::KeyCode, Node*>::iterator viewsIterator;
+	Sprite *playerControllerInactiveImage = CocosNodesHelper::getSpriteWithKey(playerControlInactiveImageKey);
+	Sprite *playerControllerActiveImage = CocosNodesHelper::getSpriteWithKey(playerControlActiveImageKey);
+	MenuItemSprite *playerControllerView = MenuItemSprite::create(playerControllerInactiveImage, playerControllerActiveImage);
+	return playerControllerView;
+}
+
+void PlayerActionControllerDesktop::addViewsToController(map<EventKeyboard::KeyCode, MenuItem*> aViews)
+{
+	Menu *playerControlsMenu = Menu::create();
+	playerControlsMenu->setPosition(Vec2(0, 0));
+	map<EventKeyboard::KeyCode, MenuItem*>::iterator viewsIterator;
 	for (viewsIterator = aViews.begin(); viewsIterator != aViews.end(); viewsIterator++)
 	{
-		Node* controllerView = viewsIterator->second;
-		this->addChild(controllerView);
+		MenuItem* controllerView = viewsIterator->second;
+		playerControlsMenu->addChild(controllerView);
 	}
+	this->addChild(playerControlsMenu);
 }
 
 void PlayerActionControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
 {
-	map<EventKeyboard::KeyCode, Node*>::iterator viewsIterator; 
+	map<EventKeyboard::KeyCode, MenuItem*>::iterator viewsIterator; 
 	viewsIterator = _controllersViews.find(aKeyCode);
 	if (viewsIterator != _controllersViews.end() && _gameTimeStepController->getUpdataAvailable() == true)
 	{
 		_gameTimeStepController->setUpdateAvailable(false);
-		Node* controllerView = _controllersViews[aKeyCode];
-		int controllerViewIndex = controllerView->getTag();
-		function<void()> callback = getCallbackWithButtonIndex(controllerViewIndex);
-		GameViewStyleHelper::runButtonActionWithCallbackAndDuration(controllerView ,callback, gameControllButtonActionDuration);
+		activatePlayerControllerOnKeyCode(aKeyCode);
 	}
+}
+
+void PlayerActionControllerDesktop::activatePlayerControllerOnKeyCode(cocos2d::EventKeyboard::KeyCode aKeyCode)
+{
+	MenuItem* controllerView = _controllersViews[aKeyCode];
+	int controllerViewIndex = controllerView->getTag();
+	function<void()> callback = getCallbackWithButtonIndex(controllerViewIndex);
+	GameViewStyleHelper::runButtonActionWithCallbackAndDuration(controllerView ,callback, gameControllButtonActionDuration);
 }
 
 function<void()> PlayerActionControllerDesktop::getCallbackWithButtonIndex(int aButtonIndex)

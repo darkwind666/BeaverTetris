@@ -12,7 +12,7 @@ using namespace cocos2d;
 
 GameViewInformationFactory::GameViewInformationFactory(void)
 {
-	_elementsInformation =  map <string , ViewElementInformation> ();
+	_elementsInformation =  map <string , ViewElementInformation>();
 	makeViewData();
 }
 
@@ -412,16 +412,26 @@ void GameViewInformationFactory::makeMainGameScreenData()
 void GameViewInformationFactory::makeMainGameWorldData()
 {
 	ViewElementInformation mainGameBackground;
+	mainGameBackground.elementImage = getImageNameForKey(mainGameBackgroundControllerKey);
 	mainGameBackground.elementPosition = getScreenCenter();
 	mainGameBackground.elementZOrder = kMainGameBackgroundZOrder;
 	_elementsInformation[mainGameBackgroundControllerKey] = mainGameBackground;
 
-	int gameBoardOffsetX = 12;
-	int gameBoardOffsetY = 12;
+	ViewElementInformation mainGameBackgroundPad;
+	mainGameBackgroundPad.elementImage = getImageNameForKey(mainGameBackgroundPadKey);
+	mainGameBackgroundPad.elementPosition = Vec2(0, 0);
+	mainGameBackgroundPad.elementZOrder = 0;
+	_elementsInformation[mainGameBackgroundPadKey] = mainGameBackgroundPad;
+
+	int gameTetraminoOffsetX = 10;
+	int gameTetraminoOffsetY = 10;
+
+	int gameboardOffsetX = 37;
+	int gameboardOffsetY = 10;
 
 	ViewElementInformation mainGameBoard;
-	mainGameBoard.elementPosition = Vec2(gameBoardOffsetX, gameBoardOffsetY);
-	mainGameBoard.elementOffset = Vec2(gameBoardOffsetX * 2, gameBoardOffsetY * 2);
+	mainGameBoard.elementPosition = Vec2(gameboardOffsetX, gameboardOffsetY);
+	mainGameBoard.elementOffset = Vec2(gameTetraminoOffsetX * 2, gameTetraminoOffsetY * 2);
 	mainGameBoard.elementZOrder = kMainGameBoardZOrder;
 	_elementsInformation[mainGameBoardControllerKey] = mainGameBoard;
 
@@ -431,7 +441,7 @@ void GameViewInformationFactory::makeMainGameWorldData()
 	_elementsInformation[tetraminoLivesCountViewKey] = tetraminoLivesCountView;
 
 	ViewElementInformation mainGameAnimation;
-	mainGameAnimation.elementPosition = Vec2(gameBoardOffsetX, gameBoardOffsetY);
+	mainGameAnimation.elementPosition = Vec2(gameboardOffsetX, gameboardOffsetY);
 	mainGameAnimation.elementZOrder = kMainGameAnimationZOrder;
 	_elementsInformation[mainGameAnimationControllerKey] = mainGameAnimation;
 
@@ -445,7 +455,7 @@ void GameViewInformationFactory::makeMainGameHudsData()
 	_elementsInformation[gameHudBackgroundKey] = mainGameHudsBackground;
 
 	ViewElementInformation mainGamePlayerActionController;
-	mainGamePlayerActionController.elementPosition =  Vec2(280, 40);
+	mainGamePlayerActionController.elementPosition =  Vec2(270, 20);
 	mainGamePlayerActionController.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[playerActionControllerKey] = mainGamePlayerActionController;
 
@@ -480,7 +490,8 @@ void GameViewInformationFactory::makeMainGameHudsData()
 	_elementsInformation[meteorForFirestormSpellKey] = meteorForFirestormSpell;
 
 	ViewElementInformation pauseGameViewController;
-	pauseGameViewController.elementPosition = Vec2(305, 65);
+	pauseGameViewController.elementImage = getImageNameForKey(pauseGameViewControllerKey);
+	pauseGameViewController.elementPosition = Vec2(295, 65);
 	pauseGameViewController.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[pauseGameViewControllerKey] = pauseGameViewController;
 	
@@ -491,33 +502,39 @@ void GameViewInformationFactory::makeMainGamePlayerControllersData()
 	int controllerOffset = 25;
 
 	ViewElementInformation rotateDetailControl;
-	rotateDetailControl.elementImage = getImageNameForKey(rotateDetailControlKey);
 	rotateDetailControl.elementPosition = Vec2(0, controllerOffset);
-	rotateDetailControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	rotateDetailControl.elementOffset = Vec2(0, 0);
 	_elementsInformation[rotateDetailControlKey] = rotateDetailControl;
 
 	ViewElementInformation accelerateDetailControl;
-	accelerateDetailControl.elementImage = getImageNameForKey(accelerateDetailControlKey);
-	accelerateDetailControl.elementPosition = Vec2(0, 0);
-	accelerateDetailControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	accelerateDetailControl.elementPosition = Vec2(-3, 0);
+	accelerateDetailControl.elementOffset = Vec2(180, 0);
 	_elementsInformation[accelerateDetailControlKey] = accelerateDetailControl;
 
 	ViewElementInformation moveDetailLeftControl;
-	moveDetailLeftControl.elementImage = getImageNameForKey(moveDetailLeftControlKey);
 	moveDetailLeftControl.elementPosition = Vec2(-controllerOffset, 0);
-	moveDetailLeftControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	moveDetailLeftControl.elementOffset = Vec2(-90, 0);
 	_elementsInformation[moveDetailLeftControlKey] = moveDetailLeftControl;
 
 	ViewElementInformation moveDetailRightControl;
-	moveDetailRightControl.elementImage = getImageNameForKey(moveDetailRightControlKey);
 	moveDetailRightControl.elementPosition = Vec2(controllerOffset, 0);
-	moveDetailRightControl.elementZOrder = kMainGamePlayerActionControllerZOrder;
+	moveDetailRightControl.elementOffset = Vec2(90, 0);
 	_elementsInformation[moveDetailRightControlKey] = moveDetailRightControl;
+
+	ViewElementInformation playerControlInactiveImage;
+	playerControlInactiveImage.elementImage = getImageNameForKey(playerControlInactiveImageKey);
+	_elementsInformation[playerControlInactiveImageKey] = playerControlInactiveImage;
+
+	ViewElementInformation playerControlActiveImage;
+	playerControlActiveImage.elementImage = getImageNameForKey(playerControlActiveImageKey);
+	_elementsInformation[playerControlActiveImageKey] = playerControlActiveImage;
+
 }
 
 void GameViewInformationFactory::makeMainGamePlayerScoreControllersData()
 {
 	ViewElementInformation scoreControllerBackground;
+	scoreControllerBackground.elementImage = getImageNameForKey(playerScoreControllerBackgroundKey);
 	scoreControllerBackground.elementPosition =  Vec2(0, 0);
 	scoreControllerBackground.elementZOrder = kMainGamePlayerScoreBackgroundZOrder;
 	_elementsInformation[playerScoreControllerBackgroundKey] = scoreControllerBackground;
@@ -531,6 +548,12 @@ void GameViewInformationFactory::makeMainGamePlayerScoreControllersData()
 void GameViewInformationFactory::makeMainGameVictoryConditionData()
 {
 	int padLength = 100;
+
+	ViewElementInformation victoryConditionPad;
+	victoryConditionPad.elementImage = getImageNameForKey(victoryConditionPadImageKey);
+	victoryConditionPad.elementPosition =  Vec2(0, 20);
+	victoryConditionPad.elementZOrder = kVictoryConditionHudImageZOrder;
+	_elementsInformation[victoryConditionPadImageKey] = victoryConditionPad;
 
 	ViewElementInformation victoryConditionHudImage;
 	victoryConditionHudImage.elementPosition =  Vec2(-(padLength/2), 30);
@@ -548,6 +571,7 @@ void GameViewInformationFactory::makeMainGameVictoryConditionData()
 void GameViewInformationFactory::makeMainGameSpellsIconsData()
 {
 	ViewElementInformation spellIcon;
+	spellIcon.elementImage = getImageNameForKey(playerSpellImageKey);
 	spellIcon.elementPosition =  Vec2(0, 30);
 	spellIcon.elementZOrder = kSpellIconImageZOrder;
 	_elementsInformation[playerSpellImageKey] = spellIcon;

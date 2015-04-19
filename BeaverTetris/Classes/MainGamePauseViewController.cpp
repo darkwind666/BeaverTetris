@@ -7,6 +7,8 @@
 #include "WinGameSystem.h"
 #include "MainGamePauseDelegate.h"
 #include "GameStatesHelper.h"
+#include "CocosNodesHelper.h"
+#include "GameViewElementsKeys.h"
 
 using namespace cocos2d;
 
@@ -36,10 +38,7 @@ void MainGamePauseViewController::setUpKeyboard()
 
 void MainGamePauseViewController::setPauseView()
 {
-	Sprite *pauseView = Sprite::create("HelloWorld.png");
-	pauseView->setScaleY(0.06f);
-	pauseView->setScaleX(0.04f);
-	pauseView->setColor(Color3B::GREEN);
+	Sprite *pauseView = CocosNodesHelper::getSpriteWithKey(pauseGameViewControllerKey);
 	this->addChild(pauseView);
 }
 

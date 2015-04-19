@@ -19,11 +19,13 @@ private:
 
 	PlayerGameControlsDataSource *_playerGameControlsDataSource;
 	GameTimeStepController *_gameTimeStepController;
-	std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::Node*> _controllersViews;
+	std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::MenuItem*> _controllersViews;
 
-	std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::Node*> makeControllersViews();
+	std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::MenuItem*> makeControllersViews();
+	cocos2d::MenuItem* getPlayerControlView();
 	void setUpKeyboard();
-	void addViewsToController(std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::Node*> aViews);
+	void addViewsToController(std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::MenuItem*> aViews);
+	void activatePlayerControllerOnKeyCode(cocos2d::EventKeyboard::KeyCode aKeyCode);
 	std::function<void()> getCallbackWithButtonIndex(int aButtonIndex);
 };
 

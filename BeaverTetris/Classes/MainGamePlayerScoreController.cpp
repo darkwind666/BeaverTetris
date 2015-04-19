@@ -13,8 +13,7 @@ using namespace std;
 MainGamePlayerScoreController::MainGamePlayerScoreController(void)
 {
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
-	_scoreView = GameViewStyleHelper::getStandardLabel();
-	_scoreView->setFontSize(20);
+	_scoreView = LabelTTF::create("", "COMICBD", 20);
 	makeControllerView();
 }
 
@@ -24,12 +23,7 @@ MainGamePlayerScoreController::~MainGamePlayerScoreController(void)
 
 void MainGamePlayerScoreController::makeControllerView()
 {
-	Sprite *background = Sprite::create("HelloWorld.png");
-	background->setScaleX(0.13f);
-	background->setScaleY(0.1f);
-	background->setColor(Color3B::MAGENTA);
-
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(background, this, playerScoreControllerBackgroundKey);
+	CocosNodesHelper::addSpriteToParentNodeWithKey(this, playerScoreControllerBackgroundKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_scoreView, this, playerScoreControllerCountKey);
 }
 

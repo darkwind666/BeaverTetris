@@ -66,7 +66,8 @@ const string playerCreatorControllerInputKey = string("playerCreatorControllerIn
 const string selectLevelSceneBackButtonKey = string("selectLevelSceneBackButton");
 
 const string gameWorldControllerKey = string("gameWorldController");
-const string mainGameBackgroundControllerKey = string("mainGameBackgroundController");
+const string mainGameBackgroundControllerKey = string("MainGameBackground");
+const string mainGameBackgroundPadKey = string("MainGamePad");
 const string mainGameBoardControllerKey = string("mainGameBoardController");
 const string tetraminoLivesCountViewKey = string("tetraminoLivesCountView");
 
@@ -85,21 +86,24 @@ const string gameHudControllerKey = string("gameHudController");
 const string gameHudBackgroundKey = string("gameHudBackground");
 const string playerActionControllerKey = string("playerActionController");
 
+const string playerControlInactiveImageKey = string("PlayerActionInactiveButton");
+const string playerControlActiveImageKey = string("PlayerActionActiveButton");
 const string rotateDetailControlKey = string("rotateDetailControl");
 const string accelerateDetailControlKey = string("accelerateDetailControl");
 const string moveDetailLeftControlKey = string("moveDetailLeftControl");
 const string moveDetailRightControlKey = string("moveDetailRightControl");
 
 const string playerScoreControllerKey = string("playerScoreController");
-const string playerScoreControllerBackgroundKey = string("playerScoreControllerBackground");
+const string playerScoreControllerBackgroundKey = string("MainGamePlayerScorePad");
 const string playerScoreControllerCountKey = string("playerScoreControllerCount");
 
 const string victoryConditionHudControllerKey = string("victoryConditionHudController");
+const string victoryConditionPadImageKey = string("VictoryConditionPad");
 const string victoryConditionHudImageKey = string("victoryConditionHudImage");
 const string victoryConditionHudStateKey = string("victoryConditionHudState");
 
 const string playerSpellsControllerKey = string("playerSpellsController");
-const string playerSpellImageKey = string("playerSpellImage");
+const string playerSpellImageKey = string("UnavailableSpellIcon");
 const string playerSpellCostLabelKey = string("playerSpellCostLabel");
 
 const string removeCurrentDetailSpellKey = string("rocketSpell");
@@ -121,7 +125,7 @@ const string killBossKey = string("Boss");
 const string accelerateEventKey = string("accelerateEvent");
 const string fallDetailsEventKey = string("fallDetailsEvent");
 
-const string pauseGameViewControllerKey = string("PauseGameViewController");
+const string pauseGameViewControllerKey = string("MainGamePauseButton");
 const string mainGamePausePopUpKey = string("MainGamePausePopUp");
 const string mainGamePausePadKey = string("MainGamePausePad");
 const string mainGamePauseRegulateSoundSliderKey = string("mainGamePauseRegulateSoundSlider");

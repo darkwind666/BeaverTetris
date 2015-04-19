@@ -26,16 +26,16 @@ int PlayerGameControlsDataSource::getPlayerControlsCount()
 	return _playerControls.size();
 }
 
-string PlayerGameControlsDataSource::getPlayerControlIconImageOnIndex(int aIndex)
-{
-	PlayerControllInformation controlInformation = _playerControls[aIndex];
-	return _gameViewElementsDataSource->getElementImageForKey(controlInformation.imageKey);
-}
-
 Vec2 PlayerGameControlsDataSource::getPlayerControlPositionOnIndex(int aIndex)
 {
 	PlayerControllInformation controlInformation = _playerControls[aIndex];
 	return _gameViewElementsDataSource->getElementPositionForKey(controlInformation.imageKey);
+}
+
+float PlayerGameControlsDataSource::getPlayerControlRotationForIndex(int aIndex)
+{
+	PlayerControllInformation controlInformation = _playerControls[aIndex];
+	return _gameViewElementsDataSource->getElementOffsetForKey(controlInformation.imageKey).x;
 }
 
 function<void()> PlayerGameControlsDataSource::getPlayerControlCallbackForIndex(int aIndex)
