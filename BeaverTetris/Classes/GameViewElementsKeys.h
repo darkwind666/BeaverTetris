@@ -54,7 +54,7 @@ const string levelCompletedSignKey = string("LevelCompletedSign");
 const string selectLevelBeaverOnRaftKey = string("SelectLevelScreeBeaverOnRaft");
 
 const string selectLevelScenePlayerStatusControllerKey = string("selectLevelScenePlayerStatusController");
-const string selectLevelScenePlayerStatusPadKey = string("selectLevelScenePlayerStatusPad");
+const string selectLevelScenePlayerStatusPadKey = string("SelectLevelScenePlayerStatusPad");
 const string selectLevelScenePlayerStatusNameKey = string("selectLevelScenePlayerStatusName");
 const string selectLevelScenePlayerStatusScoreKey = string("selectLevelScenePlayerStatusScore");
 
@@ -63,7 +63,7 @@ const string playerCreatorControllerPadKey = string("playerCreatorControllerPad"
 const string playerCreatorControllerTextKey = string("playerCreatorControllerText");
 const string playerCreatorControllerInputKey = string("playerCreatorControllerInput");
 
-const string selectLevelSceneBackButtonKey = string("selectLevelSceneBackButton");
+const string selectLevelSceneBackButtonKey = string("SelectLevelSceneBack");
 
 const string gameWorldControllerKey = string("gameWorldController");
 const string mainGameBackgroundControllerKey = string("MainGameBackground");

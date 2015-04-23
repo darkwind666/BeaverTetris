@@ -12,7 +12,7 @@ public:
 
 private:
 
-	cocos2d::MenuItemImage* getCloseButton();
+	cocos2d::MenuItemSprite* getCloseButton();
 
 };
 

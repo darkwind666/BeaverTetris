@@ -46,5 +46,6 @@ FiniteTimeAction* GameViewStyleHelper::getSoundActionWithKey(string aKey)
 
 LabelTTF* GameViewStyleHelper::getStandardLabel()
 {
-	return LabelTTF::create("", "Helvetica", 120);
+	return LabelTTF::create("", "COMIC.ttf", 15);
 }
+

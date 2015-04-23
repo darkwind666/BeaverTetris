@@ -33,15 +33,15 @@
             <key>MenuScreenStaircase.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{252,279},{369,410}}</string>
+                <string>{{252,279},{369,437}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{369,410}}</string>
+                <string>{{0,0},{369,437}}</string>
                 <key>sourceSize</key>
-                <string>{369,410}</string>
+                <string>{369,437}</string>
             </dict>
             <key>MenuScreenBeaver.png</key>
             <dict>

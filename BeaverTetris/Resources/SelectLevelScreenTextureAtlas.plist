@@ -20,33 +20,20 @@
             <key>SelectLevelLeftGround.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{49,8},{213,310}}</string>
+                <string>{{49,8},{264,394}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{213,310}}</string>
+                <string>{{0,0},{264,394}}</string>
                 <key>sourceSize</key>
-                <string>{213,310}</string>
-            </dict>
-            <key>12.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{270,8},{49,167}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{49,167}}</string>
-                <key>sourceSize</key>
-                <string>{49,167}</string>
+                <string>{264,394}</string>
             </dict>
             <key>StartBossLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{327,8},{48,64}}</string>
+                <string>{{321,8},{48,64}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +46,7 @@
             <key>StartGoodTimeLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{383,8},{33,46}}</string>
+                <string>{{377,8},{33,46}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -69,10 +56,10 @@
                 <key>sourceSize</key>
                 <string>{33,46}</string>
             </dict>
-            <key>StartBlockCollectionLevel.png</key> 
+            <key>StartBlockCollectionLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{424,8},{35,43}}</string>
+                <string>{{418,8},{35,43}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +72,7 @@
             <key>StartLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{467,8},{25,25}}</string>
+                <string>{{461,8},{25,25}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -95,36 +82,62 @@
                 <key>sourceSize</key>
                 <string>{25,25}</string>
             </dict>
+            <key>SelectLevelScreenTalk.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{494,8},{215,131}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{215,131}}</string>
+                <key>sourceSize</key>
+                <string>{215,131}</string>
+            </dict>
+            <key>SelectLevelScenePlayerStatusPad.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{717,8},{92,67}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{92,67}}</string>
+                <key>sourceSize</key>
+                <string>{92,67}</string>
+            </dict>
+            <key>SelectLevelScreeBeaverOnRaft.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{817,8},{85,105}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{85,105}}</string>
+                <key>sourceSize</key>
+                <string>{85,105}</string>
+            </dict>
             <key>SelectLevelRightGround.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{500,8},{224,306}}</string>
+                <string>{{910,8},{259,373}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{224,306}}</string>
+                <string>{{0,0},{259,373}}</string>
                 <key>sourceSize</key>
-                <string>{224,306}</string>
-            </dict>
-            <key>3.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{732,8},{123,231}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{123,231}}</string>
-                <key>sourceSize</key>
-                <string>{123,231}</string>
+                <string>{259,373}</string>
             </dict>
             <key>EndLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{863,8},{55,60}}</string>
+                <string>{{1177,8},{55,60}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +150,7 @@
             <key>EndBlockCollectionLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{926,8},{43,51}}</string>
+                <string>{{1240,8},{43,51}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,7 +163,7 @@
             <key>MiddleBossLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{977,8},{36,57}}</string>
+                <string>{{1291,8},{36,57}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +176,7 @@
             <key>MiddleGoodTimeLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{8,326},{41,40}}</string>
+                <string>{{1335,8},{41,40}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -176,7 +189,7 @@
             <key>MiddleLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{57,326},{19,26}}</string>
+                <string>{{1384,8},{19,26}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -189,7 +202,7 @@
             <key>LevelCompletedSign.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{84,326},{15,20}}</string>
+                <string>{{1411,8},{15,20}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -199,36 +212,10 @@
                 <key>sourceSize</key>
                 <string>{15,20}</string>
             </dict>
-            <key>SelectLevelScreeBeaverOnRaft.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{107,326},{84,105}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{84,105}}</string>
-                <key>sourceSize</key>
-                <string>{84,105}</string>
-            </dict>
-            <key>SelectLevelScreenTalk.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{199,326},{298,182}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{298,182}}</string>
-                <key>sourceSize</key>
-                <string>{298,182}</string>
-            </dict>
             <key>SelectLevelScreenBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{505,326},{367,575}}</string>
+                <string>{{1434,8},{367,575}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -238,13 +225,39 @@
                 <key>sourceSize</key>
                 <string>{367,575}</string>
             </dict>
+            <key>SelectLevelSceneBackInactiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1809,8},{140,37}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{140,37}}</string>
+                <key>sourceSize</key>
+                <string>{140,37}</string>
+            </dict>
+            <key>SelectLevelSceneBackActiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{8,591},{140,37}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{140,37}}</string>
+                <key>sourceSize</key>
+                <string>{140,37}</string>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
             <key>format</key>
             <integer>2</integer>
             <key>size</key>
-            <string>{1024,1024}</string>
+            <string>{2048,2048}</string>
             <key>textureFileName</key>
             <string>SelectLevelScreenTextureAtlas.png</string>
         </dict>

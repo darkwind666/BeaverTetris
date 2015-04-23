@@ -87,8 +87,8 @@ void GameViewInformationFactory::makeStartGameSreenData()
 
 	ViewElementInformation startGameMenu;
 	startGameMenu.elementImage = getImageNameForKey(startGameMenuKey);
-	startGameMenu.elementPosition = Vec2(135, -450);
-	startGameMenu.elementActionFinalPosition = Vec2(135, 230);
+	startGameMenu.elementPosition = Vec2(155, -450);
+	startGameMenu.elementActionFinalPosition = Vec2(155, 230);
 	startGameMenu.elementZOrder = kLoadingBackgroundZOrder;
 	_elementsInformation[startGameMenuKey] = startGameMenu;
 
@@ -96,8 +96,8 @@ void GameViewInformationFactory::makeStartGameSreenData()
 
 	ViewElementInformation startGameBeaver;
 	startGameBeaver.elementImage = getImageNameForKey(startGameBeaverKey);
-	startGameBeaver.elementPosition = Vec2(480, 80);
-	startGameBeaver.elementActionFinalPosition = Vec2(220, 280);
+	startGameBeaver.elementPosition = Vec2(480, 100);
+	startGameBeaver.elementActionFinalPosition = Vec2(250, 300);
 	startGameBeaver.elementOffset = Vec2(0, 200);
 	startGameBeaver.elementZOrder = kStartGameBeaverZOrder;
 	_elementsInformation[startGameBeaverKey] = startGameBeaver;
@@ -241,8 +241,8 @@ void GameViewInformationFactory::makeSelectGameLevelScreenData()
 	makeSelectGameLevelPlayerCreatorControllerData();
 
 	ViewElementInformation selectLevelSceneBackButton;
-	selectLevelSceneBackButton.elementImage = getImageNameForKey(playerCreatorControllerKey);
-	selectLevelSceneBackButton.elementPosition = Vec2(70, 40);
+	selectLevelSceneBackButton.elementImage = getImageNameForKey(selectLevelSceneBackButtonKey);
+	selectLevelSceneBackButton.elementPosition = Vec2(80, 30);
 	selectLevelSceneBackButton.elementZOrder = kSelectLevelSceneBackButtonZOrder;
 	_elementsInformation[selectLevelSceneBackButtonKey] = selectLevelSceneBackButton;
 
@@ -258,7 +258,7 @@ void GameViewInformationFactory::makeSelectGameLevelBackgroundData()
 {
 	ViewElementInformation leftGround;
 	leftGround.elementImage = getImageNameForKey(selectLevelBackgroundLeftKey);
-	leftGround.elementPosition = Vec2(130, 200);
+	leftGround.elementPosition = Vec2(110, 210);
 	leftGround.elementZOrder = 0;
 	_elementsInformation[selectLevelBackgroundLeftKey] = leftGround;
 
@@ -336,19 +336,19 @@ void GameViewInformationFactory::makeSelectGameLevelMenuData()
 void GameViewInformationFactory::makeSelectGameLevelPlayerStatusData()
 {
 	ViewElementInformation selectGameLevelPlayerStatusPad;
-	selectGameLevelPlayerStatusPad.elementImage = getImageNameForKey(selectLevelScenePlayerStatusControllerKey);
-	selectGameLevelPlayerStatusPad.elementPosition = Vec2(240, 580);
-	selectGameLevelPlayerStatusPad.elementActionFinalPosition = Vec2(240, 420);
+	selectGameLevelPlayerStatusPad.elementImage = getImageNameForKey(selectLevelScenePlayerStatusPadKey);
+	selectGameLevelPlayerStatusPad.elementPosition = Vec2(130, 580);
+	selectGameLevelPlayerStatusPad.elementActionFinalPosition = Vec2(130, 440);
 	selectGameLevelPlayerStatusPad.elementZOrder = kSelectLevelPlayerStatusPadZOrder;
 	_elementsInformation[selectLevelScenePlayerStatusPadKey] = selectGameLevelPlayerStatusPad;
 
 	ViewElementInformation selectLevelScenePlayerStatusName;
-	selectLevelScenePlayerStatusName.elementPosition = Vec2(240, 230);
+	selectLevelScenePlayerStatusName.elementPosition = Vec2(45, 45);
 	selectLevelScenePlayerStatusName.elementZOrder = kSelectLevelPlayerStatusNameZOrder;
 	_elementsInformation[selectLevelScenePlayerStatusNameKey] = selectLevelScenePlayerStatusName;
 
 	ViewElementInformation selectLevelScenePlayerStatusScore;
-	selectLevelScenePlayerStatusScore.elementPosition = Vec2(240, 110);
+	selectLevelScenePlayerStatusScore.elementPosition = Vec2(45, 25);
 	selectLevelScenePlayerStatusScore.elementZOrder = kSelectLevelPlayerStatusScoreZOrder;
 	_elementsInformation[selectLevelScenePlayerStatusScoreKey] = selectLevelScenePlayerStatusScore;
 

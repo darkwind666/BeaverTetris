@@ -9,6 +9,7 @@
 #include "GameStatesHelper.h"
 #include "GameViewStyleHelper.h"
 #include "GameEnums.h"
+#include "GameKeyWithSuffixSupporter.h"
 
 using namespace cocos2d;
 
@@ -40,23 +41,25 @@ Scene* SelectGameLevelSceneFactory::createScene()
 	playerCreatorController->setDelegate(selectLevelPlayerStatusController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerCreatorController,selectGameLevelScene,playerCreatorControllerKey);
 
-	MenuItemImage *closeButton = getCloseButton();
+	MenuItemSprite *closeButton = getCloseButton();
 	CocosNodesHelper::addButtonToParentNodeWithKey(closeButton,selectGameLevelScene,selectLevelSceneBackButtonKey);
 
 	return selectGameLevelScene;
 }
 
-MenuItemImage* SelectGameLevelSceneFactory::getCloseButton()
+MenuItemSprite* SelectGameLevelSceneFactory::getCloseButton()
 {
 	std::function<void(Object* pSender)> callback = [](Object* pSender){ 
 		Node *button = (Node*)pSender;
 		std::function<void()> buttonCallback = [](){GameStatesHelper::goToScene(kStartGame);};
 		GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);
 	};
-	
-	MenuItemImage *closeButtonItem = MenuItemImage::create("HelloWorld.png","HelloWorld.png",callback);
-	closeButtonItem->setColor(Color3B::ORANGE);
-	closeButtonItem->setScaleX(0.2f);
-	closeButtonItem->setScaleY(0.07f);
+
+	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(selectLevelSceneBackButtonKey);
+	Sprite *backButtonInactiveImage = Sprite::createWithSpriteFrameName(inactiveImageName);
+	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(selectLevelSceneBackButtonKey);
+	Sprite *backButtonActiveImage = Sprite::createWithSpriteFrameName(activeImageName);
+
+	MenuItemSprite *closeButtonItem = MenuItemSprite::create(backButtonInactiveImage,backButtonActiveImage,callback);
 	return closeButtonItem;
 }

@@ -13,22 +13,15 @@ SelectLevelPlayerStatusController::SelectLevelPlayerStatusController(void)
 	_playerStatusDataSource = new PlayerStatusDataSource();
 	_delegate = NULL;
 	_playerName = GameViewStyleHelper::getStandardLabel();
+	_playerName->setColor(Color3B(89,72,52));
 	_playerScore = GameViewStyleHelper::getStandardLabel();
-	_playerStatusView = getPlayerStatusPad();
+	_playerStatusView = CocosNodesHelper::getSpriteWithKey(selectLevelScenePlayerStatusPadKey);
 	placeAllViewParts();
 }
 
 
 SelectLevelPlayerStatusController::~SelectLevelPlayerStatusController(void)
 {
-}
-
-Node* SelectLevelPlayerStatusController::getPlayerStatusPad()
-{
-	Sprite *padView = Sprite::create("HelloWorld.png");
-	padView->setScale(0.2f);
-	padView->setColor(Color3B::MAGENTA);
-	return padView;
 }
 
 void SelectLevelPlayerStatusController::placeAllViewParts()

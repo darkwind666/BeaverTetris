@@ -9,7 +9,6 @@ using namespace cocos2d;
 SelectGameLevelBeaverTalkController::SelectGameLevelBeaverTalkController(void)
 {
 	Sprite *beaverTalk = CocosNodesHelper::getSpriteWithKey(selectLevelBeaverTalkKey);
-	beaverTalk->setScale(0.7f);
 	this->addChild(beaverTalk);
 }
 
