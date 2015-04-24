@@ -11,6 +11,7 @@
 #include "GameKeyWithSuffixSupporter.h"
 #include "GameStatesHelper.h"
 #include "GameEnums.h"
+#include "MouseOverMenuItem.h"
 
 const int maxRecordsCount = 5;
 
@@ -90,11 +91,11 @@ Node* GamesRecordsBoardController::getPlayerNameLabelWithIndex(int aIndex)
 
 void GamesRecordsBoardController::createBackToMainMenuButton()
 {
-	MenuItemSprite *goToMainMenuButton = getCloseButton();
+	MenuItem *goToMainMenuButton = getCloseButton();
 	CocosNodesHelper::addButtonToParentNodeWithKey(goToMainMenuButton,this,gameRecordsGoToMainMenuButtonKey);
 }
 
-MenuItemSprite* GamesRecordsBoardController::getCloseButton()
+MenuItem* GamesRecordsBoardController::getCloseButton()
 {
 	std::function<void(Object* pSender)> callback = [](Object* pSender){ 
 		Node *button = (Node*)pSender;
@@ -103,9 +104,7 @@ MenuItemSprite* GamesRecordsBoardController::getCloseButton()
 	};
 	
 	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(gameRecordsGoToMainMenuButtonKey);
-	Sprite *backButtonInactiveImage = Sprite::createWithSpriteFrameName(inactiveImageName);
 	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(gameRecordsGoToMainMenuButtonKey);
-	Sprite *backButtonActiveImage = Sprite::createWithSpriteFrameName(activeImageName);
-	MenuItemSprite *closeButtonItem = MenuItemSprite::create(backButtonInactiveImage,backButtonActiveImage,callback);
+	MouseOverMenuItem *closeButtonItem = new MouseOverMenuItem(activeImageName,inactiveImageName,callback);
 	return closeButtonItem;
 }

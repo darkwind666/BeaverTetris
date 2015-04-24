@@ -22,7 +22,7 @@ private:
 	std::string getRecordPadImageNameWithIndex(int aIndex);
 	cocos2d::Node* getPlayerNameLabelWithIndex(int aIndex);
 	void createBackToMainMenuButton();
-	cocos2d::MenuItemSprite* GamesRecordsBoardController::getCloseButton();
+	cocos2d::MenuItem* GamesRecordsBoardController::getCloseButton();
 
 };
 

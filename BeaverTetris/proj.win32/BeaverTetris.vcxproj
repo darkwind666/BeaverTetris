@@ -250,6 +250,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\MainGamePlayerScoreController.cpp" />
     <ClCompile Include="..\Classes\MainGameSceneFactory.cpp" />
     <ClCompile Include="..\Classes\MainGameVictoryConditionController.cpp" />
+    <ClCompile Include="..\Classes\MouseOverMenuItem.cpp" />
     <ClCompile Include="..\Classes\NewTetraminoDetailDataSource.cpp" />
     <ClCompile Include="..\Classes\PlaceSomeDetailsCondition.cpp" />
     <ClCompile Include="..\Classes\PlayerActionControllerDesktop.cpp" />
@@ -447,6 +448,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\MainGamePlayerScoreController.h" />
     <ClInclude Include="..\Classes\MainGameSceneFactory.h" />
     <ClInclude Include="..\Classes\MainGameVictoryConditionController.h" />
+    <ClInclude Include="..\Classes\MouseOverMenuItem.h" />
     <ClInclude Include="..\Classes\NewTetraminoDetailDataSource.h" />
     <ClInclude Include="..\Classes\PlaceSomeDetailsCondition.h" />
     <ClInclude Include="..\Classes\PlayerActionControllerDesktop.h" />

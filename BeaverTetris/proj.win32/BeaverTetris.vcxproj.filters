@@ -633,6 +633,9 @@
     <ClCompile Include="..\Classes\GameRecordsFishesController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MouseOverMenuItem.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1218,6 +1221,9 @@
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameRecordsFishesController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MouseOverMenuItem.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
