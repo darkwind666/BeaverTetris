@@ -155,12 +155,18 @@ const string gameRecordsFish2Key = string("GameRecordsFish2");
 
 const string gameRecordsGoToMainMenuButtonKey = string("GameRecordsBackToMainMenu");
 
-const string gameDevelopersBackgroundKey = string("gameDevelopersBackground");
+const string gameDevelopersBackgroundKey = string("GameDevelopersBackground");
+const string gameDevelopersUnderWaterBackgroundKey = string("GameDevelopersUnderWaterBackdround");
+const string gameDevelopersFishesKey = string("gameDevelopersFishes");
 const string gameDevelopersAnimationControllerKey = string("GameDevelopersAnimationController");
 const string gameDevelopersBoardControllerKey = string("GameDevelopersBoardController");
+const string gameDevelopersBoardPadKey = string("GameDevelopersStaircase");
+const string gameDevelopersBoardUnderWaterPartKey = string("GameDevelopersUnderWaterBoardPart");
+const string gameDevelopersBoardPlacePadKey = string("GameDevelopersPlacePad");
 const string gameDeveloperProgrammerKey = string("gameDeveloperProgrammer");
 const string gameDeveloperDesignerKey = string("gameDeveloperDesigner");
 const string gameDevelopersFunctionLabelKey = string("gameDevelopersFunctionLabel");
 const string gameDevelopersNameLabelKey = string("gameDevelopersNameLabel");
-const string gameDevelopersBeaverKey = string("gameDevelopersBeaver");
-const string gameDevelopersGoToMainMenuButtonKey = string("gameDevelopersGoToMainMenuButton");
+const string gameDevelopersBeaverKey = string("GameDevelopersBeaver");
+const string gameDevelopersClockKey = string("GameDevelopersBeaverClock");
+const string gameDevelopersGoToMainMenuButtonKey = string("GameDevelopersBackToMainMenu");

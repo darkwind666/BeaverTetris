@@ -11,6 +11,8 @@ public:
 	virtual void onEnterTransitionDidFinish();
 	virtual void onExitTransitionDidStart();
 
+	void setFirstFishScale(float aScale);
+
 private:
 
 	cocos2d::Node *_fish1;

@@ -15,5 +15,7 @@ private:
 	void makeViewWithPadAndFunctionAndNameKeys(std::string aPadKey, std::string aFunctionKey, std::string aNameKey);
 	cocos2d::Node* getDeveloperPadWithKey(std::string aPadKey);
 	cocos2d::Node* getDeveloperLabelWithString(std::string aString);
+	void createBackToMainMenuButton();
+	cocos2d::MenuItem* getCloseButton();
 };
 

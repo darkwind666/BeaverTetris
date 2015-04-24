@@ -23,6 +23,11 @@ StartGameFishesController::~StartGameFishesController(void)
 {
 }
 
+void StartGameFishesController::setFirstFishScale(float aScale)
+{
+	_fish1->setScale(aScale);
+}
+
 void StartGameFishesController::onEnterTransitionDidFinish()
 {
 	runFish1Animation();

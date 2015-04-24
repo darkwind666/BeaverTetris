@@ -131,7 +131,9 @@ enum GameRecordsAnimationElementsZOrdes
 enum GameDevelopersSreenZOrdes
 {
 	kGameDevelopersBackgroundZOrder,
+	kGameDevelopersUnderWaterBackgroundZOrder,
 	kGameDevelopersAnimationControllerZOrder,
+	kGameDevelopersFishesZOrder,
 	kGameDevelopersGoToMainMenuButtonZOrder,
 };
 

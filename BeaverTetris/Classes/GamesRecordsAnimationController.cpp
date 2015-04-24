@@ -36,8 +36,8 @@ GamesRecordsAnimationController::~GamesRecordsAnimationController(void)
 
 void GamesRecordsAnimationController::runAnimationWithBeaverClock()
 {
-	ActionInterval *rotateClock = RotateTo::create(0.8f, -50.0f);
-	ActionInterval *rotateClockBack = RotateTo::create(0.8f, 10.0f);
+	ActionInterval *rotateClock = RotateTo::create(gameRecordsBeaverClockActionDuration, -50.0f);
+	ActionInterval *rotateClockBack = RotateTo::create(gameRecordsBeaverClockActionDuration, 10.0f);
 	ActionInterval *sequence = Sequence::create(rotateClock, rotateClockBack, NULL);
 	FiniteTimeAction *repeat = RepeatForever::create(sequence);
 	_gamesRecordsBeaverClock->runAction(repeat);
@@ -47,8 +47,9 @@ void GamesRecordsAnimationController::onEnterTransitionDidFinish()
 {
 	FiniteTimeAction *actionWithRecordBoard = getAnimationWithBoard();
 	FiniteTimeAction *actionWithRecordBoardUnderWaterPart = getAnimationWithBoardUnderWaterPart();
+	FiniteTimeAction *spawn = Spawn::create(actionWithRecordBoard, actionWithRecordBoardUnderWaterPart, NULL);
 	FiniteTimeAction *actionWithBeaver = getAnimationWithBeaver();
-	Action *sequence = Sequence::create(actionWithRecordBoard, actionWithRecordBoardUnderWaterPart, actionWithBeaver, NULL);
+	Action *sequence = Sequence::create(spawn, actionWithBeaver, NULL);
 	this->runAction(sequence);
 }
 
@@ -56,8 +57,7 @@ FiniteTimeAction* GamesRecordsAnimationController::getAnimationWithBoard()
 {
 	Vec2 finalBoardPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(gameRecordsBoardControllerKey);
 	ActionInterval *moveBoard = MoveTo::create(gameRecordsBoardActionDuration, finalBoardPosition);
-	FiniteTimeAction *ease = EaseBackOut::create(moveBoard);
-	FiniteTimeAction *actionWithBoard = TargetedAction::create(_gamesRecordsBoard, ease);
+	FiniteTimeAction *actionWithBoard = TargetedAction::create(_gamesRecordsBoard, moveBoard);
 	return actionWithBoard;
 }
 
@@ -65,8 +65,7 @@ FiniteTimeAction* GamesRecordsAnimationController::getAnimationWithBoardUnderWat
 {
 	Vec2 finalBoardPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(gameRecordsBoardUnderWaterPartKey);
 	ActionInterval *moveBoard = MoveTo::create(gameRecordsBoardActionDuration, finalBoardPosition);
-	FiniteTimeAction *ease = EaseBackOut::create(moveBoard);
-	FiniteTimeAction *actionWithBoardUnderWaterPart = TargetedAction::create(_underWaterBoardPart, ease);
+	FiniteTimeAction *actionWithBoardUnderWaterPart = TargetedAction::create(_underWaterBoardPart, moveBoard);
 	return actionWithBoardUnderWaterPart;
 }
 
