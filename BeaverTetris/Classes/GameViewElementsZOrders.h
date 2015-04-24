@@ -116,7 +116,9 @@ enum MainGameEndPopUpZOrders
 enum GameRecordsSreenZOrdes
 {
 	kGameRecordsBackgroundZOrder,
+	kGameRecordsUnderWaterBackgroundZOrder,
 	kGameRecordsAnimationControllerZOrder,
+	kGameRecordsFishesZOrder,
 	kGameRecordsGoToMainMenuButtonZOrder,
 };
 

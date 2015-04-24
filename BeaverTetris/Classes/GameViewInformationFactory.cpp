@@ -419,18 +419,15 @@ void GameViewInformationFactory::makeMainGameWorldData()
 
 	ViewElementInformation mainGameBackgroundPad;
 	mainGameBackgroundPad.elementImage = getImageNameForKey(mainGameBackgroundPadKey);
-	mainGameBackgroundPad.elementPosition = Vec2(0, 0);
+	mainGameBackgroundPad.elementPosition = Vec2(-43, 0);
 	mainGameBackgroundPad.elementZOrder = 0;
 	_elementsInformation[mainGameBackgroundPadKey] = mainGameBackgroundPad;
 
-	int gameTetraminoOffsetX = 10;
-	int gameTetraminoOffsetY = 10;
-
-	int gameboardOffsetX = 37;
-	int gameboardOffsetY = 10;
+	int gameTetraminoOffsetX = 12;
+	int gameTetraminoOffsetY = 12;
 
 	ViewElementInformation mainGameBoard;
-	mainGameBoard.elementPosition = Vec2(gameboardOffsetX, gameboardOffsetY);
+	mainGameBoard.elementPosition = Vec2(gameTetraminoOffsetX, gameTetraminoOffsetY);
 	mainGameBoard.elementOffset = Vec2(gameTetraminoOffsetX * 2, gameTetraminoOffsetY * 2);
 	mainGameBoard.elementZOrder = kMainGameBoardZOrder;
 	_elementsInformation[mainGameBoardControllerKey] = mainGameBoard;
@@ -441,7 +438,7 @@ void GameViewInformationFactory::makeMainGameWorldData()
 	_elementsInformation[tetraminoLivesCountViewKey] = tetraminoLivesCountView;
 
 	ViewElementInformation mainGameAnimation;
-	mainGameAnimation.elementPosition = Vec2(gameboardOffsetX, gameboardOffsetY);
+	mainGameAnimation.elementPosition = Vec2(gameTetraminoOffsetX, gameTetraminoOffsetY);
 	mainGameAnimation.elementZOrder = kMainGameAnimationZOrder;
 	_elementsInformation[mainGameAnimationControllerKey] = mainGameAnimation;
 
@@ -450,33 +447,36 @@ void GameViewInformationFactory::makeMainGameWorldData()
 void GameViewInformationFactory::makeMainGameHudsData()
 {
 	ViewElementInformation mainGameHudsBackground;
-	mainGameHudsBackground.elementPosition =  Vec2(290, getScreenCenterY());
+	mainGameHudsBackground.elementImage = getImageNameForKey(gameHudBackgroundKey);
+	mainGameHudsBackground.elementPosition =  Vec2(275, getScreenCenterY());
 	mainGameHudsBackground.elementZOrder = kMainGameHudsBackgroundZOrder;
 	_elementsInformation[gameHudBackgroundKey] = mainGameHudsBackground;
 
+	int hudElementXPosition = 280;
+
 	ViewElementInformation mainGamePlayerActionController;
-	mainGamePlayerActionController.elementPosition =  Vec2(270, 20);
+	mainGamePlayerActionController.elementPosition =  Vec2(hudElementXPosition, 20);
 	mainGamePlayerActionController.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[playerActionControllerKey] = mainGamePlayerActionController;
 
 	makeMainGamePlayerControllersData();
 
 	ViewElementInformation mainGamePlayerScoreController;
-	mainGamePlayerScoreController.elementPosition =  Vec2(280, 440);
+	mainGamePlayerScoreController.elementPosition =  Vec2(hudElementXPosition, 460);
 	mainGamePlayerScoreController.elementZOrder = kMainGamePlayerScoreControllerZOrder;
 	_elementsInformation[playerScoreControllerKey] = mainGamePlayerScoreController;
 
 	makeMainGamePlayerScoreControllersData();
 
 	ViewElementInformation victoryConditionHudController;
-	victoryConditionHudController.elementPosition =  Vec2(280, 350);
+	victoryConditionHudController.elementPosition =  Vec2(hudElementXPosition, 380);
 	victoryConditionHudController.elementZOrder = kMainGamePlayerVictoryConditionZOrder;
 	_elementsInformation[victoryConditionHudControllerKey] = victoryConditionHudController;
 
 	makeMainGameVictoryConditionData();
 
 	ViewElementInformation mainGamePlayerSpellsController;
-	mainGamePlayerSpellsController.elementPosition =  Vec2(280, 280);
+	mainGamePlayerSpellsController.elementPosition =  Vec2(hudElementXPosition, 300);
 	mainGamePlayerSpellsController.elementOffset = Vec2(0, 60);
 	mainGamePlayerSpellsController.elementZOrder = kMainGamePlayerSpellsControllerZOrder;
 	_elementsInformation[playerSpellsControllerKey] = mainGamePlayerSpellsController;
@@ -491,7 +491,7 @@ void GameViewInformationFactory::makeMainGameHudsData()
 
 	ViewElementInformation pauseGameViewController;
 	pauseGameViewController.elementImage = getImageNameForKey(pauseGameViewControllerKey);
-	pauseGameViewController.elementPosition = Vec2(295, 65);
+	pauseGameViewController.elementPosition = Vec2(hudElementXPosition, 80);
 	pauseGameViewController.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[pauseGameViewControllerKey] = pauseGameViewController;
 	
@@ -556,13 +556,13 @@ void GameViewInformationFactory::makeMainGameVictoryConditionData()
 	_elementsInformation[victoryConditionPadImageKey] = victoryConditionPad;
 
 	ViewElementInformation victoryConditionHudImage;
-	victoryConditionHudImage.elementPosition =  Vec2(-(padLength/2), 30);
+	victoryConditionHudImage.elementPosition =  Vec2(-(padLength/2), 27);
 	victoryConditionHudImage.elementOffset = Vec2(padLength, 0);
 	victoryConditionHudImage.elementZOrder = kVictoryConditionHudImageZOrder;
 	_elementsInformation[victoryConditionHudImageKey] = victoryConditionHudImage;
 
 	ViewElementInformation victoryConditionState;
-	victoryConditionState.elementPosition =  Vec2(-(padLength/2), 0);
+	victoryConditionState.elementPosition =  Vec2(-(padLength/2), 8);
 	victoryConditionState.elementOffset = Vec2(padLength, 0);
 	victoryConditionState.elementZOrder = kVictoryConditionStateZOrder;
 	_elementsInformation[victoryConditionHudStateKey] = victoryConditionState;
@@ -656,6 +656,12 @@ void GameViewInformationFactory::makeRecordsScreenData()
 	gameRecordsBackground.elementPosition = getScreenCenter();
 	gameRecordsBackground.elementZOrder = kGameRecordsBackgroundZOrder;
 	_elementsInformation[gameRecordsBackgroundKey] = gameRecordsBackground;
+
+	ViewElementInformation gameRecordsUnderWaterBackground;
+	gameRecordsUnderWaterBackground.elementImage = getImageNameForKey(gameRecordsUnderWaterBackgroundKey);
+	gameRecordsUnderWaterBackground.elementPosition = Vec2(0, -190) + getScreenCenter();
+	gameRecordsUnderWaterBackground.elementZOrder = kGameRecordsUnderWaterBackgroundZOrder;
+	_elementsInformation[gameRecordsUnderWaterBackgroundKey] = gameRecordsUnderWaterBackground;
 	
 	ViewElementInformation gameRecordsAnimationController;
 	gameRecordsAnimationController.elementPosition = Vec2(0, 0);
@@ -663,40 +669,79 @@ void GameViewInformationFactory::makeRecordsScreenData()
 	_elementsInformation[gameRecordsAnimationControllerKey] = gameRecordsAnimationController;
 
 	makeGameRecordsAnimationData();
-	
-	ViewElementInformation gameRecordsGoToMainMenuButton;
-	gameRecordsGoToMainMenuButton.elementImage = getImageNameForKey(gameRecordsGoToMainMenuButtonKey);
-	gameRecordsGoToMainMenuButton.elementPosition = Vec2(70, 40);
-	gameRecordsGoToMainMenuButton.elementZOrder = kGameRecordsGoToMainMenuButtonZOrder;
-	_elementsInformation[gameRecordsGoToMainMenuButtonKey] = gameRecordsGoToMainMenuButton;
+
+	ViewElementInformation gameRecordsFishes;
+	gameRecordsFishes.elementPosition = Vec2(0, 0);
+	gameRecordsFishes.elementZOrder = kGameRecordsFishesZOrder;
+	_elementsInformation[gameRecordsFishesKey] = gameRecordsFishes;
+
+	makeGameRecordsFishesData();
+
 }
 
 void GameViewInformationFactory::makeGameRecordsAnimationData()
 {
 	ViewElementInformation gameRecordsBoardController;
-	gameRecordsBoardController.elementPosition = Vec2(90, 880);
-	gameRecordsBoardController.elementActionFinalPosition = Vec2(90, 440);
-	gameRecordsBoardController.elementOffset = Vec2(0, -80);
+	gameRecordsBoardController.elementPosition = Vec2(110, 880);
+	gameRecordsBoardController.elementActionFinalPosition = Vec2(110, 450);
+	gameRecordsBoardController.elementOffset = Vec2(0, -50);
 	gameRecordsBoardController.elementZOrder = kGameRecordsBoardZOrder;
 	_elementsInformation[gameRecordsBoardControllerKey] = gameRecordsBoardController;
 
+	ViewElementInformation gameRecordsBoardPad;
+	gameRecordsBoardPad.elementImage = getImageNameForKey(gameRecordsBoardPadKey);
+	gameRecordsBoardPad.elementPosition = Vec2(0, -110);
+	gameRecordsBoardPad.elementZOrder = 0;
+	_elementsInformation[gameRecordsBoardPadKey] = gameRecordsBoardPad;
+
+	ViewElementInformation gameRecordsBoardUnderWaterPart;
+	gameRecordsBoardUnderWaterPart.elementImage = getImageNameForKey(gameRecordsBoardUnderWaterPartKey);
+	gameRecordsBoardUnderWaterPart.elementPosition = Vec2(170, -120);
+	gameRecordsBoardUnderWaterPart.elementActionFinalPosition = Vec2(170, 50);
+	gameRecordsBoardUnderWaterPart.elementZOrder = 0;
+	_elementsInformation[gameRecordsBoardUnderWaterPartKey] = gameRecordsBoardUnderWaterPart;
+
 	ViewElementInformation gameRecordsBoardPlayerLabelName;
-	gameRecordsBoardPlayerLabelName.elementPosition = Vec2(230, 180);
+	gameRecordsBoardPlayerLabelName.elementPosition = Vec2(70, 20);
 	gameRecordsBoardPlayerLabelName.elementZOrder = 0;
 	_elementsInformation[gameRecordsBoardPlayerNameLabelKey] = gameRecordsBoardPlayerLabelName;
 
-	ViewElementInformation gameRecordsBoardPlayerLabelScore;
-	gameRecordsBoardPlayerLabelScore.elementPosition = Vec2(230, 80);
-	gameRecordsBoardPlayerLabelScore.elementZOrder = 0;
-	_elementsInformation[gameRecordsBoardPlayerScoreLabelKey] = gameRecordsBoardPlayerLabelScore;
+	ViewElementInformation gameRecordsGoToMainMenuButton;
+	gameRecordsGoToMainMenuButton.elementImage = getImageNameForKey(gameRecordsGoToMainMenuButtonKey);
+	gameRecordsGoToMainMenuButton.elementPosition = Vec2(0, -270);
+	gameRecordsGoToMainMenuButton.elementZOrder = 0;
+	_elementsInformation[gameRecordsGoToMainMenuButtonKey] = gameRecordsGoToMainMenuButton;
 
 	ViewElementInformation gameRecordsBeaver;
 	gameRecordsBeaver.elementImage = getImageNameForKey(gameRecordsBeaverKey);
-	gameRecordsBeaver.elementPosition = Vec2(240, -150);
-	gameRecordsBeaver.elementActionFinalPosition = Vec2(240, 270);
+	gameRecordsBeaver.elementPosition = Vec2(230, 600);
+	gameRecordsBeaver.elementActionFinalPosition = Vec2(230, 170);
 	gameRecordsBeaver.elementZOrder = kGameRecordsBeaverZOrder;
 	_elementsInformation[gameRecordsBeaverKey] = gameRecordsBeaver;
 
+	ViewElementInformation gameRecordsBeaverClock;
+	gameRecordsBeaverClock.elementImage = getImageNameForKey(gameRecordsClockKey);
+	gameRecordsBeaverClock.elementPosition = Vec2(60, 170);
+	gameRecordsBeaverClock.elementZOrder = kGameRecordsBeaverZOrder;
+	_elementsInformation[gameRecordsClockKey] = gameRecordsBeaverClock;
+
+}
+
+void GameViewInformationFactory::makeGameRecordsFishesData()
+{
+	ViewElementInformation gameRecordsFish1;
+	gameRecordsFish1.elementImage = getImageNameForKey(gameRecordsFish1Key);
+	gameRecordsFish1.elementPosition = Vec2(360, 100);
+	gameRecordsFish1.elementActionFinalPosition = Vec2(-20, 100);
+	gameRecordsFish1.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
+	_elementsInformation[gameRecordsFish1Key] = gameRecordsFish1;
+
+	ViewElementInformation gameRecordsFish2;
+	gameRecordsFish2.elementImage = getImageNameForKey(gameRecordsFish2Key);
+	gameRecordsFish2.elementPosition = Vec2(-40, 30);
+	gameRecordsFish2.elementActionFinalPosition = Vec2(290, 30);
+	gameRecordsFish2.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
+	_elementsInformation[gameRecordsFish2Key] = gameRecordsFish2;
 }
 
 void GameViewInformationFactory::makeDevelopersScreenData()

@@ -9,14 +9,18 @@ public:
 	~GamesRecordsAnimationController(void);
 
 	virtual void onEnterTransitionDidFinish();
+	virtual void onExitTransitionDidStart();
 
 private:
 
 	cocos2d::Node *_gamesRecordsBoard;
+	cocos2d::Node *_underWaterBoardPart;
 	cocos2d::Node *_gamesRecordsBeaver;
+	cocos2d::Node *_gamesRecordsBeaverClock;
 
-	cocos2d::Node* getGameRecordsBeaver();
+	void runAnimationWithBeaverClock();
 	cocos2d::FiniteTimeAction* getAnimationWithBoard();
+	cocos2d::FiniteTimeAction* getAnimationWithBoardUnderWaterPart();
 	cocos2d::FiniteTimeAction* getAnimationWithBeaver();
 
 };

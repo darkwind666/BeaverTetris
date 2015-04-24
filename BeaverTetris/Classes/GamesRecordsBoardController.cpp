@@ -7,6 +7,10 @@
 #include "GameViewElementsKeys.h"
 #include "GameViewStyleHelper.h"
 #include "StringsSupporter.h"
+#include "GameFileExtensionMaker.h"
+#include "GameKeyWithSuffixSupporter.h"
+#include "GameStatesHelper.h"
+#include "GameEnums.h"
 
 const int maxRecordsCount = 5;
 
@@ -25,13 +29,18 @@ GamesRecordsBoardController::~GamesRecordsBoardController(void)
 
 void GamesRecordsBoardController::makeBoardView()
 {
+	CocosNodesHelper::addSpriteToParentNodeWithKey(this, gameRecordsBoardPadKey);
+	createRecordsBoard();
+	createBackToMainMenuButton();
+}
+
+void GamesRecordsBoardController::createRecordsBoard()
+{
 	int recordsCount = getRecordsCount();
 	for (int recordIndex = 0; recordIndex < recordsCount; recordIndex++)
 	{
 		Node *recordPad = getRecordPadWithIndex(recordIndex);
 		Node *playerNameLabel = getPlayerNameLabelWithIndex(recordIndex);
-		Node *playerScoreLabel = getPlayerScoreLabelWithIndex(recordIndex);
-		CocosNodesHelper::addChildNodeToParentNodeWithKey(playerScoreLabel, recordPad, gameRecordsBoardPlayerScoreLabelKey);
 		CocosNodesHelper::addChildNodeToParentNodeWithKey(playerNameLabel, recordPad, gameRecordsBoardPlayerNameLabelKey);
 		this->addChild(recordPad);
 	}
@@ -49,33 +58,54 @@ int GamesRecordsBoardController::getRecordsCount()
 
 Node* GamesRecordsBoardController::getRecordPadWithIndex(int aIndex)
 {
-	Sprite *recordPad = Sprite::create("HelloWorld.png");
-	recordPad->setScaleX(0.3f);
-	recordPad->setScaleY(0.15f);
-	recordPad->setColor(Color3B::BLACK);
-	
+	string recordPadImageName = getRecordPadImageNameWithIndex(aIndex);
+	Sprite *recordPad = Sprite::createWithSpriteFrameName(recordPadImageName);
 	Vec2 offset = GameElementsDataHelper::getElementOffsetForKey(gameRecordsBoardControllerKey);
 	Vec2 recordPadPosition = Vec2(0, offset.y * aIndex);
 	recordPad->setPosition(recordPadPosition);
 	return recordPad;
 }
 
+string GamesRecordsBoardController::getRecordPadImageNameWithIndex(int aIndex)
+{
+	string recordPadImageName = gameRecordsBoardLeaderPlacePadKey;
+	if (aIndex > 2)
+	{
+		recordPadImageName = gameRecordsBoardPlacePadKey;
+	}
+	string recordPadImageNameWithFileExtension = GameFileExtensionMaker::getGraphicWithExtension(recordPadImageName);
+	return recordPadImageNameWithFileExtension;
+}
+
 Node* GamesRecordsBoardController::getPlayerNameLabelWithIndex(int aIndex)
 {
 	LabelTTF *playerNameLabel = GameViewStyleHelper::getStandardLabel();
-	playerNameLabel->setFontSize(80);
 	string playerIndex = StringsSupporter::getStringFromNumber(aIndex + 1) + string(")") + string(" ");
 	string playerName = _gamePlayersDatabase->getPlayerNameForIndex(aIndex);
-	string playerInformation = playerIndex + playerName;
+	string playerScore = StringsSupporter::getStringFromNumber(_gamePlayersDatabase->getPlayerScoreForIndex(aIndex));
+	string playerInformation = playerIndex + playerName + string(" ") + playerScore;
 	playerNameLabel->setString(playerInformation);
 	return playerNameLabel;
 }
 
-Node* GamesRecordsBoardController::getPlayerScoreLabelWithIndex(int aIndex)
+void GamesRecordsBoardController::createBackToMainMenuButton()
 {
-	LabelTTF *playerScoreLabel = GameViewStyleHelper::getStandardLabel();
-	playerScoreLabel->setFontSize(80);
-	string playerScore = StringsSupporter::getStringFromNumber(_gamePlayersDatabase->getPlayerScoreForIndex(aIndex));
-	playerScoreLabel->setString(playerScore);
-	return playerScoreLabel;
+	MenuItemSprite *goToMainMenuButton = getCloseButton();
+	CocosNodesHelper::addButtonToParentNodeWithKey(goToMainMenuButton,this,gameRecordsGoToMainMenuButtonKey);
+}
+
+MenuItemSprite* GamesRecordsBoardController::getCloseButton()
+{
+	std::function<void(Object* pSender)> callback = [](Object* pSender){ 
+		Node *button = (Node*)pSender;
+		std::function<void()> buttonCallback = [](){GameStatesHelper::goToScene(kStartGame);};
+		GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);
+	};
+	
+	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(gameRecordsGoToMainMenuButtonKey);
+	Sprite *backButtonInactiveImage = Sprite::createWithSpriteFrameName(inactiveImageName);
+	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(gameRecordsGoToMainMenuButtonKey);
+	Sprite *backButtonActiveImage = Sprite::createWithSpriteFrameName(activeImageName);
+	MenuItemSprite *closeButtonItem = MenuItemSprite::create(backButtonInactiveImage,backButtonActiveImage,callback);
+	return closeButtonItem;
 }

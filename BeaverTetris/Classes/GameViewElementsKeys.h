@@ -83,7 +83,7 @@ const string kingTetraminoKey = string("kingBoss");
 const string mainGameAnimationControllerKey = string("mainGameAnimationController");
 
 const string gameHudControllerKey = string("gameHudController");
-const string gameHudBackgroundKey = string("gameHudBackground");
+const string gameHudBackgroundKey = string("MainGameHudPad");
 const string playerActionControllerKey = string("playerActionController");
 
 const string playerControlInactiveImageKey = string("PlayerActionInactiveButton");
@@ -137,13 +137,23 @@ const string mainGameEndPopUpKey = string("MainGameEndPopUp");
 const string mainGameEndPopUpPadKey = string("MainGameEndPad");
 const string mainGameEndPopUpButtonKey = string("MainGameEndButton");
 
-const string gameRecordsBackgroundKey = string("gameRecordsBackground");
+const string gameRecordsBackgroundKey = string("GameRecordsBackground");
+const string gameRecordsUnderWaterBackgroundKey = string("GameRecordsUnderWater");
 const string gameRecordsAnimationControllerKey = string("GameRecordsAnimationController");
-const string gameRecordsBoardControllerKey = string("GameRecordsBoardController");
+const string gameRecordsBoardControllerKey = string("gameRecordsBoardController");
+const string gameRecordsBoardPadKey = string("GameRecordsStaircase");
+const string gameRecordsBoardUnderWaterPartKey = string("GameRecordBoardUnderWaterPart");
+const string gameRecordsBoardLeaderPlacePadKey = string("GameRecordsLeaderPlacePad");
+const string gameRecordsBoardPlacePadKey = string("GameRecordsPlacePad");
 const string gameRecordsBoardPlayerNameLabelKey = string("gameRecordsBoardPlayerNameLabel");
-const string gameRecordsBoardPlayerScoreLabelKey = string("gameRecordsBoardPlayerScoreLabel");
-const string gameRecordsBeaverKey = string("gameRecordsBeaver");
-const string gameRecordsGoToMainMenuButtonKey = string("gameRecordsGoToMainMenuButton");
+const string gameRecordsClockKey = string("GameRecordsClock");
+const string gameRecordsBeaverKey = string("GameRecordsBeaver");
+
+const string gameRecordsFishesKey = string("gameRecordsFishes");
+const string gameRecordsFish1Key = string("GameRecordsFish");
+const string gameRecordsFish2Key = string("GameRecordsFish2");
+
+const string gameRecordsGoToMainMenuButtonKey = string("GameRecordsBackToMainMenu");
 
 const string gameDevelopersBackgroundKey = string("gameDevelopersBackground");
 const string gameDevelopersAnimationControllerKey = string("GameDevelopersAnimationController");

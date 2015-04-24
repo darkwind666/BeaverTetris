@@ -47,10 +47,8 @@ vector<VictoryConditionViewElements> MainGameVictoryConditionController::makeVie
 
 Sprite* MainGameVictoryConditionController::getVictoryConditionImageViewForIndex(int aConditionIndex)
 {
-	Sprite *victoryConditionView = Sprite::create("HelloWorld.png");
-	victoryConditionView->setScaleX(0.05f);
-	victoryConditionView->setScaleY(0.08f);
-	victoryConditionView->setColor(Color3B::MAGENTA);
+	string victoryConditionImageName = _victoryConditionViewDataSource->getVictoryConditionIconImageForIndex(aConditionIndex);
+	Sprite *victoryConditionView = Sprite::createWithSpriteFrameName(victoryConditionImageName);
 	Vec2 victoryConditionViewPosition = _victoryConditionViewDataSource->getVictoryConditionIconImagePositionForIndex(aConditionIndex);
 	victoryConditionView->setPosition(victoryConditionViewPosition);
 	return victoryConditionView;
@@ -59,7 +57,6 @@ Sprite* MainGameVictoryConditionController::getVictoryConditionImageViewForIndex
 LabelTTF* MainGameVictoryConditionController::getVictoryConditionStatusViewForIndex(int aConditionIndex)
 {
 	LabelTTF *victoryConditionStatus = GameViewStyleHelper::getStandardLabel();
-	victoryConditionStatus->setFontSize(20);
 	victoryConditionStatus->setTag(aConditionIndex);
 	Vec2 victoryConditionStatusPosition = _victoryConditionViewDataSource->getVictoryConditionInformationPositionForIndex(aConditionIndex);
 	victoryConditionStatus->setPosition(victoryConditionStatusPosition);

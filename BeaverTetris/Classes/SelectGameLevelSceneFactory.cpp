@@ -59,7 +59,6 @@ MenuItemSprite* SelectGameLevelSceneFactory::getCloseButton()
 	Sprite *backButtonInactiveImage = Sprite::createWithSpriteFrameName(inactiveImageName);
 	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(selectLevelSceneBackButtonKey);
 	Sprite *backButtonActiveImage = Sprite::createWithSpriteFrameName(activeImageName);
-
 	MenuItemSprite *closeButtonItem = MenuItemSprite::create(backButtonInactiveImage,backButtonActiveImage,callback);
 	return closeButtonItem;
 }

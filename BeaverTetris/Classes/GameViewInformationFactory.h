@@ -40,6 +40,7 @@ private:
 	void makeMainGameEndPopUpData();
 	void makeRecordsScreenData();
 	void makeGameRecordsAnimationData();
+	void makeGameRecordsFishesData();
 	void makeDevelopersScreenData();
 	void makeGameDevelopersAnimationData();
 	void makeGameDevelopersBoardData();

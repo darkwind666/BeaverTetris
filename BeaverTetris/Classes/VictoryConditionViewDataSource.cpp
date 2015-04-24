@@ -8,6 +8,7 @@
 #include "GameElementsDataHelper.h"
 #include "StringsSupporter.h"
 #include "VictoryConditionInterface.h"
+#include "GameFileExtensionMaker.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -33,7 +34,8 @@ int VictoryConditionViewDataSource::getVictoryConditionsCount(void)
 string VictoryConditionViewDataSource::getVictoryConditionIconImageForIndex(int aIndex)
 {
 	string victoryConditionIconImage = _currentVictoryCondition->getVictoryStateIconImageForIndex(aIndex);
-	return victoryConditionIconImage;
+	string victoryConditionIconImageWithFileExtension = GameFileExtensionMaker::getGraphicWithExtension(victoryConditionIconImage);
+	return victoryConditionIconImageWithFileExtension;
 }
 
 Vec2 VictoryConditionViewDataSource::getVictoryConditionIconImagePositionForIndex(int aIndex)
