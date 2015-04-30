@@ -26,10 +26,15 @@ const string getSoundRegulatorsButtonKey = string("MenuScreenSetting");
 const string goToDevelopersButtonKey = string("MenuScreenAuthors");
 
 const string startGameRegulateSoundPopUpKey = string("startGameRegulateSoundPopUp");
-const string startGameRegulateSoundPadKey = string("startGameRegulateSoundPad");
-const string startGameRegulateSoundSliderKey = string("startGameRegulateSoundSlider");
-const string startGameRegulateSoundEffectsSliderKey = string("startGameRegulateSoundEffectsSlider");
-const string startGameRegulateSoundCloseButtonKey = string("startGameRegulateSoundCloseButton");
+const string startGameRegulateSoundBackgroundKey = string("StartGameSoundRegulatorBackground");
+const string startGameRegulateSoundPadKey = string("StartGameSoundRegulatorStaircase");
+const string startGameRegulateSoundPlaceKey = string("StartGameSoundRegulatorPlace");
+const string startGameRegulateSoundThumbKey = string("StartGameSoundRegulatorThumb");
+const string startGameRegulateSoundSliderKey = string("startGameBackgroundSoundController");
+const string startGameRegulateBackgroundSoundIconKey = string("StartGameBackgroundSoundRegulator");
+const string startGameRegulateSoundEffectsSliderKey = string("startGameSoundEffectsController");
+const string startGameRegulateSoundEffectsIconKey = string("StartGameSoundEffectsRegulator");
+const string startGameRegulateSoundCloseButtonKey = string("StartGameSoundRegulatorBackToMainMenu");
 
 const string selectLevelBackgroundKey = string("SelectLevelScreenBackground");
 const string selectLevelBackgroundRightKey = string("SelectLevelRightGround");

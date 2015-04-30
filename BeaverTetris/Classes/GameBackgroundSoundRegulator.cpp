@@ -4,6 +4,9 @@
 #include "GameSoundController.h"
 #include "GameSoundsKeys.h"
 #include "GameFileExtensionMaker.h"
+#include "GameFileExtensionMaker.h"
+#include "GameViewElementsKeys.h"
+#include "CocosNodesHelper.h"
 
 using namespace cocos2d;
 using namespace ui;
@@ -12,16 +15,19 @@ using namespace experimental;
 GameBackgroundSoundRegulator::GameBackgroundSoundRegulator(void)
 {
 	Slider *backgroundSoundRegulator = Slider::create();
-	backgroundSoundRegulator->loadBarTexture("sliderTrack.png");
-	backgroundSoundRegulator->loadSlidBallTextures("sliderThumb.png", "sliderThumb.png", "");
-	backgroundSoundRegulator->loadProgressBarTexture("sliderProgress.png");
-	backgroundSoundRegulator->setScale(0.6f);
+
+	string loadBarTextureName = GameFileExtensionMaker::getGraphicWithExtension(startGameRegulateSoundPlaceKey);
+	string loadBarThumbTextureName = GameFileExtensionMaker::getGraphicWithExtension(startGameRegulateSoundThumbKey);
+	backgroundSoundRegulator->loadBarTexture(loadBarTextureName, TextureResType::PLIST);
+	backgroundSoundRegulator->loadSlidBallTextureNormal(loadBarThumbTextureName, TextureResType::PLIST);
+	backgroundSoundRegulator->loadSlidBallTexturePressed(loadBarThumbTextureName, TextureResType::PLIST);
 
 	float percent = getRegulatorPercent();
 	backgroundSoundRegulator->setPercent(percent);
 	function<void(Ref*,Widget::TouchEventType)> eventListner = getEventListnerForRegulator();
 	backgroundSoundRegulator->addTouchEventListener(eventListner);
 	this->addChild(backgroundSoundRegulator);
+	CocosNodesHelper::addSpriteToParentNodeWithKey(this, startGameRegulateBackgroundSoundIconKey);
 
 }
 

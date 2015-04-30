@@ -171,29 +171,44 @@ void GameViewInformationFactory::makeStartGameMenuItemsData()
 
 void GameViewInformationFactory::makeStartGameRegulateSoundPopUpData()
 {
+	ViewElementInformation startGameRegulateSoundBackground;
+	startGameRegulateSoundBackground.elementImage = getImageNameForKey(startGameRegulateSoundBackgroundKey);
+	startGameRegulateSoundBackground.elementPosition = getScreenCenter();
+	startGameRegulateSoundBackground.elementZOrder = kStartGameRegulateSoundPopUpPadZOrder;
+	_elementsInformation[startGameRegulateSoundBackgroundKey] = startGameRegulateSoundBackground;
 
 	ViewElementInformation startGameRegulateSoundPopUpPad;
 	startGameRegulateSoundPopUpPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
-	startGameRegulateSoundPopUpPad.elementPosition = Vec2(getScreenCenterX(), 650);
-	startGameRegulateSoundPopUpPad.elementActionFinalPosition = getScreenCenter();
+	startGameRegulateSoundPopUpPad.elementPosition = Vec2(180, 400);
 	startGameRegulateSoundPopUpPad.elementZOrder = kStartGameRegulateSoundPopUpPadZOrder;
 	_elementsInformation[startGameRegulateSoundPadKey] = startGameRegulateSoundPopUpPad;
 
 	ViewElementInformation startGameRegulateSoundSlider;
-	startGameRegulateSoundSlider.elementImage = getImageNameForKey(startGameRegulateSoundSliderKey);
-	startGameRegulateSoundSlider.elementPosition = Vec2(90, 160);
+	startGameRegulateSoundSlider.elementPosition = Vec2(80, 180);
 	startGameRegulateSoundSlider.elementZOrder = kStartGameRegulateSoundSliderZOrder;
 	_elementsInformation[startGameRegulateSoundSliderKey] = startGameRegulateSoundSlider;
 
+	ViewElementInformation startGameRegulateBackgroundSoundIcon;
+	startGameRegulateBackgroundSoundIcon.elementImage = getImageNameForKey(startGameRegulateBackgroundSoundIconKey);
+	startGameRegulateBackgroundSoundIcon.elementPosition = Vec2(-130, 0);
+	startGameRegulateBackgroundSoundIcon.elementZOrder = 0;
+	_elementsInformation[startGameRegulateBackgroundSoundIconKey] = startGameRegulateBackgroundSoundIcon;
+
 	ViewElementInformation startGameRegulateSoundEffectsSlider;
 	startGameRegulateSoundEffectsSlider.elementImage = getImageNameForKey(startGameRegulateSoundEffectsSliderKey);
-	startGameRegulateSoundEffectsSlider.elementPosition = Vec2(90, 120);
+	startGameRegulateSoundEffectsSlider.elementPosition = Vec2(80, 130);
 	startGameRegulateSoundEffectsSlider.elementZOrder = kStartGameRegulateSoundEffectsSliderZOrder;
 	_elementsInformation[startGameRegulateSoundEffectsSliderKey] = startGameRegulateSoundEffectsSlider;
 
+	ViewElementInformation startGameRegulateSoundEffectsIcon;
+	startGameRegulateSoundEffectsIcon.elementImage = getImageNameForKey(startGameRegulateSoundEffectsIconKey);
+	startGameRegulateSoundEffectsIcon.elementPosition = Vec2(-130, 0);
+	startGameRegulateSoundEffectsIcon.elementZOrder = 0;
+	_elementsInformation[startGameRegulateSoundEffectsIconKey] = startGameRegulateSoundEffectsIcon;
+
 	ViewElementInformation startGameRegulateSoundCloseButton;
 	startGameRegulateSoundCloseButton.elementImage = getImageNameForKey(startGameRegulateSoundCloseButtonKey);
-	startGameRegulateSoundCloseButton.elementPosition = Vec2(150, 50);
+	startGameRegulateSoundCloseButton.elementPosition = Vec2(70, 10);
 	startGameRegulateSoundCloseButton.elementZOrder = kStartGameRegulateSoundPopUpCloseButtonZOrder;
 	_elementsInformation[startGameRegulateSoundCloseButtonKey] = startGameRegulateSoundCloseButton;
 }

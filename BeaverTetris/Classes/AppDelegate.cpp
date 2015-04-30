@@ -28,7 +28,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::create("BeaverTetris");
 		CocosViewConfigurator *cocosViewConfigurator = new CocosViewConfigurator();
 		cocosViewConfigurator->configurateView(glview);
 		delete cocosViewConfigurator;
@@ -44,6 +44,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	GameInitiator *gameInitiator = new GameInitiator();
 	gameInitiator->setInitialState();
 	delete gameInitiator;
+
+	LanguageType currentLanguage = Application::getCurrentLanguage();
 
     return true;
 }

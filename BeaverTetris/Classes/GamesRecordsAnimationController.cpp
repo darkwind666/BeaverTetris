@@ -73,8 +73,7 @@ FiniteTimeAction* GamesRecordsAnimationController::getAnimationWithBeaver()
 {
 	Vec2 finalBeaverPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(gameRecordsBeaverKey);
 	ActionInterval *moveBeaver = MoveTo::create(gameRecordsBeaverActionDuration, finalBeaverPosition);
-	FiniteTimeAction *ease = EaseBackOut::create(moveBeaver);
-	FiniteTimeAction *actionWithBoard = TargetedAction::create(_gamesRecordsBeaver, ease);
+	FiniteTimeAction *actionWithBoard = TargetedAction::create(_gamesRecordsBeaver, moveBeaver);
 	return actionWithBoard;
 }
 

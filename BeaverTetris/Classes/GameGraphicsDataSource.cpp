@@ -9,6 +9,7 @@ const string selectLevelGraphicName = string("SelectLevelScreenTextureAtlas");
 const string mainGameGraphicName = string("MainGameScreenTextureAtlas");
 const string gameRecordsGraphicName = string("GameRecordsScreenTextureAtlas");
 const string gameDevelopersGraphicName = string("GameDevelopersScreenTextureAtlas");
+const string gameSoundRegulatorsPopUpGraphicName = string("StartGameSoundRegulatorsPopUpTextureAtlas");
 
 GameGraphicsDataSource::GameGraphicsDataSource(void)
 {
@@ -55,6 +56,7 @@ std::vector<std::string> GameGraphicsDataSource::getGraphicKeys()
 	graphicsKeys.push_back(mainGameGraphicName);
 	graphicsKeys.push_back(gameRecordsGraphicName);
 	graphicsKeys.push_back(gameDevelopersGraphicName);
+	graphicsKeys.push_back(gameSoundRegulatorsPopUpGraphicName);
 
 	return graphicsKeys;
 }
