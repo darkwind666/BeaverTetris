@@ -12,6 +12,7 @@ public:
 	PlayerCreatorController(void);
 	~PlayerCreatorController(void);
 
+	virtual void editBoxTextChanged(cocos2d::ui::EditBox* editBox, const std::string& text);
 	virtual void editBoxReturn(cocos2d::ui::EditBox* editBox);
 	virtual void onEnterTransitionDidFinish();
 
@@ -25,9 +26,9 @@ private:
 	PlayerStatusDelegateInterface *_delegate;
 
 	cocos2d::Node* getControllerView();
-	cocos2d::Node* getPlayerCreatorPad();
 	cocos2d::Node* getPlayerCreatorText();
 	cocos2d::Node* getPlayerCreatorInputHolder();
+	cocos2d::MenuItem* getCloseButton();
 	void invokeDelegate();
 
 };

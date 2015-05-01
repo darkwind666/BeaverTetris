@@ -46,6 +46,11 @@ FiniteTimeAction* GameViewStyleHelper::getSoundActionWithKey(string aKey)
 
 LabelTTF* GameViewStyleHelper::getStandardLabel()
 {
-	return LabelTTF::create("", "COMIC.ttf", 15);
+	return LabelTTF::create("", "COMIC.TTF", 15);
+}
+
+cocos2d::Label* GameViewStyleHelper::getStandardLabelWithFontSize(float aFontSize)
+{
+	return Label::createWithTTF("", "COMIC.TTF", aFontSize);
 }
 

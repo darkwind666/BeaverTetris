@@ -137,20 +137,20 @@
             <key>MainGameHudPad.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{695,8},{69,501}}</string>
+                <string>{{695,8},{84,501}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{69,501}}</string>
+                <string>{{0,0},{84,501}}</string>
                 <key>sourceSize</key>
-                <string>{69,501}</string>
+                <string>{84,501}</string>
             </dict>
             <key>firestormSpell.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{772,8},{38,38}}</string>
+                <string>{{787,8},{38,38}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +163,7 @@
             <key>cohesionSpell.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{818,8},{38,38}}</string>
+                <string>{{833,8},{38,38}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -176,7 +176,7 @@
             <key>MainGamePauseButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{864,8},{38,38}}</string>
+                <string>{{879,8},{38,38}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -189,7 +189,7 @@
             <key>PlaceDetails.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{910,8},{28,19}}</string>
+                <string>{{925,8},{28,19}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -199,10 +199,88 @@
                 <key>sourceSize</key>
                 <string>{28,19}</string>
             </dict>
+            <key>RemainTime.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{961,8},{13,15}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{13,15}}</string>
+                <key>sourceSize</key>
+                <string>{13,15}</string>
+            </dict>
+            <key>queenBossWinConditionIcon.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{982,8},{12,12}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{12,12}}</string>
+                <key>sourceSize</key>
+                <string>{12,12}</string>
+            </dict>
+            <key>blackTetraminoWinConditionIcon.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1002,8},{9,9}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{9,9}}</string>
+                <key>sourceSize</key>
+                <string>{9,9}</string>
+            </dict>
+            <key>goldTetraminoWinConditionIcon.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1019,8},{9,9}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{9,9}}</string>
+                <key>sourceSize</key>
+                <string>{9,9}</string>
+            </dict>
+            <key>redTetraminoWinConditionIcon.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1036,8},{9,9}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{9,9}}</string>
+                <key>sourceSize</key>
+                <string>{9,9}</string>
+            </dict>
+            <key>greenTetraminoWinConditionIcon.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1053,8},{10,9}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{10,9}}</string>
+                <key>sourceSize</key>
+                <string>{10,9}</string>
+            </dict>
             <key>MainGamePad.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{946,8},{250,501}}</string>
+                <string>{{1071,8},{250,501}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -212,23 +290,36 @@
                 <key>sourceSize</key>
                 <string>{250,501}</string>
             </dict>
-            <key>MainGamePlayerScorePad.png</key>
+            <key>blueTetraminoWinConditionIcon.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1204,8},{42,25}}</string>
+                <string>{{1329,8},{9,9}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{42,25}}</string>
+                <string>{{0,0},{9,9}}</string>
                 <key>sourceSize</key>
-                <string>{42,25}</string>
+                <string>{9,9}</string>
+            </dict>
+            <key>MainGamePlayerScorePad.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1346,8},{72,25}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{72,25}}</string>
+                <key>sourceSize</key>
+                <string>{72,25}</string>
             </dict>
             <key>VictoryConditionPad.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1254,8},{57,51}}</string>
+                <string>{{1426,8},{57,51}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -241,7 +332,7 @@
             <key>UnavailableSpellIcon.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1319,8},{38,39}}</string>
+                <string>{{1491,8},{38,39}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -254,7 +345,7 @@
             <key>rocketSpell.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1365,8},{39,38}}</string>
+                <string>{{1537,8},{39,38}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -267,7 +358,7 @@
             <key>PlayerActionActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1412,8},{14,13}}</string>
+                <string>{{1584,8},{14,13}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -276,19 +367,6 @@
                 <string>{{0,0},{14,13}}</string>
                 <key>sourceSize</key>
                 <string>{14,13}</string>
-            </dict>
-            <key>PlayerActionInactiveButton.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1434,8},{15,14}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{15,14}}</string>
-                <key>sourceSize</key>
-                <string>{15,14}</string>
             </dict>
         </dict>
         <key>metadata</key>

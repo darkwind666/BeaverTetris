@@ -4,6 +4,7 @@
 #include "QueenBoss.h"
 #include "PrincessBoss.h"
 #include "KingBoss.h"
+#include "GameViewSuffixes.h"
 
 using namespace std;
 
@@ -63,7 +64,8 @@ int WinBossCondition::getVictoryStateInformationForIndex(int aIndex)
 
 string WinBossCondition::getVictoryStateIconImageForIndex(int aIndex)
 {
-	return _currentBoss->getVictoryStateIconImageForIndex(aIndex);
+	string bossIconImage = _currentBoss->getVictoryStateIconImageForIndex(aIndex) + tetraminoForWinConditionIconSuffixKey;
+	return bossIconImage;
 }
 
 bool WinBossCondition::playerWin(void)

@@ -17,10 +17,36 @@
                 <key>sourceSize</key>
                 <string>{22,22}</string>
             </dict>
+            <key>StartGameSoundRegulatorPlace.png</key> 
+            <dict>
+                <key>frame</key>
+                <string>{{38,8},{211,47}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{211,47}}</string>
+                <key>sourceSize</key>
+                <string>{211,47}</string>
+            </dict>
+            <key>12.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{38,8},{211,47}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{211,47}}</string>
+                <key>sourceSize</key>
+                <string>{211,47}</string>
+            </dict>
             <key>StartGameSoundRegulatorBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{38,8},{361,571}}</string>
+                <string>{{257,8},{361,571}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +59,7 @@
             <key>StartGameSoundRegulatorStaircase.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{407,8},{136,464}}</string>
+                <string>{{626,8},{136,464}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +72,7 @@
             <key>StartGameSoundRegulatorBackToMainMenuInactiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{551,8},{140,38}}</string>
+                <string>{{770,8},{140,38}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -56,36 +82,36 @@
                 <key>sourceSize</key>
                 <string>{140,38}</string>
             </dict>
-            <key>StartGameSoundRegulatorPlace.png</key>
+            <key>StartGameSoundRegulatorProgress.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{699,8},{211,47}}</string>
+                <string>{{918,8},{180,7}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{211,47}}</string>
+                <string>{{0,0},{180,7}}</string>
                 <key>sourceSize</key>
-                <string>{211,47}</string>
+                <string>{180,7}</string>
             </dict>
             <key>6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{8,587},{211,47}}</string>
+                <string>{{1106,8},{180,7}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{211,47}}</string>
+                <string>{{0,0},{180,7}}</string>
                 <key>sourceSize</key>
-                <string>{211,47}</string>
+                <string>{180,7}</string>
             </dict>
             <key>StartGameSoundRegulatorThumb.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{227,587},{21,21}}</string>
+                <string>{{1294,8},{21,21}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +124,7 @@
             <key>StartGameBackgroundSoundRegulator.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,587},{29,26}}</string>
+                <string>{{1323,8},{29,26}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +137,7 @@
             <key>StartGameSoundRegulatorBackToMainMenuActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{293,587},{140,37}}</string>
+                <string>{{1360,8},{140,37}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -127,7 +153,7 @@
             <key>format</key>
             <integer>2</integer>
             <key>size</key>
-            <string>{1024,1024}</string>
+            <string>{2048,2048}</string>
             <key>textureFileName</key>
             <string>StartGameSoundRegulatorsPopUpTextureAtlas.png</string>
         </dict>

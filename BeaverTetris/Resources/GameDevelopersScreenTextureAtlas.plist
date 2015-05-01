@@ -33,20 +33,20 @@
             <key>GameDevelopersBeaver.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{522,8},{157,226}}</string>
+                <string>{{522,8},{126,179}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{157,226}}</string>
+                <string>{{0,0},{126,179}}</string>
                 <key>sourceSize</key>
-                <string>{157,226}</string>
+                <string>{126,179}</string>
             </dict>
             <key>GameDevelopersPlacePad.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{687,8},{160,36}}</string>
+                <string>{{656,8},{160,36}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>15.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{855,8},{160,37}}</string>
+                <string>{{824,8},{160,37}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -69,10 +69,23 @@
                 <key>sourceSize</key>
                 <string>{160,37}</string>
             </dict>
+            <key>16.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{8,587},{160,36}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{160,36}}</string>
+                <key>sourceSize</key>
+                <string>{160,36}</string>
+            </dict>
             <key>GameDevelopersUnderWaterBoardPart.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{8,587},{312,116}}</string>
+                <string>{{176,587},{312,116}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +98,7 @@
             <key>GameDevelopersUnderWaterBackdround.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{328,587},{361,117}}</string>
+                <string>{{496,587},{361,117}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +111,7 @@
             <key>4.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{697,587},{68,60}}</string>
+                <string>{{865,587},{68,60}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +124,7 @@
             <key>5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{773,587},{34,41}}</string>
+                <string>{{941,587},{34,41}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +137,7 @@
             <key>6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{815,587},{44,35}}</string>
+                <string>{{8,712},{44,35}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,20 +150,20 @@
             <key>GameDevelopersBeaverClock.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{867,587},{73,193}}</string>
+                <string>{{60,712},{58,152}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{73,193}}</string>
+                <string>{{0,0},{58,152}}</string>
                 <key>sourceSize</key>
-                <string>{73,193}</string>
+                <string>{58,152}</string>
             </dict>
             <key>GameDevelopersBackToMainMenuInactiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{8,788},{140,37}}</string>
+                <string>{{126,712},{140,37}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +176,7 @@
             <key>GameDevelopersBackToMainMenuActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{156,788},{140,37}}</string>
+                <string>{{274,712},{140,37}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>

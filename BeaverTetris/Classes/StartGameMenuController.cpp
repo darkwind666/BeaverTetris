@@ -1,4 +1,4 @@
-#include "StartGameMenuController.h"
+﻿#include "StartGameMenuController.h"
 #include "StartGameMenuDataSource.h"
 #include "GameViewStyleHelper.h"
 #include "CocosNodesHelper.h"
@@ -29,12 +29,24 @@ vector<Node*> StartGameMenuController::getMenuItems()
 		string unselectedImageName = _startGameViewDataSource->getMenuInactiveImageForIndex(itemIndex);
 		string selectedImageName = _startGameViewDataSource->getMenuActiveImageForIndex(itemIndex);
 		MouseOverMenuItem *menuItem = new MouseOverMenuItem(selectedImageName, unselectedImageName, CC_CALLBACK_1(StartGameMenuController::buttonWasPressed, this));
+		Node *buttonText = getButtonTextForIndex(itemIndex);
+		CocosNodesHelper::addChildNodeToParentNodeWithKey(buttonText, menuItem, startGameMenuButtonTextKey);
 		menuItem->setScale(0.9f);
 		menuItem->setTag(itemIndex);
 		menuItem->setPosition(_startGameViewDataSource->getMenuItemPositionForIndex(itemIndex));
 		menuItems.push_back(menuItem);
 	}
 	return menuItems;
+}
+
+Node* StartGameMenuController::getButtonTextForIndex(int aIndex)
+{
+	Label *buttonText = GameViewStyleHelper::getStandardLabelWithFontSize(17);
+	float buttonTextRotation = _startGameViewDataSource->getButtonTextRotationForIndex(aIndex);
+	buttonText->setRotation(buttonTextRotation);
+	string text = _startGameViewDataSource->getButtonTextForIndex(aIndex);
+	buttonText->setString(text);
+	return buttonText;
 }
 
 void StartGameMenuController::makeStartMenuView()

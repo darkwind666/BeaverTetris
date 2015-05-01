@@ -163,20 +163,20 @@
             <key>GameRecordsFish2.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{756,711},{69,52}}</string>
+                <string>{{756,711},{60,57}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{69,52}}</string>
+                <string>{{0,0},{60,57}}</string>
                 <key>sourceSize</key>
-                <string>{69,52}</string>
+                <string>{60,57}</string>
             </dict>
             <key>GameRecordsBackToMainMenuInactiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{833,711},{140,37}}</string>
+                <string>{{824,711},{140,37}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>

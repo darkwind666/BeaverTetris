@@ -17,6 +17,7 @@ private :
 	std::vector<cocos2d::Node*> _menuItems;
 
 	std::vector<cocos2d::Node*> getMenuItems();
+	cocos2d::Node* getButtonTextForIndex(int aIndex);
 	void makeStartMenuView();
 	void createStartMenu();
 	void buttonWasPressed(cocos2d::Object* pSender);

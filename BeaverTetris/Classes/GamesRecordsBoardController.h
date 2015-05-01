@@ -21,6 +21,7 @@ private:
 	cocos2d::Node* getRecordPadWithIndex(int aIndex);
 	std::string getRecordPadImageNameWithIndex(int aIndex);
 	cocos2d::Node* getPlayerNameLabelWithIndex(int aIndex);
+	float getLabelFontSizeWithIndex(int aIndex);
 	void createBackToMainMenuButton();
 	cocos2d::MenuItem* getCloseButton();
 

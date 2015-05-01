@@ -30,8 +30,8 @@ enum SelectGameLevelScreenZOrders
 {
 	kSelectLevelMenuZOrder,
 	kSelectLevelScenePlayerStatusControllerZOrder,
-	kPlayerCreatorControllerZOrder,
 	kSelectLevelSceneBackButtonZOrder,
+	kPlayerCreatorControllerZOrder,
 	kSelectLevelSceneBeaverTalkZOrder,
 };
 
@@ -44,9 +44,10 @@ enum SelectGameLevelPlayerStatusZOrders
 
 enum PlayerCreatorZOrders
 {
+	kPlayerCreatorBackgroundZOrder,
 	kPlayerCreatorPadZOrder,
-	kPlayerCreatorTextZOrder,
 	kPlayerCreatorInputZOrder,
+	kPlayerCreatorTextZOrder,
 };
 
 enum MainGameScreenZOrders
@@ -89,6 +90,7 @@ enum SpellViewZOrders
 {
 	kSpellIconImageZOrder,
 	kSpellCostLabelZOrder,
+	kSpellButtonLabelZOrder,
 };
 
 enum RemoveCurrentDetailSpellViewZOrders

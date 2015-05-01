@@ -33,15 +33,15 @@
             <key>MenuScreenStaircase.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{252,279},{369,437}}</string>
+                <string>{{252,279},{369,430}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{369,437}}</string>
+                <string>{{0,0},{369,430}}</string>
                 <key>sourceSize</key>
-                <string>{369,437}</string>
+                <string>{369,430}</string>
             </dict>
             <key>MenuScreenBeaver.png</key>
             <dict>
@@ -147,7 +147,7 @@
                 <key>sourceSize</key>
                 <string>{236,59}</string>
             </dict>
-            <key>MenuScreenRecordsInactiveButton.png</key>
+            <key>MenuScreenRecordsActiveButton.png</key> 
             <dict>
                 <key>frame</key>
                 <string>{{467,8},{155,68}}</string>
@@ -160,7 +160,7 @@
                 <key>sourceSize</key>
                 <string>{155,68}</string>
             </dict>
-            <key>MenuScreenRecordsActiveButton.png</key>
+            <key>MenuScreenRecordsInactiveButton.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{304,8},{155,68}}</string>

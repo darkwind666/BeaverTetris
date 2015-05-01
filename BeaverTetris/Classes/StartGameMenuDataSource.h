@@ -18,6 +18,8 @@ public:
 	std::string getMenuInactiveImageForIndex(int aIndex);
 	std::string getMenuActiveImageForIndex(int aIndex);
 	cocos2d::Vec2 getMenuItemPositionForIndex(int aIndex);
+	std::string getButtonTextForIndex(int aIndex);
+	float getButtonTextRotationForIndex(int aIndex);
 	std::function<void()> getMenuItemCallbackForIndex(int aIndex);
 
 private:

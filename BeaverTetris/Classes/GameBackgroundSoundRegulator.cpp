@@ -14,9 +14,11 @@ using namespace experimental;
 
 GameBackgroundSoundRegulator::GameBackgroundSoundRegulator(void)
 {
-	Slider *backgroundSoundRegulator = Slider::create();
+	CocosNodesHelper::addSpriteToParentNodeWithKey(this, startGameRegulateSoundPlaceKey);
+	CocosNodesHelper::addSpriteToParentNodeWithKey(this, startGameRegulateBackgroundSoundIconKey);
 
-	string loadBarTextureName = GameFileExtensionMaker::getGraphicWithExtension(startGameRegulateSoundPlaceKey);
+	Slider *backgroundSoundRegulator = Slider::create();
+	string loadBarTextureName = GameFileExtensionMaker::getGraphicWithExtension(startGameRegulateSoundProgressKey);
 	string loadBarThumbTextureName = GameFileExtensionMaker::getGraphicWithExtension(startGameRegulateSoundThumbKey);
 	backgroundSoundRegulator->loadBarTexture(loadBarTextureName, TextureResType::PLIST);
 	backgroundSoundRegulator->loadSlidBallTextureNormal(loadBarThumbTextureName, TextureResType::PLIST);
@@ -27,7 +29,6 @@ GameBackgroundSoundRegulator::GameBackgroundSoundRegulator(void)
 	function<void(Ref*,Widget::TouchEventType)> eventListner = getEventListnerForRegulator();
 	backgroundSoundRegulator->addTouchEventListener(eventListner);
 	this->addChild(backgroundSoundRegulator);
-	CocosNodesHelper::addSpriteToParentNodeWithKey(this, startGameRegulateBackgroundSoundIconKey);
 
 }
 

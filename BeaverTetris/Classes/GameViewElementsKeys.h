@@ -19,6 +19,7 @@ const string startGameFish2Key = string("MenuScreenFish2");
 const string startGameFish3Key = string("MenuScreenFish3");
 
 const string startGameMenuKey = string("MenuScreenStaircase");
+const string startGameMenuButtonTextKey = string("startGameMenuButtonText");
 const string createNewGameButtonKey = string("MenuScreenNewGame");
 const string selectGameLevelButtonKey = string("MenuScreenSelectLevel");
 const string goToGameRecordsButtonKey = string("MenuScreenRecords");
@@ -29,6 +30,7 @@ const string startGameRegulateSoundPopUpKey = string("startGameRegulateSoundPopU
 const string startGameRegulateSoundBackgroundKey = string("StartGameSoundRegulatorBackground");
 const string startGameRegulateSoundPadKey = string("StartGameSoundRegulatorStaircase");
 const string startGameRegulateSoundPlaceKey = string("StartGameSoundRegulatorPlace");
+const string startGameRegulateSoundProgressKey = string("StartGameSoundRegulatorProgress");
 const string startGameRegulateSoundThumbKey = string("StartGameSoundRegulatorThumb");
 const string startGameRegulateSoundSliderKey = string("startGameBackgroundSoundController");
 const string startGameRegulateBackgroundSoundIconKey = string("StartGameBackgroundSoundRegulator");
@@ -41,6 +43,7 @@ const string selectLevelBackgroundRightKey = string("SelectLevelRightGround");
 const string selectLevelBackgroundLeftKey = string("SelectLevelLeftGround");
 
 const string selectLevelBeaverTalkKey = string("SelectLevelScreenTalk");
+const string selectLevelBeaverTalkTextKey = string("selectLevelBeaverTalkText");
 
 const string selectLevelMenuKey = string("selectLevelMenu");
 
@@ -64,9 +67,11 @@ const string selectLevelScenePlayerStatusNameKey = string("selectLevelScenePlaye
 const string selectLevelScenePlayerStatusScoreKey = string("selectLevelScenePlayerStatusScore");
 
 const string playerCreatorControllerKey = string("playerCreatorController");
-const string playerCreatorControllerPadKey = string("playerCreatorControllerPad");
+const string playerCreatorControllerBackgroundKey = string("CreateNewPlayerControllerBackground");
+const string playerCreatorControllerPadKey = string("CreateNewPlayerControllerStaircase");
 const string playerCreatorControllerTextKey = string("playerCreatorControllerText");
-const string playerCreatorControllerInputKey = string("playerCreatorControllerInput");
+const string playerCreatorControllerInputKey = string("CreateNewPlayerControllerPlayerInputPad");
+const string playerCreatorControllerBackButtonKey = string("CreateNewPlayerControllerGoToMainMenu");
 
 const string selectLevelSceneBackButtonKey = string("SelectLevelSceneBack");
 
@@ -110,6 +115,7 @@ const string victoryConditionHudStateKey = string("victoryConditionHudState");
 const string playerSpellsControllerKey = string("playerSpellsController");
 const string playerSpellImageKey = string("UnavailableSpellIcon");
 const string playerSpellCostLabelKey = string("playerSpellCostLabel");
+const string playerSpellButtonLabelKey = string("playerSpellButtonLabel");
 
 const string removeCurrentDetailSpellKey = string("rocketSpell");
 const string firestormSpellKey = string("firestormSpell");
@@ -170,6 +176,8 @@ const string gameDevelopersBoardUnderWaterPartKey = string("GameDevelopersUnderW
 const string gameDevelopersBoardPlacePadKey = string("GameDevelopersPlacePad");
 const string gameDeveloperProgrammerKey = string("gameDeveloperProgrammer");
 const string gameDeveloperDesignerKey = string("gameDeveloperDesigner");
+const string gameDeveloperMusicianKey = string("gameDeveloperMusician");
+const string gameDeveloperGameEngineKey = string("gameDeveloperGameEngene");
 const string gameDevelopersFunctionLabelKey = string("gameDevelopersFunctionLabel");
 const string gameDevelopersNameLabelKey = string("gameDevelopersNameLabel");
 const string gameDevelopersBeaverKey = string("GameDevelopersBeaver");

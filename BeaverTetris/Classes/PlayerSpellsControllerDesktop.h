@@ -27,6 +27,7 @@ private:
 	void setInSpellViewRechargedIcon(cocos2d::Node* aView);
 	std::vector<cocos2d::Node*> makeSpellsViewsWithIcons(std::vector<cocos2d::Node*> aIcons);
 	cocos2d::Node* getSpellCostLabelWithIndex(int aSpellIndex);
+	cocos2d::Node* getSpellButtonLabelWithIndex(int aSpellIndex);
 	void addViewsToController(std::vector<cocos2d::Node*> aViews);
 	void setUpKeyboard();
 	int getViewIndexForKeyboardKey(int aKeyboardKey);

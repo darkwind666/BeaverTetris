@@ -8,6 +8,7 @@
 #include "GameServicesKeys.h"
 #include "GameTimeStepController.h"
 #include "GameViewElementsKeys.h"
+#include "StringsSupporter.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -68,9 +69,12 @@ vector<Node*> PlayerSpellsControllerDesktop::makeSpellsViewsWithIcons(vector<Nod
 		Node *spellView = Node::create();
 		Vec2 spellViewPosition = _spellsViewDataSource->getSpellPositionOnIndex(iconIndex);
 		spellView->setPosition(spellViewPosition);
+
 		Node *spellCostLabel = getSpellCostLabelWithIndex(iconIndex);
+		Node *spellButtonLabel = getSpellButtonLabelWithIndex(iconIndex);
 		CocosNodesHelper::addChildNodeToParentNodeWithKey(*iconsIterator, spellView, playerSpellImageKey);
 		CocosNodesHelper::addChildNodeToParentNodeWithKey(spellCostLabel, spellView, playerSpellCostLabelKey);
+		CocosNodesHelper::addChildNodeToParentNodeWithKey(spellButtonLabel, spellView, playerSpellButtonLabelKey);
 		spellsViews.push_back(spellView);
 	}
 	return spellsViews;
@@ -83,6 +87,15 @@ Node* PlayerSpellsControllerDesktop::getSpellCostLabelWithIndex(int aSpellIndex)
 	string spellCost = _spellsViewDataSource->getSpellCostOnIndex(aSpellIndex);
 	spellCostLabel->setString(spellCost);
 	return spellCostLabel;
+}
+
+Node* PlayerSpellsControllerDesktop::getSpellButtonLabelWithIndex(int aSpellIndex)
+{
+	LabelTTF *spellButtonLabel = GameViewStyleHelper::getStandardLabel();
+	spellButtonLabel->setFontSize(13);
+	string spellButtonName = StringsSupporter::getStringFromNumber(aSpellIndex + 1);
+	spellButtonLabel->setString(spellButtonName);
+	return spellButtonLabel;
 }
 
 void PlayerSpellsControllerDesktop::addViewsToController(vector<Node*> aViews)

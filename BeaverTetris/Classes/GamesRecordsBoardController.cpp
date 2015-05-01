@@ -81,12 +81,24 @@ string GamesRecordsBoardController::getRecordPadImageNameWithIndex(int aIndex)
 Node* GamesRecordsBoardController::getPlayerNameLabelWithIndex(int aIndex)
 {
 	LabelTTF *playerNameLabel = GameViewStyleHelper::getStandardLabel();
+	float fontSize = getLabelFontSizeWithIndex(aIndex);
+	playerNameLabel->setFontSize(fontSize);
 	string playerIndex = StringsSupporter::getStringFromNumber(aIndex + 1) + string(")") + string(" ");
 	string playerName = _gamePlayersDatabase->getPlayerNameForIndex(aIndex);
 	string playerScore = StringsSupporter::getStringFromNumber(_gamePlayersDatabase->getPlayerScoreForIndex(aIndex));
 	string playerInformation = playerIndex + playerName + string(" ") + playerScore;
 	playerNameLabel->setString(playerInformation);
 	return playerNameLabel;
+}
+
+float GamesRecordsBoardController::getLabelFontSizeWithIndex(int aIndex)
+{
+	float fontSize = 15;
+	if (aIndex > 2)
+	{
+		fontSize = 13;
+	}
+	return fontSize;
 }
 
 void GamesRecordsBoardController::createBackToMainMenuButton()

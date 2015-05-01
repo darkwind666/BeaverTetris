@@ -14,6 +14,7 @@ public:
 	static void runButtonActionWithCallbackAndDuration(cocos2d::Node *aButton, std::function<void()> aCallback, float aDuration);
 	static cocos2d::FiniteTimeAction* getSoundActionWithKey(std::string aKey);
 	static cocos2d::LabelTTF* getStandardLabel();
+	static cocos2d::Label* getStandardLabelWithFontSize(float aFontSize);
 
 };
 

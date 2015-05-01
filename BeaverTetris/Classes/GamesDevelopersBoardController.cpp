@@ -26,6 +26,8 @@ void GamesDevelopersBoardController::makeBoardView()
 	CocosNodesHelper::addSpriteToParentNodeWithKey(this, gameDevelopersBoardPadKey);
 	makeViewWithPadAndFunctionAndNameKeys(gameDeveloperProgrammerKey, programmerKey, programmerNameKey);
 	makeViewWithPadAndFunctionAndNameKeys(gameDeveloperDesignerKey, designerKey, designerNameKey);
+	makeViewWithPadAndFunctionAndNameKeys(gameDeveloperMusicianKey, musicianKey, musicianNameKey);
+	makeViewWithPadAndFunctionAndNameKeys(gameDeveloperGameEngineKey, gameEngineKey, gameEngineNameKey);
 	createBackToMainMenuButton();
 }
 

@@ -18,7 +18,6 @@ GamesDevelopersAnimationController::GamesDevelopersAnimationController(void)
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(underWaterBoardPart, this, gameDevelopersBoardUnderWaterPartKey);
 
 	Node *gameDevelopersBeaver = CocosNodesHelper::getSpriteWithKey(gameDevelopersBeaverKey);
-	gameDevelopersBeaver->setScale(0.8f);
 	_gamesDevelopersBeaver = gameDevelopersBeaver;
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameDevelopersBeaver, this, gameDevelopersBeaverKey);
 
