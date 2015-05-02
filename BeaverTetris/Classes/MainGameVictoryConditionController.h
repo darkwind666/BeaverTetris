@@ -22,6 +22,7 @@ private:
 	std::vector<VictoryConditionViewElements> makeViewElements();
 	cocos2d::Sprite* getVictoryConditionImageViewForIndex(int aConditionIndex);
 	cocos2d::LabelTTF* getVictoryConditionStatusViewForIndex(int aConditionIndex);
+	void setElementsPositionsWithIndex(VictoryConditionViewElements &victoryConditionView, int aIndex);
 	void addViewElements(std::vector<VictoryConditionViewElements> aViewElements);
 	void cleanViews();
 	void updateViews();

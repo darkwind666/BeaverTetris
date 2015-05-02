@@ -12,6 +12,7 @@ GameRecordsFishesController::GameRecordsFishesController(void)
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_fish1, this, gameRecordsFish1Key);
 
 	_fish2 = CocosNodesHelper::getSpriteWithKey(gameRecordsFish2Key);
+	_fish2->setScale(0.7f);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_fish2, this, gameRecordsFish2Key);
 }
 
@@ -39,8 +40,8 @@ void GameRecordsFishesController::runFish1Animation()
 void GameRecordsFishesController::runFish2Animation()
 {
 	Vec2 leftFish2Position = GameElementsDataHelper::getElementFinalActionPositionForKey(gameRecordsFish2Key);
-	FiniteTimeAction *moveDownFish2 = MoveTo::create(middleFishActionDuration, leftFish2Position);
-	FiniteTimeAction *moveUpFish1 = MoveTo::create(middleFishActionDuration, _fish2->getPosition());
+	FiniteTimeAction *moveDownFish2 = MoveTo::create(crazyFishActionDuration, leftFish2Position);
+	FiniteTimeAction *moveUpFish1 = MoveTo::create(crazyFishActionDuration, _fish2->getPosition());
 	Sequence *sequence = Sequence::create(moveDownFish2, moveUpFish1, nullptr);
 	RepeatForever *repeat = RepeatForever::create(sequence);
 	_fish2->runAction(repeat);

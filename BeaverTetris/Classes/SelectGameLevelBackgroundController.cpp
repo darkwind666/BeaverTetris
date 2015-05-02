@@ -12,8 +12,12 @@ using namespace cocos2d;
 SelectGameLevelBackgroundController::SelectGameLevelBackgroundController(void)
 {
 	Sprite *background = CocosNodesHelper::getSpriteWithKey(selectLevelBackgroundKey);
+
+	Sprite *backgroundLeftEarth = CocosNodesHelper::getSpriteWithKey(selectLevelBackgroundLeftKey);
+	backgroundLeftEarth->setScale(0.95f);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(backgroundLeftEarth, background, selectLevelBackgroundLeftKey);
+
 	CocosNodesHelper::addSpriteToParentNodeWithKey(background, selectLevelBackgroundRightKey);
-	CocosNodesHelper::addSpriteToParentNodeWithKey(background, selectLevelBackgroundLeftKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(background, this, selectLevelBackgroundKey);
 }
 

@@ -510,6 +510,7 @@ void GameViewInformationFactory::makeMainGameHudsData()
 
 	ViewElementInformation victoryConditionHudController;
 	victoryConditionHudController.elementPosition =  Vec2(hudElementXPosition, 380);
+	victoryConditionHudController.elementOffset = Vec2(0, 6);
 	victoryConditionHudController.elementZOrder = kMainGamePlayerVictoryConditionZOrder;
 	_elementsInformation[victoryConditionHudControllerKey] = victoryConditionHudController;
 

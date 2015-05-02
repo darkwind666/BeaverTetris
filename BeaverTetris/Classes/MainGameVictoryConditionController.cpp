@@ -3,6 +3,7 @@
 #include "GameViewStyleHelper.h"
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
+#include "GameElementsDataHelper.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -40,6 +41,7 @@ vector<VictoryConditionViewElements> MainGameVictoryConditionController::makeVie
 		VictoryConditionViewElements victoryConditionView;
 		victoryConditionView.image = getVictoryConditionImageViewForIndex(conditionIndex);
 		victoryConditionView.label = getVictoryConditionStatusViewForIndex(conditionIndex);
+		setElementsPositionsWithIndex(victoryConditionView, conditionIndex);
 		victoryConditionsViews.push_back(victoryConditionView);
 	}
 	return victoryConditionsViews;
@@ -62,6 +64,19 @@ LabelTTF* MainGameVictoryConditionController::getVictoryConditionStatusViewForIn
 	Vec2 victoryConditionStatusPosition = _victoryConditionViewDataSource->getVictoryConditionInformationPositionForIndex(aConditionIndex);
 	victoryConditionStatus->setPosition(victoryConditionStatusPosition);
 	return victoryConditionStatus;
+}
+
+void MainGameVictoryConditionController::setElementsPositionsWithIndex(VictoryConditionViewElements &victoryConditionView, int aIndex)
+{
+	int victoryConditionsCount = _victoryConditionViewDataSource->getVictoryConditionsCount();
+	if (victoryConditionsCount > 1 && aIndex == 1)
+	{
+		Vec2 offset = GameElementsDataHelper::getElementOffsetForKey(victoryConditionHudControllerKey);
+		Vec2 imagePosition = victoryConditionView.image->getPosition();
+		victoryConditionView.image->setPosition(imagePosition + offset);
+		Vec2 labelPosition = victoryConditionView.label->getPosition();
+		victoryConditionView.label->setPosition(labelPosition + offset);
+	}
 }
 
 void MainGameVictoryConditionController::addViewElements(std::vector<VictoryConditionViewElements> aViewElements)
