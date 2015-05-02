@@ -7,6 +7,8 @@
 #include "CurrentPlayerDataSource.h"
 #include "GameKeyWithSuffixSupporter.h"
 #include "GameViewElementsDataSource.h"
+#include "StringsSupporter.h"
+#include "GameLocalizationKeys.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -24,7 +26,6 @@ StartGameMenuDataSource::~StartGameMenuDataSource()
 
 vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems() 
 {
-
 	vector <StartGameMenuItemInformation> menuItems = vector <StartGameMenuItemInformation>();
 
 	if (_currentPlayerDataSource->isThereCurentPlayer())
@@ -32,7 +33,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 		StartGameMenuItemInformation menuItem2;
 		menuItem2.imageKey = selectGameLevelButtonKey;
 		menuItem2.textRotation = -10.0f;
-		menuItem2.text = string("Select level");
+		menuItem2.text = StringsSupporter::getLocalizedStringFromKey(selectLevelLocalizationKey);
 		menuItem2.callback = [](){GameStatesHelper::goToScene(kSelectLevel);};
 		menuItems.push_back(menuItem2);
 	}
@@ -40,7 +41,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 	StartGameMenuItemInformation menuItem1;
 	menuItem1.imageKey = createNewGameButtonKey;
 	menuItem1.textRotation = 0;
-	menuItem1.text = string("New game");
+	menuItem1.text = StringsSupporter::getLocalizedStringFromKey(newGameLocalizationKey);
 	menuItem1.callback = [this]()
 	{
 		_currentPlayerDataSource->cleanPlayer();
@@ -51,21 +52,21 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 	StartGameMenuItemInformation menuItem3;
 	menuItem3.imageKey = goToGameRecordsButtonKey;
 	menuItem3.textRotation = -13.0f;
-	menuItem3.text = string("Records");
+	menuItem3.text = StringsSupporter::getLocalizedStringFromKey(gameRecordsLocalizationKey);
 	menuItem3.callback = [](){GameStatesHelper::goToScene(kRecords);};
     menuItems.push_back(menuItem3);
 
 	StartGameMenuItemInformation menuItem4;
 	menuItem4.imageKey = getSoundRegulatorsButtonKey;
 	menuItem4.textRotation = -13.0f;
-	menuItem4.text = string("Settings");
+	menuItem4.text = StringsSupporter::getLocalizedStringFromKey(gameSettingsLocalizationKey);
 	menuItem4.callback = [](){GameStatesHelper::goToPopUp(kRegulateSoundPopUp);};
     menuItems.push_back(menuItem4);
 
 	StartGameMenuItemInformation menuItem5;
 	menuItem5.imageKey = goToDevelopersButtonKey;
 	menuItem5.textRotation = -10.0f;
-	menuItem5.text = string("Credits");
+	menuItem5.text = StringsSupporter::getLocalizedStringFromKey(gameDevelopersLocalizationKey);
 	menuItem5.callback = [](){GameStatesHelper::goToScene(kDevelopers);};
     menuItems.push_back(menuItem5);
 	

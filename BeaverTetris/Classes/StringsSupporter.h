@@ -9,6 +9,7 @@ public:
 	~StringsSupporter(void);
 
 	static std::string getStringFromNumber(int aNumber);
+	static std::string getLocalizedStringFromKey(std::string aKey);
 
 };
 

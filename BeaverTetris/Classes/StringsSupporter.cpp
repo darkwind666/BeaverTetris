@@ -1,5 +1,8 @@
 #include "StringsSupporter.h"
 #include <sstream>
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameLocalizationDataSource.h"
 
 using namespace std;
 
@@ -18,4 +21,11 @@ string StringsSupporter::getStringFromNumber(int aNumber)
 	str << aNumber;
 	string numberInString = str.str();
 	return numberInString;
+}
+
+string StringsSupporter::getLocalizedStringFromKey(string aKey)
+{
+	GameLocalizationDataSource *gameLocalizationDataSource = (GameLocalizationDataSource*)ServiceLocator::getServiceForKey(gameLocalizationDataSourceKey);
+	string localizedText = gameLocalizationDataSource->getLocalizedStringForKey(aKey);
+	return localizedText;
 }

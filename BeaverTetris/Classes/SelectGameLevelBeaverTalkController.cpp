@@ -4,6 +4,8 @@
 #include "GameViewStyleHelper.h"
 #include "GameViewElementsKeys.h"
 #include "GameAnimationActionsConstants.h"
+#include "StringsSupporter.h"
+#include "GameLocalizationKeys.h"
 
 using namespace cocos2d;
 
@@ -15,7 +17,7 @@ SelectGameLevelBeaverTalkController::SelectGameLevelBeaverTalkController(void)
 	LabelTTF *beaverText = GameViewStyleHelper::getStandardLabel();
 	beaverText->setFontSize(11.0f);
 	beaverText->setDimensions(Size(150, 100));
-	beaverText->setString(string("Hello, I am glad to see you in game. Help me found my watch please"));
+	beaverText->setString(StringsSupporter::getLocalizedStringFromKey(gameBeaverTalkLocalizationKey));
 	beaverText->setColor(Color3B(89,72,52));
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(beaverText, this, selectLevelBeaverTalkTextKey);
 }

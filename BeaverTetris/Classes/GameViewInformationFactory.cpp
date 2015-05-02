@@ -93,7 +93,7 @@ void GameViewInformationFactory::makeStartGameSreenData()
 	_elementsInformation[startGameMenuKey] = startGameMenu;
 
 	ViewElementInformation startGameMenuButtonText;
-	startGameMenuButtonText.elementPosition = Vec2(0, 0);
+	startGameMenuButtonText.elementPosition = Vec2(12, 0);
 	startGameMenuButtonText.elementZOrder = 0;
 	_elementsInformation[startGameMenuButtonTextKey] = startGameMenuButtonText;
 
@@ -166,7 +166,6 @@ void GameViewInformationFactory::makeStartGameMenuItemsData()
 	goToDevelopersButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[goToDevelopersButtonKey] = goToDevelopersButton;
 
-
 	ViewElementInformation createNewGameButton;
 	createNewGameButton.elementPosition = Vec2(-30, -40);
 	createNewGameButton.elementZOrder = kStartGameBackgroundZOrder;
@@ -222,6 +221,12 @@ void GameViewInformationFactory::makeStartGameRegulateSoundPopUpData()
 	startGameRegulateSoundCloseButton.elementPosition = Vec2(70, 10);
 	startGameRegulateSoundCloseButton.elementZOrder = kStartGameRegulateSoundPopUpCloseButtonZOrder;
 	_elementsInformation[startGameRegulateSoundCloseButtonKey] = startGameRegulateSoundCloseButton;
+
+	ViewElementInformation closeButtonText;
+	closeButtonText.elementPosition = Vec2(0, 0);
+	closeButtonText.elementZOrder = 0;
+	_elementsInformation[closeButtonTextKey] = closeButtonText;
+
 }
 
 void GameViewInformationFactory::makeSelectGameLevelScreenData()

@@ -28,7 +28,6 @@ private:
 	cocos2d::Node* getControllerView();
 	cocos2d::Node* getPlayerCreatorText();
 	cocos2d::Node* getPlayerCreatorInputHolder();
-	cocos2d::MenuItem* getCloseButton();
 	void invokeDelegate();
 
 };

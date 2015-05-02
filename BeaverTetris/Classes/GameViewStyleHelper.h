@@ -15,6 +15,12 @@ public:
 	static cocos2d::FiniteTimeAction* getSoundActionWithKey(std::string aKey);
 	static cocos2d::LabelTTF* getStandardLabel();
 	static cocos2d::Label* getStandardLabelWithFontSize(float aFontSize);
+	static void addBackButtonToParentNodeWithKey(cocos2d::Node *aParentNode, std::string aKey);
+	static void addBackButtonToParentNodeWithKeyAndCallback(cocos2d::Node *aParentNode, std::string aKey, cocos2d::ccMenuCallback aCallback);
+
+private:
+
+	static cocos2d::MenuItem* getCloseButtonWithKeyAndCallback(std::string aKey, cocos2d::ccMenuCallback aCallback);
 
 };
 

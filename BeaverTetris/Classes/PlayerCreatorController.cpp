@@ -11,9 +11,8 @@
 
 #include "GameStatesHelper.h"
 #include "GameViewStyleHelper.h"
-#include "GameEnums.h"
-#include "GameKeyWithSuffixSupporter.h"
-#include "MouseOverMenuItem.h"
+#include "StringsSupporter.h"
+#include "GameLocalizationKeys.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -43,9 +42,7 @@ Node* PlayerCreatorController::getControllerView()
 
 	Node *createPlayerControllerInput = getPlayerCreatorInputHolder();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(createPlayerControllerInput, createPlayerControllerPad, playerCreatorControllerInputKey);
-
-	MenuItem *closeButton = getCloseButton();
-	CocosNodesHelper::addButtonToParentNodeWithKey(closeButton,createPlayerControllerPad,playerCreatorControllerBackButtonKey);
+	GameViewStyleHelper::addBackButtonToParentNodeWithKey(createPlayerControllerPad, playerCreatorControllerBackButtonKey);
 
 	return createPlayerControllerPad;
 }
@@ -54,7 +51,8 @@ Node* PlayerCreatorController::getPlayerCreatorText()
 {
 	LabelTTF *padText = GameViewStyleHelper::getStandardLabel();
 	padText->setColor(Color3B(89,72,52));
-	padText->setString("Enter player name please");
+	padText->setString(StringsSupporter::getLocalizedStringFromKey(gamePlayerCreatorLabelLocalizationKey));
+	padText->setDimensions(Size(100, 40));
 	return padText;
 }
 
@@ -70,20 +68,6 @@ Node* PlayerCreatorController::getPlayerCreatorInputHolder()
 	createPlayerControllerInput->setPlaceHolder("");
 	createPlayerControllerInput->setDelegate(this);
 	return createPlayerControllerInput;
-}
-
-MenuItem* PlayerCreatorController::getCloseButton()
-{
-	std::function<void(Object* pSender)> callback = [](Object* pSender){ 
-		Node *button = (Node*)pSender;
-		std::function<void()> buttonCallback = [](){GameStatesHelper::goToScene(kStartGame);};
-		GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);
-	};
-
-	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(playerCreatorControllerBackButtonKey);
-	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(playerCreatorControllerBackButtonKey);
-	MouseOverMenuItem *closeButtonItem = new MouseOverMenuItem(activeImageName,inactiveImageName,callback);
-	return closeButtonItem;
 }
 
 void PlayerCreatorController::onEnterTransitionDidFinish()

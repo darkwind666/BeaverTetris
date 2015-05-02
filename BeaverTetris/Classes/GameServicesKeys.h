@@ -13,6 +13,7 @@ const string currentPlayerDataSourceKey = string("CurrentPlayerDataSource");
 const string gameLevelsDataSourceKey = string("GameLevelsDataSource");
 const string keysForEnumsDataSourceKey = string("KeysForEnumsDataSource");
 const string tetraminoColorsDataSourceKey = string("TetraminoColorsDataSource");
+const string gameLocalizationDataSourceKey = string("GameLocalizationDataSource");
 const string tetrominosFactoryKey = string("TetraminosFactory");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");
 

@@ -6,6 +6,15 @@
 #include "GameSoundController.h"
 #include "GameSoundsKeys.h"
 
+#include "GameStatesHelper.h"
+#include "GameEnums.h"
+#include "GameKeyWithSuffixSupporter.h"
+#include "MouseOverMenuItem.h"
+#include "StringsSupporter.h"
+#include "GameLocalizationKeys.h"
+#include "CocosNodesHelper.h"
+#include "GameViewElementsKeys.h"
+
 using namespace std;
 using namespace cocos2d;
 
@@ -54,3 +63,31 @@ cocos2d::Label* GameViewStyleHelper::getStandardLabelWithFontSize(float aFontSiz
 	return Label::createWithTTF("", "COMIC.TTF", aFontSize);
 }
 
+void GameViewStyleHelper::addBackButtonToParentNodeWithKey(Node *aParentNode, string aKey)
+{
+	std::function<void(Object* pSender)> callback = [](Object* pSender){ 
+		Node *button = (Node*)pSender;
+		std::function<void()> buttonCallback = [](){GameStatesHelper::goToScene(kStartGame);};
+		GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);
+	};
+	addBackButtonToParentNodeWithKeyAndCallback(aParentNode, aKey, callback);
+}
+
+void GameViewStyleHelper::addBackButtonToParentNodeWithKeyAndCallback(Node *aParentNode, string aKey, ccMenuCallback aCallback)
+{
+	MenuItem *closeButton = getCloseButtonWithKeyAndCallback(aKey, aCallback);
+	CocosNodesHelper::addButtonToParentNodeWithKey(closeButton,aParentNode,aKey);
+}
+
+MenuItem* GameViewStyleHelper::getCloseButtonWithKeyAndCallback(string aKey, ccMenuCallback aCallback)
+{
+	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(aKey);
+	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(aKey);
+	MouseOverMenuItem *closeButtonItem = new MouseOverMenuItem(activeImageName,inactiveImageName,aCallback);
+	
+	Label *backButtonText = GameViewStyleHelper::getStandardLabelWithFontSize(18.0f);
+	backButtonText->setString(StringsSupporter::getLocalizedStringFromKey(gameBackButtonLocalizationKey));
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(backButtonText, closeButtonItem, closeButtonTextKey);
+	
+	return closeButtonItem;
+}

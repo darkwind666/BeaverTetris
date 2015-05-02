@@ -8,10 +8,6 @@
 #include "GameViewStyleHelper.h"
 #include "StringsSupporter.h"
 #include "GameFileExtensionMaker.h"
-#include "GameKeyWithSuffixSupporter.h"
-#include "GameStatesHelper.h"
-#include "GameEnums.h"
-#include "MouseOverMenuItem.h"
 
 const int maxRecordsCount = 5;
 
@@ -32,7 +28,7 @@ void GamesRecordsBoardController::makeBoardView()
 {
 	CocosNodesHelper::addSpriteToParentNodeWithKey(this, gameRecordsBoardPadKey);
 	createRecordsBoard();
-	createBackToMainMenuButton();
+	GameViewStyleHelper::addBackButtonToParentNodeWithKey(this, gameRecordsGoToMainMenuButtonKey);
 }
 
 void GamesRecordsBoardController::createRecordsBoard()
@@ -99,24 +95,4 @@ float GamesRecordsBoardController::getLabelFontSizeWithIndex(int aIndex)
 		fontSize = 13;
 	}
 	return fontSize;
-}
-
-void GamesRecordsBoardController::createBackToMainMenuButton()
-{
-	MenuItem *goToMainMenuButton = getCloseButton();
-	CocosNodesHelper::addButtonToParentNodeWithKey(goToMainMenuButton,this,gameRecordsGoToMainMenuButtonKey);
-}
-
-MenuItem* GamesRecordsBoardController::getCloseButton()
-{
-	std::function<void(Object* pSender)> callback = [](Object* pSender){ 
-		Node *button = (Node*)pSender;
-		std::function<void()> buttonCallback = [](){GameStatesHelper::goToScene(kStartGame);};
-		GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);
-	};
-	
-	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(gameRecordsGoToMainMenuButtonKey);
-	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(gameRecordsGoToMainMenuButtonKey);
-	MouseOverMenuItem *closeButtonItem = new MouseOverMenuItem(activeImageName,inactiveImageName,callback);
-	return closeButtonItem;
 }

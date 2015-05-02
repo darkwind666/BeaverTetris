@@ -37,6 +37,7 @@ const string startGameRegulateBackgroundSoundIconKey = string("StartGameBackgrou
 const string startGameRegulateSoundEffectsSliderKey = string("startGameSoundEffectsController");
 const string startGameRegulateSoundEffectsIconKey = string("StartGameSoundEffectsRegulator");
 const string startGameRegulateSoundCloseButtonKey = string("StartGameSoundRegulatorBackToMainMenu");
+const string closeButtonTextKey = string("closeButtonText");
 
 const string selectLevelBackgroundKey = string("SelectLevelScreenBackground");
 const string selectLevelBackgroundRightKey = string("SelectLevelRightGround");

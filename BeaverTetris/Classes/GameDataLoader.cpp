@@ -8,6 +8,7 @@
 #include "TetraminosFactory.h"
 #include "GamePlayersDatabase.h"
 #include "TetraminoColorsDataSource.h"
+#include "GameLocalizationDataSource.h"
 
 GameDataLoader::GameDataLoader(void)
 {
@@ -37,5 +38,8 @@ void GameDataLoader::loadResources()
 
 	TetraminoColorsDataSource *tetraminoColorsDataSource = new TetraminoColorsDataSource();
 	ServiceLocator::setServiceForKey(tetraminoColorsDataSource, tetraminoColorsDataSourceKey);
+
+	GameLocalizationDataSource *gameLocalizationDataSource = new GameLocalizationDataSource();
+	ServiceLocator::setServiceForKey(gameLocalizationDataSource, gameLocalizationDataSourceKey);
 
 }

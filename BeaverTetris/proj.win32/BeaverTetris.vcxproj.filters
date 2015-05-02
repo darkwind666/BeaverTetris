@@ -636,6 +636,9 @@
     <ClCompile Include="..\Classes\MouseOverMenuItem.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameLocalizationDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1145,9 +1148,6 @@
     <ClInclude Include="..\Classes\GamesDevelopersBoardController.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\DevelopersNamesConstants.h">
-      <Filter>Constants</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\SerializersConstants.h">
       <Filter>Constants</Filter>
     </ClInclude>
@@ -1226,6 +1226,12 @@
     <ClInclude Include="..\Classes\MouseOverMenuItem.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\GameLocalizationKeys.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameLocalizationDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
@@ -1240,6 +1246,9 @@
       <Filter>GameBalance</Filter>
     </Xml>
     <Xml Include="..\Resources\GameSpells.xml">
+      <Filter>GameBalance</Filter>
+    </Xml>
+    <Xml Include="..\Resources\GameLocalization.xml">
       <Filter>GameBalance</Filter>
     </Xml>
   </ItemGroup>

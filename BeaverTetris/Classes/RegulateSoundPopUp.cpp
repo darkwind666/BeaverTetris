@@ -6,8 +6,6 @@
 #include "GameElementsDataHelper.h"
 #include "GameViewStyleHelper.h"
 #include "GameAnimationActionsConstants.h"
-#include "GameKeyWithSuffixSupporter.h"
-#include "MouseOverMenuItem.h"
 
 using namespace cocos2d;
 
@@ -45,10 +43,8 @@ Node* RegulateSoundPopUp::getPopUpMenu()
 	GameBackgroundSoundRegulator *backgroundSoundRegulator = new GameBackgroundSoundRegulator();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(backgroundSoundRegulator,popUpPad,startGameRegulateSoundSliderKey);
 
-	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(startGameRegulateSoundCloseButtonKey);
-	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(startGameRegulateSoundCloseButtonKey);
-	MouseOverMenuItem *closeButtonItem = new MouseOverMenuItem(activeImageName,inactiveImageName,CC_CALLBACK_1(RegulateSoundPopUp::closePopUp, this));
-	CocosNodesHelper::addButtonToParentNodeWithKey(closeButtonItem,popUpPad,startGameRegulateSoundCloseButtonKey);
+	GameViewStyleHelper::addBackButtonToParentNodeWithKeyAndCallback(popUpPad, startGameRegulateSoundCloseButtonKey, CC_CALLBACK_1(RegulateSoundPopUp::closePopUp, this));
+
 	return popUpPad;
 }
 

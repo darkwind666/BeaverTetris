@@ -210,6 +210,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameLevelsDataFactory.cpp" />
     <ClCompile Include="..\Classes\GameLevelsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameLevelsMenuDataSource.cpp" />
+    <ClCompile Include="..\Classes\GameLocalizationDataSource.cpp" />
     <ClCompile Include="..\Classes\GameLogicLoader.cpp" />
     <ClCompile Include="..\Classes\GamePlayersDatabase.cpp" />
     <ClCompile Include="..\Classes\GamePlayersDatabaseSerializer.cpp" />
@@ -360,7 +361,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\DetailViewDataSource.h" />
     <ClInclude Include="..\Classes\CurrentPlayerDataSource.h" />
     <ClInclude Include="..\Classes\DetailsFromBoardDataSource.h" />
-    <ClInclude Include="..\Classes\DevelopersNamesConstants.h" />
     <ClInclude Include="..\Classes\DevelopersSceneFactory.h" />
     <ClInclude Include="..\Classes\EndGameMenuElementCreator.h" />
     <ClInclude Include="..\Classes\EndGameMenuElementsCollectionCreator.h" />
@@ -400,6 +400,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameLevelsDataFactory.h" />
     <ClInclude Include="..\Classes\GameLevelsDataSource.h" />
     <ClInclude Include="..\Classes\GameLevelsMenuDataSource.h" />
+    <ClInclude Include="..\Classes\GameLocalizationDataSource.h" />
+    <ClInclude Include="..\Classes\GameLocalizationKeys.h" />
     <ClInclude Include="..\Classes\GameLogicLoader.h" />
     <ClInclude Include="..\Classes\GamePlayersDatabase.h" />
     <ClInclude Include="..\Classes\GamePlayersDatabaseSerializer.h" />
@@ -543,6 +545,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <Xml Include="..\Resources\GameLevels.xml">
       <SubType>Designer</SubType>
     </Xml>
+    <Xml Include="..\Resources\GameLocalization.xml" />
     <Xml Include="..\Resources\GameSpells.xml">
       <SubType>Designer</SubType>
     </Xml>

@@ -6,11 +6,8 @@
 #include "SelectLevelPlayerStatusController.h"
 #include "PlayerCreatorController.h"
 #include "SelectGameLevelBeaverTalkController.h"
-#include "GameStatesHelper.h"
 #include "GameViewStyleHelper.h"
-#include "GameEnums.h"
-#include "GameKeyWithSuffixSupporter.h"
-#include "MouseOverMenuItem.h"
+
 
 using namespace cocos2d;
 
@@ -41,23 +38,7 @@ Scene* SelectGameLevelSceneFactory::createScene()
 	PlayerCreatorController *playerCreatorController = new PlayerCreatorController();
 	playerCreatorController->setDelegate(selectLevelPlayerStatusController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerCreatorController,selectGameLevelScene,playerCreatorControllerKey);
-
-	MenuItem *closeButton = getCloseButton();
-	CocosNodesHelper::addButtonToParentNodeWithKey(closeButton,selectGameLevelScene,selectLevelSceneBackButtonKey);
+	GameViewStyleHelper::addBackButtonToParentNodeWithKey(selectGameLevelScene, selectLevelSceneBackButtonKey);
 
 	return selectGameLevelScene;
-}
-
-MenuItem* SelectGameLevelSceneFactory::getCloseButton()
-{
-	std::function<void(Object* pSender)> callback = [](Object* pSender){ 
-		Node *button = (Node*)pSender;
-		std::function<void()> buttonCallback = [](){GameStatesHelper::goToScene(kStartGame);};
-		GameViewStyleHelper::runStandardButtonActionWithCallback(button, buttonCallback);
-	};
-
-	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(selectLevelSceneBackButtonKey);
-	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(selectLevelSceneBackButtonKey);
-	MouseOverMenuItem *closeButtonItem = new MouseOverMenuItem(activeImageName,inactiveImageName,callback);
-	return closeButtonItem;
 }
