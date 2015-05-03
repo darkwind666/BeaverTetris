@@ -139,11 +139,13 @@ const string fallDetailsEventKey = string("fallDetailsEvent");
 
 const string pauseGameViewControllerKey = string("MainGamePauseButton");
 const string mainGamePausePopUpKey = string("MainGamePausePopUp");
-const string mainGamePausePadKey = string("MainGamePausePad");
+const string mainGamePauseBackgroundKey = string("MainGamePauseBackground");
+const string mainGamePauseBackgroundPauseLabelKey = string("MainGamePauseLabelImage");
+const string mainGamePausePadKey = string("MainGamePauseStaircase");
 const string mainGamePauseRegulateSoundSliderKey = string("mainGamePauseRegulateSoundSlider");
 const string mainGamePauseRegulateSoundEffectsSliderKey = string("mainGamePauseRegulateSoundEffectsSlider");
-const string mainGamePauseCloseButtonKey = string("mainGamePauseRegulateSoundCloseButton");
-const string mainGamePauseGoToSelectLevelButtonKey = string("mainGamePauseGoToSelectLevelButton");
+const string mainGamePauseCloseButtonKey = string("MainGamePausePopUpClose");
+const string mainGamePauseGoToSelectLevelButtonKey = string("MainGamePauseGoToSelectLevel");
 
 const string mainGameEndPopUpKey = string("MainGameEndPopUp");
 const string mainGameEndPopUpPadKey = string("MainGameEndPad");

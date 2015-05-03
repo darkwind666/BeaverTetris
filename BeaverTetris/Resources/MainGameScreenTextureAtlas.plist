@@ -212,7 +212,7 @@
                 <key>sourceSize</key>
                 <string>{13,15}</string>
             </dict>
-            <key>queenBossWinConditionIcon.png</key>
+            <key>princessesBossWinConditionIcon.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{982,8},{12,12}}</string>
@@ -303,10 +303,36 @@
                 <key>sourceSize</key>
                 <string>{9,9}</string>
             </dict>
+            <key>kingBossWinConditionIcon.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1346,8},{12,12}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{12,12}}</string>
+                <key>sourceSize</key>
+                <string>{12,12}</string>
+            </dict>
+            <key>queenBossWinConditionIcon.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1366,8},{11,12}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{11,12}}</string>
+                <key>sourceSize</key>
+                <string>{11,12}</string>
+            </dict>
             <key>MainGamePlayerScorePad.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1346,8},{72,25}}</string>
+                <string>{{1385,8},{72,25}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -319,7 +345,7 @@
             <key>VictoryConditionPad.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1426,8},{57,51}}</string>
+                <string>{{1465,8},{57,51}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -332,7 +358,7 @@
             <key>UnavailableSpellIcon.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1491,8},{38,39}}</string>
+                <string>{{1530,8},{38,39}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -345,7 +371,7 @@
             <key>rocketSpell.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1537,8},{39,38}}</string>
+                <string>{{1576,8},{39,38}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -358,7 +384,7 @@
             <key>PlayerActionActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1584,8},{14,13}}</string>
+                <string>{{1623,8},{14,13}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>

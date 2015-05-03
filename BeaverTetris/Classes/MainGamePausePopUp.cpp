@@ -23,6 +23,8 @@ MainGamePausePopUp::MainGamePausePopUp(GameWorldController *aGameWorldController
 	_mainGamePauseDelegate = (MainGamePauseDelegate*)ServiceLocator::getServiceForKey(mainGamePauseDelegateKey);
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 	_popUpView = makePopUpView();
+	_popUpView->setVisible(false);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(_popUpView,this,mainGamePauseBackgroundKey);
 	setUpKeyboard();
 }
 
@@ -34,29 +36,31 @@ MainGamePausePopUp::~MainGamePausePopUp(void)
 
 Node* MainGamePausePopUp::makePopUpView()
 {
+	Sprite *popUpBackground = CocosNodesHelper::getSpriteWithKey(mainGamePauseBackgroundKey);
+	CocosNodesHelper::addSpriteToParentNodeWithKey(popUpBackground,mainGamePauseBackgroundPauseLabelKey);
+	Node *popUpMenu = getPopUpMenu();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(popUpMenu,popUpBackground,mainGamePausePadKey);
+	return popUpBackground;
+}
 
-	LayerColor *popUpPad = LayerColor::create(Color4B::RED, 300, 200);
-	popUpPad->ignoreAnchorPointForPosition(false);
+cocos2d::Node* MainGamePausePopUp::getPopUpMenu()
+{
+	Sprite *popUpPad = CocosNodesHelper::getSpriteWithKey(mainGamePausePadKey);
 
 	GameSoundEffectsRegulator *soundEffectsRegulator = new GameSoundEffectsRegulator();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(soundEffectsRegulator,popUpPad,mainGamePauseRegulateSoundEffectsSliderKey);
-
+	
 	GameBackgroundSoundRegulator *backgroundSoundRegulator = new GameBackgroundSoundRegulator();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(backgroundSoundRegulator,popUpPad,mainGamePauseRegulateSoundSliderKey);
-
-	MenuItemImage *closeButtonItem = MenuItemImage::create("HelloWorld.png","HelloWorld.png",CC_CALLBACK_1(MainGamePausePopUp::closePopUp, this));
-	closeButtonItem->setScaleX(0.2f);
-	closeButtonItem->setScaleY(0.07f);
-	CocosNodesHelper::addButtonToParentNodeWithKey(closeButtonItem,popUpPad,mainGamePauseCloseButtonKey);
-
+	
+	GameViewStyleHelper::addBackButtonToParentNodeWithKeyAndCallback(popUpPad, mainGamePauseCloseButtonKey, CC_CALLBACK_1(MainGamePausePopUp::closePopUp, this));
+	
 	MenuItemImage *goToSelectLevelItem = MenuItemImage::create("HelloWorld.png","HelloWorld.png", CC_CALLBACK_1(MainGamePausePopUp::goToSelectLevelScreen, this));
 	goToSelectLevelItem->setScaleX(0.2f);
 	goToSelectLevelItem->setScaleY(0.07f);
 	goToSelectLevelItem->setColor(Color3B::GREEN);
 	CocosNodesHelper::addButtonToParentNodeWithKey(goToSelectLevelItem,popUpPad,mainGamePauseGoToSelectLevelButtonKey);
-
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(popUpPad,this,mainGamePausePadKey);
-
+	
 	return popUpPad;
 }
 
@@ -97,24 +101,19 @@ void MainGamePausePopUp::goToSelectLevelScreen(Object* pSender)
 
 void MainGamePausePopUp::hidePopUp()
 {
-	FiniteTimeAction *moveController = CCMoveTo::create(regulateSoundPopUpStartDisapperDuration, _oldControllerPosition);
 	FiniteTimeAction *moveCallback = CallFunc::create([this](){
 		_eventListenerKeyboard->setEnabled(false);
 		_mainGamePauseDelegate->endPause();
 		_gameTimeStepController->setUpdateAvailable(true);
 		_gameWorldController->resumeGameWorld();
+		_popUpView->setVisible(false);
 	});
-	FiniteTimeAction *sequence = Sequence::create(moveController, moveCallback, NULL);
-	_popUpView->runAction(sequence);
+	_popUpView->runAction(moveCallback);
 }
 
 void MainGamePausePopUp::showPopUp()
 {
 	_gameWorldController->pauseGameWorld();
 	_eventListenerKeyboard->setEnabled(true);
-	_oldControllerPosition = _popUpView->getPosition();
-	Vec2 newControllerPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(mainGamePausePadKey);
-	ActionInterval *moveController = MoveTo::create(regulateSoundPopUpStartAppearDuration, newControllerPosition);
-	Action *ease = EaseBackOut::create(moveController);
-	_popUpView->runAction(ease);
+	_popUpView->setVisible(true);
 }

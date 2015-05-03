@@ -18,7 +18,6 @@ public:
 
 private:
 
-	cocos2d::Vec2 _oldControllerPosition;
 	cocos2d::Node* _popUpView;
 	GameTimeStepController *_gameTimeStepController;
 	cocos2d::EventListenerKeyboard *_eventListenerKeyboard;
@@ -27,6 +26,7 @@ private:
 	
 	void setUpKeyboard();
 	cocos2d::Node* makePopUpView();
+	cocos2d::Node* getPopUpMenu();
 	void closePopUp(cocos2d::Object* pSender);
 	void goToSelectLevelScreen(cocos2d::Object* pSender);
 	void keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent);

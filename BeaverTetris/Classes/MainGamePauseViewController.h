@@ -25,6 +25,7 @@ private:
 	cocos2d::EventListenerKeyboard *_eventListenerKeyboard;
 
 	void setPauseView();
+	cocos2d::Node* getPauseButtonLabel();
 	void setUpKeyboard();
 
 };

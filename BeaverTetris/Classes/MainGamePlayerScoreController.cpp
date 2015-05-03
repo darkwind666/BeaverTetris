@@ -13,7 +13,8 @@ using namespace std;
 MainGamePlayerScoreController::MainGamePlayerScoreController(void)
 {
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
-	_scoreView = LabelTTF::create("", "COMICBD", 20);
+	_scoreView = GameViewStyleHelper::getStandardLabel();
+	_scoreView->setColor(Color3B(20, 61, 62));
 	makeControllerView();
 }
 

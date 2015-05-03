@@ -6,6 +6,7 @@
   <local type="gameDevelopers" english="Credits" russian="Авторы"/>
   <local type="gameSettings" english="Settings" russian="Настройки"/>
   <local type="gameBackButton" english="Back" russian="Назад"/>
+  <local type="goToSelectLevelButton" english="Map" russian="Карта"/>
   <local type="gamePlayerCreatorLabel" english="Enter player name please" russian="Введите имя игрока пожалуйста"/>
   <local type="gameBeaverTalk" english="Hello, I am glad to see you in game. Help me found my watch please" russian="Привет, я рад тебя видеть в игре. Помоги мне найти часы."/>
   <local type="gameDeveloperProgrammer" english="Programmer" russian="Программист"/>

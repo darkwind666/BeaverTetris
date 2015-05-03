@@ -67,9 +67,6 @@
     <Filter Include="Models\GameLogic\TetraminosCombinations">
       <UniqueIdentifier>{755be405-5d25-4912-9675-2d1a480fab85}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Controllers\Loaders">
-      <UniqueIdentifier>{0244c3e7-cd6c-4e29-b379-48725c5c306a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Controllers\ViewControllers\PopUps">
       <UniqueIdentifier>{06a801be-e3fd-4adc-986f-a94536a09c8b}</UniqueIdentifier>
     </Filter>
@@ -93,6 +90,9 @@
     </Filter>
     <Filter Include="XMLParser">
       <UniqueIdentifier>{d58fdfa0-8e89-40b3-800c-dbb0dec25868}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\ViewControllers\Loaders">
+      <UniqueIdentifier>{0244c3e7-cd6c-4e29-b379-48725c5c306a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -121,7 +121,7 @@
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameGraphicsLoader.cpp">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\ServiceLocator.cpp">
       <Filter>Singletons</Filter>
@@ -148,16 +148,16 @@
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\ResourcesLoader.cpp">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameDataLoader.cpp">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameSoundLoader.cpp">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\GameLogicLoader.cpp">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CocosNodesHelper.cpp">
       <Filter>SupportedFiles</Filter>
@@ -666,7 +666,7 @@
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameGraphicsLoader.h">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameServicesKeys.h">
       <Filter>Constants</Filter>
@@ -708,16 +708,16 @@
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ResourcesLoader.h">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameDataLoader.h">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameSoundLoader.h">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameLogicLoader.h">
-      <Filter>Controllers\Loaders</Filter>
+      <Filter>Controllers\ViewControllers\Loaders</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameDesignConstants.h">
       <Filter>Constants</Filter>

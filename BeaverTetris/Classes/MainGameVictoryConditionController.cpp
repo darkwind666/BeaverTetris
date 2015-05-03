@@ -69,7 +69,7 @@ LabelTTF* MainGameVictoryConditionController::getVictoryConditionStatusViewForIn
 void MainGameVictoryConditionController::setElementsPositionsWithIndex(VictoryConditionViewElements &victoryConditionView, int aIndex)
 {
 	int victoryConditionsCount = _victoryConditionViewDataSource->getVictoryConditionsCount();
-	if (victoryConditionsCount > 1 && aIndex == 1)
+	if (victoryConditionsCount > 2 && aIndex == 1)
 	{
 		Vec2 offset = GameElementsDataHelper::getElementOffsetForKey(victoryConditionHudControllerKey);
 		Vec2 imagePosition = victoryConditionView.image->getPosition();

@@ -82,7 +82,7 @@ vector<Node*> PlayerSpellsControllerDesktop::makeSpellsViewsWithIcons(vector<Nod
 
 Node* PlayerSpellsControllerDesktop::getSpellCostLabelWithIndex(int aSpellIndex)
 {
-	LabelTTF *spellCostLabel = GameViewStyleHelper::getStandardLabel();
+	Label *spellCostLabel = GameViewStyleHelper::getStandardLabelWithFontSize(13);
 	string spellCost = _spellsViewDataSource->getSpellCostOnIndex(aSpellIndex);
 	spellCostLabel->setString(spellCost);
 	return spellCostLabel;
@@ -90,9 +90,8 @@ Node* PlayerSpellsControllerDesktop::getSpellCostLabelWithIndex(int aSpellIndex)
 
 Node* PlayerSpellsControllerDesktop::getSpellButtonLabelWithIndex(int aSpellIndex)
 {
-	LabelTTF *spellButtonLabel = GameViewStyleHelper::getStandardLabel();
-	spellButtonLabel->setFontSize(13);
-	spellButtonLabel->setColor(Color3B(0, 0, 0));
+	Label *spellButtonLabel = GameViewStyleHelper::getStandardLabelWithFontSize(13);
+	spellButtonLabel->setColor(Color3B(41, 104, 110));
 	string spellButtonName = StringsSupporter::getStringFromNumber(aSpellIndex + 1);
 	spellButtonLabel->setString(spellButtonName);
 	return spellButtonLabel;

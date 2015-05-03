@@ -537,7 +537,7 @@ void GameViewInformationFactory::makeMainGameHudsData()
 
 	ViewElementInformation pauseGameViewController;
 	pauseGameViewController.elementImage = getImageNameForKey(pauseGameViewControllerKey);
-	pauseGameViewController.elementPosition = Vec2(hudElementXPosition, 80);
+	pauseGameViewController.elementPosition = Vec2(hudElementXPosition, 55);
 	pauseGameViewController.elementZOrder = kMainGamePlayerActionControllerZOrder;
 	_elementsInformation[pauseGameViewControllerKey] = pauseGameViewController;
 	
@@ -652,34 +652,45 @@ void GameViewInformationFactory::makeRemoveCurrentDetailSpellData()
 
 void GameViewInformationFactory::makeMainGamePausePopUpData()
 {
+	ViewElementInformation mainGamePausePopUpBackground;
+	mainGamePausePopUpBackground.elementImage = getImageNameForKey(mainGamePauseBackgroundKey);
+	mainGamePausePopUpBackground.elementPosition = getScreenCenter();
+	mainGamePausePopUpBackground.elementZOrder = kMainGamePausePopUpBackgroundZOrder;
+	_elementsInformation[mainGamePauseBackgroundKey] = mainGamePausePopUpBackground;
+
+	ViewElementInformation mainGamePauseBackgroundPauseLabel;
+	mainGamePauseBackgroundPauseLabel.elementImage = getImageNameForKey(mainGamePauseBackgroundPauseLabelKey);
+	mainGamePauseBackgroundPauseLabel.elementPosition = Vec2(20, 90) + getScreenCenter();
+	mainGamePauseBackgroundPauseLabel.elementZOrder = kMainGamePauseBackgroundPauseLabelZOrder;
+	_elementsInformation[mainGamePauseBackgroundPauseLabelKey] = mainGamePauseBackgroundPauseLabel;
+
 	ViewElementInformation mainGamePauseRegulateSoundPopUpPad;
-	mainGamePauseRegulateSoundPopUpPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
-	mainGamePauseRegulateSoundPopUpPad.elementPosition = Vec2(getScreenCenterX(), 650);
-	mainGamePauseRegulateSoundPopUpPad.elementActionFinalPosition = getScreenCenter();
+	mainGamePauseRegulateSoundPopUpPad.elementImage = getImageNameForKey(mainGamePausePadKey);
+	mainGamePauseRegulateSoundPopUpPad.elementPosition = Vec2(20, 140) + getScreenCenter();
 	mainGamePauseRegulateSoundPopUpPad.elementZOrder = kMainGamePausePopUpPadZOrder;
 	_elementsInformation[mainGamePausePadKey] = mainGamePauseRegulateSoundPopUpPad;
 	
 	ViewElementInformation mainGamePauseRegulateSoundSlider;
-	mainGamePauseRegulateSoundSlider.elementImage = getImageNameForKey(startGameRegulateSoundSliderKey);
-	mainGamePauseRegulateSoundSlider.elementPosition = Vec2(90, 160);
+	mainGamePauseRegulateSoundSlider.elementImage = getImageNameForKey(mainGamePauseRegulateSoundSliderKey);
+	mainGamePauseRegulateSoundSlider.elementPosition = Vec2(60, 220);
 	mainGamePauseRegulateSoundSlider.elementZOrder = kMainGamePauseRegulateSoundSliderZOrder;
 	_elementsInformation[mainGamePauseRegulateSoundSliderKey] = mainGamePauseRegulateSoundSlider;
 	
 	ViewElementInformation mainGamePauseRegulateSoundEffectsSlider;
-	mainGamePauseRegulateSoundEffectsSlider.elementImage = getImageNameForKey(startGameRegulateSoundEffectsSliderKey);
-	mainGamePauseRegulateSoundEffectsSlider.elementPosition = Vec2(90, 120);
+	mainGamePauseRegulateSoundEffectsSlider.elementImage = getImageNameForKey(mainGamePauseRegulateSoundEffectsSliderKey);
+	mainGamePauseRegulateSoundEffectsSlider.elementPosition = Vec2(60, 160);
 	mainGamePauseRegulateSoundEffectsSlider.elementZOrder = kMainGamePauseRegulateSoundEffectsSliderZOrder;
 	_elementsInformation[mainGamePauseRegulateSoundEffectsSliderKey] = mainGamePauseRegulateSoundEffectsSlider;
 	
 	ViewElementInformation mainGamePauseRegulateSoundCloseButton;
-	mainGamePauseRegulateSoundCloseButton.elementImage = getImageNameForKey(startGameRegulateSoundCloseButtonKey);
-	mainGamePauseRegulateSoundCloseButton.elementPosition = Vec2(150, 60);
+	mainGamePauseRegulateSoundCloseButton.elementImage = getImageNameForKey(mainGamePauseCloseButtonKey);
+	mainGamePauseRegulateSoundCloseButton.elementPosition = Vec2(67, 10);
 	mainGamePauseRegulateSoundCloseButton.elementZOrder = kMainGamePausePopUpCloseButtonZOrder;
 	_elementsInformation[mainGamePauseCloseButtonKey] = mainGamePauseRegulateSoundCloseButton;
 
 	ViewElementInformation mainGamePauseGoToSelectLevelButton;
 	mainGamePauseGoToSelectLevelButton.elementImage = getImageNameForKey(mainGamePauseGoToSelectLevelButtonKey);
-	mainGamePauseGoToSelectLevelButton.elementPosition = Vec2(150, 20);
+	mainGamePauseGoToSelectLevelButton.elementPosition = Vec2(67, -40);
 	mainGamePauseGoToSelectLevelButton.elementZOrder = kMainGamePauseGoToSelectLevelButtonZOrder;
 	_elementsInformation[mainGamePauseGoToSelectLevelButtonKey] = mainGamePauseGoToSelectLevelButton;
 }

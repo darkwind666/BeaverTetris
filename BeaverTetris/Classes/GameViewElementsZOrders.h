@@ -102,6 +102,8 @@ enum RemoveCurrentDetailSpellViewZOrders
 
 enum MainGamePausePopUpZOrders
 {
+	kMainGamePausePopUpBackgroundZOrder,
+	kMainGamePauseBackgroundPauseLabelZOrder,
 	kMainGamePausePopUpPadZOrder,
 	kMainGamePauseRegulateSoundSliderZOrder,
 	kMainGamePauseRegulateSoundEffectsSliderZOrder,

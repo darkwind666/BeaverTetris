@@ -75,18 +75,23 @@ void GameViewStyleHelper::addBackButtonToParentNodeWithKey(Node *aParentNode, st
 
 void GameViewStyleHelper::addBackButtonToParentNodeWithKeyAndCallback(Node *aParentNode, string aKey, ccMenuCallback aCallback)
 {
-	MenuItem *closeButton = getCloseButtonWithKeyAndCallback(aKey, aCallback);
+	addBackButtonToParentNodeWithKeyAndCallbackAndLocalization(aParentNode, aKey, aCallback, gameBackButtonLocalizationKey);
+}
+
+void GameViewStyleHelper::addBackButtonToParentNodeWithKeyAndCallbackAndLocalization(Node *aParentNode, string aKey, ccMenuCallback aCallback, string aLocale)
+{
+	MenuItem *closeButton = getCloseButtonWithKeyAndCallbackAndLocalization(aKey, aCallback, aLocale);
 	CocosNodesHelper::addButtonToParentNodeWithKey(closeButton,aParentNode,aKey);
 }
 
-MenuItem* GameViewStyleHelper::getCloseButtonWithKeyAndCallback(string aKey, ccMenuCallback aCallback)
+MenuItem* GameViewStyleHelper::getCloseButtonWithKeyAndCallbackAndLocalization(string aKey, ccMenuCallback aCallback, string aLocale)
 {
 	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(aKey);
 	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(aKey);
 	MouseOverMenuItem *closeButtonItem = new MouseOverMenuItem(activeImageName,inactiveImageName,aCallback);
 	
 	Label *backButtonText = GameViewStyleHelper::getStandardLabelWithFontSize(18.0f);
-	backButtonText->setString(StringsSupporter::getLocalizedStringFromKey(gameBackButtonLocalizationKey));
+	backButtonText->setString(StringsSupporter::getLocalizedStringFromKey(aLocale));
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(backButtonText, closeButtonItem, closeButtonTextKey);
 	
 	return closeButtonItem;

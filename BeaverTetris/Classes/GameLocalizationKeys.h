@@ -17,6 +17,7 @@ const string gameRecordsLocalizationKey = string("gameRecords");
 const string gameDevelopersLocalizationKey = string("gameDevelopers");
 const string gameSettingsLocalizationKey = string("gameSettings");
 const string gameBackButtonLocalizationKey = string("gameBackButton");
+const string gamePauseGoToSelectLevelButtonLocalizationKey = string("goToSelectLevelButton");
 const string gamePlayerCreatorLabelLocalizationKey = string("gamePlayerCreatorLabel");
 const string gameBeaverTalkLocalizationKey = string("gameBeaverTalk");
 const string gameDeveloperProgrammerLocalizationKey = string("gameDeveloperProgrammer");

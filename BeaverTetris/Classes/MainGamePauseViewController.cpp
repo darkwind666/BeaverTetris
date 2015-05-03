@@ -39,7 +39,17 @@ void MainGamePauseViewController::setUpKeyboard()
 void MainGamePauseViewController::setPauseView()
 {
 	Sprite *pauseView = CocosNodesHelper::getSpriteWithKey(pauseGameViewControllerKey);
-	this->addChild(pauseView);
+	Node *pauseButtonLabel = getPauseButtonLabel();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(pauseView, this, playerSpellImageKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(pauseButtonLabel, this, playerSpellButtonLabelKey);
+}
+
+Node* MainGamePauseViewController::getPauseButtonLabel()
+{
+	Label *pauseButtonLabel = GameViewStyleHelper::getStandardLabelWithFontSize(13);
+	pauseButtonLabel->setColor(Color3B(41, 104, 110));
+	pauseButtonLabel->setString(string("P"));
+	return pauseButtonLabel;
 }
 
 void MainGamePauseViewController::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
