@@ -6,6 +6,9 @@
 #include "GameStatesHelper.h"
 #include "CurrentPlayerDataSource.h"
 #include "StringsSupporter.h"
+#include "CocosNodesHelper.h"
+#include "GameViewElementsKeys.h"
+#include "GameViewElementsDataSource.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -19,40 +22,45 @@ EndGameMenuElementCreator::~EndGameMenuElementCreator(void)
 {
 }
 
-Node* EndGameMenuElementCreator::getGameStateLabelWithString(string stateLabelString)
+Node* EndGameMenuElementCreator::getGameStateLabelWithLocaleString(string aLocaleString)
 {
-	LabelTTF *gameState = GameViewStyleHelper::getStandardLabel();
-	gameState->setFontSize(20);
-	gameState->setString(stateLabelString);
-	return gameState;
+	Sprite *gameStateLabelPad = CocosNodesHelper::getSpriteWithKey(mainGameEndPopResultLabelControllerKey);
+	gameStateLabelPad->setName(mainGameEndPopResultLabelControllerKey);
+	Label *gameState = GameViewStyleHelper::getStandardLabelWithFontSize(20);
+	gameState->setString(StringsSupporter::getLocalizedStringFromKey(aLocaleString));
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameState, gameStateLabelPad, mainGameEndPopResultLabelKey);
+	return gameStateLabelPad;
 }
 
-Node* EndGameMenuElementCreator::getButtonWithCallbackAndColor(function<void()> aCallback, cocos2d::Color3B aColor)
+Node* EndGameMenuElementCreator::getButtonWithCallbackAndKeyAndLocale(ccMenuCallback aCallback, string aKey, string aLocale)
 {
-	MenuItemImage *button = MenuItemImage::create("HelloWorld.png","HelloWorld.png");
-	button->setScaleX(0.2f);
-	button->setScaleY(0.07f);
-	button->setColor(aColor);
-	button->setCallback([aCallback](Ref *sender){
+	ccMenuCallback callbackFunction = [aCallback](Ref *sender){
 		Node *button = (Node*)sender;
-		GameViewStyleHelper::runStandardButtonActionWithCallback(button, aCallback);
-	});
+		function<void()> callback = [aCallback, sender](){aCallback(sender);};
+		GameViewStyleHelper::runStandardButtonActionWithCallback(button, callback);
+	};
+	MenuItem *button = GameViewStyleHelper::getCloseButtonWithKeyAndCallbackAndLocalization(aKey, callbackFunction, aLocale);
 	Menu *menuForButton = Menu::create();
+	menuForButton->setName(aKey);
 	menuForButton->addChild(button);
 	return menuForButton;
 }
 
 Node* EndGameMenuElementCreator::getPlayerAwardLabel()
 {
+	Sprite *awardPad = CocosNodesHelper::getSpriteWithKey(mainGameEndPopAwardPadKey);
+	awardPad->setName(mainGameEndPopAwardPadKey);
 	CurrentLevelDataSource *currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
 	int playerAward = currentLevelDataSource->getCurrentLevelData().levelAward;
-	Node *playerAwardLabel = getGameStateLabelWithString(StringsSupporter::getStringFromNumber(playerAward));
-	return playerAwardLabel;
+	Label *gameAward = GameViewStyleHelper::getStandardLabelWithFontSize(20);
+	gameAward->setString(StringsSupporter::getStringFromNumber(playerAward));
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameAward, awardPad, mainGameEndPopAwardLabelKey);
+	return awardPad;
 }
 
-function<void()> EndGameMenuElementCreator::getNextLevelCallback()
+ccMenuCallback EndGameMenuElementCreator::getNextLevelCallback()
 {
-	function<void()> nextLevelCallback = [](){
+	ccMenuCallback nextLevelCallback = [](Ref*){
 		CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 		int currentLevelIndex = currentPlayerDataSource->getSelectedGameLevelIndex();
 		currentPlayerDataSource->setSelectedGameLevelIndex(currentLevelIndex + 1);
@@ -61,9 +69,9 @@ function<void()> EndGameMenuElementCreator::getNextLevelCallback()
 	return nextLevelCallback;
 }
 
-function<void()> EndGameMenuElementCreator::getFinishGameCallback()
+ccMenuCallback EndGameMenuElementCreator::getFinishGameCallback()
 {
-	function<void()> nextLevelCallback = [](){
+	ccMenuCallback nextLevelCallback = [](Ref*){
 		CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 		currentPlayerDataSource->cleanPlayer();
 		GameStatesHelper::goToScene(kRecords);
@@ -71,9 +79,9 @@ function<void()> EndGameMenuElementCreator::getFinishGameCallback()
 	return nextLevelCallback;
 }
 
-function<void()> EndGameMenuElementCreator::getGoToSceneCallback(GameState aState)
+ccMenuCallback EndGameMenuElementCreator::getGoToSceneCallback(GameState aState)
 {
-	function<void()> goToSceneCallback = [aState](){
+	ccMenuCallback goToSceneCallback = [aState](Ref*){
 		GameStatesHelper::goToScene(aState);
 	};
 	return goToSceneCallback;

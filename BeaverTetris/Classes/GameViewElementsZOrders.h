@@ -113,6 +113,8 @@ enum MainGamePausePopUpZOrders
 
 enum MainGameEndPopUpZOrders
 {
+	kMainGameEndPopUpBackgroundZOrder,
+	kMainGameEndPopUpBeaverZOrder,
 	kMainGameEndPopUpPadZOrder,
 	kMainGameEndPopUpPadButtonZOrder,
 };

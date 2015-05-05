@@ -38,6 +38,7 @@ private:
 	void makeRemoveCurrentDetailSpellData();
 	void makeMainGamePausePopUpData();
 	void makeMainGameEndPopUpData();
+	void makeMainGameEndPopUpMenuButtonsData();
 	void makeRecordsScreenData();
 	void makeGameRecordsAnimationData();
 	void makeGameRecordsFishesData();

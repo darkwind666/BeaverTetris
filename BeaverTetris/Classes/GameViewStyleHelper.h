@@ -18,10 +18,6 @@ public:
 	static void addBackButtonToParentNodeWithKey(cocos2d::Node *aParentNode, std::string aKey);
 	static void addBackButtonToParentNodeWithKeyAndCallback(cocos2d::Node *aParentNode, std::string aKey, cocos2d::ccMenuCallback aCallback);
 	static void addBackButtonToParentNodeWithKeyAndCallbackAndLocalization(cocos2d::Node *aParentNode, std::string aKey, cocos2d::ccMenuCallback aCallback, std::string aLocale);
-
-private:
-
 	static cocos2d::MenuItem* getCloseButtonWithKeyAndCallbackAndLocalization(std::string aKey, cocos2d::ccMenuCallback aCallback, std::string aLocale);
-
 };
 

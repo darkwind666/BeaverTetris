@@ -148,7 +148,20 @@ const string mainGamePauseCloseButtonKey = string("MainGamePausePopUpClose");
 const string mainGamePauseGoToSelectLevelButtonKey = string("MainGamePauseGoToSelectLevel");
 
 const string mainGameEndPopUpKey = string("MainGameEndPopUp");
-const string mainGameEndPopUpPadKey = string("MainGameEndPad");
+const string mainGameEndPopUpBackgroundKey = string("MainGameEndPopUpBackground");
+const string mainGameEndPopUpWinViewKey = string("mainGameEndPopUpWinView");
+const string mainGameEndPopUpLoseViewKey = string("mainGameEndPopUpLoseView");
+const string mainGameEndPopUpPadKey = string("MainGameEndPopUpStaircase");
+const string mainGameEndPopUpNextLevelButtonKey = string("MainGameEndPopUpNextLevel");
+const string mainGameEndPopUpReplayLevelButtonKey = string("MainGameEndPopUpReplayLevel");
+const string mainGameEndPopUpGoToSelectLevelButtonKey = string("MainGameEndPopUpGoToSelectLevel");
+const string mainGameEndPopResultLabelControllerKey = string("MainGameEndPopResultLabelPad");
+const string mainGameEndPopResultLabelKey = string("mainGameEndPopResultLabel");
+const string mainGameEndPopResultImageControllerKey = string("mainGameEndPopResultImage");
+const string mainGameEndPopResultWinImageKey = string("MainGameEndPopResultWinImage");
+const string mainGameEndPopResultLoseImageKey = string("MainGameEndPopResultLoseBeaverImage");
+const string mainGameEndPopAwardPadKey = string("MainGameEndPopAwardPad");
+const string mainGameEndPopAwardLabelKey = string("MainGameEndPopAwardLabel");
 const string mainGameEndPopUpButtonKey = string("MainGameEndButton");
 
 const string gameRecordsBackgroundKey = string("GameRecordsBackground");

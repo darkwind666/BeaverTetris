@@ -23,9 +23,7 @@ private:
 	GameHudsController *_gameHudsController;
 	MainGameEndPopUpSoundController *_mainGameEndPopUpSoundController;
 
-	cocos2d::Node* makePopUpView();
 	void fillViewWithElements();
-	cocos2d::Vec2 getElementPositionForIndex(int aIndex);
 
 };
 

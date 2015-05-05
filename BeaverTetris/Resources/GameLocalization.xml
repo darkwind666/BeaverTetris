@@ -9,6 +9,11 @@
   <local type="goToSelectLevelButton" english="Map" russian="Карта"/>
   <local type="gamePlayerCreatorLabel" english="Enter player name please" russian="Введите имя игрока пожалуйста"/>
   <local type="gameBeaverTalk" english="Hello, I am glad to see you in game. Help me found my watch please" russian="Привет, я рад тебя видеть в игре. Помоги мне найти часы."/>
+  <local type="gameLose" english="You lose" russian="Вы проиграли"/>
+  <local type="gameWin" english="You win!" russian="Вы выйграли!"/>
+  <local type="gameWinAll" english="Victory!" russian="Победа!"/>
+  <local type="gameReplay" english="Replay" russian="Переиграть"/>
+  <local type="gameNextLevel" english="Next" russian="Вперёд"/>
   <local type="gameDeveloperProgrammer" english="Programmer" russian="Программист"/>
   <local type="gameDeveloperProgrammerName" english="Hotyashov Alexander" russian="Хотяшов Александр"/>
   <local type="gameDeveloperDesigner" english="Designer" russian="Дизайнер"/>

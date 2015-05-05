@@ -21,7 +21,7 @@ private:
 
 	EndGameMenuElementCreator *_endGameMenuElementCreator;
 
-	std::function<void()> getGoToSceneCallback(GameState aState);
+	cocos2d::ccMenuCallback getGoToSceneCallback(GameState aState);
 
 };
 

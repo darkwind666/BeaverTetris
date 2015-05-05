@@ -11,12 +11,12 @@ public:
 	EndGameMenuElementCreator(void);
 	~EndGameMenuElementCreator(void);
 
-	cocos2d::Node* getGameStateLabelWithString(std::string stateLabelString);
-	cocos2d::Node* getButtonWithCallbackAndColor(std::function<void()> aCallback, cocos2d::Color3B aColor);
+	cocos2d::Node* getGameStateLabelWithLocaleString(std::string aLocaleString);
+	cocos2d::Node* getButtonWithCallbackAndKeyAndLocale(cocos2d::ccMenuCallback aCallback, std::string aKey, std::string aLocale);
 	cocos2d::Node* getPlayerAwardLabel();
-	std::function<void()> getNextLevelCallback();
-	std::function<void()> getFinishGameCallback();
-	std::function<void()> getGoToSceneCallback(GameState aState);
+	cocos2d::ccMenuCallback getNextLevelCallback();
+	cocos2d::ccMenuCallback getFinishGameCallback();
+	cocos2d::ccMenuCallback getGoToSceneCallback(GameState aState);
 
 };
 

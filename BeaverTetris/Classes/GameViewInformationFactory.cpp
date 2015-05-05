@@ -446,7 +446,6 @@ void GameViewInformationFactory::makeMainGameScreenData()
 
 	ViewElementInformation mainGameEndPopUp;
 	mainGameEndPopUp.elementPosition = Vec2(0, 0);
-	mainGameEndPopUp.elementActionFinalPosition = getScreenCenter();
 	mainGameEndPopUp.elementZOrder = kMainGameEndPopUpZOrder;
 	_elementsInformation[mainGameEndPopUpKey] = mainGameEndPopUp;
 
@@ -697,18 +696,87 @@ void GameViewInformationFactory::makeMainGamePausePopUpData()
 
 void GameViewInformationFactory::makeMainGameEndPopUpData()
 {
+	ViewElementInformation mainGameEndPopUpBackground;
+	mainGameEndPopUpBackground.elementImage = getImageNameForKey(mainGameEndPopUpBackgroundKey);
+	mainGameEndPopUpBackground.elementPosition = getScreenCenter();
+	mainGameEndPopUpBackground.elementZOrder = kMainGameEndPopUpBackgroundZOrder;
+	_elementsInformation[mainGameEndPopUpBackgroundKey] = mainGameEndPopUpBackground;
+
+	ViewElementInformation mainGameEndPopUpWinView;
+	mainGameEndPopUpWinView.elementPosition = Vec2(0, 0);
+	mainGameEndPopUpWinView.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopUpWinViewKey] = mainGameEndPopUpWinView;
+
+	ViewElementInformation mainGameEndPopUpLoseView;
+	mainGameEndPopUpLoseView.elementPosition = Vec2(20, 0);
+	mainGameEndPopUpLoseView.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopUpLoseViewKey] = mainGameEndPopUpLoseView;
+
+	ViewElementInformation mainGameEndPopUpWinBeaver;
+	mainGameEndPopUpWinBeaver.elementImage = getImageNameForKey(mainGameEndPopResultWinImageKey);
+	mainGameEndPopUpWinBeaver.elementPosition = Vec2(30, 160) + getScreenCenter();
+	mainGameEndPopUpWinBeaver.elementZOrder = kMainGameEndPopUpBeaverZOrder;
+	_elementsInformation[mainGameEndPopResultWinImageKey] = mainGameEndPopUpWinBeaver;
+
+	ViewElementInformation mainGameEndPopUpLoseBeaver;
+	mainGameEndPopUpLoseBeaver.elementImage = getImageNameForKey(mainGameEndPopResultLoseImageKey);
+	mainGameEndPopUpLoseBeaver.elementPosition = Vec2(-5, 160) + getScreenCenter();
+	mainGameEndPopUpLoseBeaver.elementZOrder = kMainGameEndPopUpBeaverZOrder;
+	_elementsInformation[mainGameEndPopResultLoseImageKey] = mainGameEndPopUpLoseBeaver;
+
 	ViewElementInformation mainGameEndPopUpPad;
-	mainGameEndPopUpPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
-	mainGameEndPopUpPad.elementPosition = Vec2(getScreenCenterX(), 650);
-	mainGameEndPopUpPad.elementActionFinalPosition = getScreenCenter();
+	mainGameEndPopUpPad.elementImage = getImageNameForKey(mainGameEndPopUpPadKey);
+	mainGameEndPopUpPad.elementPosition = Vec2(-5, 120) + getScreenCenter();
 	mainGameEndPopUpPad.elementZOrder = kMainGameEndPopUpPadZOrder;
 	_elementsInformation[mainGameEndPopUpPadKey] = mainGameEndPopUpPad;
+
+	ViewElementInformation mainGameEndPopUpPadResultLabelPad;
+	mainGameEndPopUpPadResultLabelPad.elementImage = getImageNameForKey(mainGameEndPopResultLabelControllerKey);
+	mainGameEndPopUpPadResultLabelPad.elementPosition = Vec2(80, 160);
+	mainGameEndPopUpPadResultLabelPad.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopResultLabelControllerKey] = mainGameEndPopUpPadResultLabelPad;
+
+	ViewElementInformation mainGameEndPopUpPadResultLabel;
+	mainGameEndPopUpPadResultLabel.elementPosition = Vec2(110, 25);
+	mainGameEndPopUpPadResultLabel.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopResultLabelKey] = mainGameEndPopUpPadResultLabel;
+
+	ViewElementInformation mainGameEndPopAwardPad;
+	mainGameEndPopAwardPad.elementImage = getImageNameForKey(mainGameEndPopResultLabelControllerKey);
+	mainGameEndPopAwardPad.elementPosition = Vec2(80, 110);
+	mainGameEndPopAwardPad.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopAwardPadKey] = mainGameEndPopAwardPad;
+
+	ViewElementInformation mainGameEndPopUpPadLabel;
+	mainGameEndPopUpPadLabel.elementPosition = Vec2(110, 25);
+	mainGameEndPopUpPadLabel.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopAwardLabelKey] = mainGameEndPopUpPadLabel;
+
+	makeMainGameEndPopUpMenuButtonsData();
 
 	ViewElementInformation mainGameEndPopUpButton;
 	mainGameEndPopUpButton.elementPosition = Vec2(getScreenCenterX(), 180);
 	mainGameEndPopUpButton.elementOffset = Vec2(0, -40);
 	mainGameEndPopUpButton.elementZOrder = kMainGameEndPopUpPadButtonZOrder;
 	_elementsInformation[mainGameEndPopUpButtonKey] = mainGameEndPopUpButton;
+}
+
+void GameViewInformationFactory::makeMainGameEndPopUpMenuButtonsData()
+{
+	ViewElementInformation mainGameEndPopUpNextLevelButton;
+	mainGameEndPopUpNextLevelButton.elementPosition = Vec2(70, 60);
+	mainGameEndPopUpNextLevelButton.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopUpNextLevelButtonKey] = mainGameEndPopUpNextLevelButton;
+
+	ViewElementInformation mainGameEndPopUpReplayLevelButton;
+	mainGameEndPopUpReplayLevelButton.elementPosition = Vec2(70, 10);
+	mainGameEndPopUpReplayLevelButton.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopUpReplayLevelButtonKey] = mainGameEndPopUpReplayLevelButton;
+	
+	ViewElementInformation mainGameEndPopUpGoToSelectLevelButton;
+	mainGameEndPopUpGoToSelectLevelButton.elementPosition = Vec2(70, -30);
+	mainGameEndPopUpGoToSelectLevelButton.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopUpGoToSelectLevelButtonKey] = mainGameEndPopUpGoToSelectLevelButton;
 }
 
 void GameViewInformationFactory::makeRecordsScreenData()
