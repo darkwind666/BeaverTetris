@@ -76,7 +76,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;D:\Downloads\BeaverTetris\BeaverTetris\cocos2d;D:\Downloads\BeaverTetris\BeaverTetris\cocos2d\cocos\ui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;D:\Downloads\BeaverTetris\BeaverTetris\cocos2d;D:\Downloads\BeaverTetris\BeaverTetris\cocos2d\cocos\ui;D:\Downloads\BeaverTetris\BeaverTetris\cocos2d\external\curl\include\win32\curl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -90,7 +90,7 @@
       <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcurl_imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -234,6 +234,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameWorldAnimationController.cpp" />
     <ClCompile Include="..\Classes\GameWorldBackgroundController.cpp" />
     <ClCompile Include="..\Classes\GameWorldController.cpp" />
+    <ClCompile Include="..\Classes\GATrackerpp.cpp" />
     <ClCompile Include="..\Classes\HorisontalChainChecker.cpp" />
     <ClCompile Include="..\Classes\KeysForEnumsDataSource.cpp" />
     <ClCompile Include="..\Classes\KingBoss.cpp" />
@@ -433,6 +434,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameWorldAnimationController.h" />
     <ClInclude Include="..\Classes\GameWorldBackgroundController.h" />
     <ClInclude Include="..\Classes\GameWorldController.h" />
+    <ClInclude Include="..\Classes\GATrackerpp.h" />
     <ClInclude Include="..\Classes\HorisontalChainChecker.h" />
     <ClInclude Include="..\Classes\KeysForEnumsDataSource.h" />
     <ClInclude Include="..\Classes\KingBoss.h" />

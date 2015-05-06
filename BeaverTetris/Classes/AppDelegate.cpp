@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "CocosViewConfigurator.h"
 #include "GameInitiator.h"
+#include "GATrackerpp.h"
 
 USING_NS_CC;
 
@@ -45,7 +46,17 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	gameInitiator->setInitialState();
 	delete gameInitiator;
 
-	LanguageType currentLanguage = Application::getCurrentLanguage();
+	GATrackerpp analyticHelper("UA-61796273-1", "71798b3b-97af-433e-a83a-fc95f95e50f5");
+	
+
+	analyticHelper.sendAppView("MyDemoApp", "v2","Main screen7", true, false);
+
+	for (int i = 0; i < 500000; i++)
+	{
+		CCLOG("Sasha");
+	}
+
+	analyticHelper.sendAppView("MyDemoApp", "v2","Main screen8", false, true);
 
     return true;
 }

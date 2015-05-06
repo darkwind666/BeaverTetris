@@ -94,6 +94,9 @@
     <Filter Include="Controllers\ViewControllers\Loaders">
       <UniqueIdentifier>{0244c3e7-cd6c-4e29-b379-48725c5c306a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Analytics">
+      <UniqueIdentifier>{1c3dfb19-daf6-45a6-8052-5549f1a75fef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -638,6 +641,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\GameLocalizationDataSource.cpp">
       <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GATrackerpp.cpp">
+      <Filter>Analytics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1231,6 +1237,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameLocalizationDataSource.h">
       <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GATrackerpp.h">
+      <Filter>Analytics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
