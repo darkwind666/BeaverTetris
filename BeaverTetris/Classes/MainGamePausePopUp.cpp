@@ -13,6 +13,7 @@
 #include "GameWorldController.h"
 #include "GameStatesHelper.h"
 #include "StartMainGamePlayerScoreDataSource.h"
+#include "GameAnalyticController.h"
 
 using namespace cocos2d;
 
@@ -116,4 +117,6 @@ void MainGamePausePopUp::showPopUp()
 	_gameWorldController->pauseGameWorld();
 	_eventListenerKeyboard->setEnabled(true);
 	_popUpView->setVisible(true);
+	GameAnalyticController *gameAnalyticController = (GameAnalyticController*)ServiceLocator::getServiceForKey(gameAnalyticControllerKey);
+	gameAnalyticController->goToPopUp(kPauseGamePopUp);
 }

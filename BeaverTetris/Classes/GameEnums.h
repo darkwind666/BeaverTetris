@@ -13,6 +13,7 @@ enum GameState
 enum PopUpType
 {
 	kRegulateSoundPopUp,
+	kPlayerCreatorPopUp,
 	kPauseGamePopUp,
 	kEndGamePopUp,
 };

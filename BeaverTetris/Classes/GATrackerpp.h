@@ -13,7 +13,7 @@ public:
 
     ~GATrackerpp();
 
-    void sendEvent(const std::string & eventCategory, const std::string & eventAction, bool startSession, bool stopSession);
+    void sendEvent(const std::string & eventCategory, const std::string & eventAction);
 
     void sendAppView(const std::string & appName, const std::string & appVersion, const std::string & screenName, bool startSession, bool stopSession);
 

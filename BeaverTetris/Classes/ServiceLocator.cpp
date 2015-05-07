@@ -27,3 +27,12 @@ void ServiceLocator::setServiceForKey(ServiceInterface *service, string aKey)
 	}
 	_services[aKey] = service;
 }
+
+void ServiceLocator::clean()
+{
+	map <string, ServiceInterface*>::iterator serviceIterator;
+	for (serviceIterator = _services.begin(); serviceIterator != _services.end(); serviceIterator++)
+	{
+		delete serviceIterator->second;
+	}
+}

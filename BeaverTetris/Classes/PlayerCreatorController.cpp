@@ -13,6 +13,7 @@
 #include "GameViewStyleHelper.h"
 #include "StringsSupporter.h"
 #include "GameLocalizationKeys.h"
+#include "GameAnalyticController.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -21,6 +22,7 @@ PlayerCreatorController::PlayerCreatorController(void)
 {
 	_delegate = NULL;
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
+	_gameAnalyticController = (GameAnalyticController*)ServiceLocator::getServiceForKey(gameAnalyticControllerKey);
 	_controllerView = getControllerView();
 
 	CocosNodesHelper::addSpriteToParentNodeWithKey(this, playerCreatorControllerBackgroundKey);
@@ -75,6 +77,7 @@ void PlayerCreatorController::onEnterTransitionDidFinish()
 	if (_currentPlayerDataSource->isThereCurentPlayer() == false)
 	{
 		this->setVisible(true);
+		_gameAnalyticController->goToPopUp(kPlayerCreatorPopUp);
 	}
 	else
 	{
@@ -85,10 +88,11 @@ void PlayerCreatorController::onEnterTransitionDidFinish()
 void PlayerCreatorController::editBoxTextChanged(cocos2d::ui::EditBox* editBox, const std::string& text)
 {
     const char* textStart = editBox->getText();
-	_currentPlayerDataSource->setNewPlayerWithName(string(textStart));
+	string playerName = string(textStart);
+	_currentPlayerDataSource->setNewPlayerWithName(playerName);
 	this->setVisible(false);
-	FiniteTimeAction *callback = CallFunc::create([this](){invokeDelegate();});
-	_controllerView->runAction(callback);
+	_gameAnalyticController->createdNewPlayerWithName(playerName);
+	invokeDelegate();
 }
 
 void PlayerCreatorController::editBoxReturn(ui::EditBox* editBox)

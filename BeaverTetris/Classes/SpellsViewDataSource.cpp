@@ -9,6 +9,7 @@
 #include "GameKeyWithSuffixSupporter.h"
 #include "GameElementsDataHelper.h"
 #include "SpellBox.h"
+#include "GameAnalyticController.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -17,6 +18,7 @@ SpellsViewDataSource::SpellsViewDataSource()
 {
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_spellBox = (SpellBox*)ServiceLocator::getServiceForKey(spellBoxKey);
+	_gameAnalyticController = (GameAnalyticController*)ServiceLocator::getServiceForKey(gameAnalyticControllerKey);
 	_availableSpellsCount = _currentPlayerDataSource->getPlayerAvailableSpellsCount();
 	_spellsInformation = makeSpellsInformation();
 	_spellOffset = GameElementsDataHelper::getElementOffsetForKey(playerSpellsControllerKey);
@@ -116,6 +118,7 @@ void SpellsViewDataSource::useSpellOnIndex(int aIndex)
 	{
 		_currentPlayerDataSource->setPlayerScore(currentPlayerScore - spellCost);
 		_spellBox->useSpellForKey(spellKey);
+		_gameAnalyticController->useSpell(spellKey);
 	}
 }
 

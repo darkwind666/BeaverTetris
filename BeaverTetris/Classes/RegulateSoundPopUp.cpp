@@ -7,6 +7,10 @@
 #include "GameViewStyleHelper.h"
 #include "GameAnimationActionsConstants.h"
 
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "GameAnalyticController.h"
+
 using namespace cocos2d;
 
 RegulateSoundPopUp::RegulateSoundPopUp(void)
@@ -61,6 +65,8 @@ void RegulateSoundPopUp::showPopUp()
 {
 	_popUpView->setVisible(true);
 	_listner->setSwallowTouches(true);
+	GameAnalyticController *gameAnalyticController = (GameAnalyticController*)ServiceLocator::getServiceForKey(gameAnalyticControllerKey);
+	gameAnalyticController->goToPopUp(kRegulateSoundPopUp);
 }
 
 void RegulateSoundPopUp::closePopUp(Object* pSender)

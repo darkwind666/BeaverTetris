@@ -5,6 +5,7 @@
 
 class CurrentPlayerDataSource;
 class PlayerStatusDelegateInterface;
+class GameAnalyticController;
 
 class PlayerCreatorController : public cocos2d::Node, public cocos2d::ui::EditBoxDelegate
 {
@@ -21,6 +22,7 @@ public:
 private:
 
 	CurrentPlayerDataSource *_currentPlayerDataSource;
+	GameAnalyticController *_gameAnalyticController;
 	cocos2d::Node *_controllerView;
 	cocos2d::Vec2 _previousPosition;
 	PlayerStatusDelegateInterface *_delegate;

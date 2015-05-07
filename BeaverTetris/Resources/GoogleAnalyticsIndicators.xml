@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<indicators>
+  <indicator type="commonAnalytic" value="Общая аналитика"/>
+  <indicator type="createNewGamePlayer" value="Создание нового игрока"/>
+  <indicator type="compliteAllGame" value="Прохождение всей игры"/>
+  <indicator type="operationSystem" value="Операционная система"/>
+  <indicator type="language" value="Язык"/>
+  <indicator type="winLevel" value="Выигрыш уровня"/>
+  <indicator type="level" value="Уровень"/>
+  <indicator type="loseLevel" value="Проигрыш уровня"/>
+  <indicator type="spellUsing" value="Использование заклинаний"/>
+  <indicator type="spell" value="Заклинание"/>
+  <indicator type="gamePopUps" value="Всплывающие окна"/>
+  <indicator type="settings" value="Настройки"/>
+  <indicator type="pause" value="Пауза"/>
+  <indicator type="createNewPlayer" value="Создание нового игрока"/>
+  <indicator type="loadingScreen" value="Экран загрузки"/>
+  <indicator type="mainGameMenu" value="Экран главного меню"/>
+  <indicator type="selectGameLevel" value="Экран выбора уровня"/>
+  <indicator type="gameRecords" value="Экран рекордов"/>
+  <indicator type="gameDevelopers" value="Экран разработчиков"/>
+  <indicator type="gameExit" value="Выход из игры"/>
+</indicators>

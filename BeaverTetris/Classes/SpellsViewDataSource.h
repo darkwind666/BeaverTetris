@@ -7,6 +7,7 @@
 
 class SpellBox;
 class CurrentPlayerDataSource;
+class GameAnalyticController;
 
 class SpellsViewDataSource
 {
@@ -27,6 +28,7 @@ private:
 
 	CurrentPlayerDataSource *_currentPlayerDataSource;
 	SpellBox *_spellBox;
+	GameAnalyticController *_gameAnalyticController;
 	int _availableSpellsCount;
 	cocos2d::Vec2 _spellOffset;
 

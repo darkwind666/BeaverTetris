@@ -645,6 +645,12 @@
     <ClCompile Include="..\Classes\GATrackerpp.cpp">
       <Filter>Analytics</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GoogleAnalyticIndicatorsDataSource.cpp">
+      <Filter>Models\DataSources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameAnalyticController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1241,6 +1247,15 @@
     <ClInclude Include="..\Classes\GATrackerpp.h">
       <Filter>Analytics</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\GoogleAnalyticsKeys.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GoogleAnalyticIndicatorsDataSource.h">
+      <Filter>Models\DataSources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameAnalyticController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
@@ -1258,6 +1273,9 @@
       <Filter>GameBalance</Filter>
     </Xml>
     <Xml Include="..\Resources\GameLocalization.xml">
+      <Filter>GameBalance</Filter>
+    </Xml>
+    <Xml Include="..\Resources\GoogleAnalyticsIndicators.xml">
       <Filter>GameBalance</Filter>
     </Xml>
   </ItemGroup>

@@ -2,6 +2,7 @@
 #include "CocosViewConfigurator.h"
 #include "GameInitiator.h"
 #include "GATrackerpp.h"
+#include "ServiceLocator.h"
 
 USING_NS_CC;
 
@@ -11,6 +12,7 @@ AppDelegate::AppDelegate() {
 
 AppDelegate::~AppDelegate() 
 {
+	ServiceLocator::clean();
 }
 
 //if you want a different context,just modify the value of glContextAttrs
@@ -47,15 +49,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	delete gameInitiator;
 
 	GATrackerpp analyticHelper("UA-61796273-1", "71798b3b-97af-433e-a83a-fc95f95e50f5");
-	
-
 	analyticHelper.sendAppView("MyDemoApp", "v2","Main screen7", true, false);
-
-	for (int i = 0; i < 500000; i++)
-	{
-		CCLOG("Sasha");
-	}
-
 	analyticHelper.sendAppView("MyDemoApp", "v2","Main screen8", false, true);
 
     return true;

@@ -16,6 +16,7 @@ const string tetraminoColorsDataSourceKey = string("TetraminoColorsDataSource");
 const string gameLocalizationDataSourceKey = string("GameLocalizationDataSource");
 const string tetrominosFactoryKey = string("TetraminosFactory");
 const string gamePlayersDatabaseKey = string("GamePlayersDatabase");
+const string gameAnalyticControllerKey = string("GameAnalyticController");
 
 
 const string gameBoardKey = string("GameBoard");

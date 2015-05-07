@@ -190,6 +190,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\FirestromSpell.cpp" />
     <ClCompile Include="..\Classes\FirestromSpellExplosionPositionDelegate.cpp" />
     <ClCompile Include="..\Classes\FullLineCombination.cpp" />
+    <ClCompile Include="..\Classes\GameAnalyticController.cpp" />
     <ClCompile Include="..\Classes\GameBackgroundSoundRegulator.cpp" />
     <ClCompile Include="..\Classes\GameBoard.cpp" />
     <ClCompile Include="..\Classes\GameBoardController.cpp" />
@@ -235,6 +236,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameWorldBackgroundController.cpp" />
     <ClCompile Include="..\Classes\GameWorldController.cpp" />
     <ClCompile Include="..\Classes\GATrackerpp.cpp" />
+    <ClCompile Include="..\Classes\GoogleAnalyticIndicatorsDataSource.cpp" />
     <ClCompile Include="..\Classes\HorisontalChainChecker.cpp" />
     <ClCompile Include="..\Classes\KeysForEnumsDataSource.cpp" />
     <ClCompile Include="..\Classes\KingBoss.cpp" />
@@ -379,6 +381,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\FirestromSpellExplosionPositionDelegate.h" />
     <ClInclude Include="..\Classes\FuctionsTypedefs.h" />
     <ClInclude Include="..\Classes\FullLineCombination.h" />
+    <ClInclude Include="..\Classes\GameAnalyticController.h" />
     <ClInclude Include="..\Classes\GameAnimationActionsConstants.h" />
     <ClInclude Include="..\Classes\GameBackgroundSoundRegulator.h" />
     <ClInclude Include="..\Classes\GameBalanceDataConstants.h" />
@@ -435,6 +438,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameWorldBackgroundController.h" />
     <ClInclude Include="..\Classes\GameWorldController.h" />
     <ClInclude Include="..\Classes\GATrackerpp.h" />
+    <ClInclude Include="..\Classes\GoogleAnalyticIndicatorsDataSource.h" />
+    <ClInclude Include="..\Classes\GoogleAnalyticsKeys.h" />
     <ClInclude Include="..\Classes\HorisontalChainChecker.h" />
     <ClInclude Include="..\Classes\KeysForEnumsDataSource.h" />
     <ClInclude Include="..\Classes\KingBoss.h" />
@@ -554,6 +559,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <Xml Include="..\Resources\GameTetraminos.xml">
       <SubType>Designer</SubType>
     </Xml>
+    <Xml Include="..\Resources\GoogleAnalyticsIndicators.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

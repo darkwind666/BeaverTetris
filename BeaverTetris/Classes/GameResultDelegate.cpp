@@ -6,6 +6,7 @@
 #include "GamePlayersDatabase.h"
 #include "CurrentLevelDataSource.h"
 #include "StartMainGamePlayerScoreDataSource.h"
+#include "GameAnalyticController.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ GameResultDelegate::GameResultDelegate(WinGameSystem *aWinGameSystem)
 	_currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 	_gamePlayersDatabase = (GamePlayersDatabase*)ServiceLocator::getServiceForKey(gamePlayersDatabaseKey);
 	_currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
+	_gameAnalyticController = (GameAnalyticController*)ServiceLocator::getServiceForKey(gameAnalyticControllerKey);
 }
 
 
@@ -27,11 +29,13 @@ void GameResultDelegate::gameWasEnded()
 	if (_winGameSystem->playerWin())
 	{
 		giveResultToPlayer();
+		_gameAnalyticController->winSelectedLevel();
 		writePlayerToDatabaseIfFinalLevel();
 	}
 	else
 	{
 		restorePlayerScore();
+		_gameAnalyticController->loseSelectedLevel();
 	}
 	_currentPlayerDataSource->savePlayer();
 }
@@ -53,6 +57,7 @@ void GameResultDelegate::writePlayerToDatabaseIfFinalLevel()
 		string playerName = _currentPlayerDataSource->getPlayerName();
 		int playerScore = _currentPlayerDataSource->getPlayerScore();
 		_gamePlayersDatabase->setPlayerResult(playerName, playerScore);
+		_gameAnalyticController->winAllGameWithResult(playerScore);
 	}
 }
 
