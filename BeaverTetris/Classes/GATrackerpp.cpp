@@ -1,67 +1,117 @@
 #include "GATrackerpp.h"
+#include "cocos2d.h"
 
-GATrackerpp::GATrackerpp(const std::string &trackingId, const std::string &clientId) :
-        trackingId_(trackingId), clientId_(clientId) {
+using namespace std;
+
+void sendAnalyticData(std::string aData, int *handle, bool *onLine);
+
+GATrackerpp::GATrackerpp(const string &trackingId, const string &clientId, std::string appName, std::string appVersion) :
+        trackingId_(trackingId), clientId_(clientId), _appName(appName), _appVersion(appVersion) 
+{
     curl_global_init(CURL_GLOBAL_ALL);
-    curl_ = curl_easy_init();
+	_handle = 0;
+	_onLine = true;
 }
 
-GATrackerpp::~GATrackerpp() {
-    curl_easy_cleanup(curl_);
+GATrackerpp::~GATrackerpp() 
+{
     curl_global_cleanup();
 }
 
-void GATrackerpp::sendEvent(const std::string &eventCategory, const std::string &eventAction) {
-
-    //Now specify event POST data
-    //
-    std::stringstream postFields;
+void GATrackerpp::sendEvent(const std::string & eventCategory, const std::string & eventAction)
+{
+	stringstream postFields;
     postFields << "v=1&tid=" << trackingId_ << "&cid=" << clientId_;
     postFields << "&t=event&ec=" << eventCategory << "&ea=" << eventAction;
-
     sendAnalytics(postFields.str());
 }
 
-void GATrackerpp::sendAppView(const std::string &appName, const std::string &appVersion, const std::string &screenName, bool startSession, bool stopSession) {
+void GATrackerpp::sendEvent(const string &eventCategory, const string &eventAction, int value) 
+{
 
-    std::stringstream postFields;
+    stringstream postFields;
     postFields << "v=1&tid=" << trackingId_ << "&cid=" << clientId_;
-    postFields << "&t=appview&an=" << appName << "&av=" << appVersion  << "&aiid=WindowsStore" << "&cd=" << screenName;
-
-	assert(!startSession || !stopSession);
-
-	if (startSession) {
-        postFields << "&sc=start";
-    }
-    if (stopSession) {
-        postFields << "&sc=end";
-    }
-
+    postFields << "&t=event&ec=" << eventCategory << "&ea=" << eventAction << "&ev=" << value;
     sendAnalytics(postFields.str());
 }
 
-void GATrackerpp::sendAnalytics(const std::string &payload) {
+void GATrackerpp::sendEvent(const string & eventCategory, const string & eventAction, string eventLabel)
+{
+	stringstream postFields;
+	postFields << "v=1&tid=" << trackingId_ << "&cid=" << clientId_;
+	postFields << "&t=event&ec=" << eventCategory << "&ea=" << eventAction << "&el=" << eventLabel;
+	sendAnalytics(postFields.str());
+}
 
-    if (curl_) {
+void GATrackerpp::sendEvent(const string & eventCategory, const string & eventAction, string eventLabel , int value)
+{
+	stringstream postFields;
+	postFields << "v=1&tid=" << trackingId_ << "&cid=" << clientId_;
+	postFields << "&t=event&ec=" << eventCategory << "&ea=" << eventAction << "&el=" << eventLabel << "&ev=" << value;
+	sendAnalytics(postFields.str());
+}
 
-        // First set the URL
-        //
-        curl_easy_setopt(curl_, CURLOPT_URL, "https://www.google-analytics.com/collect");
-        curl_easy_setopt(curl_, CURLOPT_COPYPOSTFIELDS, payload.c_str());
-		curl_easy_setopt(curl_, CURLOPT_SSL_VERIFYPEER, FALSE);
+void GATrackerpp::sendAppView(const string &screenName) {
 
-        //Perform the request, res will get the return code
-        //
-        CURLcode res = curl_easy_perform(curl_);
+    stringstream postFields;
+    postFields << "v=1&tid=" << trackingId_ << "&cid=" << clientId_;
+    postFields << "&t=appview&an=" << _appName << "&av=" << _appVersion << "&cd=" << screenName;
+    sendAnalytics(postFields.str());
+}
 
-        /* Check for errors */
-        if (res != CURLE_OK) {
-            printf("curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-        }
-        else {
-            printf("curl_easy_perform() success\n");
-        }
+void GATrackerpp::sendStartAppView(const string & screenName, string shop, string language)
+{
+	stringstream postFields;
+    postFields << "v=1&tid=" << trackingId_ << "&cid=" << clientId_;
+    postFields << "&t=appview&an=" << _appName << "&av=" << _appVersion  << "&aiid=" << shop << "&cd=" << screenName << "&ul=" << language << "&sc=start";
+	sendAnalytics(postFields.str());
+}
 
-    }
+void GATrackerpp::sendEndAppView(const string & screenName)
+{
+	stringstream postFields;
+    postFields << "v=1&tid=" << trackingId_ << "&cid=" << clientId_;
+    postFields << "&t=appview&an=" << _appName << "&av=" << _appVersion << "&cd=" << screenName << "&sc=end";
+    sendAnalytics(postFields.str());
+}
+
+void GATrackerpp::sendAnalytics(const string &payload) 
+{
+	if (_onLine)
+	{
+		thread thread(sendAnalyticData, payload, &_handle, &_onLine);
+		thread.detach();
+	}
+}
+
+void sendAnalyticData(string aData, int *handle, bool *onLine)
+{
+
+	CURL *curl = NULL;
+	curl = curl_easy_init();
+	curl_easy_setopt(curl, CURLOPT_URL, "https://www.google-analytics.com/collect");
+	curl_easy_setopt(curl, CURLOPT_COPYPOSTFIELDS, aData.c_str());
+	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+	
+	while (true)
+	{
+		if (*onLine == false)
+		{
+			break;
+		}
+
+		if (*handle == 0)
+		{
+			*handle = 1;
+			CURLcode result = curl_easy_perform(curl);
+			if (result != CURLE_OK)
+			{
+				*onLine = false;
+			}
+			*handle = 0;
+			break;
+		}
+	}
+	curl_easy_cleanup(curl);
 }
 

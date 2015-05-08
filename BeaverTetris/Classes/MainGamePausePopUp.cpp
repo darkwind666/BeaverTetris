@@ -14,6 +14,7 @@
 #include "GameStatesHelper.h"
 #include "StartMainGamePlayerScoreDataSource.h"
 #include "GameAnalyticController.h"
+#include "GameLocalizationKeys.h"
 
 using namespace cocos2d;
 
@@ -55,12 +56,7 @@ cocos2d::Node* MainGamePausePopUp::getPopUpMenu()
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(backgroundSoundRegulator,popUpPad,mainGamePauseRegulateSoundSliderKey);
 	
 	GameViewStyleHelper::addBackButtonToParentNodeWithKeyAndCallback(popUpPad, mainGamePauseCloseButtonKey, CC_CALLBACK_1(MainGamePausePopUp::closePopUp, this));
-	
-	MenuItemImage *goToSelectLevelItem = MenuItemImage::create("HelloWorld.png","HelloWorld.png", CC_CALLBACK_1(MainGamePausePopUp::goToSelectLevelScreen, this));
-	goToSelectLevelItem->setScaleX(0.2f);
-	goToSelectLevelItem->setScaleY(0.07f);
-	goToSelectLevelItem->setColor(Color3B::GREEN);
-	CocosNodesHelper::addButtonToParentNodeWithKey(goToSelectLevelItem,popUpPad,mainGamePauseGoToSelectLevelButtonKey);
+	GameViewStyleHelper::addBackButtonToParentNodeWithKeyAndCallbackAndLocalization(popUpPad, mainGamePauseGoToSelectLevelButtonKey, CC_CALLBACK_1(MainGamePausePopUp::goToSelectLevelScreen, this), gameGoToMapLocalizationKey);
 	
 	return popUpPad;
 }

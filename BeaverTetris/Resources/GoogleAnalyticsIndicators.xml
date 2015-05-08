@@ -5,6 +5,8 @@
   <indicator type="compliteAllGame" value="Прохождение всей игры"/>
   <indicator type="operationSystem" value="Операционная система"/>
   <indicator type="language" value="Язык"/>
+  <indicator type="russian" value="Русский"/>
+  <indicator type="english" value="Английский"/>
   <indicator type="winLevel" value="Выигрыш уровня"/>
   <indicator type="level" value="Уровень"/>
   <indicator type="loseLevel" value="Проигрыш уровня"/>

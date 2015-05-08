@@ -7,7 +7,7 @@
             <key>10.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{413,8},{22,22}}</string>
+                <string>{{8,8},{22,22}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>11.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{8,54},{211,47}}</string>
+                <string>{{38,8},{211,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>12.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{8,54},{211,47}}</string>
+                <string>{{38,8},{211,47}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>MainGamePauseLabelImage.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{227,54},{223,224}}</string>
+                <string>{{257,8},{223,224}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,20 @@
             <key>MainGamePauseGoToSelectLevelActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{480,8},{78,34}}</string>
+                <string>{{488,8},{78,34}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{78,34}}</string>
+                <key>sourceSize</key>
+                <string>{78,34}</string>
+            </dict>
+            <key>MainGamePauseGoToSelectLevelInactiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{574,8},{78,34}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +85,7 @@
             <key>MainGamePauseBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{602,54},{361,571}}</string>
+                <string>{{8,240},{361,571}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +98,7 @@
             <key>MainGamePauseStaircase.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{458,54},{136,464}}</string>
+                <string>{{377,240},{136,464}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +111,7 @@
             <key>MainGamePausePopUpCloseActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{714,8},{140,38}}</string>
+                <string>{{521,240},{140,38}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +124,7 @@
             <key>5.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{8,8},{180,7}}</string>
+                <string>{{669,240},{180,7}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +137,7 @@
             <key>6.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{196,8},{180,7}}</string>
+                <string>{{8,819},{180,7}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +150,7 @@
             <key>7.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{384,8},{21,21}}</string>
+                <string>{{196,819},{21,21}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,7 +163,7 @@
             <key>8.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{443,8},{29,26}}</string>
+                <string>{{225,819},{29,26}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -163,7 +176,7 @@
             <key>MainGamePausePopUpCloseInactiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{566,8},{140,37}}</string>
+                <string>{{262,819},{140,37}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>

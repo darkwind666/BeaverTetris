@@ -39,5 +39,6 @@ void GameInitiator::setInitialState()
 
 	gameGraphicsLoader->setInitialGraphic();
 	gameTransitionsViewController->goToInitialState();
+	gameAnalyticController->startGame();
 	
 }

@@ -14,7 +14,9 @@ const string commonAnalyticCategoryKey = string("commonAnalytic");
 const string createNewGamePlayerActionKey = string("createNewGamePlayer");
 const string compliteAllGameActionKey = string("compliteAllGame");
 const string operationSystemKey = string("operationSystem");
-const string operationSystemLanguageKey = string("language");
+const string gameLanguageKey = string("language");
+const string gameEnglishLanguageKey = string("english");
+const string gameRussianLanguageKey = string("russian");
 
 const string winLevelAnalyticCategoryKey = string("winLevel");
 const string levelKey = string("level");
