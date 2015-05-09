@@ -7,44 +7,28 @@
 #include "CurrentPlayerDataSource.h"
 #include "StringsSupporter.h"
 #include "KeysForEnumsDataSource.h"
+#include "GameAnalyticControllerDelegate.h"
 
 using namespace std;
 using namespace cocos2d;
 
 GameAnalyticController::GameAnalyticController(void)
 {
-	_indicatorsNamesDataSource = new GoogleAnalyticIndicatorsDataSource();
-	_playerId = string("71798b3b-97af-433e-a83a-fc95f95e50f5");
-	_analyticHelper = new GATrackerpp("UA-61796273-1", _playerId, string("BeaverTetris"), string("v1"));
-	_platformsNames = getPlatformsNames();
+	_analyticDelegate = new GameAnalyticControllerDelegate();
+	_shopName = _analyticDelegate->getShopName();
+	_language = _analyticDelegate->getCurrentGameLanguage();
+	_operationSystem = _analyticDelegate->getOperationSystem();
+	_playerId = _analyticDelegate->getPlayerId();
+	_analyticHelper = new GATrackerpp("UA-62798008-1", _playerId, string("BeaverTetris"), string("v1"));
 	_screensAnalyticMessages = getScreensAnalyticMessages();
-	_popUpNames = getPopUpNames();
+	_popUpNames = _analyticDelegate->getPopUpNames();
 }
 
 
 GameAnalyticController::~GameAnalyticController(void)
 {
 	_analyticHelper->sendEndAppView(getIndicator(gameExitScreenAnalyticKey));
-	delete _indicatorsNamesDataSource;
-}
-
-map<Application::Platform, string> GameAnalyticController::getPlatformsNames()
-{
-	map<Application::Platform, string> platformsNames;
-
-	platformsNames[Application::Platform::OS_WINDOWS] = string("Windows");
-	platformsNames[Application::Platform::OS_LINUX] = string("Linux");
-	platformsNames[Application::Platform::OS_MAC] = string("MacOS");
-	platformsNames[Application::Platform::OS_ANDROID] = string("Android");
-	platformsNames[Application::Platform::OS_IPHONE] = string("Iphone");
-	platformsNames[Application::Platform::OS_IPAD] = string("Ipad");
-	platformsNames[Application::Platform::OS_BLACKBERRY] = string("Blackberry");
-	platformsNames[Application::Platform::OS_TIZEN] = string("Tizen");
-	platformsNames[Application::Platform:: OS_NACL] = string("ChromeOs");
-	platformsNames[Application::Platform::OS_WINRT] = string("WindowsRT");
-	platformsNames[Application::Platform::OS_WP8] = string("WindowsPhone");
-
-	return platformsNames;
+	delete _analyticDelegate;
 }
 
 map< GameState, function<void()> > GameAnalyticController::getScreensAnalyticMessages()
@@ -57,10 +41,8 @@ map< GameState, function<void()> > GameAnalyticController::getScreensAnalyticMes
 	screensAnalyticMessages[kRecords] = [this](){_analyticHelper->sendAppView(getIndicator(gameRecordsScreenAnalyticKey));};
 
 	screensAnalyticMessages[kLoadGame] = [this](){
-		string shopName = string("SashaShop");
-		string language = getCurrentGameLanguage();
-		_analyticHelper->sendStartAppView(getIndicator(loadingScreenAnalyticKey), shopName, language);
-		_analyticHelper->sendEvent(getIndicator(commonAnalyticCategoryKey), getIndicator(operationSystemKey), getOperationSystem());
+		_analyticHelper->sendStartAppView(getIndicator(loadingScreenAnalyticKey), _shopName, _language);
+		_analyticHelper->sendEvent(getIndicator(commonAnalyticCategoryKey), getIndicator(operationSystemKey), _operationSystem);
 	};
 
 	screensAnalyticMessages[kPlayGame] = [this](){
@@ -70,34 +52,6 @@ map< GameState, function<void()> > GameAnalyticController::getScreensAnalyticMes
 	};
 
 	return screensAnalyticMessages;
-}
-
-string GameAnalyticController::getCurrentGameLanguage()
-{
-	string currentGameLanguage = _indicatorsNamesDataSource->getIndicatorNameForKey(gameEnglishLanguageKey);
-	LanguageType gameLanguage = Application::getInstance()->getCurrentLanguage();
-	if (gameLanguage == LanguageType::RUSSIAN)
-	{
-		currentGameLanguage = _indicatorsNamesDataSource->getIndicatorNameForKey(gameRussianLanguageKey);
-	}
-	return currentGameLanguage;
-}
-
-string GameAnalyticController::getOperationSystem()
-{
-	Application::Platform platform = Application::getInstance()->getTargetPlatform();
-	return _platformsNames[platform];
-}
-
-map<PopUpType, string> GameAnalyticController::getPopUpNames()
-{
-	map<PopUpType, string> popUpNames;
-
-	popUpNames[kRegulateSoundPopUp] = gamePopUpSettingsActionKey;
-	popUpNames[kPlayerCreatorPopUp] = gamePopUpCreateNewPlayerActionKey;
-	popUpNames[kPauseGamePopUp] = gamePopUpPauseActionKey;
-
-	return popUpNames;
 }
 
 void GameAnalyticController::startGame()
@@ -159,7 +113,7 @@ void GameAnalyticController::goToScreen(GameState aScreen)
 
 string GameAnalyticController::getIndicator(string aKey)
 {
-	string indicatorName = _indicatorsNamesDataSource->getIndicatorNameForKey(aKey);
+	string indicatorName = _analyticDelegate->getIndicator(aKey);
 	return indicatorName;
 }
 

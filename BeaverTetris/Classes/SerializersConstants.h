@@ -14,3 +14,9 @@ const string playerCompletedLevelsCountKey = string("PlayerCompletedLevelsCount"
 const string playerSpellsInformationKey = string("PlayerSpellsInformation");
 const string playerSpellCountKey = string("count");
 const string playerSpellRechargeIntervalKey = string("rechargeInterval");
+
+const string playerIdFileNameKey = string("PlayerId.plist");
+const string playerIdKey = string("playerId");
+
+const string shopFileNameKey = string("Shop.plist");
+const string shopKey = string("shop");

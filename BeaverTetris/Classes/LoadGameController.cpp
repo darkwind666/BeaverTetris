@@ -56,7 +56,7 @@ void LoadGameController::loadOneResource()
 void LoadGameController::runLoadingActionWithLoadingPercent(int aLoadingPercent)
 {
 	int currentPercent = _loadGameControllerView->getPercentage();
-	float actionDuration = onePercentActionDuration * aLoadingPercent;
+	float actionDuration = 0.06 * aLoadingPercent;
 	
 	FiniteTimeAction *progressAction = ProgressFromTo::create(actionDuration, currentPercent, currentPercent - aLoadingPercent);
 	FiniteTimeAction *callback = CallFunc::create(this, CC_CALLFUNC_SELECTOR(LoadGameController::loadGameResource));
