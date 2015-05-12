@@ -4,6 +4,7 @@
 #include "CocosNodesHelper.h"
 #include "GameFileExtensionMaker.h"
 #include "GameViewElementsKeys.h"
+#include "BackButtonController.h"
 
 using namespace cocos2d;
 
@@ -31,6 +32,8 @@ Scene* LoadingGameSceneFactory::createScene()
 	LoadingGameWaveController *wave = new LoadingGameWaveController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(wave,loadingScene,loadingGameWaveKey);
 
+	BackButtonController *backButtonController = new BackButtonController(kLoadGame);
+	loadingScene->addChild(backButtonController);
 
 	return loadingScene;
 }

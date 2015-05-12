@@ -6,6 +6,7 @@
 #include "GameViewElementsKeys.h"
 #include "GamesDevelopersAnimationController.h"
 #include "StartGameFishesController.h"
+#include "BackButtonController.h"
 
 using namespace cocos2d;
 
@@ -31,6 +32,9 @@ Scene* DevelopersSceneFactory::createScene()
 
 	GamesDevelopersAnimationController *developersAnimationController = new GamesDevelopersAnimationController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(developersAnimationController,gameDevelopersScene,gameDevelopersAnimationControllerKey);
+
+	BackButtonController *backButtonController = new BackButtonController(kDevelopers);
+	gameDevelopersScene->addChild(backButtonController);
 
 	return gameDevelopersScene;
 }

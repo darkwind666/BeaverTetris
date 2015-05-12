@@ -149,6 +149,12 @@
                 <key>PlayerScore</key>
                 <integer>973</integer>
             </dict>
+            <dict>
+                <key>PlayerName</key>
+                <string>п</string>
+                <key>PlayerScore</key>
+                <integer>926</integer>
+            </dict>
         </array>
     </dict>
 </plist>

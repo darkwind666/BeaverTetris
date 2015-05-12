@@ -657,6 +657,9 @@
     <ClCompile Include="..\Classes\GameAnalyticControllerDelegate.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\BackButtonController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1267,6 +1270,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GameAnalyticControllerDelegate.h">
       <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BackButtonController.h">
+      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

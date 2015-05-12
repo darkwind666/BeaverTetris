@@ -5,6 +5,7 @@
 #include "RegulateSoundPopUp.h"
 #include "StartGameBackgroundController.h"
 #include "StartGameFishesController.h"
+#include "BackButtonController.h"
 
 using namespace cocos2d;
 
@@ -32,6 +33,9 @@ Scene* StartGameSceneFactory::createScene()
 
 	RegulateSoundPopUp *regulateSoundPopUp = new RegulateSoundPopUp();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(regulateSoundPopUp,startGameScene,startGameRegulateSoundPopUpKey);
+
+	BackButtonController *backButtonController = new BackButtonController(kStartGame);
+	startGameScene->addChild(backButtonController);
 
 	return startGameScene;
 }

@@ -7,7 +7,7 @@
 #include "PlayerCreatorController.h"
 #include "SelectGameLevelBeaverTalkController.h"
 #include "GameViewStyleHelper.h"
-
+#include "BackButtonController.h"
 
 using namespace cocos2d;
 
@@ -39,6 +39,9 @@ Scene* SelectGameLevelSceneFactory::createScene()
 	playerCreatorController->setDelegate(selectLevelPlayerStatusController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(playerCreatorController,selectGameLevelScene,playerCreatorControllerKey);
 	GameViewStyleHelper::addBackButtonToParentNodeWithKey(selectGameLevelScene, selectLevelSceneBackButtonKey);
+
+	BackButtonController *backButtonController = new BackButtonController(kSelectLevel);
+	selectGameLevelScene->addChild(backButtonController);
 
 	return selectGameLevelScene;
 }

@@ -7,6 +7,7 @@
 #include "GameHudsController.h"
 #include "MainGamePausePopUp.h"
 #include "MainGameEndPopUp.h"
+#include "BackButtonController.h"
 
 using namespace cocos2d;
 
@@ -37,6 +38,9 @@ Scene* MainGameSceneFactory::createScene()
 
 	MainGameEndPopUp *mainGameEndPopUp = new MainGameEndPopUp(gameWorldController, gameHudsController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(mainGameEndPopUp, mainGameScene, mainGameEndPopUpKey);
+
+	BackButtonController *backButtonController = new BackButtonController(kPlayGame);
+	mainGameScene->addChild(backButtonController);
 
 	return mainGameScene;
 }

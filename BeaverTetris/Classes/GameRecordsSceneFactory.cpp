@@ -4,6 +4,7 @@
 #include "GameViewElementsKeys.h"
 #include "GamesRecordsAnimationController.h"
 #include "GameRecordsFishesController.h"
+#include "BackButtonController.h"
 
 using namespace cocos2d;
 
@@ -28,6 +29,9 @@ Scene* GameRecordsSceneFactory::createScene()
 
 	GameRecordsFishesController *gameRecordsFishesController = new GameRecordsFishesController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameRecordsFishesController,gameRecordsScene,gameRecordsFishesKey);
+
+	BackButtonController *backButtonController = new BackButtonController(kRecords);
+	gameRecordsScene->addChild(backButtonController);
 
 	return gameRecordsScene;
 }
