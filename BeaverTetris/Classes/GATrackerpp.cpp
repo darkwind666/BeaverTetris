@@ -72,7 +72,7 @@ void GATrackerpp::sendEndAppView(const string & screenName)
 	stringstream postFields;
     postFields << "v=1&tid=" << trackingId_ << "&cid=" << clientId_;
     postFields << "&t=appview&an=" << _appName << "&av=" << _appVersion << "&cd=" << screenName << "&sc=end";
-    sendAnalytics(postFields.str());
+    sendFinalAnalytics(postFields.str());
 }
 
 void GATrackerpp::sendAnalytics(const string &payload) 
@@ -81,6 +81,15 @@ void GATrackerpp::sendAnalytics(const string &payload)
 	{
 		thread thread(sendAnalyticData, payload, &_handle, &_onLine);
 		thread.detach();
+	}
+}
+
+void GATrackerpp::sendFinalAnalytics(string const &payload)
+{
+	if (_onLine)
+	{
+		thread thread(sendAnalyticData, payload, &_handle, &_onLine);
+		thread.join();
 	}
 }
 

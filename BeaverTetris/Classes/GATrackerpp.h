@@ -30,4 +30,5 @@ private:
 	std::string _appVersion;
 
     void sendAnalytics(std::string const &payload);
+	void sendFinalAnalytics(std::string const &payload);
 };
