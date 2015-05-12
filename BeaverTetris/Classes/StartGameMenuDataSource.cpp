@@ -33,7 +33,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 		StartGameMenuItemInformation menuItem2;
 		menuItem2.imageKey = selectGameLevelButtonKey;
 		menuItem2.textRotation = -10.0f;
-		menuItem2.text = StringsSupporter::getLocalizedStringFromKey(selectLevelLocalizationKey);
+		menuItem2.text = StringsSupporter::getLocalizedStringFromKey(gameGoToMapLocalizationKey);
 		menuItem2.callback = [](){GameStatesHelper::goToScene(kSelectLevel);};
 		menuItems.push_back(menuItem2);
 	}

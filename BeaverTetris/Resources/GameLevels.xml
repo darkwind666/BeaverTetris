@@ -98,7 +98,7 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <fallDetailsEvent eventInterval="50" detailsCount="4"/>
+      <fallDetailsEvent eventInterval="70" detailsCount="3"/>
     </gameEvents>
     <spells>
       <spell type="randomExplosionsSpell" count="17" rechargeInterval="40"/>
@@ -116,8 +116,8 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="40" eventDuration="140" fallingSpeed="10"/>
-      <fallDetailsEvent eventInterval="80" detailsCount="4"/>
+      <accelerateEvent eventInterval="50" eventDuration="110" fallingSpeed="10"/>
+      <fallDetailsEvent eventInterval="110" detailsCount="3"/>
     </gameEvents>
     <spells>
       <spell type="rocketSpell" rechargeInterval="30"/>
@@ -149,7 +149,7 @@
   </level>
   <level levelName="EndLevel" levelAward="440">
     <winCondition winType="PlaceDetails">
-      <detailsCount>85</detailsCount>
+      <detailsCount>75</detailsCount>
     </winCondition>
     <tetraminosTypes>
       <tetraminoType>redTetramino</tetraminoType>
@@ -159,7 +159,7 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="10" eventDuration="600" fallingSpeed="3"/>
+      <accelerateEvent eventInterval="130" eventDuration="180" fallingSpeed="3"/>
     </gameEvents>
     <spells>
       <spell type="firestormSpell" count="7" rechargeInterval="40"/>
@@ -178,8 +178,8 @@
       <tetraminoType>goldTetramino</tetraminoType>
     </tetraminosTypes>
     <gameEvents>
-      <accelerateEvent eventInterval="70" eventDuration="280" fallingSpeed="5"/>
-      <fallDetailsEvent eventInterval="110" detailsCount="6"/>
+      <accelerateEvent eventInterval="130" eventDuration="180" fallingSpeed="5"/>
+      <fallDetailsEvent eventInterval="160" detailsCount="4"/>
     </gameEvents>
     <spells>
       <spell type="firestormSpell" count="9" rechargeInterval="30"/>

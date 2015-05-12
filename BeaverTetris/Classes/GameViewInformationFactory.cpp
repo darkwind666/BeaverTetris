@@ -93,7 +93,7 @@ void GameViewInformationFactory::makeStartGameSreenData()
 	_elementsInformation[startGameMenuKey] = startGameMenu;
 
 	ViewElementInformation startGameMenuButtonText;
-	startGameMenuButtonText.elementPosition = Vec2(12, 0);
+	startGameMenuButtonText.elementPosition = Vec2(12, 5);
 	startGameMenuButtonText.elementZOrder = 0;
 	_elementsInformation[startGameMenuButtonTextKey] = startGameMenuButtonText;
 
@@ -748,7 +748,7 @@ void GameViewInformationFactory::makeMainGameEndPopUpData()
 	_elementsInformation[mainGameEndPopAwardPadKey] = mainGameEndPopAwardPad;
 
 	ViewElementInformation mainGameEndPopUpPadLabel;
-	mainGameEndPopUpPadLabel.elementPosition = Vec2(110, 25);
+	mainGameEndPopUpPadLabel.elementPosition = Vec2(100, 25);
 	mainGameEndPopUpPadLabel.elementZOrder = 0;
 	_elementsInformation[mainGameEndPopAwardLabelKey] = mainGameEndPopUpPadLabel;
 

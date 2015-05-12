@@ -18,3 +18,4 @@ const string birdInForestSoundKey = string("BirdInForestSound");
 const string backgroundSoundKey = string("BackgroundSound");
 const string backgroundSound1Key = string("BackgroundSound1");
 const string backgroundSound2Key = string("BackgroundSound2");
+const string backgroundSound3Key = string("BackgroundSound3");

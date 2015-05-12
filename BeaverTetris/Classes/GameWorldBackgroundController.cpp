@@ -8,6 +8,7 @@
 #include "GameSoundsKeys.h"
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
+#include "StringsSupporter.h"
 
 using namespace cocos2d;
 
@@ -40,17 +41,10 @@ void GameWorldBackgroundController::onEnterTransitionDidFinish()
 
 string GameWorldBackgroundController::getMainGameBackgroundMusicName()
 {
-	string soundName  = string();
 	srand(time(0));
-	int flag = GameHelper::getRandomNumberFromUpInterval(2);
-	if (flag == 0)
-	{
-		soundName = backgroundSound1Key;
-	}
-	else
-	{
-		soundName = backgroundSound2Key;
-	}
+	int flag = GameHelper::getRandomNumberFromUpInterval(3) + 1;
+	string soundIndex = StringsSupporter::getStringFromNumber(flag);
+	string soundName = backgroundSoundKey + soundIndex;
 	return soundName;
 }
 

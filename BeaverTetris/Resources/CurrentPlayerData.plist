@@ -4,41 +4,12 @@
 <plist version="1.0">
     <dict>
         <key>PlayerName</key>
-        <string>veronika</string>
+        <string>п</string>
         <key>PlayerScore</key>
-        <integer>1089</integer>
+        <integer>482</integer>
         <key>PlayerCompletedLevelsCount</key>
-        <integer>9</integer>
+        <integer>1</integer>
         <key>PlayerSpellsInformation</key>
-        <dict>
-            <key>cohesionSpell</key>
-            <dict>
-                <key>count</key>
-                <integer>16</integer>
-                <key>rechargeInterval</key>
-                <integer>20</integer>
-            </dict>
-            <key>firestormSpell</key>
-            <dict>
-                <key>count</key>
-                <integer>9</integer>
-                <key>rechargeInterval</key>
-                <integer>20</integer>
-            </dict>
-            <key>randomExplosionsSpell</key>
-            <dict>
-                <key>count</key>
-                <integer>14</integer>
-                <key>rechargeInterval</key>
-                <integer>20</integer>
-            </dict>
-            <key>rocketSpell</key>
-            <dict>
-                <key>count</key>
-                <integer>0</integer>
-                <key>rechargeInterval</key>
-                <integer>50</integer>
-            </dict>
-        </dict>
+        <dict/>
     </dict>
 </plist>

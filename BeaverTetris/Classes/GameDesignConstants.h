@@ -9,8 +9,8 @@ const float startBackgroundSoundVolume = 0.5f;
 const int normalUpdateInterval = 30;
 const int acceleratedCurrentDetailUpdateInterval = 2;
 
-const int tetraminoBossMoveTimeIntervalConstant = 11;
-const int tetraminoBossTimeIntervalSpellCastConstant = 20;
+const int tetraminoBossMoveTimeIntervalConstant = 21;
+const int tetraminoBossTimeIntervalSpellCastConstant = 50;
 const int minPeacefulNonEmptyTetraminosCount = 8;
 
 const int standartDetailWidth = 3;
