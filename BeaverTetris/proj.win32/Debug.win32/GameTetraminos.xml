@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tetraminosData>
+  <tetraminos>
+    <tetramino type="redTetramino" lives="1" cost="1"/>
+    <tetramino type="greenTetramino" lives="1" cost="1"/>
+    <tetramino type="blueTetramino" lives="1" cost="1"/>
+    <tetramino type="goldTetramino" lives="2" cost="4"/>
+    <tetramino type="blackTetramino" lives="3" cost="3"/>
+    <tetramino type="queenBoss" lives="6" cost="110"/>
+    <tetramino type="princessesBoss" lives="13" cost="120"/>
+    <tetramino type="kingBoss" lives="20" cost="290"/>
+  </tetraminos>
+  <awardForFullTetraminosLine award="5"/>
+  <awardForElementInTetraminosChain award="1"/>
+</tetraminosData>
+
