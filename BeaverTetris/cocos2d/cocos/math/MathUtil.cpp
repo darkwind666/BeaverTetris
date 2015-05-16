@@ -42,7 +42,8 @@ This file was modified to fit the cocos2d-x project
     #else
     #endif
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    #if defined (__arm64__)
+    #if defined (__arm64__) || defined (__aarch64__)
+    #define USE_NEON64
     #define INCLUDE_NEON64
     #elif defined (__ARM_NEON__)
     #define INCLUDE_NEON32
@@ -92,6 +93,11 @@ void MathUtil::smooth(float* x, float target, float elapsedTime, float riseTime,
         float delta = target - *x;
         *x += delta * elapsedTime / (elapsedTime + (delta > 0 ? riseTime : fallTime));
     }
+}
+
+float MathUtil::lerp(float from, float to, float alpha)
+{
+    return from * (1.0f - alpha) + to * alpha;
 }
 
 bool MathUtil::isNeon32Enabled()

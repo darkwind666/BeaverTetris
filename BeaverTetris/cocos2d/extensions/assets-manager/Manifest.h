@@ -95,12 +95,26 @@ public:
      */
     const std::string& getVersion() const;
     
+    /** @brief Get the search paths list related to the Manifest.
+     */
+    std::vector<std::string> getSearchPaths() const;
+    
 protected:
     
     /** @brief Constructor for Manifest class
-     @param manifestUrl Url of the local manifest
+     * @param manifestUrl Url of the local manifest
      */
     Manifest(const std::string& manifestUrl = "");
+    
+    /** @brief Load the json file into local json object
+     * @param url Url of the json file
+     */
+    void loadJson(const std::string& url);
+    
+    /** @brief Parse the version file information into this manifest
+     * @param versionUrl Url of the local version file
+     */
+    void parseVersion(const std::string& versionUrl);
     
     /** @brief Parse the manifest file information into this manifest
      * @param manifestUrl Url of the local manifest
@@ -149,7 +163,9 @@ protected:
      */
     const std::string& getGroupVersion(const std::string &group) const;
     
-    /** @brief Gets assets.
+    /** 
+     * @brief Gets assets.
+     * @lua NA
      */
     const std::unordered_map<std::string, Asset>& getAssets() const;
     

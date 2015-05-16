@@ -27,6 +27,8 @@ THE SOFTWARE.
 
 #include "2d/CCSprite.h"
 
+#include <algorithm>
+
 #include "2d/CCSpriteBatchNode.h"
 #include "2d/CCAnimationCache.h"
 #include "2d/CCSpriteFrame.h"
@@ -226,7 +228,7 @@ bool Sprite::initWithTexture(Texture2D *texture, const Rect& rect, bool rotated)
         setAnchorPoint(Vec2(0.5f, 0.5f));
         
         // zwoptex default values
-        _offsetPosition = Vec2::ZERO;
+        _offsetPosition.setZero();
 
         // clean the Quad
         memset(&_quad, 0, sizeof(_quad));
@@ -259,10 +261,11 @@ bool Sprite::initWithTexture(Texture2D *texture, const Rect& rect, bool rotated)
 }
 
 Sprite::Sprite(void)
-: _shouldBeHidden(false)
+: _batchNode(nullptr)
+, _shouldBeHidden(false)
 , _texture(nullptr)
+, _spriteFrame(nullptr)
 , _insideBounds(true)
-, _batchNode(nullptr)
 {
 #if CC_SPRITE_DEBUG_DRAW
     _debugDrawNode = DrawNode::create();
@@ -272,6 +275,7 @@ Sprite::Sprite(void)
 
 Sprite::~Sprite(void)
 {
+    CC_SAFE_RELEASE(_spriteFrame);
     CC_SAFE_RELEASE(_texture);
 }
 
@@ -306,7 +310,8 @@ void Sprite::setTexture(const std::string &filename)
     setTexture(texture);
 
     Rect rect = Rect::ZERO;
-    rect.size = texture->getContentSize();
+    if (texture)
+        rect.size = texture->getContentSize();
     setTextureRect(rect);
 }
 
@@ -362,20 +367,21 @@ void Sprite::setTextureRect(const Rect& rect, bool rotated, const Size& untrimme
     setVertexRect(rect);
     setTextureCoords(rect);
 
-    Vec2 relativeOffset = _unflippedOffsetPositionFromCenter;
+    float relativeOffsetX = _unflippedOffsetPositionFromCenter.x;
+    float relativeOffsetY = _unflippedOffsetPositionFromCenter.y;
 
     // issue #732
     if (_flippedX)
     {
-        relativeOffset.x = -relativeOffset.x;
+        relativeOffsetX = -relativeOffsetX;
     }
     if (_flippedY)
     {
-        relativeOffset.y = -relativeOffset.y;
+        relativeOffsetY = -relativeOffsetY;
     }
 
-    _offsetPosition.x = relativeOffset.x + (_contentSize.width - _rect.size.width) / 2;
-    _offsetPosition.y = relativeOffset.y + (_contentSize.height - _rect.size.height) / 2;
+    _offsetPosition.x = relativeOffsetX + (_contentSize.width - _rect.size.width) / 2;
+    _offsetPosition.y = relativeOffsetY + (_contentSize.height - _rect.size.height) / 2;
 
     // rendering using batch node
     if (_batchNode)
@@ -388,16 +394,16 @@ void Sprite::setTextureRect(const Rect& rect, bool rotated, const Size& untrimme
         // self rendering
         
         // Atlas: Vertex
-        float x1 = 0 + _offsetPosition.x;
-        float y1 = 0 + _offsetPosition.y;
+        float x1 = 0.0f + _offsetPosition.x;
+        float y1 = 0.0f + _offsetPosition.y;
         float x2 = x1 + _rect.size.width;
         float y2 = y1 + _rect.size.height;
 
         // Don't update Z.
-        _quad.bl.vertices = Vec3(x1, y1, 0);
-        _quad.br.vertices = Vec3(x2, y1, 0);
-        _quad.tl.vertices = Vec3(x1, y2, 0);
-        _quad.tr.vertices = Vec3(x2, y2, 0);
+        _quad.bl.vertices.set(x1, y1, 0.0f);
+        _quad.br.vertices.set(x2, y1, 0.0f);
+        _quad.tl.vertices.set(x1, y2, 0.0f);
+        _quad.tr.vertices.set(x2, y2, 0.0f);
     }
 }
 
@@ -438,12 +444,12 @@ void Sprite::setTextureCoords(Rect rect)
 
         if (_flippedX)
         {
-            CC_SWAP(top, bottom, float);
+            std::swap(top, bottom);
         }
 
         if (_flippedY)
         {
-            CC_SWAP(left, right, float);
+            std::swap(left, right);
         }
 
         _quad.bl.texCoords.u = left;
@@ -471,12 +477,12 @@ void Sprite::setTextureCoords(Rect rect)
 
         if(_flippedX)
         {
-            CC_SWAP(left,right,float);
+            std::swap(left, right);
         }
 
         if(_flippedY)
         {
-            CC_SWAP(top,bottom,float);
+            std::swap(top, bottom);
         }
 
         _quad.bl.texCoords.u = left;
@@ -502,7 +508,10 @@ void Sprite::updateTransform(void)
         // If it is not visible, or one of its ancestors is not visible, then do nothing:
         if( !_visible || ( _parent && _parent != _batchNode && static_cast<Sprite*>(_parent)->_shouldBeHidden) )
         {
-            _quad.br.vertices = _quad.tl.vertices = _quad.tr.vertices = _quad.bl.vertices = Vec3(0,0,0);
+            _quad.br.vertices.setZero();
+            _quad.tl.vertices.setZero();
+            _quad.tr.vertices.setZero();
+            _quad.bl.vertices.setZero();
             _shouldBeHidden = true;
         }
         else
@@ -551,15 +560,15 @@ void Sprite::updateTransform(void)
             float dx = x1 * cr - y2 * sr2 + x;
             float dy = x1 * sr + y2 * cr2 + y;
 
-            _quad.bl.vertices = Vec3( RENDER_IN_SUBPIXEL(ax), RENDER_IN_SUBPIXEL(ay), _positionZ );
-            _quad.br.vertices = Vec3( RENDER_IN_SUBPIXEL(bx), RENDER_IN_SUBPIXEL(by), _positionZ );
-            _quad.tl.vertices = Vec3( RENDER_IN_SUBPIXEL(dx), RENDER_IN_SUBPIXEL(dy), _positionZ );
-            _quad.tr.vertices = Vec3( RENDER_IN_SUBPIXEL(cx), RENDER_IN_SUBPIXEL(cy), _positionZ );
+            _quad.bl.vertices.set(RENDER_IN_SUBPIXEL(ax), RENDER_IN_SUBPIXEL(ay), _positionZ);
+            _quad.br.vertices.set(RENDER_IN_SUBPIXEL(bx), RENDER_IN_SUBPIXEL(by), _positionZ);
+            _quad.tl.vertices.set(RENDER_IN_SUBPIXEL(dx), RENDER_IN_SUBPIXEL(dy), _positionZ);
+            _quad.tr.vertices.set(RENDER_IN_SUBPIXEL(cx), RENDER_IN_SUBPIXEL(cy), _positionZ);
         }
 
         // MARMALADE CHANGE: ADDED CHECK FOR nullptr, TO PERMIT SPRITES WITH NO BATCH NODE / TEXTURE ATLAS
         if (_textureAtlas)
-		{
+        {
             _textureAtlas->updateQuad(&_quad, _atlasIndex);
         }
 
@@ -582,13 +591,16 @@ void Sprite::updateTransform(void)
 
 void Sprite::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
 {
+#if CC_USE_CULLING
     // Don't do calculate the culling if the transform was not updated
     _insideBounds = (flags & FLAGS_TRANSFORM_DIRTY) ? renderer->checkVisibility(transform, _contentSize) : _insideBounds;
 
     if(_insideBounds)
+#endif
     {
-        _quadCommand.init(_globalZOrder, _texture->getName(), getGLProgramState(), _blendFunc, &_quad, 1, transform);
+        _quadCommand.init(_globalZOrder, _texture->getName(), getGLProgramState(), _blendFunc, &_quad, 1, transform, flags);
         renderer->addCommand(&_quadCommand);
+        
 #if CC_SPRITE_DEBUG_DRAW
         _debugDrawNode->clear();
         Vec2 vertices[4] = {
@@ -874,11 +886,11 @@ void Sprite::updateColor(void)
     Color4B color4( _displayedColor.r, _displayedColor.g, _displayedColor.b, _displayedOpacity );
     
     // special opacity for premultiplied textures
-	if (_opacityModifyRGB)
+    if (_opacityModifyRGB)
     {
-		color4.r *= _displayedOpacity/255.0f;
-		color4.g *= _displayedOpacity/255.0f;
-		color4.b *= _displayedOpacity/255.0f;
+        color4.r *= _displayedOpacity/255.0f;
+        color4.g *= _displayedOpacity/255.0f;
+        color4.b *= _displayedOpacity/255.0f;
     }
 
     _quad.bl.colors = color4;
@@ -926,13 +938,21 @@ void Sprite::setSpriteFrame(const std::string &spriteFrameName)
     SpriteFrameCache *cache = SpriteFrameCache::getInstance();
     SpriteFrame *spriteFrame = cache->getSpriteFrameByName(spriteFrameName);
 
-    CCASSERT(spriteFrame, "Invalid spriteFrameName");
+    CCASSERT(spriteFrame, std::string("Invalid spriteFrameName :").append(spriteFrameName).c_str());
 
     setSpriteFrame(spriteFrame);
 }
 
 void Sprite::setSpriteFrame(SpriteFrame *spriteFrame)
 {
+    // retain the sprite frame
+    // do not removed by SpriteFrameCache::removeUnusedSpriteFrames
+    if (_spriteFrame != spriteFrame)
+    {
+        CC_SAFE_RELEASE(_spriteFrame);
+        _spriteFrame = spriteFrame;
+        spriteFrame->retain();
+    }
     _unflippedOffsetPositionFromCenter = spriteFrame->getOffset();
 
     Texture2D *texture = spriteFrame->getTexture();
@@ -980,7 +1000,7 @@ SpriteFrame* Sprite::getSpriteFrame() const
                                            CC_SIZE_POINTS_TO_PIXELS(_contentSize));
 }
 
-SpriteBatchNode* Sprite::getBatchNode()
+SpriteBatchNode* Sprite::getBatchNode() const
 {
     return _batchNode;
 }
@@ -1000,10 +1020,10 @@ void Sprite::setBatchNode(SpriteBatchNode *spriteBatchNode)
         float y1 = _offsetPosition.y;
         float x2 = x1 + _rect.size.width;
         float y2 = y1 + _rect.size.height;
-        _quad.bl.vertices = Vec3( x1, y1, 0 );
-        _quad.br.vertices = Vec3( x2, y1, 0 );
-        _quad.tl.vertices = Vec3( x1, y2, 0 );
-        _quad.tr.vertices = Vec3( x2, y2, 0 );
+        _quad.bl.vertices.set( x1, y1, 0 );
+        _quad.br.vertices.set(x2, y1, 0);
+        _quad.tl.vertices.set(x1, y2, 0);
+        _quad.tr.vertices.set(x2, y2, 0);
 
     } else {
 

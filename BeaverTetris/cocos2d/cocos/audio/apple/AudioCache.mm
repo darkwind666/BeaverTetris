@@ -53,13 +53,13 @@ using namespace cocos2d;
 using namespace cocos2d::experimental;
 
 AudioCache::AudioCache()
-: _pcmData(nullptr)
-, _dataSize(0)
+: _dataSize(0)
+, _pcmData(nullptr)
 , _bytesOfRead(0)
-, _exitReadDataTask(false)
 , _queBufferFrames(0)
 , _queBufferBytes(0)
 , _alBufferReady(false)
+, _exitReadDataTask(false)
 {
     
 }
@@ -99,8 +99,10 @@ void AudioCache::readDataTask()
     AudioBufferList theDataBuffer;
     ExtAudioFileRef extRef = nullptr;
     
-    auto fileURL = (CFURLRef)[[NSURL fileURLWithPath:[NSString stringWithCString:_fileFullPath.c_str() encoding:[NSString defaultCStringEncoding]]] retain];
-    
+    NSString *fileFullPath = [[NSString alloc] initWithCString:_fileFullPath.c_str() encoding:[NSString defaultCStringEncoding]];
+    auto fileURL = (CFURLRef)[[NSURL alloc] initFileURLWithPath:fileFullPath];
+    [fileFullPath release];
+
     auto error = ExtAudioFileOpenURL(fileURL, &extRef);
     if(error) {
         printf("%s: ExtAudioFileOpenURL FAILED, Error = %ld\n", __PRETTY_FUNCTION__, (long)error);

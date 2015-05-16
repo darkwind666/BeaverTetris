@@ -239,7 +239,7 @@ void SimpleAudioEngine::stopAllEffects()
 
 void SimpleAudioEngine::preloadBackgroundMusic(const char* pszFilePath)
 {
-	
+
 }
 
 void SimpleAudioEngine::unloadEffect(const char* pszFilePath)
