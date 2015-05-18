@@ -152,7 +152,6 @@ const string mainGameEndPopUpBackgroundKey = string("MainGameEndPopUpBackground"
 const string mainGameEndPopUpWinViewKey = string("mainGameEndPopUpWinView");
 const string mainGameEndPopUpLoseViewKey = string("mainGameEndPopUpLoseView");
 const string mainGameEndPopUpPadKey = string("MainGameEndPopUpStaircase");
-const string mainGameEndPopUpNextLevelButtonKey = string("MainGameEndPopUpNextLevel");
 const string mainGameEndPopUpReplayLevelButtonKey = string("MainGameEndPopUpReplayLevel");
 const string mainGameEndPopUpGoToSelectLevelButtonKey = string("MainGameEndPopUpGoToSelectLevel");
 const string mainGameEndPopResultLabelControllerKey = string("MainGameEndPopResultLabelPad");

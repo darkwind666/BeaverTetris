@@ -58,17 +58,6 @@ Node* EndGameMenuElementCreator::getPlayerAwardLabel()
 	return awardPad;
 }
 
-ccMenuCallback EndGameMenuElementCreator::getNextLevelCallback()
-{
-	ccMenuCallback nextLevelCallback = [](Ref*){
-		CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
-		int currentLevelIndex = currentPlayerDataSource->getSelectedGameLevelIndex();
-		currentPlayerDataSource->setSelectedGameLevelIndex(currentLevelIndex + 1);
-		GameStatesHelper::goToScene(kPlayGame);
-	};
-	return nextLevelCallback;
-}
-
 ccMenuCallback EndGameMenuElementCreator::getFinishGameCallback()
 {
 	ccMenuCallback nextLevelCallback = [](Ref*){

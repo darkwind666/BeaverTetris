@@ -248,7 +248,7 @@ void GameViewInformationFactory::makeSelectGameLevelScreenData()
 	_elementsInformation[selectLevelBeaverTalkKey] = selectGameLevelBeaverTalk;
 
 	ViewElementInformation selectGameLevelBeaverTalkText;
-	selectGameLevelBeaverTalkText.elementPosition = Vec2(-35, -10);
+	selectGameLevelBeaverTalkText.elementPosition = Vec2(-25, -10);
 	selectGameLevelBeaverTalkText.elementZOrder = 0;
 	_elementsInformation[selectLevelBeaverTalkTextKey] = selectGameLevelBeaverTalkText;
 
@@ -763,11 +763,6 @@ void GameViewInformationFactory::makeMainGameEndPopUpData()
 
 void GameViewInformationFactory::makeMainGameEndPopUpMenuButtonsData()
 {
-	ViewElementInformation mainGameEndPopUpNextLevelButton;
-	mainGameEndPopUpNextLevelButton.elementPosition = Vec2(70, 60);
-	mainGameEndPopUpNextLevelButton.elementZOrder = 0;
-	_elementsInformation[mainGameEndPopUpNextLevelButtonKey] = mainGameEndPopUpNextLevelButton;
-
 	ViewElementInformation mainGameEndPopUpReplayLevelButton;
 	mainGameEndPopUpReplayLevelButton.elementPosition = Vec2(70, 10);
 	mainGameEndPopUpReplayLevelButton.elementZOrder = 0;

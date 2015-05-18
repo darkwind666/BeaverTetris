@@ -26,11 +26,12 @@ private:
 	std::vector<cocos2d::Node*> getCompletedLevelsSigns();
 	void addCompletedLevelSignsToBackground(std::vector<cocos2d::Node*> &aCompletedLevelsSigns, cocos2d::Node *aBackground);
 	cocos2d::Node* makeScrollableMenuWithContent(cocos2d::Node* aContentContainer);
-
 	std::vector<cocos2d::MenuItem*> makeLevelsIcons();
+	cocos2d::MenuItem* getIconForIndex(int aIndex);
+	
+	cocos2d::MenuItem* makeAvailableLevelIcon();
 	void addLevelIconsToMenu(std::vector<cocos2d::MenuItem*>  aLevelIcons);
-	cocos2d::FiniteTimeAction* makeMenuAnimationWithIcons(std::vector<cocos2d::MenuItem*>  aLevelIcons);
-	cocos2d::Vector<cocos2d::FiniteTimeAction*> makeActionWithEachIcon(std::vector<cocos2d::MenuItem*>  aLevelIcons);
+	cocos2d::FiniteTimeAction* makeMenuAnimationWithAvailableLevelIcon(cocos2d::MenuItem *aLevelIcon);
 	cocos2d::FiniteTimeAction* getDelegateAction();
 	void buttonWasPressed(cocos2d::Object* pSender);
 

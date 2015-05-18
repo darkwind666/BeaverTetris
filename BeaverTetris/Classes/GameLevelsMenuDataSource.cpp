@@ -50,11 +50,10 @@ vector <string> GameLevelsMenuDataSource::makeMenuItems()
 
 int GameLevelsMenuDataSource::getAvailableLevelsCount()
 {
-	int allLevelsCount = _gameLevelsDataSource->getLevelsCount();
-	int completedLevelsCount = _currentPlayerDataSource->getPlayerCompletedLevelsCount();
-
 	int availableLevelsCount = 0;
 	
+	int completedLevelsCount = _currentPlayerDataSource->getPlayerCompletedLevelsCount();
+	int allLevelsCount = _gameLevelsDataSource->getLevelsCount();
 	if (allLevelsCount == completedLevelsCount)
 	{
 		availableLevelsCount = completedLevelsCount;

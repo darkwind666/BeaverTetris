@@ -6,6 +6,10 @@
 #include "GameAnimationActionsConstants.h"
 #include "StringsSupporter.h"
 #include "GameLocalizationKeys.h"
+#include "ServiceLocator.h"
+#include "GameServicesKeys.h"
+#include "CurrentPlayerDataSource.h"
+#include "GameLevelsDataSource.h"
 
 using namespace cocos2d;
 
@@ -16,8 +20,9 @@ SelectGameLevelBeaverTalkController::SelectGameLevelBeaverTalkController(void)
 
 	LabelTTF *beaverText = GameViewStyleHelper::getStandardLabel();
 	beaverText->setFontSize(11.0f);
-	beaverText->setDimensions(Size(150, 100));
-	beaverText->setString(StringsSupporter::getLocalizedStringFromKey(gameBeaverTalkLocalizationKey));
+	beaverText->setDimensions(Size(130, 100));
+	string beaverSpeech = getBeaverSpeech();
+	beaverText->setString(StringsSupporter::getLocalizedStringFromKey(beaverSpeech));
 	beaverText->setColor(Color3B(89,72,52));
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(beaverText, this, selectLevelBeaverTalkTextKey);
 }
@@ -25,6 +30,15 @@ SelectGameLevelBeaverTalkController::SelectGameLevelBeaverTalkController(void)
 
 SelectGameLevelBeaverTalkController::~SelectGameLevelBeaverTalkController(void)
 {
+}
+
+string SelectGameLevelBeaverTalkController::getBeaverSpeech()
+{
+	CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
+	GameLevelsDataSource *gameLevelsDataSource = (GameLevelsDataSource*)ServiceLocator::getServiceForKey(gameLevelsDataSourceKey);
+	int completedLevelsCount = currentPlayerDataSource->getPlayerCompletedLevelsCount();
+	string beaverSpeech = gameLevelsDataSource->getLevelNameForIndex(completedLevelsCount);
+	return beaverSpeech;
 }
 
 void SelectGameLevelBeaverTalkController::showPlayerStatus()

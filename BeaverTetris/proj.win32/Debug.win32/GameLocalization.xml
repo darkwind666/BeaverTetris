@@ -8,12 +8,10 @@
   <local type="gameBackButton" english="Back" russian="Назад"/>
   <local type="goToSelectLevelButton" english="Map" russian="Карта"/>
   <local type="gamePlayerCreatorLabel" english="Enter player name please" russian="Введите имя игрока пожалуйста"/>
-  <local type="gameBeaverTalk" english="Hello, I am glad to see you in game. Help me found my watch please" russian="Привет, я рад тебя видеть в игре. Помоги мне найти часы."/>
   <local type="gameLose" english="You lose" russian="Вы проиграли"/>
   <local type="gameWin" english="You win!" russian="Вы выйграли!"/>
   <local type="gameWinAll" english="Victory!" russian="Победа!"/>
   <local type="gameReplay" english="Replay" russian="Переиграть"/>
-  <local type="gameNextLevel" english="Next" russian="Вперёд"/>
   <local type="gameDeveloperProgrammer" english="Programmer" russian="Программист"/>
   <local type="gameDeveloperProgrammerName" english="Hotyashov Alexander" russian="Хотяшов Александр"/>
   <local type="gameDeveloperDesigner" english="Designer" russian="Дизайнер"/>
@@ -22,4 +20,14 @@
   <local type="gameDeveloperMusicianName" english="Letter Box - Up Above" russian="Letter Box - Up Above"/>
   <local type="gameDeveloperGameEngine" english="GameEngine" russian="Игровой движок"/>
   <local type="gameDeveloperGameEngineName" english="Cocos2d-x" russian="Cocos2d-x"/>
+  <local type="StartLevel" english="Hello, I am glad to see you in game. Help me found my watch please." russian="Привет, я рад тебя видеть в игре. Помоги мне найти часы."/>
+  <local type="StartBlockCollectionLevel" english="Collect some blocks, and use spells." russian="Собери пару блоков. Используй заклинание когда захочешь."/>
+  <local type="StartGoodTimeLevel" english="Remain some time for victory. I am sure in your skills." russian="Продержись немного времени для победы. Я в тебя верю."/>
+  <local type="StartBossLevel" english="Fight with boss. Show who is boss here." russian="Сразись с боссом. Покажи кто тут главный."/>
+  <local type="MiddleLevel" english="It is a middle game. I am proud of you bravery." russian="Эта середина игры. Я горжусь тобой."/>
+  <local type="MiddleGoodTimeLevel" english="Great job. You always can use spell to reduce blocks." russian="Отличная работа. Используй заклинания в тяжёлую минуту"/>
+  <local type="MiddleBossLevel" english="Second boss. Firestorm help you." russian="Второй босс. Огненная буря поможет тебе."/>
+  <local type="EndBlockCollectionLevel" english="I see my watch. Some steps remain" russian="Я уже вижу свои часы. Осталось совсем чуть-чуть."/>
+  <local type="EndLevel" english="It is will be difficult level. You should be fast as tiger." russian="Это будет сложный уровень. Будь быстрым как тигр."/>
+  <local type="EndBossLevel" english="You found my watch. Cool. It is final challenge." russian="Ура. Ты нашёл мои часы. Ты готов к последнему испытанию."/>
 </localizationsStrings>

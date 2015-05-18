@@ -118,7 +118,12 @@ int CurrentPlayerDataSource::getPlayerScore()
 
 int CurrentPlayerDataSource::getPlayerCompletedLevelsCount()
 {
-	return _completedLevelsNames.size();
+	int completedLevelsCount = 0;
+	if (_isThereCurentPlayer)
+	{
+		completedLevelsCount = _completedLevelsNames.size();
+	}
+	return completedLevelsCount;
 }
 
 int CurrentPlayerDataSource::getPlayerAvailableSpellsCount()

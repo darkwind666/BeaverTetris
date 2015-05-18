@@ -13,9 +13,10 @@ using namespace std;
 SelectGameLevelController::SelectGameLevelController(void)
 {
 	_gameLevelsMenuDataSource = new GameLevelsMenuDataSource();
-	vector<MenuItem*> levelsIcons = makeLevelsIcons();
 	_menuView = Menu::create();
 	_menuView->setPosition(Vec2(0,0));
+	vector<MenuItem*> levelIcons = makeLevelsIcons();
+	addLevelIconsToMenu(levelIcons);
 	makeScrollableMenuWithBackground(_menuView);
 	_delegate = NULL;
 }
@@ -79,32 +80,27 @@ Node* SelectGameLevelController::makeScrollableMenuWithContent(Node* aContentCon
 	return scrollLayer;
 }
 
-void SelectGameLevelController::showPlayerStatus()
-{
-	vector<MenuItem*> levelIcons = makeLevelsIcons();
-	addLevelIconsToMenu(levelIcons);
-	FiniteTimeAction *menuAnimation = makeMenuAnimationWithIcons(levelIcons);
-	FiniteTimeAction *invokeDelegateAction = getDelegateAction();
-	Action *sequence = Sequence::create(menuAnimation, invokeDelegateAction, NULL);
-	this->runAction(sequence);
-}
-
 vector<MenuItem*> SelectGameLevelController::makeLevelsIcons()
 {
 	vector<MenuItem*> levelIcons;
-	int availableLevelsCount = _gameLevelsMenuDataSource->getLevelsCount();
+	int availableLevelsCount = _gameLevelsMenuDataSource->getLevelsCount() - 1;
 	for (int levelIndex = 0; levelIndex < availableLevelsCount; levelIndex++)
 	{
-		string imageName = _gameLevelsMenuDataSource->getLevelIconImageForIndex(levelIndex);
-		Sprite *activeImage = Sprite::createWithSpriteFrameName(imageName);
-		Sprite *inactiveImage = Sprite::createWithSpriteFrameName(imageName);
-		MenuItemSprite *levelIconButton = MenuItemSprite::create(activeImage, inactiveImage, CC_CALLBACK_1(SelectGameLevelController::buttonWasPressed, this));
-		levelIconButton->setScale(0.0f);
-		levelIconButton->setTag(levelIndex);
-		levelIconButton->setPosition(_gameLevelsMenuDataSource->getLevelIconPositionForIndex(levelIndex));
+		MenuItem *levelIconButton = getIconForIndex(levelIndex);
 		levelIcons.push_back(levelIconButton);
 	}
 	return levelIcons;
+}
+
+cocos2d::MenuItem* SelectGameLevelController::getIconForIndex(int aIndex)
+{
+	string imageName = _gameLevelsMenuDataSource->getLevelIconImageForIndex(aIndex);
+	Sprite *activeImage = Sprite::createWithSpriteFrameName(imageName);
+	Sprite *inactiveImage = Sprite::createWithSpriteFrameName(imageName);
+	MenuItemSprite *levelIconButton = MenuItemSprite::create(activeImage, inactiveImage, CC_CALLBACK_1(SelectGameLevelController::buttonWasPressed, this));
+	levelIconButton->setTag(aIndex);
+	levelIconButton->setPosition(_gameLevelsMenuDataSource->getLevelIconPositionForIndex(aIndex));
+	return levelIconButton;
 }
 
 void SelectGameLevelController::addLevelIconsToMenu(vector<MenuItem*>  aLevelIcons)
@@ -117,25 +113,29 @@ void SelectGameLevelController::addLevelIconsToMenu(vector<MenuItem*>  aLevelIco
 	}
 }
 
-FiniteTimeAction*  SelectGameLevelController::makeMenuAnimationWithIcons(vector<MenuItem*>  aLevelIcons)
+void SelectGameLevelController::showPlayerStatus()
 {
-	Vector<FiniteTimeAction*> actions = makeActionWithEachIcon(aLevelIcons);
-	FiniteTimeAction *iconsApperanceAnimation = Sequence::create(actions);
-	return iconsApperanceAnimation;
+	MenuItem* levelIcon = makeAvailableLevelIcon();
+	_menuView->addChild(levelIcon);
+	FiniteTimeAction *menuAnimation = makeMenuAnimationWithAvailableLevelIcon(levelIcon);
+	FiniteTimeAction *invokeDelegateAction = getDelegateAction();
+	Action *sequence = Sequence::create(menuAnimation, invokeDelegateAction, NULL);
+	this->runAction(sequence);
 }
 
-Vector<FiniteTimeAction*> SelectGameLevelController::makeActionWithEachIcon(vector<MenuItem*>  aLevelIcons)
+MenuItem* SelectGameLevelController::makeAvailableLevelIcon()
 {
-	Vector<FiniteTimeAction*> actions;
-	vector<MenuItem*>::iterator iconsIterator;
-	for (iconsIterator = aLevelIcons.begin(); iconsIterator != aLevelIcons.end(); iconsIterator++)
-	{
-		Node *menuItem = *iconsIterator;
-		FiniteTimeAction *scaleUp = ScaleTo::create(levelIconAppearActionDuration, 1.0f);
-		FiniteTimeAction *actionWithLevelIcon = TargetedAction::create(menuItem, scaleUp);
-		actions.pushBack(actionWithLevelIcon);
-	}
-	return actions;
+	int availableLevelsCount = _gameLevelsMenuDataSource->getLevelsCount() - 1;
+	MenuItem* levelIcon = getIconForIndex(availableLevelsCount);
+	levelIcon->setScale(0.0f);
+	return levelIcon;
+}
+
+FiniteTimeAction*  SelectGameLevelController::makeMenuAnimationWithAvailableLevelIcon(MenuItem *aLevelIcon)
+{
+	FiniteTimeAction *scaleUp = ScaleTo::create(levelIconAppearActionDuration, 1.0f);
+	FiniteTimeAction *actionWithLevelIcon = TargetedAction::create(aLevelIcon, scaleUp);
+	return actionWithLevelIcon;
 }
 
 FiniteTimeAction* SelectGameLevelController::getDelegateAction()

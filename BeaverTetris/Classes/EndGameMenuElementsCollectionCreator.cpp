@@ -44,9 +44,6 @@ vector<Node*> EndGameMenuElementsCollectionCreator::getNextLevelElements()
 	Node *playerAwardLabel = _endGameMenuElementCreator->getPlayerAwardLabel();
 	nextLevelElements.push_back(playerAwardLabel);
 
-	Node *nextLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(_endGameMenuElementCreator->getNextLevelCallback(), mainGameEndPopUpNextLevelButtonKey, gameNextLocalizationKey);
-	nextLevelElements.push_back(nextLevelButton);
-
 	Node *replayLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(getGoToSceneCallback(kPlayGame), mainGameEndPopUpReplayLevelButtonKey, gameReplayLocalizationKey);
 	nextLevelElements.push_back(replayLevelButton);
 
