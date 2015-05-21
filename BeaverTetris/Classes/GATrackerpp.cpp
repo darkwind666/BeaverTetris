@@ -113,7 +113,7 @@ void sendAnalyticData(string aData, int *handle, bool *onLine)
 		{
 			*handle = 1;
 			CURLcode result = curl_easy_perform(curl);
-			if (result != CURLE_OK)
+			if (result != CURLE_OK && result != CURLE_WRITE_ERROR)
 			{
 				*onLine = false;
 			}

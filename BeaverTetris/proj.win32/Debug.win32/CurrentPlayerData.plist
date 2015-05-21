@@ -2,5 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"/>
 
 <plist version="1.0">
-    <dict/>
+    <dict>
+        <key>PlayerName</key>
+        <string>п</string>
+        <key>PlayerScore</key>
+        <integer>330</integer>
+        <key>PlayerCompletedLevelsCount</key>
+        <integer>1</integer>
+        <key>PlayerTutorialsInformation</key>
+        <array>
+            <string>StartLevel</string>
+        </array>
+        <key>PlayerSpellsInformation</key>
+        <dict/>
+    </dict>
 </plist>

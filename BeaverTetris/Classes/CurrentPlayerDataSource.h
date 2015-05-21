@@ -33,6 +33,9 @@ public:
 	void setNewSpellCountForKey(int spellCount, std::string aKey);
 	void setNewSpellRechargeIntervalForKey(int spellRechargeInterval, std::string aKey);
 
+	bool isPlayerCompletTutorial(std::string aTutorialKey);
+	void completTutorial(std::string aTutorialKey);
+
 	void savePlayer();
 	void cleanPlayer();
 

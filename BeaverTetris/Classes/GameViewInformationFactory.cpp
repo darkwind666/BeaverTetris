@@ -436,6 +436,13 @@ void GameViewInformationFactory::makeMainGameScreenData()
 
 	makeMainGameHudsData();
 
+	ViewElementInformation gameTutorialController;
+	gameTutorialController.elementPosition = Vec2(0, 0);
+	gameTutorialController.elementZOrder = kGameTutorialControllerZOrder;
+	_elementsInformation[gameTutorialControllerKey] = gameTutorialController;
+
+	makeMainGameTutorialData();
+
 	ViewElementInformation mainGamePausePopUp;
 	mainGamePausePopUp.elementPosition = Vec2(0, 0);
 	mainGamePausePopUp.elementActionFinalPosition = getScreenCenter();
@@ -647,6 +654,22 @@ void GameViewInformationFactory::makeRemoveCurrentDetailSpellData()
 	explosionsForRemoveDetail.elementPosition =  Vec2(0, 0);
 	explosionsForRemoveDetail.elementZOrder = kExplosionsForRemoveDetailZOrder;
 	_elementsInformation[explosionsForRemoveCurrentDetailSpellKey] = explosionsForRemoveDetail;
+}
+
+void GameViewInformationFactory::makeMainGameTutorialData()
+{
+	ViewElementInformation gameTutorialView;
+	gameTutorialView.elementPosition =  Vec2(0, 0);
+	gameTutorialView.elementZOrder = kGameTutorialViewZOrder;
+	_elementsInformation[gameTutorialViewKey] = gameTutorialView;
+
+	ViewElementInformation gameTutorialBeaverTalk;
+	gameTutorialBeaverTalk.elementImage = getImageNameForKey(selectLevelBeaverTalkKey);
+	gameTutorialBeaverTalk.elementPosition = Vec2(500, 60);
+	gameTutorialBeaverTalk.elementActionFinalPosition = Vec2(220, 60);
+	gameTutorialBeaverTalk.elementZOrder = kGameTutorialBeaverZOrder;
+	_elementsInformation[gameTutorialBeaverKey] = gameTutorialBeaverTalk;
+
 }
 
 void GameViewInformationFactory::makeMainGamePausePopUpData()

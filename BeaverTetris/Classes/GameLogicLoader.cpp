@@ -33,7 +33,6 @@ GameLogicLoader::~GameLogicLoader(void)
 
 void GameLogicLoader::loadResources()
 {
-
 	CurrentLevelDataSource *currentLevelDataSource = new CurrentLevelDataSource();
 	ServiceLocator::setServiceForKey(currentLevelDataSource, currentLevelDataSourceKey);
 

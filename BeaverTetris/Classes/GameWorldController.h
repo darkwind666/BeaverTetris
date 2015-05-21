@@ -15,6 +15,7 @@ public:
 	virtual void onEnterTransitionDidFinish();
 	virtual void update(float delta);
 
+	void startGame();
 	void pauseGameWorld();
 	void resumeGameWorld();
 
@@ -24,6 +25,7 @@ private:
 	GameTimeStepController *_gameTimeStepController;
 	GameWorldAnimationController *_gameWorldAnimationController;
 	cocos2d::Node* _backgroundController;
+	bool _gameStarted;
 
 	void makeControllerView();
 

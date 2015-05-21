@@ -36,6 +36,7 @@ private:
 	void makeMainGameVictoryConditionData();
 	void makeMainGameSpellsIconsData();
 	void makeRemoveCurrentDetailSpellData();
+	void makeMainGameTutorialData();
 	void makeMainGamePausePopUpData();
 	void makeMainGameEndPopUpData();
 	void makeMainGameEndPopUpMenuButtonsData();

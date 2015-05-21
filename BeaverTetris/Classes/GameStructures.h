@@ -91,6 +91,7 @@ struct PlayerInformation
 	int playerScore;
 	int playerCompletedLevelsCount;
 	std::map<std::string, LevelSpellInformation> spellsInformation;
+	std::vector<std::string> completedTutorials;
 };
 
 struct DatabaseInformation

@@ -2,6 +2,8 @@
 
 #include "GameStructures.h"
 #include "cocos2d.h"
+#include <string>
+#include <vector>
 
 class CurrentPlayerSerializer
 {
@@ -11,9 +13,7 @@ public:
 
 	bool availablePlayer();
 	PlayerInformation getSavedPlayer();
-	std::map<std::string, LevelSpellInformation> getSpellsInformationFromData(cocos2d::ValueMap &aData);
 	void savePlayer(PlayerInformation aPlayer);
-	cocos2d::ValueMap getSpellsDataFromPlayer(PlayerInformation &aPlayer);
 	void cleanSavedPlayer();
 
 private:
@@ -21,6 +21,10 @@ private:
 	cocos2d::FileUtils *_fileUtils;
 
 	void createFile();
+	std::map<std::string, LevelSpellInformation> getSpellsInformationFromData(cocos2d::ValueMap &aData);
+	std::vector<std::string> getCompletedTutorialsInformationFromData(cocos2d::ValueMap &aData);
+	cocos2d::ValueMap getSpellsDataFromPlayer(PlayerInformation &aPlayer);
+	cocos2d::ValueVector getTutorialsDataFromPlayer(PlayerInformation &aPlayer);
 
 };
 

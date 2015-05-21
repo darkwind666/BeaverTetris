@@ -49,6 +49,7 @@ void CurrentPlayerDataSource::setNewPlayerWithName(string aNewPlayerName)
 	newPlayer.playerName = aNewPlayerName;
 	newPlayer.playerScore = 0;
 	newPlayer.spellsInformation = map<string, LevelSpellInformation>();
+	newPlayer.completedTutorials = vector<string>();
 	newPlayer.playerCompletedLevelsCount = 0;
 
 	_playerData = newPlayer;
@@ -74,6 +75,7 @@ void CurrentPlayerDataSource::cleanPlayer()
 	zeroData.playerName = string("0");
 	zeroData.playerScore = 0;
 	zeroData.spellsInformation = map<string, LevelSpellInformation>();
+	zeroData.completedTutorials = vector<string>();
 	zeroData.playerCompletedLevelsCount = 0;
 	_playerData = zeroData;
 	_isThereCurentPlayer = false;
@@ -155,4 +157,20 @@ void CurrentPlayerDataSource::setNewSpellCountForKey(int spellCount, string aKey
 void CurrentPlayerDataSource::setNewSpellRechargeIntervalForKey(int spellRechargeInterval, string aKey)
 {
 	_currentPlayerSpellsDelegate->setNewSpellRechargeIntervalForKey(spellRechargeInterval, aKey);
+}
+
+bool CurrentPlayerDataSource::isPlayerCompletTutorial(string aTutorialKey)
+{
+	bool playerCompletTutorial = false;
+	vector<string>::iterator tutorialsIterator = find(_playerData.completedTutorials.begin(), _playerData.completedTutorials.end(), aTutorialKey);
+	if (tutorialsIterator != _playerData.completedTutorials.end())
+	{
+		playerCompletTutorial = true;
+	}
+	return playerCompletTutorial;
+}
+
+void CurrentPlayerDataSource::completTutorial(string aTutorialKey)
+{
+	_playerData.completedTutorials.push_back(aTutorialKey);
 }

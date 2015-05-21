@@ -137,6 +137,10 @@ const string killBossKey = string("Boss");
 const string accelerateEventKey = string("accelerateEvent");
 const string fallDetailsEventKey = string("fallDetailsEvent");
 
+const string gameTutorialControllerKey = string("GameTutorialController");
+const string gameTutorialViewKey = string("GameTutorialView");
+const string gameTutorialBeaverKey = string("GameTutorialBeaver");
+
 const string pauseGameViewControllerKey = string("MainGamePauseButton");
 const string mainGamePausePopUpKey = string("MainGamePausePopUp");
 const string mainGamePauseBackgroundKey = string("MainGamePauseBackground");

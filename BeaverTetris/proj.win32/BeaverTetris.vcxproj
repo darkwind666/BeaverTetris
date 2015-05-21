@@ -231,6 +231,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameSystemInterface.cpp" />
     <ClCompile Include="..\Classes\GameTimeStepController.cpp" />
     <ClCompile Include="..\Classes\GameTransitionsViewController.cpp" />
+    <ClCompile Include="..\Classes\GameTutorialBeaverTalkController.cpp" />
+    <ClCompile Include="..\Classes\GameTutorialController.cpp" />
+    <ClCompile Include="..\Classes\GameTutorial.cpp" />
+    <ClCompile Include="..\Classes\GameTutorialOrderController.cpp" />
+    <ClCompile Include="..\Classes\GameTutorialsFactory.cpp" />
     <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameViewInformationFactory.cpp" />
     <ClCompile Include="..\Classes\GameViewStyleHelper.cpp" />
@@ -293,6 +298,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SpellsViewDataSource.cpp" />
     <ClCompile Include="..\Classes\StartGameBackgroundController.cpp" />
     <ClCompile Include="..\Classes\StartGameFishesController.cpp" />
+    <ClCompile Include="..\Classes\StartLevelGameTutorial.cpp" />
     <ClCompile Include="..\Classes\StartMainGamePlayerScoreDataSource.cpp" />
     <ClCompile Include="..\Classes\TetraminisDetailsFactory.cpp" />
     <ClCompile Include="..\Classes\TetraminoExplosionFactory.cpp" />
@@ -432,6 +438,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameSystemInterface.h" />
     <ClInclude Include="..\Classes\GameTimeStepController.h" />
     <ClInclude Include="..\Classes\GameTransitionsViewController.h" />
+    <ClInclude Include="..\Classes\GameTutorialBeaverTalkController.h" />
+    <ClInclude Include="..\Classes\GameTutorialController.h" />
+    <ClInclude Include="..\Classes\GameTutorial.h" />
+    <ClInclude Include="..\Classes\GameTutorialOrderController.h" />
+    <ClInclude Include="..\Classes\GameTutorialsFactory.h" />
     <ClInclude Include="..\Classes\GameViewConstants.h" />
     <ClInclude Include="..\Classes\GameViewElementsDataSource.h" />
     <ClInclude Include="..\Classes\GameViewElementsKeys.h" />
@@ -501,6 +512,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SpellsViewDataSource.h" />
     <ClInclude Include="..\Classes\StartGameBackgroundController.h" />
     <ClInclude Include="..\Classes\StartGameFishesController.h" />
+    <ClInclude Include="..\Classes\StartLevelGameTutorial.h" />
     <ClInclude Include="..\Classes\StartMainGamePlayerScoreDataSource.h" />
     <ClInclude Include="..\Classes\TetraminisDetailsFactory.h" />
     <ClInclude Include="..\Classes\TetraminoExplosionFactory.h" />

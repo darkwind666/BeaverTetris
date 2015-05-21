@@ -97,6 +97,9 @@
     <Filter Include="Analytics">
       <UniqueIdentifier>{1c3dfb19-daf6-45a6-8052-5549f1a75fef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Controllers\ViewControllers\GameTutorials">
+      <UniqueIdentifier>{fc59f479-b8a4-4024-8444-4b1bbf44dc4d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -659,6 +662,24 @@
     </ClCompile>
     <ClCompile Include="..\Classes\BackButtonController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameTutorialController.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameTutorialsFactory.cpp">
+      <Filter>Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameTutorial.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StartLevelGameTutorial.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameTutorialOrderController.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameTutorialBeaverTalkController.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1273,6 +1294,24 @@
     </ClInclude>
     <ClInclude Include="..\Classes\BackButtonController.h">
       <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameTutorialController.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameTutorialsFactory.h">
+      <Filter>Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameTutorial.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartLevelGameTutorial.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameTutorialOrderController.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameTutorialBeaverTalkController.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

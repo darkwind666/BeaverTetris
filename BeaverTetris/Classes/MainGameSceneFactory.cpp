@@ -5,6 +5,7 @@
 
 #include "GameWorldController.h"
 #include "GameHudsController.h"
+#include "GameTutorialController.h"
 #include "MainGamePausePopUp.h"
 #include "MainGameEndPopUp.h"
 #include "BackButtonController.h"
@@ -24,6 +25,7 @@ Scene* MainGameSceneFactory::createScene()
 {
 	GameLogicLoader *gameLogicLoader = new GameLogicLoader();
 	gameLogicLoader->loadResources();
+	delete gameLogicLoader;
 
 	Scene *mainGameScene = Scene::create();
 
@@ -38,6 +40,9 @@ Scene* MainGameSceneFactory::createScene()
 
 	MainGameEndPopUp *mainGameEndPopUp = new MainGameEndPopUp(gameWorldController, gameHudsController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(mainGameEndPopUp, mainGameScene, mainGameEndPopUpKey);
+
+	GameTutorialController *gameTutorialController = new GameTutorialController(gameWorldController);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameTutorialController, mainGameScene, gameTutorialControllerKey);
 
 	BackButtonController *backButtonController = new BackButtonController(kPlayGame);
 	mainGameScene->addChild(backButtonController);
