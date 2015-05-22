@@ -659,7 +659,7 @@ void GameViewInformationFactory::makeRemoveCurrentDetailSpellData()
 void GameViewInformationFactory::makeMainGameTutorialData()
 {
 	ViewElementInformation gameTutorialView;
-	gameTutorialView.elementPosition =  Vec2(0, 0);
+	gameTutorialView.elementPosition =  Vec2(12, -12);
 	gameTutorialView.elementZOrder = kGameTutorialViewZOrder;
 	_elementsInformation[gameTutorialViewKey] = gameTutorialView;
 
@@ -671,9 +671,9 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 	_elementsInformation[gameTutorialBeaverKey] = gameTutorialBeaverTalk;
 
 	ViewElementInformation gameTutorialStartDetail;
-	gameTutorialStartDetail.elementPosition = Vec2(60, 500);
-	gameTutorialStartDetail.elementActionFinalPosition = Vec2(60, 410);
-	gameTutorialStartDetail.elementOffset = Vec2(60, 35);
+	gameTutorialStartDetail.elementPosition = Vec2(47, 500);
+	gameTutorialStartDetail.elementActionFinalPosition = Vec2(47, 410);
+	gameTutorialStartDetail.elementOffset = Vec2(47, 45);
 	gameTutorialStartDetail.elementZOrder = 0;
 	_elementsInformation[gameTutorialStartDetailKey] = gameTutorialStartDetail;
 
