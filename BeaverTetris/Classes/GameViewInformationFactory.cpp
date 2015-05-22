@@ -670,6 +670,35 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 	gameTutorialBeaverTalk.elementZOrder = kGameTutorialBeaverZOrder;
 	_elementsInformation[gameTutorialBeaverKey] = gameTutorialBeaverTalk;
 
+	ViewElementInformation gameTutorialStartDetail;
+	gameTutorialStartDetail.elementPosition = Vec2(60, 500);
+	gameTutorialStartDetail.elementActionFinalPosition = Vec2(60, 410);
+	gameTutorialStartDetail.elementOffset = Vec2(60, 35);
+	gameTutorialStartDetail.elementZOrder = 0;
+	_elementsInformation[gameTutorialStartDetailKey] = gameTutorialStartDetail;
+
+	int controllerOffset = 50;
+	Vec2 startControlPosition = Vec2(150, 250);
+
+	ViewElementInformation rotateDetailControl;
+	rotateDetailControl.elementPosition = Vec2(startControlPosition.x, startControlPosition.y + controllerOffset);
+	rotateDetailControl.elementOffset = Vec2(0, 0);
+	_elementsInformation[gameTutorialRotateDetailControlKey] = rotateDetailControl;
+	
+	ViewElementInformation accelerateDetailControl;
+	accelerateDetailControl.elementPosition = startControlPosition;
+	accelerateDetailControl.elementOffset = Vec2(180, 0);
+	_elementsInformation[gameTutorialAccelerateDetailControlKey] = accelerateDetailControl;
+	
+	ViewElementInformation moveDetailLeftControl;
+	moveDetailLeftControl.elementPosition = Vec2(startControlPosition.x - controllerOffset, startControlPosition.y);
+	moveDetailLeftControl.elementOffset = Vec2(-90, 0);
+	_elementsInformation[gameTutorialMoveDetailLeftControlKey] = moveDetailLeftControl;
+	
+	ViewElementInformation moveDetailRightControl;
+	moveDetailRightControl.elementPosition = Vec2(startControlPosition.x + controllerOffset, startControlPosition.y);
+	moveDetailRightControl.elementOffset = Vec2(90, 0);
+	_elementsInformation[gameTutorialMoveDetailRightControlKey] = moveDetailRightControl;
 }
 
 void GameViewInformationFactory::makeMainGamePausePopUpData()

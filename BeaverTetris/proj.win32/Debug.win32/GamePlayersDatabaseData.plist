@@ -109,6 +109,12 @@
             </dict>
             <dict>
                 <key>PlayerName</key>
+                <string>п</string>
+                <key>PlayerScore</key>
+                <integer>3250</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
                 <string>р</string>
                 <key>PlayerScore</key>
                 <integer>2725</integer>

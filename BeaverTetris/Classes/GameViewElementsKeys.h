@@ -140,6 +140,11 @@ const string fallDetailsEventKey = string("fallDetailsEvent");
 const string gameTutorialControllerKey = string("GameTutorialController");
 const string gameTutorialViewKey = string("GameTutorialView");
 const string gameTutorialBeaverKey = string("GameTutorialBeaver");
+const string gameTutorialStartDetailKey = string("GameTutorialStartDetail");
+const string gameTutorialRotateDetailControlKey = string("gameTutorialRotateDetailControl");
+const string gameTutorialAccelerateDetailControlKey = string("gameTutorialAccelerateDetailControl");
+const string gameTutorialMoveDetailLeftControlKey = string("gameTutorialMoveDetailLeftControl");
+const string gameTutorialMoveDetailRightControlKey = string("gameTutorialMoveDetailRightControl");
 
 const string pauseGameViewControllerKey = string("MainGamePauseButton");
 const string mainGamePausePopUpKey = string("MainGamePausePopUp");

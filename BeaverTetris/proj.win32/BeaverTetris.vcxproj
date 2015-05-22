@@ -235,6 +235,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameTutorialController.cpp" />
     <ClCompile Include="..\Classes\GameTutorial.cpp" />
     <ClCompile Include="..\Classes\GameTutorialOrderController.cpp" />
+    <ClCompile Include="..\Classes\GameTutorialsAnimationController.cpp" />
     <ClCompile Include="..\Classes\GameTutorialsFactory.cpp" />
     <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameViewInformationFactory.cpp" />
@@ -442,6 +443,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameTutorialController.h" />
     <ClInclude Include="..\Classes\GameTutorial.h" />
     <ClInclude Include="..\Classes\GameTutorialOrderController.h" />
+    <ClInclude Include="..\Classes\GameTutorialsAnimationController.h" />
     <ClInclude Include="..\Classes\GameTutorialsFactory.h" />
     <ClInclude Include="..\Classes\GameViewConstants.h" />
     <ClInclude Include="..\Classes\GameViewElementsDataSource.h" />
