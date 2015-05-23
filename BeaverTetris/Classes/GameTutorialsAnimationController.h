@@ -12,6 +12,8 @@ public:
 
 	cocos2d::FiniteTimeAction* getPlayerControllsTutorial();
 	cocos2d::FiniteTimeAction* getPlayerReduceLineTutorial();
+	cocos2d::FiniteTimeAction* getPlayerReduceHorizontalCombinationTutorial();
+	cocos2d::FiniteTimeAction* getPlayerReduceVerticalCombinationTutorial();
 
 private:
 
@@ -29,13 +31,24 @@ private:
 	std::vector<cocos2d::Sprite*> getTetraminosInBottom();
 	std::vector<cocos2d::Sprite*> getElementsFromArray(int *aSourceMassive);
 	cocos2d::Sprite* getTetraminoViewForType(int aType);
-	cocos2d::Vec2 getTetraminoPositionForIndex(int aIndex);
-	cocos2d::FiniteTimeAction* getTetraminosExplosionAnimation();
+	cocos2d::Vec2 getTetraminoPositionForIndexXY(int xIndex, int yIndex);
 	void makeBottomExplosion();
-	void setExplosionForIndex(int aIndex);
-	cocos2d::FiniteTimeAction* getTetraminosDisappearanceAnimation(std::vector<cocos2d::Sprite*> aTetraminos, cocos2d::Node *aDetail);
-	cocos2d::FiniteTimeAction* getTetraminosAppearanceAnimation(std::vector<cocos2d::Sprite*> aTetraminos, cocos2d::Node *aDetail);
-	cocos2d::FiniteTimeAction* getAnimationWithTetraminosAndDetailAndAction(std::vector<cocos2d::Sprite*> aTetraminos, cocos2d::Node *aDetail, std::function<cocos2d::FiniteTimeAction*()> action);
+	cocos2d::FiniteTimeAction* getTetraminosExplosionAnimationForCallback(std::function<void()> aCallback);
+	void setExplosionForIndexXY(int xIndex, int yIndex);
+	cocos2d::ParticleSystem* getExplosion();
+	std::vector<cocos2d::Node*> getBottomDetailTetraminos(cocos2d::Node* aDetail);
+	cocos2d::FiniteTimeAction* getTetraminosDisappearanceAnimation(std::vector<cocos2d::Sprite*> aTetraminos, std::vector<cocos2d::Node*> aDetailTetraminos);
+	cocos2d::FiniteTimeAction* getTetraminosAppearanceAnimation(std::vector<cocos2d::Sprite*> aTetraminos, std::vector<cocos2d::Node*> aDetailTetraminos);
+	cocos2d::FiniteTimeAction* getAnimationWithTetraminosAndDetailAndAction(std::vector<cocos2d::Sprite*> aTetraminos, std::vector<cocos2d::Node*> aDetailTetraminos, std::function<cocos2d::FiniteTimeAction*()> action);
+	cocos2d::FiniteTimeAction* getAnimationWithTetraminosInDetail(std::vector<cocos2d::Node*> aDetailTetraminos, std::function<cocos2d::FiniteTimeAction*()> action);
+
+	std::vector<cocos2d::Sprite*> getTetraminosHorizontalLineCombination();
+	void getHorizontalLineCombinationExplosion();
+
+	cocos2d::FiniteTimeAction* getDetailFallenToOneBlockAnimation(cocos2d::Node *aDetail);
+	std::vector<cocos2d::Sprite*> getTetraminosVerticallLineCombination();
+	void getVericalLineCombinationExplosion();
+	std::vector<cocos2d::Node*> getVerticalDetailTetraminos(cocos2d::Node *aDetail);
 
 };
 

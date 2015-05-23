@@ -27,7 +27,8 @@ vector< function<FiniteTimeAction*()> > StartLevelGameTutorial::getTutorials()
 
 	tutorials.push_back([this](){return _tutorialsAnimationController->getPlayerControllsTutorial();});
 	tutorials.push_back([this](){return _tutorialsAnimationController->getPlayerReduceLineTutorial();});
-	tutorials.push_back([this](){return _tutorialsAnimationController->getPlayerControllsTutorial();});
+	tutorials.push_back([this](){return _tutorialsAnimationController->getPlayerReduceHorizontalCombinationTutorial();});
+	tutorials.push_back([this](){return _tutorialsAnimationController->getPlayerReduceVerticalCombinationTutorial();});
 
 	return tutorials;
 }
