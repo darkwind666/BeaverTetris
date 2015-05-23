@@ -684,6 +684,9 @@
     <ClCompile Include="..\Classes\GameTutorialsAnimationController.cpp">
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\StartBlockCollectionLevelTutorial.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1317,6 +1320,9 @@
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameTutorialsAnimationController.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartBlockCollectionLevelTutorial.h">
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClInclude>
   </ItemGroup>

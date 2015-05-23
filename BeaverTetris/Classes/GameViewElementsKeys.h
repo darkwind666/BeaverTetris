@@ -145,6 +145,8 @@ const string gameTutorialRotateDetailControlKey = string("gameTutorialRotateDeta
 const string gameTutorialAccelerateDetailControlKey = string("gameTutorialAccelerateDetailControl");
 const string gameTutorialMoveDetailLeftControlKey = string("gameTutorialMoveDetailLeftControl");
 const string gameTutorialMoveDetailRightControlKey = string("gameTutorialMoveDetailRightControl");
+const string gameTutorialUseSpellControlKey = string("gameTutorialUseSpellControl");
+const string gameTutorialUseSpellRocketKey = string("gameTutorialUseSpellRocket");
 
 const string pauseGameViewControllerKey = string("MainGamePauseButton");
 const string mainGamePausePopUpKey = string("MainGamePausePopUp");

@@ -14,6 +14,7 @@ public:
 	cocos2d::FiniteTimeAction* getPlayerReduceLineTutorial();
 	cocos2d::FiniteTimeAction* getPlayerReduceHorizontalCombinationTutorial();
 	cocos2d::FiniteTimeAction* getPlayerReduceVerticalCombinationTutorial();
+	cocos2d::FiniteTimeAction* getPlayerUseSpellTutorial();
 
 private:
 
@@ -49,6 +50,9 @@ private:
 	std::vector<cocos2d::Sprite*> getTetraminosVerticallLineCombination();
 	void getVericalLineCombinationExplosion();
 	std::vector<cocos2d::Node*> getVerticalDetailTetraminos(cocos2d::Node *aDetail);
+
+	void getSpellExplosion();
+	cocos2d::FiniteTimeAction* getUseSpellKeyAnimation();
 
 };
 

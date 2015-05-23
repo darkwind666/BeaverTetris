@@ -699,6 +699,18 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 	moveDetailRightControl.elementPosition = Vec2(startControlPosition.x + controllerOffset, startControlPosition.y);
 	moveDetailRightControl.elementOffset = Vec2(90, 0);
 	_elementsInformation[gameTutorialMoveDetailRightControlKey] = moveDetailRightControl;
+
+	ViewElementInformation useSpellControl;
+	useSpellControl.elementPosition = Vec2(150, 350);
+	useSpellControl.elementZOrder = 0;
+	_elementsInformation[gameTutorialUseSpellControlKey] = useSpellControl;
+
+	ViewElementInformation useSpellRocket;
+	useSpellRocket.elementPosition = Vec2(200, 550);
+	useSpellRocket.elementActionFinalPosition = Vec2(47, 410);
+	useSpellRocket.elementZOrder = 0;
+	_elementsInformation[gameTutorialUseSpellRocketKey] = useSpellRocket;
+
 }
 
 void GameViewInformationFactory::makeMainGamePausePopUpData()

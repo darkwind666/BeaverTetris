@@ -297,6 +297,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\SpellRechargeDelegate.cpp" />
     <ClCompile Include="..\Classes\SpellRechargeSystem.cpp" />
     <ClCompile Include="..\Classes\SpellsViewDataSource.cpp" />
+    <ClCompile Include="..\Classes\StartBlockCollectionLevelTutorial.cpp" />
     <ClCompile Include="..\Classes\StartGameBackgroundController.cpp" />
     <ClCompile Include="..\Classes\StartGameFishesController.cpp" />
     <ClCompile Include="..\Classes\StartLevelGameTutorial.cpp" />
@@ -512,6 +513,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\SpellRechargeDelegate.h" />
     <ClInclude Include="..\Classes\SpellRechargeSystem.h" />
     <ClInclude Include="..\Classes\SpellsViewDataSource.h" />
+    <ClInclude Include="..\Classes\StartBlockCollectionLevelTutorial.h" />
     <ClInclude Include="..\Classes\StartGameBackgroundController.h" />
     <ClInclude Include="..\Classes\StartGameFishesController.h" />
     <ClInclude Include="..\Classes\StartLevelGameTutorial.h" />

@@ -10,6 +10,7 @@
 #include "KeysForEnumsDataSource.h"
 #include "TetraminoExplosionFactory.h"
 #include "GameAnimationActionsConstants.h"
+#include "GameViewStyleHelper.h"
 
 using namespace cocos2d;
 using namespace std;
@@ -154,7 +155,7 @@ Node* GameTutorialsAnimationController::getControllerWithKey(string aKey)
 FiniteTimeAction* GameTutorialsAnimationController::getActivateControllerAnimation(Node *aController)
 {
 	float startScale = aController->getScale();
-	FiniteTimeAction *activateControllerScaleDown = ScaleTo::create(tutorialActionDuration, 1.0f);
+	FiniteTimeAction *activateControllerScaleDown = ScaleTo::create(tutorialActionDuration, startScale / 2);
 	FiniteTimeAction *activateControllerScaleUp = ScaleTo::create(tutorialActionDuration, startScale);
 	FiniteTimeAction *sequence = Sequence::create(activateControllerScaleDown, activateControllerScaleUp, nullptr);
 	FiniteTimeAction *actionWithController = TargetedAction::create(aController, sequence);
@@ -415,4 +416,60 @@ vector<Node*> GameTutorialsAnimationController::getVerticalDetailTetraminos(Node
 	Node* verticalTetramino3 = aDetail->getChildByTag(tetramino1Tag);
 	detailTetraminos.push_back(verticalTetramino3);
 	return detailTetraminos;
+}
+
+
+
+FiniteTimeAction* GameTutorialsAnimationController::getPlayerUseSpellTutorial()
+{
+	Node *detail = getDetailForControllsTutorial();
+
+	FiniteTimeAction *detailAppearanceAnimation = getDetailAppearanceAnimation(detail);
+
+	FiniteTimeAction *useSpellKeyAnimation = getUseSpellKeyAnimation();
+
+	FiniteTimeAction *explosionAnimation = getTetraminosExplosionAnimationForCallback([this](){getSpellExplosion();});
+
+	FiniteTimeAction *detailHideAnimation = Hide::create();
+	FiniteTimeAction *hideDetail = TargetedAction::create(detail, detailHideAnimation);
+
+	FiniteTimeAction *setStartPosition = Place::create(detail->getPosition());
+	FiniteTimeAction *placeDetailAtStartPositon = TargetedAction::create(detail, setStartPosition);
+
+	FiniteTimeAction *detailShowAnimation = Show::create();
+	FiniteTimeAction *showDetail = TargetedAction::create(detail, detailShowAnimation);
+
+	ActionInterval *sequence  = Sequence::create(detailAppearanceAnimation, useSpellKeyAnimation, explosionAnimation, hideDetail, placeDetailAtStartPositon, showDetail, nullptr);
+	FiniteTimeAction *repeat = RepeatForever::create(sequence);
+	return repeat;
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getUseSpellKeyAnimation()
+{
+	Label *spellButtonLabel = GameViewStyleHelper::getStandardLabelWithFontSize(46);
+	spellButtonLabel->setColor(Color3B(41, 104, 110));
+	spellButtonLabel->setString(string("1"));
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(spellButtonLabel, this, gameTutorialUseSpellControlKey);
+	FiniteTimeAction *actionWithUpController = getActivateControllerAnimation(spellButtonLabel);
+
+	ParticleSystem *rocket = ParticleMeteor::create();
+	rocket->setGravity(Vec2(200,200));
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(rocket, this, gameTutorialUseSpellRocketKey);
+	Vec2 rocketFinalPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(gameTutorialUseSpellRocketKey);
+	FiniteTimeAction *moveRocket = MoveTo::create(0.3f, rocketFinalPosition);
+	FiniteTimeAction *setStartRocketPosition = Place::create(rocket->getPosition());
+	FiniteTimeAction *rocketSequence = Sequence::create(moveRocket, setStartRocketPosition, nullptr);
+	FiniteTimeAction *animationWithRocket = TargetedAction::create(rocket, rocketSequence);
+
+	FiniteTimeAction *sequence = Sequence::create(actionWithUpController, animationWithRocket, nullptr);
+	return sequence;
+}
+
+void GameTutorialsAnimationController::getSpellExplosion()
+{
+	for (int explosionIndex = 16; explosionIndex < 19; explosionIndex++)
+	{
+		setExplosionForIndexXY(2, explosionIndex);
+	}
+	setExplosionForIndexXY(3, 18);
 }
