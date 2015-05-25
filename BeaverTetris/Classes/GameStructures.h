@@ -17,8 +17,11 @@ struct ResoucesLoaderInformation
 struct StartGameMenuItemInformation
 {
 	std::string imageKey;
+	std::string imageName;
 	float textRotation;
+	float buttonRotation;
 	std::string text;
+	int textSize;
 	std::function<void()> callback;
 };
 

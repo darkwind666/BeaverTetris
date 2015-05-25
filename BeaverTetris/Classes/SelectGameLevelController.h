@@ -5,6 +5,7 @@
 #include <vector>
 
 class GameLevelsMenuDataSource;
+class GameTutorialShowLevelIcon;
 
 class SelectGameLevelController : public cocos2d::Node, public PlayerStatusDelegateInterface
 {
@@ -21,6 +22,7 @@ private:
 	GameLevelsMenuDataSource *_gameLevelsMenuDataSource;
 	cocos2d::Menu* _menuView;
 	PlayerStatusDelegateInterface *_delegate;
+	GameTutorialShowLevelIcon *_showLevelIconController;
 
 	void makeScrollableMenuWithBackground(cocos2d::Menu* aMenu);
 	std::vector<cocos2d::Node*> getCompletedLevelsSigns();

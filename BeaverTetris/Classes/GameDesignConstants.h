@@ -4,7 +4,7 @@ const int tetrisBlocksWidth = 10;
 const int tetrisBlocksHeight = 20;
 
 const float startSoundEffectsVolume = 0.5f;
-const float startBackgroundSoundVolume = 0.5f;
+const float startBackgroundSoundVolume = 0.15f;
 
 const int normalUpdateInterval = 30;
 const int acceleratedCurrentDetailUpdateInterval = 2;

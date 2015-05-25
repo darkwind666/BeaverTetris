@@ -185,6 +185,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\FallenDetailAnimationDelegate.cpp" />
     <ClCompile Include="..\Classes\FallenDetailAnimationFactory.cpp" />
     <ClCompile Include="..\Classes\FallenDetailDelegate.cpp" />
+    <ClCompile Include="..\Classes\FightWithBossLevelTutorial.cpp" />
     <ClCompile Include="..\Classes\FillingGapInBoardSystem.cpp" />
     <ClCompile Include="..\Classes\FirestormSpellAnimationController.cpp" />
     <ClCompile Include="..\Classes\FirestormSpellDelegate.cpp" />
@@ -237,6 +238,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameTutorialOrderController.cpp" />
     <ClCompile Include="..\Classes\GameTutorialsAnimationController.cpp" />
     <ClCompile Include="..\Classes\GameTutorialsFactory.cpp" />
+    <ClCompile Include="..\Classes\GameTutorialShowLevelIcon.cpp" />
     <ClCompile Include="..\Classes\GameViewElementsDataSource.cpp" />
     <ClCompile Include="..\Classes\GameViewInformationFactory.cpp" />
     <ClCompile Include="..\Classes\GameViewStyleHelper.cpp" />
@@ -386,6 +388,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\FallenDetailAnimationDelegate.h" />
     <ClInclude Include="..\Classes\FallenDetailAnimationFactory.h" />
     <ClInclude Include="..\Classes\FallenDetailDelegate.h" />
+    <ClInclude Include="..\Classes\FightWithBossLevelTutorial.h" />
     <ClInclude Include="..\Classes\FillingGapInBoardSystem.h" />
     <ClInclude Include="..\Classes\FirestormSpellAnimationController.h" />
     <ClInclude Include="..\Classes\FirestormSpellDelegate.h" />
@@ -446,6 +449,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameTutorialOrderController.h" />
     <ClInclude Include="..\Classes\GameTutorialsAnimationController.h" />
     <ClInclude Include="..\Classes\GameTutorialsFactory.h" />
+    <ClInclude Include="..\Classes\GameTutorialShowLevelIcon.h" />
     <ClInclude Include="..\Classes\GameViewConstants.h" />
     <ClInclude Include="..\Classes\GameViewElementsDataSource.h" />
     <ClInclude Include="..\Classes\GameViewElementsKeys.h" />

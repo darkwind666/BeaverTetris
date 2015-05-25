@@ -31,7 +31,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("BeaverTetris");
+        glview = GLViewImpl::create("Beaver time");
 		CocosViewConfigurator *cocosViewConfigurator = new CocosViewConfigurator();
 		cocosViewConfigurator->configurateView(glview);
 		delete cocosViewConfigurator;

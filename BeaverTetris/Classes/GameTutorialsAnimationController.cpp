@@ -90,8 +90,9 @@ FiniteTimeAction* GameTutorialsAnimationController::getOperationsOnDetailAnimati
 	FiniteTimeAction *moveDetailRightAnimation = getMoveDetailRightAnimation(aDetail);
 	FiniteTimeAction *moveDetailLeftAnimation = getMoveDetailLeftAnimation(aDetail);
 	FiniteTimeAction *rotateDetailAnimation = getRotateDetailAnimation(aDetail);
+	FiniteTimeAction *usePauseButtonAnimation = getUsePauseButtonAnimation();
 	FiniteTimeAction *moveDetailDownAnimation = getMoveDetailDownAnimation(aDetail);
-	FiniteTimeAction *sequence = Sequence::create(moveDetailRightAnimation, moveDetailLeftAnimation, rotateDetailAnimation, moveDetailDownAnimation, nullptr);
+	FiniteTimeAction *sequence = Sequence::create(moveDetailRightAnimation, moveDetailLeftAnimation, rotateDetailAnimation, usePauseButtonAnimation, moveDetailDownAnimation, nullptr);
 	return sequence;
 }
 
@@ -125,6 +126,14 @@ FiniteTimeAction* GameTutorialsAnimationController::getRotateDetailAnimation(Nod
 	FiniteTimeAction *actionWithRotateDetail = TargetedAction::create(aDetail, rotateDetail);
 	FiniteTimeAction *sequence = Sequence::create(actionWithUpController, actionWithRotateDetail, nullptr);
 	return sequence;
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getUsePauseButtonAnimation()
+{
+	Node *pauseButton = CocosNodesHelper::getSpriteWithKey(gameTutorialUsePauseButtonKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(pauseButton, this, gameTutorialUsePauseButtonKey);
+	FiniteTimeAction *actionWithUpController = getActivateControllerAnimation(pauseButton);
+	return actionWithUpController;
 }
 
 FiniteTimeAction* GameTutorialsAnimationController::getMoveDetailDownAnimation(Node *aDetail)
@@ -171,7 +180,7 @@ FiniteTimeAction* GameTutorialsAnimationController::getPlayerReduceLineTutorial(
 	Node *detail = getDetailForControllsTutorial();
 	FiniteTimeAction *detailFallenAnimation = getDetailFallenAnimation(detail);
 	vector<Sprite*> tetraminosInBottom = getTetraminosInBottom();
-	FiniteTimeAction *tetraminosExplosionAnimation = getTetraminosExplosionAnimationForCallback([this](){makeBottomExplosion();});
+	FiniteTimeAction *tetraminosExplosionAnimation = getTetraminosExplosionAnimationForCallback([this](){makeBottomExplosionWithHeight(1);});
 	vector<Node*> detailTetraminos = getBottomDetailTetraminos(detail);
 	FiniteTimeAction *tetraminosDisappearanceAnimation = getTetraminosDisappearanceAnimation(tetraminosInBottom, detailTetraminos);
 	FiniteTimeAction *setStartPosition = Place::create(detail->getPosition());
@@ -195,18 +204,18 @@ FiniteTimeAction* GameTutorialsAnimationController::getDetailFallenAnimation(Nod
 vector<Sprite*> GameTutorialsAnimationController::getTetraminosInBottom()
 {
 	int bottomElements[] = {1,2,0,1,2,2,2,1,3,1};
-	vector<Sprite*> elements = getElementsFromArray(bottomElements);
+	vector<Sprite*> elements = getElementsFromArrayWithYIndex(bottomElements, 1);
 	return elements;
 }
 
-vector<Sprite*> GameTutorialsAnimationController::getElementsFromArray(int *aSourceMassive)
+vector<Sprite*> GameTutorialsAnimationController::getElementsFromArrayWithYIndex(int *aSourceMassive, int yIndex)
 {
 	vector<Sprite*> tetraminoElementsLine;
 	for (int xIndex = 0; xIndex < tetrisBlocksWidth; xIndex++)
 	{
 		int tetraminoTag = aSourceMassive[xIndex];
 		Sprite *tetraminoView = getTetraminoViewForType(tetraminoTag);
-		Vec2 tetraminoPosition = getTetraminoPositionForIndexXY(xIndex, 1);
+		Vec2 tetraminoPosition = getTetraminoPositionForIndexXY(xIndex, yIndex);
 		tetraminoView->setPosition(tetraminoPosition);
 		this->addChild(tetraminoView);
 		tetraminoElementsLine.push_back(tetraminoView);
@@ -248,11 +257,11 @@ FiniteTimeAction* GameTutorialsAnimationController::getTetraminosExplosionAnimat
 	return blowUpAnimation;
 }
 
-void GameTutorialsAnimationController::makeBottomExplosion()
+void GameTutorialsAnimationController::makeBottomExplosionWithHeight(int aHeight)
 {
 	for (int explosionIndex = 0; explosionIndex < tetrisBlocksWidth; explosionIndex++)
 	{
-		setExplosionForIndexXY(explosionIndex, 1);
+		setExplosionForIndexXY(explosionIndex, aHeight);
 	}
 }
 
@@ -349,7 +358,7 @@ FiniteTimeAction* GameTutorialsAnimationController::getPlayerReduceHorizontalCom
 vector<Sprite*> GameTutorialsAnimationController::getTetraminosHorizontalLineCombination()
 {
 	int bottomElements[] = {0,0,0,1,1,1,0,0,0,0};
-	vector<Sprite*> elements = getElementsFromArray(bottomElements);
+	vector<Sprite*> elements = getElementsFromArrayWithYIndex(bottomElements, 1);
 	return elements;
 }
 
@@ -392,7 +401,7 @@ FiniteTimeAction* GameTutorialsAnimationController::getDetailFallenToOneBlockAni
 vector<Sprite*> GameTutorialsAnimationController::getTetraminosVerticallLineCombination()
 {
 	int bottomElements[] = {0,0,1,1,1,0,0,0,0,0};
-	vector<Sprite*> elements = getElementsFromArray(bottomElements);
+	vector<Sprite*> elements = getElementsFromArrayWithYIndex(bottomElements, 1);
 	vector<Sprite*> tetraminoInBottom;
 	tetraminoInBottom.push_back(elements[2]);
 	return tetraminoInBottom;
@@ -446,11 +455,9 @@ FiniteTimeAction* GameTutorialsAnimationController::getPlayerUseSpellTutorial()
 
 FiniteTimeAction* GameTutorialsAnimationController::getUseSpellKeyAnimation()
 {
-	Label *spellButtonLabel = GameViewStyleHelper::getStandardLabelWithFontSize(46);
-	spellButtonLabel->setColor(Color3B(41, 104, 110));
-	spellButtonLabel->setString(string("1"));
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(spellButtonLabel, this, gameTutorialUseSpellControlKey);
-	FiniteTimeAction *actionWithUpController = getActivateControllerAnimation(spellButtonLabel);
+	Sprite *spellButton = CocosNodesHelper::getSpriteWithKey(gameTutorialUseSpellControlKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(spellButton, this, gameTutorialUseSpellControlKey);
+	FiniteTimeAction *actionWithUpController = getActivateControllerAnimation(spellButton);
 
 	ParticleSystem *rocket = ParticleMeteor::create();
 	rocket->setGravity(Vec2(200,200));
@@ -472,4 +479,97 @@ void GameTutorialsAnimationController::getSpellExplosion()
 		setExplosionForIndexXY(2, explosionIndex);
 	}
 	setExplosionForIndexXY(3, 18);
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getPlayerFightWithBossTutorial()
+{
+	Node *detail = getDetailForControllsTutorial();
+	FiniteTimeAction *detailFallenAnimation = getDetailFallenToBossLineAnimation(detail);
+	makeBossEnvironmentTetraminos();
+
+	LabelTTF *bossLifeCount = getBossLifeCountLabel();
+	FiniteTimeAction *victoryConditionAnimation = getVictoryConditionAnimationWithLifeLabel(bossLifeCount);
+	FiniteTimeAction *bossLifeCountStartAnimation = CallFunc::create([bossLifeCount](){bossLifeCount->setString(string("1"));});
+
+	vector<Sprite*> tetraminosInBossLine = getBossLineTetraminosCombination();
+	FiniteTimeAction *tetraminosExplosionAnimation = getTetraminosExplosionAnimationForCallback([this](){makeBottomExplosionWithHeight(4);});
+	vector<Node*> detailTetraminos = getBottomDetailTetraminos(detail);
+	FiniteTimeAction *tetraminosDisappearanceAnimation = getTetraminosDisappearanceAnimation(tetraminosInBossLine, detailTetraminos);
+	FiniteTimeAction *setStartPosition = Place::create(detail->getPosition());
+	FiniteTimeAction *actionWithMoveDetailAtStartPositon = TargetedAction::create(detail, setStartPosition);
+	FiniteTimeAction *actionWithTetraminosAppearance = getTetraminosAppearanceAnimation(tetraminosInBossLine, detailTetraminos);
+	FiniteTimeAction *delayTime = DelayTime::create(0.4f);
+
+	ActionInterval *sequence  = Sequence::create(detailFallenAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, victoryConditionAnimation, delayTime, actionWithMoveDetailAtStartPositon, actionWithTetraminosAppearance, bossLifeCountStartAnimation, nullptr);
+	FiniteTimeAction *repeat = RepeatForever::create(sequence);
+	return repeat;
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getDetailFallenToBossLineAnimation(Node *aDetail)
+{
+	Vec2 finalPosition = GameElementsDataHelper::getElementOffsetForKey(gameTutorialStartDetailKey);
+	Vec2 offset = GameElementsDataHelper::getElementOffsetForKey(mainGameBoardControllerKey);
+	Vec2 detailPosition = Vec2(finalPosition.x, finalPosition.y + offset.y * 3);
+	FiniteTimeAction *moveDetailOnScreen = MoveTo::create(0.6f,  detailPosition);
+	FiniteTimeAction *actionWithDetailAppearance = TargetedAction::create(aDetail, moveDetailOnScreen);
+	return actionWithDetailAppearance;
+}
+
+void GameTutorialsAnimationController::makeBossEnvironmentTetraminos()
+{
+	int tetraminoElementsInBoard[standartDetailHeight][tetrisBlocksWidth] = {
+		{0,0,2,2,1,1,1,3,3,3},
+		{1,1,2,2,3,0,4,4,1,1},
+		{0,1,1,3,3,3,4,4,1,1},
+	};
+
+	for (int yIndex = 0; yIndex < standartDetailHeight; yIndex++)
+	{
+		makeElementsFromArrayWithYIndex(&tetraminoElementsInBoard[0][0], yIndex);
+	}
+}
+
+void GameTutorialsAnimationController::makeElementsFromArrayWithYIndex(int *aSourceMassive, int yIndex)
+{
+	int elements[] = {0,0,0,0,0,0,0,0,0,0};
+	for (int xIndex = 0; xIndex < tetrisBlocksWidth; xIndex++)
+	{
+		int tetraminoTag = aSourceMassive[yIndex * tetrisBlocksWidth + xIndex];
+		elements[xIndex] = tetraminoTag;
+	}
+	getElementsFromArrayWithYIndex(elements, yIndex);
+}
+
+LabelTTF* GameTutorialsAnimationController::getBossLifeCountLabel()
+{
+	LabelTTF *victoryConditionStatus = GameViewStyleHelper::getStandardLabel();
+	victoryConditionStatus->setFontSize(12.0f);
+	victoryConditionStatus->setString(string("1"));
+	return victoryConditionStatus;
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getVictoryConditionAnimationWithLifeLabel(LabelTTF *aLabel)
+{
+	Sprite *pad = CocosNodesHelper::getSpriteWithKey(victoryConditionPadImageKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(pad, this, gameTutorialVictoryConditionPadKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(aLabel, pad, gameTutorialVictoryConditionCountLabelKey);
+
+	string bossImageName = GameFileExtensionMaker::getGraphicWithExtension("queenBossWinConditionIcon");
+	Sprite *bossImage = Sprite::createWithSpriteFrameName(bossImageName);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(bossImage, pad, gameTutorialVictoryConditionImageKey);
+
+	FiniteTimeAction *activateControllerScaleUp = ScaleTo::create(tutorialActionDuration, 1.5f);
+	FiniteTimeAction *activateLabel = CallFunc::create([aLabel](){aLabel->setString(string("0"));});
+	FiniteTimeAction *activateControllerScaleDown = ScaleTo::create(tutorialActionDuration, 1.0f);
+	FiniteTimeAction *sequence = Sequence::create(activateLabel, activateControllerScaleUp, activateControllerScaleDown, nullptr);
+	FiniteTimeAction *actionWithCondition = TargetedAction::create(pad, sequence);
+	return actionWithCondition;
+}
+
+vector<Sprite*> GameTutorialsAnimationController::getBossLineTetraminosCombination()
+{
+	int elementsInBossLine[] = {6,1,0,3,4,1,1,5,3,3};
+	vector<Sprite*> elements = getElementsFromArrayWithYIndex(elementsInBossLine, 4);
+	vector<Sprite*> tetraminoInBottom = elements;
+	return tetraminoInBottom;
 }

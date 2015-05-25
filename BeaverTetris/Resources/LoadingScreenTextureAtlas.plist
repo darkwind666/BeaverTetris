@@ -59,15 +59,15 @@
             <key>LoadingScreenGameName.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1142,8},{155,129}}</string>
+                <string>{{1142,8},{133,120}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{155,129}}</string>
+                <string>{{0,0},{133,120}}</string>
                 <key>sourceSize</key>
-                <string>{155,129}</string>
+                <string>{133,120}</string>
             </dict>
         </dict>
         <key>metadata</key>

@@ -102,7 +102,7 @@ void GameViewInformationFactory::makeStartGameSreenData()
 	ViewElementInformation startGameBeaver;
 	startGameBeaver.elementImage = getImageNameForKey(startGameBeaverKey);
 	startGameBeaver.elementPosition = Vec2(480, 100);
-	startGameBeaver.elementActionFinalPosition = Vec2(250, 300);
+	startGameBeaver.elementActionFinalPosition = Vec2(230, 290);
 	startGameBeaver.elementOffset = Vec2(0, 200);
 	startGameBeaver.elementZOrder = kStartGameBeaverZOrder;
 	_elementsInformation[startGameBeaverKey] = startGameBeaver;
@@ -145,31 +145,35 @@ void GameViewInformationFactory::makeStartGameFishesData()
 void GameViewInformationFactory::makeStartGameMenuItemsData()
 {
 
+	ViewElementInformation createNewGameButton;
+	createNewGameButton.elementPosition = Vec2(-30, 160);
+	createNewGameButton.elementOffset = Vec2(10, 0);
+	createNewGameButton.elementZOrder = kStartGameBackgroundZOrder;
+	_elementsInformation[createNewGameButtonKey] = createNewGameButton;
+
+	ViewElementInformation selectGameLevelButton;
+	selectGameLevelButton.elementPosition = Vec2(-40, 100);
+	selectGameLevelButton.elementOffset = Vec2(10, 0);
+	selectGameLevelButton.elementZOrder = kStartGameBackgroundZOrder;
+	_elementsInformation[selectGameLevelButtonKey] = selectGameLevelButton;
+
 	ViewElementInformation goToGameRecordsButton;
-	goToGameRecordsButton.elementPosition = Vec2(-40, 150);
+	goToGameRecordsButton.elementPosition = Vec2(-40, 60);
+	goToGameRecordsButton.elementOffset = Vec2(10, 0);
 	goToGameRecordsButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[goToGameRecordsButtonKey] = goToGameRecordsButton;
 
 	ViewElementInformation getSoundRegulatorsButton;
-	getSoundRegulatorsButton.elementPosition = Vec2(-40, 110);
+	getSoundRegulatorsButton.elementPosition = Vec2(-70, 0);
+	getSoundRegulatorsButton.elementOffset = Vec2(10, 0);
 	getSoundRegulatorsButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[getSoundRegulatorsButtonKey] = getSoundRegulatorsButton;
 
-
-	ViewElementInformation selectGameLevelButton;
-	selectGameLevelButton.elementPosition = Vec2(-40, 60);
-	selectGameLevelButton.elementZOrder = kStartGameBackgroundZOrder;
-	_elementsInformation[selectGameLevelButtonKey] = selectGameLevelButton;
-
 	ViewElementInformation goToDevelopersButton;
-	goToDevelopersButton.elementPosition = Vec2(-40, 20);
+	goToDevelopersButton.elementPosition = Vec2(-70, -40);
+	goToDevelopersButton.elementOffset = Vec2(10, 0);
 	goToDevelopersButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[goToDevelopersButtonKey] = goToDevelopersButton;
-
-	ViewElementInformation createNewGameButton;
-	createNewGameButton.elementPosition = Vec2(-30, -40);
-	createNewGameButton.elementZOrder = kStartGameBackgroundZOrder;
-	_elementsInformation[createNewGameButtonKey] = createNewGameButton;
 
 }
 
@@ -513,14 +517,14 @@ void GameViewInformationFactory::makeMainGameHudsData()
 	makeMainGamePlayerControllersData();
 
 	ViewElementInformation mainGamePlayerScoreController;
-	mainGamePlayerScoreController.elementPosition =  Vec2(hudElementXPosition, 460);
+	mainGamePlayerScoreController.elementPosition =  Vec2(hudElementXPosition, 450);
 	mainGamePlayerScoreController.elementZOrder = kMainGamePlayerScoreControllerZOrder;
 	_elementsInformation[playerScoreControllerKey] = mainGamePlayerScoreController;
 
 	makeMainGamePlayerScoreControllersData();
 
 	ViewElementInformation victoryConditionHudController;
-	victoryConditionHudController.elementPosition =  Vec2(hudElementXPosition, 380);
+	victoryConditionHudController.elementPosition =  Vec2(hudElementXPosition, 370);
 	victoryConditionHudController.elementOffset = Vec2(0, 6);
 	victoryConditionHudController.elementZOrder = kMainGamePlayerVictoryConditionZOrder;
 	_elementsInformation[victoryConditionHudControllerKey] = victoryConditionHudController;
@@ -528,7 +532,7 @@ void GameViewInformationFactory::makeMainGameHudsData()
 	makeMainGameVictoryConditionData();
 
 	ViewElementInformation mainGamePlayerSpellsController;
-	mainGamePlayerSpellsController.elementPosition =  Vec2(hudElementXPosition, 300);
+	mainGamePlayerSpellsController.elementPosition =  Vec2(hudElementXPosition, 290);
 	mainGamePlayerSpellsController.elementOffset = Vec2(0, 60);
 	mainGamePlayerSpellsController.elementZOrder = kMainGamePlayerSpellsControllerZOrder;
 	_elementsInformation[playerSpellsControllerKey] = mainGamePlayerSpellsController;
@@ -701,6 +705,7 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 	_elementsInformation[gameTutorialMoveDetailRightControlKey] = moveDetailRightControl;
 
 	ViewElementInformation useSpellControl;
+	useSpellControl.elementImage = getImageNameForKey(gameTutorialUseSpellControlKey);
 	useSpellControl.elementPosition = Vec2(150, 350);
 	useSpellControl.elementZOrder = 0;
 	_elementsInformation[gameTutorialUseSpellControlKey] = useSpellControl;
@@ -711,6 +716,34 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 	useSpellRocket.elementZOrder = 0;
 	_elementsInformation[gameTutorialUseSpellRocketKey] = useSpellRocket;
 
+
+	ViewElementInformation conditionPad;
+	conditionPad.elementPosition = Vec2(100, 350);
+	conditionPad.elementZOrder = 0;
+	_elementsInformation[gameTutorialVictoryConditionPadKey] = conditionPad;
+
+	ViewElementInformation conditionCountLabel;
+	conditionCountLabel.elementPosition = Vec2(37, 20);
+	conditionCountLabel.elementZOrder = 0;
+	_elementsInformation[gameTutorialVictoryConditionCountLabelKey] = conditionCountLabel;
+
+	ViewElementInformation conditionImage;
+	conditionImage.elementPosition = Vec2(37, 40);
+	conditionImage.elementZOrder = 0;
+	_elementsInformation[gameTutorialVictoryConditionImageKey] = conditionImage;
+
+	ViewElementInformation showLevelIcon;
+	showLevelIcon.elementImage = getImageNameForKey(gameTutorialShowLevelIconKey);
+	showLevelIcon.elementPosition = Vec2(-110, -110);
+	showLevelIcon.elementActionFinalPosition = Vec2(-110, -130);
+	showLevelIcon.elementZOrder = 0;
+	_elementsInformation[gameTutorialShowLevelIconKey] = showLevelIcon;
+
+	ViewElementInformation usePauseButton;
+	usePauseButton.elementImage = getImageNameForKey(gameTutorialUsePauseButtonKey);
+	usePauseButton.elementPosition = Vec2(startControlPosition.x + controllerOffset, startControlPosition.y + controllerOffset);
+	usePauseButton.elementZOrder = 0;
+	_elementsInformation[gameTutorialUsePauseButtonKey] = usePauseButton;
 }
 
 void GameViewInformationFactory::makeMainGamePausePopUpData()

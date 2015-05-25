@@ -5,6 +5,7 @@
 #include "GameAnimationActionsConstants.h"
 #include "SelectGameLevelBackgroundController.h"
 #include "SelectGameLevelBeaverOnRaftController.h"
+#include "GameTutorialShowLevelIcon.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension; 
@@ -19,6 +20,10 @@ SelectGameLevelController::SelectGameLevelController(void)
 	addLevelIconsToMenu(levelIcons);
 	makeScrollableMenuWithBackground(_menuView);
 	_delegate = NULL;
+
+	GameTutorialShowLevelIcon *gameTutorialShowLevelIcon = new GameTutorialShowLevelIcon();
+	_showLevelIconController = gameTutorialShowLevelIcon;
+	this->addChild(gameTutorialShowLevelIcon);
 }
 
 
@@ -118,8 +123,9 @@ void SelectGameLevelController::showPlayerStatus()
 	MenuItem* levelIcon = makeAvailableLevelIcon();
 	_menuView->addChild(levelIcon);
 	FiniteTimeAction *menuAnimation = makeMenuAnimationWithAvailableLevelIcon(levelIcon);
+	FiniteTimeAction *showLevelSign = CallFunc::create([this](){_showLevelIconController->showIcon();});
 	FiniteTimeAction *invokeDelegateAction = getDelegateAction();
-	Action *sequence = Sequence::create(menuAnimation, invokeDelegateAction, NULL);
+	Action *sequence = Sequence::create(menuAnimation, showLevelSign, invokeDelegateAction, NULL);
 	this->runAction(sequence);
 }
 

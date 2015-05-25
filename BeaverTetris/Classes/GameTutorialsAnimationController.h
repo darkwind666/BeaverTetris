@@ -15,6 +15,7 @@ public:
 	cocos2d::FiniteTimeAction* getPlayerReduceHorizontalCombinationTutorial();
 	cocos2d::FiniteTimeAction* getPlayerReduceVerticalCombinationTutorial();
 	cocos2d::FiniteTimeAction* getPlayerUseSpellTutorial();
+	cocos2d::FiniteTimeAction* getPlayerFightWithBossTutorial();
 
 private:
 
@@ -25,15 +26,16 @@ private:
 	cocos2d::FiniteTimeAction* getMoveDetailRightAnimation(cocos2d::Node *aDetail);
 	cocos2d::FiniteTimeAction* getMoveDetailLeftAnimation(cocos2d::Node *aDetail);
 	cocos2d::FiniteTimeAction* getRotateDetailAnimation(cocos2d::Node *aDetail);
+	cocos2d::FiniteTimeAction* getUsePauseButtonAnimation();
 	cocos2d::FiniteTimeAction* getMoveDetailDownAnimation(cocos2d::Node *aDetail);
 	cocos2d::FiniteTimeAction* getActivateControllerAnimation(cocos2d::Node *aController);
 
 	cocos2d::FiniteTimeAction* getDetailFallenAnimation(cocos2d::Node* aDetail);
 	std::vector<cocos2d::Sprite*> getTetraminosInBottom();
-	std::vector<cocos2d::Sprite*> getElementsFromArray(int *aSourceMassive);
+	std::vector<cocos2d::Sprite*> getElementsFromArrayWithYIndex(int *aSourceMassive, int yIndex);
 	cocos2d::Sprite* getTetraminoViewForType(int aType);
 	cocos2d::Vec2 getTetraminoPositionForIndexXY(int xIndex, int yIndex);
-	void makeBottomExplosion();
+	void makeBottomExplosionWithHeight(int aHeight);
 	cocos2d::FiniteTimeAction* getTetraminosExplosionAnimationForCallback(std::function<void()> aCallback);
 	void setExplosionForIndexXY(int xIndex, int yIndex);
 	cocos2d::ParticleSystem* getExplosion();
@@ -53,6 +55,13 @@ private:
 
 	void getSpellExplosion();
 	cocos2d::FiniteTimeAction* getUseSpellKeyAnimation();
+
+	cocos2d::FiniteTimeAction* getDetailFallenToBossLineAnimation(cocos2d::Node *aDetail);
+	void makeBossEnvironmentTetraminos();
+	void makeElementsFromArrayWithYIndex(int *aSourceMassive, int yIndex);
+	cocos2d::LabelTTF* getBossLifeCountLabel();
+	cocos2d::FiniteTimeAction* getVictoryConditionAnimationWithLifeLabel(cocos2d::LabelTTF *aLabel);
+	std::vector<cocos2d::Sprite*> getBossLineTetraminosCombination();
 
 };
 

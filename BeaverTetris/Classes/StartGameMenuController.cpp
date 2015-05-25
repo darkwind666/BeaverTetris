@@ -30,8 +30,9 @@ vector<Node*> StartGameMenuController::getMenuItems()
 		string selectedImageName = _startGameViewDataSource->getMenuActiveImageForIndex(itemIndex);
 		MouseOverMenuItem *menuItem = new MouseOverMenuItem(selectedImageName, unselectedImageName, CC_CALLBACK_1(StartGameMenuController::buttonWasPressed, this));
 		Node *buttonText = getButtonTextForIndex(itemIndex);
-		CocosNodesHelper::addChildNodeToParentNodeWithKey(buttonText, menuItem, startGameMenuButtonTextKey);
-		menuItem->setScale(0.9f);
+		menuItem->addChild(buttonText);
+		float buttonRotation = _startGameViewDataSource->getButtonRotationForIndex(itemIndex);
+		menuItem->setRotation(buttonRotation);
 		menuItem->setTag(itemIndex);
 		menuItem->setPosition(_startGameViewDataSource->getMenuItemPositionForIndex(itemIndex));
 		menuItems.push_back(menuItem);
@@ -41,7 +42,11 @@ vector<Node*> StartGameMenuController::getMenuItems()
 
 Node* StartGameMenuController::getButtonTextForIndex(int aIndex)
 {
-	Label *buttonText = GameViewStyleHelper::getStandardLabelWithFontSize(17);
+	int textSize = _startGameViewDataSource->getTextSizeForIndex(aIndex);
+	Label *buttonText = Label::createWithTTF("", "Schist Black.TTF", textSize);
+	buttonText->setColor(Color3B(179,231,195));
+	Vec2 buttonPosition = _startGameViewDataSource->getButtonTextPositionForIndex(aIndex);
+	buttonText->setPosition(buttonPosition);
 	float buttonTextRotation = _startGameViewDataSource->getButtonTextRotationForIndex(aIndex);
 	buttonText->setRotation(buttonTextRotation);
 	string text = _startGameViewDataSource->getButtonTextForIndex(aIndex);
