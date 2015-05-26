@@ -88,7 +88,7 @@ void GameViewInformationFactory::makeStartGameSreenData()
 	ViewElementInformation startGameMenu;
 	startGameMenu.elementImage = getImageNameForKey(startGameMenuKey);
 	startGameMenu.elementPosition = Vec2(155, -450);
-	startGameMenu.elementActionFinalPosition = Vec2(155, 230);
+	startGameMenu.elementActionFinalPosition = Vec2(155, 210);
 	startGameMenu.elementZOrder = kLoadingBackgroundZOrder;
 	_elementsInformation[startGameMenuKey] = startGameMenu;
 
@@ -102,7 +102,7 @@ void GameViewInformationFactory::makeStartGameSreenData()
 	ViewElementInformation startGameBeaver;
 	startGameBeaver.elementImage = getImageNameForKey(startGameBeaverKey);
 	startGameBeaver.elementPosition = Vec2(480, 100);
-	startGameBeaver.elementActionFinalPosition = Vec2(230, 290);
+	startGameBeaver.elementActionFinalPosition = Vec2(230, 270);
 	startGameBeaver.elementOffset = Vec2(0, 200);
 	startGameBeaver.elementZOrder = kStartGameBeaverZOrder;
 	_elementsInformation[startGameBeaverKey] = startGameBeaver;

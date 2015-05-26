@@ -60,7 +60,7 @@ LabelTTF* GameViewStyleHelper::getStandardLabel()
 
 cocos2d::Label* GameViewStyleHelper::getStandardLabelWithFontSize(float aFontSize)
 {
-	return Label::createWithTTF("", "COMIC.TTF", aFontSize);
+	return Label::createWithTTF("", "Schist Black.TTF", aFontSize);
 }
 
 void GameViewStyleHelper::addBackButtonToParentNodeWithKey(Node *aParentNode, string aKey)

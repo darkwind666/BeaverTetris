@@ -34,8 +34,7 @@ FiniteTimeAction* StartGameAnimationController::getAnimationWithMenu()
 {
 	Vec2 finalMenuPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(startGameMenuKey);
 	ActionInterval *moveMenu = MoveTo::create(startMenuActionDuration, finalMenuPosition);
-	FiniteTimeAction *ease = EaseBackOut::create(moveMenu);
-	FiniteTimeAction *actionWithMenu = TargetedAction::create(_startGameMenuController, ease);
+	FiniteTimeAction *actionWithMenu = TargetedAction::create(_startGameMenuController, moveMenu);
 	return actionWithMenu;
 }
 

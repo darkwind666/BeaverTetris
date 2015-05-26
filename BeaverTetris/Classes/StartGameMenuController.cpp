@@ -43,8 +43,7 @@ vector<Node*> StartGameMenuController::getMenuItems()
 Node* StartGameMenuController::getButtonTextForIndex(int aIndex)
 {
 	int textSize = _startGameViewDataSource->getTextSizeForIndex(aIndex);
-	Label *buttonText = Label::createWithTTF("", "Schist Black.TTF", textSize);
-	buttonText->setColor(Color3B(179,231,195));
+	Label *buttonText = GameViewStyleHelper::getStandardLabelWithFontSize(textSize);
 	Vec2 buttonPosition = _startGameViewDataSource->getButtonTextPositionForIndex(aIndex);
 	buttonText->setPosition(buttonPosition);
 	float buttonTextRotation = _startGameViewDataSource->getButtonTextRotationForIndex(aIndex);

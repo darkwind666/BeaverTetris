@@ -13,7 +13,7 @@ const float standardButtonActionDuration = 0.15f;
 const float gameControllButtonActionDuration = 0.05f;
 const float standardButtonScaleForAction = 0.8f;
 
-const float startMenuActionDuration = 1.5f;
+const float startMenuActionDuration = 0.8f;
 const float beaverStartScreenActionDuration = 1.0f;
 const float beaverClockArrowRotationSpeed = 1.0f;
 
