@@ -2,10 +2,8 @@
 #include "GameTutorialController.h"
 #include "GameViewElementsKeys.h"
 #include "StartLevelGameTutorial.h"
-#include "StartBlockCollectionLevelTutorial.h"
 #include "FightWithBossLevelTutorial.h"
-#include "MiddleBossLevelTutorial.h"
-#include "EndLevelTutorial.h"
+#include "GameTutorialWithOneStep.h"
 #include "GameTutorialOrderController.h"
 
 using namespace std;
@@ -27,10 +25,10 @@ map<string, function<GameTutorial*()> > GameTutorialsFactory::getTutorials()
 	map<string, function<GameTutorial*()> > tutorials;
 
 	tutorials[gameLevel1Key] = [this](){return new StartLevelGameTutorial(this);};
-	tutorials[gameLevel2Key] = [this](){return new StartBlockCollectionLevelTutorial(this);};
+	tutorials[gameLevel2Key] = [this](){return new GameTutorialWithOneStep(this, gameLevel2Key);};
 	tutorials[gameLevel4Key] = [this](){return new FightWithBossLevelTutorial(this);};
-	tutorials[gameLevel7Key] = [this](){return new MiddleBossLevelTutorial(this);};
-	tutorials[gameLevel9Key] = [this](){return new EndLevelTutorial(this);};
+	tutorials[gameLevel7Key] = [this](){return new GameTutorialWithOneStep(this, gameLevel7Key);};
+	tutorials[gameLevel9Key] = [this](){return new GameTutorialWithOneStep(this, gameLevel9Key);};
 
 	return tutorials;
 }

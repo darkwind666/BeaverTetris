@@ -503,7 +503,7 @@ FiniteTimeAction* GameTutorialsAnimationController::getPlayerUseRocketSpellTutor
 	FiniteTimeAction *detailShowAnimation = Show::create();
 	FiniteTimeAction *showDetail = TargetedAction::create(detail, detailShowAnimation);
 
-	ActionInterval *sequence  = Sequence::create(detailAppearanceAnimation, useSpellKeyAnimation, playerScoreAnimation, explosionAnimation, hideDetail, placeDetailAtStartPositon, showDetail, playerScoreStartAnimation, nullptr);
+	ActionInterval *sequence  = Sequence::create(detailAppearanceAnimation, useSpellKeyAnimation, explosionAnimation, playerScoreAnimation , hideDetail, placeDetailAtStartPositon, showDetail, playerScoreStartAnimation, nullptr);
 	FiniteTimeAction *repeat = RepeatForever::create(sequence);
 	return repeat;
 }
