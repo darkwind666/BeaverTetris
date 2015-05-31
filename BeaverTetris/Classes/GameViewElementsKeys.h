@@ -154,6 +154,7 @@ const string gameTutorialShowLevelIconKey = string("GameTutorialShowLevelIcon");
 const string gameTutorialUsePauseButtonKey = string("TutorialUsePauseButton");
 const string gameTutorialPlayerScorePadKey = string("gameTutorialPlayerScorePad");
 const string gameTutorialUseRandomExplosionsSpellControlKey = string("TutorialUseRandomExplosionsSpellButton");
+const string gameTutorialUseFirestormSpellControlKey = string("TutorialUseFirestormSpellButton");
 
 
 

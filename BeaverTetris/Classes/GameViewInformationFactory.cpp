@@ -718,6 +718,12 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 	useRandomExplosionSpellControl.elementZOrder = 0;
 	_elementsInformation[gameTutorialUseRandomExplosionsSpellControlKey] = useRandomExplosionSpellControl;
 
+	ViewElementInformation useFirestormSpellControl;
+	useFirestormSpellControl.elementImage = getImageNameForKey(gameTutorialUseFirestormSpellControlKey);
+	useFirestormSpellControl.elementPosition = useSpellControllPosition;
+	useFirestormSpellControl.elementZOrder = 0;
+	_elementsInformation[gameTutorialUseFirestormSpellControlKey] = useFirestormSpellControl;
+
 	ViewElementInformation useSpellRocket;
 	useSpellRocket.elementPosition = Vec2(200, 550);
 	useSpellRocket.elementActionFinalPosition = Vec2(47, 410);

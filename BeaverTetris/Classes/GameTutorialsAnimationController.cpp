@@ -688,3 +688,90 @@ void GameTutorialsAnimationController::makeRandomSpellExplosions()
 	setExplosionForIndexXY(5, 3);
 	setExplosionForIndexXY(8, 3);
 }
+
+FiniteTimeAction* GameTutorialsAnimationController::getPlayerUseFirestormSpellTutorial()
+{
+	FiniteTimeAction *useSpellKeyAnimation = getUseSpellButtonAnimationWithKey(gameTutorialUseFirestormSpellControlKey);
+	FiniteTimeAction *firestormAnimation = getFirestormAnimation();
+	vector<Sprite*> tetraminosForFirestorm = getTetraminosForFirestorm();
+	FiniteTimeAction *tetraminosExplosionAnimation = getTetraminosExplosionAnimationForCallback([this](){makeFirestormSpellExplosions();});
+	vector<Node*> detailTetraminos;
+	FiniteTimeAction *tetraminosDisappearanceAnimation = getTetraminosDisappearanceAnimation(tetraminosForFirestorm, detailTetraminos);
+	FiniteTimeAction *actionWithTetraminosAppearance = getTetraminosAppearanceAnimation(tetraminosForFirestorm, detailTetraminos);
+	FiniteTimeAction *delayTime = DelayTime::create(0.4f);
+
+	ActionInterval *sequence  = Sequence::create(useSpellKeyAnimation, firestormAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, delayTime, actionWithTetraminosAppearance, nullptr);
+	FiniteTimeAction *repeat = RepeatForever::create(sequence);
+	return repeat;
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getFirestormAnimation()
+{
+	FiniteTimeAction *meteor1Animation = getMeteorAnimationForIndex(2);
+	FiniteTimeAction *meteor2Animation = getMeteorAnimationForIndex(4);
+	FiniteTimeAction *meteor3Animation = getMeteorAnimationForIndex(6);
+	FiniteTimeAction *meteor4Animation = getMeteorAnimationForIndex(8);
+
+	FiniteTimeAction *spawn = Spawn::create(meteor1Animation, meteor2Animation, meteor3Animation, meteor4Animation, nullptr);
+	FiniteTimeAction *animationWithMeteors = TargetedAction::create(this, spawn);
+	return animationWithMeteors;
+
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getMeteorAnimationForIndex(int aIndex)
+{
+	ParticleSystem *meteor = ParticleMeteor::create();
+	meteor->setGravity(Vec2(0,400));
+	Vec2 meteorPosition = getTetraminoPositionForIndexXY(aIndex, 23);
+	meteor->setPosition(meteorPosition);
+	this->addChild(meteor);
+
+	Vec2 meteorFinalPosition = getTetraminoPositionForIndexXY(aIndex, 3);
+	FiniteTimeAction *moveMeteor = MoveTo::create(0.3f, meteorFinalPosition);
+	FiniteTimeAction *setStartRocketPosition = Place::create(meteor->getPosition());
+	FiniteTimeAction *meteorSequence = Sequence::create(moveMeteor, setStartRocketPosition, nullptr);
+	FiniteTimeAction *animationWithMeteor = TargetedAction::create(meteor, meteorSequence);
+	return animationWithMeteor;
+}
+
+vector<Sprite*>  GameTutorialsAnimationController::getTetraminosForFirestorm()
+{
+	vector<Sprite*> elementsForExplosions;
+
+	int middleLine[] = {1,1,2,2,3,0,4,4,1,1};
+
+	vector<Sprite*> middleLineElements = getElementsFromArrayWithYIndex(middleLine, 2);
+	elementsForExplosions.push_back(middleLineElements[1]);
+	elementsForExplosions.push_back(middleLineElements[2]);
+	elementsForExplosions.push_back(middleLineElements[3]);
+	elementsForExplosions.push_back(middleLineElements[4]);
+	elementsForExplosions.push_back(middleLineElements[6]);
+	elementsForExplosions.push_back(middleLineElements[7]);
+	elementsForExplosions.push_back(middleLineElements[8]);
+
+	getTetraminosInBottom();
+
+	return elementsForExplosions;
+
+}
+
+void GameTutorialsAnimationController::makeFirestormSpellExplosions()
+{
+	setExplosionAroundX(2);
+	setExplosionAroundX(4);
+	setExplosionAroundX(6);
+	setExplosionAroundX(8);
+}
+
+void GameTutorialsAnimationController::setExplosionAroundX(int xIndex)
+{
+	setExplosionForIndexXY(xIndex - 1, 4);
+	setExplosionForIndexXY(xIndex, 4);
+	setExplosionForIndexXY(xIndex + 1, 4);
+	setExplosionForIndexXY(xIndex - 1, 3);
+	setExplosionForIndexXY(xIndex, 3);
+	setExplosionForIndexXY(xIndex + 1, 3);
+	setExplosionForIndexXY(xIndex - 1, 2);
+	setExplosionForIndexXY(xIndex, 2);
+	setExplosionForIndexXY(xIndex + 1, 2);
+}

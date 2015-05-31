@@ -693,6 +693,9 @@
     <ClCompile Include="..\Classes\GameTutorialShowLevelIcon.cpp">
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MiddleBossLevelTutorial.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1335,6 +1338,9 @@
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameTutorialShowLevelIcon.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MiddleBossLevelTutorial.h">
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClInclude>
   </ItemGroup>

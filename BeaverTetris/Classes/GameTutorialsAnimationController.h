@@ -17,6 +17,7 @@ public:
 	cocos2d::FiniteTimeAction* getPlayerUseRocketSpellTutorial();
 	cocos2d::FiniteTimeAction* getPlayerFightWithBossTutorial();
 	cocos2d::FiniteTimeAction* getPlayerUseRandomExplosionsSpellTutorial();
+	cocos2d::FiniteTimeAction* getPlayerUseFirestormSpellTutorial();
 
 private:
 
@@ -69,6 +70,12 @@ private:
 
 	std::vector<cocos2d::Sprite*> getTetraminosForRandomExplosions();
 	void makeRandomSpellExplosions();
+
+	cocos2d::FiniteTimeAction* getFirestormAnimation();
+	cocos2d::FiniteTimeAction* getMeteorAnimationForIndex(int aIndex);
+	std::vector<cocos2d::Sprite*>  getTetraminosForFirestorm();
+	void makeFirestormSpellExplosions();
+	void setExplosionAroundX(int xIndex);
 
 };
 
