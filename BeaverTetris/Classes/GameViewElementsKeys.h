@@ -155,7 +155,7 @@ const string gameTutorialUsePauseButtonKey = string("TutorialUsePauseButton");
 const string gameTutorialPlayerScorePadKey = string("gameTutorialPlayerScorePad");
 const string gameTutorialUseRandomExplosionsSpellControlKey = string("TutorialUseRandomExplosionsSpellButton");
 const string gameTutorialUseFirestormSpellControlKey = string("TutorialUseFirestormSpellButton");
-
+const string gameTutorialUseCohesionSpellControlKey = string("TutorialUseCohesionSpellButton");
 
 
 const string pauseGameViewControllerKey = string("MainGamePauseButton");

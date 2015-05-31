@@ -724,6 +724,13 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 	useFirestormSpellControl.elementZOrder = 0;
 	_elementsInformation[gameTutorialUseFirestormSpellControlKey] = useFirestormSpellControl;
 
+	ViewElementInformation useCohesionSpellControl;
+	useCohesionSpellControl.elementImage = getImageNameForKey(gameTutorialUseCohesionSpellControlKey);
+	useCohesionSpellControl.elementPosition = useSpellControllPosition;
+	useCohesionSpellControl.elementZOrder = 0;
+	_elementsInformation[gameTutorialUseCohesionSpellControlKey] = useCohesionSpellControl;
+
+
 	ViewElementInformation useSpellRocket;
 	useSpellRocket.elementPosition = Vec2(200, 550);
 	useSpellRocket.elementActionFinalPosition = Vec2(47, 410);

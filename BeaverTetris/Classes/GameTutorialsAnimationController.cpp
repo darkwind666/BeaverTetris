@@ -220,6 +220,7 @@ vector<Sprite*> GameTutorialsAnimationController::getElementsFromArrayWithYIndex
 	{
 		int tetraminoTag = aSourceMassive[xIndex];
 		Sprite *tetraminoView = getTetraminoViewForType(tetraminoTag);
+		tetraminoView->setTag(tetraminoTag);
 		Vec2 tetraminoPosition = getTetraminoPositionForIndexXY(xIndex, yIndex);
 		tetraminoView->setPosition(tetraminoPosition);
 		this->addChild(tetraminoView);
@@ -774,4 +775,85 @@ void GameTutorialsAnimationController::setExplosionAroundX(int xIndex)
 	setExplosionForIndexXY(xIndex - 1, 2);
 	setExplosionForIndexXY(xIndex, 2);
 	setExplosionForIndexXY(xIndex + 1, 2);
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getPlayerUseCohesionSpellTutorial()
+{
+	FiniteTimeAction *useSpellKeyAnimation = getUseSpellButtonAnimationWithKey(gameTutorialUseCohesionSpellControlKey);
+	vector<Sprite*> tetraminosForCohesion = getTetraminosForCohesion();
+	FiniteTimeAction *tetraminosExplosionAnimation = getTetraminosExplosionAnimationForCallback([this](){makeCohesionSpellExplosions();});
+	vector<Node*> cohesionTetraminos = getCohesionTetraminos();
+	FiniteTimeAction *tetraminosCohesionAnimation = getCohesionAnimationWithTetraminos(cohesionTetraminos);
+	vector<Node*> detailTetraminos;
+	FiniteTimeAction *tetraminosDisappearanceAnimation = getTetraminosDisappearanceAnimation(tetraminosForCohesion, cohesionTetraminos);
+	FiniteTimeAction *actionWithTetraminosAppearance = getTetraminosAppearanceAnimation(tetraminosForCohesion, detailTetraminos);
+	FiniteTimeAction *delayTime = DelayTime::create(0.4f);
+
+	ActionInterval *sequence  = Sequence::create(useSpellKeyAnimation, tetraminosCohesionAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, delayTime, actionWithTetraminosAppearance, nullptr);
+	FiniteTimeAction *repeat = RepeatForever::create(sequence);
+	return repeat;
+}
+
+vector<Sprite*> GameTutorialsAnimationController::getTetraminosForCohesion()
+{
+	vector<Sprite*> elementsForExplosions;
+
+	int middleLine[] = {1,0,2,2,3,0,4,4,1,1};
+
+	vector<Sprite*> middleLineElements = getElementsFromArrayWithYIndex(middleLine, 2);
+	elementsForExplosions.insert(elementsForExplosions.end(), middleLineElements.begin(), middleLineElements.end());
+
+	int downLine[] = {0,1,1,0,3,3,0,4,1,1};
+
+	vector<Sprite*> downLineElements = getElementsFromArrayWithYIndex(downLine, 1);
+	elementsForExplosions.insert(elementsForExplosions.end(), downLineElements.begin(), downLineElements.end());
+
+	return elementsForExplosions;
+}
+
+void GameTutorialsAnimationController::makeCohesionSpellExplosions()
+{
+	makeBottomExplosionWithHeight(1);
+	makeBottomExplosionWithHeight(2);
+}
+
+vector<Node*> GameTutorialsAnimationController::getCohesionTetraminos()
+{
+	vector<Node*> elementsForExplosions;
+
+	int downLine[] = {1,0,0,1,0,0,1,0,0,0};
+
+	vector<Sprite*> downLineElements = getElementsFromArrayWithYIndex(downLine, 1);
+	elementsForExplosions.insert(elementsForExplosions.end(), downLineElements.begin(), downLineElements.end());
+
+	int middleLine[] = {0,1,0,0,0,1,0,0,0,0};
+
+	vector<Sprite*> middleLineElements = getElementsFromArrayWithYIndex(middleLine, 2);
+	elementsForExplosions.insert(elementsForExplosions.end(), middleLineElements.begin(), middleLineElements.end());
+
+	return elementsForExplosions;
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getCohesionAnimationWithTetraminos(vector<Node*> aTetraminos)
+{
+	Vector<FiniteTimeAction*> actions;
+	vector<Node*>::iterator tetraminosIterator;
+	for (tetraminosIterator = aTetraminos.begin(); tetraminosIterator != aTetraminos.end(); tetraminosIterator++)
+	{
+		Node *tetraminoView = *tetraminosIterator;
+		if (tetraminoView->getTag() > 0)
+		{
+			tetraminoView->setOpacity(0.0f);
+			FiniteTimeAction *showNode = Show::create();
+			FiniteTimeAction *setOpacity = CallFuncN::create([](Node *aTarget){aTarget->setOpacity(0.0f);});
+			FiniteTimeAction *showTetramino = FadeIn::create(0.3f);
+			FiniteTimeAction *sequence = Sequence::create(setOpacity, showNode, showTetramino, nullptr);
+			FiniteTimeAction *animationWithTetramino = TargetedAction::create(tetraminoView, sequence);
+
+			actions.pushBack(animationWithTetramino);
+		}
+	}
+	FiniteTimeAction *tetraminosSequence = Sequence::create(actions);
+	FiniteTimeAction *animationWithTetraminos = TargetedAction::create(this, tetraminosSequence);
+	return animationWithTetraminos;
 }

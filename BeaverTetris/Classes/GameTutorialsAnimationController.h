@@ -18,6 +18,7 @@ public:
 	cocos2d::FiniteTimeAction* getPlayerFightWithBossTutorial();
 	cocos2d::FiniteTimeAction* getPlayerUseRandomExplosionsSpellTutorial();
 	cocos2d::FiniteTimeAction* getPlayerUseFirestormSpellTutorial();
+	cocos2d::FiniteTimeAction* getPlayerUseCohesionSpellTutorial();
 
 private:
 
@@ -76,6 +77,11 @@ private:
 	std::vector<cocos2d::Sprite*>  getTetraminosForFirestorm();
 	void makeFirestormSpellExplosions();
 	void setExplosionAroundX(int xIndex);
+
+	std::vector<cocos2d::Sprite*> getTetraminosForCohesion();
+	void makeCohesionSpellExplosions();
+	std::vector<cocos2d::Node*> getCohesionTetraminos();
+	cocos2d::FiniteTimeAction* getCohesionAnimationWithTetraminos(std::vector<cocos2d::Node*> aTetraminos);
 
 };
 

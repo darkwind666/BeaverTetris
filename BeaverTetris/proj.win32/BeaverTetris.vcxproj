@@ -179,6 +179,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\EndGameMenuElementCreator.cpp" />
     <ClCompile Include="..\Classes\EndGameMenuElementsCollectionCreator.cpp" />
     <ClCompile Include="..\Classes\EndGameMenuElementsFactory.cpp" />
+    <ClCompile Include="..\Classes\EndLevelTutorial.cpp" />
     <ClCompile Include="..\Classes\ExplosionAnimationController.cpp" />
     <ClCompile Include="..\Classes\ExplosionAnimationDelegate.cpp" />
     <ClCompile Include="..\Classes\FallenDetailAnimationController.cpp" />
@@ -383,6 +384,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\EndGameMenuElementCreator.h" />
     <ClInclude Include="..\Classes\EndGameMenuElementsCollectionCreator.h" />
     <ClInclude Include="..\Classes\EndGameMenuElementsFactory.h" />
+    <ClInclude Include="..\Classes\EndLevelTutorial.h" />
     <ClInclude Include="..\Classes\ExplosionAnimationController.h" />
     <ClInclude Include="..\Classes\ExplosionAnimationDelegate.h" />
     <ClInclude Include="..\Classes\FallenDetailAnimationController.h" />
