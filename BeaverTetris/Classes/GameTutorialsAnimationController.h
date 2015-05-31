@@ -14,8 +14,9 @@ public:
 	cocos2d::FiniteTimeAction* getPlayerReduceLineTutorial();
 	cocos2d::FiniteTimeAction* getPlayerReduceHorizontalCombinationTutorial();
 	cocos2d::FiniteTimeAction* getPlayerReduceVerticalCombinationTutorial();
-	cocos2d::FiniteTimeAction* getPlayerUseSpellTutorial();
+	cocos2d::FiniteTimeAction* getPlayerUseRocketSpellTutorial();
 	cocos2d::FiniteTimeAction* getPlayerFightWithBossTutorial();
+	cocos2d::FiniteTimeAction* getPlayerUseRandomExplosionsSpellTutorial();
 
 private:
 
@@ -44,6 +45,8 @@ private:
 	cocos2d::FiniteTimeAction* getTetraminosAppearanceAnimation(std::vector<cocos2d::Sprite*> aTetraminos, std::vector<cocos2d::Node*> aDetailTetraminos);
 	cocos2d::FiniteTimeAction* getAnimationWithTetraminosAndDetailAndAction(std::vector<cocos2d::Sprite*> aTetraminos, std::vector<cocos2d::Node*> aDetailTetraminos, std::function<cocos2d::FiniteTimeAction*()> action);
 	cocos2d::FiniteTimeAction* getAnimationWithTetraminosInDetail(std::vector<cocos2d::Node*> aDetailTetraminos, std::function<cocos2d::FiniteTimeAction*()> action);
+	cocos2d::LabelTTF* getPlayerScoreCountLabel();
+	cocos2d::FiniteTimeAction* getPlayerScoreAnimationWithCountLabelAndFinalCount(cocos2d::LabelTTF *aLabel, std::string aCount);
 
 	std::vector<cocos2d::Sprite*> getTetraminosHorizontalLineCombination();
 	void getHorizontalLineCombinationExplosion();
@@ -55,6 +58,7 @@ private:
 
 	void getSpellExplosion();
 	cocos2d::FiniteTimeAction* getUseSpellKeyAnimation();
+	cocos2d::FiniteTimeAction* getUseSpellButtonAnimationWithKey(std::string aKey);
 
 	cocos2d::FiniteTimeAction* getDetailFallenToBossLineAnimation(cocos2d::Node *aDetail);
 	void makeBossEnvironmentTetraminos();
@@ -62,6 +66,9 @@ private:
 	cocos2d::LabelTTF* getBossLifeCountLabel();
 	cocos2d::FiniteTimeAction* getVictoryConditionAnimationWithLifeLabel(cocos2d::LabelTTF *aLabel);
 	std::vector<cocos2d::Sprite*> getBossLineTetraminosCombination();
+
+	std::vector<cocos2d::Sprite*> getTetraminosForRandomExplosions();
+	void makeRandomSpellExplosions();
 
 };
 

@@ -596,7 +596,7 @@ void GameViewInformationFactory::makeMainGamePlayerScoreControllersData()
 	_elementsInformation[playerScoreControllerBackgroundKey] = scoreControllerBackground;
 
 	ViewElementInformation scoreControllerCountLabel;
-	scoreControllerCountLabel.elementPosition =  Vec2(0, 0);
+	scoreControllerCountLabel.elementPosition =  Vec2(35, 25);
 	scoreControllerCountLabel.elementZOrder = kMainGamePlayerScoreCountZOrder;
 	_elementsInformation[playerScoreControllerCountKey] = scoreControllerCountLabel;
 }
@@ -704,11 +704,19 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 	moveDetailRightControl.elementOffset = Vec2(90, 0);
 	_elementsInformation[gameTutorialMoveDetailRightControlKey] = moveDetailRightControl;
 
-	ViewElementInformation useSpellControl;
-	useSpellControl.elementImage = getImageNameForKey(gameTutorialUseSpellControlKey);
-	useSpellControl.elementPosition = Vec2(150, 350);
-	useSpellControl.elementZOrder = 0;
-	_elementsInformation[gameTutorialUseSpellControlKey] = useSpellControl;
+	Vec2 useSpellControllPosition = Vec2(150, 350);
+
+	ViewElementInformation useRocketSpellControl;
+	useRocketSpellControl.elementImage = getImageNameForKey(gameTutorialUseRocketSpellControlKey);
+	useRocketSpellControl.elementPosition = useSpellControllPosition;
+	useRocketSpellControl.elementZOrder = 0;
+	_elementsInformation[gameTutorialUseRocketSpellControlKey] = useRocketSpellControl;
+
+	ViewElementInformation useRandomExplosionSpellControl;
+	useRandomExplosionSpellControl.elementImage = getImageNameForKey(gameTutorialUseRandomExplosionsSpellControlKey);
+	useRandomExplosionSpellControl.elementPosition = useSpellControllPosition;
+	useRandomExplosionSpellControl.elementZOrder = 0;
+	_elementsInformation[gameTutorialUseRandomExplosionsSpellControlKey] = useRandomExplosionSpellControl;
 
 	ViewElementInformation useSpellRocket;
 	useSpellRocket.elementPosition = Vec2(200, 550);
@@ -744,6 +752,12 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 	usePauseButton.elementPosition = Vec2(startControlPosition.x + controllerOffset, startControlPosition.y + controllerOffset);
 	usePauseButton.elementZOrder = 0;
 	_elementsInformation[gameTutorialUsePauseButtonKey] = usePauseButton;
+
+	ViewElementInformation playerScorePad;
+	playerScorePad.elementImage = getImageNameForKey(playerScoreControllerBackgroundKey);
+	playerScorePad.elementPosition = Vec2(100, 350);
+	playerScorePad.elementZOrder = 0;
+	_elementsInformation[gameTutorialPlayerScorePadKey] = playerScorePad;
 }
 
 void GameViewInformationFactory::makeMainGamePausePopUpData()

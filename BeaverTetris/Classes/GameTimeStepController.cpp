@@ -7,7 +7,7 @@ using namespace std;
 GameTimeStepController::GameTimeStepController(void)
 {
 	_updateInterval = normalUpdateInterval;
-	_updateAvailable = true;
+	_updateAvailable = false;
 	_currentTimeInterval = 0;
 	_systems = vector<GameSystemInterface*>();
 	setAllSystemsUpdated();

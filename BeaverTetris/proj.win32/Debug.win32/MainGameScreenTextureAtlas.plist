@@ -420,7 +420,7 @@
                 <key>sourceSize</key>
                 <string>{15,14}</string>
             </dict>
-            <key>TutorialUseSpellButton.png</key>
+            <key>TutorialUseRocketSpellButton.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1802,8},{28,28}}</string>
@@ -433,7 +433,7 @@
                 <key>sourceSize</key>
                 <string>{28,28}</string>
             </dict>
-            <key>knopka 3.png</key>
+            <key>TutorialUseRandomExplosionsSpellButton.png</key>
             <dict>
                 <key>frame</key>
                 <string>{{1838,8},{28,28}}</string>

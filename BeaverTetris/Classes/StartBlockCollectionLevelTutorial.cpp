@@ -21,7 +21,7 @@ StartBlockCollectionLevelTutorial::~StartBlockCollectionLevelTutorial(void)
 
 void StartBlockCollectionLevelTutorial::startTutorial()
 {
-	FiniteTimeAction* tutorial = _tutorialsAnimationController->getPlayerUseSpellTutorial();
+	FiniteTimeAction* tutorial = _tutorialsAnimationController->getPlayerUseRocketSpellTutorial();
 	_tutorialsAnimationController->runAction(tutorial);
 }
 

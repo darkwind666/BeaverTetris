@@ -177,6 +177,11 @@ FiniteTimeAction* GameTutorialsAnimationController::getActivateControllerAnimati
 
 FiniteTimeAction* GameTutorialsAnimationController::getPlayerReduceLineTutorial()
 {
+
+	LabelTTF *playerScoreCount = getPlayerScoreCountLabel();
+	FiniteTimeAction *playerScoreAnimation = getPlayerScoreAnimationWithCountLabelAndFinalCount(playerScoreCount, string("300"));
+	FiniteTimeAction *playerScoreStartAnimation = CallFunc::create([playerScoreCount](){playerScoreCount->setString(string("200"));});
+
 	Node *detail = getDetailForControllsTutorial();
 	FiniteTimeAction *detailFallenAnimation = getDetailFallenAnimation(detail);
 	vector<Sprite*> tetraminosInBottom = getTetraminosInBottom();
@@ -188,7 +193,7 @@ FiniteTimeAction* GameTutorialsAnimationController::getPlayerReduceLineTutorial(
 	FiniteTimeAction *actionWithTetraminosAppearance = getTetraminosAppearanceAnimation(tetraminosInBottom, detailTetraminos);
 	FiniteTimeAction *delayTime = DelayTime::create(0.4f);
 
-	ActionInterval *sequence  = Sequence::create(detailFallenAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, delayTime, actionWithMoveDetailAtStartPositon, actionWithTetraminosAppearance, nullptr);
+	ActionInterval *sequence  = Sequence::create(detailFallenAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, playerScoreAnimation, delayTime, actionWithMoveDetailAtStartPositon, actionWithTetraminosAppearance, playerScoreStartAnimation, nullptr);
 	FiniteTimeAction *repeat = RepeatForever::create(sequence);
 	return repeat;
 }
@@ -315,9 +320,20 @@ FiniteTimeAction* GameTutorialsAnimationController::getAnimationWithTetraminosAn
 		actions.pushBack(animationWithTetramino);
 	}
 	FiniteTimeAction *bottomTetraminosSequence = Sequence::create(actions);
-	FiniteTimeAction *animationWithTetraminosInDetail = getAnimationWithTetraminosInDetail(aDetailTetraminos, action);
-	FiniteTimeAction *sequence = Sequence::create(bottomTetraminosSequence, animationWithTetraminosInDetail, nullptr);
-	FiniteTimeAction *animationWithTetraminos = TargetedAction::create(this, sequence);
+
+	FiniteTimeAction *animation;
+
+	if (aDetailTetraminos.size() > 0)
+	{
+		FiniteTimeAction *animationWithTetraminosInDetail = getAnimationWithTetraminosInDetail(aDetailTetraminos, action);
+		animation = Sequence::create(bottomTetraminosSequence, animationWithTetraminosInDetail, nullptr);
+	}
+	else
+	{
+		animation = bottomTetraminosSequence;
+	}
+
+	FiniteTimeAction *animationWithTetraminos = TargetedAction::create(this, animation);
 	return animationWithTetraminos;
 }
 
@@ -336,9 +352,38 @@ FiniteTimeAction* GameTutorialsAnimationController::getAnimationWithTetraminosIn
 	return animationWithTetraminos;
 }
 
+LabelTTF* GameTutorialsAnimationController::getPlayerScoreCountLabel()
+{
+	LabelTTF *victoryConditionStatus = LabelTTF::create("", "COMIC.TTF", 19);
+	victoryConditionStatus->setColor(Color3B(20, 61, 62));
+	victoryConditionStatus->setString(string("200"));
+	return victoryConditionStatus;
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getPlayerScoreAnimationWithCountLabelAndFinalCount(LabelTTF *aLabel, string aCount)
+{
+	Sprite *pad = CocosNodesHelper::getSpriteWithKey(playerScoreControllerBackgroundKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(pad, this, gameTutorialPlayerScorePadKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(aLabel, pad, playerScoreControllerCountKey);
+
+	FiniteTimeAction *activateControllerScaleUp = ScaleTo::create(tutorialActionDuration, 1.5f);
+	FiniteTimeAction *activateLabel = CallFunc::create([aLabel, aCount](){aLabel->setString(aCount);});
+	FiniteTimeAction *activateControllerScaleDown = ScaleTo::create(tutorialActionDuration, 1.0f);
+	FiniteTimeAction *sequence = Sequence::create(activateLabel, activateControllerScaleUp, activateControllerScaleDown, nullptr);
+	FiniteTimeAction *actionWithCondition = TargetedAction::create(pad, sequence);
+	return actionWithCondition;
+}
+
+
+
+
 
 FiniteTimeAction* GameTutorialsAnimationController::getPlayerReduceHorizontalCombinationTutorial()
 {
+	LabelTTF *playerScoreCount = getPlayerScoreCountLabel();
+	FiniteTimeAction *playerScoreAnimation = getPlayerScoreAnimationWithCountLabelAndFinalCount(playerScoreCount, string("300"));
+	FiniteTimeAction *playerScoreStartAnimation = CallFunc::create([playerScoreCount](){playerScoreCount->setString(string("200"));});
+
 	Node *detail = getDetailForControllsTutorial();
 	FiniteTimeAction *detailFallenAnimation = getDetailFallenAnimation(detail);
 	vector<Sprite*> tetraminosInBottom = getTetraminosHorizontalLineCombination();
@@ -350,7 +395,7 @@ FiniteTimeAction* GameTutorialsAnimationController::getPlayerReduceHorizontalCom
 	FiniteTimeAction *actionWithTetraminosAppearance = getTetraminosAppearanceAnimation(tetraminosInBottom, detailTetraminos);
 	FiniteTimeAction *delayTime = DelayTime::create(0.4f);
 
-	ActionInterval *sequence  = Sequence::create(detailFallenAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, delayTime, actionWithMoveDetailAtStartPositon, actionWithTetraminosAppearance, nullptr);
+	ActionInterval *sequence  = Sequence::create(detailFallenAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, playerScoreAnimation, delayTime, actionWithMoveDetailAtStartPositon, actionWithTetraminosAppearance, playerScoreStartAnimation, nullptr);
 	FiniteTimeAction *repeat = RepeatForever::create(sequence);
 	return repeat;
 }
@@ -372,6 +417,11 @@ void GameTutorialsAnimationController::getHorizontalLineCombinationExplosion()
 
 FiniteTimeAction* GameTutorialsAnimationController::getPlayerReduceVerticalCombinationTutorial()
 {
+
+	LabelTTF *playerScoreCount = getPlayerScoreCountLabel();
+	FiniteTimeAction *playerScoreAnimation = getPlayerScoreAnimationWithCountLabelAndFinalCount(playerScoreCount, string("300"));
+	FiniteTimeAction *playerScoreStartAnimation = CallFunc::create([playerScoreCount](){playerScoreCount->setString(string("200"));});
+
 	Node *detail = getDetailForControllsTutorial();
 	FiniteTimeAction *detailFallenAnimation = getDetailFallenToOneBlockAnimation(detail);
 	vector<Sprite*> tetraminosInBottom = getTetraminosVerticallLineCombination();
@@ -383,7 +433,7 @@ FiniteTimeAction* GameTutorialsAnimationController::getPlayerReduceVerticalCombi
 	FiniteTimeAction *actionWithTetraminosAppearance = getTetraminosAppearanceAnimation(tetraminosInBottom, detailTetraminos);
 	FiniteTimeAction *delayTime = DelayTime::create(0.4f);
 
-	ActionInterval *sequence  = Sequence::create(detailFallenAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, delayTime, actionWithMoveDetailAtStartPositon, actionWithTetraminosAppearance, nullptr);
+	ActionInterval *sequence  = Sequence::create(detailFallenAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, playerScoreAnimation, delayTime, actionWithMoveDetailAtStartPositon, actionWithTetraminosAppearance, playerScoreStartAnimation, nullptr);
 	FiniteTimeAction *repeat = RepeatForever::create(sequence);
 	return repeat;
 }
@@ -429,8 +479,12 @@ vector<Node*> GameTutorialsAnimationController::getVerticalDetailTetraminos(Node
 
 
 
-FiniteTimeAction* GameTutorialsAnimationController::getPlayerUseSpellTutorial()
+FiniteTimeAction* GameTutorialsAnimationController::getPlayerUseRocketSpellTutorial()
 {
+	LabelTTF *playerScoreCount = getPlayerScoreCountLabel();
+	FiniteTimeAction *playerScoreAnimation = getPlayerScoreAnimationWithCountLabelAndFinalCount(playerScoreCount, string("160"));
+	FiniteTimeAction *playerScoreStartAnimation = CallFunc::create([playerScoreCount](){playerScoreCount->setString(string("200"));});
+
 	Node *detail = getDetailForControllsTutorial();
 
 	FiniteTimeAction *detailAppearanceAnimation = getDetailAppearanceAnimation(detail);
@@ -448,17 +502,14 @@ FiniteTimeAction* GameTutorialsAnimationController::getPlayerUseSpellTutorial()
 	FiniteTimeAction *detailShowAnimation = Show::create();
 	FiniteTimeAction *showDetail = TargetedAction::create(detail, detailShowAnimation);
 
-	ActionInterval *sequence  = Sequence::create(detailAppearanceAnimation, useSpellKeyAnimation, explosionAnimation, hideDetail, placeDetailAtStartPositon, showDetail, nullptr);
+	ActionInterval *sequence  = Sequence::create(detailAppearanceAnimation, useSpellKeyAnimation, playerScoreAnimation, explosionAnimation, hideDetail, placeDetailAtStartPositon, showDetail, playerScoreStartAnimation, nullptr);
 	FiniteTimeAction *repeat = RepeatForever::create(sequence);
 	return repeat;
 }
 
 FiniteTimeAction* GameTutorialsAnimationController::getUseSpellKeyAnimation()
 {
-	Sprite *spellButton = CocosNodesHelper::getSpriteWithKey(gameTutorialUseSpellControlKey);
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(spellButton, this, gameTutorialUseSpellControlKey);
-	FiniteTimeAction *actionWithUpController = getActivateControllerAnimation(spellButton);
-
+	FiniteTimeAction *actionWithUpController = getUseSpellButtonAnimationWithKey(gameTutorialUseRocketSpellControlKey);
 	ParticleSystem *rocket = ParticleMeteor::create();
 	rocket->setGravity(Vec2(200,200));
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(rocket, this, gameTutorialUseSpellRocketKey);
@@ -470,6 +521,14 @@ FiniteTimeAction* GameTutorialsAnimationController::getUseSpellKeyAnimation()
 
 	FiniteTimeAction *sequence = Sequence::create(actionWithUpController, animationWithRocket, nullptr);
 	return sequence;
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getUseSpellButtonAnimationWithKey(string aKey)
+{
+	Sprite *spellButton = CocosNodesHelper::getSpriteWithKey(aKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(spellButton, this, aKey);
+	FiniteTimeAction *actionWithUpController = getActivateControllerAnimation(spellButton);
+	return actionWithUpController;
 }
 
 void GameTutorialsAnimationController::getSpellExplosion()
@@ -537,7 +596,7 @@ void GameTutorialsAnimationController::makeElementsFromArrayWithYIndex(int *aSou
 		int tetraminoTag = aSourceMassive[yIndex * tetrisBlocksWidth + xIndex];
 		elements[xIndex] = tetraminoTag;
 	}
-	getElementsFromArrayWithYIndex(elements, yIndex);
+	getElementsFromArrayWithYIndex(elements, yIndex + 1);
 }
 
 LabelTTF* GameTutorialsAnimationController::getBossLifeCountLabel()
@@ -572,4 +631,60 @@ vector<Sprite*> GameTutorialsAnimationController::getBossLineTetraminosCombinati
 	vector<Sprite*> elements = getElementsFromArrayWithYIndex(elementsInBossLine, 4);
 	vector<Sprite*> tetraminoInBottom = elements;
 	return tetraminoInBottom;
+}
+
+FiniteTimeAction* GameTutorialsAnimationController::getPlayerUseRandomExplosionsSpellTutorial()
+{
+	FiniteTimeAction *useSpellKeyAnimation = getUseSpellButtonAnimationWithKey(gameTutorialUseRandomExplosionsSpellControlKey);
+	
+	vector<Sprite*> tetraminosForRandomExplosions = getTetraminosForRandomExplosions();
+	FiniteTimeAction *tetraminosExplosionAnimation = getTetraminosExplosionAnimationForCallback([this](){makeRandomSpellExplosions();});
+	vector<Node*> detailTetraminos;
+	FiniteTimeAction *tetraminosDisappearanceAnimation = getTetraminosDisappearanceAnimation(tetraminosForRandomExplosions, detailTetraminos);
+	FiniteTimeAction *actionWithTetraminosAppearance = getTetraminosAppearanceAnimation(tetraminosForRandomExplosions, detailTetraminos);
+	FiniteTimeAction *delayTime = DelayTime::create(0.4f);
+
+	ActionInterval *sequence  = Sequence::create(useSpellKeyAnimation, tetraminosExplosionAnimation, tetraminosDisappearanceAnimation, delayTime, actionWithTetraminosAppearance, nullptr);
+	FiniteTimeAction *repeat = RepeatForever::create(sequence);
+	return repeat;
+}
+
+vector<Sprite*> GameTutorialsAnimationController::getTetraminosForRandomExplosions()
+{
+
+	vector<Sprite*> elementsForExplosions;
+
+	int upLine[] = {0,0,2,2,1,1,1,3,3,3};
+
+	vector<Sprite*> upLineElements = getElementsFromArrayWithYIndex(upLine, 3);
+	elementsForExplosions.push_back(upLineElements[6]);
+	elementsForExplosions.push_back(upLineElements[5]);
+	elementsForExplosions.push_back(upLineElements[8]);
+
+	int middleLine[] = {1,1,2,2,3,0,4,4,1,1};
+
+	vector<Sprite*> middleLineElements = getElementsFromArrayWithYIndex(middleLine, 2);
+	elementsForExplosions.push_back(middleLineElements[2]);
+	elementsForExplosions.push_back(middleLineElements[3]);
+
+	int downLine[] = {0,1,1,3,3,3,4,4,1,1};
+
+	vector<Sprite*> downLineElements = getElementsFromArrayWithYIndex(downLine, 1);
+	elementsForExplosions.push_back(downLineElements[1]);
+	elementsForExplosions.push_back(downLineElements[3]);
+	elementsForExplosions.push_back(downLineElements[2]);
+
+	return elementsForExplosions;
+}
+
+void GameTutorialsAnimationController::makeRandomSpellExplosions()
+{
+	setExplosionForIndexXY(1, 1);
+	setExplosionForIndexXY(3, 1);
+	setExplosionForIndexXY(2, 1);
+	setExplosionForIndexXY(2, 2);
+	setExplosionForIndexXY(3, 2);
+	setExplosionForIndexXY(6, 3);
+	setExplosionForIndexXY(5, 3);
+	setExplosionForIndexXY(8, 3);
 }

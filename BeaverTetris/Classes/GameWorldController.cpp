@@ -34,6 +34,7 @@ void GameWorldController::makeControllerView()
 
 void GameWorldController::startGame()
 {
+	_gameTimeStepController->setUpdateAvailable(true);
 	_gameStarted = true;
 	scheduleUpdate();
 }

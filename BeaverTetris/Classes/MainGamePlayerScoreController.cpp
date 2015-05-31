@@ -24,8 +24,9 @@ MainGamePlayerScoreController::~MainGamePlayerScoreController(void)
 
 void MainGamePlayerScoreController::makeControllerView()
 {
-	CocosNodesHelper::addSpriteToParentNodeWithKey(this, playerScoreControllerBackgroundKey);
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(_scoreView, this, playerScoreControllerCountKey);
+	Sprite *scorePad = CocosNodesHelper::getSpriteWithKey(playerScoreControllerBackgroundKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(scorePad, this, playerScoreControllerBackgroundKey);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(_scoreView, scorePad, playerScoreControllerCountKey);
 }
 
 void MainGamePlayerScoreController::update(float delta)

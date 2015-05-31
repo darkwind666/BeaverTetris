@@ -145,13 +145,16 @@ const string gameTutorialRotateDetailControlKey = string("gameTutorialRotateDeta
 const string gameTutorialAccelerateDetailControlKey = string("gameTutorialAccelerateDetailControl");
 const string gameTutorialMoveDetailLeftControlKey = string("gameTutorialMoveDetailLeftControl");
 const string gameTutorialMoveDetailRightControlKey = string("gameTutorialMoveDetailRightControl");
-const string gameTutorialUseSpellControlKey = string("TutorialUseSpellButton");
+const string gameTutorialUseRocketSpellControlKey = string("TutorialUseRocketSpellButton");
 const string gameTutorialUseSpellRocketKey = string("gameTutorialUseSpellRocket");
 const string gameTutorialVictoryConditionPadKey = string("gameTutorialVictoryConditionPad");
 const string gameTutorialVictoryConditionCountLabelKey = string("gameTutorialVictoryConditionCountLabel");
 const string gameTutorialVictoryConditionImageKey = string("gameTutorialVictoryConditionImage");
 const string gameTutorialShowLevelIconKey = string("GameTutorialShowLevelIcon");
 const string gameTutorialUsePauseButtonKey = string("TutorialUsePauseButton");
+const string gameTutorialPlayerScorePadKey = string("gameTutorialPlayerScorePad");
+const string gameTutorialUseRandomExplosionsSpellControlKey = string("TutorialUseRandomExplosionsSpellButton");
+
 
 
 const string pauseGameViewControllerKey = string("MainGamePauseButton");
