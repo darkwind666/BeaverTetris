@@ -14,6 +14,7 @@
 #include "GameLocalizationKeys.h"
 #include "CocosNodesHelper.h"
 #include "GameViewElementsKeys.h"
+#include "GameViewElementsDataSource.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -86,8 +87,10 @@ void GameViewStyleHelper::addBackButtonToParentNodeWithKeyAndCallbackAndLocaliza
 
 MenuItem* GameViewStyleHelper::getCloseButtonWithKeyAndCallbackAndLocalization(string aKey, ccMenuCallback aCallback, string aLocale)
 {
-	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(aKey);
-	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(aKey);
+	GameViewElementsDataSource *gameViewElementsDataSource = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
+	string buttonImageKey = gameViewElementsDataSource->getElementImageForKey(aKey);
+	string inactiveImageName = GameKeyWithSuffixSupporter::makeUnselectedImageForKey(buttonImageKey);
+	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(buttonImageKey);
 	MouseOverMenuItem *closeButtonItem = new MouseOverMenuItem(activeImageName,inactiveImageName,aCallback);
 	
 	Label *backButtonText = GameViewStyleHelper::getStandardLabelWithFontSize(18.0f);

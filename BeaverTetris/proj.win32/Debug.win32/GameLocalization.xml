@@ -12,6 +12,7 @@
   <local type="gameLose" english="You lose" russian="Вы проиграли"/>
   <local type="gameWin" english="You win!" russian="Вы выйграли!"/>
   <local type="gameWinAll" english="Victory!" russian="Победа!"/>
+  <local type="goToNextLevel" english="Next" russian="Вперёд"/>
   <local type="gameReplay" english="Replay" russian="Переиграть"/>
   <local type="gameDeveloperProgrammer" english="Programmer" russian="Программист"/>
   <local type="gameDeveloperProgrammerName" english="Hotyashov Alexander" russian="Хотяшов Александр"/>

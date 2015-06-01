@@ -38,9 +38,13 @@ void MainGamePauseViewController::setUpKeyboard()
 
 void MainGamePauseViewController::setPauseView()
 {
-	Sprite *pauseView = CocosNodesHelper::getSpriteWithKey(pauseGameViewControllerKey);
+	Sprite *pauseViewActiveImage = CocosNodesHelper::getSpriteWithKey(pauseGameViewControllerKey);
+	Sprite *pauseViewInactiveImage = CocosNodesHelper::getSpriteWithKey(pauseGameViewControllerKey);
+	MenuItemSprite *pauseButtonItem = MenuItemSprite::create(pauseViewActiveImage,pauseViewInactiveImage,[this](Ref*){stopGame();});
+	CocosNodesHelper::addButtonToParentNodeWithKey(pauseButtonItem, this, playerSpellImageKey);
+	_pauseView = pauseButtonItem;
+
 	Node *pauseButtonLabel = getPauseButtonLabel();
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(pauseView, this, playerSpellImageKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(pauseButtonLabel, this, playerSpellButtonLabelKey);
 }
 
@@ -54,12 +58,20 @@ Node* MainGamePauseViewController::getPauseButtonLabel()
 
 void MainGamePauseViewController::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
 {
-	if (aKeyCode == EventKeyboard::KeyCode::KEY_P && _winGameSystem->gameEnded() == false)
+	if (aKeyCode == EventKeyboard::KeyCode::KEY_P)
+	{
+		stopGame();
+	}
+}
+
+void MainGamePauseViewController::stopGame()
+{
+	if (_winGameSystem->gameEnded() == false)
 	{
 		_eventListenerKeyboard->setEnabled(false);
 		_gameTimeStepController->setUpdateAvailable(false);
 		function<void()> callback = [](){ GameStatesHelper::goToPopUp(kPauseGamePopUp);};
-		GameViewStyleHelper::runButtonActionWithCallbackAndDuration(this ,callback, gameControllButtonActionDuration);
+		GameViewStyleHelper::runButtonActionWithCallbackAndDuration(_pauseView ,callback, gameControllButtonActionDuration);
 	}
 }
 

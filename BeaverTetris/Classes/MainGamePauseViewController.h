@@ -27,6 +27,7 @@ private:
 	void setPauseView();
 	cocos2d::Node* getPauseButtonLabel();
 	void setUpKeyboard();
+	void stopGame();
 
 };
 

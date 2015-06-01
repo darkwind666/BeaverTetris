@@ -6,8 +6,8 @@ const float onePercentActionDuration = 0.01f;
 const float wavesActionDuration = 1.0f;
 
 const float bigFishActionDuration = 2.3f;
-const float middleFishActionDuration = 1.7f;
-const float crazyFishActionDuration = 1.1f;
+const float middleFishActionDuration = 2.1f;
+const float crazyFishActionDuration = 2.0f;
 
 const float standardButtonActionDuration = 0.15f;
 const float gameControllButtonActionDuration = 0.05f;

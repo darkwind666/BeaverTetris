@@ -44,11 +44,11 @@ vector<Node*> EndGameMenuElementsCollectionCreator::getNextLevelElements()
 	Node *playerAwardLabel = _endGameMenuElementCreator->getPlayerAwardLabel();
 	nextLevelElements.push_back(playerAwardLabel);
 
+	Node *goToNextLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(getGoToSceneCallback(kSelectLevel), mainGameEndPopUpNextButtonKey, gameGoToNextLevelLocalizationKey);
+	nextLevelElements.push_back(goToNextLevelButton);
+
 	Node *replayLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(getGoToSceneCallback(kPlayGame), mainGameEndPopUpReplayLevelButtonKey, gameReplayLocalizationKey);
 	nextLevelElements.push_back(replayLevelButton);
-
-	Node *goToSelectLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(getGoToSceneCallback(kSelectLevel), mainGamePauseGoToSelectLevelButtonKey, gameGoToMapLocalizationKey);
-	nextLevelElements.push_back(goToSelectLevelButton);
 
 	return nextLevelElements;
 }

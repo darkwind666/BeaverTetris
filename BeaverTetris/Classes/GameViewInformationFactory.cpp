@@ -121,22 +121,22 @@ void GameViewInformationFactory::makeStartGameFishesData()
 {
 	ViewElementInformation startGameFish1;
 	startGameFish1.elementImage = getImageNameForKey(startGameFish1Key);
-	startGameFish1.elementPosition = Vec2(320, 100);
-	startGameFish1.elementActionFinalPosition = Vec2(-20, 100);
+	startGameFish1.elementPosition = Vec2(380, 100);
+	startGameFish1.elementActionFinalPosition = Vec2(-80, 100);
 	startGameFish1.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
 	_elementsInformation[startGameFish1Key] = startGameFish1;
 
 	ViewElementInformation startGameFish2;
 	startGameFish2.elementImage = getImageNameForKey(startGameFish2Key);
-	startGameFish2.elementPosition = Vec2(-20, 30);
-	startGameFish2.elementActionFinalPosition = Vec2(290, 30);
+	startGameFish2.elementPosition = Vec2(-80, 30);
+	startGameFish2.elementActionFinalPosition = Vec2(380, 30);
 	startGameFish2.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
 	_elementsInformation[startGameFish2Key] = startGameFish2;
 
 	ViewElementInformation startGameFish3;
 	startGameFish3.elementImage = getImageNameForKey(startGameFish3Key);
-	startGameFish3.elementPosition = Vec2(-30, 90);
-	startGameFish3.elementActionFinalPosition = Vec2(290, 90);
+	startGameFish3.elementPosition = Vec2(-80, 90);
+	startGameFish3.elementActionFinalPosition = Vec2(380, 90);
 	startGameFish3.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
 	_elementsInformation[startGameFish3Key] = startGameFish3;
 
@@ -221,7 +221,7 @@ void GameViewInformationFactory::makeStartGameRegulateSoundPopUpData()
 	_elementsInformation[startGameRegulateSoundEffectsIconKey] = startGameRegulateSoundEffectsIcon;
 
 	ViewElementInformation startGameRegulateSoundCloseButton;
-	startGameRegulateSoundCloseButton.elementImage = getImageNameForKey(startGameRegulateSoundCloseButtonKey);
+	startGameRegulateSoundCloseButton.elementImage = startGameRegulateSoundCloseButtonKey;
 	startGameRegulateSoundCloseButton.elementPosition = Vec2(70, 10);
 	startGameRegulateSoundCloseButton.elementZOrder = kStartGameRegulateSoundPopUpCloseButtonZOrder;
 	_elementsInformation[startGameRegulateSoundCloseButtonKey] = startGameRegulateSoundCloseButton;
@@ -281,7 +281,7 @@ void GameViewInformationFactory::makeSelectGameLevelScreenData()
 	makeSelectGameLevelPlayerCreatorControllerData();
 
 	ViewElementInformation selectLevelSceneBackButton;
-	selectLevelSceneBackButton.elementImage = getImageNameForKey(selectLevelSceneBackButtonKey);
+	selectLevelSceneBackButton.elementImage = selectLevelSceneBackButtonKey;
 	selectLevelSceneBackButton.elementPosition = Vec2(80, 30);
 	selectLevelSceneBackButton.elementZOrder = kSelectLevelSceneBackButtonZOrder;
 	_elementsInformation[selectLevelSceneBackButtonKey] = selectLevelSceneBackButton;
@@ -419,6 +419,7 @@ void GameViewInformationFactory::makeSelectGameLevelPlayerCreatorControllerData(
 	_elementsInformation[playerCreatorControllerInputKey] = playerCreatorInput;
 
 	ViewElementInformation playerCreatorControllerBackButton;
+	playerCreatorControllerBackButton.elementImage = playerCreatorControllerBackButtonKey;
 	playerCreatorControllerBackButton.elementPosition = Vec2(68, 10);
 	playerCreatorControllerBackButton.elementZOrder = kPlayerCreatorInputZOrder;
 	_elementsInformation[playerCreatorControllerBackButtonKey] = playerCreatorControllerBackButton;
@@ -806,13 +807,13 @@ void GameViewInformationFactory::makeMainGamePausePopUpData()
 	_elementsInformation[mainGamePauseRegulateSoundEffectsSliderKey] = mainGamePauseRegulateSoundEffectsSlider;
 	
 	ViewElementInformation mainGamePauseRegulateSoundCloseButton;
-	mainGamePauseRegulateSoundCloseButton.elementImage = getImageNameForKey(mainGamePauseCloseButtonKey);
+	mainGamePauseRegulateSoundCloseButton.elementImage = mainGamePauseCloseButtonKey;
 	mainGamePauseRegulateSoundCloseButton.elementPosition = Vec2(67, 10);
 	mainGamePauseRegulateSoundCloseButton.elementZOrder = kMainGamePausePopUpCloseButtonZOrder;
 	_elementsInformation[mainGamePauseCloseButtonKey] = mainGamePauseRegulateSoundCloseButton;
 
 	ViewElementInformation mainGamePauseGoToSelectLevelButton;
-	mainGamePauseGoToSelectLevelButton.elementImage = getImageNameForKey(mainGamePauseGoToSelectLevelButtonKey);
+	mainGamePauseGoToSelectLevelButton.elementImage = mainGamePauseGoToSelectLevelButtonKey;
 	mainGamePauseGoToSelectLevelButton.elementPosition = Vec2(67, -40);
 	mainGamePauseGoToSelectLevelButton.elementZOrder = kMainGamePauseGoToSelectLevelButtonZOrder;
 	_elementsInformation[mainGamePauseGoToSelectLevelButtonKey] = mainGamePauseGoToSelectLevelButton;
@@ -888,9 +889,16 @@ void GameViewInformationFactory::makeMainGameEndPopUpData()
 void GameViewInformationFactory::makeMainGameEndPopUpMenuButtonsData()
 {
 	ViewElementInformation mainGameEndPopUpReplayLevelButton;
+	mainGameEndPopUpReplayLevelButton.elementImage = mainGameEndPopUpReplayLevelButtonKey;
 	mainGameEndPopUpReplayLevelButton.elementPosition = Vec2(70, 10);
 	mainGameEndPopUpReplayLevelButton.elementZOrder = 0;
 	_elementsInformation[mainGameEndPopUpReplayLevelButtonKey] = mainGameEndPopUpReplayLevelButton;
+
+	ViewElementInformation mainGameEndPopUpNextLevelButton;
+	mainGameEndPopUpNextLevelButton.elementImage = mainGameEndPopUpReplayLevelButtonKey;
+	mainGameEndPopUpNextLevelButton.elementPosition = Vec2(70, 60);
+	mainGameEndPopUpNextLevelButton.elementZOrder = 0;
+	_elementsInformation[mainGameEndPopUpNextButtonKey] = mainGameEndPopUpNextLevelButton;
 	
 	ViewElementInformation mainGameEndPopUpGoToSelectLevelButton;
 	mainGameEndPopUpGoToSelectLevelButton.elementPosition = Vec2(70, -30);
@@ -956,7 +964,7 @@ void GameViewInformationFactory::makeGameRecordsAnimationData()
 	_elementsInformation[gameRecordsBoardPlayerNameLabelKey] = gameRecordsBoardPlayerLabelName;
 
 	ViewElementInformation gameRecordsGoToMainMenuButton;
-	gameRecordsGoToMainMenuButton.elementImage = getImageNameForKey(gameRecordsGoToMainMenuButtonKey);
+	gameRecordsGoToMainMenuButton.elementImage = gameRecordsGoToMainMenuButtonKey;
 	gameRecordsGoToMainMenuButton.elementPosition = Vec2(0, -270);
 	gameRecordsGoToMainMenuButton.elementZOrder = 0;
 	_elementsInformation[gameRecordsGoToMainMenuButtonKey] = gameRecordsGoToMainMenuButton;
@@ -1081,7 +1089,7 @@ void GameViewInformationFactory::makeGameDevelopersBoardData()
 	_elementsInformation[gameDevelopersNameLabelKey] = gameDevelopersNameLabel;
 
 	ViewElementInformation gameDevelopersGoToMainMenuButton;
-	gameDevelopersGoToMainMenuButton.elementImage = getImageNameForKey(gameDevelopersGoToMainMenuButtonKey);
+	gameDevelopersGoToMainMenuButton.elementImage = gameDevelopersGoToMainMenuButtonKey;
 	gameDevelopersGoToMainMenuButton.elementPosition = Vec2(0, -220);
 	gameDevelopersGoToMainMenuButton.elementZOrder = kGameDevelopersGoToMainMenuButtonZOrder;
 	_elementsInformation[gameDevelopersGoToMainMenuButtonKey] = gameDevelopersGoToMainMenuButton;
