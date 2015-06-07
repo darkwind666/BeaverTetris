@@ -38,23 +38,23 @@ map<EventKeyboard::KeyCode, MenuItem*> PlayerActionControllerDesktop::makeContro
 	int controllersCount = _playerGameControlsDataSource->getPlayerControlsCount();
 	for (int controllerIndex = 0; controllerIndex < controllersCount; controllerIndex++)
 	{
-		MenuItem *playerControllerView = getPlayerControlView();
+		EventKeyboard::KeyCode keyCode = (EventKeyboard::KeyCode) _playerGameControlsDataSource->getPlayerControlKeyboardKeyOnIndex(controllerIndex);
+		MenuItem *playerControllerView = getPlayerControlViewWithKey(keyCode);
 		Vec2 viewPosition = _playerGameControlsDataSource->getPlayerControlPositionOnIndex(controllerIndex);
 		playerControllerView->setPosition(viewPosition);
 		float controllRotation = _playerGameControlsDataSource->getPlayerControlRotationForIndex(controllerIndex);
 		playerControllerView->setRotation(controllRotation);
 		playerControllerView->setTag(controllerIndex);
-		EventKeyboard::KeyCode keyCode = (EventKeyboard::KeyCode) _playerGameControlsDataSource->getPlayerControlKeyboardKeyOnIndex(controllerIndex);
 		controllersViews[keyCode] = playerControllerView;
 	}
 	return controllersViews;
 }
 
-MenuItem* PlayerActionControllerDesktop::getPlayerControlView()
+MenuItem* PlayerActionControllerDesktop::getPlayerControlViewWithKey(EventKeyboard::KeyCode aKey)
 {
 	Sprite *playerControllerInactiveImage = CocosNodesHelper::getSpriteWithKey(playerControlActiveImageKey);
 	Sprite *playerControllerActiveImage = CocosNodesHelper::getSpriteWithKey(playerControlActiveImageKey);
-	MenuItemSprite *playerControllerView = MenuItemSprite::create(playerControllerInactiveImage, playerControllerActiveImage);
+	MenuItemSprite *playerControllerView = MenuItemSprite::create(playerControllerInactiveImage, playerControllerActiveImage, [this, aKey](Ref* target){activatePlayerControllerOnKeyCode(aKey);});
 	return playerControllerView;
 }
 
@@ -75,19 +75,22 @@ void PlayerActionControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode a
 {
 	map<EventKeyboard::KeyCode, MenuItem*>::iterator viewsIterator; 
 	viewsIterator = _controllersViews.find(aKeyCode);
-	if (viewsIterator != _controllersViews.end() && _gameTimeStepController->getUpdataAvailable() == true)
+	if (viewsIterator != _controllersViews.end())
 	{
-		_gameTimeStepController->setUpdateAvailable(false);
 		activatePlayerControllerOnKeyCode(aKeyCode);
 	}
 }
 
 void PlayerActionControllerDesktop::activatePlayerControllerOnKeyCode(cocos2d::EventKeyboard::KeyCode aKeyCode)
 {
-	MenuItem* controllerView = _controllersViews[aKeyCode];
-	int controllerViewIndex = controllerView->getTag();
-	function<void()> callback = getCallbackWithButtonIndex(controllerViewIndex);
-	GameViewStyleHelper::runButtonActionWithCallbackAndDuration(controllerView ,callback, gameControllButtonActionDuration);
+	if (_gameTimeStepController->getUpdataAvailable() == true)
+	{
+		_gameTimeStepController->setUpdateAvailable(false);
+		MenuItem* controllerView = _controllersViews[aKeyCode];
+		int controllerViewIndex = controllerView->getTag();
+		function<void()> callback = getCallbackWithButtonIndex(controllerViewIndex);
+		GameViewStyleHelper::runButtonActionWithCallbackAndDuration(controllerView ,callback, gameControllButtonActionDuration);
+	}
 }
 
 function<void()> PlayerActionControllerDesktop::getCallbackWithButtonIndex(int aButtonIndex)

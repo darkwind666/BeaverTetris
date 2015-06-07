@@ -1,6 +1,7 @@
 #include "PlayerSpellsControllerDesktop.h"
 #include "SpellsViewDataSource.h"
 #include "CocosNodesHelper.h"
+#include "GameElementsDataHelper.h"
 #include "GameViewElementsKeys.h"
 #include "GameViewStyleHelper.h"
 #include "GameViewSuffixes.h"
@@ -13,7 +14,7 @@
 using namespace cocos2d;
 using namespace std;
 
-const int spellRechargeViewTag = 1;
+const int spellRechargeViewTag = 6;
 
 PlayerSpellsControllerDesktop::PlayerSpellsControllerDesktop(void)
 {
@@ -31,16 +32,16 @@ PlayerSpellsControllerDesktop::~PlayerSpellsControllerDesktop(void)
 	delete _spellsViewDataSource;
 }
 
-vector<Node*> PlayerSpellsControllerDesktop::makeSpellsIcons()
+vector<MenuItem*> PlayerSpellsControllerDesktop::makeSpellsIcons()
 {
-	vector<Node*> spellsIcons;
+	vector<MenuItem*> spellsIcons;
 	int spellsCount = _spellsViewDataSource->getAvailableSpellsCount();
 	for (int spellIndex = 0; spellIndex < spellsCount; spellIndex++)
 	{
-		Node *spellView = Node::create();
 		string normalSpellImage = _spellsViewDataSource->getSpellIconImageOnIndex(spellIndex);
 		Sprite *normalSpellView = Sprite::createWithSpriteFrameName(normalSpellImage);
-		spellView->addChild(normalSpellView);
+		Sprite *selectedSpellView = Sprite::createWithSpriteFrameName(normalSpellImage);
+		MenuItem *spellView = MenuItemSprite::create(normalSpellView, selectedSpellView, [this, spellIndex](Ref*){useSpellForIndex(spellIndex);});
 		setInSpellViewRechargedIcon(spellView);
 		int spellKeyboardKey = _spellsViewDataSource->getPlayerSpellKeyboardKeyOnIndex(spellIndex);
 		spellView->setTag(spellKeyboardKey);
@@ -56,15 +57,19 @@ void PlayerSpellsControllerDesktop::setInSpellViewRechargedIcon(Node* aView)
 	progress->setReverseDirection(true);
 	progress->setPercentage(0);
 	progress->setTag(spellRechargeViewTag);
+	Vec2 position = GameElementsDataHelper::getElementOffsetForKey(playerSpellImageKey);
+	progress->setPosition(position);
 	aView->addChild(progress);
 }
 
-vector<Node*> PlayerSpellsControllerDesktop::makeSpellsViewsWithIcons(vector<Node*> aIcons)
+vector<Node*> PlayerSpellsControllerDesktop::makeSpellsViewsWithIcons(vector<MenuItem*> aIcons)
 {
 	vector<Node*> spellsViews;
-	vector<Node*>::iterator iconsIterator;
+	vector<MenuItem*>::iterator iconsIterator;
 	for (iconsIterator = aIcons.begin(); iconsIterator != aIcons.end(); iconsIterator++)
 	{
+		Menu *menuForIcon = Menu::createWithItem(*iconsIterator);
+
 		int iconIndex = distance(aIcons.begin(), iconsIterator);
 		Node *spellView = Node::create();
 		Vec2 spellViewPosition = _spellsViewDataSource->getSpellPositionOnIndex(iconIndex);
@@ -72,7 +77,7 @@ vector<Node*> PlayerSpellsControllerDesktop::makeSpellsViewsWithIcons(vector<Nod
 
 		Node *spellCostLabel = getSpellCostLabelWithIndex(iconIndex);
 		Node *spellButtonLabel = getSpellButtonLabelWithIndex(iconIndex);
-		CocosNodesHelper::addChildNodeToParentNodeWithKey(*iconsIterator, spellView, playerSpellImageKey);
+		CocosNodesHelper::addChildNodeToParentNodeWithKey(menuForIcon, spellView, playerSpellImageKey);
 		CocosNodesHelper::addChildNodeToParentNodeWithKey(spellCostLabel, spellView, playerSpellCostLabelKey);
 		CocosNodesHelper::addChildNodeToParentNodeWithKey(spellButtonLabel, spellView, playerSpellButtonLabelKey);
 		spellsViews.push_back(spellView);
@@ -116,10 +121,10 @@ void PlayerSpellsControllerDesktop::setUpKeyboard()
 
 void PlayerSpellsControllerDesktop::update(float delta)
 {
-	vector<Node*>::iterator iconsIterator;
+	vector<MenuItem*>::iterator iconsIterator;
 	for (iconsIterator = _spellsIcons.begin(); iconsIterator != _spellsIcons.end(); iconsIterator++)
 	{
-		Node *spellIcon = *iconsIterator;
+		MenuItem *spellIcon = *iconsIterator;
 		int spellIndex = distance(_spellsIcons.begin(), iconsIterator);
 		float spellRechargePercent = _spellsViewDataSource->getSpellRechargePercenOnIndex(spellIndex);
 		ProgressTimer *spellRechargeView = (ProgressTimer*)spellIcon->getChildByTag(spellRechargeViewTag);
@@ -130,19 +135,16 @@ void PlayerSpellsControllerDesktop::update(float delta)
 void PlayerSpellsControllerDesktop::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
 {
 	int viewIndex = getViewIndexForKeyboardKey((int)aKeyCode);
-	if (viewIndex >= 0 && _gameTimeStepController->getUpdataAvailable() == true)
+	if (viewIndex >= 0)
 	{
-		_gameTimeStepController->setUpdateAvailable(false);
-		Node* controllerView = _spellsIcons[viewIndex];
-		function<void()> callback = getCallbackWithButtonIndex(viewIndex);
-		GameViewStyleHelper::runStandardButtonActionWithCallback(controllerView ,callback);
+		useSpellForIndex(viewIndex);
 	}
 }
 
 int PlayerSpellsControllerDesktop::getViewIndexForKeyboardKey(int aKeyboardKey)
 {
 	int viewIndex = -1;
-	vector<Node*>::iterator iconsIterator;
+	vector<MenuItem*>::iterator iconsIterator;
 	for (iconsIterator = _spellsIcons.begin(); iconsIterator != _spellsIcons.end(); iconsIterator++)
 	{
 		Node *spellIcon = *iconsIterator;
@@ -153,6 +155,17 @@ int PlayerSpellsControllerDesktop::getViewIndexForKeyboardKey(int aKeyboardKey)
 		}
 	}
 	return viewIndex;
+}
+
+void PlayerSpellsControllerDesktop::useSpellForIndex(int aIndex)
+{
+	if (_gameTimeStepController->getUpdataAvailable() == true)
+	{
+		_gameTimeStepController->setUpdateAvailable(false);
+		Node* controllerView = _spellsIcons[aIndex];
+		function<void()> callback = getCallbackWithButtonIndex(aIndex);
+		GameViewStyleHelper::runStandardButtonActionWithCallback(controllerView ,callback);
+	}
 }
 
 function<void()> PlayerSpellsControllerDesktop::getCallbackWithButtonIndex(int aButtonIndex)

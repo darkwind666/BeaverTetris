@@ -17,6 +17,7 @@ GameTutorialOrderController::GameTutorialOrderController(GameTutorial *aGameTuto
 	_tutorialBeaver = tutorialBeaver;
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(tutorialBeaver, this, gameTutorialBeaverKey);
 	_startBeaverPosition = tutorialBeaver->getPosition();
+	_beaverAnimationFinished = true;
 
 	setUpKeyboard();
 }
@@ -42,12 +43,15 @@ void GameTutorialOrderController::startTutorial()
 
 void GameTutorialOrderController::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
 {
-	if (aKeyCode == EventKeyboard::KeyCode::KEY_SPACE && _availableTutorials == true)
+	if (aKeyCode == EventKeyboard::KeyCode::KEY_SPACE && _availableTutorials == true && _beaverAnimationFinished == true)
 	{
 		_gameTutorial->nextTutorial();
 		_availableTutorials = _gameTutorial->availableTutorials();
-		ActionInterval *beaverAnimation = getBeaverAnimation();
-		_tutorialBeaver->runAction(beaverAnimation);
+		_beaverAnimationFinished = false;
+		FiniteTimeAction *beaverAnimation = getBeaverAnimation();
+		FiniteTimeAction *callback = CallFunc::create([this](){_beaverAnimationFinished = true;});
+		FiniteTimeAction *sequence = Sequence::create(beaverAnimation, callback, nullptr);
+		_tutorialBeaver->runAction(sequence);
 	}
 }
 

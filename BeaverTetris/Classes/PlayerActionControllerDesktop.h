@@ -22,7 +22,7 @@ private:
 	std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::MenuItem*> _controllersViews;
 
 	std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::MenuItem*> makeControllersViews();
-	cocos2d::MenuItem* getPlayerControlView();
+	cocos2d::MenuItem* getPlayerControlViewWithKey(cocos2d::EventKeyboard::KeyCode aKey);
 	void setUpKeyboard();
 	void addViewsToController(std::map<cocos2d::EventKeyboard::KeyCode, cocos2d::MenuItem*> aViews);
 	void activatePlayerControllerOnKeyCode(cocos2d::EventKeyboard::KeyCode aKeyCode);

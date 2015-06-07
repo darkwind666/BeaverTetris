@@ -18,6 +18,7 @@ private:
 	bool _availableTutorials;
 	cocos2d::Node *_tutorialBeaver;
 	cocos2d::Vec2 _startBeaverPosition;
+	bool _beaverAnimationFinished;
 
 	void setUpKeyboard();
 	void keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent);
