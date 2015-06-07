@@ -41,8 +41,7 @@ void FightWithBossLevelTutorial::nextTutorial()
 {
 	if (_availableTutorials)
 	{
-		_tutorialsAnimationController->stopAllActions();
-		_tutorialsAnimationController->removeAllChildrenWithCleanup(true);
+		_tutorialsAnimationController->cleanCurrentTutorial();
 		_currentTutorialIndex++;
 		showNextTutorial();
 	}

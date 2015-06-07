@@ -43,8 +43,7 @@ void GameTutorialWithOneStep::startTutorial()
 
 void GameTutorialWithOneStep::nextTutorial()
 {
-	_tutorialsAnimationController->stopAllActions();
-	_tutorialsAnimationController->removeAllChildrenWithCleanup(true);
+	_tutorialsAnimationController->cleanCurrentTutorial();
 	_availableTutorials = false;
 	_delegate->endTutorial();
 }

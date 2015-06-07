@@ -693,6 +693,24 @@
     <ClCompile Include="..\Classes\GameTutorialWithOneStep.cpp">
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\DetailForTutorialController.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PlayerActionsForTutorialController.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PlayerScoreForTutorialController.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TetraminosForTutorialController.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ExplosionsForTutorialController.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VictoryConditionForTutorialController.cpp">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1335,6 +1353,27 @@
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\GameTutorialWithOneStep.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DetailForTutorialController.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TutorialConstants.h">
+      <Filter>Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerActionsForTutorialController.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayerScoreForTutorialController.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TetraminosForTutorialController.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ExplosionsForTutorialController.h">
+      <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VictoryConditionForTutorialController.h">
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClInclude>
   </ItemGroup>

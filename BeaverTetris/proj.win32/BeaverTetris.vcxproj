@@ -172,6 +172,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CurrentPlayerSpellsDelegate.cpp" />
     <ClCompile Include="..\Classes\CurrentVictoryConditionDataSource.cpp" />
     <ClCompile Include="..\Classes\DamageToPlayerSpell.cpp" />
+    <ClCompile Include="..\Classes\DetailForTutorialController.cpp" />
     <ClCompile Include="..\Classes\DetailViewDataSource.cpp" />
     <ClCompile Include="..\Classes\CurrentPlayerDataSource.cpp" />
     <ClCompile Include="..\Classes\DetailsFromBoardDataSource.cpp" />
@@ -181,6 +182,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\EndGameMenuElementsFactory.cpp" />
     <ClCompile Include="..\Classes\ExplosionAnimationController.cpp" />
     <ClCompile Include="..\Classes\ExplosionAnimationDelegate.cpp" />
+    <ClCompile Include="..\Classes\ExplosionsForTutorialController.cpp" />
     <ClCompile Include="..\Classes\FallenDetailAnimationController.cpp" />
     <ClCompile Include="..\Classes\FallenDetailAnimationDelegate.cpp" />
     <ClCompile Include="..\Classes\FallenDetailAnimationFactory.cpp" />
@@ -271,8 +273,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\PlaceSomeDetailsCondition.cpp" />
     <ClCompile Include="..\Classes\PlayerActionControllerDesktop.cpp" />
     <ClCompile Include="..\Classes\PlayerActionControllerFactory.cpp" />
+    <ClCompile Include="..\Classes\PlayerActionsForTutorialController.cpp" />
     <ClCompile Include="..\Classes\PlayerCreatorController.cpp" />
     <ClCompile Include="..\Classes\PlayerGameControlsDataSource.cpp" />
+    <ClCompile Include="..\Classes\PlayerScoreForTutorialController.cpp" />
     <ClCompile Include="..\Classes\PlayerSpellsControllerDesktop.cpp" />
     <ClCompile Include="..\Classes\PlayerSpellsControllerFactory.cpp" />
     <ClCompile Include="..\Classes\PlayerStatusDataSource.cpp" />
@@ -311,6 +315,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminosChainCleaner.cpp" />
     <ClCompile Include="..\Classes\TetraminosCombinatorDelegate.cpp" />
     <ClCompile Include="..\Classes\TetraminosFallEvent.cpp" />
+    <ClCompile Include="..\Classes\TetraminosForTutorialController.cpp" />
     <ClCompile Include="..\Classes\TetraminosInGameBoardViewDataSource.cpp" />
     <ClCompile Include="..\Classes\TetraminoViewController.cpp" />
     <ClCompile Include="..\Classes\TetrisLogicSystem.cpp" />
@@ -335,6 +340,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TetraminosFactory.cpp" />
     <ClCompile Include="..\Classes\TimeAccelerationEvent.cpp" />
     <ClCompile Include="..\Classes\VerticalChainChecker.cpp" />
+    <ClCompile Include="..\Classes\VictoryConditionForTutorialController.cpp" />
     <ClCompile Include="..\Classes\VictoryConditionInterface.cpp" />
     <ClCompile Include="..\Classes\VictoryConditionViewDataSource.cpp" />
     <ClCompile Include="..\Classes\WinBossCondition.cpp" />
@@ -375,6 +381,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CurrentPlayerSpellsDelegate.h" />
     <ClInclude Include="..\Classes\CurrentVictoryConditionDataSource.h" />
     <ClInclude Include="..\Classes\DamageToPlayerSpell.h" />
+    <ClInclude Include="..\Classes\DetailForTutorialController.h" />
     <ClInclude Include="..\Classes\DetailViewDataSource.h" />
     <ClInclude Include="..\Classes\CurrentPlayerDataSource.h" />
     <ClInclude Include="..\Classes\DetailsFromBoardDataSource.h" />
@@ -384,6 +391,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\EndGameMenuElementsFactory.h" />
     <ClInclude Include="..\Classes\ExplosionAnimationController.h" />
     <ClInclude Include="..\Classes\ExplosionAnimationDelegate.h" />
+    <ClInclude Include="..\Classes\ExplosionsForTutorialController.h" />
     <ClInclude Include="..\Classes\FallenDetailAnimationController.h" />
     <ClInclude Include="..\Classes\FallenDetailAnimationDelegate.h" />
     <ClInclude Include="..\Classes\FallenDetailAnimationFactory.h" />
@@ -487,8 +495,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\PlaceSomeDetailsCondition.h" />
     <ClInclude Include="..\Classes\PlayerActionControllerDesktop.h" />
     <ClInclude Include="..\Classes\PlayerActionControllerFactory.h" />
+    <ClInclude Include="..\Classes\PlayerActionsForTutorialController.h" />
     <ClInclude Include="..\Classes\PlayerCreatorController.h" />
     <ClInclude Include="..\Classes\PlayerGameControlsDataSource.h" />
+    <ClInclude Include="..\Classes\PlayerScoreForTutorialController.h" />
     <ClInclude Include="..\Classes\PlayerSpellsControllerDesktop.h" />
     <ClInclude Include="..\Classes\PlayerSpellsControllerFactory.h" />
     <ClInclude Include="..\Classes\PlayerStatusDataSource.h" />
@@ -529,6 +539,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminosChainCleaner.h" />
     <ClInclude Include="..\Classes\TetraminosCombinatorDelegate.h" />
     <ClInclude Include="..\Classes\TetraminosFallEvent.h" />
+    <ClInclude Include="..\Classes\TetraminosForTutorialController.h" />
     <ClInclude Include="..\Classes\TetraminosInGameBoardViewDataSource.h" />
     <ClInclude Include="..\Classes\TetraminoViewController.h" />
     <ClInclude Include="..\Classes\TetrisLogicSystem.h" />
@@ -552,7 +563,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TetraminosPositionsDelegate.h" />
     <ClInclude Include="..\Classes\TetraminosFactory.h" />
     <ClInclude Include="..\Classes\TimeAccelerationEvent.h" />
+    <ClInclude Include="..\Classes\TutorialConstants.h" />
     <ClInclude Include="..\Classes\VerticalChainChecker.h" />
+    <ClInclude Include="..\Classes\VictoryConditionForTutorialController.h" />
     <ClInclude Include="..\Classes\VictoryConditionInterface.h" />
     <ClInclude Include="..\Classes\VictoryConditionViewDataSource.h" />
     <ClInclude Include="..\Classes\WinBossCondition.h" />
