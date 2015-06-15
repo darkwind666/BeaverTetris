@@ -7,6 +7,7 @@
 #include "MainGameSceneFactory.h"
 #include "GameRecordsSceneFactory.h"
 #include "DevelopersSceneFactory.h"
+#include "FinalSceneFactory.h"
 
 using namespace std;
 using namespace cocos2d;
@@ -37,6 +38,7 @@ std::map<GameState, SceneFactory*> ScenesFactory::getScenesFactories()
 	scenesFactories[kPlayGame] = new MainGameSceneFactory();
 	scenesFactories[kRecords] = new GameRecordsSceneFactory();
 	scenesFactories[kDevelopers] = new DevelopersSceneFactory();
+	scenesFactories[kEndGame] = new FinalSceneFactory();
 
 	return scenesFactories;
 }

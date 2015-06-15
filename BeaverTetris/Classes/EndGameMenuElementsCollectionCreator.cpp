@@ -28,7 +28,7 @@ vector<Node*> EndGameMenuElementsCollectionCreator::getFinalLevelElements()
 	Node *playerAwardLabel = _endGameMenuElementCreator->getPlayerAwardLabel();
 	finalLevelElements.push_back(playerAwardLabel);
 
-	Node *goToRecordsScreenButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(_endGameMenuElementCreator->getFinishGameCallback(), mainGameEndPopUpReplayLevelButtonKey, gameRecordsLocalizationKey);
+	Node *goToRecordsScreenButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(_endGameMenuElementCreator->getFinishGameCallback(), mainGameEndPopUpReplayLevelButtonKey, gameGoToNextLevelLocalizationKey);
 	finalLevelElements.push_back(goToRecordsScreenButton);
 
 	return finalLevelElements;

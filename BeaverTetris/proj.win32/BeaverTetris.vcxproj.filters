@@ -711,6 +711,12 @@
     <ClCompile Include="..\Classes\VictoryConditionForTutorialController.cpp">
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FinalSceneFactory.cpp">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FinalSceneAnimationController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1375,6 +1381,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\VictoryConditionForTutorialController.h">
       <Filter>Controllers\ViewControllers\GameTutorials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FinalSceneFactory.h">
+      <Filter>Factories\ScenesFactories</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FinalSceneAnimationController.h">
+      <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -14,6 +14,8 @@ const string createNewPlayerControllerGraphicName = string("CreateNewPlayerContr
 const string mainGamePausePopUpGraphicName = string("MainGamePausePopUpTextureAtlas");
 const string mainLosePopUpGraphicName = string("MainLosePopUpTextureAtlas");
 const string mainWinPopUpGraphicName = string("MainWinPopUpTextureAtlas");
+const string finalScreenGraphicName = string("FinalScreenTextureAtlas");
+
 
 GameGraphicsDataSource::GameGraphicsDataSource(void)
 {
@@ -65,6 +67,7 @@ std::vector<std::string> GameGraphicsDataSource::getGraphicKeys()
 	graphicsKeys.push_back(mainGamePausePopUpGraphicName);
 	graphicsKeys.push_back(mainLosePopUpGraphicName);
 	graphicsKeys.push_back(mainWinPopUpGraphicName);
+	graphicsKeys.push_back(finalScreenGraphicName);
 
 	return graphicsKeys;
 }

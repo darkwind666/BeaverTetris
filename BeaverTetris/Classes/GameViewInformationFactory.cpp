@@ -35,6 +35,7 @@ void GameViewInformationFactory::makeViewData()
 	makeMainGameScreenData();
 	makeRecordsScreenData();
 	makeDevelopersScreenData();
+	makeFinalScreenData();
 }
 
 void GameViewInformationFactory::makeLoadingScreenData()
@@ -1118,6 +1119,82 @@ void GameViewInformationFactory::makeGameDevelopersPositionsData()
 	gameDeveloperGameEngine.elementPosition = Vec2(0, -180);
 	gameDeveloperGameEngine.elementZOrder = 0;
 	_elementsInformation[gameDeveloperGameEngineKey] = gameDeveloperGameEngine;
+}
+
+void GameViewInformationFactory::makeFinalScreenData()
+{
+	ViewElementInformation finalScreenBackground;
+	finalScreenBackground.elementImage = getImageNameForKey(finalScreenBackgroundKey);
+	finalScreenBackground.elementPosition = getScreenCenter();
+	finalScreenBackground.elementZOrder = kFinalSreenBackgroundZOrder;
+	_elementsInformation[finalScreenBackgroundKey] = finalScreenBackground;
+
+	ViewElementInformation finalScreenAnimationController;
+	finalScreenAnimationController.elementPosition = Vec2(0, 0);
+	finalScreenAnimationController.elementZOrder = kFinalSreenAnimationControllerZOrder;
+	_elementsInformation[finalScreenAnimationControllerKey] = finalScreenAnimationController;
+
+	makeFinalScreenAnimationData();
+
+	ViewElementInformation finalScreenGoToRecordsButton;
+	finalScreenGoToRecordsButton.elementImage = finalScreenGoToRecordsButtonKey;
+	finalScreenGoToRecordsButton.elementPosition = Vec2(getScreenCenterX(), 50);
+	finalScreenGoToRecordsButton.elementZOrder = kFinalSreenGoToRecordsButtonZOrder;
+	_elementsInformation[finalScreenGoToRecordsButtonKey] = finalScreenGoToRecordsButton;
+
+}
+
+void GameViewInformationFactory::makeFinalScreenAnimationData()
+{
+	ViewElementInformation finalScreenClock;
+	finalScreenClock.elementImage = getImageNameForKey(finalScreenClockKey);
+	finalScreenClock.elementPosition = Vec2(220, 420);
+	finalScreenClock.elementZOrder = 0;
+	_elementsInformation[finalScreenClockKey] = finalScreenClock;
+
+	ViewElementInformation finalScreenBeaverPad;
+	finalScreenBeaverPad.elementPosition = Vec2(480, 100);
+	finalScreenBeaverPad.elementActionFinalPosition = Vec2(getScreenCenterX(), 100);
+	finalScreenBeaverPad.elementOffset = Vec2(0, 200);
+	finalScreenBeaverPad.elementZOrder = 0;
+	_elementsInformation[finalScreenBeaverKey] = finalScreenBeaverPad;
+
+	ViewElementInformation beaverRightHand;
+	beaverRightHand.elementImage = getImageNameForKey(finalScreenBeaverRightHandKey);
+	beaverRightHand.elementPosition = Vec2(90, 240);
+	beaverRightHand.elementZOrder = kFinalSreenBeaverRightHandZOrder;
+	_elementsInformation[finalScreenBeaverRightHandKey] = beaverRightHand;
+
+	ViewElementInformation beaverLeftHand;
+	beaverLeftHand.elementImage = getImageNameForKey(finalScreenBeaverLeftHandKey);
+	beaverLeftHand.elementPosition = Vec2(-230, 240);
+	beaverLeftHand.elementZOrder = kFinalSreenBeaverLeftHandZOrder;
+	_elementsInformation[finalScreenBeaverLeftHandKey] = beaverLeftHand;
+
+	ViewElementInformation beaverBody;
+	beaverBody.elementImage = getImageNameForKey(finalScreenBeaverBodyKey);
+	beaverBody.elementPosition = Vec2(0, 85);
+	beaverBody.elementActionFinalPosition = Vec2(getScreenCenterX(), 220);
+	beaverBody.elementZOrder = kFinalSreenBeaverBodyZOrder;
+	_elementsInformation[finalScreenBeaverBodyKey] = beaverBody;
+
+	ViewElementInformation beaverEyesPad;
+	beaverEyesPad.elementPosition = Vec2(-80, 270);
+	beaverEyesPad.elementZOrder = kFinalSreenBeaverEyesZOrder;
+	_elementsInformation[finalScreenBeaverEyesKey] = beaverEyesPad;
+
+	ViewElementInformation beaverRightEye;
+	beaverRightEye.elementImage = getImageNameForKey(finalScreenBeaverRightEyeKey);
+	beaverRightEye.elementPosition = Vec2(15, 35);
+	beaverRightEye.elementZOrder = 0;
+	_elementsInformation[finalScreenBeaverRightEyeKey] = beaverRightEye;
+
+	ViewElementInformation beaverLeftEye;
+	beaverLeftEye.elementImage = getImageNameForKey(finalScreenBeaverLeftEyeKey);
+	beaverLeftEye.elementPosition = Vec2(-80, 40);
+	beaverLeftEye.elementZOrder = 0;
+	_elementsInformation[finalScreenBeaverLeftEyeKey] = beaverLeftEye;
+
 }
 
 Vec2 GameViewInformationFactory::getScreenCenter()

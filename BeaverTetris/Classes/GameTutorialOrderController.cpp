@@ -20,10 +20,12 @@ GameTutorialOrderController::GameTutorialOrderController(GameTutorial *aGameTuto
 	_beaverAnimationFinished = true;
 
 	setUpKeyboard();
+	_listner = getListner();
 }
 
 GameTutorialOrderController::~GameTutorialOrderController(void)
 {
+	_eventDispatcher->removeEventListener(_listner);
 }
 
 void GameTutorialOrderController::setUpKeyboard()
@@ -31,6 +33,16 @@ void GameTutorialOrderController::setUpKeyboard()
 	EventListenerKeyboard *keyboardListner = EventListenerKeyboard::create();
 	keyboardListner->onKeyPressed = CC_CALLBACK_2(GameTutorialOrderController::keyPressed, this);
 	this->_eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardListner, this);
+}
+
+EventListenerTouchOneByOne* GameTutorialOrderController::getListner()
+{
+	EventListenerTouchOneByOne *listner = EventListenerTouchOneByOne::create();
+	listner->setSwallowTouches(false);
+	listner->onTouchBegan = [](Touch *touch, Event *aEvent){return true;};
+	listner->onTouchEnded = [this](Touch *touch, Event *aEvent){nextTutorial();};
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(listner, this);
+	return listner;
 }
 
 void GameTutorialOrderController::startTutorial()
@@ -43,7 +55,15 @@ void GameTutorialOrderController::startTutorial()
 
 void GameTutorialOrderController::keyPressed(cocos2d::EventKeyboard::KeyCode aKeyCode, cocos2d::Event *aEvent)
 {
-	if (aKeyCode == EventKeyboard::KeyCode::KEY_SPACE && _availableTutorials == true && _beaverAnimationFinished == true)
+	if (aKeyCode == EventKeyboard::KeyCode::KEY_SPACE)
+	{
+		nextTutorial();
+	}
+}
+
+void GameTutorialOrderController::nextTutorial()
+{
+	if (_availableTutorials == true && _beaverAnimationFinished == true)
 	{
 		_gameTutorial->nextTutorial();
 		_availableTutorials = _gameTutorial->availableTutorials();

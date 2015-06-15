@@ -8,6 +8,7 @@ enum GameState
 	kPlayGame,
 	kDevelopers,
 	kRecords,
+	kEndGame,
 };
 
 enum PopUpType

@@ -63,7 +63,7 @@ ccMenuCallback EndGameMenuElementCreator::getFinishGameCallback()
 	ccMenuCallback nextLevelCallback = [](Ref*){
 		CurrentPlayerDataSource *currentPlayerDataSource = (CurrentPlayerDataSource*)ServiceLocator::getServiceForKey(currentPlayerDataSourceKey);
 		currentPlayerDataSource->cleanPlayer();
-		GameStatesHelper::goToScene(kRecords);
+		GameStatesHelper::goToScene(kEndGame);
 	};
 	return nextLevelCallback;
 }

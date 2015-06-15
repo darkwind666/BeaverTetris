@@ -220,3 +220,15 @@ const string gameDevelopersNameLabelKey = string("gameDevelopersNameLabel");
 const string gameDevelopersBeaverKey = string("GameDevelopersBeaver");
 const string gameDevelopersClockKey = string("GameDevelopersBeaverClock");
 const string gameDevelopersGoToMainMenuButtonKey = string("GameDevelopersBackToMainMenu");
+
+const string finalScreenBackgroundKey = string("FinalScreenBackground");
+const string finalScreenAnimationControllerKey = string("FinalScreenAnimationController");
+const string finalScreenClockKey = string("FinalScreenClock");
+const string finalScreenBeaverKey = string("FinalScreenBeaverPad");
+const string finalScreenBeaverBodyKey = string("FinalScreenBeaver");
+const string finalScreenBeaverLeftHandKey = string("FinalScreenBeaverLeftHand");
+const string finalScreenBeaverRightHandKey = string("FinalScreenBeaverRightHand");
+const string finalScreenBeaverEyesKey = string("FinalScreenBeaverEyes");
+const string finalScreenBeaverLeftEyeKey = string("FinalScreenBeaverLeftEye");
+const string finalScreenBeaverRightEyeKey = string("FinalScreenBeaverRightEye");
+const string finalScreenGoToRecordsButtonKey = string("FinalScreenGoToRecords");

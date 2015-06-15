@@ -47,6 +47,8 @@ private:
 	void makeGameDevelopersAnimationData();
 	void makeGameDevelopersBoardData();
 	void makeGameDevelopersPositionsData();
+	void makeFinalScreenData();
+	void makeFinalScreenAnimationData();
 
 	cocos2d::Vec2 getScreenCenter();
 	float getScreenCenterX();

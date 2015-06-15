@@ -189,6 +189,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\FallenDetailDelegate.cpp" />
     <ClCompile Include="..\Classes\FightWithBossLevelTutorial.cpp" />
     <ClCompile Include="..\Classes\FillingGapInBoardSystem.cpp" />
+    <ClCompile Include="..\Classes\FinalSceneAnimationController.cpp" />
+    <ClCompile Include="..\Classes\FinalSceneFactory.cpp" />
     <ClCompile Include="..\Classes\FirestormSpellAnimationController.cpp" />
     <ClCompile Include="..\Classes\FirestormSpellDelegate.cpp" />
     <ClCompile Include="..\Classes\FirestromSpell.cpp" />
@@ -398,6 +400,8 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\FallenDetailDelegate.h" />
     <ClInclude Include="..\Classes\FightWithBossLevelTutorial.h" />
     <ClInclude Include="..\Classes\FillingGapInBoardSystem.h" />
+    <ClInclude Include="..\Classes\FinalSceneAnimationController.h" />
+    <ClInclude Include="..\Classes\FinalSceneFactory.h" />
     <ClInclude Include="..\Classes\FirestormSpellAnimationController.h" />
     <ClInclude Include="..\Classes\FirestormSpellDelegate.h" />
     <ClInclude Include="..\Classes\FirestromSpell.h" />

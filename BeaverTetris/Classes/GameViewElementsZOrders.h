@@ -155,3 +155,18 @@ enum GameDevelopersAnimationElementsZOrdes
 	kGameDevelopersBoardZOrder,
 	kGameDevelopersBeaverZOrder,
 };
+
+enum FinalSreenZOrdes
+{
+	kFinalSreenBackgroundZOrder,
+	kFinalSreenGoToRecordsButtonZOrder,
+	kFinalSreenAnimationControllerZOrder,
+};
+
+enum FinalSreenBeaverZOrdes
+{
+	kFinalSreenBeaverLeftHandZOrder,
+	kFinalSreenBeaverBodyZOrder,
+	kFinalSreenBeaverRightHandZOrder,
+	kFinalSreenBeaverEyesZOrder,
+};
