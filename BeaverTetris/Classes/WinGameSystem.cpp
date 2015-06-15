@@ -40,7 +40,7 @@ void WinGameSystem::updateSystem(float deltaTime)
 
 void WinGameSystem::checkWinGameState()
 {
-	if (_currentVictoryCondition->playerWin() == false)
+	if (_currentVictoryCondition->playerWin())
 	{
 		_gameTimeStepController->setUpdateAvailable(false);
 		_gameEnded = true;
