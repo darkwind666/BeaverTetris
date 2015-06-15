@@ -717,6 +717,9 @@
     <ClCompile Include="..\Classes\FinalSceneAnimationController.cpp">
       <Filter>Controllers\ViewControllers</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\FinalSceneBackgroundController.cpp">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -1386,6 +1389,9 @@
       <Filter>Factories\ScenesFactories</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\FinalSceneAnimationController.h">
+      <Filter>Controllers\ViewControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FinalSceneBackgroundController.h">
       <Filter>Controllers\ViewControllers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -18,10 +18,8 @@
   <local type="gameDeveloperProgrammerName" english="Hotyashov Alexander" russian="Хотяшов Александр"/>
   <local type="gameDeveloperDesigner" english="Designer" russian="Дизайнер"/>
   <local type="gameDeveloperDesignerName" english="Hotyashova Veronika" russian="Хотяшова Вероника"/>
-  <local type="gameDeveloperMusician" english="Music" russian="Музыка"/>
-  <local type="gameDeveloperMusicianName" english="Letter Box - Up Above" russian="Letter Box - Up Above"/>
-  <local type="gameDeveloperGameEngine" english="GameEngine" russian="Игровой движок"/>
-  <local type="gameDeveloperGameEngineName" english="Cocos2d-x" russian="Cocos2d-x"/>
+  <local type="gameDevelopersEmail" english="Email" russian="Электронный адрес"/>
+  <local type="gameDevelopersEmailName" english="darkwinddev@gmail.com" russian="darkwinddev@gmail.com"/>
   <local type="StartLevel" english="Hello, I am glad to see you in game. Help me found my watch please." russian="Привет, я рад тебя видеть в игре. Помоги мне найти часы."/>
   <local type="StartBlockCollectionLevel" english="Collect some blocks, and use spells." russian="Собери пару блоков. Используй заклинание когда захочешь."/>
   <local type="StartGoodTimeLevel" english="Remain some time for victory. I am sure in your skills." russian="Продержись немного времени для победы. Я в тебя верю."/>

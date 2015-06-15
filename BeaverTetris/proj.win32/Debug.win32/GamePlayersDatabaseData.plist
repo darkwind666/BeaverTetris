@@ -757,6 +757,18 @@
             </dict>
             <dict>
                 <key>PlayerName</key>
+                <string>п</string>
+                <key>PlayerScore</key>
+                <integer>2590</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
+                <string>п</string>
+                <key>PlayerScore</key>
+                <integer>2590</integer>
+            </dict>
+            <dict>
+                <key>PlayerName</key>
                 <string>veronika</string>
                 <key>PlayerScore</key>
                 <integer>2228</integer>

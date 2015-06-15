@@ -1110,15 +1110,10 @@ void GameViewInformationFactory::makeGameDevelopersPositionsData()
 	gameDeveloperDesigner.elementZOrder = 0;
 	_elementsInformation[gameDeveloperDesignerKey] = gameDeveloperDesigner;
 
-	ViewElementInformation gameDeveloperMusician;
-	gameDeveloperMusician.elementPosition = Vec2(0, -140);
-	gameDeveloperMusician.elementZOrder = 0;
-	_elementsInformation[gameDeveloperMusicianKey] = gameDeveloperMusician;
-
-	ViewElementInformation gameDeveloperGameEngine;
-	gameDeveloperGameEngine.elementPosition = Vec2(0, -180);
-	gameDeveloperGameEngine.elementZOrder = 0;
-	_elementsInformation[gameDeveloperGameEngineKey] = gameDeveloperGameEngine;
+	ViewElementInformation gameDevelopersEmail;
+	gameDevelopersEmail.elementPosition = Vec2(0, -140);
+	gameDevelopersEmail.elementZOrder = 0;
+	_elementsInformation[gameDevelopersEmailKey] = gameDevelopersEmail;
 }
 
 void GameViewInformationFactory::makeFinalScreenData()

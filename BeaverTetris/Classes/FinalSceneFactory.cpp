@@ -4,6 +4,7 @@
 #include "GameViewStyleHelper.h"
 #include "GameEnums.h"
 #include "GameViewElementsKeys.h"
+#include "FinalSceneBackgroundController.h"
 #include "FinalSceneAnimationController.h"
 #include "BackButtonController.h"
 #include "GameLocalizationKeys.h"
@@ -23,7 +24,8 @@ Scene* FinalSceneFactory::createScene()
 {
 	Scene *finalScene = Scene::create();
 
-	CocosNodesHelper::addSpriteToParentNodeWithKey(finalScene, finalScreenBackgroundKey);
+	FinalSceneBackgroundController *finalSceneBackgroundController = new FinalSceneBackgroundController();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(finalSceneBackgroundController, finalScene,  finalScreenBackgroundKey);
 
 	BackButtonController *backButtonController = new BackButtonController(kRecords);
 	finalScene->addChild(backButtonController);
