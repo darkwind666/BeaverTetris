@@ -25,19 +25,18 @@ cocos2d-x is:
 Git user attention
 -----------------------
 
-1. clone the repo from GitHub.
+1. Clone the repo from GitHub.
 
-         $ git clone git@github.com:cocos2d/cocos2d-x.git
+         $ git clone https://github.com/cocos2d/cocos2d-x.git
 
 2. After cloning the repo, please execute `download-deps.py` to download and install dependencies.
 
          $ cd cocos2d-x
-         $ python download-deps.py
+         cocos2d-x $ python download-deps.py
 
 3. After running `download-deps.py`.
 
-         $ cd cocos2d-x
-         $ git submodule update --init
+         cocos2d-x $ git submodule update --init
 
 How to start a new game
 -----------------------
@@ -135,10 +134,10 @@ Build Requirements
 
 * Mac OS X 10.7+, Xcode 5.1+
 * or Ubuntu 12.10+, CMake 2.6+
-* or Windows 7+, VS 2012+
+* or Windows 7+, VS 2013+
 * Python 2.7.5
 * NDK r10c+ is required to build Android games
-* Windows Phone/Store 8.0 VS 2012+
+* Windows Phone/Store 8.0 VS 2013+
 * Windows Phone/Store 8.1 VS 2013 Update 3+
 
 
@@ -186,7 +185,7 @@ $ bin/lua-empty-test/lua-empty-test
 
 * For Windows
 
-Open the `cocos2d-x/build/cocos2d-win32.vc2012.sln`
+Open the `cocos2d-x/build/cocos2d-win32.sln`
 
 * For Windows 8.1 Universal Apps (Phone and Store)
 
