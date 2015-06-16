@@ -24,15 +24,18 @@ THE SOFTWARE.
 #ifndef CC_TERRAIN_H
 #define CC_TERRAIN_H
 
+#include <vector>
+
 #include "2d/CCNode.h"
 #include "2d/CCCamera.h"
 #include "renderer/CCTexture2D.h"
 #include "renderer/CCCustomCommand.h"
+#include "renderer/CCRenderState.h"
 #include "3d/CCAABB.h"
 #include "3d/CCRay.h"
-#include <vector>
 #include "base/CCEventListenerCustom.h"
 #include "base/CCEventDispatcher.h"
+
 NS_CC_BEGIN
 
 /**
@@ -81,7 +84,7 @@ NS_CC_BEGIN
     * We can use ray-terrain intersection to pick a point of the terrain;
     * Also we can get an arbitrary point of the terrain's height and normal vector for convenience .
     **/
-class CC_DLL Terrain :public Node
+class CC_DLL Terrain : public Node
 {
 public:
 
@@ -299,22 +302,22 @@ public:
      * @param normal the specified position's normal vector in terrain . if this argument is NULL or nullptr,Normal calculation shall be skip.
      * @return the height value of the specified position of the terrain, if the (X,Z) position is out of the terrain bounds,it shall return 0;
      **/
-    float getHeight(float x, float z, Vec3 * normal= nullptr);
+    float getHeight(float x, float z, Vec3 * normal= nullptr) const;
 
     /**get specified position's height mapping to the terrain,use bi-linear interpolation method
      * @param pos the position (X,Z)
      * @param normal the specified position's normal vector in terrain . if this argument is NULL or nullptr,Normal calculation shall be skip.
      * @return the height value of the specified position of the terrain, if the (X,Z) position is out of the terrain bounds,it shall return 0;
      **/
-    float getHeight(Vec2 pos, Vec3*Normal = nullptr);
+    float getHeight(Vec2 pos, Vec3*Normal = nullptr) const;
 
     /**get the normal of the specified pistion in terrain
      * @return the normal vector of the specified position of the terrain.
      * @note the fast normal calculation may not get precise normal vector.
      **/
-    Vec3 getNormal(int pixelX, int pixelY);
+    Vec3 getNormal(int pixelX, int pixelY) const;
     /**get height from the raw height filed*/
-    float getImageHeight(int pixelX, int pixelY);
+    float getImageHeight(int pixelX, int pixelY) const;
     /**show the wireline instead of the surface,Debug Use only.
      * @Note only support desktop platform
      **/
@@ -341,7 +344,15 @@ public:
      * Ray-Terrain intersection.
      * @return the intersection point
      */
-    Vec3 getIntersectionPoint(const Ray & ray);
+    Vec3 getIntersectionPoint(const Ray & ray) const;
+
+   /**
+    * Ray-Terrain intersection.
+    * @param ray to hit the terrain
+    * @param intersectionPoint hit point if hitted
+    * @return true if hit, false otherwise
+    */
+    bool getIntersectionPoint(const Ray & ray, Vec3 & intersectionPoint) const;
 
     /**
      * set the MaxDetailAmount.
@@ -384,6 +395,17 @@ public:
     QuadTree * getQuadTree();
 
     void reload();
+    
+    /**
+     * get the terrain's size
+     */
+    Size getTerrainSize() const { return Size(_imageWidth, _imageHeight); }
+    
+    /**
+     * get the terrain's height data
+     */
+    std::vector<float> getHeightData() const;
+    
 protected:
     
     Terrain();
@@ -422,6 +444,7 @@ protected:
     ChunkIndices insertIndicesLOD(int neighborLod[4], int selfLod, GLushort * indices, int size);
 
     ChunkIndices insertIndicesLODSkirt(int selfLod, GLushort * indices, int size);
+
 protected:
     std::vector <ChunkLODIndices> _chunkLodIndicesSet;
     std::vector<ChunkLODIndicesSkirt> _chunkLodIndicesSkirtSet;
@@ -458,7 +481,10 @@ protected:
     GLint _alphaMapLocation;
     GLint _alphaIsHasAlphaMapLocation;
     GLint _detailMapSizeLocation[4];
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_WP8 || CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+
+    RenderState::StateBlock* _stateBlock;
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
     EventListenerCustom* _backToForegroundListener;
 #endif
 };

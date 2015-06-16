@@ -34,7 +34,7 @@ THE SOFTWARE.
 #include "base/CCEventListenerCustom.h"
 #include "base/CCEventDispatcher.h"
 #include "renderer/CCRenderer.h"
-
+#include "2d/CCCamera.h"
 
 NS_CC_BEGIN
 
@@ -551,13 +551,6 @@ void RenderTexture::onBegin()
     if(!_keepMatrix)
     {
         director->setProjection(director->getProjection());
-
-#if CC_TARGET_PLATFORM == CC_PLATFORM_WP8
-        auto modifiedProjection = director->getMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
-        modifiedProjection = GLViewImpl::sharedOpenGLView()->getReverseOrientationMatrix() * modifiedProjection;
-        director->loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION,modifiedProjection);
-#endif
-
         const Size& texSize = _texture->getContentSizeInPixels();
         
         // Calculate the adjustment ratios based on the old and new projections
@@ -568,14 +561,6 @@ void RenderTexture::onBegin()
         Mat4 orthoMatrix;
         Mat4::createOrthographicOffCenter((float)-1.0 / widthRatio, (float)1.0 / widthRatio, (float)-1.0 / heightRatio, (float)1.0 / heightRatio, -1, 1, &orthoMatrix);
         director->multiplyMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, orthoMatrix);
-    }
-    else
-    {
-#if CC_TARGET_PLATFORM == CC_PLATFORM_WP8
-        auto modifiedProjection = director->getMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
-        modifiedProjection = GLViewImpl::sharedOpenGLView()->getReverseOrientationMatrix() * modifiedProjection;
-        director->loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, modifiedProjection);
-#endif
     }
     
     //calculate viewport
@@ -617,6 +602,8 @@ void RenderTexture::onEnd()
 
     // restore viewport
     director->setViewport();
+    const auto& vp = Camera::getDefaultViewport();
+    glViewport(vp._left, vp._bottom, vp._width, vp._height);
     //
     director->loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, _oldProjMatrix);
     director->loadMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW, _oldTransMatrix);
