@@ -10,7 +10,7 @@ GATrackerpp::GATrackerpp(const string &trackingId, const string &clientId, std::
 {
     curl_global_init(CURL_GLOBAL_ALL);
 	_handle = 0;
-	_onLine = true;
+	_onLine = false;
 }
 
 GATrackerpp::~GATrackerpp() 
