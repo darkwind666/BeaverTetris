@@ -48,7 +48,7 @@ void GameViewInformationFactory::makeLoadingScreenData()
 
 	ViewElementInformation loadingGameWave;
 	loadingGameWave.elementImage = getImageNameForKey(loadingGameWaveKey);
-	loadingGameWave.elementPosition = Vec2(0, 40) + getScreenCenter();
+	loadingGameWave.elementPosition = Vec2(0, 60) + getScreenCenter();
 	loadingGameWave.elementZOrder = kLoadingGameWaveZOrder;
 	_elementsInformation[loadingGameWaveKey] = loadingGameWave;
 	
@@ -88,8 +88,8 @@ void GameViewInformationFactory::makeStartGameSreenData()
 
 	ViewElementInformation startGameMenu;
 	startGameMenu.elementImage = getImageNameForKey(startGameMenuKey);
-	startGameMenu.elementPosition = Vec2(155, -450);
-	startGameMenu.elementActionFinalPosition = Vec2(155, 210);
+	startGameMenu.elementPosition = getScreenCenter() - Vec2(0, 800);
+	startGameMenu.elementActionFinalPosition = getScreenCenter() - Vec2(0, 60);
 	startGameMenu.elementZOrder = kLoadingBackgroundZOrder;
 	_elementsInformation[startGameMenuKey] = startGameMenu;
 
@@ -102,9 +102,9 @@ void GameViewInformationFactory::makeStartGameSreenData()
 
 	ViewElementInformation startGameBeaver;
 	startGameBeaver.elementImage = getImageNameForKey(startGameBeaverKey);
-	startGameBeaver.elementPosition = Vec2(480, 100);
-	startGameBeaver.elementActionFinalPosition = Vec2(230, 270);
-	startGameBeaver.elementOffset = Vec2(0, 200);
+	startGameBeaver.elementPosition = Vec2(1680, 220);
+	startGameBeaver.elementActionFinalPosition = Vec2(890, 440);
+	startGameBeaver.elementOffset = Vec2(0, 250);
 	startGameBeaver.elementZOrder = kStartGameBeaverZOrder;
 	_elementsInformation[startGameBeaverKey] = startGameBeaver;
 
@@ -122,22 +122,22 @@ void GameViewInformationFactory::makeStartGameFishesData()
 {
 	ViewElementInformation startGameFish1;
 	startGameFish1.elementImage = getImageNameForKey(startGameFish1Key);
-	startGameFish1.elementPosition = Vec2(380, 100);
-	startGameFish1.elementActionFinalPosition = Vec2(-80, 100);
+	startGameFish1.elementPosition = Vec2(1680, 150);
+	startGameFish1.elementActionFinalPosition = Vec2(-110, 150);
 	startGameFish1.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
 	_elementsInformation[startGameFish1Key] = startGameFish1;
 
 	ViewElementInformation startGameFish2;
 	startGameFish2.elementImage = getImageNameForKey(startGameFish2Key);
-	startGameFish2.elementPosition = Vec2(-80, 30);
-	startGameFish2.elementActionFinalPosition = Vec2(380, 30);
+	startGameFish2.elementPosition = Vec2(-110, 50);
+	startGameFish2.elementActionFinalPosition = Vec2(1680, 50);
 	startGameFish2.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
 	_elementsInformation[startGameFish2Key] = startGameFish2;
 
 	ViewElementInformation startGameFish3;
 	startGameFish3.elementImage = getImageNameForKey(startGameFish3Key);
-	startGameFish3.elementPosition = Vec2(-80, 90);
-	startGameFish3.elementActionFinalPosition = Vec2(380, 90);
+	startGameFish3.elementPosition = Vec2(-110, 100);
+	startGameFish3.elementActionFinalPosition = Vec2(1680, 100);
 	startGameFish3.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
 	_elementsInformation[startGameFish3Key] = startGameFish3;
 
@@ -147,31 +147,31 @@ void GameViewInformationFactory::makeStartGameMenuItemsData()
 {
 
 	ViewElementInformation createNewGameButton;
-	createNewGameButton.elementPosition = Vec2(-30, 160);
+	createNewGameButton.elementPosition = Vec2(0, 310);
 	createNewGameButton.elementOffset = Vec2(10, 0);
 	createNewGameButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[createNewGameButtonKey] = createNewGameButton;
 
 	ViewElementInformation selectGameLevelButton;
-	selectGameLevelButton.elementPosition = Vec2(-40, 100);
+	selectGameLevelButton.elementPosition = Vec2(0, 220);
 	selectGameLevelButton.elementOffset = Vec2(10, 0);
 	selectGameLevelButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[selectGameLevelButtonKey] = selectGameLevelButton;
 
 	ViewElementInformation goToGameRecordsButton;
-	goToGameRecordsButton.elementPosition = Vec2(-40, 60);
+	goToGameRecordsButton.elementPosition = Vec2(0, 130);
 	goToGameRecordsButton.elementOffset = Vec2(10, 0);
 	goToGameRecordsButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[goToGameRecordsButtonKey] = goToGameRecordsButton;
 
 	ViewElementInformation getSoundRegulatorsButton;
-	getSoundRegulatorsButton.elementPosition = Vec2(-70, 0);
+	getSoundRegulatorsButton.elementPosition = Vec2(-45, 40);
 	getSoundRegulatorsButton.elementOffset = Vec2(10, 0);
 	getSoundRegulatorsButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[getSoundRegulatorsButtonKey] = getSoundRegulatorsButton;
 
 	ViewElementInformation goToDevelopersButton;
-	goToDevelopersButton.elementPosition = Vec2(-70, -40);
+	goToDevelopersButton.elementPosition = Vec2(-45, -40);
 	goToDevelopersButton.elementOffset = Vec2(10, 0);
 	goToDevelopersButton.elementZOrder = kStartGameBackgroundZOrder;
 	_elementsInformation[goToDevelopersButtonKey] = goToDevelopersButton;

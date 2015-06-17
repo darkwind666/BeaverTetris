@@ -5,16 +5,16 @@ const float standartTransitionDuration = 1.0f;
 const float onePercentActionDuration = 0.01f;
 const float wavesActionDuration = 1.0f;
 
-const float bigFishActionDuration = 2.3f;
-const float middleFishActionDuration = 2.1f;
-const float crazyFishActionDuration = 2.0f;
+const float bigFishActionDuration = 5.3f;
+const float middleFishActionDuration = 5.1f;
+const float crazyFishActionDuration = 5.0f;
 
 const float standardButtonActionDuration = 0.15f;
 const float gameControllButtonActionDuration = 0.05f;
 const float standardButtonScaleForAction = 0.8f;
 
 const float startMenuActionDuration = 0.8f;
-const float beaverStartScreenActionDuration = 1.0f;
+const float beaverStartScreenActionDuration = 1.5f;
 const float beaverClockArrowRotationSpeed = 1.0f;
 
 const float regulateSoundPopUpStartAppearDuration = 1.0f;

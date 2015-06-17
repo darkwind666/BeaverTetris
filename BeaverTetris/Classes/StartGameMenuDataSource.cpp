@@ -28,6 +28,8 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 {
 	vector <StartGameMenuItemInformation> menuItems = vector <StartGameMenuItemInformation>();
 
+	int standardTextSize = 21;
+
 	if (_currentPlayerDataSource->isThereCurentPlayer())
 	{
 		StartGameMenuItemInformation menuItem2;
@@ -35,7 +37,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 		menuItem2.imageName = selectGameLevelButtonKey;
 		menuItem2.textRotation = -10.0f;
 		menuItem2.buttonRotation = 0.0f;
-		menuItem2.textSize = 13;
+		menuItem2.textSize = standardTextSize;
 		menuItem2.text = StringsSupporter::getLocalizedStringFromKey(gameGoToMapLocalizationKey);
 		menuItem2.callback = [](){GameStatesHelper::goToScene(kSelectLevel);};
 		menuItems.push_back(menuItem2);
@@ -46,7 +48,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 	menuItem1.imageName = goToDevelopersButtonKey;
 	menuItem1.textRotation = -10.0f;
 	menuItem1.buttonRotation = 0.0f;
-	menuItem1.textSize = 17;
+	menuItem1.textSize = standardTextSize + 4;
 	menuItem1.text = StringsSupporter::getLocalizedStringFromKey(newGameLocalizationKey);
 	menuItem1.callback = [this]()
 	{
@@ -60,7 +62,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 	menuItem3.imageName = selectGameLevelButtonKey;
 	menuItem3.textRotation = -10.0f;
 	menuItem3.buttonRotation = 0.0f;
-	menuItem3.textSize = 13;
+	menuItem3.textSize = standardTextSize;
 	menuItem3.text = StringsSupporter::getLocalizedStringFromKey(gameRecordsLocalizationKey);
 	menuItem3.callback = [](){GameStatesHelper::goToScene(kRecords);};
     menuItems.push_back(menuItem3);
@@ -70,7 +72,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 	menuItem4.imageName = selectGameLevelButtonKey;
 	menuItem4.textRotation = -10.0f;
 	menuItem4.buttonRotation = 7.0f;
-	menuItem4.textSize = 13;
+	menuItem4.textSize = standardTextSize;
 	menuItem4.text = StringsSupporter::getLocalizedStringFromKey(gameSettingsLocalizationKey);
 	menuItem4.callback = [](){GameStatesHelper::goToPopUp(kRegulateSoundPopUp);};
     menuItems.push_back(menuItem4);
@@ -80,7 +82,7 @@ vector <StartGameMenuItemInformation> StartGameMenuDataSource::makeMenuItems()
 	menuItem5.imageName = selectGameLevelButtonKey;
 	menuItem5.textRotation = -10.0f;
 	menuItem5.buttonRotation = 7.0f;
-	menuItem5.textSize = 13;
+	menuItem5.textSize = standardTextSize;
 	menuItem5.text = StringsSupporter::getLocalizedStringFromKey(gameDevelopersLocalizationKey);
 	menuItem5.callback = [](){GameStatesHelper::goToScene(kDevelopers);};
     menuItems.push_back(menuItem5);

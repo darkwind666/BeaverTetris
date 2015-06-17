@@ -40,7 +40,7 @@ void LoadGameController::loadGameResource()
 	}
 	else
 	{
-		//GameStatesHelper::goToScene(kStartGame);
+		GameStatesHelper::goToScene(kStartGame);
 	}
 
 }
