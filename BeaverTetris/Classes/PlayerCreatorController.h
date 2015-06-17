@@ -1,7 +1,7 @@
 #pragma once
 
 #include "cocos2d.h"
-#include "UIEditBox\UIEditBox.h"
+#include "UIEditBox.h"
 
 class CurrentPlayerDataSource;
 class PlayerStatusDelegateInterface;

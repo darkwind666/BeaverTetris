@@ -30,14 +30,5 @@
     <None Include="$(CurlBinPath)ssleay32.dll">
       <DeploymentContent>true</DeploymentContent>
     </None>
-    <None Include="$(OggBinPath)libogg.dll">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-    <None Include="$(OggBinPath)libvorbis.dll">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-    <None Include="$(OggBinPath)libvorbisfile.dll">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
   </ItemGroup>
 </Project>

@@ -498,6 +498,7 @@ Wrappers::FileHandle MP3Reader::openFile(const std::string& path, bool append)
     return Microsoft::WRL::Wrappers::FileHandle(CreateFile2(std::wstring(path.begin(), path.end()).c_str(), access, FILE_SHARE_READ, creation, &extParams));
 }
 
+/*
 
 // OGGReader
 OGGReader::OGGReader()
@@ -630,5 +631,7 @@ void OGGReader::seekTo(const float ratio)
 {
     AudioSourceReader::seekTo(ratio);
 }
+
+*/
 
 #endif

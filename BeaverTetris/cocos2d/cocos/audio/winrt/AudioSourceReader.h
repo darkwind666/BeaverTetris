@@ -30,8 +30,8 @@
 #include <queue>
 #include <mutex>
 #include "MediaStreamer.h"
-#include "ogg/ogg.h"
-#include "vorbis/vorbisfile.h"
+//#include "ogg/ogg.h"
+//#include "vorbis/vorbisfile.h"
 
 NS_CC_BEGIN
 namespace experimental{
@@ -134,6 +134,7 @@ class MP3Reader : public AudioSourceReader
      std::string _mappedWavFile;
  };
 
+/*
 class OGGReader : public AudioSourceReader
 {
 public:
@@ -149,6 +150,8 @@ public:
 private:
     std::unique_ptr<OggVorbis_File> _vorbisFd;
 };
+
+*/
 
 }
 NS_CC_END

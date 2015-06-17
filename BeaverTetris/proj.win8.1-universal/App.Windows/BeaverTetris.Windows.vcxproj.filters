@@ -11,6 +11,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BeaverTetris.Windows_TemporaryKey.pfx" />
+    <None Include="..\..\Resources\StartGameSoundRegulatorsPopUpTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\Shop.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\SelectLevelScreenTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\PlayerId.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\MenuScreenTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\MainWinPopUpTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\MainLosePopUpTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\MainGameScreenTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\MainGamePausePopUpTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\LoadingScreenTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\GameRecordsScreenTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\GamePlayersDatabaseData.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\GameDevelopersScreenTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\FinalScreenTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\CurrentPlayerData.plist">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\..\Resources\CreateNewPlayerControllerTextureAtlas.plist">
+      <Filter>Assets</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Logo.scale-100.png">
@@ -25,5 +73,119 @@
     <Image Include="Assets\SplashScreen.scale-100.png">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="..\..\Resources\StartGameSoundRegulatorsPopUpTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\SelectLevelScreenTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\MenuScreenTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\MainWinPopUpTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\MainLosePopUpTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\MainGameScreenTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\MainGamePausePopUpTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\LoadingScreenTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\GameRecordsScreenTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\GameDevelopersScreenTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\FinalScreenTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\CreateNewPlayerControllerTextureAtlas.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\CloseSelected.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\Resources\CloseNormal.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\Resources\WinLevelSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\WinAllGameSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\WaterSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\TetraminoAppearSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\RocketLaunchSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\LoseLevelSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\ExplosionSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\DetailFallingSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\ButtonPressedSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\BirdInForestSound.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\BackgroundSound3.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\BackgroundSound2.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+    <Media Include="..\..\Resources\BackgroundSound1.mp3">
+      <Filter>Assets</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\Resources\VOGUE_CYR.TTF">
+      <Filter>Assets</Filter>
+    </Font>
+    <Font Include="..\..\Resources\Schist Black.ttf">
+      <Filter>Assets</Filter>
+    </Font>
+    <Font Include="..\..\Resources\COMICBD.TTF">
+      <Filter>Assets</Filter>
+    </Font>
+    <Font Include="..\..\Resources\COMIC.TTF">
+      <Filter>Assets</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\Resources\GoogleAnalyticsIndicators.xml">
+      <Filter>Assets</Filter>
+    </Xml>
+    <Xml Include="..\..\Resources\GameTetraminos.xml">
+      <Filter>Assets</Filter>
+    </Xml>
+    <Xml Include="..\..\Resources\GameSpells.xml">
+      <Filter>Assets</Filter>
+    </Xml>
+    <Xml Include="..\..\Resources\GameLocalization.xml">
+      <Filter>Assets</Filter>
+    </Xml>
+    <Xml Include="..\..\Resources\GameLevels.xml">
+      <Filter>Assets</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

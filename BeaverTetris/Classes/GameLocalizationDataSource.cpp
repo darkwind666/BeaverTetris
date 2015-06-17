@@ -43,7 +43,7 @@ string GameLocalizationDataSource::getLocalizedStringFromNode(xml_node &node)
 string GameLocalizationDataSource::getCurrentSystemLanguage()
 {
 	string currentSystemLanguage = localizationEnglishLanguageKey;
-	cocos2d::LanguageType language = cocos2d::Application::sharedApplication()->getCurrentLanguage();
+	cocos2d::LanguageType language = cocos2d::Application::getInstance()->getCurrentLanguage();
 	if (language == cocos2d::LanguageType::RUSSIAN)
 	{
 		currentSystemLanguage = localizationRussianLanguageKey;

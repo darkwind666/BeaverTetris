@@ -324,6 +324,7 @@ void Manifest::setAssetDownloadState(const std::string &key, const Manifest::Dow
                 rapidjson::Value &assets = _json[KEY_ASSETS];
                 if (assets.IsObject())
                 {
+					/*
                     for (rapidjson::Value::MemberIterator itr = assets.MemberBegin(); itr != assets.MemberEnd(); ++itr)
                     {
                         std::string jkey = itr->name.GetString();
@@ -339,6 +340,7 @@ void Manifest::setAssetDownloadState(const std::string &key, const Manifest::Dow
                             }
                         }
                     }
+					*/
                 }
             }
         }
@@ -425,6 +427,7 @@ void Manifest::loadVersion(const rapidjson::Document &json)
         const rapidjson::Value& groupVers = json[KEY_GROUP_VERSIONS];
         if (groupVers.IsObject())
         {
+			/*
             for (rapidjson::Value::ConstMemberIterator itr = groupVers.MemberBegin(); itr != groupVers.MemberEnd(); ++itr)
             {
                 std::string group = itr->name.GetString();
@@ -436,6 +439,7 @@ void Manifest::loadVersion(const rapidjson::Document &json)
                 _groups.push_back(group);
                 _groupVer.emplace(group, version);
             }
+			*/
         }
     }
     
@@ -469,12 +473,14 @@ void Manifest::loadManifest(const rapidjson::Document &json)
         const rapidjson::Value& assets = json[KEY_ASSETS];
         if (assets.IsObject())
         {
+			/*
             for (rapidjson::Value::ConstMemberIterator itr = assets.MemberBegin(); itr != assets.MemberEnd(); ++itr)
             {
                 std::string key = itr->name.GetString();
                 Asset asset = parseAsset(key, itr->value);
                 _assets.emplace(key, asset);
             }
+			*/
         }
     }
     

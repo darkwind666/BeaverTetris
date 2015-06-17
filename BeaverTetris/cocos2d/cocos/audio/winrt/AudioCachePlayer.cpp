@@ -76,7 +76,7 @@ void AudioCache::readDataTask()
         break;
 
     case FileFormat::OGG:
-        _srcReader = new (std::nothrow) OGGReader();
+       // _srcReader = new (std::nothrow) OGGReader();
         break;
 
     case FileFormat::MP3:
