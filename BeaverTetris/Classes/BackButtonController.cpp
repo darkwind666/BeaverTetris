@@ -98,5 +98,6 @@ void BackButtonController::onKeyReleased(EventKeyboard::KeyCode keyCode, Event *
 	{
 		function<void()> backButtonHandler = _backButtonHandlers[_screenType];
 		backButtonHandler();
+		aEvent->stopPropagation();
 	}
 }
