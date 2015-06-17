@@ -8,7 +8,7 @@ const string standardResolutionFolder = string("sd");
 const string highResolutionFolder = string("hd");
 const string twoHighResolutionFolder = string("hd2");
 
-const int designResolutionWidth = 320;
-const int designResolutionHeight = 480;
+const int designResolutionWidth = 1366;
+const int designResolutionHeight = 768;
 
 const int victoryConditionInformationYOffset = 60;
