@@ -68,7 +68,8 @@ ValueMap GameAnalyticControllerDelegate::getPlayerData()
 		stream << playerId;
 		playerIdData = ValueMap();
 		playerIdData[playerIdKey] = stream.str();
-		fileUtils->writeToFile(playerIdData ,playerIdFileNameKey);
+		string fullPath = fileUtils->getWritablePath() + playerIdFileNameKey;
+		fileUtils->writeToFile(playerIdData, fullPath);
 	}
 	return playerIdData;
 }
@@ -105,7 +106,8 @@ ValueMap GameAnalyticControllerDelegate::getShopData()
 	{
 		shopData = ValueMap();
 		shopData[shopKey] = string("UnknowShop");
-		fileUtils->writeToFile(shopData ,shopFileNameKey);
+		string fullPath = fileUtils->getWritablePath() + shopFileNameKey;
+		fileUtils->writeToFile(shopData, fullPath);
 	}
 	return shopData;
 }

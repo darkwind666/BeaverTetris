@@ -9,6 +9,7 @@ using namespace std;
 CurrentPlayerSerializer::CurrentPlayerSerializer(void)
 {
 	_fileUtils = FileUtils::sharedFileUtils();
+	_fullWritablePath = _fileUtils->getWritablePath() + currentPlayerDataKey;
 	createFile();
 }
 
@@ -18,18 +19,18 @@ CurrentPlayerSerializer::~CurrentPlayerSerializer(void)
 
 void CurrentPlayerSerializer::createFile()
 {
-	ValueMap playerData = _fileUtils->getValueMapFromFile(currentPlayerDataKey);
+	ValueMap playerData = _fileUtils->getValueMapFromWritableFolderFromFile(currentPlayerDataKey);
 	if (playerData.size() == 0)
 	{
 		playerData = ValueMap();
-		_fileUtils->writeToFile(playerData ,currentPlayerDataKey);
+		_fileUtils->writeToFile(playerData, _fullWritablePath);
 	}
 }
 
 bool CurrentPlayerSerializer::availablePlayer()
 {
 	bool available = true;
-	ValueMap playerData = _fileUtils->getValueMapFromFile(currentPlayerDataKey);
+	ValueMap playerData = _fileUtils->getValueMapFromWritableFolderFromFile(currentPlayerDataKey);
 	if (playerData.size() == 0)
 	{
 		available = false;
@@ -39,7 +40,7 @@ bool CurrentPlayerSerializer::availablePlayer()
 
 PlayerInformation CurrentPlayerSerializer::getSavedPlayer()
 {
-	ValueMap playerData = _fileUtils->getValueMapFromFile(currentPlayerDataKey);
+	ValueMap playerData = _fileUtils->getValueMapFromWritableFolderFromFile(currentPlayerDataKey);
 	PlayerInformation player;
 	player.playerName = playerData[playerNameKey].asString();
 	player.playerScore = playerData[playerScoreKey].asInt();
@@ -89,7 +90,7 @@ void CurrentPlayerSerializer::savePlayer(PlayerInformation aPlayer)
 	playerData[playerSpellsInformationKey] = Value(playerSpellsData);
 	ValueVector playerTutorialsData = getTutorialsDataFromPlayer(aPlayer);
 	playerData[playerTutorialsInformationKey] = Value(playerTutorialsData);
-	_fileUtils->writeToFile(playerData ,currentPlayerDataKey);
+	_fileUtils->writeToFile(playerData, _fullWritablePath);
 }
 
 ValueMap CurrentPlayerSerializer::getSpellsDataFromPlayer(PlayerInformation &aPlayer)
@@ -125,6 +126,6 @@ ValueVector CurrentPlayerSerializer::getTutorialsDataFromPlayer(PlayerInformatio
 
 void CurrentPlayerSerializer::cleanSavedPlayer()
 {
-	Dictionary *playerData = Dictionary::create();
-	playerData->writeToFile(currentPlayerDataKey.c_str());
+	ValueMap playerData = ValueMap();
+	_fileUtils->writeToFile(playerData, _fullWritablePath);
 }
