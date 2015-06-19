@@ -479,6 +479,10 @@
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)OpenGLESPage.xaml" />
   </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\ru-RU\Resources.resw" />
+  </ItemGroup>
   <Target Name="_CollectCustomResources" BeforeTargets="AssignTargetPaths">
     <Message Text="Adding resource: %(_CustomResource.Identity) -&gt; %(_CustomResource.Link)" />
     <ItemGroup>

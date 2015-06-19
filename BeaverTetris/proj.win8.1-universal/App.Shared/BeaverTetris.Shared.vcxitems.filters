@@ -637,6 +637,15 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{38ad799c-8c3c-44a2-8e41-516c8f62f556}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Strings">
+      <UniqueIdentifier>{9c4ce3ee-cc5b-4865-9a9c-4ba1b4b73d4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Strings\en-US">
+      <UniqueIdentifier>{fc0d40ce-9894-4d1b-92a9-8a0e03ab1471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Strings\ru-RU">
+      <UniqueIdentifier>{3c1ed0a8-8f95-4327-bdf3-de1722c8b804}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\Classes\AppDelegate.h">
@@ -1316,5 +1325,13 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)OpenGLESPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw">
+      <Filter>Strings\en-US</Filter>
+    </PRIResource>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\ru-RU\Resources.resw">
+      <Filter>Strings\ru-RU</Filter>
+    </PRIResource>
   </ItemGroup>
 </Project>
