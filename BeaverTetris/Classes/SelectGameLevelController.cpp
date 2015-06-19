@@ -42,8 +42,7 @@ void SelectGameLevelController::makeScrollableMenuWithBackground(Menu *aMenu)
 	contentContainer->addChild(aMenu);
 	addCompletedLevelSignsToBackground(completedLevelsSigns, contentContainer);
 	contentContainer->addChild(beaverOnRaftController);
-	Node *scrollableMenu = makeScrollableMenuWithContent(contentContainer);
-	this->addChild(scrollableMenu);
+	this->addChild(contentContainer);
 }
 
 vector<Node*> SelectGameLevelController::getCompletedLevelsSigns()
@@ -56,6 +55,7 @@ vector<Node*> SelectGameLevelController::getCompletedLevelsSigns()
 		{
 			Sprite *completedLevelsSignImage = Sprite::createWithSpriteFrameName(_gameLevelsMenuDataSource->getCompletedLevelSignImage());
 			completedLevelsSignImage->setPosition(_gameLevelsMenuDataSource->getLevelCompletedSignPositionForIndex(levelIndex));
+			completedLevelsSignImage->setScale(0.1f);
 			completedLevelsSigns.push_back(completedLevelsSignImage);
 		}
 	}

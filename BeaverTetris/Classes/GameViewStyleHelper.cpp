@@ -56,7 +56,7 @@ FiniteTimeAction* GameViewStyleHelper::getSoundActionWithKey(string aKey)
 
 LabelTTF* GameViewStyleHelper::getStandardLabel()
 {
-	return LabelTTF::create("", "COMIC.TTF", 15);
+	return LabelTTF::create("", "COMIC.TTF", 29);
 }
 
 cocos2d::Label* GameViewStyleHelper::getStandardLabelWithFontSize(float aFontSize)
@@ -93,7 +93,7 @@ MenuItem* GameViewStyleHelper::getCloseButtonWithKeyAndCallbackAndLocalization(s
 	string activeImageName = GameKeyWithSuffixSupporter::makeSelectedImageForKey(buttonImageKey);
 	MouseOverMenuItem *closeButtonItem = new MouseOverMenuItem(activeImageName,inactiveImageName,aCallback);
 	
-	Label *backButtonText = GameViewStyleHelper::getStandardLabelWithFontSize(18.0f);
+	Label *backButtonText = GameViewStyleHelper::getStandardLabelWithFontSize(28.0f);
 	backButtonText->setString(StringsSupporter::getLocalizedStringFromKey(aLocale));
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(backButtonText, closeButtonItem, closeButtonTextKey);
 	

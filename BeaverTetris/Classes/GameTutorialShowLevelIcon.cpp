@@ -26,7 +26,6 @@ void GameTutorialShowLevelIcon::showIcon()
 		if (currentPlayerDataSource->getPlayerCompletedLevelsCount() == 0)
 		{
 			_currentLevelMark = CocosNodesHelper::getSpriteWithKey(gameTutorialShowLevelIconKey);
-			_currentLevelMark->setRotation(90.0f);
 			CocosNodesHelper::addChildNodeToParentNodeWithKey(_currentLevelMark, this, gameTutorialShowLevelIconKey);
 			Vec2 finalPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(gameTutorialShowLevelIconKey);
 			FiniteTimeAction *moveDown = MoveTo::create(0.5f, finalPosition);
