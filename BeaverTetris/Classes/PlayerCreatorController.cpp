@@ -25,12 +25,7 @@ PlayerCreatorController::PlayerCreatorController(void)
 	_gameAnalyticController = (GameAnalyticController*)ServiceLocator::getServiceForKey(gameAnalyticControllerKey);
 	_controllerView = getControllerView();
 
-	float width = Director::getInstance()->getWinSizeInPixels().width;
-	float height = Director::getInstance()->getWinSizeInPixels().height;
-	LayerColor *background = LayerColor::create(Color4B(93, 176, 192, 200), width, height);
-	background->ignoreAnchorPointForPosition(false);
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(background, this, playerCreatorControllerBackgroundKey);
-
+	GameViewStyleHelper::addPopUpBackgroundToParentNodeWithKey(this, playerCreatorControllerBackgroundKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_controllerView, this, playerCreatorControllerPadKey);
 	this->setVisible(false);
 }

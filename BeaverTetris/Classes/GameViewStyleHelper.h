@@ -19,5 +19,7 @@ public:
 	static void addBackButtonToParentNodeWithKeyAndCallback(cocos2d::Node *aParentNode, std::string aKey, cocos2d::ccMenuCallback aCallback);
 	static void addBackButtonToParentNodeWithKeyAndCallbackAndLocalization(cocos2d::Node *aParentNode, std::string aKey, cocos2d::ccMenuCallback aCallback, std::string aLocale);
 	static cocos2d::MenuItem* getCloseButtonWithKeyAndCallbackAndLocalization(std::string aKey, cocos2d::ccMenuCallback aCallback, std::string aLocale);
+	static void addPopUpBackgroundToParentNodeWithKey(cocos2d::Node *aParentNode, std::string aKey);
+	static cocos2d::Node* getPopUpBackground();
 };
 
