@@ -45,7 +45,7 @@ Node* GamesDevelopersBoardController::getDeveloperPadWithKey(string aPadKey)
 Node* GamesDevelopersBoardController::getDeveloperLabelWithString(string aString)
 {
 	LabelTTF *playerNameLabel = GameViewStyleHelper::getStandardLabel();
-	playerNameLabel->setFontSize(12);
+	playerNameLabel->setFontSize(15);
 	playerNameLabel->setString(StringsSupporter::getLocalizedStringFromKey(aString));
 	return playerNameLabel;
 }

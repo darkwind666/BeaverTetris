@@ -41,4 +41,4 @@ const float gameRecordsBeaverActionDuration = 1.0f;
 const float gameRecordsBeaverClockActionDuration = 1.5f;
 
 const float gameDevelopersBoardActionDuration = 0.5f;
-const float gameDevelopersBeaverActionDuration = 0.5f;
+const float gameDevelopersBeaverActionDuration = 0.8f;
