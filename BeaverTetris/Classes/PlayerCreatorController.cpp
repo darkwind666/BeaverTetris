@@ -25,7 +25,12 @@ PlayerCreatorController::PlayerCreatorController(void)
 	_gameAnalyticController = (GameAnalyticController*)ServiceLocator::getServiceForKey(gameAnalyticControllerKey);
 	_controllerView = getControllerView();
 
-	CocosNodesHelper::addSpriteToParentNodeWithKey(this, playerCreatorControllerBackgroundKey);
+	float width = Director::getInstance()->getWinSizeInPixels().width;
+	float height = Director::getInstance()->getWinSizeInPixels().height;
+	LayerColor *background = LayerColor::create(Color4B(93, 176, 192, 200), width, height);
+	background->ignoreAnchorPointForPosition(false);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(background, this, playerCreatorControllerBackgroundKey);
+
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_controllerView, this, playerCreatorControllerPadKey);
 	this->setVisible(false);
 }
@@ -54,7 +59,7 @@ Node* PlayerCreatorController::getPlayerCreatorText()
 	LabelTTF *padText = GameViewStyleHelper::getStandardLabel();
 	padText->setColor(Color3B(89,72,52));
 	padText->setString(StringsSupporter::getLocalizedStringFromKey(gamePlayerCreatorLabelLocalizationKey));
-	padText->setDimensions(Size(100, 40));
+	padText->setDimensions(Size(200, 100));
 	return padText;
 }
 

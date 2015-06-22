@@ -411,23 +411,23 @@ void GameViewInformationFactory::makeSelectGameLevelPlayerCreatorControllerData(
 
 	ViewElementInformation playerCreatorPad;
 	playerCreatorPad.elementImage = getImageNameForKey(playerCreatorControllerPadKey);
-	playerCreatorPad.elementPosition = Vec2(0, 70) + getScreenCenter();
+	playerCreatorPad.elementPosition = Vec2(0, 130) + getScreenCenter();
 	playerCreatorPad.elementZOrder = kPlayerCreatorPadZOrder;
 	_elementsInformation[playerCreatorControllerPadKey] = playerCreatorPad;
 
 	ViewElementInformation playerCreatorText;
-	playerCreatorText.elementPosition = Vec2(65, 260);
+	playerCreatorText.elementPosition = Vec2(95, 400);
 	playerCreatorText.elementZOrder = kPlayerCreatorTextZOrder;
 	_elementsInformation[playerCreatorControllerTextKey] = playerCreatorText;
 
 	ViewElementInformation playerCreatorInput;
-	playerCreatorInput.elementPosition = Vec2(65, 240);
+	playerCreatorInput.elementPosition = Vec2(95, 400);
 	playerCreatorInput.elementZOrder = kPlayerCreatorInputZOrder;
 	_elementsInformation[playerCreatorControllerInputKey] = playerCreatorInput;
 
 	ViewElementInformation playerCreatorControllerBackButton;
 	playerCreatorControllerBackButton.elementImage = playerCreatorControllerBackButtonKey;
-	playerCreatorControllerBackButton.elementPosition = Vec2(68, 10);
+	playerCreatorControllerBackButton.elementPosition = Vec2(113, 10);
 	playerCreatorControllerBackButton.elementZOrder = kPlayerCreatorInputZOrder;
 	_elementsInformation[playerCreatorControllerBackButtonKey] = playerCreatorControllerBackButton;
 }
