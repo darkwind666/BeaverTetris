@@ -50,7 +50,7 @@ void MainGamePauseViewController::setPauseView()
 
 Node* MainGamePauseViewController::getPauseButtonLabel()
 {
-	Label *pauseButtonLabel = GameViewStyleHelper::getStandardLabelWithFontSize(13);
+	Label *pauseButtonLabel = GameViewStyleHelper::getStandardLabelWithFontSize(19);
 	pauseButtonLabel->setColor(Color3B(41, 104, 110));
 	pauseButtonLabel->setString(string("P"));
 	return pauseButtonLabel;

@@ -26,8 +26,8 @@ GameWorldBackgroundController::~GameWorldBackgroundController(void)
 void GameWorldBackgroundController::makeControllerView()
 {
 	Sprite *backgroundImage = CocosNodesHelper::getSpriteWithKey(mainGameBackgroundControllerKey);
-	Sprite *backgroundPadImage = CocosNodesHelper::getSpriteWithKey(mainGameBackgroundPadKey);
 	this->addChild(backgroundImage);
+	CocosNodesHelper::addSpriteToParentNodeWithKey(this, mainGameBorderKey);
 	CocosNodesHelper::addSpriteToParentNodeWithKey(this, mainGameBackgroundPadKey);
 }
 

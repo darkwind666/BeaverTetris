@@ -52,9 +52,10 @@ map<EventKeyboard::KeyCode, MenuItem*> PlayerActionControllerDesktop::makeContro
 
 MenuItem* PlayerActionControllerDesktop::getPlayerControlViewWithKey(EventKeyboard::KeyCode aKey)
 {
-	Sprite *playerControllerInactiveImage = CocosNodesHelper::getSpriteWithKey(playerControlActiveImageKey);
-	Sprite *playerControllerActiveImage = CocosNodesHelper::getSpriteWithKey(playerControlActiveImageKey);
+	Sprite *playerControllerInactiveImage = CocosNodesHelper::getSpriteWithKey(playerControlInactiveImageKey);
+	Sprite *playerControllerActiveImage = CocosNodesHelper::getSpriteWithKey(playerControlInactiveImageKey);
 	MenuItemSprite *playerControllerView = MenuItemSprite::create(playerControllerInactiveImage, playerControllerActiveImage, [this, aKey](Ref* target){activatePlayerControllerOnKeyCode(aKey);});
+	playerControllerView->setScale(2.5f);
 	return playerControllerView;
 }
 

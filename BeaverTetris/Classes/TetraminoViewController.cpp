@@ -17,7 +17,7 @@ TetraminoViewController::TetraminoViewController(void)
 	this->addChild(tetraminoTexture);
 
 	LabelTTF *tetraminoLives = GameViewStyleHelper::getStandardLabel();
-	tetraminoLives->setFontSize(20);
+	tetraminoLives->setFontSize(28);
 	_tetraminoLives = tetraminoLives;
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(tetraminoLives, this, tetraminoLivesCountViewKey);
 

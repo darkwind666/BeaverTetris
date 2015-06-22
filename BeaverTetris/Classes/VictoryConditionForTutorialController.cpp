@@ -20,7 +20,7 @@ VictoryConditionForTutorialController::~VictoryConditionForTutorialController(vo
 LabelTTF* VictoryConditionForTutorialController::getBossLifeCountLabel()
 {
 	LabelTTF *victoryConditionStatus = GameViewStyleHelper::getStandardLabel();
-	victoryConditionStatus->setFontSize(12.0f);
+	victoryConditionStatus->setFontSize(19.0f);
 	victoryConditionStatus->setString(string("1"));
 	return victoryConditionStatus;
 }

@@ -44,6 +44,7 @@ const string selectLevelBackgroundRightKey = string("SelectLevelRightGround");
 const string selectLevelBackgroundLeftKey = string("SelectLevelLeftGround");
 
 const string selectLevelBeaverTalkKey = string("SelectLevelScreenTalk");
+const string selectLevelBeaverBlobTalkKey = string("SelectLevelScreenBeaverBlobTalk");
 const string selectLevelBeaverTalkTextKey = string("selectLevelBeaverTalkText");
 
 const string selectLevelMenuKey = string("selectLevelMenu");
@@ -78,6 +79,7 @@ const string selectLevelSceneBackButtonKey = string("SelectLevelSceneBack");
 
 const string gameWorldControllerKey = string("gameWorldController");
 const string mainGameBackgroundControllerKey = string("MainGameBackground");
+const string mainGameBorderKey = string("MainGameBorder");
 const string mainGameBackgroundPadKey = string("MainGamePad");
 const string mainGameBoardControllerKey = string("mainGameBoardController");
 const string tetraminoLivesCountViewKey = string("tetraminoLivesCountView");

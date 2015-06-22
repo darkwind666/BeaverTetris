@@ -75,7 +75,7 @@ void TetraminoExplosionFactory::setExplosionParticles(ParticleSystem* aExplosion
 	aExplosion->setEndSize(0.0f);
 	aExplosion->setLife(tetraminosExplosionDuration);
 	aExplosion->setLifeVar(0.0f);
-	aExplosion->setSpeed(1.5f);
+	aExplosion->setSpeed(5.8f);
 }
 
 void TetraminoExplosionFactory::setExplosionPositionOnXY(ParticleSystem* aExplosion, int xPosition, int yPosition)

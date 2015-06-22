@@ -18,9 +18,11 @@ SelectGameLevelBeaverTalkController::SelectGameLevelBeaverTalkController(void)
 	Sprite *beaverTalk = CocosNodesHelper::getSpriteWithKey(selectLevelBeaverTalkKey);
 	this->addChild(beaverTalk);
 
+	CocosNodesHelper::addSpriteToParentNodeWithKey(this, selectLevelBeaverBlobTalkKey);
+
 	LabelTTF *beaverText = GameViewStyleHelper::getStandardLabel();
-	beaverText->setFontSize(11.0f);
-	beaverText->setDimensions(Size(130, 100));
+	beaverText->setFontSize(21.0f);
+	beaverText->setDimensions(Size(230, 200));
 	string beaverSpeech = getBeaverSpeech();
 	beaverText->setString(StringsSupporter::getLocalizedStringFromKey(beaverSpeech));
 	beaverText->setColor(Color3B(89,72,52));
@@ -44,6 +46,6 @@ string SelectGameLevelBeaverTalkController::getBeaverSpeech()
 void SelectGameLevelBeaverTalkController::showPlayerStatus()
 {
 	Vec2 finalActionPosition = GameElementsDataHelper::getElementFinalActionPositionForKey(selectLevelBeaverTalkKey);
-	ActionInterval *moveBeaver = MoveTo::create(0.3f, finalActionPosition);
+	ActionInterval *moveBeaver = MoveTo::create(0.6f, finalActionPosition);
 	this->runAction(moveBeaver);
 }

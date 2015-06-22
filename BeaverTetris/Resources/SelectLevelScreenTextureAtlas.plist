@@ -30,10 +30,23 @@
                 <key>sourceSize</key>
                 <string>{948,900}</string>
             </dict>
+            <key>10.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2576,8},{119,127}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{119,127}}</string>
+                <key>sourceSize</key>
+                <string>{119,127}</string>
+            </dict>
             <key>MiddleLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2576,8},{69,99}}</string>
+                <string>{{2703,8},{69,99}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,7 +59,7 @@
             <key>EndBlockCollectionLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2653,8},{84,104}}</string>
+                <string>{{2780,8},{84,104}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -59,7 +72,7 @@
             <key>StartBossLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2745,8},{100,129}}</string>
+                <string>{{2872,8},{100,129}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +85,7 @@
             <key>StartGoodTimeLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2853,8},{90,124}}</string>
+                <string>{{2980,8},{90,124}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -85,7 +98,7 @@
             <key>StartBlockCollectionLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2951,8},{88,115}}</string>
+                <string>{{3078,8},{88,115}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +111,7 @@
             <key>StartLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3047,8},{85,84}}</string>
+                <string>{{3174,8},{85,84}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,7 +124,7 @@
             <key>SelectLevelSceneBackActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3140,8},{218,57}}</string>
+                <string>{{3267,8},{218,57}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +137,7 @@
             <key>SelectLevelSceneBackInactiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3366,8},{217,57}}</string>
+                <string>{{3493,8},{217,57}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +150,7 @@
             <key>GameTutorialShowLevelIcon.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3591,8},{109,217}}</string>
+                <string>{{3718,8},{109,217}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,7 +163,7 @@
             <key>MiddleGoodTimeLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3708,8},{119,111}}</string>
+                <string>{{3835,8},{119,111}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -173,10 +186,23 @@
                 <key>sourceSize</key>
                 <string>{903,587}</string>
             </dict>
+            <key>LevelCompletedSign.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{919,921},{37,51}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{37,51}}</string>
+                <key>sourceSize</key>
+                <string>{37,51}</string>
+            </dict>
             <key>SelectLevelScreenTalk.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{919,921},{251,213}}</string>
+                <string>{{964,921},{251,213}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -186,10 +212,10 @@
                 <key>sourceSize</key>
                 <string>{251,213}</string>
             </dict>
-            <key>LevelCompletedSign.png</key>
+            <key>SelectLevelScreenBeaverBlobTalk.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1178,921},{300,181}}</string>
+                <string>{{1223,921},{300,181}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -202,7 +228,7 @@
             <key>SelectLevelScenePlayerStatusPad.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1486,921},{216,158}}</string>
+                <string>{{1531,921},{216,158}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -215,7 +241,7 @@
             <key>EndBossLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1710,921},{86,98}}</string>
+                <string>{{1755,921},{86,98}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -228,7 +254,7 @@
             <key>SelectLevelScreeBeaverOnRaft.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1804,921},{137,170}}</string>
+                <string>{{1849,921},{137,170}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -241,7 +267,7 @@
             <key>EndLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1949,921},{122,135}}</string>
+                <string>{{1994,921},{122,135}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -254,7 +280,7 @@
             <key>MiddleBossLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2079,921},{88,137}}</string>
+                <string>{{2124,921},{88,137}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>

@@ -34,7 +34,7 @@ const float tetraminoDisappearDuration = 0.04f;
 const float tetraminoAppearDuration = 0.1f;
 
 const float rocketLaunchActionDurationPerPoint = 0.002f;
-const float meteorActionDurationPerPoint = 0.00025f;
+const float meteorActionDurationPerPoint = 0.0002f;
 
 const float gameRecordsBoardActionDuration = 0.5f;
 const float gameRecordsBeaverActionDuration = 1.0f;

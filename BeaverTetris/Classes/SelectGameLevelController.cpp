@@ -55,7 +55,6 @@ vector<Node*> SelectGameLevelController::getCompletedLevelsSigns()
 		{
 			Sprite *completedLevelsSignImage = Sprite::createWithSpriteFrameName(_gameLevelsMenuDataSource->getCompletedLevelSignImage());
 			completedLevelsSignImage->setPosition(_gameLevelsMenuDataSource->getLevelCompletedSignPositionForIndex(levelIndex));
-			completedLevelsSignImage->setScale(0.1f);
 			completedLevelsSigns.push_back(completedLevelsSignImage);
 		}
 	}

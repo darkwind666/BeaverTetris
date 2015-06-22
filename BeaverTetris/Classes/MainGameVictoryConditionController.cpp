@@ -59,7 +59,7 @@ Sprite* MainGameVictoryConditionController::getVictoryConditionImageViewForIndex
 LabelTTF* MainGameVictoryConditionController::getVictoryConditionStatusViewForIndex(int aConditionIndex)
 {
 	LabelTTF *victoryConditionStatus = GameViewStyleHelper::getStandardLabel();
-	victoryConditionStatus->setFontSize(12.0f);
+	victoryConditionStatus->setFontSize(17.0f);
 	victoryConditionStatus->setTag(aConditionIndex);
 	Vec2 victoryConditionStatusPosition = _victoryConditionViewDataSource->getVictoryConditionInformationPositionForIndex(aConditionIndex);
 	victoryConditionStatus->setPosition(victoryConditionStatusPosition);

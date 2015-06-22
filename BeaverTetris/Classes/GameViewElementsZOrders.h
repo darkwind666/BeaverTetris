@@ -62,6 +62,8 @@ enum MainGameScreenZOrders
 enum MainGameWorldZOrders
 {
 	kMainGameBackgroundZOrder,
+	kMainGameBorderZOrder,
+	kMainGamePadZOrder,
 	kMainGameBoardZOrder,
 	kMainGameAnimationZOrder,
 };
