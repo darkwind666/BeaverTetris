@@ -410,7 +410,7 @@ void GameViewInformationFactory::makeSelectGameLevelPlayerCreatorControllerData(
 	_elementsInformation[playerCreatorControllerBackgroundKey] = playerCreatorBackground;
 
 	ViewElementInformation playerCreatorPad;
-	playerCreatorPad.elementImage = getImageNameForKey(playerCreatorControllerPadKey);
+	playerCreatorPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
 	playerCreatorPad.elementPosition = Vec2(0, 130) + getScreenCenter();
 	playerCreatorPad.elementZOrder = kPlayerCreatorPadZOrder;
 	_elementsInformation[playerCreatorControllerPadKey] = playerCreatorPad;
@@ -801,7 +801,7 @@ void GameViewInformationFactory::makeMainGamePausePopUpData()
 	_elementsInformation[mainGamePauseBackgroundPauseLabelKey] = mainGamePauseBackgroundPauseLabel;
 
 	ViewElementInformation mainGamePauseRegulateSoundPopUpPad;
-	mainGamePauseRegulateSoundPopUpPad.elementImage = getImageNameForKey(mainGamePausePadKey);
+	mainGamePauseRegulateSoundPopUpPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
 	mainGamePauseRegulateSoundPopUpPad.elementPosition = Vec2(0, 200) + getScreenCenter();
 	mainGamePauseRegulateSoundPopUpPad.elementZOrder = kMainGamePausePopUpPadZOrder;
 	_elementsInformation[mainGamePausePadKey] = mainGamePauseRegulateSoundPopUpPad;
@@ -922,7 +922,7 @@ void GameViewInformationFactory::makeMainGameEndPopUpMenuButtonsData()
 void GameViewInformationFactory::makeRecordsScreenData()
 {
 	ViewElementInformation gameRecordsBackground;
-	gameRecordsBackground.elementImage = getImageNameForKey(gameRecordsBackgroundKey);
+	gameRecordsBackground.elementImage = getImageNameForKey(startGameMenuBackgroundKey);
 	gameRecordsBackground.elementPosition = getScreenCenter();
 	gameRecordsBackground.elementZOrder = kGameRecordsBackgroundZOrder;
 	_elementsInformation[gameRecordsBackgroundKey] = gameRecordsBackground;
@@ -1017,13 +1017,13 @@ void GameViewInformationFactory::makeGameRecordsFishesData()
 void GameViewInformationFactory::makeDevelopersScreenData()
 {
 	ViewElementInformation gameDevelopersBackground;
-	gameDevelopersBackground.elementImage = getImageNameForKey(gameDevelopersBackgroundKey);
+	gameDevelopersBackground.elementImage = getImageNameForKey(startGameMenuBackgroundKey);
 	gameDevelopersBackground.elementPosition = getScreenCenter();
 	gameDevelopersBackground.elementZOrder = kGameDevelopersBackgroundZOrder;
 	_elementsInformation[gameDevelopersBackgroundKey] = gameDevelopersBackground;
 
 	ViewElementInformation gameDevelopersUnderWaterBackground;
-	gameDevelopersUnderWaterBackground.elementImage = getImageNameForKey(gameDevelopersUnderWaterBackgroundKey);
+	gameDevelopersUnderWaterBackground.elementImage = getImageNameForKey(gameRecordsUnderWaterBackgroundKey);
 	gameDevelopersUnderWaterBackground.elementPosition = getScreenCenter() + Vec2(0, -315);
 	gameDevelopersUnderWaterBackground.elementZOrder = kGameDevelopersUnderWaterBackgroundZOrder;
 	_elementsInformation[gameDevelopersUnderWaterBackgroundKey] = gameDevelopersUnderWaterBackground;
@@ -1130,7 +1130,7 @@ void GameViewInformationFactory::makeGameDevelopersPositionsData()
 void GameViewInformationFactory::makeFinalScreenData()
 {
 	ViewElementInformation finalScreenBackground;
-	finalScreenBackground.elementImage = getImageNameForKey(finalScreenBackgroundKey);
+	finalScreenBackground.elementImage = getImageNameForKey(startGameMenuBackgroundKey);
 	finalScreenBackground.elementPosition = getScreenCenter();
 	finalScreenBackground.elementZOrder = kFinalSreenBackgroundZOrder;
 	_elementsInformation[finalScreenBackgroundKey] = finalScreenBackground;

@@ -4,18 +4,9 @@
 using namespace std;
 
 const string loadingScreenGraphicName = string("LoadingScreenTextureAtlas");
-const string startMenuGraphicName = string("MenuScreenTextureAtlas");
 const string selectLevelGraphicName = string("SelectLevelScreenTextureAtlas");
 const string mainGameGraphicName = string("MainGameScreenTextureAtlas");
-const string gameRecordsGraphicName = string("GameRecordsScreenTextureAtlas");
-const string gameDevelopersGraphicName = string("GameDevelopersScreenTextureAtlas");
-const string gameSoundRegulatorsPopUpGraphicName = string("StartGameSoundRegulatorsPopUpTextureAtlas");
-const string createNewPlayerControllerGraphicName = string("CreateNewPlayerControllerTextureAtlas");
-const string mainGamePausePopUpGraphicName = string("MainGamePausePopUpTextureAtlas");
-const string mainLosePopUpGraphicName = string("MainLosePopUpTextureAtlas");
-const string mainWinPopUpGraphicName = string("MainWinPopUpTextureAtlas");
 const string finalScreenGraphicName = string("FinalScreenTextureAtlas");
-
 
 GameGraphicsDataSource::GameGraphicsDataSource(void)
 {
@@ -57,16 +48,8 @@ std::vector<std::string> GameGraphicsDataSource::getGraphicKeys()
 {
 	vector<string> graphicsKeys;
 
-	graphicsKeys.push_back(startMenuGraphicName);
 	graphicsKeys.push_back(selectLevelGraphicName);
 	graphicsKeys.push_back(mainGameGraphicName);
-	graphicsKeys.push_back(gameRecordsGraphicName);
-	graphicsKeys.push_back(gameDevelopersGraphicName);
-	graphicsKeys.push_back(gameSoundRegulatorsPopUpGraphicName);
-	graphicsKeys.push_back(createNewPlayerControllerGraphicName);
-	graphicsKeys.push_back(mainGamePausePopUpGraphicName);
-	graphicsKeys.push_back(mainLosePopUpGraphicName);
-	graphicsKeys.push_back(mainWinPopUpGraphicName);
 	graphicsKeys.push_back(finalScreenGraphicName);
 
 	return graphicsKeys;

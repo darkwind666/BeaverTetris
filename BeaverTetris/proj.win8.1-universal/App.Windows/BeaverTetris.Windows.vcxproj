@@ -182,40 +182,24 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="..\..\Resources\CreateNewPlayerControllerTextureAtlas.plist" />
     <None Include="..\..\Resources\CurrentPlayerData.plist" />
     <None Include="..\..\Resources\FinalScreenTextureAtlas.plist" />
-    <None Include="..\..\Resources\GameDevelopersScreenTextureAtlas.plist" />
     <None Include="..\..\Resources\GamePlayersDatabaseData.plist" />
-    <None Include="..\..\Resources\GameRecordsScreenTextureAtlas.plist" />
     <None Include="..\..\Resources\LoadingScreenTextureAtlas.plist" />
-    <None Include="..\..\Resources\MainGamePausePopUpTextureAtlas.plist" />
     <None Include="..\..\Resources\MainGameScreenTextureAtlas.plist" />
-    <None Include="..\..\Resources\MainLosePopUpTextureAtlas.plist" />
-    <None Include="..\..\Resources\MainWinPopUpTextureAtlas.plist" />
-    <None Include="..\..\Resources\MenuScreenTextureAtlas.plist" />
     <None Include="..\..\Resources\PlayerId.plist" />
     <None Include="..\..\Resources\SelectLevelScreenTextureAtlas.plist" />
     <None Include="..\..\Resources\Shop.plist" />
-    <None Include="..\..\Resources\StartGameSoundRegulatorsPopUpTextureAtlas.plist" />
     <None Include="BeaverTetris.Windows_StoreKey.pfx" />
     <None Include="BeaverTetris.Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\Resources\CloseNormal.png" />
     <Image Include="..\..\Resources\CloseSelected.png" />
-    <Image Include="..\..\Resources\CreateNewPlayerControllerTextureAtlas.png" />
     <Image Include="..\..\Resources\FinalScreenTextureAtlas.png" />
-    <Image Include="..\..\Resources\GameDevelopersScreenTextureAtlas.png" />
-    <Image Include="..\..\Resources\GameRecordsScreenTextureAtlas.png" />
     <Image Include="..\..\Resources\LoadingScreenTextureAtlas.png" />
-    <Image Include="..\..\Resources\MainGamePausePopUpTextureAtlas.png" />
     <Image Include="..\..\Resources\MainGameScreenTextureAtlas.png" />
-    <Image Include="..\..\Resources\MainLosePopUpTextureAtlas.png" />
-    <Image Include="..\..\Resources\MainWinPopUpTextureAtlas.png" />
-    <Image Include="..\..\Resources\MenuScreenTextureAtlas.png" />
     <Image Include="..\..\Resources\SelectLevelScreenTextureAtlas.png" />
-    <Image Include="..\..\Resources\StartGameSoundRegulatorsPopUpTextureAtlas.png" />
     <Image Include="Assets\Logo.scale-100.png">
       <DeploymentContent>true</DeploymentContent>
     </Image>

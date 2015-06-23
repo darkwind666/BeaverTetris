@@ -4,62 +4,10 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>SelectLevelScreenBackground.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{8,8},{1604,905}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{1604,905}}</string>
-                <key>sourceSize</key>
-                <string>{1604,905}</string>
-            </dict>
-            <key>SelectLevelLeftGround.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1620,8},{948,900}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{948,900}}</string>
-                <key>sourceSize</key>
-                <string>{948,900}</string>
-            </dict>
-            <key>10.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2576,8},{119,127}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{119,127}}</string>
-                <key>sourceSize</key>
-                <string>{119,127}</string>
-            </dict>
-            <key>MiddleLevel.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2703,8},{69,99}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{69,99}}</string>
-                <key>sourceSize</key>
-                <string>{69,99}</string>
-            </dict>
             <key>EndBlockCollectionLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2780,8},{84,104}}</string>
+                <string>{{5,5},{84,104}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -69,62 +17,491 @@
                 <key>sourceSize</key>
                 <string>{84,104}</string>
             </dict>
-            <key>StartBossLevel.png</key>
+            <key>EndBossLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2872,8},{100,129}}</string>
+                <string>{{94,5},{86,98}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{100,129}}</string>
+                <string>{{0,0},{86,98}}</string>
                 <key>sourceSize</key>
-                <string>{100,129}</string>
+                <string>{86,98}</string>
             </dict>
-            <key>StartGoodTimeLevel.png</key>
+            <key>EndLevel.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2980,8},{90,124}}</string>
+                <string>{{185,5},{122,135}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{90,124}}</string>
+                <string>{{0,0},{122,135}}</string>
                 <key>sourceSize</key>
-                <string>{90,124}</string>
+                <string>{122,135}</string>
             </dict>
-            <key>StartBlockCollectionLevel.png</key>
+            <key>GameDevelopersBackToMainMenuActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3078,8},{88,115}}</string>
+                <string>{{312,5},{208,54}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{88,115}}</string>
+                <string>{{0,0},{208,54}}</string>
                 <key>sourceSize</key>
-                <string>{88,115}</string>
+                <string>{208,54}</string>
             </dict>
-            <key>StartLevel.png</key>
+            <key>GameDevelopersBackToMainMenuInactiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3174,8},{85,84}}</string>
+                <string>{{525,5},{208,54}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{85,84}}</string>
+                <string>{{0,0},{208,54}}</string>
                 <key>sourceSize</key>
-                <string>{85,84}</string>
+                <string>{208,54}</string>
+            </dict>
+            <key>GameDevelopersBeaver.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{738,5},{185,266}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{185,266}}</string>
+                <key>sourceSize</key>
+                <string>{185,266}</string>
+            </dict>
+            <key>GameDevelopersBeaverClock.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{928,5},{109,288}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{109,288}}</string>
+                <key>sourceSize</key>
+                <string>{109,288}</string>
+            </dict>
+            <key>GameDevelopersPlacePad.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1042,5},{238,53}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{238,53}}</string>
+                <key>sourceSize</key>
+                <string>{238,53}</string>
+            </dict>
+            <key>GameDevelopersStaircase.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1285,5},{203,517}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{203,517}}</string>
+                <key>sourceSize</key>
+                <string>{203,517}</string>
+            </dict>
+            <key>GameDevelopersUnderWaterBoardPart.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1493,5},{1601,183}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{1601,183}}</string>
+                <key>sourceSize</key>
+                <string>{1601,183}</string>
+            </dict>
+            <key>GameRecordBoardUnderWaterPart.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{5,527},{1601,181}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{1601,181}}</string>
+                <key>sourceSize</key>
+                <string>{1601,181}</string>
+            </dict>
+            <key>GameRecordsBackToMainMenuActiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1611,527},{211,56}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{211,56}}</string>
+                <key>sourceSize</key>
+                <string>{211,56}</string>
+            </dict>
+            <key>GameRecordsBackToMainMenuInactiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1827,527},{212,55}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{212,55}}</string>
+                <key>sourceSize</key>
+                <string>{212,55}</string>
+            </dict>
+            <key>GameRecordsBeaver.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2044,527},{258,280}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{258,280}}</string>
+                <key>sourceSize</key>
+                <string>{258,280}</string>
+            </dict>
+            <key>GameRecordsClock.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2307,527},{167,202}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{167,202}}</string>
+                <key>sourceSize</key>
+                <string>{167,202}</string>
+            </dict>
+            <key>GameRecordsFish.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2479,527},{124,89}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{124,89}}</string>
+                <key>sourceSize</key>
+                <string>{124,89}</string>
+            </dict>
+            <key>GameRecordsFish2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2608,527},{92,87}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{92,87}}</string>
+                <key>sourceSize</key>
+                <string>{92,87}</string>
+            </dict>
+            <key>GameRecordsLeaderPlacePad.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2705,527},{284,62}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{284,62}}</string>
+                <key>sourceSize</key>
+                <string>{284,62}</string>
+            </dict>
+            <key>GameRecordsPlacePad.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2994,527},{249,55}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{249,55}}</string>
+                <key>sourceSize</key>
+                <string>{249,55}</string>
+            </dict>
+            <key>GameRecordsStaircase.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3248,527},{212,508}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{212,508}}</string>
+                <key>sourceSize</key>
+                <string>{212,508}</string>
+            </dict>
+            <key>GameRecordsUnderWater.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{5,1040},{1601,181}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{1601,181}}</string>
+                <key>sourceSize</key>
+                <string>{1601,181}</string>
+            </dict>
+            <key>GameTutorialShowLevelIcon.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1611,1040},{109,217}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{109,217}}</string>
+                <key>sourceSize</key>
+                <string>{109,217}</string>
+            </dict>
+            <key>LevelCompletedSign.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1725,1040},{37,51}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{37,51}}</string>
+                <key>sourceSize</key>
+                <string>{37,51}</string>
+            </dict>
+            <key>MenuScreenSelectLevelActiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1767,1040},{254,94}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{254,94}}</string>
+                <key>sourceSize</key>
+                <string>{254,94}</string>
+            </dict>
+            <key>MenuScreenSelectLevelInactiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2026,1040},{254,94}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{254,94}}</string>
+                <key>sourceSize</key>
+                <string>{254,94}</string>
+            </dict>
+            <key>MenuScreenBackground.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2285,1040},{1601,901}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{1601,901}}</string>
+                <key>sourceSize</key>
+                <string>{1601,901}</string>
+            </dict>
+            <key>MenuScreenBeaver.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{5,1946},{203,342}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{203,342}}</string>
+                <key>sourceSize</key>
+                <string>{203,342}</string>
+            </dict>
+            <key>MenuScreenFish.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{213,1946},{79,62}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{79,62}}</string>
+                <key>sourceSize</key>
+                <string>{79,62}</string>
+            </dict>
+            <key>MenuScreenFish2.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{297,1946},{59,73}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{59,73}}</string>
+                <key>sourceSize</key>
+                <string>{59,73}</string>
+            </dict>
+            <key>MenuScreenFish3.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{361,1946},{120,108}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{120,108}}</string>
+                <key>sourceSize</key>
+                <string>{120,108}</string>
+            </dict>
+            <key>MenuScreenAuthorsActiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{486,1946},{304,116}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{304,116}}</string>
+                <key>sourceSize</key>
+                <string>{304,116}</string>
+            </dict>
+            <key>MenuScreenAuthorsInactiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{795,1946},{304,116}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{304,116}}</string>
+                <key>sourceSize</key>
+                <string>{304,116}</string>
+            </dict>
+            <key>MenuScreenStaircase.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1104,1946},{1603,821}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{1603,821}}</string>
+                <key>sourceSize</key>
+                <string>{1603,821}</string>
+            </dict>
+            <key>MiddleBossLevel.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2712,1946},{88,137}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{88,137}}</string>
+                <key>sourceSize</key>
+                <string>{88,137}</string>
+            </dict>
+            <key>MiddleGoodTimeLevel.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2805,1946},{119,111}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{119,111}}</string>
+                <key>sourceSize</key>
+                <string>{119,111}</string>
+            </dict>
+            <key>MiddleLevel.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2929,1946},{69,99}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{69,99}}</string>
+                <key>sourceSize</key>
+                <string>{69,99}</string>
+            </dict>
+            <key>SelectLevelLeftGround.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3003,1946},{948,900}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{948,900}}</string>
+                <key>sourceSize</key>
+                <string>{948,900}</string>
+            </dict>
+            <key>SelectLevelRightGround.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{5,2851},{903,587}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{903,587}}</string>
+                <key>sourceSize</key>
+                <string>{903,587}</string>
             </dict>
             <key>SelectLevelSceneBackActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3267,8},{218,57}}</string>
+                <string>{{913,2851},{218,57}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +514,7 @@
             <key>SelectLevelSceneBackInactiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{3493,8},{217,57}}</string>
+                <string>{{1136,2851},{217,57}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -147,88 +524,10 @@
                 <key>sourceSize</key>
                 <string>{217,57}</string>
             </dict>
-            <key>GameTutorialShowLevelIcon.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{3718,8},{109,217}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{109,217}}</string>
-                <key>sourceSize</key>
-                <string>{109,217}</string>
-            </dict>
-            <key>MiddleGoodTimeLevel.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{3835,8},{119,111}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{119,111}}</string>
-                <key>sourceSize</key>
-                <string>{119,111}</string>
-            </dict>
-            <key>SelectLevelRightGround.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{8,921},{903,587}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{903,587}}</string>
-                <key>sourceSize</key>
-                <string>{903,587}</string>
-            </dict>
-            <key>LevelCompletedSign.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{919,921},{37,51}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{37,51}}</string>
-                <key>sourceSize</key>
-                <string>{37,51}</string>
-            </dict>
-            <key>SelectLevelScreenTalk.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{964,921},{251,213}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{251,213}}</string>
-                <key>sourceSize</key>
-                <string>{251,213}</string>
-            </dict>
-            <key>SelectLevelScreenBeaverBlobTalk.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1223,921},{300,181}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{300,181}}</string>
-                <key>sourceSize</key>
-                <string>{300,181}</string>
-            </dict>
             <key>SelectLevelScenePlayerStatusPad.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1531,921},{216,158}}</string>
+                <string>{{1358,2851},{216,158}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -238,23 +537,10 @@
                 <key>sourceSize</key>
                 <string>{216,158}</string>
             </dict>
-            <key>EndBossLevel.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1755,921},{86,98}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{86,98}}</string>
-                <key>sourceSize</key>
-                <string>{86,98}</string>
-            </dict>
             <key>SelectLevelScreeBeaverOnRaft.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1849,921},{137,170}}</string>
+                <string>{{1579,2851},{137,170}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -264,31 +550,96 @@
                 <key>sourceSize</key>
                 <string>{137,170}</string>
             </dict>
-            <key>EndLevel.png</key>
+            <key>SelectLevelScreenBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1994,921},{122,135}}</string>
+                <string>{{1721,2851},{1604,905}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{122,135}}</string>
+                <string>{{0,0},{1604,905}}</string>
                 <key>sourceSize</key>
-                <string>{122,135}</string>
+                <string>{1604,905}</string>
             </dict>
-            <key>MiddleBossLevel.png</key>
+            <key>SelectLevelScreenBeaverBlobTalk.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2124,921},{88,137}}</string>
+                <string>{{3330,2851},{300,181}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{88,137}}</string>
+                <string>{{0,0},{300,181}}</string>
                 <key>sourceSize</key>
-                <string>{88,137}</string>
+                <string>{300,181}</string>
+            </dict>
+            <key>SelectLevelScreenTalk.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3635,2851},{251,213}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{251,213}}</string>
+                <key>sourceSize</key>
+                <string>{251,213}</string>
+            </dict>
+            <key>StartBlockCollectionLevel.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3891,2851},{88,115}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{88,115}}</string>
+                <key>sourceSize</key>
+                <string>{88,115}</string>
+            </dict>
+            <key>StartBossLevel.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{3984,2851},{100,129}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{100,129}}</string>
+                <key>sourceSize</key>
+                <string>{100,129}</string>
+            </dict>
+            <key>StartGoodTimeLevel.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{5,3761},{90,124}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{90,124}}</string>
+                <key>sourceSize</key>
+                <string>{90,124}</string>
+            </dict>
+            <key>StartLevel.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{100,3761},{85,84}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{85,84}}</string>
+                <key>sourceSize</key>
+                <string>{85,84}</string>
             </dict>
         </dict>
         <key>metadata</key>

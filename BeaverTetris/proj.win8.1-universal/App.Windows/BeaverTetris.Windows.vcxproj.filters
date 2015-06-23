@@ -11,9 +11,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BeaverTetris.Windows_TemporaryKey.pfx" />
-    <None Include="..\..\Resources\StartGameSoundRegulatorsPopUpTextureAtlas.plist">
-      <Filter>Assets</Filter>
-    </None>
     <None Include="..\..\Resources\Shop.plist">
       <Filter>Assets</Filter>
     </None>
@@ -23,40 +20,19 @@
     <None Include="..\..\Resources\PlayerId.plist">
       <Filter>Assets</Filter>
     </None>
-    <None Include="..\..\Resources\MenuScreenTextureAtlas.plist">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="..\..\Resources\MainWinPopUpTextureAtlas.plist">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="..\..\Resources\MainLosePopUpTextureAtlas.plist">
-      <Filter>Assets</Filter>
-    </None>
     <None Include="..\..\Resources\MainGameScreenTextureAtlas.plist">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="..\..\Resources\MainGamePausePopUpTextureAtlas.plist">
       <Filter>Assets</Filter>
     </None>
     <None Include="..\..\Resources\LoadingScreenTextureAtlas.plist">
       <Filter>Assets</Filter>
     </None>
-    <None Include="..\..\Resources\GameRecordsScreenTextureAtlas.plist">
-      <Filter>Assets</Filter>
-    </None>
     <None Include="..\..\Resources\GamePlayersDatabaseData.plist">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="..\..\Resources\GameDevelopersScreenTextureAtlas.plist">
       <Filter>Assets</Filter>
     </None>
     <None Include="..\..\Resources\FinalScreenTextureAtlas.plist">
       <Filter>Assets</Filter>
     </None>
     <None Include="..\..\Resources\CurrentPlayerData.plist">
-      <Filter>Assets</Filter>
-    </None>
-    <None Include="..\..\Resources\CreateNewPlayerControllerTextureAtlas.plist">
       <Filter>Assets</Filter>
     </None>
     <None Include="Package.StoreAssociation.xml" />
@@ -75,40 +51,16 @@
     <Image Include="Assets\SplashScreen.scale-100.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="..\..\Resources\StartGameSoundRegulatorsPopUpTextureAtlas.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="..\..\Resources\SelectLevelScreenTextureAtlas.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="..\..\Resources\MenuScreenTextureAtlas.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="..\..\Resources\MainWinPopUpTextureAtlas.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="..\..\Resources\MainLosePopUpTextureAtlas.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="..\..\Resources\MainGameScreenTextureAtlas.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="..\..\Resources\MainGamePausePopUpTextureAtlas.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="..\..\Resources\LoadingScreenTextureAtlas.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="..\..\Resources\GameRecordsScreenTextureAtlas.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="..\..\Resources\GameDevelopersScreenTextureAtlas.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="..\..\Resources\FinalScreenTextureAtlas.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="..\..\Resources\CreateNewPlayerControllerTextureAtlas.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="..\..\Resources\CloseSelected.png">
