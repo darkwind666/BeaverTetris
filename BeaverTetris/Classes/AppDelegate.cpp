@@ -44,6 +44,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
+	CocosViewConfigurator *cocosViewConfigurator = new CocosViewConfigurator();
+	cocosViewConfigurator->configurateView(glview);
+	delete cocosViewConfigurator;
+
 	GameInitiator *gameInitiator = new GameInitiator();
 	gameInitiator->setInitialState();
 	delete gameInitiator;

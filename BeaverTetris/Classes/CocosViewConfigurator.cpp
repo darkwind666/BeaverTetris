@@ -17,8 +17,9 @@ CocosViewConfigurator::~CocosViewConfigurator(void)
 void CocosViewConfigurator::configurateView(GLView *aView)
 {
 	//configurateScreenSize(aView);
-	Size aScreenSize = aView->getFrameSize();
-	setScalingAndResourcesFolderForScreenSize(aScreenSize);
+	aView->setDesignResolutionSize(designResolutionWidth, designResolutionHeight, kResolutionShowAll);
+	//Size aScreenSize = aView->getFrameSize();
+	//setScalingAndResourcesFolderForScreenSize(aScreenSize);
 }
 
 vector<int> CocosViewConfigurator::getStandartResolutionOperationSystems()
