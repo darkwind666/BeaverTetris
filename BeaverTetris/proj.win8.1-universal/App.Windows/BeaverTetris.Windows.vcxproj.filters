@@ -59,6 +59,8 @@
     <None Include="..\..\Resources\CreateNewPlayerControllerTextureAtlas.plist">
       <Filter>Assets</Filter>
     </None>
+    <None Include="Package.StoreAssociation.xml" />
+    <None Include="BeaverTetris.Windows_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Logo.scale-100.png">
@@ -113,6 +115,15 @@
       <Filter>Assets</Filter>
     </Image>
     <Image Include="..\..\Resources\CloseNormal.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-140.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-180.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-100.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>
