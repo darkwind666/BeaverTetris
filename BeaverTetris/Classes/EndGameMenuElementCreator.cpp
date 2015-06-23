@@ -26,7 +26,7 @@ Node* EndGameMenuElementCreator::getGameStateLabelWithLocaleString(string aLocal
 {
 	Sprite *gameStateLabelPad = CocosNodesHelper::getSpriteWithKey(mainGameEndPopResultLabelControllerKey);
 	gameStateLabelPad->setName(mainGameEndPopResultLabelControllerKey);
-	Label *gameState = GameViewStyleHelper::getStandardLabelWithFontSize(20);
+	Label *gameState = GameViewStyleHelper::getStandardLabelWithFontSize(30);
 	gameState->setString(StringsSupporter::getLocalizedStringFromKey(aLocaleString));
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameState, gameStateLabelPad, mainGameEndPopResultLabelKey);
 	return gameStateLabelPad;
@@ -52,7 +52,7 @@ Node* EndGameMenuElementCreator::getPlayerAwardLabel()
 	awardPad->setName(mainGameEndPopAwardPadKey);
 	CurrentLevelDataSource *currentLevelDataSource = (CurrentLevelDataSource*)ServiceLocator::getServiceForKey(currentLevelDataSourceKey);
 	int playerAward = currentLevelDataSource->getCurrentLevelData().levelAward;
-	Label *gameAward = GameViewStyleHelper::getStandardLabelWithFontSize(20);
+	Label *gameAward = GameViewStyleHelper::getStandardLabelWithFontSize(30);
 	gameAward->setString(StringsSupporter::getStringFromNumber(playerAward));
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(gameAward, awardPad, mainGameEndPopAwardLabelKey);
 	return awardPad;

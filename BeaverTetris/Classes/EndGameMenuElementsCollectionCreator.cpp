@@ -63,7 +63,7 @@ vector<Node*> EndGameMenuElementsCollectionCreator::getLoseGameElements()
 	Node *replayLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(getGoToSceneCallback(kPlayGame), mainGameEndPopUpReplayLevelButtonKey, gameReplayLocalizationKey);
 	loseGameElements.push_back(replayLevelButton);
 	
-	Node *goToSelectLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(getGoToSceneCallback(kSelectLevel), mainGamePauseGoToSelectLevelButtonKey, gameGoToMapLocalizationKey);
+	Node *goToSelectLevelButton = _endGameMenuElementCreator->getButtonWithCallbackAndKeyAndLocale(getGoToSceneCallback(kSelectLevel), mainGameEndPopUpGoToSelectLevelButtonKey, gameGoToMapLocalizationKey);
 	loseGameElements.push_back(goToSelectLevelButton);
 
 	return loseGameElements;

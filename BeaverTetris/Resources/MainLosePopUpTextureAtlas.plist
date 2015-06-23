@@ -4,96 +4,109 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>MainGameEndPopUpReplayLevelActiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{542,8},{231,60}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{231,60}}</string>
+                <key>sourceSize</key>
+                <string>{231,60}</string>
+            </dict>
             <key>MainGameEndPopUpGoToSelectLevelActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{8,8},{78,34}}</string>
+                <string>{{403,8},{131,57}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{78,34}}</string>
+                <string>{{0,0},{131,57}}</string>
                 <key>sourceSize</key>
-                <string>{78,34}</string>
-            </dict>
-            <key>MainGameEndPopUpBackground.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{94,8},{361,571}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{361,571}}</string>
-                <key>sourceSize</key>
-                <string>{361,571}</string>
+                <string>{131,57}</string>
             </dict>
             <key>MainGameEndPopUpStaircase.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{463,8},{136,464}}</string>
+                <string>{{744,77},{207,711}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{136,464}}</string>
+                <string>{{0,0},{207,711}}</string>
                 <key>sourceSize</key>
-                <string>{136,464}</string>
-            </dict>
-            <key>MainGameEndPopUpReplayLevelActiveButton.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{607,8},{140,38}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{140,38}}</string>
-                <key>sourceSize</key>
-                <string>{140,38}</string>
-            </dict>
-            <key>MainGameEndPopResultLoseBeaverImage.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{755,8},{232,215}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{232,215}}</string>
-                <key>sourceSize</key>
-                <string>{232,215}</string>
-            </dict>
-            <key>MainGameEndPopResultLabelPad.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{8,587},{211,47}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{211,47}}</string>
-                <key>sourceSize</key>
-                <string>{211,47}</string>
+                <string>{207,711}</string>
             </dict>
             <key>MainGameEndPopUpReplayLevelInactiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{227,587},{140,37}}</string>
+                <string>{{781,8},{231,61}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{140,37}}</string>
+                <string>{{0,0},{231,61}}</string>
                 <key>sourceSize</key>
-                <string>{140,37}</string>
+                <string>{231,61}</string>
+            </dict>
+            <key>MainGameEndPopUpGoToSelectLevelInactiveButton.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{264,8},{131,57}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{131,57}}</string>
+                <key>sourceSize</key>
+                <string>{131,57}</string>
+            </dict>
+            <key>MainGameEndPopResultLabelPad.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{8,77},{353,77}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{353,77}}</string>
+                <key>sourceSize</key>
+                <string>{353,77}</string>
+            </dict>
+            <key>в.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{8,8},{248,54}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{248,54}}</string>
+                <key>sourceSize</key>
+                <string>{248,54}</string>
+            </dict>
+            <key>MainGameEndPopResultLoseBeaverImage.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{369,77},{367,342}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{367,342}}</string>
+                <key>sourceSize</key>
+                <string>{367,342}</string>
             </dict>
         </dict>
         <key>metadata</key>
