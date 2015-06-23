@@ -482,7 +482,7 @@ void GameViewInformationFactory::makeMainGameWorldData()
 
 	ViewElementInformation mainGameBorder;
 	mainGameBorder.elementImage = getImageNameForKey(mainGameBorderKey);
-	mainGameBorder.elementPosition = Vec2(0, 0);
+	mainGameBorder.elementPosition = Vec2(8, 0);
 	mainGameBorder.elementZOrder = kMainGameBorderZOrder;
 	_elementsInformation[mainGameBorderKey] = mainGameBorder;
 
@@ -796,37 +796,37 @@ void GameViewInformationFactory::makeMainGamePausePopUpData()
 
 	ViewElementInformation mainGamePauseBackgroundPauseLabel;
 	mainGamePauseBackgroundPauseLabel.elementImage = getImageNameForKey(mainGamePauseBackgroundPauseLabelKey);
-	mainGamePauseBackgroundPauseLabel.elementPosition = Vec2(20, 90) + getScreenCenter();
+	mainGamePauseBackgroundPauseLabel.elementPosition = Vec2(0, 90) + getScreenCenter();
 	mainGamePauseBackgroundPauseLabel.elementZOrder = kMainGamePauseBackgroundPauseLabelZOrder;
 	_elementsInformation[mainGamePauseBackgroundPauseLabelKey] = mainGamePauseBackgroundPauseLabel;
 
 	ViewElementInformation mainGamePauseRegulateSoundPopUpPad;
 	mainGamePauseRegulateSoundPopUpPad.elementImage = getImageNameForKey(mainGamePausePadKey);
-	mainGamePauseRegulateSoundPopUpPad.elementPosition = Vec2(20, 140) + getScreenCenter();
+	mainGamePauseRegulateSoundPopUpPad.elementPosition = Vec2(0, 200) + getScreenCenter();
 	mainGamePauseRegulateSoundPopUpPad.elementZOrder = kMainGamePausePopUpPadZOrder;
 	_elementsInformation[mainGamePausePadKey] = mainGamePauseRegulateSoundPopUpPad;
 	
 	ViewElementInformation mainGamePauseRegulateSoundSlider;
 	mainGamePauseRegulateSoundSlider.elementImage = getImageNameForKey(mainGamePauseRegulateSoundSliderKey);
-	mainGamePauseRegulateSoundSlider.elementPosition = Vec2(60, 220);
+	mainGamePauseRegulateSoundSlider.elementPosition = Vec2(110, 430);
 	mainGamePauseRegulateSoundSlider.elementZOrder = kMainGamePauseRegulateSoundSliderZOrder;
 	_elementsInformation[mainGamePauseRegulateSoundSliderKey] = mainGamePauseRegulateSoundSlider;
 	
 	ViewElementInformation mainGamePauseRegulateSoundEffectsSlider;
 	mainGamePauseRegulateSoundEffectsSlider.elementImage = getImageNameForKey(mainGamePauseRegulateSoundEffectsSliderKey);
-	mainGamePauseRegulateSoundEffectsSlider.elementPosition = Vec2(60, 160);
+	mainGamePauseRegulateSoundEffectsSlider.elementPosition = Vec2(110, 300);
 	mainGamePauseRegulateSoundEffectsSlider.elementZOrder = kMainGamePauseRegulateSoundEffectsSliderZOrder;
 	_elementsInformation[mainGamePauseRegulateSoundEffectsSliderKey] = mainGamePauseRegulateSoundEffectsSlider;
 	
 	ViewElementInformation mainGamePauseRegulateSoundCloseButton;
 	mainGamePauseRegulateSoundCloseButton.elementImage = mainGamePauseCloseButtonKey;
-	mainGamePauseRegulateSoundCloseButton.elementPosition = Vec2(67, 10);
+	mainGamePauseRegulateSoundCloseButton.elementPosition = Vec2(112, 10);
 	mainGamePauseRegulateSoundCloseButton.elementZOrder = kMainGamePausePopUpCloseButtonZOrder;
 	_elementsInformation[mainGamePauseCloseButtonKey] = mainGamePauseRegulateSoundCloseButton;
 
 	ViewElementInformation mainGamePauseGoToSelectLevelButton;
 	mainGamePauseGoToSelectLevelButton.elementImage = mainGamePauseGoToSelectLevelButtonKey;
-	mainGamePauseGoToSelectLevelButton.elementPosition = Vec2(67, -40);
+	mainGamePauseGoToSelectLevelButton.elementPosition = Vec2(112, -60);
 	mainGamePauseGoToSelectLevelButton.elementZOrder = kMainGamePauseGoToSelectLevelButtonZOrder;
 	_elementsInformation[mainGamePauseGoToSelectLevelButtonKey] = mainGamePauseGoToSelectLevelButton;
 }
@@ -1000,8 +1000,8 @@ void GameViewInformationFactory::makeGameRecordsFishesData()
 {
 	ViewElementInformation gameRecordsFish1;
 	gameRecordsFish1.elementImage = getImageNameForKey(gameRecordsFish1Key);
-	gameRecordsFish1.elementPosition = Vec2(1180, 50);
-	gameRecordsFish1.elementActionFinalPosition = Vec2(1180, 80);
+	gameRecordsFish1.elementPosition = Vec2(280, 80);
+	gameRecordsFish1.elementActionFinalPosition = Vec2(280, 50);
 	gameRecordsFish1.elementZOrder = kStartGameRegulateSoundPopUpZOrder;
 	_elementsInformation[gameRecordsFish1Key] = gameRecordsFish1;
 
