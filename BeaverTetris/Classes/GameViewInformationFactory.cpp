@@ -395,7 +395,7 @@ void GameViewInformationFactory::makeSelectGameLevelPlayerStatusData()
 	_elementsInformation[selectLevelScenePlayerStatusNameKey] = selectLevelScenePlayerStatusName;
 
 	ViewElementInformation selectLevelScenePlayerStatusScore;
-	selectLevelScenePlayerStatusScore.elementPosition = Vec2(105, 75);
+	selectLevelScenePlayerStatusScore.elementPosition = Vec2(105, 65);
 	selectLevelScenePlayerStatusScore.elementZOrder = kSelectLevelPlayerStatusScoreZOrder;
 	_elementsInformation[selectLevelScenePlayerStatusScoreKey] = selectLevelScenePlayerStatusScore;
 
@@ -1144,7 +1144,7 @@ void GameViewInformationFactory::makeFinalScreenData()
 
 	ViewElementInformation finalScreenGoToRecordsButton;
 	finalScreenGoToRecordsButton.elementImage = finalScreenGoToRecordsButtonKey;
-	finalScreenGoToRecordsButton.elementPosition = Vec2(getScreenCenterX(), 50);
+	finalScreenGoToRecordsButton.elementPosition = Vec2(getScreenCenterX(), 80);
 	finalScreenGoToRecordsButton.elementZOrder = kFinalSreenGoToRecordsButtonZOrder;
 	_elementsInformation[finalScreenGoToRecordsButtonKey] = finalScreenGoToRecordsButton;
 
@@ -1154,50 +1154,50 @@ void GameViewInformationFactory::makeFinalScreenAnimationData()
 {
 	ViewElementInformation finalScreenClock;
 	finalScreenClock.elementImage = getImageNameForKey(finalScreenClockKey);
-	finalScreenClock.elementPosition = Vec2(220, 420);
+	finalScreenClock.elementPosition = getScreenCenter() + Vec2(310, 270);
 	finalScreenClock.elementZOrder = 0;
 	_elementsInformation[finalScreenClockKey] = finalScreenClock;
 
 	ViewElementInformation finalScreenBeaverPad;
-	finalScreenBeaverPad.elementPosition = Vec2(480, 100);
-	finalScreenBeaverPad.elementActionFinalPosition = Vec2(getScreenCenterX(), 100);
-	finalScreenBeaverPad.elementOffset = Vec2(0, 200);
+	finalScreenBeaverPad.elementPosition = Vec2(1780, 100);
+	finalScreenBeaverPad.elementActionFinalPosition = Vec2(getScreenCenterX() + 200, 140);
+	finalScreenBeaverPad.elementOffset = Vec2(0, 300);
 	finalScreenBeaverPad.elementZOrder = 0;
 	_elementsInformation[finalScreenBeaverKey] = finalScreenBeaverPad;
 
 	ViewElementInformation beaverRightHand;
 	beaverRightHand.elementImage = getImageNameForKey(finalScreenBeaverRightHandKey);
-	beaverRightHand.elementPosition = Vec2(90, 240);
+	beaverRightHand.elementPosition = Vec2(70, 190);
 	beaverRightHand.elementZOrder = kFinalSreenBeaverRightHandZOrder;
 	_elementsInformation[finalScreenBeaverRightHandKey] = beaverRightHand;
 
 	ViewElementInformation beaverLeftHand;
 	beaverLeftHand.elementImage = getImageNameForKey(finalScreenBeaverLeftHandKey);
-	beaverLeftHand.elementPosition = Vec2(-230, 240);
+	beaverLeftHand.elementPosition = Vec2(-185, 210);
 	beaverLeftHand.elementZOrder = kFinalSreenBeaverLeftHandZOrder;
 	_elementsInformation[finalScreenBeaverLeftHandKey] = beaverLeftHand;
 
 	ViewElementInformation beaverBody;
 	beaverBody.elementImage = getImageNameForKey(finalScreenBeaverBodyKey);
 	beaverBody.elementPosition = Vec2(0, 85);
-	beaverBody.elementActionFinalPosition = Vec2(getScreenCenterX(), 220);
+	beaverBody.elementActionFinalPosition = Vec2(getScreenCenterX() + 200, 220);
 	beaverBody.elementZOrder = kFinalSreenBeaverBodyZOrder;
 	_elementsInformation[finalScreenBeaverBodyKey] = beaverBody;
 
 	ViewElementInformation beaverEyesPad;
-	beaverEyesPad.elementPosition = Vec2(-80, 270);
+	beaverEyesPad.elementPosition = Vec2(-50, 230);
 	beaverEyesPad.elementZOrder = kFinalSreenBeaverEyesZOrder;
 	_elementsInformation[finalScreenBeaverEyesKey] = beaverEyesPad;
 
 	ViewElementInformation beaverRightEye;
 	beaverRightEye.elementImage = getImageNameForKey(finalScreenBeaverRightEyeKey);
-	beaverRightEye.elementPosition = Vec2(15, 35);
+	beaverRightEye.elementPosition = Vec2(10, 35);
 	beaverRightEye.elementZOrder = 0;
 	_elementsInformation[finalScreenBeaverRightEyeKey] = beaverRightEye;
 
 	ViewElementInformation beaverLeftEye;
 	beaverLeftEye.elementImage = getImageNameForKey(finalScreenBeaverLeftEyeKey);
-	beaverLeftEye.elementPosition = Vec2(-80, 40);
+	beaverLeftEye.elementPosition = Vec2(-75, 40);
 	beaverLeftEye.elementZOrder = 0;
 	_elementsInformation[finalScreenBeaverLeftEyeKey] = beaverLeftEye;
 

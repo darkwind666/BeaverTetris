@@ -4,122 +4,122 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>FinalScreenBeaverRightHand.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{8,8},{176,249}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{176,249}}</string>
-                <key>sourceSize</key>
-                <string>{176,249}</string>
-            </dict>
-            <key>FinalScreenClock.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{192,8},{92,104}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{92,104}}</string>
-                <key>sourceSize</key>
-                <string>{92,104}</string>
-            </dict>
             <key>FinalScreenBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{292,8},{369,578}}</string>
+                <string>{{8,8},{1601,901}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{369,578}}</string>
+                <string>{{0,0},{1601,901}}</string>
                 <key>sourceSize</key>
-                <string>{369,578}</string>
+                <string>{1601,901}</string>
             </dict>
             <key>FinalScreenGoToRecordsActiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{669,8},{284,71}}</string>
+                <string>{{8,917},{481,120}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{284,71}}</string>
+                <string>{{0,0},{481,120}}</string>
                 <key>sourceSize</key>
-                <string>{284,71}</string>
-            </dict>
-            <key>FinalScreenBeaver.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{961,8},{581,645}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{581,645}}</string>
-                <key>sourceSize</key>
-                <string>{581,645}</string>
-            </dict>
-            <key>FinalScreenBeaverRightEye.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1550,8},{129,98}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{129,98}}</string>
-                <key>sourceSize</key>
-                <string>{129,98}</string>
-            </dict>
-            <key>FinalScreenBeaverLeftHand.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1687,8},{90,203}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{90,203}}</string>
-                <key>sourceSize</key>
-                <string>{90,203}</string>
-            </dict>
-            <key>FinalScreenBeaverLeftEye.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1785,8},{84,90}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{84,90}}</string>
-                <key>sourceSize</key>
-                <string>{84,90}</string>
+                <string>{481,120}</string>
             </dict>
             <key>FinalScreenGoToRecordsInactiveButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{8,661},{284,72}}</string>
+                <string>{{497,917},{481,120}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{284,72}}</string>
+                <string>{{0,0},{481,120}}</string>
                 <key>sourceSize</key>
-                <string>{284,72}</string>
+                <string>{481,120}</string>
+            </dict>
+            <key>FinalScreenClock.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{986,917},{154,175}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{154,175}}</string>
+                <key>sourceSize</key>
+                <string>{154,175}</string>
+            </dict>
+            <key>FinalScreenBeaverLeftHand.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1148,917},{71,162}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{71,162}}</string>
+                <key>sourceSize</key>
+                <string>{71,162}</string>
+            </dict>
+            <key>FinalScreenBeaverRightHand.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1227,917},{140,198}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{140,198}}</string>
+                <key>sourceSize</key>
+                <string>{140,198}</string>
+            </dict>
+            <key>FinalScreenBeaverLeftEye.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1375,917},{66,72}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{66,72}}</string>
+                <key>sourceSize</key>
+                <string>{66,72}</string>
+            </dict>
+            <key>FinalScreenBeaverRightEye.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1449,917},{80,78}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{80,78}}</string>
+                <key>sourceSize</key>
+                <string>{80,78}</string>
+            </dict>
+            <key>FinalScreenBeaver.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1537,917},{462,513}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{462,513}}</string>
+                <key>sourceSize</key>
+                <string>{462,513}</string>
             </dict>
         </dict>
         <key>metadata</key>
