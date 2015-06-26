@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="8295DarkWind.Beavertime" Publisher="CN=19C5058A-EDD8-4DD3-9C83-A5FF0C9DA3A2" Version="1.1.0.3" />
+  <Identity Name="8295DarkWind.Beavertime" Publisher="CN=19C5058A-EDD8-4DD3-9C83-A5FF0C9DA3A2" Version="1.1.0.4" />
   <Properties>
     <DisplayName>Beaver time</DisplayName>
     <PublisherDisplayName>DarkWind</PublisherDisplayName>

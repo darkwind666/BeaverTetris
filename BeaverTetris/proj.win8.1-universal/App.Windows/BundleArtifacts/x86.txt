@@ -1,5 +1,5 @@
-MainPackage=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\Release\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.3_Bundle\BeaverTetris.Windows_1.1.0.3_Win32.appx
-SymbolPackage=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\AppPackages\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.3_Test\BeaverTetris.Windows_1.1.0.3_Win32.appxsym
-ResourcePack=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\Release\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.3_Bundle\BeaverTetris.Windows_1.1.0.3_language-ru.appx
-ResourcePack=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\Release\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.3_Bundle\BeaverTetris.Windows_1.1.0.3_scale-140.appx
-ResourcePack=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\Release\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.3_Bundle\BeaverTetris.Windows_1.1.0.3_scale-180.appx
+MainPackage=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\Release\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.4_Bundle\BeaverTetris.Windows_1.1.0.4_Win32.appx
+SymbolPackage=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\AppPackages\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.4_Test\BeaverTetris.Windows_1.1.0.4_Win32.appxsym
+ResourcePack=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\Release\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.4_Bundle\BeaverTetris.Windows_1.1.0.4_language-ru.appx
+ResourcePack=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\Release\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.4_Bundle\BeaverTetris.Windows_1.1.0.4_scale-140.appx
+ResourcePack=E:\Downloads\BeaverTetris\BeaverTetris\proj.win8.1-universal\Release\BeaverTetris.Windows\BeaverTetris.Windows_1.1.0.4_Bundle\BeaverTetris.Windows_1.1.0.4_scale-180.appx
