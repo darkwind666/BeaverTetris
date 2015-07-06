@@ -19,8 +19,8 @@ Vec2 GameViewElementsDataSource::getElementPositionForKey(std::string aKey)
 {
 	ViewElementInformation elementsInformation = _gameViewInformationFactory->getViewInformationForKey(aKey);
 	Vec2 positionInDesignResolution = elementsInformation.elementPosition;
-	Vec2 absoluteElementPosition = getAbsolutePosition(positionInDesignResolution);
-	return absoluteElementPosition;
+	//Vec2 absoluteElementPosition = getAbsolutePosition(positionInDesignResolution);
+	return positionInDesignResolution;
 }
 
 std::string GameViewElementsDataSource::getElementImageForKey(std::string aKey)

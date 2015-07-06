@@ -38,7 +38,7 @@ MainGamePausePopUp::~MainGamePausePopUp(void)
 
 Node* MainGamePausePopUp::makePopUpView()
 {
-	Sprite *popUpBackground = CocosNodesHelper::getSpriteWithKey(mainGamePauseBackgroundKey);
+	Node *popUpBackground = GameViewStyleHelper::getPopUpBackground();
 	CocosNodesHelper::addSpriteToParentNodeWithKey(popUpBackground,mainGamePauseBackgroundPauseLabelKey);
 	Node *popUpMenu = getPopUpMenu();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(popUpMenu,popUpBackground,mainGamePausePadKey);

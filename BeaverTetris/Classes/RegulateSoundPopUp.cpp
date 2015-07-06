@@ -31,7 +31,7 @@ RegulateSoundPopUp::~RegulateSoundPopUp(void)
 
 Node* RegulateSoundPopUp::makePopUpView()
 {
-	Sprite *popUpBackground = CocosNodesHelper::getSpriteWithKey(startGameRegulateSoundBackgroundKey);
+	Node *popUpBackground = GameViewStyleHelper::getPopUpBackground();
 	Node *popUpMenu = getPopUpMenu();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(popUpMenu,popUpBackground,startGameRegulateSoundPadKey);
 	return popUpBackground;
@@ -39,7 +39,7 @@ Node* RegulateSoundPopUp::makePopUpView()
 
 Node* RegulateSoundPopUp::getPopUpMenu()
 {
-	Sprite *popUpPad = CocosNodesHelper::getSpriteWithKey(startGameRegulateSoundPadKey);
+	Node *popUpPad = CocosNodesHelper::getSpriteWithKey(startGameRegulateSoundPadKey);
 
 	GameSoundEffectsRegulator *soundEffectsRegulator = new GameSoundEffectsRegulator();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(soundEffectsRegulator,popUpPad,startGameRegulateSoundEffectsSliderKey);

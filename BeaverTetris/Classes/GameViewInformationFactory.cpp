@@ -188,7 +188,7 @@ void GameViewInformationFactory::makeStartGameRegulateSoundPopUpData()
 
 	ViewElementInformation startGameRegulateSoundPopUpPad;
 	startGameRegulateSoundPopUpPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
-	startGameRegulateSoundPopUpPad.elementPosition = Vec2(180, 400);
+	startGameRegulateSoundPopUpPad.elementPosition = Vec2(160, 380);
 	startGameRegulateSoundPopUpPad.elementZOrder = kStartGameRegulateSoundPopUpPadZOrder;
 	_elementsInformation[startGameRegulateSoundPadKey] = startGameRegulateSoundPopUpPad;
 
@@ -830,30 +830,30 @@ void GameViewInformationFactory::makeMainGameEndPopUpData()
 	_elementsInformation[mainGameEndPopUpBackgroundKey] = mainGameEndPopUpBackground;
 
 	ViewElementInformation mainGameEndPopUpWinView;
-	mainGameEndPopUpWinView.elementPosition = Vec2(0, 0);
+	mainGameEndPopUpWinView.elementPosition = Vec2(-20, 0);
 	mainGameEndPopUpWinView.elementZOrder = 0;
 	_elementsInformation[mainGameEndPopUpWinViewKey] = mainGameEndPopUpWinView;
 
 	ViewElementInformation mainGameEndPopUpLoseView;
-	mainGameEndPopUpLoseView.elementPosition = Vec2(20, 0);
+	mainGameEndPopUpLoseView.elementPosition = Vec2(0, 0);
 	mainGameEndPopUpLoseView.elementZOrder = 0;
 	_elementsInformation[mainGameEndPopUpLoseViewKey] = mainGameEndPopUpLoseView;
 
 	ViewElementInformation mainGameEndPopUpWinBeaver;
 	mainGameEndPopUpWinBeaver.elementImage = getImageNameForKey(mainGameEndPopResultWinImageKey);
-	mainGameEndPopUpWinBeaver.elementPosition = Vec2(30, 160) + getScreenCenter();
+	mainGameEndPopUpWinBeaver.elementPosition = Vec2(30, 120) + getScreenCenter();
 	mainGameEndPopUpWinBeaver.elementZOrder = kMainGameEndPopUpBeaverZOrder;
 	_elementsInformation[mainGameEndPopResultWinImageKey] = mainGameEndPopUpWinBeaver;
 
 	ViewElementInformation mainGameEndPopUpLoseBeaver;
 	mainGameEndPopUpLoseBeaver.elementImage = getImageNameForKey(mainGameEndPopResultLoseImageKey);
-	mainGameEndPopUpLoseBeaver.elementPosition = Vec2(-5, 160) + getScreenCenter();
+	mainGameEndPopUpLoseBeaver.elementPosition = Vec2(-5, 120) + getScreenCenter();
 	mainGameEndPopUpLoseBeaver.elementZOrder = kMainGameEndPopUpBeaverZOrder;
 	_elementsInformation[mainGameEndPopResultLoseImageKey] = mainGameEndPopUpLoseBeaver;
 
 	ViewElementInformation mainGameEndPopUpPad;
 	mainGameEndPopUpPad.elementImage = getImageNameForKey(mainGameEndPopUpPadKey);
-	mainGameEndPopUpPad.elementPosition = Vec2(-5, 120) + getScreenCenter();
+	mainGameEndPopUpPad.elementPosition = Vec2(-5, 80) + getScreenCenter();
 	mainGameEndPopUpPad.elementZOrder = kMainGameEndPopUpPadZOrder;
 	_elementsInformation[mainGameEndPopUpPadKey] = mainGameEndPopUpPad;
 

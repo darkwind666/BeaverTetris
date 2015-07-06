@@ -36,6 +36,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		cocosViewConfigurator->configurateView(glview);
 		delete cocosViewConfigurator;
         director->setOpenGLView(glview);
+		glview->setDesignResolutionSize(320, 480, kResolutionShowAll);
     }
 
     // turn on display FPS

@@ -22,7 +22,7 @@ MainGameEndPopUp::MainGameEndPopUp(GameWorldController *aGameWorldController, Ga
 	_gameWorldController = aGameWorldController;
 	_gameHudsController = aGameHudsController;
 	_mainGameEndPopUpSoundController = new MainGameEndPopUpSoundController();
-	_popUpView = CocosNodesHelper::getSpriteWithKey(mainGameEndPopUpBackgroundKey);
+	_popUpView = GameViewStyleHelper::getPopUpBackground();
 	_popUpView->setVisible(false);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_popUpView,this,mainGameEndPopUpBackgroundKey);
 }

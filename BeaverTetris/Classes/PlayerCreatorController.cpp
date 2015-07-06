@@ -25,7 +25,7 @@ PlayerCreatorController::PlayerCreatorController(void)
 	_gameAnalyticController = (GameAnalyticController*)ServiceLocator::getServiceForKey(gameAnalyticControllerKey);
 	_controllerView = getControllerView();
 
-	CocosNodesHelper::addSpriteToParentNodeWithKey(this, playerCreatorControllerBackgroundKey);
+	GameViewStyleHelper::addPopUpBackgroundToParentNodeWithKey(this, playerCreatorControllerBackgroundKey);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_controllerView, this, playerCreatorControllerPadKey);
 	this->setVisible(false);
 }

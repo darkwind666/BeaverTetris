@@ -99,3 +99,18 @@ MenuItem* GameViewStyleHelper::getCloseButtonWithKeyAndCallbackAndLocalization(s
 	
 	return closeButtonItem;
 }
+
+void GameViewStyleHelper::addPopUpBackgroundToParentNodeWithKey(Node *aParentNode, string aKey)
+{
+	Node *background = getPopUpBackground();
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(background, aParentNode, aKey);
+}
+
+Node* GameViewStyleHelper::getPopUpBackground()
+{
+	float width = Director::getInstance()->getWinSizeInPixels().width;
+	float height = Director::getInstance()->getWinSizeInPixels().height;
+	LayerColor *background = LayerColor::create(Color4B(93, 176, 192, 200), width, height);
+	background->ignoreAnchorPointForPosition(false);
+	return background;
+}

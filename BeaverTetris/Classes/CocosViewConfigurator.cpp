@@ -16,7 +16,7 @@ CocosViewConfigurator::~CocosViewConfigurator(void)
 
 void CocosViewConfigurator::configurateView(GLView *aView)
 {
-	configurateScreenSize(aView);
+	//configurateScreenSize(aView);
 	Size aScreenSize = aView->getFrameSize();
 	setScalingAndResourcesFolderForScreenSize(aScreenSize);
 }
@@ -45,21 +45,21 @@ void CocosViewConfigurator::setScalingAndResourcesFolderForScreenSize(Size aScre
 	FileUtils *fileUtils = FileUtils::getInstance();
 	Director *director = Director::getInstance();
 	
-	if (aScreenSize.height <= designResolutionHeight)
-	{
-		fileUtils->addSearchPath(standardResolutionFolder);
-		director->setContentScaleFactor( aScreenSize.height / designResolutionHeight);
-	}
-	
-	else if (aScreenSize.height > designResolutionHeight && aScreenSize.height <= designResolutionHeight * 2)
-	{
-		fileUtils->addSearchPath(highResolutionFolder);
-		director->setContentScaleFactor(aScreenSize.height / designResolutionHeight * 2);
-	}
-	
-	else if (aScreenSize.height > designResolutionHeight * 2 && aScreenSize.height <= designResolutionHeight * 4)
+	float mediumHeight = 640;
+	float largeHeight = 1280;
+
+	if (aScreenSize.height > mediumHeight)
 	{
 		fileUtils->addSearchPath(twoHighResolutionFolder);
-		director->setContentScaleFactor(aScreenSize.height / designResolutionHeight * 4);
+	}
+	
+	else if (aScreenSize.height > designResolutionHeight)
+	{
+		fileUtils->addSearchPath(highResolutionFolder);
+	}
+	
+	else 
+	{
+		fileUtils->addSearchPath(standardResolutionFolder);
 	}
 }
