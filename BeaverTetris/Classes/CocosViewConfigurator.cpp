@@ -27,6 +27,7 @@ vector<int> CocosViewConfigurator::getStandartResolutionOperationSystems()
 	standartResolutionOperationSystems.push_back(CC_PLATFORM_WIN32);
 	standartResolutionOperationSystems.push_back(CC_PLATFORM_LINUX);
 	standartResolutionOperationSystems.push_back(CC_PLATFORM_MAC);
+	standartResolutionOperationSystems.push_back(CC_PLATFORM_ANDROID);
 	return standartResolutionOperationSystems;
 }
 

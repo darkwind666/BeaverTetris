@@ -321,6 +321,8 @@ public:
      */
     virtual ValueMap getValueMapFromFile(const std::string& filename);
 
+	virtual ValueMap getValueMapFromWritableFolderFromFile(const std::string& filename);
+
     // Converts the contents of a file to a ValueMap.
     // This method is used internally.
     virtual ValueMap getValueMapFromData(const char* filedata, int filesize);

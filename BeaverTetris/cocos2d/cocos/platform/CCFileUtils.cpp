@@ -345,6 +345,13 @@ ValueMap FileUtils::getValueMapFromFile(const std::string& filename)
     return tMaker.dictionaryWithContentsOfFile(fullPath.c_str());
 }
 
+ValueMap FileUtils::getValueMapFromWritableFolderFromFile(const std::string& filename)
+{
+	const std::string fullPath = getWritablePath() + filename;
+	DictMaker tMaker;
+	return tMaker.dictionaryWithContentsOfFile(fullPath.c_str());
+}
+
 ValueMap FileUtils::getValueMapFromData(const char* filedata, int filesize)
 {
     DictMaker tMaker;

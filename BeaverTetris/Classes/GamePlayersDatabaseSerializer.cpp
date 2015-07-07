@@ -7,6 +7,7 @@ using namespace cocos2d;
 GamePlayersDatabaseSerializer::GamePlayersDatabaseSerializer(void)
 {
 	_fileUtils = FileUtils::sharedFileUtils();
+	_fullWritablePath = _fileUtils->getWritablePath() + gamePlayersDatabaseDataKey;
 	createFile();
 }
 
@@ -16,21 +17,21 @@ GamePlayersDatabaseSerializer::~GamePlayersDatabaseSerializer(void)
 
 void GamePlayersDatabaseSerializer::createFile()
 {
-	ValueMap databaseData = _fileUtils->getValueMapFromFile(gamePlayersDatabaseDataKey);
+	ValueMap databaseData = _fileUtils->getValueMapFromWritableFolderFromFile(gamePlayersDatabaseDataKey);
 	if (databaseData.size() == 0)
 	{
 		databaseData = ValueMap();
 		ValueVector players = ValueVector();
 		Value playersValue = Value(players);
 		databaseData[gamePlayersKey] = playersValue;
-		_fileUtils->writeToFile(databaseData ,gamePlayersDatabaseDataKey);
+		_fileUtils->writeToFile(databaseData, _fullWritablePath);
 	}
 }
 
 vector<DatabaseInformation> GamePlayersDatabaseSerializer::getDatabaseData()
 {
 	vector<DatabaseInformation> databaseData;
-	ValueMap savedData = _fileUtils->getValueMapFromFile(gamePlayersDatabaseDataKey);
+	ValueMap savedData = _fileUtils->getValueMapFromWritableFolderFromFile(gamePlayersDatabaseDataKey);
 	ValueVector players = savedData[gamePlayersKey].asValueVector();
 	fillDatabaseWithPlayers(databaseData, players);
 	return databaseData;
@@ -53,7 +54,7 @@ void GamePlayersDatabaseSerializer::saveDatabaseData(vector<DatabaseInformation>
 	ValueMap dataToSave = ValueMap();
 	ValueVector players = getPlayersInformationFromPlayers(aPlayers);
 	dataToSave[gamePlayersKey] = players;
-	_fileUtils->writeToFile(dataToSave ,gamePlayersDatabaseDataKey);
+	_fileUtils->writeToFile(dataToSave, _fullWritablePath);
 }
 
 ValueVector GamePlayersDatabaseSerializer::getPlayersInformationFromPlayers(vector<DatabaseInformation> &aPlayers)

@@ -19,6 +19,7 @@ public:
 private:
 
 	cocos2d::FileUtils *_fileUtils;
+	std::string _fullWritablePath;
 
 	void createFile();
 	std::map<std::string, LevelSpellInformation> getSpellsInformationFromData(cocos2d::ValueMap &aData);

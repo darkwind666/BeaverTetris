@@ -35,5 +35,6 @@ vector<int> PlayerSpellsControllerFactory::getPlatformsForDesktop()
 	platformsForDesktop.push_back(CC_PLATFORM_WIN32);
 	platformsForDesktop.push_back(CC_PLATFORM_LINUX);
 	platformsForDesktop.push_back(CC_PLATFORM_MAC);
+	platformsForDesktop.push_back(CC_PLATFORM_ANDROID);
 	return platformsForDesktop;
 }

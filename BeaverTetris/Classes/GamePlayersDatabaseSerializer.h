@@ -16,6 +16,7 @@ public:
 private:
 
 	cocos2d::FileUtils *_fileUtils;
+	std::string _fullWritablePath;
 
 	void createFile();
 	void fillDatabaseWithPlayers(std::vector<DatabaseInformation> &aDatabaseData, cocos2d::ValueVector &aPlayers);
