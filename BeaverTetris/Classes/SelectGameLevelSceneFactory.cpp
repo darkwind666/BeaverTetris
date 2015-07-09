@@ -24,13 +24,14 @@ Scene* SelectGameLevelSceneFactory::createScene()
 {
 	Scene *selectGameLevelScene = Scene::create();
 
+	
 	SelectGameLevelBeaverTalkController *selectGameLevelBeaverTalkController = new SelectGameLevelBeaverTalkController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectGameLevelBeaverTalkController,selectGameLevelScene,selectLevelBeaverTalkKey);
 
 	SelectGameLevelController *selectGameLevelController = new SelectGameLevelController();
 	selectGameLevelController->setDelegate(selectGameLevelBeaverTalkController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectGameLevelController,selectGameLevelScene,selectLevelMenuKey);
-
+	
 	SelectLevelPlayerStatusController *selectLevelPlayerStatusController = new SelectLevelPlayerStatusController();
 	selectLevelPlayerStatusController->setDelegate(selectGameLevelController);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(selectLevelPlayerStatusController,selectGameLevelScene,selectLevelScenePlayerStatusControllerKey);

@@ -237,3 +237,4 @@ $RECYCLE.BIN/
 *.exe
 *.exp
 *.res
+*.so

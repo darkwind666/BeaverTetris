@@ -5,9 +5,11 @@
 #include "GameServicesKeys.h"
 #include "KeysForEnumsDataSource.h"
 #include "GameLevelsAttributesCreator.h"
+#include "cocos2d.h"
 
 using namespace std;
 using namespace pugi;
+using namespace cocos2d;
 
 GameLevelsDataFactory::GameLevelsDataFactory(void)
 {
@@ -30,7 +32,21 @@ vector<GameLevelInformation> GameLevelsDataFactory::getLevelsInformation()
 void GameLevelsDataFactory::fillLevelsInformation(vector<GameLevelInformation> &aLevelsInformation)
 {
 	xml_document levelsFile;
-	xml_parse_result result = levelsFile.load_file(gameLevelsFileKey.c_str());
+	xml_parse_result result;
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+	result = levelsFile.load_file(gameLevelsFileKey.c_str());
+#endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	string fullPath = FileUtils::getInstance()->fullPathForFilename(gameLevelsFileKey);
+	unsigned char* pBuffer = NULL;
+	ssize_t bufferSize = 0;
+	const char *mode = "r";
+	pBuffer = FileUtils::getInstance()->getFileData(fullPath.c_str(), mode, &bufferSize);
+	result = levelsFile.load_buffer(pBuffer, bufferSize);
+#endif
+
 	if (result)
 	{
 		xml_node levels = levelsFile.child(levelsKey.c_str());
