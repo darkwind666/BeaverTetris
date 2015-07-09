@@ -4,6 +4,7 @@
 
 using namespace std;
 using namespace pugi;
+using namespace cocos2d;
 
 GameLocalizationDataSource::GameLocalizationDataSource(void)
 {
@@ -18,7 +19,21 @@ map<string, string> GameLocalizationDataSource::getLocalizedStrings()
 {
 	map<string, string> localizedStrings;
 	xml_document localizationFile;
-	xml_parse_result result = localizationFile.load_file(localizationFileNameKey.c_str());
+	xml_parse_result result;
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+	result = localizationFile.load_file(localizationFileNameKey.c_str());
+#endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	string fullPath = FileUtils::getInstance()->fullPathForFilename(localizationFileNameKey);
+	unsigned char* pBuffer = NULL;
+	ssize_t bufferSize = 0;
+	const char *mode = "r";
+	pBuffer = FileUtils::getInstance()->getFileData(fullPath.c_str(), mode, &bufferSize);
+	result = localizationFile.load_buffer(pBuffer, bufferSize);
+#endif
+
 	if (result)
 	{
 		xml_node localizations = localizationFile.child(localizationsKey.c_str());
@@ -54,4 +69,6 @@ string GameLocalizationDataSource::getCurrentSystemLanguage()
 string GameLocalizationDataSource::getLocalizedStringForKey(string aKey)
 {
 	return _localizedStrings[aKey];
+	//string a = string("a");
+	//return a;
 }

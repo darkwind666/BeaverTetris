@@ -62,12 +62,8 @@ ValueMap GameAnalyticControllerDelegate::getPlayerData()
 	ValueMap playerIdData = fileUtils->getValueMapFromFile(playerIdFileNameKey);
 	if (playerIdData.size() == 0)
 	{
-		GuidGenerator idGenerator;
-		Guid playerId = idGenerator.newGuid();
-		stringstream stream;
-		stream << playerId;
 		playerIdData = ValueMap();
-		playerIdData[playerIdKey] = stream.str();
+		playerIdData[playerIdKey] = string("36d991da-52d3-4fa2-a428-4897648fb5dd");
 		string fullPath = fileUtils->getWritablePath() + playerIdFileNameKey;
 		fileUtils->writeToFile(playerIdData, fullPath);
 	}

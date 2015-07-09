@@ -38,6 +38,14 @@ bool AppDelegate::applicationDidFinishLaunching() {
         director->setOpenGLView(glview);
 		glview->setDesignResolutionSize(320, 480, kResolutionShowAll);
     }
+	else
+	{
+		CocosViewConfigurator *cocosViewConfigurator = new CocosViewConfigurator();
+		cocosViewConfigurator->configurateView(glview);
+		delete cocosViewConfigurator;
+		director->setOpenGLView(glview);
+		glview->setDesignResolutionSize(320, 480, kResolutionShowAll);
+	}
 
     // turn on display FPS
     director->setDisplayStats(false);

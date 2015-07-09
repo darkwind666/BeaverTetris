@@ -13,28 +13,32 @@ MouseOverMenuItem::MouseOverMenuItem(std::string activeImageKey, std::string ina
 	menuItemMenu->addChild(menuItem);
 	this->addChild(menuItemMenu);
 
-	setMouseListner();
+	//setMouseListner();
 }
 
 
 MouseOverMenuItem::~MouseOverMenuItem(void)
 {
-	_eventDispatcher->removeEventListener(_mouseListner);
+	//_eventDispatcher->removeEventListener(_mouseListner);
 }
 
 void MouseOverMenuItem::setMouseListner()
 {
+	/*
 	_mouseListner = EventListenerMouse::create();
 	_mouseListner->onMouseMove = CC_CALLBACK_1(MouseOverMenuItem::onMouseMove, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(_mouseListner, this);
+	*/
 }
 
 void MouseOverMenuItem::onMouseMove(Event *aEvent)
 {
+	/*
 	EventMouse *mouseEvent = (EventMouse*)aEvent;
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 mouseLocation = Vec2(mouseEvent->getCursorX(), mouseEvent->getCursorY() + visibleSize.height);
 	changeMenuItemImageWithMouseLocation(mouseLocation);
+	*/
 }
 
 void MouseOverMenuItem::changeMenuItemImageWithMouseLocation(cocos2d::Vec2 aMouseLocation)

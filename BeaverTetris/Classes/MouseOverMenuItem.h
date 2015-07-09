@@ -14,7 +14,7 @@ public:
 private:
 
 	MenuItem *_menuItem;
-	cocos2d::EventListenerMouse *_mouseListner;
+	//cocos2d::EventListenerMouse *_mouseListner;
 
 	void setMouseListner();
 	void onMouseMove(cocos2d::Event *aEvent);

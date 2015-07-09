@@ -100,7 +100,7 @@ void sendAnalyticData(string aData, int *handle, bool *onLine)
 	curl = curl_easy_init();
 	curl_easy_setopt(curl, CURLOPT_URL, "https://www.google-analytics.com/collect");
 	curl_easy_setopt(curl, CURLOPT_COPYPOSTFIELDS, aData.c_str());
-	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0);
 	
 	while (true)
 	{
