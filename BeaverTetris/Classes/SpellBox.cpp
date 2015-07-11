@@ -12,6 +12,7 @@
 #include "CurrentPlayerDataSource.h"
 #include "pugixml.hpp"
 #include "GameBalanceDataConstants.h"
+#include "GameHelper.h"
 
 using namespace std;
 using namespace pugi;
@@ -55,7 +56,7 @@ map<string, int> SpellBox::getSpellsCosts()
 	map<string, int> spellsCosts;
 	map<TetraminoType, TetraminoInformation> tetraminosData;
 	xml_document spellsFile;
-	xml_parse_result result = spellsFile.load_file(gameSpellsFileKey.c_str());
+	xml_parse_result result = GameHelper::configFileForParsingWithKey(&spellsFile, gameSpellsFileKey);
 	if (result)
 	{
 		xml_node spells = spellsFile.child(gameSpellsDataKey.c_str());

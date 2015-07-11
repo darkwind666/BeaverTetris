@@ -1,6 +1,7 @@
 #include "GoogleAnalyticIndicatorsDataSource.h"
 #include "pugixml.hpp"
 #include "GoogleAnalyticsKeys.h"
+#include "GameHelper.h"
 
 using namespace std;
 using namespace pugi;
@@ -19,7 +20,7 @@ map<string, string> GoogleAnalyticIndicatorsDataSource::getIndicatorsNames()
 {
 	map<string, string> indicatorsNames;
 	xml_document indicatorsFile;
-	xml_parse_result result = indicatorsFile.load_file(analiticsIndicatorsFileKey.c_str());
+	xml_parse_result result = GameHelper::configFileForParsingWithKey(&indicatorsFile, analiticsIndicatorsFileKey);
 	if (result)
 	{
 		xml_node indicators = indicatorsFile.child(analiticsIndicatorsKeys.c_str());

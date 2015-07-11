@@ -238,3 +238,5 @@ $RECYCLE.BIN/
 *.exp
 *.res
 *.so
+*.so
+BeaverTetris/proj.android/libs/armeabi/libcocos2dcpp.so

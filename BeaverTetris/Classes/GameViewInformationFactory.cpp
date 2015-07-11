@@ -337,39 +337,39 @@ void GameViewInformationFactory::makeSelectGameLevelMenuData()
 	_elementsInformation[gameLevel4Key] = gameLevel4;
 
 	ViewElementInformation gameLevel5;
-	gameLevel5.elementPosition = Vec2(277, 275);
+	gameLevel5.elementPosition = Vec2(277, 235);
 	gameLevel5.elementOffset = Vec2(20, 20);
 	gameLevel5.elementActionFinalPosition = Vec2(160, 300);
 	_elementsInformation[gameLevel5Key] = gameLevel5;
 
 	ViewElementInformation gameLevel6;
-	gameLevel6.elementPosition = Vec2(287, 345);
+	gameLevel6.elementPosition = Vec2(287, 305);
 	gameLevel6.elementOffset = Vec2(20, 20);
 	gameLevel6.elementActionFinalPosition = Vec2(150, 350);
 	_elementsInformation[gameLevel6Key] = gameLevel6;
 
 	ViewElementInformation gameLevel7;
-	gameLevel7.elementPosition = Vec2(277, 405);
+	gameLevel7.elementPosition = Vec2(277, 375);
 	gameLevel7.elementOffset = Vec2(20, 20);
 	gameLevel7.elementActionFinalPosition = Vec2(150, 350);
 	_elementsInformation[gameLevel7Key] = gameLevel7;
 
 	ViewElementInformation gameLevel8;
-	gameLevel8.elementPosition = Vec2(210, 435);
+	gameLevel8.elementPosition = Vec2(210, 415);
 	gameLevel8.elementOffset = Vec2(-40, -10);
 	gameLevel8.elementActionFinalPosition = Vec2(130, 400);
 	_elementsInformation[gameLevel8Key] = gameLevel8;
 
 	ViewElementInformation gameLevel9;
-	gameLevel9.elementPosition = Vec2(257, 475);
+	gameLevel9.elementPosition = Vec2(267, 445);
 	gameLevel9.elementOffset = Vec2(40, -10);
 	gameLevel9.elementActionFinalPosition = Vec2(130, 400);
 	_elementsInformation[gameLevel9Key] = gameLevel9;
 
 	ViewElementInformation gameLevel10;
-	gameLevel10.elementPosition = Vec2(50, 495);
+	gameLevel10.elementPosition = Vec2(30, 445);
 	gameLevel10.elementOffset = Vec2(20, 20);
-	gameLevel10.elementActionFinalPosition = Vec2(50, 420);
+	gameLevel10.elementActionFinalPosition = Vec2(130, 400);
 	_elementsInformation[gameLevel10Key] = gameLevel10;
 
 }

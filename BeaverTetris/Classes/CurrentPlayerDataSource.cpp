@@ -65,7 +65,7 @@ void CurrentPlayerDataSource::completeLevel(string aCompletedLevelName)
 	if (it == _completedLevelsNames.end())
 	{
 		_completedLevelsNames.push_back(aCompletedLevelName);
-		_playerData.playerCompletedLevelsCount = _playerData.playerCompletedLevelsCount++;
+		_playerData.playerCompletedLevelsCount = _playerData.playerCompletedLevelsCount + 1;
 	}
 }
 

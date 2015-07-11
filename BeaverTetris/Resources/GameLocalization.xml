@@ -8,7 +8,7 @@
   <local type="gameBackButton" english="Back" russian="Назад"/>
   <local type="goToSelectLevelButton" english="Map" russian="Карта"/>
   <local type="gamePlayerCreatorLabel" english="Enter player name please" russian="Введите имя игрока пожалуйста"/>
-  <local type="gameTutorialBeaverTalk" english="Press SPACE to continue" russian="Нажми ПРОБЕЛ что бы продолжить"/>
+  <local type="gameTutorialBeaverTalk" english="Tap screen to continue" russian="Коснись экрана что бы продолжить"/>
   <local type="gameLose" english="You lose" russian="Вы проиграли"/>
   <local type="gameWin" english="You win!" russian="Вы выйграли!"/>
   <local type="gameWinAll" english="Victory!" russian="Победа!"/>

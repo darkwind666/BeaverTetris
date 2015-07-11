@@ -2,6 +2,7 @@
 #include "Tetramino.h"
 #include "KeysForEnumsDataSource.h"
 #include "GameBalanceDataConstants.h"
+#include "GameHelper.h"
 
 using namespace std;
 using namespace pugi;
@@ -21,7 +22,7 @@ map<TetraminoType, TetraminoInformation> TetraminosFactory::getTetraminosData()
 {
 	map<TetraminoType, TetraminoInformation> tetraminosData;
 	xml_document levelsFile;
-	xml_parse_result result = levelsFile.load_file(gameTetraminosFileKey.c_str());
+	xml_parse_result result = GameHelper::configFileForParsingWithKey(&levelsFile, gameTetraminosFileKey);
 	if (result)
 	{
 		xml_node tetraminosInformation = levelsFile.child(gameTetraminosDataKey.c_str());
@@ -54,7 +55,7 @@ TetraminoType TetraminosFactory::getTetraminoTypeFromNode(pugi::xml_node &aNode)
 void TetraminosFactory::setAwardForTetraminosCobinations()
 {
 	xml_document levelsFile;
-	xml_parse_result result = levelsFile.load_file(gameTetraminosFileKey.c_str());
+	xml_parse_result result = GameHelper::configFileForParsingWithKey(&levelsFile, gameTetraminosFileKey);
 	if (result)
 	{
 		xml_node tetraminosData = levelsFile.child(gameTetraminosDataKey.c_str());

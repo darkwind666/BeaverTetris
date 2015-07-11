@@ -1,5 +1,6 @@
 #include "GameLocalizationDataSource.h"
 #include "GameLocalizationKeys.h"
+#include "GameHelper.h"
 #include "cocos2d.h"
 
 using namespace std;
@@ -19,20 +20,7 @@ map<string, string> GameLocalizationDataSource::getLocalizedStrings()
 {
 	map<string, string> localizedStrings;
 	xml_document localizationFile;
-	xml_parse_result result;
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-	result = localizationFile.load_file(localizationFileNameKey.c_str());
-#endif
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-	string fullPath = FileUtils::getInstance()->fullPathForFilename(localizationFileNameKey);
-	unsigned char* pBuffer = NULL;
-	ssize_t bufferSize = 0;
-	const char *mode = "r";
-	pBuffer = FileUtils::getInstance()->getFileData(fullPath.c_str(), mode, &bufferSize);
-	result = localizationFile.load_buffer(pBuffer, bufferSize);
-#endif
+	xml_parse_result result = GameHelper::configFileForParsingWithKey(&localizationFile, localizationFileNameKey);
 
 	if (result)
 	{
@@ -69,6 +57,4 @@ string GameLocalizationDataSource::getCurrentSystemLanguage()
 string GameLocalizationDataSource::getLocalizedStringForKey(string aKey)
 {
 	return _localizedStrings[aKey];
-	//string a = string("a");
-	//return a;
 }
