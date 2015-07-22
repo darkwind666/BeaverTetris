@@ -44,7 +44,8 @@ const string selectLevelBackgroundKey = string("SelectLevelScreenBackground");
 const string selectLevelBackgroundRightKey = string("SelectLevelRightGround");
 const string selectLevelBackgroundLeftKey = string("SelectLevelLeftGround");
 
-const string selectLevelBeaverTalkKey = string("SelectLevelScreenTalk");
+const string selectLevelBeaverTalkKey = string("SelectLevelBeaverForTalk");
+const string selectLevelBeaverTalkBlobKey = string("SelectLevelBeaverTalkBlob");
 const string selectLevelBeaverTalkTextKey = string("selectLevelBeaverTalkText");
 
 const string selectLevelMenuKey = string("selectLevelMenu");

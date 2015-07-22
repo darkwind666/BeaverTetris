@@ -253,13 +253,19 @@ void GameViewInformationFactory::makeSelectGameLevelScreenData()
 
 	ViewElementInformation selectGameLevelBeaverTalk;
 	selectGameLevelBeaverTalk.elementImage = getImageNameForKey(selectLevelBeaverTalkKey);
-	selectGameLevelBeaverTalk.elementPosition = Vec2(500, 60);
-	selectGameLevelBeaverTalk.elementActionFinalPosition = Vec2(220, 60);
+	selectGameLevelBeaverTalk.elementPosition = Vec2(500, 50);
+	selectGameLevelBeaverTalk.elementActionFinalPosition = Vec2(260, 50);
 	selectGameLevelBeaverTalk.elementZOrder = kSelectLevelSceneBeaverTalkZOrder;
 	_elementsInformation[selectLevelBeaverTalkKey] = selectGameLevelBeaverTalk;
 
+	ViewElementInformation selectGameLevelBeaverTalkBlob;
+	selectGameLevelBeaverTalkBlob.elementImage = getImageNameForKey(selectLevelBeaverTalkBlobKey);
+	selectGameLevelBeaverTalkBlob.elementPosition = Vec2(-85, 40);
+	selectGameLevelBeaverTalkBlob.elementZOrder = 0;
+	_elementsInformation[selectLevelBeaverTalkBlobKey] = selectGameLevelBeaverTalkBlob;
+
 	ViewElementInformation selectGameLevelBeaverTalkText;
-	selectGameLevelBeaverTalkText.elementPosition = Vec2(-25, -10);
+	selectGameLevelBeaverTalkText.elementPosition = Vec2(-80, 10);
 	selectGameLevelBeaverTalkText.elementZOrder = 0;
 	_elementsInformation[selectLevelBeaverTalkTextKey] = selectGameLevelBeaverTalkText;
 
@@ -288,7 +294,7 @@ void GameViewInformationFactory::makeSelectGameLevelScreenData()
 	makeSelectGameLevelPlayerCreatorControllerData();
 
 	ViewElementInformation selectLevelSceneBackButton;
-	selectLevelSceneBackButton.elementImage = selectLevelSceneBackButtonKey;
+	selectLevelSceneBackButton.elementImage = gameRecordsGoToMainMenuButtonKey;
 	selectLevelSceneBackButton.elementPosition = Vec2(80, 30);
 	selectLevelSceneBackButton.elementZOrder = kSelectLevelSceneBackButtonZOrder;
 	_elementsInformation[selectLevelSceneBackButtonKey] = selectLevelSceneBackButton;
@@ -410,7 +416,7 @@ void GameViewInformationFactory::makeSelectGameLevelPlayerCreatorControllerData(
 	_elementsInformation[playerCreatorControllerBackgroundKey] = playerCreatorBackground;
 
 	ViewElementInformation playerCreatorPad;
-	playerCreatorPad.elementImage = getImageNameForKey(playerCreatorControllerPadKey);
+	playerCreatorPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
 	playerCreatorPad.elementPosition = Vec2(0, 70) + getScreenCenter();
 	playerCreatorPad.elementZOrder = kPlayerCreatorPadZOrder;
 	_elementsInformation[playerCreatorControllerPadKey] = playerCreatorPad;
@@ -679,8 +685,8 @@ void GameViewInformationFactory::makeMainGameTutorialData()
 
 	ViewElementInformation gameTutorialBeaverTalk;
 	gameTutorialBeaverTalk.elementImage = getImageNameForKey(selectLevelBeaverTalkKey);
-	gameTutorialBeaverTalk.elementPosition = Vec2(500, 60);
-	gameTutorialBeaverTalk.elementActionFinalPosition = Vec2(220, 60);
+	gameTutorialBeaverTalk.elementPosition = Vec2(500, 50);
+	gameTutorialBeaverTalk.elementActionFinalPosition = Vec2(260, 50);
 	gameTutorialBeaverTalk.elementZOrder = kGameTutorialBeaverZOrder;
 	_elementsInformation[gameTutorialBeaverKey] = gameTutorialBeaverTalk;
 
@@ -802,7 +808,7 @@ void GameViewInformationFactory::makeMainGamePausePopUpData()
 	_elementsInformation[mainGamePauseBackgroundPauseLabelKey] = mainGamePauseBackgroundPauseLabel;
 
 	ViewElementInformation mainGamePauseRegulateSoundPopUpPad;
-	mainGamePauseRegulateSoundPopUpPad.elementImage = getImageNameForKey(mainGamePausePadKey);
+	mainGamePauseRegulateSoundPopUpPad.elementImage = getImageNameForKey(startGameRegulateSoundPadKey);
 	mainGamePauseRegulateSoundPopUpPad.elementPosition = Vec2(20, 140) + getScreenCenter();
 	mainGamePauseRegulateSoundPopUpPad.elementZOrder = kMainGamePausePopUpPadZOrder;
 	_elementsInformation[mainGamePausePadKey] = mainGamePauseRegulateSoundPopUpPad;
@@ -922,7 +928,7 @@ void GameViewInformationFactory::makeMainGameEndPopUpMenuButtonsData()
 void GameViewInformationFactory::makeRecordsScreenData()
 {
 	ViewElementInformation gameRecordsBackground;
-	gameRecordsBackground.elementImage = getImageNameForKey(gameRecordsBackgroundKey);
+	gameRecordsBackground.elementImage = getImageNameForKey(startGameMenuBackgroundKey);
 	gameRecordsBackground.elementPosition = getScreenCenter();
 	gameRecordsBackground.elementZOrder = kGameRecordsBackgroundZOrder;
 	_elementsInformation[gameRecordsBackgroundKey] = gameRecordsBackground;
@@ -1017,13 +1023,13 @@ void GameViewInformationFactory::makeGameRecordsFishesData()
 void GameViewInformationFactory::makeDevelopersScreenData()
 {
 	ViewElementInformation gameDevelopersBackground;
-	gameDevelopersBackground.elementImage = getImageNameForKey(gameDevelopersBackgroundKey);
+	gameDevelopersBackground.elementImage = getImageNameForKey(startGameMenuBackgroundKey);
 	gameDevelopersBackground.elementPosition = getScreenCenter();
 	gameDevelopersBackground.elementZOrder = kGameDevelopersBackgroundZOrder;
 	_elementsInformation[gameDevelopersBackgroundKey] = gameDevelopersBackground;
 
 	ViewElementInformation gameDevelopersUnderWaterBackground;
-	gameDevelopersUnderWaterBackground.elementImage = getImageNameForKey(gameDevelopersUnderWaterBackgroundKey);
+	gameDevelopersUnderWaterBackground.elementImage = getImageNameForKey(gameRecordsUnderWaterBackgroundKey);
 	gameDevelopersUnderWaterBackground.elementPosition = Vec2(0, -190) + getScreenCenter();
 	gameDevelopersUnderWaterBackground.elementZOrder = kGameDevelopersUnderWaterBackgroundZOrder;
 	_elementsInformation[gameDevelopersUnderWaterBackgroundKey] = gameDevelopersUnderWaterBackground;
@@ -1071,13 +1077,13 @@ void GameViewInformationFactory::makeGameDevelopersAnimationData()
 void GameViewInformationFactory::makeGameDevelopersBoardData()
 {
 	ViewElementInformation gameDevelopersBoardPad;
-	gameDevelopersBoardPad.elementImage = getImageNameForKey(gameDevelopersBoardPadKey);
+	gameDevelopersBoardPad.elementImage = getImageNameForKey(gameRecordsBoardPadKey);
 	gameDevelopersBoardPad.elementPosition = Vec2(0, -60);
 	gameDevelopersBoardPad.elementZOrder = 0;
 	_elementsInformation[gameDevelopersBoardPadKey] = gameDevelopersBoardPad;
 
 	ViewElementInformation gameDevelopersBoardUnderWaterPart;
-	gameDevelopersBoardUnderWaterPart.elementImage = getImageNameForKey(gameDevelopersBoardUnderWaterPartKey);
+	gameDevelopersBoardUnderWaterPart.elementImage = getImageNameForKey(gameRecordsBoardUnderWaterPartKey);
 	gameDevelopersBoardUnderWaterPart.elementPosition = Vec2(170, -120);
 	gameDevelopersBoardUnderWaterPart.elementActionFinalPosition = Vec2(170, 50);
 	gameDevelopersBoardUnderWaterPart.elementZOrder = 0;
@@ -1130,7 +1136,7 @@ void GameViewInformationFactory::makeGameDevelopersPositionsData()
 void GameViewInformationFactory::makeFinalScreenData()
 {
 	ViewElementInformation finalScreenBackground;
-	finalScreenBackground.elementImage = getImageNameForKey(finalScreenBackgroundKey);
+	finalScreenBackground.elementImage = getImageNameForKey(startGameMenuBackgroundKey);
 	finalScreenBackground.elementPosition = getScreenCenter();
 	finalScreenBackground.elementZOrder = kFinalSreenBackgroundZOrder;
 	_elementsInformation[finalScreenBackgroundKey] = finalScreenBackground;

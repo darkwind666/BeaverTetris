@@ -12,6 +12,8 @@ GameTutorialBeaverTalkController::GameTutorialBeaverTalkController(void)
 	Sprite *beaverTalk = CocosNodesHelper::getSpriteWithKey(gameTutorialBeaverKey);
 	this->addChild(beaverTalk);
 
+	CocosNodesHelper::addSpriteToParentNodeWithKey(this, selectLevelBeaverTalkBlobKey);
+
 	LabelTTF *beaverText = GameViewStyleHelper::getStandardLabel();
 	beaverText->setFontSize(11.0f);
 	beaverText->setDimensions(Size(130, 100));
