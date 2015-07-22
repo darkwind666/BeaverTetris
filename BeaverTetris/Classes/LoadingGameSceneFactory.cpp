@@ -41,6 +41,7 @@ Scene* LoadingGameSceneFactory::createScene()
 Node* LoadingGameSceneFactory::getBeaverWithClock()
 {
 	Sprite *beaver = CocosNodesHelper::getSpriteWithKey(loadingGameBeaverKey);
+	CocosNodesHelper::addSpriteToParentNodeWithKey(beaver, loadingGameBeaverClockKey);
 	LoadGameController *loadGameController = new LoadGameController();
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(loadGameController,beaver,loadingGameClockKey);
 	return beaver;

@@ -43,9 +43,6 @@ void MainGamePauseViewController::setPauseView()
 	MenuItemSprite *pauseButtonItem = MenuItemSprite::create(pauseViewActiveImage,pauseViewInactiveImage,[this](Ref*){stopGame();});
 	CocosNodesHelper::addButtonToParentNodeWithKey(pauseButtonItem, this, playerSpellImageKey);
 	_pauseView = pauseButtonItem;
-
-	Node *pauseButtonLabel = getPauseButtonLabel();
-	CocosNodesHelper::addChildNodeToParentNodeWithKey(pauseButtonLabel, this, playerSpellButtonLabelKey);
 }
 
 Node* MainGamePauseViewController::getPauseButtonLabel()

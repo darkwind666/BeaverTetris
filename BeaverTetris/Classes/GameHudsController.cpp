@@ -21,7 +21,9 @@ GameHudsController::~GameHudsController(void)
 
 void GameHudsController::makeView()
 {
-	CocosNodesHelper::addSpriteToParentNodeWithKey(this, gameHudBackgroundKey);
+	Sprite *background = CocosNodesHelper::getSpriteWithKey(gameHudBackgroundKey);
+	background->setScale(1.2f);
+	CocosNodesHelper::addChildNodeToParentNodeWithKey(background,this, gameHudBackgroundKey);
 
 	PlayerActionControllerFactory playerActionControllerFactory;
 	Node *playerActionController = playerActionControllerFactory.getPlayerActionControllerForCurrentPlatform();

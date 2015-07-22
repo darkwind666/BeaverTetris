@@ -39,21 +39,20 @@ map<EventKeyboard::KeyCode, MenuItem*> PlayerActionControllerDesktop::makeContro
 	for (int controllerIndex = 0; controllerIndex < controllersCount; controllerIndex++)
 	{
 		EventKeyboard::KeyCode keyCode = (EventKeyboard::KeyCode) _playerGameControlsDataSource->getPlayerControlKeyboardKeyOnIndex(controllerIndex);
-		MenuItem *playerControllerView = getPlayerControlViewWithKey(keyCode);
+		MenuItem *playerControllerView = getPlayerControlViewWithKeyAndIndex(keyCode, controllerIndex);
 		Vec2 viewPosition = _playerGameControlsDataSource->getPlayerControlPositionOnIndex(controllerIndex);
 		playerControllerView->setPosition(viewPosition);
-		float controllRotation = _playerGameControlsDataSource->getPlayerControlRotationForIndex(controllerIndex);
-		playerControllerView->setRotation(controllRotation);
 		playerControllerView->setTag(controllerIndex);
 		controllersViews[keyCode] = playerControllerView;
 	}
 	return controllersViews;
 }
 
-MenuItem* PlayerActionControllerDesktop::getPlayerControlViewWithKey(EventKeyboard::KeyCode aKey)
+MenuItem* PlayerActionControllerDesktop::getPlayerControlViewWithKeyAndIndex(EventKeyboard::KeyCode aKey, int aIndex)
 {
-	Sprite *playerControllerInactiveImage = CocosNodesHelper::getSpriteWithKey(playerControlActiveImageKey);
-	Sprite *playerControllerActiveImage = CocosNodesHelper::getSpriteWithKey(playerControlActiveImageKey);
+	string playerControllerImageName = _playerGameControlsDataSource->getPlayerControlImageForIndex(aIndex);
+	Sprite *playerControllerInactiveImage = Sprite::createWithSpriteFrameName(playerControllerImageName);
+	Sprite *playerControllerActiveImage = Sprite::createWithSpriteFrameName(playerControllerImageName);
 	MenuItemSprite *playerControllerView = MenuItemSprite::create(playerControllerInactiveImage, playerControllerActiveImage, [this, aKey](Ref* target){activatePlayerControllerOnKeyCode(aKey);});
 	return playerControllerView;
 }

@@ -76,10 +76,8 @@ vector<Node*> PlayerSpellsControllerDesktop::makeSpellsViewsWithIcons(vector<Men
 		spellView->setPosition(spellViewPosition);
 
 		Node *spellCostLabel = getSpellCostLabelWithIndex(iconIndex);
-		Node *spellButtonLabel = getSpellButtonLabelWithIndex(iconIndex);
 		CocosNodesHelper::addChildNodeToParentNodeWithKey(menuForIcon, spellView, playerSpellImageKey);
 		CocosNodesHelper::addChildNodeToParentNodeWithKey(spellCostLabel, spellView, playerSpellCostLabelKey);
-		CocosNodesHelper::addChildNodeToParentNodeWithKey(spellButtonLabel, spellView, playerSpellButtonLabelKey);
 		spellsViews.push_back(spellView);
 	}
 	return spellsViews;
@@ -87,7 +85,7 @@ vector<Node*> PlayerSpellsControllerDesktop::makeSpellsViewsWithIcons(vector<Men
 
 Node* PlayerSpellsControllerDesktop::getSpellCostLabelWithIndex(int aSpellIndex)
 {
-	Label *spellCostLabel = GameViewStyleHelper::getStandardLabelWithFontSize(13);
+	Label *spellCostLabel = GameViewStyleHelper::getStandardLabelWithFontSize(16);
 	string spellCost = _spellsViewDataSource->getSpellCostOnIndex(aSpellIndex);
 	spellCostLabel->setString(spellCost);
 	return spellCostLabel;

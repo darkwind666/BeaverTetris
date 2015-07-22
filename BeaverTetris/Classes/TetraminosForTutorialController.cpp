@@ -180,6 +180,7 @@ vector<Sprite*>  TetraminosForTutorialController::getTetraminosForFirestorm()
 	elementsForExplosions.push_back(middleLineElements[6]);
 	elementsForExplosions.push_back(middleLineElements[7]);
 	elementsForExplosions.push_back(middleLineElements[8]);
+	elementsForExplosions.push_back(middleLineElements[9]);
 
 	getTetraminosInBottom();
 

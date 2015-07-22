@@ -86,13 +86,11 @@ FiniteTimeAction* PlayerActionsForTutorialController::getMoveDetailDownAnimation
 
 Node* PlayerActionsForTutorialController::getControllerWithKey(string aKey)
 {
-	Sprite *controllerView = CocosNodesHelper::getSpriteWithKey(playerControlActiveImageKey);
-	controllerView->setScale(2.0f);
 	GameViewElementsDataSource *gameViewElementsDataSource = (GameViewElementsDataSource*)ServiceLocator::getServiceForKey(gameViewElementsDataSourceKey);
+	string controllerImage = gameViewElementsDataSource->getElementImageForKey(aKey);
+	Sprite *controllerView = Sprite::createWithSpriteFrameName(controllerImage);
 	Vec2 controllerPosition = gameViewElementsDataSource->getElementPositionForKey(aKey);
 	controllerView->setPosition(controllerPosition);
-	Vec2 controllRotation = gameViewElementsDataSource->getElementOffsetForKey(aKey);
-	controllerView->setRotation(controllRotation.x);
 	this->addChild(controllerView);
 	return controllerView;
 }

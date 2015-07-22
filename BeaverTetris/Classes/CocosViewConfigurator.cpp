@@ -16,7 +16,7 @@ CocosViewConfigurator::~CocosViewConfigurator(void)
 
 void CocosViewConfigurator::configurateView(GLView *aView)
 {
-	//configurateScreenSize(aView);
+	configurateScreenSize(aView);
 	Size aScreenSize = aView->getFrameSize();
 	setScalingAndResourcesFolderForScreenSize(aScreenSize);
 }

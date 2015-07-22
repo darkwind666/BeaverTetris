@@ -20,6 +20,7 @@ public:
 	float getPlayerControlRotationForIndex(int aIndex);
 	int  getPlayerControlKeyboardKeyOnIndex(int aIndex);
 	std::function<void()> getPlayerControlCallbackForIndex(int aIndex);
+	std::string getPlayerControlImageForIndex(int aIndex);
 
 private:
 

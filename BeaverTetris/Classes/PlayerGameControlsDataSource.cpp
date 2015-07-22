@@ -4,6 +4,7 @@
 #include "GameServicesKeys.h"
 #include "GameViewElementsDataSource.h"
 #include "CurrentDetailController.h"
+#include "GameFileExtensionMaker.h"
 #include "cocos2d.h"
 
 using namespace std;
@@ -42,6 +43,14 @@ function<void()> PlayerGameControlsDataSource::getPlayerControlCallbackForIndex(
 {
 	PlayerControllInformation controlInformation = _playerControls[aIndex];
 	return controlInformation.callback;
+}
+
+string PlayerGameControlsDataSource::getPlayerControlImageForIndex(int aIndex)
+{
+	PlayerControllInformation controlInformation = _playerControls[aIndex];
+	string controlInactiveImage = controlInformation.imageKey + string("Inactive");
+	string imageName = GameFileExtensionMaker::getGraphicWithExtension(controlInactiveImage);
+	return imageName;
 }
 
 int  PlayerGameControlsDataSource::getPlayerControlKeyboardKeyOnIndex(int aIndex)

@@ -4,70 +4,83 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>LoadingScreenBeaver.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{8,8},{288,450}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{288,450}}</string>
-                <key>sourceSize</key>
-                <string>{288,450}</string>
-            </dict>
-            <key>LoadingScreenWaves.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{304,8},{368,39}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{368,39}}</string>
-                <key>sourceSize</key>
-                <string>{368,39}</string>
-            </dict>
             <key>LoadingScreenBackground.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{680,8},{369,578}}</string>
+                <string>{{8,8},{360,570}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{369,578}}</string>
+                <string>{{0,0},{360,570}}</string>
                 <key>sourceSize</key>
-                <string>{369,578}</string>
-            </dict>
-            <key>LoadingScreenClockCover.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1057,8},{77,77}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{77,77}}</string>
-                <key>sourceSize</key>
-                <string>{77,77}</string>
+                <string>{360,570}</string>
             </dict>
             <key>LoadingScreenGameName.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1142,8},{133,120}}</string>
+                <string>{{376,8},{121,101}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{133,120}}</string>
+                <string>{{0,0},{121,101}}</string>
                 <key>sourceSize</key>
-                <string>{133,120}</string>
+                <string>{121,101}</string>
+            </dict>
+            <key>LoadingScreenClock.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{505,8},{148,291}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,0},{148,291}}</string>
+                <key>sourceSize</key>
+                <string>{150,291}</string>
+            </dict>
+            <key>LoadingScreenBeaver.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{661,8},{260,336}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{260,336}}</string>
+                <key>sourceSize</key>
+                <string>{260,336}</string>
+            </dict>
+            <key>LoadingScreenWaves.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{8,586},{362,39}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{362,39}}</string>
+                <key>sourceSize</key>
+                <string>{362,39}</string>
+            </dict>
+            <key>LoadingScreenClockCover.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{378,586},{60,60}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{60,60}}</string>
+                <key>sourceSize</key>
+                <string>{60,60}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -75,7 +88,7 @@
             <key>format</key>
             <integer>2</integer>
             <key>size</key>
-            <string>{2048,2048}</string>
+            <string>{1024,1024}</string>
             <key>textureFileName</key>
             <string>LoadingScreenTextureAtlas.png</string>
         </dict>

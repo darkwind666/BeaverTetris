@@ -44,7 +44,7 @@ void ExplosionsForTutorialController::getHorizontalLineCombinationExplosion()
 
 void ExplosionsForTutorialController::getVericalLineCombinationExplosion()
 {
-	for (int explosionIndex = 0; explosionIndex < 5; explosionIndex++)
+	for (int explosionIndex = 1; explosionIndex < 5; explosionIndex++)
 	{
 		setExplosionForIndexXY(2, explosionIndex);
 	}

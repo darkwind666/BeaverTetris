@@ -6,6 +6,7 @@ using namespace std;
 
 const string loadingGameBackgroundKey = string("LoadingScreenBackground");
 const string loadingGameBeaverKey = string("LoadingScreenBeaver");
+const string loadingGameBeaverClockKey = string("LoadingScreenClock");
 const string loadingGameClockKey = string("LoadingScreenClockCover");
 const string loadingGameNameKey = string("LoadingScreenGameName");
 const string loadingGameWaveKey = string("LoadingScreenWaves");
@@ -99,10 +100,10 @@ const string playerActionControllerKey = string("playerActionController");
 
 const string playerControlInactiveImageKey = string("PlayerActionInactiveButton");
 const string playerControlActiveImageKey = string("PlayerActionActiveButton");
-const string rotateDetailControlKey = string("rotateDetailControl");
-const string accelerateDetailControlKey = string("accelerateDetailControl");
-const string moveDetailLeftControlKey = string("moveDetailLeftControl");
-const string moveDetailRightControlKey = string("moveDetailRightControl");
+const string rotateDetailControlKey = string("RotateDetailControl");
+const string accelerateDetailControlKey = string("AccelerateDetailControl");
+const string moveDetailLeftControlKey = string("MoveDetailLeftControl");
+const string moveDetailRightControlKey = string("MoveDetailRightControl");
 
 const string playerScoreControllerKey = string("playerScoreController");
 const string playerScoreControllerBackgroundKey = string("MainGamePlayerScorePad");
@@ -145,7 +146,6 @@ const string gameTutorialRotateDetailControlKey = string("gameTutorialRotateDeta
 const string gameTutorialAccelerateDetailControlKey = string("gameTutorialAccelerateDetailControl");
 const string gameTutorialMoveDetailLeftControlKey = string("gameTutorialMoveDetailLeftControl");
 const string gameTutorialMoveDetailRightControlKey = string("gameTutorialMoveDetailRightControl");
-const string gameTutorialUseRocketSpellControlKey = string("TutorialUseRocketSpellButton");
 const string gameTutorialUseSpellRocketKey = string("gameTutorialUseSpellRocket");
 const string gameTutorialVictoryConditionPadKey = string("gameTutorialVictoryConditionPad");
 const string gameTutorialVictoryConditionCountLabelKey = string("gameTutorialVictoryConditionCountLabel");
@@ -153,12 +153,13 @@ const string gameTutorialVictoryConditionImageKey = string("gameTutorialVictoryC
 const string gameTutorialShowLevelIconKey = string("GameTutorialShowLevelIcon");
 const string gameTutorialUsePauseButtonKey = string("TutorialUsePauseButton");
 const string gameTutorialPlayerScorePadKey = string("gameTutorialPlayerScorePad");
+const string gameTutorialUseRocketSpellControlKey = string("TutorialUseRocketSpellButton");
 const string gameTutorialUseRandomExplosionsSpellControlKey = string("TutorialUseRandomExplosionsSpellButton");
 const string gameTutorialUseFirestormSpellControlKey = string("TutorialUseFirestormSpellButton");
 const string gameTutorialUseCohesionSpellControlKey = string("TutorialUseCohesionSpellButton");
 
 
-const string pauseGameViewControllerKey = string("MainGamePauseButton");
+const string pauseGameViewControllerKey = string("MainGamePauseInactiveButton");
 const string mainGamePausePopUpKey = string("MainGamePausePopUp");
 const string mainGamePauseBackgroundKey = string("MainGamePauseBackground");
 const string mainGamePauseBackgroundPauseLabelKey = string("MainGamePauseLabelImage");
