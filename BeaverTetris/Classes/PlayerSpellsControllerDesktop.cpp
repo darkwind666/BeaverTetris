@@ -23,7 +23,6 @@ PlayerSpellsControllerDesktop::PlayerSpellsControllerDesktop(void)
 	_spellsIcons = makeSpellsIcons();
 	vector<Node*> spellsViews = makeSpellsViewsWithIcons(_spellsIcons);
 	addViewsToController(spellsViews);
-	setUpKeyboard();
 }
 
 

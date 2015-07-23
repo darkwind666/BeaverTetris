@@ -17,7 +17,6 @@ MainGamePauseViewController::MainGamePauseViewController(void)
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
 	_winGameSystem = (WinGameSystem*)ServiceLocator::getServiceForKey(winGameSystemKey);
 	setPauseView();
-	setUpKeyboard();
 
 	MainGamePauseDelegate *mainGamePauseDelegate = (MainGamePauseDelegate*)ServiceLocator::getServiceForKey(mainGamePauseDelegateKey);
 	mainGamePauseDelegate->addObserver(this);
@@ -65,7 +64,6 @@ void MainGamePauseViewController::stopGame()
 {
 	if (_winGameSystem->gameEnded() == false)
 	{
-		_eventListenerKeyboard->setEnabled(false);
 		_gameTimeStepController->setUpdateAvailable(false);
 		function<void()> callback = [](){ GameStatesHelper::goToPopUp(kPauseGamePopUp);};
 		GameViewStyleHelper::runButtonActionWithCallbackAndDuration(_pauseView ,callback, gameControllButtonActionDuration);
@@ -74,5 +72,5 @@ void MainGamePauseViewController::stopGame()
 
 void MainGamePauseViewController::pauseWasEnded()
 {
-	_eventListenerKeyboard->setEnabled(true);
+	
 }

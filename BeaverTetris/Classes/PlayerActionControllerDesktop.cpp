@@ -15,7 +15,6 @@ PlayerActionControllerDesktop::PlayerActionControllerDesktop(void)
 {
 	_playerGameControlsDataSource = new PlayerGameControlsDataSource();
 	_gameTimeStepController = (GameTimeStepController*)ServiceLocator::getServiceForKey(gameTimeStepControllerKey);
-	setUpKeyboard();
 	_controllersViews = makeControllersViews();
 	addViewsToController(_controllersViews);
 }

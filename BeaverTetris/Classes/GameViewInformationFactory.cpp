@@ -644,7 +644,7 @@ void GameViewInformationFactory::makeMainGameSpellsIconsData()
 	ViewElementInformation spellIcon;
 	spellIcon.elementImage = getImageNameForKey(playerSpellImageKey);
 	spellIcon.elementPosition =  Vec2(0, 30);
-	spellIcon.elementOffset = Vec2(27, 26);
+	spellIcon.elementOffset = Vec2(26, 26);
 	spellIcon.elementZOrder = kSpellIconImageZOrder;
 	_elementsInformation[playerSpellImageKey] = spellIcon;
 

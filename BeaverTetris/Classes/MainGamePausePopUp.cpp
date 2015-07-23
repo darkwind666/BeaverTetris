@@ -27,7 +27,6 @@ MainGamePausePopUp::MainGamePausePopUp(GameWorldController *aGameWorldController
 	_popUpView = makePopUpView();
 	_popUpView->setVisible(false);
 	CocosNodesHelper::addChildNodeToParentNodeWithKey(_popUpView,this,mainGamePauseBackgroundKey);
-	setUpKeyboard();
 }
 
 
@@ -99,7 +98,6 @@ void MainGamePausePopUp::goToSelectLevelScreen(Object* pSender)
 void MainGamePausePopUp::hidePopUp()
 {
 	FiniteTimeAction *moveCallback = CallFunc::create([this](){
-		_eventListenerKeyboard->setEnabled(false);
 		_mainGamePauseDelegate->endPause();
 		_gameTimeStepController->setUpdateAvailable(true);
 		_gameWorldController->resumeGameWorld();
@@ -111,7 +109,6 @@ void MainGamePausePopUp::hidePopUp()
 void MainGamePausePopUp::showPopUp()
 {
 	_gameWorldController->pauseGameWorld();
-	_eventListenerKeyboard->setEnabled(true);
 	_popUpView->setVisible(true);
 	GameAnalyticController *gameAnalyticController = (GameAnalyticController*)ServiceLocator::getServiceForKey(gameAnalyticControllerKey);
 	gameAnalyticController->goToPopUp(kPauseGamePopUp);

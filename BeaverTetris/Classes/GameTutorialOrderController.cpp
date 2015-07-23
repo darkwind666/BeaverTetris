@@ -19,7 +19,6 @@ GameTutorialOrderController::GameTutorialOrderController(GameTutorial *aGameTuto
 	_startBeaverPosition = tutorialBeaver->getPosition();
 	_beaverAnimationFinished = true;
 
-	setUpKeyboard();
 	_listner = getListner();
 }
 
