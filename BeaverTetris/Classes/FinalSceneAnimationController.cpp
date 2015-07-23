@@ -25,7 +25,6 @@ FinalSceneAnimationController::~FinalSceneAnimationController(void)
 Node* FinalSceneAnimationController::makeBeaver()
 {
 	Node *beaver = Node::create();
-	beaver->setScale(0.35f);
 
 	Sprite *beaverRightHand = CocosNodesHelper::getSpriteWithKey(finalScreenBeaverRightHandKey);
 	beaverRightHand->setAnchorPoint(Vec2(0.35f,0.15f));
@@ -100,7 +99,6 @@ FiniteTimeAction* FinalSceneAnimationController::getCatchClockAnimation()
 		_finalSceneClock->retain();
 		_finalSceneClock->removeFromParentAndCleanup(false);
 		_finalSceneBeaverRightHand->addChild(_finalSceneClock);
-		_finalSceneClock->setScale(2.85f);
 		_finalSceneClock->release();
 	});
 	return callback;

@@ -54,7 +54,7 @@ Node* PlayerCreatorController::getPlayerCreatorText()
 	LabelTTF *padText = GameViewStyleHelper::getStandardLabel();
 	padText->setColor(Color3B(89,72,52));
 	padText->setString(StringsSupporter::getLocalizedStringFromKey(gamePlayerCreatorLabelLocalizationKey));
-	padText->setDimensions(Size(100, 40));
+	padText->setDimensions(Size(100, 50));
 	return padText;
 }
 

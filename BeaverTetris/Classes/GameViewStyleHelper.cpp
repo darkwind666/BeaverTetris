@@ -108,8 +108,8 @@ void GameViewStyleHelper::addPopUpBackgroundToParentNodeWithKey(Node *aParentNod
 
 Node* GameViewStyleHelper::getPopUpBackground()
 {
-	float width = Director::getInstance()->getWinSizeInPixels().width;
-	float height = Director::getInstance()->getWinSizeInPixels().height;
+	float width = Director::getInstance()->getWinSize().width;
+	float height = Director::getInstance()->getWinSize().height;
 	LayerColor *background = LayerColor::create(Color4B(93, 176, 192, 200), width, height);
 	background->ignoreAnchorPointForPosition(false);
 	return background;
