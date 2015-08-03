@@ -45,23 +45,43 @@ void CocosViewConfigurator::setScalingAndResourcesFolderForScreenSize(Size aScre
 	FileUtils *fileUtils = FileUtils::getInstance();
 	Director *director = Director::getInstance();
 	
-	float mediumWidth = 640;
-	float largeWidth = 1280;
+	float mediumHeight = 960;
+	float largeHeight = 1920;
 
-	if (aScreenSize.width > mediumWidth)
+	GLint m_maxTextureSize = 0;
+	glGetIntegerv(GL_MAX_TEXTURE_SIZE, &m_maxTextureSize);
+
+	if (aScreenSize.height > mediumHeight)
 	{
-		fileUtils->addSearchPath(twoHighResolutionFolder);
-		director->setContentScaleFactor(largeWidth / designResolutionWidth);
+
+		if (m_maxTextureSize == 8192)
+		{
+			fileUtils->addSearchPath(twoHighResolutionFolder);
+			director->setContentScaleFactor(largeHeight / designResolutionHeight);
+		}
+
+		else if (m_maxTextureSize == 4096)
+		{
+			fileUtils->addSearchPath(highResolutionFolder);
+			director->setContentScaleFactor(mediumHeight / designResolutionHeight);
+		}
+
+		else
+		{
+			fileUtils->addSearchPath(standardResolutionFolder);
+		}
+		
 	}
 	
-	else if (aScreenSize.width > designResolutionWidth)
+	else if ( (aScreenSize.height > designResolutionHeight) && (m_maxTextureSize >= 4096) )
 	{
 		fileUtils->addSearchPath(highResolutionFolder);
-		director->setContentScaleFactor(mediumWidth / designResolutionWidth);
+		director->setContentScaleFactor(mediumHeight / designResolutionHeight);
 	}
 	
 	else 
 	{
 		fileUtils->addSearchPath(standardResolutionFolder);
 	}
+
 }
