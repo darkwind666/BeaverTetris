@@ -420,7 +420,7 @@ PlayerSettings:
   - XboxOne::enus
   XboxOne::enus: 1
   stringPropertyNames: []
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 6eef7ff3-3870-4b0d-9eb3-4fec082dec9e
+  projectName: BeaverTime
+  organizationId: darkwinddev
   cloudEnabled: 0
