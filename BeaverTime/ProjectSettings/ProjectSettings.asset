@@ -419,7 +419,15 @@ PlayerSettings:
   boolPropertyNames:
   - XboxOne::enus
   XboxOne::enus: 1
-  stringPropertyNames: []
+  stringPropertyNames:
+  - Build_ServiceEnabled::Build_ServiceEnabled
+  - ErrorHub_ServiceEnabled::ErrorHub_ServiceEnabled
+  - Hub_ServiceEnabled::Hub_ServiceEnabled
+  - UNet_ServiceEnabled::UNet_ServiceEnabled
+  Build_ServiceEnabled::Build_ServiceEnabled: True
+  ErrorHub_ServiceEnabled::ErrorHub_ServiceEnabled: False
+  Hub_ServiceEnabled::Hub_ServiceEnabled: False
+  UNet_ServiceEnabled::UNet_ServiceEnabled: True
   cloudProjectId: 6eef7ff3-3870-4b0d-9eb3-4fec082dec9e
   projectName: BeaverTime
   organizationId: darkwinddev
