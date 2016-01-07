@@ -9,6 +9,14 @@ One day beaver decided to ride on the river by rafts. Suddenly some fishes  appe
   - 4 beaver powers.
   - 3 funny fishes.
 
+# Downloads
+
+Google play: [Google play](https://play.google.com/store/apps/details?id=comDarkWind.BeaverTime)
+
+Windows Store: [Windows Store](https://www.microsoft.com/ru-ru/store/games/beaver-time/9wzdncrd36s3)
+
+ItchIo: [ItchIo](http://darkwind.itch.io/beaver-time)
+
 # Teaser video
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/6Z5nQ72sLqA/0.jpg)](http://www.youtube.com/watch?v=6Z5nQ72sLqA)
@@ -22,11 +30,3 @@ One day beaver decided to ride on the river by rafts. Suddenly some fishes  appe
 ![alt tag](http://s1.uploadpics.ru/images/WJtlrjjs4x.png)
 
 ![alt tag](http://s1.uploadpics.ru/images/-1PF3IjjEg.png)
-
-# Downloads
-
-Google play: [Google play](https://play.google.com/store/apps/details?id=comDarkWind.BeaverTime)
-
-Windows Store: [Windows Store](https://www.microsoft.com/ru-ru/store/games/beaver-time/9wzdncrd36s3)
-
-ItchIo: [ItchIo](http://darkwind.itch.io/beaver-time)
