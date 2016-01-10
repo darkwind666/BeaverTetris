@@ -23,6 +23,7 @@ public class LoadGameController : MonoBehaviour {
         else
         {
             fadingController.startFade("MainMenuScreen", false);
+            GamePlayerDataController player = new GamePlayerDataController();
             enabled = false;
         }
 	}
