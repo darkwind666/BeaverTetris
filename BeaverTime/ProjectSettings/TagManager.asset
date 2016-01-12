@@ -50,3 +50,6 @@ TagManager:
   - name: Beaver
     uniqueID: 2466909415
     locked: 0
+  - name: Fishes
+    uniqueID: 427978189
+    locked: 0

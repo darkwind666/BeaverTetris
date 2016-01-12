@@ -8,7 +8,7 @@ public class GamePlayerDataController {
 
     const string playerDataFileName = "/playerData.bt";
 
-    bool _playerExist;
+    public bool playerExist { get; set; }
     string _dataPath;
 
     public GamePlayerDataController()
@@ -25,7 +25,7 @@ public class GamePlayerDataController {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream file = File.Open(_dataPath, FileMode.Open);
             PlayerData data = formatter.Deserialize(file) as PlayerData;
-            _playerExist = data.playerExist;
+            playerExist = data.playerExist;
             file.Close();
         }
 
@@ -36,7 +36,7 @@ public class GamePlayerDataController {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream file = File.Create(_dataPath);
         PlayerData savingData = new PlayerData();
-        savingData.playerExist = _playerExist;
+        savingData.playerExist = playerExist;
         formatter.Serialize(file, savingData);
     }
 
