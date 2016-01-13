@@ -6,22 +6,32 @@ public class MainMenuController : MonoBehaviour {
     public GameObject selectLevelButton;
     public GameObject soundSettingsPopUp;
 
+    public GameObject background;
+    public GameObject buttonClick;
+
     public Slider musicSlider;
     public Slider effectsSlider;
 
     GamePlayerDataController _playerData;
+    AudioSource _buttonClickEffect;
+    AudioSource _backgroundSound;
 
     void Start () {
 
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
-        if(_playerData.playerExist == false) {
+        _buttonClickEffect = buttonClick.GetComponent<AudioSource>();
+        _backgroundSound = background.GetComponent<AudioSource>();
+
+        if (_playerData.playerExist == false) {
             selectLevelButton.SetActive(false);
         }
 
         musicSlider.value = _playerData.gameMusicVolume;
         effectsSlider.value = _playerData.gameSoundEffectsVolume;
 
+        _backgroundSound.volume = _playerData.gameMusicVolume;
+        _buttonClickEffect.volume = _playerData.gameSoundEffectsVolume;
 
     }
 	
