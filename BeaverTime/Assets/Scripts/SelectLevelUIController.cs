@@ -31,7 +31,7 @@ public class SelectLevelUIController : MonoBehaviour {
 
     public void selectLevelButtonPressedWithIndex(int aIndex)
     {
-
+        fadingController.startFade("MainGameScreen", false);
     }
 
     public void setNewPlayer()
