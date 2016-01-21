@@ -53,3 +53,9 @@ TagManager:
   - name: Fishes
     uniqueID: 427978189
     locked: 0
+  - name: MainGamePad
+    uniqueID: 1053869235
+    locked: 0
+  - name: MainGameBlocks
+    uniqueID: 853529551
+    locked: 0
