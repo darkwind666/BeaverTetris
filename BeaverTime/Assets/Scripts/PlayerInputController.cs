@@ -28,7 +28,7 @@ public class PlayerInputController : MonoBehaviour {
 
     void checkUserInput()
     {
-
+        /*
         GameObject currentShape = _shapesController.currentShape();
         Rigidbody2D shapeBody = currentShape.GetComponent<Rigidbody2D>();
 
@@ -37,13 +37,13 @@ public class PlayerInputController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             Vector2 direction = new Vector2(20f, 0f);
-            shapeBody.MovePosition(shapeBody.position + direction * Time.fixedDeltaTime);
+            shapeBody.position = shapeBody.position + direction * Time.fixedDeltaTime;
             Debug.Log(Time.fixedDeltaTime);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Vector2 direction = new Vector2(20f, 0f);
-            shapeBody.MovePosition(shapeBody.position - direction * Time.fixedDeltaTime);
+            shapeBody.position = shapeBody.position - direction * Time.fixedDeltaTime;
             Debug.Log(Time.fixedDeltaTime);
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -54,8 +54,9 @@ public class PlayerInputController : MonoBehaviour {
         else
         {
             Vector2 upDirection = new Vector2(0f, 1f);
-            shapeBody.MovePosition(shapeBody.position - upDirection * Time.fixedDeltaTime);
+            shapeBody.position = shapeBody.position - upDirection * Time.fixedDeltaTime;
         }
+        */
 
     }
 

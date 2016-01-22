@@ -745,11 +745,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2045741284}
   - 212: {fileID: 2045741285}
-  - 68: {fileID: 2045741286}
-  - 61: {fileID: 2045741290}
-  - 61: {fileID: 2045741289}
-  - 61: {fileID: 2045741288}
-  - 61: {fileID: 2045741287}
+  - 114: {fileID: 2045741286}
   m_Layer: 0
   m_Name: MainGamePad
   m_TagString: Untagged
@@ -802,79 +798,17 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!68 &2045741286
-EdgeCollider2D:
+--- !u!114 &2045741286
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2045741283}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: f387c3b9456843448a9ee27e33308c11, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-  - {x: -1.9066323, y: 3.8231266}
-  - {x: -1.9011995, y: -3.796391}
-  - {x: 1.9220569, y: -3.8130114}
-  - {x: 1.92, y: 3.8498614}
---- !u!61 &2045741287
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045741283}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.010597667, y: -4.0527725}
-  serializedVersion: 2
-  m_Size: {x: 4.7797213, y: 0.46716082}
---- !u!61 &2045741288
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045741283}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.010597667, y: 4.101409}
-  serializedVersion: 2
-  m_Size: {x: 4.7797213, y: 0.49117917}
---- !u!61 &2045741289
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045741283}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 2.1722322, y: 0.0000000028297027}
-  serializedVersion: 2
-  m_Size: {x: 0.4564393, y: 7.6599994}
---- !u!61 &2045741290
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045741283}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -2.1399705, y: 0.0000000028297027}
-  serializedVersion: 2
-  m_Size: {x: 0.47858757, y: 7.6599994}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a85b2cc9f43caa43ac9544f01e197a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2095959536
 GameObject:
   m_ObjectHideFlags: 0
