@@ -12,15 +12,15 @@ public class ShapeFinalPlaceChecker : MonoBehaviour {
 
 	void Start () {
 
-        _shapesSpawner = currentShapeContainer.GetComponent<GameShapesSpawner>();
-        resetPositionAndDestroyTime();
+        //_shapesSpawner = currentShapeContainer.GetComponent<GameShapesSpawner>();
+        //resetPositionAndDestroyTime();
         
     }
 
     void resetPositionAndDestroyTime()
     {
-        _previousYPosition = _shapesSpawner.currentShape().transform.position.y;
-        destroyTime = 0;
+        //_previousYPosition = _shapesSpawner.currentShape().transform.position.y;
+       // destroyTime = 0;
     }
 
     void Update () {
@@ -29,7 +29,7 @@ public class ShapeFinalPlaceChecker : MonoBehaviour {
 
     void FixedUpdate()
     {
-
+        /*
         GameObject currentShape = _shapesSpawner.currentShape();
         float shapePositionDifference = Mathf.Abs(_previousYPosition - currentShape.transform.position.y);
         _previousYPosition = currentShape.transform.position.y;
@@ -43,6 +43,7 @@ public class ShapeFinalPlaceChecker : MonoBehaviour {
             }
 
         }
+        */
 
     }
 

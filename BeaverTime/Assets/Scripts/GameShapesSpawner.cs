@@ -8,7 +8,6 @@ public class GameShapesSpawner : MonoBehaviour {
     GameObject _currentShape;
     bool _currentShapeAvailable;
 
-
 	void Start () {
         createNewShape();
     }
@@ -17,7 +16,8 @@ public class GameShapesSpawner : MonoBehaviour {
     {
         int shapeIndex = Random.Range(0, shapes.Length);
         _currentShape = Instantiate(shapes[shapeIndex], transform.position, Quaternion.identity) as GameObject;
-        _currentShape.transform.parent = transform.parent;
+        _currentShape.transform.SetParent(transform.parent, false);
+        _currentShape.transform.position = transform.position;
         _currentShapeAvailable = true;
     }
 
