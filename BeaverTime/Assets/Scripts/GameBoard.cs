@@ -11,8 +11,11 @@ public class GameBoard {
     float _blockHeight;
     int _shapeSideInBlocks;
 
+    public bool gameBoardLocked;
+
     public GameBoard(int aShapeSideInBlocks) {
 
+        gameBoardLocked = false;
         _shapeSideInBlocks = aShapeSideInBlocks;
         _boardHeight = _gameBoard.GetLength(0);
         _boardWidth = _gameBoard.GetLength(1);

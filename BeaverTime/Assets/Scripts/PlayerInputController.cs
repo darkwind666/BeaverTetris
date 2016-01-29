@@ -10,6 +10,7 @@ public class PlayerInputController : MonoBehaviour {
     public GameObject shapesContainer;
     GameShapesSpawner _shapesController;
     ShapesLocator _shapesLocator;
+    GameBoard _gameBoard;
 
     AvailablePositionChecker _positionChecker;
 
@@ -18,7 +19,7 @@ public class PlayerInputController : MonoBehaviour {
 
         _shapesLocator = new ShapesLocator();
         _positionChecker = new AvailablePositionChecker();
-        GameBoard gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
+        _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _shapesController = shapesContainer.GetComponent<GameShapesSpawner>();
         _maxUpdateTime = standardUpdateTime;
         _currentUpdateState = 0;
@@ -42,7 +43,7 @@ public class PlayerInputController : MonoBehaviour {
     {
         checkUserInput();
         _currentUpdateState++;
-        if(_currentUpdateState >= _maxUpdateTime)
+        if(_currentUpdateState >= _maxUpdateTime && _gameBoard.gameBoardLocked == false)
         {
             _currentUpdateState = 0;
             downShape();

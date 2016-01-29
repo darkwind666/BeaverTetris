@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class GameBoardCleaner : MonoBehaviour {
 
@@ -15,16 +16,9 @@ public class GameBoardCleaner : MonoBehaviour {
 
         List<int> linesForDeliting = getLinesForDeliting();
 
-        foreach(int aLineIndex in linesForDeliting)
+        if(linesForDeliting.Count > 0 && _gameBoard.gameBoardLocked == false)
         {
-            deleteLineForIndex(aLineIndex);
-        }
-
-        linesForDeliting.Sort();
-
-        if(linesForDeliting.Count > 0)
-        {
-            moveLinesFromLineIndex(linesForDeliting[0]);
+            StartCoroutine(removeFilledLines(linesForDeliting));
         }
 
     }
@@ -33,9 +27,9 @@ public class GameBoardCleaner : MonoBehaviour {
     {
         List<int> linesForDeliting = new List<int>();
 
-        for(int yIndex = 0; yIndex < _gameBoard.getBoardHeight(); yIndex++)
+        for (int yIndex = 0; yIndex < _gameBoard.getBoardHeight(); yIndex++)
         {
-            if(lineFilledForYIndex(yIndex))
+            if (lineFilledForYIndex(yIndex))
             {
                 linesForDeliting.Add(yIndex);
             }
@@ -58,6 +52,43 @@ public class GameBoardCleaner : MonoBehaviour {
         }
 
         return empty;
+    }
+
+    IEnumerator removeFilledLines(List<int> aLines)
+    {
+        _gameBoard.gameBoardLocked = true;
+        foreach (int aLineIndex in aLines)
+        {
+            showExplosionEffectInLineForIndex(aLineIndex);
+        }
+
+        GameObject block = _gameBoard.getObjectForXY(0, aLines[0]);
+        ParticleSystem particle = block.GetComponent<ParticleSystem>();
+        float explosionDutation = particle.startLifetime;
+
+        yield return new WaitForSeconds(explosionDutation);
+        foreach (int aLineIndex in aLines)
+        {
+            deleteLineForIndex(aLineIndex);
+        }
+
+        aLines.Sort();
+
+        moveLinesFromLineIndex(aLines[0]);
+        _gameBoard.gameBoardLocked = false;
+
+
+    }
+
+    void showExplosionEffectInLineForIndex(int aLineIndex)
+    {
+        for (int xIndex = 0; xIndex < _gameBoard.getBoardWidth(); xIndex++)
+        {
+            GameObject block = _gameBoard.getObjectForXY(xIndex, aLineIndex);
+            ParticleSystem particle = block.GetComponent<ParticleSystem>();
+            particle.Clear();
+            particle.Play();
+        }
     }
 
     void deleteLineForIndex(int aLineIndex)
