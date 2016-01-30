@@ -77,7 +77,6 @@ public class GameBoardCleaner : MonoBehaviour {
         moveLinesFromLineIndex(aLines[0]);
         _gameBoard.gameBoardLocked = false;
 
-
     }
 
     void showExplosionEffectInLineForIndex(int aLineIndex)

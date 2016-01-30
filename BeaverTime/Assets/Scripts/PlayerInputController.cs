@@ -53,7 +53,6 @@ public class PlayerInputController : MonoBehaviour {
 
     void checkUserInput()
     {
-        
         GameObject currentShape = _shapesController.currentShape();
         Vector3 currentPosition = currentShape.transform.localPosition;
 
@@ -77,25 +76,27 @@ public class PlayerInputController : MonoBehaviour {
         {
             Vector3 point = new Vector3(1, 1, 0);
             Vector3 rotatePoint = currentShape.transform.TransformPoint(point);
+            rotateCurrentShapeAroundPoint(rotatePoint);
+        }
+    }
 
+    void rotateCurrentShapeAroundPoint(Vector3 rotatePoint)
+    {
+        GameObject currentShape = _shapesController.currentShape();
+        foreach (Transform child in currentShape.transform)
+        {
+            child.RotateAround(rotatePoint, Vector3.forward, 90);
+            child.localPosition = roundPosition(child.localPosition);
+        }
+
+        if (_positionChecker.checkAvailableObjectPosition(currentShape, currentShape.transform.localPosition) == false)
+        {
             foreach (Transform child in currentShape.transform)
             {
-                child.RotateAround(rotatePoint, Vector3.forward, 90);
+                child.RotateAround(rotatePoint, Vector3.forward, -90);
                 child.localPosition = roundPosition(child.localPosition);
             }
-
-            
-            if (_positionChecker.checkAvailableObjectPosition(currentShape, currentShape.transform.localPosition) == false)
-            {
-                foreach (Transform child in currentShape.transform)
-                {
-                    child.RotateAround(rotatePoint, Vector3.forward, -90);
-                    child.localPosition = roundPosition(child.localPosition);
-                }
-            }
-            
         }
-        
     }
 
     void downShape()

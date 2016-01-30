@@ -12,24 +12,41 @@ public class ShapesLocator {
 
     public void writeShapeInBoard(GameObject aShape)
     {
+        List<Transform> children = getShapeChildren(aShape);
+        replaceChildrenOnGameBoard(children);
+        replaceChildrenToShapeParent(children, aShape);
+        Object.Destroy(aShape);
+    }
+
+    List<Transform> getShapeChildren(GameObject aShape)
+    {
         List<Transform> children = new List<Transform>();
 
         foreach (Transform child in aShape.transform)
+        {
+            children.Add(child);
+        }
+
+        return children;
+    }
+
+    void replaceChildrenOnGameBoard(List<Transform>  aChildren)
+    {
+        foreach (Transform child in aChildren)
         {
             Vector3 childPositionOnBoard = getShapePositionOnBoard(child);
             int positionX = (int)Mathf.Round(childPositionOnBoard.x);
             int positionY = (int)Mathf.Round(childPositionOnBoard.y);
             _gameBoard.setObjectForXY(child.gameObject, positionX, positionY);
-            children.Add(child);
         }
+    }
 
-        foreach (Transform child in children)
+    void replaceChildrenToShapeParent(List<Transform> aChildren, GameObject aShape)
+    {
+        foreach (Transform child in aChildren)
         {
             child.parent = aShape.transform.parent;
         }
-
-        Object.Destroy(aShape);
-
     }
 
     Vector3 getShapePositionOnBoard(Transform aChild)
