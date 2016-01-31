@@ -356,6 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2c7f0ae57af16499dfdb3375d751c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveTimeForOneBlock: 1
 --- !u!1 &241746251
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +771,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415575845}
-  - 114: {fileID: 415575846}
   m_Layer: 0
   m_Name: CurrentShapeFinalPlaceChecker
   m_TagString: Untagged
@@ -790,19 +790,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2045741284}
   m_RootOrder: 1
---- !u!114 &415575846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 415575844}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0f4ec329955784396791616b5e0157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentShapeContainer: {fileID: 1119402925}
-  destroyInterval: 12
 --- !u!1 &438359737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +2117,14 @@ Prefab:
     - target: {fileID: 19800000, guid: f75468363e2394440a081e9c175e6c93, type: 2}
       propertyPath: InitialModule.startSpeed.scalar
       value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: f75468363e2394440a081e9c175e6c93, type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: f75468363e2394440a081e9c175e6c93, type: 2}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f75468363e2394440a081e9c175e6c93, type: 2}
