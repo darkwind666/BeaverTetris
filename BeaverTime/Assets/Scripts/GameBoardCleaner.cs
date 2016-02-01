@@ -29,7 +29,7 @@ public class GameBoardCleaner : MonoBehaviour {
 
             explosionSequence.AppendCallback(()=> showExplosionsInLines(linesForDeliting));
             explosionSequence.AppendInterval(explosionDutation);
-            explosionSequence.AppendCallback(() => downLinesUpDeletedLines(linesForDeliting));
+            explosionSequence.AppendCallback(() => deleteAndDownLinesUpDeletedLines(linesForDeliting));
             explosionSequence.AppendInterval(moveTimeForOneBlock * linesForDeliting.Count);
             explosionSequence.AppendCallback(() => _gameBoard.gameBoardLocked = false);
         }
@@ -75,7 +75,7 @@ public class GameBoardCleaner : MonoBehaviour {
         }
     }
 
-    void downLinesUpDeletedLines(List<int> aLines)
+    void deleteAndDownLinesUpDeletedLines(List<int> aLines)
     {
         foreach (int aLineIndex in aLines)
         {

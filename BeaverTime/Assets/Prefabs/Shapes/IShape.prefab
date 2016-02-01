@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21289132}
   - 199: {fileID: 19976198}
   - 198: {fileID: 19838056}
+  - 114: {fileID: 11487002}
   m_Layer: 0
   m_Name: ExampleBlock (2)
   m_TagString: Untagged
@@ -29,6 +30,7 @@ GameObject:
   - 212: {fileID: 21210994}
   - 199: {fileID: 19939286}
   - 198: {fileID: 19872842}
+  - 114: {fileID: 11410316}
   m_Layer: 0
   m_Name: ExampleBlock
   m_TagString: Untagged
@@ -47,6 +49,7 @@ GameObject:
   - 212: {fileID: 21212508}
   - 199: {fileID: 19911812}
   - 198: {fileID: 19874136}
+  - 114: {fileID: 11483782}
   m_Layer: 0
   m_Name: ExampleBlock (1)
   m_TagString: Untagged
@@ -120,6 +123,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 406214}
   m_RootOrder: 0
+--- !u!114 &11410316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1133e51d8a5cf2d4aa341f594f05973b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockType: 1
+--- !u!114 &11483782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1133e51d8a5cf2d4aa341f594f05973b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockType: 1
+--- !u!114 &11487002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1133e51d8a5cf2d4aa341f594f05973b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockType: 1
 --- !u!198 &19838056
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -4704,6 +4743,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blockType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

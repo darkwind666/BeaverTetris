@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2c7f0ae57af16499dfdb3375d751c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTimeForOneBlock: 1
+  moveTimeForOneBlock: 0.31
 --- !u!1 &241746251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1033,7 @@ Transform:
   m_Children:
   - {fileID: 1119402926}
   - {fileID: 183402880}
+  - {fileID: 1349521579}
   m_Father: {fileID: 2045741284}
   m_RootOrder: 4
 --- !u!1 &821716877
@@ -1760,6 +1761,47 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1349521578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1349521579}
+  - 114: {fileID: 1349521580}
+  m_Layer: 0
+  m_Name: BlocksChainCleaner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1349521579
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1349521578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 764259399}
+  m_RootOrder: 2
+--- !u!114 &1349521580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1349521578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6286f27896e677342b02fd830ef8e767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxBlocksChainCount: 3
+  animationTimeContainer: {fileID: 183402879}
 --- !u!1 &1372009056
 GameObject:
   m_ObjectHideFlags: 0
