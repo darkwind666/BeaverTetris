@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class VerticalBlocksChainCleaner : MonoBehaviour {
+public class VerticalBlocksChainCleaner {
 
     public int maxBlocksChainCount;
     List<GameObject> _blocksForDeleting;

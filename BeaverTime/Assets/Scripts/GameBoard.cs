@@ -23,7 +23,7 @@ public class GameBoard {
 
 	}
 	
-    void cleanGameBoard()
+    public void cleanGameBoard()
     {
 
         for (int yIndex = 0; yIndex < _boardHeight; yIndex++)

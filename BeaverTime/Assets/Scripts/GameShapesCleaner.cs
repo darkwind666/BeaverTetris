@@ -1,0 +1,189 @@
+﻿using UnityEngine;
+using System.Collections.Generic;
+using System;
+using DG.Tweening;
+
+public class GameShapesCleaner : MonoBehaviour {
+
+    GameBoard _mainGameBoard;
+
+    public GameObject animationTimeContainer;
+    float _moveTimeForOneBlock;
+    GameShapesSeparator _gameShapesSeparator;
+
+    void Start () {
+        _moveTimeForOneBlock = animationTimeContainer.GetComponent<GameBoardCleaner>().moveTimeForOneBlock;
+        _mainGameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
+        _gameShapesSeparator = new GameShapesSeparator();
+    }
+	
+	void Update () {
+
+        if (_mainGameBoard.gameBoardLocked == false)
+        {
+            List<List<GameObject>> blockShapes = _gameShapesSeparator.getBlockShapesOnGameBoard();
+            downShapes(blockShapes);
+        }
+
+    }
+
+    void downShapes(List<List<GameObject>> aShapes)
+    {
+
+        bool moveShapesDown = false;
+        int maxDelta = 0;
+
+        foreach (List<GameObject> shape in aShapes)
+        {
+            int yDelta = getYDeltaForShape(shape);
+
+            if (yDelta > 0)
+            {
+                moveShapesDown = true;
+                downShapeOnYDelta(shape, yDelta);
+                maxDelta = Math.Max(maxDelta, yDelta);
+            }
+
+        }
+
+        if (moveShapesDown)
+        {
+            _mainGameBoard.gameBoardLocked = true;
+            Sequence explosionSequence = DOTween.Sequence();
+            explosionSequence.AppendCallback(() => showShapesFollenAnimation(aShapes));
+            explosionSequence.AppendInterval(maxDelta * _moveTimeForOneBlock);
+            explosionSequence.AppendCallback(() => _mainGameBoard.gameBoardLocked = false);
+        }
+
+    }
+
+    int getYDeltaForShape(List<GameObject> aShape)
+    {
+        int yDelta = 0;
+
+        while (availablePositionForShapeWithYDelta(aShape, yDelta + 1))
+        {
+            yDelta++;
+        }
+
+        return yDelta;
+    }
+
+    bool availablePositionForShapeWithYDelta(List<GameObject> aShape, int aDelta)
+    {
+        bool availablePosition = true;
+
+        bool shapeInBoard = checkShapeBlocksPositionsInBoard(aShape, aDelta);
+        if (shapeInBoard)
+        {
+            if (collideWithOtherShapes(aShape, aDelta))
+            {
+                availablePosition = false;
+            }
+        }
+        else
+        {
+            availablePosition = false;
+        }
+
+        return availablePosition;
+    }
+
+    bool checkShapeBlocksPositionsInBoard(List<GameObject> aShape, int aDelta)
+    {
+        bool inBoard = true;
+
+        foreach (GameObject block in aShape)
+        {
+            Vector3 blockPosition = block.transform.localPosition;
+            Vector3 blockPositionWithDelta = new Vector3(blockPosition.x, blockPosition.y - aDelta, blockPosition.z);
+            Vector3 newBlockPosition = new Vector3(Mathf.Round(blockPositionWithDelta.x), Mathf.Round(blockPositionWithDelta.y), blockPosition.z);
+
+            if (_mainGameBoard.checkPositionInBoard(newBlockPosition) == false)
+            {
+                inBoard = false;
+                break;
+            }
+
+        }
+
+        return inBoard;
+    }
+
+    bool collideWithOtherShapes(List<GameObject> aShape, int aDelta)
+    {
+        bool collide = false;
+
+        foreach (GameObject block in aShape)
+        {
+            Vector3 blockPosition = block.transform.localPosition;
+            Vector3 blockPositionWithDelta = new Vector3(blockPosition.x, blockPosition.y - aDelta, blockPosition.z);
+            int xPosition = (int)Mathf.Round(blockPositionWithDelta.x);
+            int yPosition = (int)Mathf.Round(blockPositionWithDelta.y);
+
+            GameObject blockInBoard = _mainGameBoard.getObjectForXY(xPosition, yPosition);
+
+            if (blockInBoard)
+            {
+                if (aShape.Contains(blockInBoard) == false)
+                {
+                    collide = true;
+                    break;
+                }
+
+            }
+
+        }
+
+        return collide;
+    }
+
+    void downShapeOnYDelta(List<GameObject> aShape, int aDelta)
+    {
+        foreach (GameObject block in aShape)
+        {
+            int xPosition = (int)Mathf.Round(block.transform.localPosition.x);
+            int yPosition = (int)Mathf.Round(block.transform.localPosition.y);
+            GameObject blockInBoard = _mainGameBoard.getObjectForXY(xPosition, yPosition);
+
+            if (block == blockInBoard)
+            {
+                _mainGameBoard.deleteObjectForXY(xPosition, yPosition);
+            }
+
+            int newYPosition = yPosition - aDelta;
+
+            GameObject blockInBoardOnNextPosition = _mainGameBoard.getObjectForXY(xPosition, newYPosition);
+
+            if (blockInBoardOnNextPosition)
+            {
+                _mainGameBoard.deleteObjectForXY(xPosition, newYPosition);
+            }
+
+            _mainGameBoard.setObjectForXY(block, xPosition, newYPosition);
+        }
+    }
+
+    void showShapesFollenAnimation(List<List<GameObject>> aShapes)
+    {
+        foreach (List<GameObject> shape in aShapes)
+        {
+            int yDelta = getYDeltaForShape(shape);
+
+            if (yDelta > 0)
+            {
+
+                foreach (GameObject block in shape)
+                {
+                    int xPosition = (int)Mathf.Round(block.transform.localPosition.x);
+                    int yPosition = (int)Mathf.Round(block.transform.localPosition.y);
+                    Vector3 newPosition = new Vector3(xPosition, yPosition - yDelta, block.transform.localPosition.z);
+                    block.transform.DOLocalMove(newPosition, yDelta * _moveTimeForOneBlock);
+                }
+
+            }
+
+        }
+    }
+
+}
