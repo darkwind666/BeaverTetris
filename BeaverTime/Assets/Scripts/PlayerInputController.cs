@@ -14,6 +14,9 @@ public class PlayerInputController : MonoBehaviour {
 
     AvailablePositionChecker _positionChecker;
 
+    public GameObject spellsContainer;
+    SpellsController _spellsController;
+
 
     void Start () {
 
@@ -23,6 +26,7 @@ public class PlayerInputController : MonoBehaviour {
         _shapesController = shapesContainer.GetComponent<GameShapesSpawner>();
         _maxUpdateTime = standardUpdateTime;
         _currentUpdateState = 0;
+        _spellsController = spellsContainer.GetComponent<SpellsController>();
 
     }
 
@@ -41,18 +45,25 @@ public class PlayerInputController : MonoBehaviour {
 
     void Update()
     {
-        checkUserInput();
+
+        if (_shapesController.currentShapeAvailable())
+        {
+            checkUserInput();
+        }
+
         _currentUpdateState++;
         if(_currentUpdateState >= _maxUpdateTime && _gameBoard.gameBoardLocked == false)
         {
             _currentUpdateState = 0;
             downShape();
         }
+
     }
 
 
     void checkUserInput()
     {
+
         GameObject currentShape = _shapesController.currentShape();
         Vector3 currentPosition = currentShape.transform.localPosition;
 
@@ -68,7 +79,7 @@ public class PlayerInputController : MonoBehaviour {
             Vector3 newShapePosition = roundPosition(currentPosition + direction);
             tryChangeShapePosition(currentShape, newShapePosition);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             _maxUpdateTime = acceleratedUpdateTime;
         }
@@ -78,6 +89,12 @@ public class PlayerInputController : MonoBehaviour {
             Vector3 rotatePoint = currentShape.transform.TransformPoint(point);
             rotateCurrentShapeAroundPoint(rotatePoint);
         }
+        
+        else if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            _spellsController.removeCurrentShapeSpell();
+        }
+
     }
 
     void rotateCurrentShapeAroundPoint(Vector3 rotatePoint)
@@ -121,6 +138,11 @@ public class PlayerInputController : MonoBehaviour {
             }
 
         }
+    }
+
+    public void setStandardShapeSpeed()
+    {
+        _maxUpdateTime = standardUpdateTime;
     }
 
 }
