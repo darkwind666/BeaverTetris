@@ -71,17 +71,6 @@ public class RemoveBlocksSpellController : MonoBehaviour {
             aAvailableBlocks.RemoveAt(randomExplosionIndex);
         }
 
-        /*
-        blocksForRemoving.Add(_gameBoard.getObjectForXY(0,0));
-        blocksForRemoving.Add(_gameBoard.getObjectForXY(1, 0));
-        blocksForRemoving.Add(_gameBoard.getObjectForXY(2, 0));
-        blocksForRemoving.Add(_gameBoard.getObjectForXY(0, 1));
-        blocksForRemoving.Add(_gameBoard.getObjectForXY(1, 1));
-        blocksForRemoving.Add(_gameBoard.getObjectForXY(2, 1));
-        blocksForRemoving.Add(_gameBoard.getObjectForXY(1, 2));
-        blocksForRemoving.Add(_gameBoard.getObjectForXY(2, 2));
-        */
-
         return blocksForRemoving;
     }
 

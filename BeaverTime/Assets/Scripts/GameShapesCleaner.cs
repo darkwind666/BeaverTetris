@@ -33,6 +33,8 @@ public class GameShapesCleaner : MonoBehaviour {
         bool moveShapesDown = false;
         int maxDelta = 0;
 
+        List<int> shapesDeltas = new List<int>();
+
         foreach (List<GameObject> shape in aShapes)
         {
             int yDelta = getYDeltaForShape(shape);
@@ -44,13 +46,14 @@ public class GameShapesCleaner : MonoBehaviour {
                 maxDelta = Math.Max(maxDelta, yDelta);
             }
 
+            shapesDeltas.Add(yDelta);
         }
 
         if (moveShapesDown)
         {
             _mainGameBoard.gameBoardLocked = true;
             Sequence explosionSequence = DOTween.Sequence();
-            explosionSequence.AppendCallback(() => showShapesFollenAnimation(aShapes));
+            explosionSequence.AppendCallback(() => showShapesFollenAnimationWithDeltas(aShapes, shapesDeltas));
             explosionSequence.AppendInterval(maxDelta * _moveTimeForOneBlock);
             explosionSequence.AppendCallback(() => _mainGameBoard.gameBoardLocked = false);
         }
@@ -152,9 +155,7 @@ public class GameShapesCleaner : MonoBehaviour {
             }
 
             int newYPosition = yPosition - aDelta;
-
             GameObject blockInBoardOnNextPosition = _mainGameBoard.getObjectForXY(xPosition, newYPosition);
-
             if (blockInBoardOnNextPosition)
             {
                 _mainGameBoard.deleteObjectForXY(xPosition, newYPosition);
@@ -164,15 +165,15 @@ public class GameShapesCleaner : MonoBehaviour {
         }
     }
 
-    void showShapesFollenAnimation(List<List<GameObject>> aShapes)
+    void showShapesFollenAnimationWithDeltas(List<List<GameObject>> aShapes, List<int> aShapesDeltas)
     {
         foreach (List<GameObject> shape in aShapes)
         {
-            int yDelta = getYDeltaForShape(shape);
+            int objectIndex = aShapes.IndexOf(shape);
+            int yDelta = aShapesDeltas[objectIndex];
 
             if (yDelta > 0)
             {
-
                 foreach (GameObject block in shape)
                 {
                     int xPosition = (int)Mathf.Round(block.transform.localPosition.x);
@@ -180,9 +181,7 @@ public class GameShapesCleaner : MonoBehaviour {
                     Vector3 newPosition = new Vector3(xPosition, yPosition - yDelta, block.transform.localPosition.z);
                     block.transform.DOLocalMove(newPosition, yDelta * _moveTimeForOneBlock);
                 }
-
             }
-
         }
     }
 

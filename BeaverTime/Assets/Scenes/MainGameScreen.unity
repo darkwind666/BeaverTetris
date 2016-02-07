@@ -828,7 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapesControllerContainer: {fileID: 1119402925}
-  randomExplosionsCount: 8
+  randomExplosionsCount: 3
 --- !u!1 &411195323
 GameObject:
   m_ObjectHideFlags: 0
