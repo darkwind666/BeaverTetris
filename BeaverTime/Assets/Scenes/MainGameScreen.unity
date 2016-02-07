@@ -423,7 +423,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 879407708}
+  - {fileID: 1843952256}
+  - {fileID: 409092499}
   m_Father: {fileID: 2045741284}
   m_RootOrder: 6
 --- !u!114 &205491053
@@ -437,10 +438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb726934a930924cb2419512e82f62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapesControllerContainer: {fileID: 1119402925}
-  shapesSpeedControllerContainer: {fileID: 687657437}
-  meteorParticle: {fileID: 2046782018}
-  meteorSpeed: 0.48
+  removeCurrentShapeSpellContainer: {fileID: 1843952255}
+  removeBlocksSpellContainer: {fileID: 409092498}
 --- !u!1 &241746251
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +788,47 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &409092498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 409092499}
+  - 114: {fileID: 409092500}
+  m_Layer: 0
+  m_Name: RemoveRandomBlocksSpell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &409092499
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409092498}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 205491052}
+  m_RootOrder: 1
+--- !u!114 &409092500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409092498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b2821563d41fe42bb56f69104c5e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapesControllerContainer: {fileID: 1119402925}
+  randomExplosionsCount: 8
 --- !u!1 &411195323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1286,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 205491052}
+    m_TransformParent: {fileID: 1843952256}
     m_Modifications:
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1258,7 +1298,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.06
+      value: -0.059999995
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1298,7 +1338,7 @@ Prefab:
       objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalScale.x
-      value: -0.004382582
+      value: -0.0043825824
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
       propertyPath: m_LocalScale.y
@@ -2655,6 +2695,50 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1843952255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1843952256}
+  - 114: {fileID: 1843952257}
+  m_Layer: 0
+  m_Name: RemoveCurrentShapeSpell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1843952256
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1843952255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 879407708}
+  m_Father: {fileID: 205491052}
+  m_RootOrder: 0
+--- !u!114 &1843952257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1843952255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f49fff844367fc439f6a2264349cd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapesControllerContainer: {fileID: 1119402925}
+  shapesSpeedControllerContainer: {fileID: 687657437}
+  meteorParticle: {fileID: 2046782018}
+  meteorSpeed: 1.03
 --- !u!1 &1905333037
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ public class PlayerInputController : MonoBehaviour {
     void Update()
     {
 
-        if (_shapesController.currentShapeAvailable())
+        if (_shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false)
         {
             checkUserInput();
         }
@@ -89,10 +89,13 @@ public class PlayerInputController : MonoBehaviour {
             Vector3 rotatePoint = currentShape.transform.TransformPoint(point);
             rotateCurrentShapeAroundPoint(rotatePoint);
         }
-        
-        else if (Input.GetKeyDown(KeyCode.Keypad1))
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _spellsController.removeCurrentShapeSpell();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            _spellsController.removeRandomBlocksSpell();
         }
 
     }
