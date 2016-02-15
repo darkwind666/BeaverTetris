@@ -97,6 +97,10 @@ public class PlayerInputController : MonoBehaviour {
         {
             _spellsController.removeRandomBlocksSpell();
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            _spellsController.firestormSpell();
+        }
 
     }
 
