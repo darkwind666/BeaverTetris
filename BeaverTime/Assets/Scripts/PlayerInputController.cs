@@ -101,6 +101,10 @@ public class PlayerInputController : MonoBehaviour {
         {
             _spellsController.firestormSpell();
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            _spellsController.cohessionSpell();
+        }
 
     }
 

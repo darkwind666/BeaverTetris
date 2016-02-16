@@ -592,6 +592,7 @@ Transform:
   - {fileID: 1843952256}
   - {fileID: 409092499}
   - {fileID: 1557092450}
+  - {fileID: 1905852757}
   m_Father: {fileID: 2045741284}
   m_RootOrder: 6
 --- !u!114 &205491053
@@ -608,6 +609,7 @@ MonoBehaviour:
   removeCurrentShapeSpellContainer: {fileID: 1843952255}
   removeBlocksSpellContainer: {fileID: 409092498}
   firestormSpellContainer: {fileID: 1557092449}
+  cohessionSpellContainer: {fileID: 1905852756}
 --- !u!1 &241746251
 GameObject:
   m_ObjectHideFlags: 0
@@ -4021,6 +4023,50 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1905852756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1905852757}
+  - 114: {fileID: 1905852758}
+  m_Layer: 0
+  m_Name: CohessionSpell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1905852757
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1905852756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3400002, y: 0.4299996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 205491052}
+  m_RootOrder: 3
+--- !u!114 &1905852758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1905852756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea804a54c5b71745900fc3cad117d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockCountForCohession: 5
+  blockAppearanceDuration: 0.77
+  gameBlocksPatterns:
+  - {fileID: 108572, guid: 3c4f9646247d3bd4fb41ce3f46c2ce7f, type: 2}
+  - {fileID: 103320, guid: b69c8bcaabea540459392e48340ce4ec, type: 2}
 --- !u!1001 &1929438550
 Prefab:
   m_ObjectHideFlags: 0
