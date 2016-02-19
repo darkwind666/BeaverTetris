@@ -784,6 +784,34 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &299234629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 299234630}
+  m_Layer: 0
+  m_Name: NegativeMomentsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &299234630
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 299234629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2060211380}
+  m_Father: {fileID: 2045741284}
+  m_RootOrder: 7
 --- !u!1 &312799603
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,7 +4074,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1905852756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3400002, y: 0.4299996, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 205491052}
@@ -4063,10 +4091,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockCountForCohession: 5
-  blockAppearanceDuration: 0.77
+  blockAppearanceDuration: 0.08
   gameBlocksPatterns:
-  - {fileID: 108572, guid: 3c4f9646247d3bd4fb41ce3f46c2ce7f, type: 2}
+  - {fileID: 196852, guid: 3c4f9646247d3bd4fb41ce3f46c2ce7f, type: 2}
   - {fileID: 103320, guid: b69c8bcaabea540459392e48340ce4ec, type: 2}
+  gameBoardPad: {fileID: 764259398}
 --- !u!1001 &1929438550
 Prefab:
   m_ObjectHideFlags: 0
@@ -4721,12 +4750,57 @@ Transform:
   - {fileID: 764259399}
   - {fileID: 1087201653}
   - {fileID: 205491052}
+  - {fileID: 299234630}
   m_Father: {fileID: 1584519592}
   m_RootOrder: 0
 --- !u!1 &2046782018 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
   m_PrefabInternal: {fileID: 879407707}
+--- !u!1 &2060211379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2060211380}
+  - 114: {fileID: 2060211381}
+  m_Layer: 0
+  m_Name: FallSomeShapes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2060211380
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060211379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 299234630}
+  m_RootOrder: 0
+--- !u!114 &2060211381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060211379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5c52efea92541438ca6d254b73a802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxUpdateTime: 144
+  fallShapesCount: 3
+  fallSpeed: 1.66
+  gameBoardPad: {fileID: 764259398}
+  shapesContainer: {fileID: 1119402925}
 --- !u!1001 &2076315449
 Prefab:
   m_ObjectHideFlags: 0

@@ -99,7 +99,7 @@ public class GameShapesSeparator {
 
     void continueFillingTetraminoChainWithPosition(List<GameObject> aShape, Vector3 aStartPosition)
     {
-        if (_mainGameBoard.checkPositionInBoard(aStartPosition))
+        if (_mainGameBoard.checkPositionInBoard(aStartPosition) && aStartPosition.y < _mainGameBoard.getBoardHeight())
         {
             if (nextChainPartOnPosition(aShape, aStartPosition))
             {

@@ -37,7 +37,12 @@ public class ShapesLocator {
             Vector3 childPositionOnBoard = getShapePositionOnBoard(child);
             int positionX = (int)Mathf.Round(childPositionOnBoard.x);
             int positionY = (int)Mathf.Round(childPositionOnBoard.y);
-            _gameBoard.setObjectForXY(child.gameObject, positionX, positionY);
+
+            if(_gameBoard.checkPositionInBoard(new Vector3(positionX, positionY, 0)) && positionY < _gameBoard.getBoardHeight())
+            {
+                _gameBoard.setObjectForXY(child.gameObject, positionX, positionY);
+            }
+            
         }
     }
 

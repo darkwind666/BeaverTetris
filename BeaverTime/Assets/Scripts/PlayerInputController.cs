@@ -48,10 +48,11 @@ public class PlayerInputController : MonoBehaviour {
 
         if (_shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false)
         {
+            _currentUpdateState++;
             checkUserInput();
         }
 
-        _currentUpdateState++;
+        
         if(_currentUpdateState >= _maxUpdateTime && _gameBoard.gameBoardLocked == false)
         {
             _currentUpdateState = 0;
