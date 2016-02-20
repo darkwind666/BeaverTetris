@@ -133,7 +133,7 @@ public class PlayerInputController : MonoBehaviour {
             {
                 _shapesLocator.writeShapeInBoard(currentShape);
                 _shapesController.createNewShape();
-                _gameSpeedController.setStandardShapeSpeed();
+                _gameSpeedController.stopShapeAcceleration();
             }
 
         }

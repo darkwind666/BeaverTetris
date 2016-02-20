@@ -26,6 +26,10 @@ public class FallSomeShapesController : MonoBehaviour {
 
     void Update() {
 
+    }
+
+    public void updateWithGameTime()
+    {
         if (_gameBoard.gameBoardLocked == false && _shapeController.currentShapeAvailable())
         {
             _currentUpdateState++;
@@ -35,7 +39,6 @@ public class FallSomeShapesController : MonoBehaviour {
                 fallSomeShapes();
             }
         }
-
     }
 
     void fallSomeShapes()

@@ -1450,6 +1450,8 @@ MonoBehaviour:
   acceleratedUpdateTime: 5
   shapesContainer: {fileID: 1119402925}
   playerInputContainer: {fileID: 687657437}
+  fallSomeShapesContainer: {fileID: 2060211379}
+  accelerateGameSpeedContainer: {fileID: 898652460}
 --- !u!4 &874530028
 Transform:
   m_ObjectHideFlags: 0
@@ -1720,6 +1722,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e705937db62114ab7f35a90efae8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxUpdateTime: 10
+  acceleratedSpeed: 3
+  gameSpeedContainer: {fileID: 874530026}
+  shapesContainer: {fileID: 1119402925}
+  activeDuration: 124
 --- !u!1001 &934805416
 Prefab:
   m_ObjectHideFlags: 0
@@ -4879,7 +4886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5c52efea92541438ca6d254b73a802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxUpdateTime: 144
+  maxUpdateTime: 3
   fallShapesCount: 3
   fallSpeed: 1.66
   gameBoardPad: {fileID: 764259398}

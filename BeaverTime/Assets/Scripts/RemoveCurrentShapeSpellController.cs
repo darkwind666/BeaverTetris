@@ -80,7 +80,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour {
     void destroyCurrentShape()
     {
         GameObject currentShape = _shapesController.currentShape();
-        _gameSpeedController.setStandardShapeSpeed();
+        _gameSpeedController.stopShapeAcceleration();
         Object.Destroy(currentShape);
         _shapesController.createNewShape();
     }

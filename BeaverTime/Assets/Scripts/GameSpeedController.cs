@@ -7,6 +7,7 @@ public class GameSpeedController : MonoBehaviour {
     public int acceleratedUpdateTime;
     int _maxUpdateTime;
     int _currentUpdateState;
+    int _currentStandardUpdateTime;
 
     GameBoard _gameBoard;
 
@@ -16,13 +17,22 @@ public class GameSpeedController : MonoBehaviour {
     public GameObject playerInputContainer;
     PlayerInputController _playerInputController;
 
+    public GameObject fallSomeShapesContainer;
+    FallSomeShapesController _fallSomeShapesController;
+
+    public GameObject accelerateGameSpeedContainer;
+    AccelerateGameSpeedController _accelerateGameSpeedController;
+
     void Start () {
 
         _maxUpdateTime = standardUpdateTime;
+        _currentStandardUpdateTime = standardUpdateTime;
         _currentUpdateState = 0;
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _shapesController = shapesContainer.GetComponent<GameShapesSpawner>();
         _playerInputController = playerInputContainer.GetComponent<PlayerInputController>();
+        _fallSomeShapesController = fallSomeShapesContainer.GetComponent<FallSomeShapesController>();
+        _accelerateGameSpeedController = accelerateGameSpeedContainer.GetComponent<AccelerateGameSpeedController>();
 
     }
 	
@@ -36,10 +46,17 @@ public class GameSpeedController : MonoBehaviour {
             {
                 _currentUpdateState = 0;
                 _playerInputController.downShape();
+                _accelerateGameSpeedController.updateWithGameTime();
+                _fallSomeShapesController.updateWithGameTime();
             }
 
         }
 
+    }
+
+    public int getCurrentGameSpeed()
+    {
+        return _maxUpdateTime;
     }
 
     public void setAcceleratedShapeSpeed()
@@ -47,9 +64,14 @@ public class GameSpeedController : MonoBehaviour {
         _maxUpdateTime = acceleratedUpdateTime;
     }
 
-    public void setStandardShapeSpeed()
+    public void stopShapeAcceleration()
     {
-        _maxUpdateTime = standardUpdateTime;
+        _maxUpdateTime = _currentStandardUpdateTime;
+    }
+
+    public void setStandardShapeSpeed(int aSpeed)
+    {
+        _currentStandardUpdateTime = aSpeed;
     }
 
 }
