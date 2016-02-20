@@ -810,6 +810,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2060211380}
+  - {fileID: 898652461}
   m_Father: {fileID: 2045741284}
   m_RootOrder: 7
 --- !u!1 &312799603
@@ -1209,10 +1210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abb525299b808f499bbdfad0e12a811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardUpdateTime: 60
-  acceleratedUpdateTime: 5
   shapesContainer: {fileID: 1119402925}
   spellsContainer: {fileID: 205491051}
+  gameSpeedContainer: {fileID: 874530026}
 --- !u!1 &688114328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,6 +1358,7 @@ Transform:
   - {fileID: 183402880}
   - {fileID: 1349521579}
   - {fileID: 127555368}
+  - {fileID: 874530028}
   m_Father: {fileID: 2045741284}
   m_RootOrder: 4
 --- !u!1 &821716877
@@ -1418,6 +1419,49 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &874530026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 874530028}
+  - 114: {fileID: 874530027}
+  m_Layer: 0
+  m_Name: GameSpeedController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &874530027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874530026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9954f3ac507acb049bed42da958816ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardUpdateTime: 60
+  acceleratedUpdateTime: 5
+  shapesContainer: {fileID: 1119402925}
+  playerInputContainer: {fileID: 687657437}
+--- !u!4 &874530028
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874530026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 764259399}
+  m_RootOrder: 4
 --- !u!1 &874740566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1681,45 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 06e14e2567d994e0b942d2e9ed9c92a7, type: 2}
   m_PrefabInternal: {fileID: 879407707}
+--- !u!1 &898652460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 898652461}
+  - 114: {fileID: 898652462}
+  m_Layer: 0
+  m_Name: AccelerateGameSpeed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &898652461
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898652460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 299234630}
+  m_RootOrder: 1
+--- !u!114 &898652462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898652460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e705937db62114ab7f35a90efae8b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &934805416
 Prefab:
   m_ObjectHideFlags: 0
@@ -3990,7 +4073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapesControllerContainer: {fileID: 1119402925}
-  shapesSpeedControllerContainer: {fileID: 687657437}
+  gameSpeedControllerContainer: {fileID: 874530026}
   meteorParticle: {fileID: 2046782018}
   meteorSpeed: 1.03
 --- !u!1 &1905333037

@@ -7,8 +7,8 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour {
     public GameObject shapesControllerContainer;
     GameShapesSpawner _shapesController;
 
-    public GameObject shapesSpeedControllerContainer;
-    PlayerInputController _shapesSpeedController;
+    public GameObject gameSpeedControllerContainer;
+    GameSpeedController _gameSpeedController;
 
     public GameObject meteorParticle;
     GameBoard _gameBoard;
@@ -19,7 +19,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour {
     void Start () {
 
         _shapesController = shapesControllerContainer.GetComponent<GameShapesSpawner>();
-        _shapesSpeedController = shapesSpeedControllerContainer.GetComponent<PlayerInputController>();
+        _gameSpeedController = gameSpeedControllerContainer.GetComponent<GameSpeedController>();
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         meteorParticle.SetActive(true);
         _startMeteorPosition = meteorParticle.transform.position;
@@ -80,7 +80,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour {
     void destroyCurrentShape()
     {
         GameObject currentShape = _shapesController.currentShape();
-        _shapesSpeedController.setStandardShapeSpeed();
+        _gameSpeedController.setStandardShapeSpeed();
         Object.Destroy(currentShape);
         _shapesController.createNewShape();
     }

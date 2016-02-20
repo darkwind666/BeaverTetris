@@ -3,10 +3,6 @@ using System.Collections;
 
 public class PlayerInputController : MonoBehaviour {
 
-    public int standardUpdateTime;
-    public int acceleratedUpdateTime;
-    int _maxUpdateTime;
-    int _currentUpdateState;
     public GameObject shapesContainer;
     GameShapesSpawner _shapesController;
     ShapesLocator _shapesLocator;
@@ -17,6 +13,8 @@ public class PlayerInputController : MonoBehaviour {
     public GameObject spellsContainer;
     SpellsController _spellsController;
 
+    public GameObject gameSpeedContainer;
+    GameSpeedController _gameSpeedController;
 
     void Start () {
 
@@ -24,9 +22,8 @@ public class PlayerInputController : MonoBehaviour {
         _positionChecker = new AvailablePositionChecker();
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _shapesController = shapesContainer.GetComponent<GameShapesSpawner>();
-        _maxUpdateTime = standardUpdateTime;
-        _currentUpdateState = 0;
         _spellsController = spellsContainer.GetComponent<SpellsController>();
+        _gameSpeedController = gameSpeedContainer.GetComponent<GameSpeedController>();
 
     }
 
@@ -45,20 +42,10 @@ public class PlayerInputController : MonoBehaviour {
 
     void Update()
     {
-
         if (_shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false)
         {
-            _currentUpdateState++;
             checkUserInput();
         }
-
-        
-        if(_currentUpdateState >= _maxUpdateTime && _gameBoard.gameBoardLocked == false)
-        {
-            _currentUpdateState = 0;
-            downShape();
-        }
-
     }
 
 
@@ -82,7 +69,7 @@ public class PlayerInputController : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            _maxUpdateTime = acceleratedUpdateTime;
+            _gameSpeedController.setAcceleratedShapeSpeed();
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -128,7 +115,7 @@ public class PlayerInputController : MonoBehaviour {
         }
     }
 
-    void downShape()
+    public void downShape()
     {
         if (_shapesController.currentShapeAvailable())
         {
@@ -146,15 +133,10 @@ public class PlayerInputController : MonoBehaviour {
             {
                 _shapesLocator.writeShapeInBoard(currentShape);
                 _shapesController.createNewShape();
-                _maxUpdateTime = standardUpdateTime;
+                _gameSpeedController.setStandardShapeSpeed();
             }
 
         }
-    }
-
-    public void setStandardShapeSpeed()
-    {
-        _maxUpdateTime = standardUpdateTime;
     }
 
 }
