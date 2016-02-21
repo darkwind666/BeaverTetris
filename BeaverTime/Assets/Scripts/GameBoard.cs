@@ -57,10 +57,6 @@ public class GameBoard {
 
     public void setObjectForXY(GameObject aObject, int aXIndex, int aYIndex)
     {
-        if(_gameBoard[aYIndex, aXIndex])
-        {
-            Object.Destroy(_gameBoard[aYIndex, aXIndex]);
-        }
         _gameBoard[aYIndex, aXIndex] = aObject;
     }
 

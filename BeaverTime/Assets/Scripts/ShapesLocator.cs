@@ -40,7 +40,13 @@ public class ShapesLocator {
 
             if(_gameBoard.checkPositionInBoard(new Vector3(positionX, positionY, 0)) && positionY < _gameBoard.getBoardHeight())
             {
+                GameObject block = _gameBoard.getObjectForXY(positionX, positionY);
+                if(block)
+                {
+                    GameObject.Destroy(block);
+                }
                 _gameBoard.setObjectForXY(child.gameObject, positionX, positionY);
+                // if block - boss -> not destroy boss.
             }
             
         }
