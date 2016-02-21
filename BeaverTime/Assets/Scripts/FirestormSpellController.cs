@@ -134,8 +134,17 @@ public class FirestormSpellController : MonoBehaviour {
 
             Sequence explosionSequence = DOTween.Sequence();
             explosionSequence.AppendInterval(particle.startLifetime);
-            explosionSequence.AppendCallback(() => Destroy(block));
+            explosionSequence.AppendCallback(() => tryToRemoveBlockFromScreen(block));
 
+        }
+    }
+
+    void tryToRemoveBlockFromScreen(GameObject aBlock)
+    {
+        BlockLiveController blockLives = aBlock.GetComponent<BlockLiveController>();
+        if (blockLives.blockLivesCount <= 0)
+        {
+            Destroy(aBlock);
         }
     }
 
@@ -145,7 +154,12 @@ public class FirestormSpellController : MonoBehaviour {
 
         if (block)
         {
-            _gameBoard.deleteObjectForXY(xPosition, yPosition);
+            BlockLiveController blockLives = block.GetComponent<BlockLiveController>();
+            blockLives.removeOneBlockLive();
+            if (blockLives.blockLivesCount <= 0)
+            {
+                _gameBoard.deleteObjectForXY(xPosition, yPosition);
+            }
         }
         else
         {

@@ -12,6 +12,7 @@ GameObject:
   - 199: {fileID: 19948924}
   - 198: {fileID: 19839834}
   - 114: {fileID: 11414536}
+  - 114: {fileID: 11483338}
   m_Layer: 0
   m_Name: BlockType2
   m_TagString: Untagged
@@ -43,6 +44,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockType: 2
+--- !u!114 &11483338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7c8bee5c9a0764aaeb2d6821dd7f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockLivesCount: 1
+  blockLivesPoints: []
 --- !u!198 &19839834
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1561,12 +1575,28 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: blockLivesPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_LocalScale.x
       value: 2.656568
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
       value: 2.656568
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blockLivesPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 131118, guid: b69c8bcaabea540459392e48340ce4ec, type: 2}
+    - target: {fileID: 0}
+      propertyPath: blockLivesPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 158164, guid: b69c8bcaabea540459392e48340ce4ec, type: 2}
+    - target: {fileID: 0}
+      propertyPath: blockLivesCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

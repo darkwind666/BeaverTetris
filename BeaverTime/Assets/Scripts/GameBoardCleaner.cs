@@ -30,7 +30,6 @@ public class GameBoardCleaner : MonoBehaviour {
             explosionSequence.AppendCallback(()=> showExplosionsInLines(linesForDeliting));
             explosionSequence.AppendInterval(explosionDutation);
             explosionSequence.AppendCallback(() => deleteAndDownLinesUpDeletedLines(linesForDeliting));
-            explosionSequence.AppendInterval(moveTimeForOneBlock * linesForDeliting.Count);
             explosionSequence.AppendCallback(() => _gameBoard.gameBoardLocked = false);
         }
 
@@ -82,8 +81,6 @@ public class GameBoardCleaner : MonoBehaviour {
             deleteLineForIndex(aLineIndex);
         }
 
-        aLines.Sort();
-        moveLinesFromLineIndex(aLines[0]);
     }
 
     void showExplosionEffectInLineForIndex(int aLineIndex)
@@ -102,85 +99,12 @@ public class GameBoardCleaner : MonoBehaviour {
         for (int xIndex = 0; xIndex < _gameBoard.getBoardWidth(); xIndex++)
         {
             GameObject block = _gameBoard.getObjectForXY(xIndex, aLineIndex);
-            Destroy(block);
-            _gameBoard.deleteObjectForXY(xIndex, aLineIndex);
-        }
-    }
-
-    void moveLinesFromLineIndex(int aIndex)
-    {
-        for (int yIndex = aIndex + 1; yIndex < _gameBoard.getBoardHeight(); yIndex++)
-        {
-            if (lineEmptyForYIndex(yIndex) == false)
+            BlockLiveController blockLives = block.GetComponent<BlockLiveController>();
+            blockLives.removeOneBlockLive();
+            if (blockLives.blockLivesCount <= 0)
             {
-                moveLineDown(yIndex);
-            }
-        }
-    }
-
-    bool lineEmptyForYIndex(int yIndex)
-    {
-        bool empty = true;
-
-        for (int xIndex = 0; xIndex < _gameBoard.getBoardWidth(); xIndex++)
-        {
-            if (_gameBoard.getObjectForXY(xIndex, yIndex))
-            {
-                empty = false;
-                break;
-            }
-        }
-
-        return empty;
-    }
-
-    void moveLineDown(int aLineIndex)
-    {
-        int finalLineYIndex = getFinalLineYIndex(aLineIndex);
-        replaceAnimationFromFirstIndexToSecondIndex(aLineIndex, finalLineYIndex);
-        replaceLineFromFirstIndexToSecondIndex(aLineIndex, finalLineYIndex);
-    }
-
-    int getFinalLineYIndex(int aLineIndex)
-    {
-        int finalLineYIndex = 0;
-
-        for (int yIndex = aLineIndex - 1; yIndex >= 0; yIndex--)
-        {
-
-            if (lineEmptyForYIndex(yIndex) == false)
-            {
-                finalLineYIndex = yIndex + 1;
-                break;
-            }
-
-        }
-
-        return finalLineYIndex;
-    }
-
-    void replaceAnimationFromFirstIndexToSecondIndex(int aFirstIndex, int aSecondIndex)
-    {
-        for (int xIndex = 0; xIndex < _gameBoard.getBoardWidth(); xIndex++)
-        {
-            if (_gameBoard.getObjectForXY(xIndex, aFirstIndex))
-            {
-                GameObject block = _gameBoard.getObjectForXY(xIndex, aFirstIndex);
-                Vector3 newPosition = new Vector3(block.transform.localPosition.x, aSecondIndex, block.transform.localPosition.z);
-                block.transform.DOLocalMove(newPosition, (aFirstIndex - aSecondIndex) * moveTimeForOneBlock);
-            }
-        }
-    }
-
-    void replaceLineFromFirstIndexToSecondIndex(int aFirstIndex, int aSecondIndex)
-    {
-        for (int xIndex = 0; xIndex < _gameBoard.getBoardWidth(); xIndex++)
-        {
-            if(_gameBoard.getObjectForXY(xIndex, aFirstIndex))
-            {
-                GameObject block = _gameBoard.getObjectForXY(xIndex, aFirstIndex);
-                _gameBoard.deleteObjectForXY(xIndex, aFirstIndex);
-                _gameBoard.setObjectForXY(block, xIndex, aSecondIndex);
+                Destroy(block);
+                _gameBoard.deleteObjectForXY(xIndex, aLineIndex);
             }
         }
     }

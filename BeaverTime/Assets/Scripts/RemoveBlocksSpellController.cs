@@ -78,9 +78,14 @@ public class RemoveBlocksSpellController : MonoBehaviour {
     {
         foreach (GameObject block in aBlocksForRemoving)
         {
-            int xPosition = (int)Mathf.Round(block.transform.localPosition.x);
-            int yPosition = (int)Mathf.Round(block.transform.localPosition.y);
-            _gameBoard.deleteObjectForXY(xPosition, yPosition);
+            BlockLiveController blockLives = block.GetComponent<BlockLiveController>();
+            blockLives.removeOneBlockLive();
+            if (blockLives.blockLivesCount <= 0)
+            {
+                int xPosition = (int)Mathf.Round(block.transform.localPosition.x);
+                int yPosition = (int)Mathf.Round(block.transform.localPosition.y);
+                _gameBoard.deleteObjectForXY(xPosition, yPosition);
+            }
         }
     }
 
@@ -107,7 +112,11 @@ public class RemoveBlocksSpellController : MonoBehaviour {
     {
         foreach (GameObject block in aBlocksForRemoving)
         {
-            Object.Destroy(block);
+            BlockLiveController blockLives = block.GetComponent<BlockLiveController>();
+            if (blockLives.blockLivesCount <= 0)
+            {
+                Object.Destroy(block);
+            }
         }
     }
 
