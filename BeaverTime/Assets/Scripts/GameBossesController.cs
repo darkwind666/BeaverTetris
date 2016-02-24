@@ -45,6 +45,7 @@ public class GameBossesController : MonoBehaviour {
             Destroy(blockInBoard);
         }
 
+        aBlock.SetActive(true);
         _gameBoard.setObjectForXY(aBlock, positionX, positionY);
         aBlock.transform.SetParent(gameBoardPad.transform, false);
     }

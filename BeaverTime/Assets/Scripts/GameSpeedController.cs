@@ -23,6 +23,8 @@ public class GameSpeedController : MonoBehaviour {
     public GameObject accelerateGameSpeedContainer;
     AccelerateGameSpeedController _accelerateGameSpeedController;
 
+    public GameObject[] moveBosses;
+
     void Start () {
 
         _maxUpdateTime = standardUpdateTime;
@@ -46,8 +48,24 @@ public class GameSpeedController : MonoBehaviour {
             {
                 _currentUpdateState = 0;
                 _playerInputController.downShape();
+
+                foreach(GameObject boss in moveBosses)
+                {
+                    if(boss)
+                    {
+                        if (boss.activeSelf)
+                        {
+                            BossMovementController movementController = boss.GetComponent<BossMovementController>();
+                            movementController.updateWithGameTime();
+                        }
+                    }
+
+                }
+
                 _accelerateGameSpeedController.updateWithGameTime();
                 _fallSomeShapesController.updateWithGameTime();
+
+
             }
 
         }
