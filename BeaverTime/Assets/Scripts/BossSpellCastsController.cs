@@ -35,9 +35,21 @@ public class BossSpellCastsController : MonoBehaviour {
             if (_currentUpdateState >= bossSpellInterval)
             {
                 _currentUpdateState = 0;
-                //_addLineToBoardBottomSpell.castSpell();
-                _damageToPlayerSpell.castSpell();
+                castSpell();
             }
+        }
+    }
+
+    void castSpell()
+    {
+        int randomNumber = Random.Range(0, 2);
+        if (randomNumber == 0)
+        {
+            _addLineToBoardBottomSpell.castSpell();
+        }
+        else
+        {
+            _damageToPlayerSpell.castSpell();
         }
     }
 
