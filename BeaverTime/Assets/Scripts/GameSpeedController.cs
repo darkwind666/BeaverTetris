@@ -24,6 +24,7 @@ public class GameSpeedController : MonoBehaviour {
     AccelerateGameSpeedController _accelerateGameSpeedController;
 
     public GameObject[] moveBosses;
+    public GameObject bossSpells;
 
     void Start () {
 
@@ -59,12 +60,19 @@ public class GameSpeedController : MonoBehaviour {
                             movementController.updateWithGameTime();
                         }
                     }
+                }
 
+                if(bossSpells)
+                {
+                    if(bossSpells.activeSelf)
+                    {
+                        BossSpellCastsController bossSpell = bossSpells.GetComponent<BossSpellCastsController>();
+                        bossSpell.updateWithGameTime();
+                    }
                 }
 
                 _accelerateGameSpeedController.updateWithGameTime();
                 _fallSomeShapesController.updateWithGameTime();
-
 
             }
 

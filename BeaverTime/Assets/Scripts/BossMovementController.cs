@@ -18,6 +18,7 @@ public class BossMovementController : MonoBehaviour {
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         setupBossDirections();
         _savedBlock = null;
+        _currentUpdateState = 0;
 
     }
 

@@ -4,6 +4,7 @@ using System.Collections;
 public class GameShapesSpawner : MonoBehaviour {
 
     public GameObject[] shapes;
+    public GameObject[] gameBlocksPatterns;
 
     GameObject _currentShape;
     bool _currentShapeAvailable;
