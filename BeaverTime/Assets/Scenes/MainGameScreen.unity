@@ -521,6 +521,46 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 427040, guid: b69c8bcaabea540459392e48340ce4ec, type: 2}
   m_PrefabInternal: {fileID: 92709773}
+--- !u!1 &117982492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 117982494}
+  - 114: {fileID: 117982493}
+  m_Layer: 0
+  m_Name: DamageToPlayerSpell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &117982493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117982492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4dcd4bb15171946a82a83f9f01922d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minNonEmptyBlocksCount: 5
+--- !u!4 &117982494
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 117982492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 205491052}
+  m_RootOrder: 5
 --- !u!1 &127555367
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,6 +831,7 @@ Transform:
   - {fileID: 1557092450}
   - {fileID: 1905852757}
   - {fileID: 159613573}
+  - {fileID: 117982494}
   m_Father: {fileID: 2045741284}
   m_RootOrder: 6
 --- !u!114 &205491053
@@ -1944,6 +1985,7 @@ MonoBehaviour:
   - {fileID: 1014825586}
   - {fileID: 1724590900}
   - {fileID: 1083699729}
+  bossSpells: {fileID: 1083699729}
 --- !u!4 &874530028
 Transform:
   m_ObjectHideFlags: 0
@@ -6361,6 +6403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossSpellInterval: 20
   addLineSpellContainer: {fileID: 159613571}
+  damageToPlayerSpellContainer: {fileID: 117982492}
 --- !u!1 &1087201652
 GameObject:
   m_ObjectHideFlags: 0
