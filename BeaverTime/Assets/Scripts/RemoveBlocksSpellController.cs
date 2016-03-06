@@ -11,10 +11,14 @@ public class RemoveBlocksSpellController : MonoBehaviour {
 
     public int randomExplosionsCount;
 
+    public GameObject removeBlocksConditionContainer;
+    RemoveBlocksCondition _removeBlocksCondition;
+
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _shapesController = shapesControllerContainer.GetComponent<GameShapesSpawner>();
+        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
 
     }
 	
@@ -115,6 +119,8 @@ public class RemoveBlocksSpellController : MonoBehaviour {
             BlockLiveController blockLives = block.GetComponent<BlockLiveController>();
             if (blockLives.blockLivesCount <= 0)
             {
+                BlockType type = block.GetComponent<BlockType>();
+                _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
                 Object.Destroy(block);
             }
         }

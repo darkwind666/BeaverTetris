@@ -13,6 +13,9 @@ public class BlocksChainCleaner : MonoBehaviour {
     HorizontalBlocksChainCleaner _horizontalCleaner;
     VerticalBlocksChainCleaner _verticalCleaner;
 
+    public GameObject removeBlocksConditionContainer;
+    RemoveBlocksCondition _removeBlocksCondition;
+
     void Start () {
 
         _blocksForDeleting = new List<GameObject>();
@@ -20,6 +23,7 @@ public class BlocksChainCleaner : MonoBehaviour {
         _verticalCleaner = new VerticalBlocksChainCleaner(maxBlocksChainCount, _blocksForDeleting);
         _moveTimeForOneBlock = animationTimeContainer.GetComponent<GameBoardCleaner>().moveTimeForOneBlock;
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
+        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
 
     }
 	
@@ -68,6 +72,8 @@ public class BlocksChainCleaner : MonoBehaviour {
     {
         foreach (GameObject block in aBlocks)
         {
+            BlockType type = block.GetComponent<BlockType>();
+            _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
             Destroy(block);
         }
 

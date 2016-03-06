@@ -201,6 +201,45 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &47340684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 47340685}
+  - 114: {fileID: 47340686}
+  m_Layer: 0
+  m_Name: RemoveBlocksCondition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &47340685
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47340684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 757021568}
+  m_RootOrder: 2
+--- !u!114 &47340686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 47340684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34009d719f53b1e4795a924c0f0b06a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &50566870
 Prefab:
   m_ObjectHideFlags: 0
@@ -841,6 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTimeForOneBlock: 0.31
+  removeBlocksConditionContainer: {fileID: 47340684}
 --- !u!1 &205491051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapesControllerContainer: {fileID: 1119402925}
   randomExplosionsCount: 3
+  removeBlocksConditionContainer: {fileID: 47340684}
 --- !u!1 &411195323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,6 +1922,7 @@ Transform:
   m_Children:
   - {fileID: 88921100}
   - {fileID: 675930476}
+  - {fileID: 47340685}
   m_Father: {fileID: 2045741284}
   m_RootOrder: 9
 --- !u!114 &757021569
@@ -1894,10 +1936,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6443f6e822bdbe54cbf6106e2cfb19bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWinConditionIndex: 1
+  currentWinConditionIndex: 2
   winConditions:
   - {fileID: 88921099}
   - {fileID: 675930475}
+  - {fileID: 47340684}
   gameSpeedContainer: {fileID: 874530026}
 --- !u!1 &764259398
 GameObject:
@@ -7594,6 +7637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxBlocksChainCount: 3
   animationTimeContainer: {fileID: 183402879}
+  removeBlocksConditionContainer: {fileID: 47340684}
 --- !u!1 &1372009056
 GameObject:
   m_ObjectHideFlags: 0
@@ -8302,6 +8346,7 @@ MonoBehaviour:
   meteorSpeed: 0.61
   currentDetailContainer: {fileID: 1119402925}
   explosionObject: {fileID: 160882, guid: 92f5bdbbfdf5ea949993fa328b0dc0c3, type: 2}
+  removeBlocksConditionContainer: {fileID: 47340684}
 --- !u!1 &1584519591
 GameObject:
   m_ObjectHideFlags: 0
@@ -12128,6 +12173,7 @@ MonoBehaviour:
   gameSpeedControllerContainer: {fileID: 874530026}
   meteorParticle: {fileID: 2046782018}
   meteorSpeed: 1.03
+  removeBlocksConditionContainer: {fileID: 47340684}
 --- !u!1 &1873545997
 GameObject:
   m_ObjectHideFlags: 0

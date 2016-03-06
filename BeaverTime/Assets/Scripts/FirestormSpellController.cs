@@ -17,12 +17,16 @@ public class FirestormSpellController : MonoBehaviour {
     float _maxMeteorDuration;
     float _explosionDuration;
 
+    public GameObject removeBlocksConditionContainer;
+    RemoveBlocksCondition _removeBlocksCondition;
+
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _shapesController = currentDetailContainer.GetComponent<GameShapesSpawner>();
         ParticleSystem particle = explosionObject.GetComponent<ParticleSystem>();
         _explosionDuration = particle.startLifetime;
+        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
     }
 	
 	void Update () {
@@ -144,6 +148,12 @@ public class FirestormSpellController : MonoBehaviour {
         BlockLiveController blockLives = aBlock.GetComponent<BlockLiveController>();
         if (blockLives.blockLivesCount <= 0)
         {
+            BlockType type = aBlock.GetComponent<BlockType>();
+            if(type)
+            {
+                _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+            }
+
             Destroy(aBlock);
         }
     }

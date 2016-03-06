@@ -16,6 +16,9 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour {
 
     public float meteorSpeed;
 
+    public GameObject removeBlocksConditionContainer;
+    RemoveBlocksCondition _removeBlocksCondition;
+
     void Start () {
 
         _shapesController = shapesControllerContainer.GetComponent<GameShapesSpawner>();
@@ -23,6 +26,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour {
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         meteorParticle.SetActive(true);
         _startMeteorPosition = meteorParticle.transform.position;
+        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
 
     }
 	
@@ -74,6 +78,10 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour {
             ParticleSystem particle = block.GetComponent<ParticleSystem>();
             particle.Clear();
             particle.Play();
+
+            BlockType type = block.GetComponent<BlockType>();
+            _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+
         }
     }
 

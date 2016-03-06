@@ -7,11 +7,15 @@ public class GameBoardCleaner : MonoBehaviour {
 
     public float moveTimeForOneBlock;
 
+    public GameObject removeBlocksConditionContainer;
+    RemoveBlocksCondition _removeBlocksCondition;
+
     GameBoard _gameBoard;
 
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
+        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
 
     }
 	
@@ -103,6 +107,8 @@ public class GameBoardCleaner : MonoBehaviour {
             blockLives.removeOneBlockLive();
             if (blockLives.blockLivesCount <= 0)
             {
+                BlockType type = block.GetComponent<BlockType>();
+                _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
                 Destroy(block);
                 _gameBoard.deleteObjectForXY(xIndex, aLineIndex);
             }
