@@ -9,7 +9,10 @@ public class GameShapesSpawner : MonoBehaviour {
     GameObject _currentShape;
     bool _currentShapeAvailable;
 
-	void Start () {
+    int _fallenShapesCount;
+
+    void Start () {
+        _fallenShapesCount = 0;
         createNewShape();
     }
 
@@ -20,6 +23,7 @@ public class GameShapesSpawner : MonoBehaviour {
         _currentShape.transform.SetParent(transform.parent, false);
         _currentShape.transform.position = transform.position;
         _currentShapeAvailable = true;
+        _fallenShapesCount++;
     }
 
     void Update () {
@@ -34,6 +38,11 @@ public class GameShapesSpawner : MonoBehaviour {
     public GameObject currentShape()
     {
         return _currentShape;
+    }
+
+    public int getFallenShapesCount()
+    {
+        return _fallenShapesCount;
     }
 
 }

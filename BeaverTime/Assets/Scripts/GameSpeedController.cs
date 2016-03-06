@@ -8,6 +8,7 @@ public class GameSpeedController : MonoBehaviour {
     int _maxUpdateTime;
     int _currentUpdateState;
     int _currentStandardUpdateTime;
+    bool _stopGame;
 
     GameBoard _gameBoard;
 
@@ -23,6 +24,9 @@ public class GameSpeedController : MonoBehaviour {
     public GameObject accelerateGameSpeedContainer;
     AccelerateGameSpeedController _accelerateGameSpeedController;
 
+    public GameObject winGameConditionContainer;
+    WinGameConditionsController _winGameConditionsController;
+
     public GameObject[] moveBosses;
     public GameObject bossSpells;
 
@@ -36,12 +40,13 @@ public class GameSpeedController : MonoBehaviour {
         _playerInputController = playerInputContainer.GetComponent<PlayerInputController>();
         _fallSomeShapesController = fallSomeShapesContainer.GetComponent<FallSomeShapesController>();
         _accelerateGameSpeedController = accelerateGameSpeedContainer.GetComponent<AccelerateGameSpeedController>();
-
+        _winGameConditionsController = winGameConditionContainer.GetComponent<WinGameConditionsController>();
+        _stopGame = false;
     }
 	
 	void Update () {
 
-        if (_shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false)
+        if (_shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false && _stopGame == false)
         {
             _currentUpdateState++;
 
@@ -73,6 +78,7 @@ public class GameSpeedController : MonoBehaviour {
 
                 _accelerateGameSpeedController.updateWithGameTime();
                 _fallSomeShapesController.updateWithGameTime();
+                _winGameConditionsController.updateWithGameTime();
 
             }
 
@@ -98,6 +104,11 @@ public class GameSpeedController : MonoBehaviour {
     public void setStandardShapeSpeed(int aSpeed)
     {
         _currentStandardUpdateTime = aSpeed;
+    }
+
+    public void stopGame()
+    {
+        _stopGame = true;
     }
 
 }
