@@ -36,9 +36,12 @@ public class RemoveBlocksCondition : MonoBehaviour, IWinCondition {
 
     public void blockWasRemoovedWithType(int aBlockType)
     {
-        if(_removeBlocksToWin.ContainsKey(aBlockType))
+        if(_removeBlocksToWin != null)
         {
-            _removeBlocksToWin[aBlockType] = _removeBlocksToWin[aBlockType] - 1;
+            if (_removeBlocksToWin.ContainsKey(aBlockType))
+            {
+                _removeBlocksToWin[aBlockType] = _removeBlocksToWin[aBlockType] - 1;
+            }
         }
     }
 

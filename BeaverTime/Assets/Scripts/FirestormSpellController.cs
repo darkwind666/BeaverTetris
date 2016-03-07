@@ -145,16 +145,19 @@ public class FirestormSpellController : MonoBehaviour {
 
     void tryToRemoveBlockFromScreen(GameObject aBlock)
     {
-        BlockLiveController blockLives = aBlock.GetComponent<BlockLiveController>();
-        if (blockLives.blockLivesCount <= 0)
+        if(aBlock)
         {
-            BlockType type = aBlock.GetComponent<BlockType>();
-            if(type)
+            BlockLiveController blockLives = aBlock.GetComponent<BlockLiveController>();
+            if (blockLives.blockLivesCount <= 0)
             {
-                _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
-            }
+                BlockType type = aBlock.GetComponent<BlockType>();
+                if (type)
+                {
+                    _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+                }
 
-            Destroy(aBlock);
+                Destroy(aBlock);
+            }
         }
     }
 

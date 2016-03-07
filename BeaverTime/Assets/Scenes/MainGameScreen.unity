@@ -1923,6 +1923,7 @@ Transform:
   - {fileID: 88921100}
   - {fileID: 675930476}
   - {fileID: 47340685}
+  - {fileID: 1911386220}
   m_Father: {fileID: 2045741284}
   m_RootOrder: 9
 --- !u!114 &757021569
@@ -1936,11 +1937,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6443f6e822bdbe54cbf6106e2cfb19bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWinConditionIndex: 2
+  currentWinConditionIndex: 3
   winConditions:
   - {fileID: 88921099}
   - {fileID: 675930475}
   - {fileID: 47340684}
+  - {fileID: 1911386219}
   gameSpeedContainer: {fileID: 874530026}
 --- !u!1 &764259398
 GameObject:
@@ -12251,6 +12253,7 @@ MonoBehaviour:
   - {fileID: 776487920}
   bossEnvironmentContainer: {fileID: 1550674158}
   bossType: 2
+  currentBosses: []
 --- !u!1 &1905333037
 GameObject:
   m_ObjectHideFlags: 0
@@ -12352,6 +12355,46 @@ MonoBehaviour:
   blockAppearanceDuration: 0.08
   gameShapesSpawnerContainer: {fileID: 1119402925}
   gameBoardPad: {fileID: 764259398}
+--- !u!1 &1911386219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1911386220}
+  - 114: {fileID: 1911386221}
+  m_Layer: 0
+  m_Name: WinBossCondition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1911386220
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911386219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 757021568}
+  m_RootOrder: 3
+--- !u!114 &1911386221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911386219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4b7104ae275a34fa2107bbb2e3e15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossesContainer: {fileID: 1887226835}
 --- !u!1001 &1913152798
 Prefab:
   m_ObjectHideFlags: 0

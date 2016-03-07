@@ -9,12 +9,23 @@ public class GameBossesController : MonoBehaviour {
     public int bossType;
     GameBoard _gameBoard;
 
+    public List<GameObject> currentBosses;
+
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
+        saveBosses();
         placeAllBlocksFromPad(bossEnvironmentContainer);
         placeAllBlocksFromPad(bosses[bossType]);
 
+    }
+
+    void saveBosses()
+    {
+        foreach (Transform child in bosses[bossType].transform)
+        {
+            currentBosses.Add(child.gameObject);
+        }
     }
 
     void placeAllBlocksFromPad(GameObject aPad)
