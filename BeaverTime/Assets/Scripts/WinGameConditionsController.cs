@@ -38,10 +38,35 @@ public class WinGameConditionsController : MonoBehaviour {
             }
             else
             {
-
+                checkLoseGameCondition();
             }
         }
 
+    }
+
+    void checkLoseGameCondition()
+    {
+        if(blockExistOnFinalLine())
+        {
+            _gameSpeedController.stopGame();
+        }
+    }
+
+    bool blockExistOnFinalLine()
+    {
+        bool blockExist = false;
+
+        for(int xIndex = 0; xIndex < _gameBoard.getBoardWidth(); xIndex++)
+        {
+            GameObject block = _gameBoard.getObjectForXY(xIndex, _gameBoard.getBoardHeight() - 1);
+            if(block)
+            {
+                blockExist = true;
+                break;
+            }
+        }
+
+        return blockExist;
     }
 
 }

@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapesSpawnerContainer: {fileID: 1119402925}
-  winShapesCount: 5
+  winShapesCount: 100
 --- !u!1001 &92709773
 Prefab:
   m_ObjectHideFlags: 0
@@ -1937,7 +1937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6443f6e822bdbe54cbf6106e2cfb19bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWinConditionIndex: 3
+  currentWinConditionIndex: 0
   winConditions:
   - {fileID: 88921099}
   - {fileID: 675930475}
