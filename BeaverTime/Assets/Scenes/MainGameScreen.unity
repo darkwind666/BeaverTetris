@@ -3122,7 +3122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1133e51d8a5cf2d4aa341f594f05973b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockType: 4
+  blockType: 7
 --- !u!198 &1014825590
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5052,7 +5052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1133e51d8a5cf2d4aa341f594f05973b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockType: 5
+  blockType: 8
 --- !u!198 &1083699735
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -6633,6 +6633,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeSideInBlocks: 3
+  gameLevelsCollection: {fileID: 11400000, guid: 916d003f2f9225e49b3dc4c40d9be41e,
+    type: 2}
 --- !u!4 &1098217002
 Transform:
   m_ObjectHideFlags: 0
@@ -6688,8 +6690,11 @@ MonoBehaviour:
   - {fileID: 173590, guid: 949610778eebf564f99080c4e59aaef1, type: 2}
   - {fileID: 186776, guid: 5e8086f5c5c5e9145bacbcd2f18bdf56, type: 2}
   gameBlocksPatterns:
-  - {fileID: 103320, guid: b69c8bcaabea540459392e48340ce4ec, type: 2}
   - {fileID: 196852, guid: 3c4f9646247d3bd4fb41ce3f46c2ce7f, type: 2}
+  - {fileID: 196852, guid: 7f0090804ce148c4b8c914c311a07171, type: 2}
+  - {fileID: 196852, guid: 8644cf5f08839134f8790474a82ad009, type: 2}
+  - {fileID: 103320, guid: 0bead93aa6df06e48badb819aa6050fe, type: 2}
+  - {fileID: 103320, guid: b69c8bcaabea540459392e48340ce4ec, type: 2}
 --- !u!1 &1136582460
 GameObject:
   m_ObjectHideFlags: 0
@@ -8523,7 +8528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1133e51d8a5cf2d4aa341f594f05973b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockType: 3
+  blockType: 6
 --- !u!198 &1627817268
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -10307,7 +10312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1133e51d8a5cf2d4aa341f594f05973b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockType: 4
+  blockType: 7
 --- !u!198 &1724590904
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -12220,7 +12225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1887226836
 Transform:
   m_ObjectHideFlags: 0

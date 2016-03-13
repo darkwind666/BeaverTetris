@@ -53,13 +53,11 @@ public class FallSomeShapesController : MonoBehaviour {
 
         for (int shapeIndex = 0; shapeIndex < fallShapesCount; shapeIndex++)
         {
-            int randomIndex = Random.Range(0, _shapeController.shapes.Length);
-
             int randomXPosition = getRandomShapePosition();
-
             Vector3 shapeStartPosition = new Vector3(randomXPosition, 21, 0);
-            GameObject shape = Instantiate(_shapeController.shapes[randomIndex], shapeStartPosition, Quaternion.identity) as GameObject;
-            shape.transform.SetParent(gameBoardPad.transform, false);
+
+            GameObject shape = _shapeController.createStandardShape();
+            shape.transform.localPosition = shapeStartPosition;
             shapes.Add(shape);
         }
 

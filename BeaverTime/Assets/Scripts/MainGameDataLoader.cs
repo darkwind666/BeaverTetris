@@ -12,7 +12,7 @@ public class MainGameDataLoader : MonoBehaviour {
         ServicesLocator.setServiceForKey(newGameBoard, typeof(GameBoard).Name);
 
         LevelDataStore levelDataController = new LevelDataStore(gameLevelsCollection);
-        ServicesLocator.setServiceForKey(newGameBoard, typeof(LevelDataStore).Name);
+        ServicesLocator.setServiceForKey(levelDataController, typeof(LevelDataStore).Name);
     }
 
 	void Start () {

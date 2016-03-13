@@ -24,28 +24,16 @@ MonoBehaviour:
     eventDuration: 180
     detailsCount: 0
     fallingSpeed: 5
-  fallShapesEventEnable: 1
-  detailsCount: 4
-  fallShapesEventInterval: 160
-  accelerateGameEventEnable: 1
-  fallingSpeed: 5
-  accelerateGameEventInterval: 130
-  accelerateGameEventDuration: 180
   availableBoss: 0
   bossType: 2
   winConditionType: 3
   needToPlaceDetailsCount: 0
   remainTimes: 0
-  removeBlocksTypes: 
-  removeBlocksCount: 
-  availableRocketSpell: 0
-  rocketSpellRechargeInterval: 0
-  availableRandomExplosionsSpell: 0
-  randomExplosionsCount: 0
-  randomExplosionsRechargeInterval: 0
-  availableFirestormSpell: 1
-  firestormCount: 9
-  firestormRechargeInterval: 30
-  availableCohessionSpell: 1
-  cohessionCount: 16
-  cohessionRechargeInterval: 40
+  blocks: []
+  levelSpells:
+  - spellType: 2
+    spellCount: 9
+    spellRechargeInterval: 30
+  - spellType: 3
+    spellCount: 16
+    spellRechargeInterval: 40

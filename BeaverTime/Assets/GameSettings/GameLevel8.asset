@@ -36,15 +36,10 @@ MonoBehaviour:
     blocksCount: 50
   - blockType: 4
     blocksCount: 37
-  levelSpells: []
-  availableRocketSpell: 0
-  rocketSpellRechargeInterval: 0
-  availableRandomExplosionsSpell: 1
-  randomExplosionsCount: 21
-  randomExplosionsRechargeInterval: 20
-  availableFirestormSpell: 1
-  firestormCount: 6
-  firestormRechargeInterval: 50
-  availableCohessionSpell: 0
-  cohessionCount: 0
-  cohessionRechargeInterval: 0
+  levelSpells:
+  - spellType: 1
+    spellCount: 21
+    spellRechargeInterval: 20
+  - spellType: 2
+    spellCount: 6
+    spellRechargeInterval: 50

@@ -7,8 +7,6 @@ public class GameBoard {
     int _boardHeight;
     int _boardWidth;
 
-    float _blockWidth;
-    float _blockHeight;
     int _shapeSideInBlocks;
 
     public bool gameBoardLocked;

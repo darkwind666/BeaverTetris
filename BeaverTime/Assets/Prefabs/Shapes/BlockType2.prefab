@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1133e51d8a5cf2d4aa341f594f05973b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockType: 2
+  blockType: 1
 --- !u!114 &11483338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1596,6 +1596,10 @@ Prefab:
       objectReference: {fileID: 158164, guid: b69c8bcaabea540459392e48340ce4ec, type: 2}
     - target: {fileID: 0}
       propertyPath: blockLivesCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blockType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
