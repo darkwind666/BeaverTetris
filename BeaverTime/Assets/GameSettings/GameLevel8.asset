@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb69157ce5ee314eb7b61704da33a23, type: 3}
+  m_Name: GameLevel8
+  m_EditorClassIdentifier: 
+  levelAward: 385
+  availableBlockTypesCount: 4
+  levelEvents:
+  - gameEventType: 0
+    eventInterval: 70
+    eventDuration: 0
+    detailsCount: 5
+    fallingSpeed: 0
+  - gameEventType: 1
+    eventInterval: 40
+    eventDuration: 170
+    detailsCount: 0
+    fallingSpeed: 10
+  availableBoss: 0
+  bossType: 0
+  winConditionType: 1
+  needToPlaceDetailsCount: 0
+  remainTimes: 0
+  blocks:
+  - blockType: 2
+    blocksCount: 50
+  - blockType: 3
+    blocksCount: 50
+  - blockType: 4
+    blocksCount: 37
+  levelSpells: []
+  availableRocketSpell: 0
+  rocketSpellRechargeInterval: 0
+  availableRandomExplosionsSpell: 1
+  randomExplosionsCount: 21
+  randomExplosionsRechargeInterval: 20
+  availableFirestormSpell: 1
+  firestormCount: 6
+  firestormRechargeInterval: 50
+  availableCohessionSpell: 0
+  cohessionCount: 0
+  cohessionRechargeInterval: 0

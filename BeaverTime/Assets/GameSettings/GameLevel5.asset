@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb69157ce5ee314eb7b61704da33a23, type: 3}
+  m_Name: GameLevel5
+  m_EditorClassIdentifier: 
+  levelAward: 230
+  availableBlockTypesCount: 4
+  levelEvents:
+  - gameEventType: 1
+    eventInterval: 30
+    eventDuration: 370
+    detailsCount: 0
+    fallingSpeed: 10
+  fallShapesEventEnable: 0
+  detailsCount: 0
+  fallShapesEventInterval: 0
+  accelerateGameEventEnable: 1
+  fallingSpeed: 10
+  accelerateGameEventInterval: 30
+  accelerateGameEventDuration: 370
+  availableBoss: 0
+  bossType: 0
+  winConditionType: 0
+  needToPlaceDetailsCount: 60
+  remainTimes: 0
+  removeBlocksTypes: 
+  removeBlocksCount: 
+  availableRocketSpell: 1
+  rocketSpellRechargeInterval: 40
+  availableRandomExplosionsSpell: 1
+  randomExplosionsCount: 14
+  randomExplosionsRechargeInterval: 50
+  availableFirestormSpell: 0
+  firestormCount: 0
+  firestormRechargeInterval: 0
+  availableCohessionSpell: 0
+  cohessionCount: 0
+  cohessionRechargeInterval: 0

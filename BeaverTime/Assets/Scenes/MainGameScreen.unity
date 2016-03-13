@@ -228,7 +228,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 757021568}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &47340686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,7 +1723,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 757021568}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &675930477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1921,8 +1921,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 88921100}
-  - {fileID: 675930476}
   - {fileID: 47340685}
+  - {fileID: 675930476}
   - {fileID: 1911386220}
   m_Father: {fileID: 2045741284}
   m_RootOrder: 9
@@ -1940,8 +1940,8 @@ MonoBehaviour:
   currentWinConditionIndex: 0
   winConditions:
   - {fileID: 88921099}
-  - {fileID: 675930475}
   - {fileID: 47340684}
+  - {fileID: 675930475}
   - {fileID: 1911386219}
   gameSpeedContainer: {fileID: 874530026}
 --- !u!1 &764259398
