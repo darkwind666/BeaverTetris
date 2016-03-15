@@ -6689,6 +6689,12 @@ MonoBehaviour:
   shapes:
   - {fileID: 173590, guid: 949610778eebf564f99080c4e59aaef1, type: 2}
   - {fileID: 186776, guid: 5e8086f5c5c5e9145bacbcd2f18bdf56, type: 2}
+  - {fileID: 151358, guid: 18da9cc723f04da4bbdcc0da305ed975, type: 2}
+  - {fileID: 139476, guid: 452a6ee31b42dc8468a8201cbf11a668, type: 2}
+  - {fileID: 157134, guid: 36f1736a3c0ad754f8e8bb6fc22b6361, type: 2}
+  - {fileID: 169678, guid: 0459a02935553ee4ca5dd63182ca1194, type: 2}
+  - {fileID: 141788, guid: 49780392f1435824e9c69aff7e701c6c, type: 2}
+  - {fileID: 117974, guid: 46c3f23d5786bc24292db368e35b743f, type: 2}
   gameBlocksPatterns:
   - {fileID: 196852, guid: 3c4f9646247d3bd4fb41ce3f46c2ce7f, type: 2}
   - {fileID: 196852, guid: 7f0090804ce148c4b8c914c311a07171, type: 2}
