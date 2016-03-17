@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Collections.Generic;
 
 
 
@@ -17,6 +18,8 @@ public class GamePlayerDataController {
     public int playerScore { get; set; }
 
     string _dataPath;
+
+    List<LevelSpell> _playerSpells;
 
     public GamePlayerDataController()
     {
@@ -39,6 +42,12 @@ public class GamePlayerDataController {
             playerName = data.playerName;
             completedLevelsCount = data.completedLevelsCount;
             playerScore = data.playerScore;
+            _playerSpells = data.playerSpells;
+
+            if (_playerSpells == null)
+            {
+                _playerSpells = new List<LevelSpell>();
+            }
 
             file.Close();
         }
@@ -57,6 +66,7 @@ public class GamePlayerDataController {
         savingData.playerName = playerName;
         savingData.completedLevelsCount = completedLevelsCount;
         savingData.playerScore = playerScore;
+        savingData.playerSpells = _playerSpells;
 
         formatter.Serialize(file, savingData);
         file.Close();
@@ -80,6 +90,28 @@ public class GamePlayerDataController {
         savePlayerData();
     }
 
+    public int getPlayerSpellsCount()
+    {
+        return _playerSpells.Count;
+    }
+
+    public void setPlayerSpell(LevelSpell aSpellData)
+    {
+        if (aSpellData.spellType > (getPlayerSpellsCount() - 1))
+        {
+            _playerSpells.Add(aSpellData);
+        }
+        else
+        {
+            _playerSpells[aSpellData.spellType] = aSpellData;
+        }
+    }
+
+    public LevelSpell getPlayerSpellForIndex(int aSpellIndex)
+    {
+        return _playerSpells[aSpellIndex];
+    }
+
 }
 
 [System.Serializable]
@@ -91,5 +123,6 @@ public class PlayerData
     public string playerName;
     public int completedLevelsCount;
     public int playerScore;
+    public List<LevelSpell> playerSpells;
 
 }
