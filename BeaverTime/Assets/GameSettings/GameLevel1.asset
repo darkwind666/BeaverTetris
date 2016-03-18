@@ -28,4 +28,4 @@ MonoBehaviour:
   levelSpells:
   - spellType: 0
     spellCount: 0
-    spellRechargeInterval: 20
+    spellRechargeInterval: 60

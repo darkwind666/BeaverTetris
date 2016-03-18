@@ -15,6 +15,21 @@ public class MainGameDataLoader : MonoBehaviour {
 
         LevelDataStore levelDataController = new LevelDataStore(gameLevelsCollection);
         ServicesLocator.setServiceForKey(levelDataController, typeof(LevelDataStore).Name);
+
+        setUpPlayer();
+    }
+
+    void setUpPlayer()
+    {
+        GamePlayerDataController gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+
+        LevelDataStore levelDataStore = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
+        GameLevel level = levelDataStore.getCurrentLevelData();
+
+        foreach (LevelSpell spell in level.levelSpells)
+        {
+            gamePlayerData.setPlayerSpell(spell);
+        }
     }
 
 	void Start () {

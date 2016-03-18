@@ -4,57 +4,26 @@ using System;
 
 public class SpellsController : MonoBehaviour {
 
-    public GameObject removeCurrentShapeSpellContainer;
-    RemoveCurrentShapeSpellController _removeCurrentShapeSpellController;
-
-    public GameObject removeBlocksSpellContainer;
-    RemoveBlocksSpellController _removeBlocksSpellController;
-
-    public GameObject firestormSpellContainer;
-    FirestormSpellController _firestormSpellController;
-
-    public GameObject cohessionSpellContainer;
-    CohessionSpellController _cohessionSpellController;
-
-    List<Action> _spells;
+    public GameObject[] spells;
     GamePlayerDataController _gamePlayerData;
 
     void Start ()
     {
-        setSpellsData();
-        setPlayerData();
-    }
-
-    void setSpellsData()
-    {
-        _removeCurrentShapeSpellController = removeCurrentShapeSpellContainer.GetComponent<RemoveCurrentShapeSpellController>();
-        _removeBlocksSpellController = removeBlocksSpellContainer.GetComponent<RemoveBlocksSpellController>();
-        _firestormSpellController = firestormSpellContainer.GetComponent<FirestormSpellController>();
-        _cohessionSpellController = cohessionSpellContainer.GetComponent<CohessionSpellController>();
-
-        _spells = new List<Action>();
-        _spells.Add(() => _removeCurrentShapeSpellController.removeCurrentShapeSpell());
-        _spells.Add(() => _removeBlocksSpellController.removeRandomBlocksSpell());
-        _spells.Add(() => _firestormSpellController.firestormSpell());
-        _spells.Add(() => _cohessionSpellController.cohessionSpell());
-    }
-
-    void setPlayerData()
-    {
         _gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-
-        LevelDataStore levelDataStore = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
-        GameLevel level = levelDataStore.getCurrentLevelData();
-
-        foreach (LevelSpell spell in level.levelSpells)
-        {
-            _gamePlayerData.setPlayerSpell(spell);
-        }
     }
 
     void Update () {
 
 	}
+
+    public void updateWithGameTime()
+    {
+        foreach(GameObject spellContainer in spells)
+        {
+            SpellCountdownController sepllCountdown = spellContainer.GetComponent<SpellCountdownController>();
+            sepllCountdown.updateWithGameTime();
+        }
+    }
 
     public void removeCurrentShapeSpell()
     {
@@ -81,8 +50,16 @@ public class SpellsController : MonoBehaviour {
     {
         if (aSpellIndex < _gamePlayerData.getPlayerSpellsCount())
         {
-            Action spell = _spells[aSpellIndex];
-            spell();
+            GameObject spellContainer = spells[aSpellIndex];
+            
+            SpellCountdownController spellCountdown = spellContainer.GetComponent<SpellCountdownController>();
+            if(spellCountdown.availableSpell())
+            {
+                ISpell spell = spellContainer.GetComponent<ISpell>();
+                spell.useSpell();
+                spellCountdown.useSpell();
+            }
+            
         }
     }
 

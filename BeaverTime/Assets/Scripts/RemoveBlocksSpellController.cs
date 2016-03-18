@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 
-public class RemoveBlocksSpellController : MonoBehaviour {
+public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
 
     public GameObject shapesControllerContainer;
     GameShapesSpawner _shapesController;
@@ -26,7 +26,7 @@ public class RemoveBlocksSpellController : MonoBehaviour {
 	
 	}
 
-    public void removeRandomBlocksSpell()
+    public void useSpell()
     {
         List<GameObject> blocksInGameBoard = getAvailableBlocksInGameBoard();
 

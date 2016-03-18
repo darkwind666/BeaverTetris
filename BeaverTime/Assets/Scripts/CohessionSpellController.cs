@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 
-public class CohessionSpellController : MonoBehaviour {
+public class CohessionSpellController : MonoBehaviour, ISpell {
 
     GameBoard _gameBoard;
     public int blockCountForCohession;
@@ -25,7 +25,7 @@ public class CohessionSpellController : MonoBehaviour {
 	
 	}
 
-    public void cohessionSpell()
+    public void useSpell()
     {
         List<Vector3> newBlockPositions = getNewBlocksPositions();
         generateNewBlocksOnPositions(newBlockPositions);

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using System.Linq;
 
-public class FirestormSpellController : MonoBehaviour {
+public class FirestormSpellController : MonoBehaviour, ISpell {
 
 
     public GameObject[] meteors;
@@ -33,7 +33,7 @@ public class FirestormSpellController : MonoBehaviour {
 	
 	}
 
-    public void firestormSpell()
+    public void useSpell()
     {
         _gameBoard.gameBoardLocked = true;
         Sequence explosionSequence = DOTween.Sequence();

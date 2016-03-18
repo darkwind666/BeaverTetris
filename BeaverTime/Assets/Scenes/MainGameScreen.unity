@@ -930,6 +930,11 @@ MonoBehaviour:
   removeBlocksSpellContainer: {fileID: 409092498}
   firestormSpellContainer: {fileID: 1557092449}
   cohessionSpellContainer: {fileID: 1905852756}
+  spells:
+  - {fileID: 1843952255}
+  - {fileID: 409092498}
+  - {fileID: 1557092449}
+  - {fileID: 1905852756}
 --- !u!1 &241746251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,6 +1379,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 409092499}
   - 114: {fileID: 409092500}
+  - 114: {fileID: 409092501}
   m_Layer: 0
   m_Name: RemoveRandomBlocksSpell
   m_TagString: Untagged
@@ -1407,6 +1413,18 @@ MonoBehaviour:
   shapesControllerContainer: {fileID: 1119402925}
   randomExplosionsCount: 3
   removeBlocksConditionContainer: {fileID: 47340684}
+--- !u!114 &409092501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409092498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44128febd2d17944befede259631dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellType: 1
 --- !u!1 &411195323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,6 +2177,7 @@ MonoBehaviour:
   - {fileID: 1724590900}
   - {fileID: 1083699729}
   bossSpells: {fileID: 1083699729}
+  spellsContainer: {fileID: 205491051}
 --- !u!4 &874530028
 Transform:
   m_ObjectHideFlags: 0
@@ -8304,6 +8323,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1557092450}
   - 114: {fileID: 1557092451}
+  - 114: {fileID: 1557092452}
   m_Layer: 0
   m_Name: FirestormSpell
   m_TagString: Untagged
@@ -8360,6 +8380,18 @@ MonoBehaviour:
   currentDetailContainer: {fileID: 1119402925}
   explosionObject: {fileID: 160882, guid: 92f5bdbbfdf5ea949993fa328b0dc0c3, type: 2}
   removeBlocksConditionContainer: {fileID: 47340684}
+--- !u!114 &1557092452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1557092449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44128febd2d17944befede259631dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellType: 2
 --- !u!1 &1584519591
 GameObject:
   m_ObjectHideFlags: 0
@@ -12151,6 +12183,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1843952256}
   - 114: {fileID: 1843952257}
+  - 114: {fileID: 1843952258}
   m_Layer: 0
   m_Name: RemoveCurrentShapeSpell
   m_TagString: Untagged
@@ -12187,6 +12220,18 @@ MonoBehaviour:
   meteorParticle: {fileID: 2046782018}
   meteorSpeed: 1.03
   removeBlocksConditionContainer: {fileID: 47340684}
+--- !u!114 &1843952258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1843952255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44128febd2d17944befede259631dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellType: 0
 --- !u!1 &1873545997
 GameObject:
   m_ObjectHideFlags: 0
@@ -12332,6 +12377,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1905852757}
   - 114: {fileID: 1905852758}
+  - 114: {fileID: 1905852759}
   m_Layer: 0
   m_Name: CohessionSpell
   m_TagString: Untagged
@@ -12366,6 +12412,18 @@ MonoBehaviour:
   blockAppearanceDuration: 0.08
   gameShapesSpawnerContainer: {fileID: 1119402925}
   gameBoardPad: {fileID: 764259398}
+--- !u!114 &1905852759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1905852756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44128febd2d17944befede259631dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellType: 3
 --- !u!1 &1911386219
 GameObject:
   m_ObjectHideFlags: 0

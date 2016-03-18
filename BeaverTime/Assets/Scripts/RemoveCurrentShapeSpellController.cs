@@ -2,7 +2,8 @@
 using System.Collections;
 using DG.Tweening;
 
-public class RemoveCurrentShapeSpellController : MonoBehaviour {
+public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
+{
 
     public GameObject shapesControllerContainer;
     GameShapesSpawner _shapesController;
@@ -34,7 +35,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour {
 	
 	}
 
-    public void removeCurrentShapeSpell()
+    public void useSpell()
     {
         _gameBoard.gameBoardLocked = true;
         Sequence explosionSequence = DOTween.Sequence();

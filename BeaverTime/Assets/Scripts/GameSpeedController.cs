@@ -30,6 +30,9 @@ public class GameSpeedController : MonoBehaviour {
     public GameObject[] moveBosses;
     public GameObject bossSpells;
 
+    public GameObject spellsContainer;
+    SpellsController _spellsController;
+
     void Start () {
 
         _maxUpdateTime = standardUpdateTime;
@@ -41,6 +44,7 @@ public class GameSpeedController : MonoBehaviour {
         _fallSomeShapesController = fallSomeShapesContainer.GetComponent<FallSomeShapesController>();
         _accelerateGameSpeedController = accelerateGameSpeedContainer.GetComponent<AccelerateGameSpeedController>();
         _winGameConditionsController = winGameConditionContainer.GetComponent<WinGameConditionsController>();
+        _spellsController = spellsContainer.GetComponent<SpellsController>();
         _stopGame = false;
     }
 	
@@ -76,6 +80,7 @@ public class GameSpeedController : MonoBehaviour {
                     }
                 }
 
+                _spellsController.updateWithGameTime();
                 _accelerateGameSpeedController.updateWithGameTime();
                 _fallSomeShapesController.updateWithGameTime();
                 _winGameConditionsController.updateWithGameTime();
