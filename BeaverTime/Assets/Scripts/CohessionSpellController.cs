@@ -18,7 +18,8 @@ public class CohessionSpellController : MonoBehaviour, ISpell {
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         GameShapesSpawner gameShapesSpawner = gameShapesSpawnerContainer.GetComponent<GameShapesSpawner>();
         gameBlocksPatterns = gameShapesSpawner.gameBlocksPatterns;
-
+        SpellCountdownController countdownController = GetComponent<SpellCountdownController>();
+        blockCountForCohession = countdownController.getSpellCount();
     }
 	
 	void Update () {

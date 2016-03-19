@@ -19,10 +19,11 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _shapesController = shapesControllerContainer.GetComponent<GameShapesSpawner>();
         _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
-
+        SpellCountdownController countdownController = GetComponent<SpellCountdownController>();
+        randomExplosionsCount = countdownController.getSpellCount();
     }
-	
-	void Update () {
+
+    void Update () {
 	
 	}
 

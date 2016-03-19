@@ -47,4 +47,18 @@ public class SpellCountdownController : MonoBehaviour {
         return ((_spellRechargeState >= _spellRechargeInterval) && _playerHasSpell);
     }
 
+    public int getSpellCount()
+    {
+        int spellCount = 0;
+
+        GamePlayerDataController gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+        if (spellType < gamePlayerData.getPlayerSpellsCount())
+        {
+            LevelSpell spellData = gamePlayerData.getPlayerSpellForIndex(spellType);
+            spellCount = spellData.spellCount;
+        }
+
+        return spellCount;
+    }
+
 }

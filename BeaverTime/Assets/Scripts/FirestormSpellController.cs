@@ -27,6 +27,8 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
         ParticleSystem particle = explosionObject.GetComponent<ParticleSystem>();
         _explosionDuration = particle.startLifetime;
         _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
+        SpellCountdownController countdownController = GetComponent<SpellCountdownController>();
+        meteorCount = countdownController.getSpellCount();
     }
 	
 	void Update () {
