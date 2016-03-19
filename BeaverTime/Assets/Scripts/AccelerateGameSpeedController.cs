@@ -3,8 +3,9 @@ using System.Collections;
 
 public class AccelerateGameSpeedController : MonoBehaviour {
 
-    public int maxUpdateTime;
-    public int acceleratedSpeed;
+    public int eventType;
+    int maxUpdateTime;
+    int acceleratedSpeed;
 
     int _standardShapeSpeed;
     int _currentUpdateState;
@@ -16,9 +17,11 @@ public class AccelerateGameSpeedController : MonoBehaviour {
     public GameObject shapesContainer;
     GameShapesSpawner _shapeController;
 
-    public int activeDuration;
+    int activeDuration;
     bool _activeAcceleration;
     int _currentActiveAccelerationState;
+
+    bool _eventActive;
 
     void Start () {
 
@@ -29,7 +32,27 @@ public class AccelerateGameSpeedController : MonoBehaviour {
         _standardShapeSpeed = _gameSpeedController.standardUpdateTime;
         _activeAcceleration = false;
         _currentActiveAccelerationState = 0;
+        _eventActive = false;
+        setAccelerateEventSettings();
 
+    }
+
+    void setAccelerateEventSettings()
+    {
+        LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
+        GameLevel level = levelData.getCurrentLevelData();
+
+        foreach (GameEvent gameEvent in level.levelEvents)
+        {
+            if (gameEvent.gameEventType == eventType)
+            {
+                maxUpdateTime = gameEvent.eventInterval;
+                acceleratedSpeed = gameEvent.fallingSpeed;
+                activeDuration = gameEvent.eventDuration;
+                _eventActive = true;
+                break;
+            }
+        }
     }
 
     void Update()
@@ -39,7 +62,7 @@ public class AccelerateGameSpeedController : MonoBehaviour {
 
     public void updateWithGameTime()
     {
-        if (_gameBoard.gameBoardLocked == false && _shapeController.currentShapeAvailable())
+        if (_gameBoard.gameBoardLocked == false && _shapeController.currentShapeAvailable() && _eventActive == true)
         {
             updateAccelerateNegativeMoment();
         }

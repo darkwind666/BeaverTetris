@@ -926,10 +926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb726934a930924cb2419512e82f62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeCurrentShapeSpellContainer: {fileID: 1843952255}
-  removeBlocksSpellContainer: {fileID: 409092498}
-  firestormSpellContainer: {fileID: 1557092449}
-  cohessionSpellContainer: {fileID: 1905852756}
   spells:
   - {fileID: 1843952255}
   - {fileID: 409092498}
@@ -2564,11 +2560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e705937db62114ab7f35a90efae8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxUpdateTime: 10
-  acceleratedSpeed: 3
+  eventType: 1
   gameSpeedContainer: {fileID: 874530026}
   shapesContainer: {fileID: 1119402925}
-  activeDuration: 124
 --- !u!1001 &934805416
 Prefab:
   m_ObjectHideFlags: 0
@@ -8375,7 +8369,6 @@ MonoBehaviour:
   - {fileID: 1996553840}
   - {fileID: 934805418}
   - {fileID: 1391204854}
-  meteorCount: 3
   meteorSpeed: 0.61
   currentDetailContainer: {fileID: 1119402925}
   explosionObject: {fileID: 160882, guid: 92f5bdbbfdf5ea949993fa328b0dc0c3, type: 2}
@@ -12408,7 +12401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea804a54c5b71745900fc3cad117d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockCountForCohession: 5
   blockAppearanceDuration: 0.08
   gameShapesSpawnerContainer: {fileID: 1119402925}
   gameBoardPad: {fileID: 764259398}
@@ -13282,8 +13274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5c52efea92541438ca6d254b73a802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxUpdateTime: 38
-  fallShapesCount: 3
+  eventType: 0
   fallSpeed: 1.66
   gameBoardPad: {fileID: 764259398}
   shapesContainer: {fileID: 1119402925}

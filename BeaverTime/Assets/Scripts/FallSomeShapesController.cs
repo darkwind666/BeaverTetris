@@ -4,8 +4,9 @@ using DG.Tweening;
 
 public class FallSomeShapesController : MonoBehaviour {
 
-    public int maxUpdateTime;
-    public int fallShapesCount;
+    public int eventType;
+    int maxUpdateTime;
+    int fallShapesCount;
     public float fallSpeed;
     public GameObject gameBoardPad;
     int _currentUpdateState;
@@ -15,13 +16,33 @@ public class FallSomeShapesController : MonoBehaviour {
     GameShapesSpawner _shapeController;
     ShapeFinalPositionHelper _shapeFinalPositionHelper;
 
+    bool _eventActive;
+
     void Start() {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _currentUpdateState = 0;
         _shapeController = shapesContainer.GetComponent<GameShapesSpawner>();
         _shapeFinalPositionHelper = new ShapeFinalPositionHelper();
+        _eventActive = false;
+        setFallEventSettings();
+    }
 
+    void setFallEventSettings()
+    {
+        LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
+        GameLevel level = levelData.getCurrentLevelData();
+
+        foreach (GameEvent gameEvent in level.levelEvents)
+        {
+            if (gameEvent.gameEventType == eventType)
+            {
+                maxUpdateTime = gameEvent.eventInterval;
+                fallShapesCount = gameEvent.detailsCount;
+                _eventActive = true;
+                break;
+            }
+        }
     }
 
     void Update() {
@@ -30,7 +51,7 @@ public class FallSomeShapesController : MonoBehaviour {
 
     public void updateWithGameTime()
     {
-        if (_gameBoard.gameBoardLocked == false && _shapeController.currentShapeAvailable())
+        if (_gameBoard.gameBoardLocked == false && _shapeController.currentShapeAvailable() && _eventActive == true)
         {
             _currentUpdateState++;
             if (_currentUpdateState >= maxUpdateTime)

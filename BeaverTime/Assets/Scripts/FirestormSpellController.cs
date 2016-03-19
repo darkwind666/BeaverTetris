@@ -7,7 +7,7 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
 
 
     public GameObject[] meteors;
-    public int meteorCount;
+    int meteorCount;
     public float meteorSpeed;
     public GameObject currentDetailContainer;
     GameShapesSpawner _shapesController;

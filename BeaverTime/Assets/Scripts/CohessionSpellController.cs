@@ -5,7 +5,7 @@ using DG.Tweening;
 public class CohessionSpellController : MonoBehaviour, ISpell {
 
     GameBoard _gameBoard;
-    public int blockCountForCohession;
+    int blockCountForCohession;
     public float blockAppearanceDuration;
 
     public GameObject gameShapesSpawnerContainer;
