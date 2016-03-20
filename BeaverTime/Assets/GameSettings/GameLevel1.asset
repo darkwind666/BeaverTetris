@@ -21,7 +21,7 @@ MonoBehaviour:
     fallingSpeed: 20
   availableBoss: 0
   bossType: 0
-  winConditionType: 0
+  winConditionType: 3
   needToPlaceDetailsCount: 40
   remainTimes: 0
   blocks: []

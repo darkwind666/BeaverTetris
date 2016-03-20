@@ -3,7 +3,6 @@ using System.Collections;
 
 public class WinGameConditionsController : MonoBehaviour {
 
-    public int currentWinConditionIndex;
     public GameObject[] winConditions;
 
     public GameObject gameSpeedContainer;
@@ -17,7 +16,12 @@ public class WinGameConditionsController : MonoBehaviour {
 
         _gameSpeedController = gameSpeedContainer.GetComponent<GameSpeedController>();
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _currentWinCondition = winConditions[currentWinConditionIndex];
+        
+        LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
+        GameLevel level = levelData.getCurrentLevelData();
+        int winConditionIndex = level.winConditionType;
+
+        _currentWinCondition = winConditions[winConditionIndex];
         _currentWinCondition.SetActive(true);
 
     }

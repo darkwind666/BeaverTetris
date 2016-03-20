@@ -35,7 +35,6 @@ public class GameLevel : ScriptableObject {
 
     public GameEvent[] levelEvents;
 
-    public bool availableBoss;
     public int bossType;
 
     public int winConditionType;

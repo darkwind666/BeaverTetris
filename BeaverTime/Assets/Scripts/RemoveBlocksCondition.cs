@@ -9,8 +9,13 @@ public class RemoveBlocksCondition : MonoBehaviour, IWinCondition {
 
         _removeBlocksToWin = new Dictionary<int, int>();
 
-        _removeBlocksToWin.Add(1, 10);
-        _removeBlocksToWin.Add(2, 20);
+        LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
+        GameLevel level = levelData.getCurrentLevelData();
+
+        foreach (BlocksForRemoving blockData in level.blocks)
+        {
+            _removeBlocksToWin.Add(blockData.blockType, blockData.blocksCount);
+        }
 
     }
 	

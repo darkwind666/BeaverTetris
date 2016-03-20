@@ -4,10 +4,14 @@ using System;
 
 public class RemainTimeCondition : MonoBehaviour, IWinCondition {
 
-    public int remainTime;
+    int remainTime;
     int _currentTimeState;
 
     void Start () {
+
+        LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
+        GameLevel level = levelData.getCurrentLevelData();
+        remainTime = level.remainTimes;
 
         _currentTimeState = 0;
 

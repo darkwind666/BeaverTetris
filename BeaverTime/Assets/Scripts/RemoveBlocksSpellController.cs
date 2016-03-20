@@ -9,7 +9,7 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
 
     GameBoard _gameBoard;
 
-    public int randomExplosionsCount;
+    int randomExplosionsCount;
 
     public GameObject removeBlocksConditionContainer;
     RemoveBlocksCondition _removeBlocksCondition;

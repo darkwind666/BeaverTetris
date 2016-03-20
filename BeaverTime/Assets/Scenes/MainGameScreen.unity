@@ -550,7 +550,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapesSpawnerContainer: {fileID: 1119402925}
-  winShapesCount: 100
 --- !u!1001 &92709773
 Prefab:
   m_ObjectHideFlags: 0
@@ -1407,7 +1406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapesControllerContainer: {fileID: 1119402925}
-  randomExplosionsCount: 3
   removeBlocksConditionContainer: {fileID: 47340684}
 --- !u!114 &409092501
 MonoBehaviour:
@@ -1528,13 +1526,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 419204691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.34000024, y: 0.42999965, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1441378754}
   - {fileID: 1873545998}
   - {fileID: 776487921}
-  m_Father: {fileID: 1887226836}
+  m_Father: {fileID: 1911386220}
   m_RootOrder: 1
 --- !u!1 &438359737
 GameObject:
@@ -1749,7 +1747,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63a2b79a9f7755245b73020be61d4830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainTime: 60
 --- !u!1 &687657437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,7 +1936,7 @@ Transform:
   - {fileID: 675930476}
   - {fileID: 1911386220}
   m_Father: {fileID: 2045741284}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!114 &757021569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1951,7 +1948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6443f6e822bdbe54cbf6106e2cfb19bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWinConditionIndex: 0
   winConditions:
   - {fileID: 88921099}
   - {fileID: 47340684}
@@ -8276,7 +8272,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1550674158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.34000024, y: 0.42999965, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 957311762}
@@ -8306,7 +8302,7 @@ Transform:
   - {fileID: 1445156370}
   - {fileID: 964789859}
   - {fileID: 545566094}
-  m_Father: {fileID: 1887226836}
+  m_Father: {fileID: 1911386220}
   m_RootOrder: 0
 --- !u!1 &1557092449
 GameObject:
@@ -12254,55 +12250,6 @@ Transform:
   - {fileID: 1724590901}
   m_Father: {fileID: 419204692}
   m_RootOrder: 1
---- !u!1 &1887226835
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1887226836}
-  - 114: {fileID: 1887226837}
-  m_Layer: 0
-  m_Name: GameBossesController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1887226836
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1887226835}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3400002, y: 0.4299996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1550674159}
-  - {fileID: 419204692}
-  m_Father: {fileID: 2045741284}
-  m_RootOrder: 8
---- !u!114 &1887226837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1887226835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe58f160293e694ca395a320c72aed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameBoardPad: {fileID: 764259398}
-  bosses:
-  - {fileID: 1441378753}
-  - {fileID: 1873545997}
-  - {fileID: 776487920}
-  bossEnvironmentContainer: {fileID: 1550674158}
-  bossType: 2
-  currentBosses: []
 --- !u!1 &1905333037
 GameObject:
   m_ObjectHideFlags: 0
@@ -12441,7 +12388,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1550674159}
+  - {fileID: 419204692}
   m_Father: {fileID: 757021568}
   m_RootOrder: 3
 --- !u!114 &1911386221
@@ -12455,7 +12404,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4b7104ae275a34fa2107bbb2e3e15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossesContainer: {fileID: 1887226835}
+  gameBoardPad: {fileID: 764259398}
+  bosses:
+  - {fileID: 1441378753}
+  - {fileID: 1873545997}
+  - {fileID: 776487920}
+  bossEnvironmentContainer: {fileID: 1550674158}
+  currentBosses: []
 --- !u!1001 &1913152798
 Prefab:
   m_ObjectHideFlags: 0
@@ -13227,7 +13182,6 @@ Transform:
   - {fileID: 1087201653}
   - {fileID: 205491052}
   - {fileID: 299234630}
-  - {fileID: 1887226836}
   - {fileID: 757021568}
   m_Father: {fileID: 1584519592}
   m_RootOrder: 0
