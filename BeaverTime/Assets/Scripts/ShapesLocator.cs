@@ -54,8 +54,8 @@ public class ShapesLocator {
         GameObject block = _gameBoard.getObjectForXY(positionX, positionY);
         if (block)
         {
-            GameBoss bossFlag = block.GetComponent<GameBoss>();
-            if (bossFlag == null)
+            BlockType bossFlag = block.GetComponent<BlockType>();
+            if (bossFlag.boss == false)
             {
                 GameObject.Destroy(block);
                 _gameBoard.setObjectForXY(child.gameObject, positionX, positionY);

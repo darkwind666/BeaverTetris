@@ -19,6 +19,7 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
 
     public GameObject removeBlocksConditionContainer;
     RemoveBlocksCondition _removeBlocksCondition;
+    GamePlayerDataController _playerData;
 
     void Start () {
 
@@ -29,6 +30,7 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
         _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
         SpellCountdownController countdownController = GetComponent<SpellCountdownController>();
         meteorCount = countdownController.getSpellCount();
+        _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
     }
 	
 	void Update () {
@@ -156,6 +158,7 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
                 if (type)
                 {
                     _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+                    _playerData.playerScore = _playerData.playerScore + type.blockReward;
                 }
 
                 Destroy(aBlock);

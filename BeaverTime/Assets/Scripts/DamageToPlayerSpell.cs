@@ -64,8 +64,8 @@ public class DamageToPlayerSpell : MonoBehaviour {
         GameObject block = _gameBoard.getObjectForXY(xIndex, yIndex);
         if (block)
         {
-            GameBoss bossTag = block.GetComponent<GameBoss>();
-            if (bossTag == null)
+            BlockType bossTag = block.GetComponent<BlockType>();
+            if (bossTag.boss == false)
             {
                 available = true;
             }

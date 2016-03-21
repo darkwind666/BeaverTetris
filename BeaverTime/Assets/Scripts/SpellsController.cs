@@ -53,11 +53,12 @@ public class SpellsController : MonoBehaviour {
             GameObject spellContainer = spells[aSpellIndex];
             
             SpellCountdownController spellCountdown = spellContainer.GetComponent<SpellCountdownController>();
-            if(spellCountdown.availableSpell())
+            if(spellCountdown.availableSpell() && _gamePlayerData.playerScore >= spellCountdown.spellScorePrice)
             {
                 ISpell spell = spellContainer.GetComponent<ISpell>();
                 spell.useSpell();
                 spellCountdown.useSpell();
+                _gamePlayerData.playerScore = _gamePlayerData.playerScore - spellCountdown.spellScorePrice;
             }
             
         }

@@ -4,6 +4,7 @@ using System.Collections;
 public class SpellCountdownController : MonoBehaviour {
 
     public int spellType;
+    public int spellScorePrice;
 
     int _spellRechargeInterval;
     int _spellRechargeState;

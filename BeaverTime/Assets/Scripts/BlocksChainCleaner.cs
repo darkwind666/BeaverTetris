@@ -4,6 +4,7 @@ using DG.Tweening;
 
 public class BlocksChainCleaner : MonoBehaviour {
 
+    public int rewardForBlockInChain;
     public int maxBlocksChainCount;
     public GameObject animationTimeContainer;
     GameBoard _gameBoard;
@@ -16,6 +17,8 @@ public class BlocksChainCleaner : MonoBehaviour {
     public GameObject removeBlocksConditionContainer;
     RemoveBlocksCondition _removeBlocksCondition;
 
+    GamePlayerDataController _playerData;
+
     void Start () {
 
         _blocksForDeleting = new List<GameObject>();
@@ -24,6 +27,7 @@ public class BlocksChainCleaner : MonoBehaviour {
         _moveTimeForOneBlock = animationTimeContainer.GetComponent<GameBoardCleaner>().moveTimeForOneBlock;
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
+        _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
     }
 	
@@ -74,6 +78,7 @@ public class BlocksChainCleaner : MonoBehaviour {
         {
             BlockType type = block.GetComponent<BlockType>();
             _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+            _playerData.playerScore = _playerData.playerScore + type.blockReward + rewardForBlockInChain;
             Destroy(block);
         }
 

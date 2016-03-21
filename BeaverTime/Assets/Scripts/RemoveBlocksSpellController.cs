@@ -14,6 +14,8 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
     public GameObject removeBlocksConditionContainer;
     RemoveBlocksCondition _removeBlocksCondition;
 
+    GamePlayerDataController _playerData;
+
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
@@ -21,6 +23,7 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
         _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
         SpellCountdownController countdownController = GetComponent<SpellCountdownController>();
         randomExplosionsCount = countdownController.getSpellCount();
+        _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
     }
 
     void Update () {
@@ -122,6 +125,7 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
             {
                 BlockType type = block.GetComponent<BlockType>();
                 _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+                _playerData.playerScore = _playerData.playerScore + type.blockReward;
                 Object.Destroy(block);
             }
         }

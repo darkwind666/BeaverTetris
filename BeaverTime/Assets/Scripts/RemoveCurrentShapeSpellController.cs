@@ -20,6 +20,8 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
     public GameObject removeBlocksConditionContainer;
     RemoveBlocksCondition _removeBlocksCondition;
 
+    GamePlayerDataController _playerData;
+
     void Start () {
 
         _shapesController = shapesControllerContainer.GetComponent<GameShapesSpawner>();
@@ -28,6 +30,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
         meteorParticle.SetActive(true);
         _startMeteorPosition = meteorParticle.transform.position;
         _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
+        _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
     }
 	
@@ -82,6 +85,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 
             BlockType type = block.GetComponent<BlockType>();
             _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+            _playerData.playerScore = _playerData.playerScore + type.blockReward;
 
         }
     }

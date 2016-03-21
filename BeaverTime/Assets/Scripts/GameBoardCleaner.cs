@@ -5,17 +5,20 @@ using DG.Tweening;
 
 public class GameBoardCleaner : MonoBehaviour {
 
+    public int rewardForLine;
     public float moveTimeForOneBlock;
 
     public GameObject removeBlocksConditionContainer;
     RemoveBlocksCondition _removeBlocksCondition;
 
     GameBoard _gameBoard;
+    GamePlayerDataController _playerData;
 
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
+        _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
     }
 	
@@ -83,6 +86,7 @@ public class GameBoardCleaner : MonoBehaviour {
         foreach (int aLineIndex in aLines)
         {
             deleteLineForIndex(aLineIndex);
+            _playerData.playerScore = _playerData.playerScore + rewardForLine;
         }
 
     }
@@ -109,6 +113,7 @@ public class GameBoardCleaner : MonoBehaviour {
             {
                 BlockType type = block.GetComponent<BlockType>();
                 _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+                _playerData.playerScore = _playerData.playerScore + type.blockReward;
                 Destroy(block);
                 _gameBoard.deleteObjectForXY(xIndex, aLineIndex);
             }
