@@ -880,7 +880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewardForLine: 5
   moveTimeForOneBlock: 0.31
-  removeBlocksConditionContainer: {fileID: 47340684}
+  _removeBlocksCondition: {fileID: 47340686}
 --- !u!1 &205491051
 GameObject:
   m_ObjectHideFlags: 0

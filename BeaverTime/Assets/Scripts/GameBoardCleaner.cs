@@ -8,8 +8,7 @@ public class GameBoardCleaner : MonoBehaviour {
     public int rewardForLine;
     public float moveTimeForOneBlock;
 
-    public GameObject removeBlocksConditionContainer;
-    RemoveBlocksCondition _removeBlocksCondition;
+    public RemoveBlocksCondition _removeBlocksCondition;
 
     GameBoard _gameBoard;
     GamePlayerDataController _playerData;
@@ -17,7 +16,6 @@ public class GameBoardCleaner : MonoBehaviour {
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
     }
