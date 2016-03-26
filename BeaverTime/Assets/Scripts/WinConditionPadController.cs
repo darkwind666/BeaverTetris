@@ -3,9 +3,9 @@ using System.Collections;
 
 public class WinConditionPadController : MonoBehaviour {
 
-    GameObject[] winConditionsIndicators;
-    GameObject[] winBlocksIndicators;
-    GameObject[] winBossesIndicators;
+    public GameObject[] winConditionsIndicators;
+    public GameObject[] winBlocksIndicators;
+    public GameObject[] winBossesIndicators;
 
     void Start () {
 
@@ -15,9 +15,28 @@ public class WinConditionPadController : MonoBehaviour {
         GameObject levelIndicator = winConditionsIndicators[levelData.winConditionType];
         levelIndicator.SetActive(true);
 
+        checkWinBlocksLevel(levelData);
+
     }
-	
-	void Update () {
+
+    void checkWinBlocksLevel(GameLevel aLevelData)
+    {
+        if(aLevelData.winConditionType == 1)
+        {
+            GameObject indicator;
+            if (aLevelData.blocks.Length == 2)
+            {
+               indicator = winBlocksIndicators[0];
+            }
+            else
+            {
+               indicator = winBlocksIndicators[1];
+            }
+            indicator.SetActive(true);
+        }
+    }
+
+    void Update () {
 	
 	}
 }

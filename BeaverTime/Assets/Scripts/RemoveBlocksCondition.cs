@@ -3,18 +3,18 @@ using System.Collections.Generic;
 
 public class RemoveBlocksCondition : MonoBehaviour, IWinCondition {
 
-    Dictionary<int, int> _removeBlocksToWin;
+    public Dictionary<int, int> removeBlocksToWin;
 
 	void Start () {
 
-        _removeBlocksToWin = new Dictionary<int, int>();
+        removeBlocksToWin = new Dictionary<int, int>();
 
         LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
         GameLevel level = levelData.getCurrentLevelData();
 
         foreach (BlocksForRemoving blockData in level.blocks)
         {
-            _removeBlocksToWin.Add(blockData.blockType, blockData.blocksCount);
+            removeBlocksToWin.Add(blockData.blockType, blockData.blocksCount);
         }
 
     }
@@ -27,7 +27,7 @@ public class RemoveBlocksCondition : MonoBehaviour, IWinCondition {
     {
         bool win = true;
 
-        foreach(KeyValuePair<int, int> pair in _removeBlocksToWin)
+        foreach(KeyValuePair<int, int> pair in removeBlocksToWin)
         {
             if(pair.Value > 0)
             {
@@ -41,11 +41,15 @@ public class RemoveBlocksCondition : MonoBehaviour, IWinCondition {
 
     public void blockWasRemoovedWithType(int aBlockType)
     {
-        if(_removeBlocksToWin != null)
+        if(removeBlocksToWin != null)
         {
-            if (_removeBlocksToWin.ContainsKey(aBlockType))
+            if (removeBlocksToWin.ContainsKey(aBlockType))
             {
-                _removeBlocksToWin[aBlockType] = _removeBlocksToWin[aBlockType] - 1;
+                removeBlocksToWin[aBlockType] = removeBlocksToWin[aBlockType] - 1;
+                if(removeBlocksToWin[aBlockType] < 0)
+                {
+                    removeBlocksToWin[aBlockType] = 0;
+                }
             }
         }
     }
