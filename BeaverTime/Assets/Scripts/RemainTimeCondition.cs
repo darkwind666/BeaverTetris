@@ -4,8 +4,8 @@ using System;
 
 public class RemainTimeCondition : MonoBehaviour, IWinCondition {
 
-    int remainTime;
-    int _currentTimeState;
+    public int remainTime;
+    public int currentTimeState;
 
     void Start () {
 
@@ -13,7 +13,7 @@ public class RemainTimeCondition : MonoBehaviour, IWinCondition {
         GameLevel level = levelData.getCurrentLevelData();
         remainTime = level.remainTimes;
 
-        _currentTimeState = 0;
+        currentTimeState = 0;
 
     }
 	
@@ -25,8 +25,8 @@ public class RemainTimeCondition : MonoBehaviour, IWinCondition {
     {
         bool win = true;
 
-        _currentTimeState++;
-        if(_currentTimeState < remainTime)
+        currentTimeState++;
+        if(currentTimeState < remainTime)
         {
             win = false;
         }
