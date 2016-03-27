@@ -20,7 +20,7 @@ MonoBehaviour:
     detailsCount: 0
     fallingSpeed: 20
   bossType: 0
-  winConditionType: 0
+  winConditionType: 3
   needToPlaceDetailsCount: 40
   remainTimes: 0
   blocks: []
@@ -28,3 +28,9 @@ MonoBehaviour:
   - spellType: 0
     spellCount: 0
     spellRechargeInterval: 60
+  - spellType: 1
+    spellCount: 10
+    spellRechargeInterval: 10
+  - spellType: 2
+    spellCount: 7
+    spellRechargeInterval: 10

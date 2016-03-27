@@ -16,6 +16,7 @@ public class WinConditionPadController : MonoBehaviour {
         levelIndicator.SetActive(true);
 
         checkWinBlocksLevel(levelData);
+        checkWinBoss(levelData);
 
     }
 
@@ -32,6 +33,15 @@ public class WinConditionPadController : MonoBehaviour {
             {
                indicator = winBlocksIndicators[1];
             }
+            indicator.SetActive(true);
+        }
+    }
+
+    void checkWinBoss(GameLevel aLevelData)
+    {
+        if (aLevelData.winConditionType == 3)
+        {
+            GameObject indicator = winBossesIndicators[aLevelData.bossType];
             indicator.SetActive(true);
         }
     }
