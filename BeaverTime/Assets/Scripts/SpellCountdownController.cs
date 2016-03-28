@@ -6,8 +6,8 @@ public class SpellCountdownController : MonoBehaviour {
     public int spellType;
     public int spellScorePrice;
 
-    int _spellRechargeInterval;
-    int _spellRechargeState;
+    public int spellRechargeInterval;
+    public int spellRechargeState;
     bool _playerHasSpell;
 
 	void Start () {
@@ -19,11 +19,11 @@ public class SpellCountdownController : MonoBehaviour {
         if(spellType <  gamePlayerData.getPlayerSpellsCount())
         {
             LevelSpell spellData = gamePlayerData.getPlayerSpellForIndex(spellType);
-            _spellRechargeInterval = spellData.spellRechargeInterval;
+            spellRechargeInterval = spellData.spellRechargeInterval;
             _playerHasSpell = true;
         }
 
-        _spellRechargeState = _spellRechargeInterval;
+        spellRechargeState = spellRechargeInterval;
     }
 	
 	void Update () {
@@ -32,20 +32,20 @@ public class SpellCountdownController : MonoBehaviour {
 
     public void updateWithGameTime()
     {
-        if (_spellRechargeState <= _spellRechargeInterval)
+        if (spellRechargeState <= spellRechargeInterval)
         {
-            _spellRechargeState++;
+            spellRechargeState++;
         }
     }
 
     public void useSpell()
     {
-        _spellRechargeState = 0;
+        spellRechargeState = 0;
     }
 
     public bool availableSpell()
     {
-        return ((_spellRechargeState >= _spellRechargeInterval) && _playerHasSpell);
+        return ((spellRechargeState >= spellRechargeInterval) && _playerHasSpell);
     }
 
     public int getSpellCount()

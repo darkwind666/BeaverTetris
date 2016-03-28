@@ -28,9 +28,3 @@ MonoBehaviour:
   - spellType: 0
     spellCount: 0
     spellRechargeInterval: 60
-  - spellType: 1
-    spellCount: 10
-    spellRechargeInterval: 10
-  - spellType: 2
-    spellCount: 7
-    spellRechargeInterval: 10
