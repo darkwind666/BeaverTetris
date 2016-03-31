@@ -9,29 +9,17 @@ public class GameSpeedController : MonoBehaviour {
     int _currentUpdateState;
     int _currentStandardUpdateTime;
     bool _stopGame;
-
     GameBoard _gameBoard;
 
-    public GameObject shapesContainer;
-    GameShapesSpawner _shapesController;
-
-    public GameObject playerInputContainer;
-    PlayerInputController _playerInputController;
-
-    public GameObject fallSomeShapesContainer;
-    FallSomeShapesController _fallSomeShapesController;
-
-    public GameObject accelerateGameSpeedContainer;
-    AccelerateGameSpeedController _accelerateGameSpeedController;
-
-    public GameObject winGameConditionContainer;
-    WinGameConditionsController _winGameConditionsController;
-
+    public GameShapesSpawner shapesController;
+    public PlayerInputController playerInputController;
+    public FallSomeShapesController fallSomeShapesController;
+    public AccelerateGameSpeedController accelerateGameSpeedController;
+    public WinGameConditionsController winGameConditionsController;
     public GameObject[] moveBosses;
     public GameObject bossSpells;
 
-    public GameObject spellsContainer;
-    SpellsController _spellsController;
+    public SpellsController spellsController;
 
     void Start () {
 
@@ -39,25 +27,19 @@ public class GameSpeedController : MonoBehaviour {
         _currentStandardUpdateTime = standardUpdateTime;
         _currentUpdateState = 0;
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _shapesController = shapesContainer.GetComponent<GameShapesSpawner>();
-        _playerInputController = playerInputContainer.GetComponent<PlayerInputController>();
-        _fallSomeShapesController = fallSomeShapesContainer.GetComponent<FallSomeShapesController>();
-        _accelerateGameSpeedController = accelerateGameSpeedContainer.GetComponent<AccelerateGameSpeedController>();
-        _winGameConditionsController = winGameConditionContainer.GetComponent<WinGameConditionsController>();
-        _spellsController = spellsContainer.GetComponent<SpellsController>();
         _stopGame = false;
     }
 	
 	void Update () {
 
-        if (_shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false && _stopGame == false)
+        if (shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false && _stopGame == false)
         {
             _currentUpdateState++;
 
             if (_currentUpdateState >= _maxUpdateTime)
             {
                 _currentUpdateState = 0;
-                _playerInputController.downShape();
+                playerInputController.downShape();
 
                 foreach(GameObject boss in moveBosses)
                 {
@@ -80,10 +62,10 @@ public class GameSpeedController : MonoBehaviour {
                     }
                 }
 
-                _spellsController.updateWithGameTime();
-                _accelerateGameSpeedController.updateWithGameTime();
-                _fallSomeShapesController.updateWithGameTime();
-                _winGameConditionsController.updateWithGameTime();
+                spellsController.updateWithGameTime();
+                accelerateGameSpeedController.updateWithGameTime();
+                fallSomeShapesController.updateWithGameTime();
+                winGameConditionsController.updateWithGameTime();
 
             }
 

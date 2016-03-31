@@ -4,12 +4,9 @@ using DG.Tweening;
 
 public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 {
-
-    public GameObject shapesControllerContainer;
-    GameShapesSpawner _shapesController;
-
-    public GameObject gameSpeedControllerContainer;
-    GameSpeedController _gameSpeedController;
+    public GameShapesSpawner shapesController;
+    public GameSpeedController gameSpeedController;
+    public RemoveBlocksCondition removeBlocksCondition;
 
     public GameObject meteorParticle;
     GameBoard _gameBoard;
@@ -17,19 +14,13 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 
     public float meteorSpeed;
 
-    public GameObject removeBlocksConditionContainer;
-    RemoveBlocksCondition _removeBlocksCondition;
-
     GamePlayerDataController _playerData;
 
     void Start () {
 
-        _shapesController = shapesControllerContainer.GetComponent<GameShapesSpawner>();
-        _gameSpeedController = gameSpeedControllerContainer.GetComponent<GameSpeedController>();
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         meteorParticle.SetActive(true);
         _startMeteorPosition = meteorParticle.transform.position;
-        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
     }
@@ -56,7 +47,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 
     Vector3 getMeteorEndPointForDeleteCurrentShape()
     {
-        GameObject shape = _shapesController.currentShape();
+        GameObject shape = shapesController.currentShape();
         Vector3 shapePosition = shape.transform.localPosition;
         Vector3 shapeCenterPosition = new Vector3(shapePosition.x + 1, shapePosition.y + 1, shapePosition.z);
         GameObject shapeParent = shape.transform.parent.gameObject;
@@ -66,7 +57,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 
     float getExplosionDuration()
     {
-        GameObject shape = _shapesController.currentShape();
+        GameObject shape = shapesController.currentShape();
         GameObject block = shape.transform.GetChild(0).gameObject;
         ParticleSystem particle = block.GetComponent<ParticleSystem>();
         float explosionDutation = particle.startLifetime;
@@ -75,7 +66,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 
     void showBlockExplosionsInCurrentShape()
     {
-        GameObject shape = _shapesController.currentShape();
+        GameObject shape = shapesController.currentShape();
         foreach (Transform child in shape.transform)
         {
             GameObject block = child.gameObject;
@@ -84,7 +75,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
             particle.Play();
 
             BlockType type = block.GetComponent<BlockType>();
-            _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+            removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
             _playerData.playerScore = _playerData.playerScore + type.blockReward;
 
         }
@@ -92,10 +83,10 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 
     void destroyCurrentShape()
     {
-        GameObject currentShape = _shapesController.currentShape();
-        _gameSpeedController.stopShapeAcceleration();
+        GameObject currentShape = shapesController.currentShape();
+        gameSpeedController.stopShapeAcceleration();
         Object.Destroy(currentShape);
-        _shapesController.createNewShape();
+        shapesController.createNewShape();
     }
 
 }

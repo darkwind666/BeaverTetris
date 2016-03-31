@@ -7,13 +7,13 @@ public class GameShapesCleaner : MonoBehaviour {
 
     GameBoard _mainGameBoard;
 
-    public GameObject animationTimeContainer;
+    public GameBoardCleaner gameBoardCleaner;
     float _moveTimeForOneBlock;
     GameShapesSeparator _gameShapesSeparator;
     ShapeFinalPositionHelper _shapeFinalPositionHelper;
 
     void Start () {
-        _moveTimeForOneBlock = animationTimeContainer.GetComponent<GameBoardCleaner>().moveTimeForOneBlock;
+        _moveTimeForOneBlock = gameBoardCleaner.moveTimeForOneBlock;
         _mainGameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _gameShapesSeparator = new GameShapesSeparator();
         _shapeFinalPositionHelper = new ShapeFinalPositionHelper();

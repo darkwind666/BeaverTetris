@@ -9,25 +9,20 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
     public GameObject[] meteors;
     int meteorCount;
     public float meteorSpeed;
-    public GameObject currentDetailContainer;
-    GameShapesSpawner _shapesController;
     public GameObject explosionObject;
 
     GameBoard _gameBoard;
     float _maxMeteorDuration;
     float _explosionDuration;
 
-    public GameObject removeBlocksConditionContainer;
-    RemoveBlocksCondition _removeBlocksCondition;
+    public RemoveBlocksCondition removeBlocksCondition;
     GamePlayerDataController _playerData;
 
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _shapesController = currentDetailContainer.GetComponent<GameShapesSpawner>();
         ParticleSystem particle = explosionObject.GetComponent<ParticleSystem>();
         _explosionDuration = particle.startLifetime;
-        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
         SpellCountdownController countdownController = GetComponent<SpellCountdownController>();
         meteorCount = countdownController.getSpellCount();
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
@@ -157,7 +152,7 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
                 BlockType type = aBlock.GetComponent<BlockType>();
                 if (type)
                 {
-                    _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+                    removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
                     _playerData.playerScore = _playerData.playerScore + type.blockReward;
                 }
 

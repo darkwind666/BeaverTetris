@@ -7,18 +7,13 @@ public class BossSpellCastsController : MonoBehaviour {
     int _currentUpdateState;
     GameBoard _gameBoard;
 
-    public GameObject addLineSpellContainer;
-    AddLineToBoardBottomSpell _addLineToBoardBottomSpell;
-
-    public GameObject damageToPlayerSpellContainer;
-    DamageToPlayerSpell _damageToPlayerSpell;
+    public AddLineToBoardBottomSpell addLineToBoardBottomSpell;
+    public DamageToPlayerSpell damageToPlayerSpell;
 
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _currentUpdateState = 0;
-        _addLineToBoardBottomSpell = addLineSpellContainer.GetComponent<AddLineToBoardBottomSpell>();
-        _damageToPlayerSpell = damageToPlayerSpellContainer.GetComponent<DamageToPlayerSpell>();
 
     }
 	
@@ -45,11 +40,11 @@ public class BossSpellCastsController : MonoBehaviour {
         int randomNumber = Random.Range(0, 2);
         if (randomNumber == 0)
         {
-            _addLineToBoardBottomSpell.castSpell();
+            addLineToBoardBottomSpell.castSpell();
         }
         else
         {
-            _damageToPlayerSpell.castSpell();
+            damageToPlayerSpell.castSpell();
         }
     }
 

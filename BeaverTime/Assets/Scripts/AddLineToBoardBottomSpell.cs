@@ -8,14 +8,13 @@ public class AddLineToBoardBottomSpell : MonoBehaviour {
     public float moveUpBlocksAnimationDuration;
     public float blockAppearanceDuration;
 
-    public GameObject gameShapesSpawnerContainer;
+    public GameShapesSpawner gameShapesSpawner;
     GameObject[] gameBlocksPatterns;
     public GameObject gameBoardPad;
 
     void Start ()
     {
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        GameShapesSpawner gameShapesSpawner = gameShapesSpawnerContainer.GetComponent<GameShapesSpawner>();
         gameBlocksPatterns = gameShapesSpawner.gameBlocksPatterns;
     }
 

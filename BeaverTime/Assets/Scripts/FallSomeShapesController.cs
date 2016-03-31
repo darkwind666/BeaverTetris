@@ -12,8 +12,7 @@ public class FallSomeShapesController : MonoBehaviour {
     int _currentUpdateState;
     GameBoard _gameBoard;
 
-    public GameObject shapesContainer;
-    GameShapesSpawner _shapeController;
+    public GameShapesSpawner shapeController;
     ShapeFinalPositionHelper _shapeFinalPositionHelper;
 
     bool _eventActive;
@@ -22,7 +21,6 @@ public class FallSomeShapesController : MonoBehaviour {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         _currentUpdateState = 0;
-        _shapeController = shapesContainer.GetComponent<GameShapesSpawner>();
         _shapeFinalPositionHelper = new ShapeFinalPositionHelper();
         _eventActive = false;
         setFallEventSettings();
@@ -51,7 +49,7 @@ public class FallSomeShapesController : MonoBehaviour {
 
     public void updateWithGameTime()
     {
-        if (_gameBoard.gameBoardLocked == false && _shapeController.currentShapeAvailable() && _eventActive == true)
+        if (_gameBoard.gameBoardLocked == false && shapeController.currentShapeAvailable() && _eventActive == true)
         {
             _currentUpdateState++;
             if (_currentUpdateState >= maxUpdateTime)
@@ -77,7 +75,7 @@ public class FallSomeShapesController : MonoBehaviour {
             int randomXPosition = getRandomShapePosition();
             Vector3 shapeStartPosition = new Vector3(randomXPosition, 21, 0);
 
-            GameObject shape = _shapeController.createStandardShape();
+            GameObject shape = shapeController.createStandardShape();
             shape.transform.localPosition = shapeStartPosition;
             shapes.Add(shape);
         }
@@ -98,7 +96,7 @@ public class FallSomeShapesController : MonoBehaviour {
 
     List<int>  getAvailablePositions()
     {
-        int shapeXPosition = Mathf.RoundToInt(_shapeController.currentShape().transform.localPosition.x);
+        int shapeXPosition = Mathf.RoundToInt(shapeController.currentShape().transform.localPosition.x);
         int maxUpInterval = shapeXPosition - 3;
         int maxDownInterval = shapeXPosition + 3;
 

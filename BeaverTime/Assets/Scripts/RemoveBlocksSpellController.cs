@@ -4,23 +4,16 @@ using DG.Tweening;
 
 public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
 
-    public GameObject shapesControllerContainer;
-    GameShapesSpawner _shapesController;
+    public GameShapesSpawner shapesController;
+    public RemoveBlocksCondition removeBlocksCondition;
 
     GameBoard _gameBoard;
-
     int randomExplosionsCount;
-
-    public GameObject removeBlocksConditionContainer;
-    RemoveBlocksCondition _removeBlocksCondition;
-
     GamePlayerDataController _playerData;
 
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _shapesController = shapesControllerContainer.GetComponent<GameShapesSpawner>();
-        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
         SpellCountdownController countdownController = GetComponent<SpellCountdownController>();
         randomExplosionsCount = countdownController.getSpellCount();
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
@@ -109,7 +102,7 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
 
     float getExplosionDuration()
     {
-        GameObject shape = _shapesController.currentShape();
+        GameObject shape = shapesController.currentShape();
         GameObject block = shape.transform.GetChild(0).gameObject;
         ParticleSystem particle = block.GetComponent<ParticleSystem>();
         float explosionDutation = particle.startLifetime;
@@ -124,7 +117,7 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
             if (blockLives.blockLivesCount <= 0)
             {
                 BlockType type = block.GetComponent<BlockType>();
-                _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+                removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
                 _playerData.playerScore = _playerData.playerScore + type.blockReward;
                 Object.Destroy(block);
             }

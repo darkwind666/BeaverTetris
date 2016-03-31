@@ -3,20 +3,14 @@ using System.Collections;
 
 public class PlayerInputController : MonoBehaviour {
 
-    public GameObject shapesContainer;
-    GameShapesSpawner _shapesController;
+    public GameShapesSpawner shapesController;
+    public SpellsController spellsController;
+    public GameSpeedController gameSpeedController;
+    public string buttonCode { get; set; }
+
     ShapesLocator _shapesLocator;
     GameBoard _gameBoard;
-
     AvailablePositionChecker _positionChecker;
-
-    public GameObject spellsContainer;
-    SpellsController _spellsController;
-
-    public GameObject gameSpeedContainer;
-    GameSpeedController _gameSpeedController;
-
-    public string buttonCode { get; set; }
 
     const string moveRight = "MoveShapeRight";
     const string moveLeft = "MoveShapeLeft";
@@ -32,10 +26,6 @@ public class PlayerInputController : MonoBehaviour {
         _shapesLocator = new ShapesLocator();
         _positionChecker = new AvailablePositionChecker();
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _shapesController = shapesContainer.GetComponent<GameShapesSpawner>();
-        _spellsController = spellsContainer.GetComponent<SpellsController>();
-        _gameSpeedController = gameSpeedContainer.GetComponent<GameSpeedController>();
-
     }
 
     Vector3 roundPosition(Vector3 aPosition)
@@ -53,7 +43,7 @@ public class PlayerInputController : MonoBehaviour {
 
     void Update()
     {
-        if (_shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false)
+        if (shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false)
         {
             checkUserInput();
         }
@@ -80,19 +70,19 @@ public class PlayerInputController : MonoBehaviour {
         }
         else if (Input.GetButtonDown(spell1) || buttonCode == spell1)
         {
-            _spellsController.removeCurrentShapeSpell();
+            spellsController.removeCurrentShapeSpell();
         }
         else if (Input.GetButtonDown(spell2) || buttonCode == spell2)
         {
-            _spellsController.removeRandomBlocksSpell();
+            spellsController.removeRandomBlocksSpell();
         }
         else if (Input.GetButtonDown(spell3) || buttonCode == spell3)
         {
-            _spellsController.firestormSpell();
+            spellsController.firestormSpell();
         }
         else if (Input.GetButtonDown(spell4) || buttonCode == spell4)
         {
-            _spellsController.cohessionSpell();
+            spellsController.cohessionSpell();
         }
 
         buttonCode = "";
@@ -100,7 +90,7 @@ public class PlayerInputController : MonoBehaviour {
 
     public void moveShapeRight()
     {
-        GameObject currentShape = _shapesController.currentShape();
+        GameObject currentShape = shapesController.currentShape();
         Vector3 currentPosition = currentShape.transform.localPosition;
         Vector3 direction = new Vector3(1, 0, 0);
         Vector3 newShapePosition = roundPosition(currentPosition + direction);
@@ -109,7 +99,7 @@ public class PlayerInputController : MonoBehaviour {
 
     public void moveShapeLeft()
     {
-        GameObject currentShape = _shapesController.currentShape();
+        GameObject currentShape = shapesController.currentShape();
         Vector3 currentPosition = currentShape.transform.localPosition;
         Vector3 direction = new Vector3(-1, 0, 0);
         Vector3 newShapePosition = roundPosition(currentPosition + direction);
@@ -118,12 +108,12 @@ public class PlayerInputController : MonoBehaviour {
 
     public void acceleratedShapeSpeed()
     {
-        _gameSpeedController.setAcceleratedShapeSpeed();
+        gameSpeedController.setAcceleratedShapeSpeed();
     }
 
     public void rotateShape()
     {
-        GameObject currentShape = _shapesController.currentShape();
+        GameObject currentShape = shapesController.currentShape();
         Vector3 point = new Vector3(1, 1, 0);
         Vector3 rotatePoint = currentShape.transform.TransformPoint(point);
         rotateCurrentShapeAroundPoint(rotatePoint);
@@ -131,7 +121,7 @@ public class PlayerInputController : MonoBehaviour {
 
     void rotateCurrentShapeAroundPoint(Vector3 rotatePoint)
     {
-        GameObject currentShape = _shapesController.currentShape();
+        GameObject currentShape = shapesController.currentShape();
         foreach (Transform child in currentShape.transform)
         {
             child.RotateAround(rotatePoint, Vector3.forward, 90);
@@ -150,9 +140,9 @@ public class PlayerInputController : MonoBehaviour {
 
     public void downShape()
     {
-        if (_shapesController.currentShapeAvailable())
+        if (shapesController.currentShapeAvailable())
         {
-            GameObject currentShape = _shapesController.currentShape();
+            GameObject currentShape = shapesController.currentShape();
             Vector3 currentPosition = currentShape.transform.localPosition;
 
             Vector3 direction = new Vector3(0, -1, 0);
@@ -165,8 +155,8 @@ public class PlayerInputController : MonoBehaviour {
             else
             {
                 _shapesLocator.writeShapeInBoard(currentShape);
-                _shapesController.createNewShape();
-                _gameSpeedController.stopShapeAcceleration();
+                shapesController.createNewShape();
+                gameSpeedController.stopShapeAcceleration();
             }
 
         }

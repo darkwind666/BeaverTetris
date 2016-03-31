@@ -4,9 +4,7 @@ using System.Collections;
 public class WinGameConditionsController : MonoBehaviour {
 
     public GameObject[] winConditions;
-
-    public GameObject gameSpeedContainer;
-    GameSpeedController _gameSpeedController;
+    public GameSpeedController gameSpeedController;
 
     GameObject _currentWinCondition;
     GameBoard _gameBoard;
@@ -14,7 +12,6 @@ public class WinGameConditionsController : MonoBehaviour {
 
     void Start () {
 
-        _gameSpeedController = gameSpeedContainer.GetComponent<GameSpeedController>();
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         
         LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
@@ -23,7 +20,6 @@ public class WinGameConditionsController : MonoBehaviour {
 
         _currentWinCondition = winConditions[winConditionIndex];
         _currentWinCondition.SetActive(true);
-
     }
 	
 	void Update () {
@@ -38,7 +34,7 @@ public class WinGameConditionsController : MonoBehaviour {
             IWinCondition winCondition = _currentWinCondition.GetComponent<IWinCondition>();
             if (winCondition.checkWinCondition())
             {
-                _gameSpeedController.stopGame();
+                gameSpeedController.stopGame();
             }
             else
             {
@@ -52,7 +48,7 @@ public class WinGameConditionsController : MonoBehaviour {
     {
         if(blockExistOnFinalLine())
         {
-            _gameSpeedController.stopGame();
+            gameSpeedController.stopGame();
         }
     }
 

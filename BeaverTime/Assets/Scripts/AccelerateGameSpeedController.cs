@@ -11,11 +11,8 @@ public class AccelerateGameSpeedController : MonoBehaviour {
     int _currentUpdateState;
     GameBoard _gameBoard;
 
-    public GameObject gameSpeedContainer;
-    GameSpeedController _gameSpeedController;
-
-    public GameObject shapesContainer;
-    GameShapesSpawner _shapeController;
+    public GameSpeedController gameSpeedController;
+    public GameShapesSpawner shapeController;
 
     int activeDuration;
     bool _activeAcceleration;
@@ -27,14 +24,11 @@ public class AccelerateGameSpeedController : MonoBehaviour {
 
         _currentUpdateState = 0;
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _gameSpeedController = gameSpeedContainer.GetComponent<GameSpeedController>();
-        _shapeController = shapesContainer.GetComponent<GameShapesSpawner>();
-        _standardShapeSpeed = _gameSpeedController.standardUpdateTime;
+        _standardShapeSpeed = gameSpeedController.standardUpdateTime;
         _activeAcceleration = false;
         _currentActiveAccelerationState = 0;
         _eventActive = false;
         setAccelerateEventSettings();
-
     }
 
     void setAccelerateEventSettings()
@@ -62,7 +56,7 @@ public class AccelerateGameSpeedController : MonoBehaviour {
 
     public void updateWithGameTime()
     {
-        if (_gameBoard.gameBoardLocked == false && _shapeController.currentShapeAvailable() && _eventActive == true)
+        if (_gameBoard.gameBoardLocked == false && shapeController.currentShapeAvailable() && _eventActive == true)
         {
             updateAccelerateNegativeMoment();
         }
@@ -91,14 +85,14 @@ public class AccelerateGameSpeedController : MonoBehaviour {
 
     void stopAcceleration()
     {
-        if (_gameSpeedController.getCurrentGameSpeed() == acceleratedSpeed)
+        if (gameSpeedController.getCurrentGameSpeed() == acceleratedSpeed)
         {
-            _gameSpeedController.setStandardShapeSpeed(_standardShapeSpeed);
-            _gameSpeedController.stopShapeAcceleration();
+            gameSpeedController.setStandardShapeSpeed(_standardShapeSpeed);
+            gameSpeedController.stopShapeAcceleration();
         }
         else
         {
-            _gameSpeedController.setStandardShapeSpeed(_standardShapeSpeed);
+            gameSpeedController.setStandardShapeSpeed(_standardShapeSpeed);
         }
 
         _currentActiveAccelerationState = 0;
@@ -111,8 +105,8 @@ public class AccelerateGameSpeedController : MonoBehaviour {
         if (_currentUpdateState >= maxUpdateTime)
         {
             _currentUpdateState = 0;
-            _gameSpeedController.setStandardShapeSpeed(acceleratedSpeed);
-            _gameSpeedController.stopShapeAcceleration();
+            gameSpeedController.setStandardShapeSpeed(acceleratedSpeed);
+            gameSpeedController.stopShapeAcceleration();
             _activeAcceleration = true;
         }
     }

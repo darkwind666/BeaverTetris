@@ -4,14 +4,11 @@ using System;
 
 public class PlaceShapesCondition : MonoBehaviour, IWinCondition {
 
-    public GameObject shapesSpawnerContainer;
-    GameShapesSpawner _gameShapesSpawner;
+    public GameShapesSpawner gameShapesSpawner;
 
     int winShapesCount;
 
     void Start () {
-
-        _gameShapesSpawner = shapesSpawnerContainer.GetComponent<GameShapesSpawner>();
 
         LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
         GameLevel level = levelData.getCurrentLevelData();
@@ -26,7 +23,7 @@ public class PlaceShapesCondition : MonoBehaviour, IWinCondition {
     {
         bool win = true;
 
-        if(_gameShapesSpawner.getFallenShapesCount() <= winShapesCount)
+        if(gameShapesSpawner.getFallenShapesCount() <= winShapesCount)
         {
             win = false;
         }

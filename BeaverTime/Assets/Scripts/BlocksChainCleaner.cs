@@ -6,16 +6,16 @@ public class BlocksChainCleaner : MonoBehaviour {
 
     public int rewardForBlockInChain;
     public int maxBlocksChainCount;
-    public GameObject animationTimeContainer;
-    GameBoard _gameBoard;
+    public GameBoardCleaner gameBoardCleaner;
     float _moveTimeForOneBlock;
+    GameBoard _gameBoard;
+
     List<GameObject> _blocksForDeleting;
 
     HorizontalBlocksChainCleaner _horizontalCleaner;
     VerticalBlocksChainCleaner _verticalCleaner;
 
-    public GameObject removeBlocksConditionContainer;
-    RemoveBlocksCondition _removeBlocksCondition;
+    public RemoveBlocksCondition removeBlocksCondition;
 
     GamePlayerDataController _playerData;
 
@@ -24,9 +24,8 @@ public class BlocksChainCleaner : MonoBehaviour {
         _blocksForDeleting = new List<GameObject>();
         _horizontalCleaner = new HorizontalBlocksChainCleaner(maxBlocksChainCount, _blocksForDeleting);
         _verticalCleaner = new VerticalBlocksChainCleaner(maxBlocksChainCount, _blocksForDeleting);
-        _moveTimeForOneBlock = animationTimeContainer.GetComponent<GameBoardCleaner>().moveTimeForOneBlock;
+        _moveTimeForOneBlock = gameBoardCleaner.moveTimeForOneBlock;
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _removeBlocksCondition = removeBlocksConditionContainer.GetComponent<RemoveBlocksCondition>();
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
     }
@@ -77,7 +76,7 @@ public class BlocksChainCleaner : MonoBehaviour {
         foreach (GameObject block in aBlocks)
         {
             BlockType type = block.GetComponent<BlockType>();
-            _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+            removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
             _playerData.playerScore = _playerData.playerScore + type.blockReward + rewardForBlockInChain;
             Destroy(block);
         }
