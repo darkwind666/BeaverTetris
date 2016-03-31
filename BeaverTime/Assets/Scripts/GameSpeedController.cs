@@ -3,12 +3,13 @@ using System.Collections;
 
 public class GameSpeedController : MonoBehaviour {
 
+    public bool stopGame { get; set; }
+
     public int standardUpdateTime;
     public int acceleratedUpdateTime;
     int _maxUpdateTime;
     int _currentUpdateState;
     int _currentStandardUpdateTime;
-    bool _stopGame;
     GameBoard _gameBoard;
 
     public GameShapesSpawner shapesController;
@@ -27,12 +28,12 @@ public class GameSpeedController : MonoBehaviour {
         _currentStandardUpdateTime = standardUpdateTime;
         _currentUpdateState = 0;
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _stopGame = false;
+        stopGame = false;
     }
 	
 	void Update () {
 
-        if (shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false && _stopGame == false)
+        if (shapesController.currentShapeAvailable() && _gameBoard.gameBoardLocked == false && stopGame == false)
         {
             _currentUpdateState++;
 
@@ -93,9 +94,16 @@ public class GameSpeedController : MonoBehaviour {
         _currentStandardUpdateTime = aSpeed;
     }
 
+    /*
     public void stopGame()
     {
-        _stopGame = true;
+        stopGame = true;
     }
+
+    public void continueGame()
+    {
+        stopGame = false;
+    }
+    */
 
 }

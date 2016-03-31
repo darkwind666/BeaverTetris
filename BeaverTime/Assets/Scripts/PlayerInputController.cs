@@ -20,6 +20,7 @@ public class PlayerInputController : MonoBehaviour {
     const string spell2 = "RemoveRandomBlocks";
     const string spell3 = "FirestormSpell";
     const string spell4 = "CohessionSpell";
+    const string pause = "Pause";
 
     void Start () {
 

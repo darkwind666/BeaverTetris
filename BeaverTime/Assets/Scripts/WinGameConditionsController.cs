@@ -34,7 +34,7 @@ public class WinGameConditionsController : MonoBehaviour {
             IWinCondition winCondition = _currentWinCondition.GetComponent<IWinCondition>();
             if (winCondition.checkWinCondition())
             {
-                gameSpeedController.stopGame();
+                gameSpeedController.stopGame = true;
             }
             else
             {
@@ -48,7 +48,7 @@ public class WinGameConditionsController : MonoBehaviour {
     {
         if(blockExistOnFinalLine())
         {
-            gameSpeedController.stopGame();
+            gameSpeedController.stopGame = true;
         }
     }
 
