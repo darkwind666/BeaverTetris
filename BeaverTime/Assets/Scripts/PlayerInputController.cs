@@ -16,6 +16,17 @@ public class PlayerInputController : MonoBehaviour {
     public GameObject gameSpeedContainer;
     GameSpeedController _gameSpeedController;
 
+    public string buttonCode { get; set; }
+
+    const string moveRight = "MoveShapeRight";
+    const string moveLeft = "MoveShapeLeft";
+    const string accelerate = "AccelerateShape";
+    const string rotate = "RotateShape";
+    const string spell1 = "RemoveShape";
+    const string spell2 = "RemoveRandomBlocks";
+    const string spell3 = "FirestormSpell";
+    const string spell4 = "CohessionSpell";
+
     void Start () {
 
         _shapesLocator = new ShapesLocator();
@@ -51,49 +62,71 @@ public class PlayerInputController : MonoBehaviour {
 
     void checkUserInput()
     {
-
-        GameObject currentShape = _shapesController.currentShape();
-        Vector3 currentPosition = currentShape.transform.localPosition;
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetButtonDown(moveRight) || buttonCode == moveRight)
         {
-            Vector3 direction = new Vector3(1, 0, 0);
-            Vector3 newShapePosition = roundPosition(currentPosition + direction);
-            tryChangeShapePosition(currentShape, newShapePosition);
+            moveShapeRight();
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetButtonDown(moveLeft) || buttonCode == moveLeft)
         {
-            Vector3 direction = new Vector3( -1, 0, 0);
-            Vector3 newShapePosition = roundPosition(currentPosition + direction);
-            tryChangeShapePosition(currentShape, newShapePosition);
+            moveShapeLeft();
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetButtonDown(accelerate) || buttonCode == accelerate)
         {
-            _gameSpeedController.setAcceleratedShapeSpeed();
+            acceleratedShapeSpeed();
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetButtonDown(rotate) || buttonCode == rotate)
         {
-            Vector3 point = new Vector3(1, 1, 0);
-            Vector3 rotatePoint = currentShape.transform.TransformPoint(point);
-            rotateCurrentShapeAroundPoint(rotatePoint);
+            rotateShape();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        else if (Input.GetButtonDown(spell1) || buttonCode == spell1)
         {
             _spellsController.removeCurrentShapeSpell();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetButtonDown(spell2) || buttonCode == spell2)
         {
             _spellsController.removeRandomBlocksSpell();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetButtonDown(spell3) || buttonCode == spell3)
         {
             _spellsController.firestormSpell();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetButtonDown(spell4) || buttonCode == spell4)
         {
             _spellsController.cohessionSpell();
         }
 
+        buttonCode = "";
+    }
+
+    public void moveShapeRight()
+    {
+        GameObject currentShape = _shapesController.currentShape();
+        Vector3 currentPosition = currentShape.transform.localPosition;
+        Vector3 direction = new Vector3(1, 0, 0);
+        Vector3 newShapePosition = roundPosition(currentPosition + direction);
+        tryChangeShapePosition(currentShape, newShapePosition);
+    }
+
+    public void moveShapeLeft()
+    {
+        GameObject currentShape = _shapesController.currentShape();
+        Vector3 currentPosition = currentShape.transform.localPosition;
+        Vector3 direction = new Vector3(-1, 0, 0);
+        Vector3 newShapePosition = roundPosition(currentPosition + direction);
+        tryChangeShapePosition(currentShape, newShapePosition);
+    }
+
+    public void acceleratedShapeSpeed()
+    {
+        _gameSpeedController.setAcceleratedShapeSpeed();
+    }
+
+    public void rotateShape()
+    {
+        GameObject currentShape = _shapesController.currentShape();
+        Vector3 point = new Vector3(1, 1, 0);
+        Vector3 rotatePoint = currentShape.transform.TransformPoint(point);
+        rotateCurrentShapeAroundPoint(rotatePoint);
     }
 
     void rotateCurrentShapeAroundPoint(Vector3 rotatePoint)
