@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerInputController : MonoBehaviour {
 
     public GameShapesSpawner shapesController;
-    public SpellsController spellsController;
     public GameSpeedController gameSpeedController;
     public string buttonCode { get; set; }
 
@@ -16,11 +16,6 @@ public class PlayerInputController : MonoBehaviour {
     const string moveLeft = "MoveShapeLeft";
     const string accelerate = "AccelerateShape";
     const string rotate = "RotateShape";
-    const string spell1 = "RemoveShape";
-    const string spell2 = "RemoveRandomBlocks";
-    const string spell3 = "FirestormSpell";
-    const string spell4 = "CohessionSpell";
-    const string pause = "Pause";
 
     void Start () {
 
@@ -68,22 +63,6 @@ public class PlayerInputController : MonoBehaviour {
         else if (Input.GetButtonDown(rotate) || buttonCode == rotate)
         {
             rotateShape();
-        }
-        else if (Input.GetButtonDown(spell1) || buttonCode == spell1)
-        {
-            spellsController.removeCurrentShapeSpell();
-        }
-        else if (Input.GetButtonDown(spell2) || buttonCode == spell2)
-        {
-            spellsController.removeRandomBlocksSpell();
-        }
-        else if (Input.GetButtonDown(spell3) || buttonCode == spell3)
-        {
-            spellsController.firestormSpell();
-        }
-        else if (Input.GetButtonDown(spell4) || buttonCode == spell4)
-        {
-            spellsController.cohessionSpell();
         }
 
         buttonCode = "";

@@ -316,6 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8c8ce6e0f3abd45ab5689ffff06e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shapesController: {fileID: 1119402927}
+  spellsController: {fileID: 205491053}
   playerSpells:
   - {fileID: 509610058}
   - {fileID: 525599024}
@@ -2848,7 +2850,7 @@ Prefab:
     - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 687657439}
+      objectReference: {fileID: 47108837}
     - target: {fileID: 148114, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -3536,8 +3538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapesController: {fileID: 1119402927}
-  spellsController: {fileID: 205491053}
   gameSpeedController: {fileID: 874530027}
+  pauseButton: {fileID: 2113917067}
 --- !u!1 &688114328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4441,7 +4443,7 @@ Prefab:
     - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 687657439}
+      objectReference: {fileID: 47108837}
     - target: {fileID: 11409340, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: spellRechargeController
       value: 
@@ -8797,7 +8799,7 @@ Prefab:
     - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 687657439}
+      objectReference: {fileID: 47108837}
     - target: {fileID: 148114, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -9349,7 +9351,7 @@ Prefab:
     - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 687657439}
+      objectReference: {fileID: 47108837}
     - target: {fileID: 148114, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -12713,6 +12715,7 @@ GameObject:
   - 114: {fileID: 2113917068}
   - 114: {fileID: 2113917067}
   - 95: {fileID: 2113917066}
+  - 114: {fileID: 2113917070}
   m_Layer: 5
   m_Name: PauseGameButton
   m_TagString: Untagged
@@ -12850,6 +12853,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2113917064}
+--- !u!114 &2113917070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2113917064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc8abb4ba43d684f98c26c06fdbc940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausePopUp: {fileID: 899838060}
+  closePausePopUpButton: {fileID: 1768216253}
 --- !u!1001 &2142277019
 Prefab:
   m_ObjectHideFlags: 0
