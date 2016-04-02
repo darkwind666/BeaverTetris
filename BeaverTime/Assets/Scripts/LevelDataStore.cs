@@ -9,7 +9,8 @@ public class LevelDataStore {
     public LevelDataStore(GameLevelsCollection aGameLevels)
     {
         _gameLevels = aGameLevels;
-        _selectedLevelIndex = 0;
+        GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+        _selectedLevelIndex = playerData.selectedLevelIndex;
     }
 
     public GameLevel getCurrentLevelData()

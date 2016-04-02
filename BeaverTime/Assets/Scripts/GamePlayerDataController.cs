@@ -16,6 +16,7 @@ public class GamePlayerDataController {
 
     public int completedLevelsCount { get; set; }
     public int playerScore { get; set; }
+    public int selectedLevelIndex { get; set; }
 
     string _dataPath;
 
@@ -25,6 +26,7 @@ public class GamePlayerDataController {
     {
         _dataPath = Application.persistentDataPath + playerDataFileName;
         loadPlayerData();
+        selectedLevelIndex = 0;
     }
 
     void loadPlayerData()

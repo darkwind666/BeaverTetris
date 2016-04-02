@@ -6,6 +6,7 @@ public class PauseGameController : MonoBehaviour {
 
     public GameObject pausePopUp;
     public Button closePausePopUpButton;
+    public GameObject gameResultPad;
 
     Button _pauseButton;
 
@@ -19,7 +20,7 @@ public class PauseGameController : MonoBehaviour {
 	
 	void Update ()
     {
-        if (Input.GetButtonDown(pause))
+        if (Input.GetButtonDown(pause) && gameResultPad.activeSelf == false)
         {
 
             if(pausePopUp.activeSelf)

@@ -4,7 +4,8 @@ using System.Collections;
 public class WinGameConditionsController : MonoBehaviour {
 
     public GameObject[] winConditions;
-    public GameSpeedController gameSpeedController;
+    //public GameSpeedController gameSpeedController;
+    public LevelResultsController resultController;
 
     GameObject _currentWinCondition;
     GameBoard _gameBoard;
@@ -34,7 +35,8 @@ public class WinGameConditionsController : MonoBehaviour {
             IWinCondition winCondition = _currentWinCondition.GetComponent<IWinCondition>();
             if (winCondition.checkWinCondition())
             {
-                gameSpeedController.stopGame = true;
+                resultController.winLevel();
+                //gameSpeedController.stopGame = true;
             }
             else
             {
@@ -48,7 +50,8 @@ public class WinGameConditionsController : MonoBehaviour {
     {
         if(blockExistOnFinalLine())
         {
-            gameSpeedController.stopGame = true;
+            resultController.loseLevel();
+            //gameSpeedController.stopGame = true;
         }
     }
 
