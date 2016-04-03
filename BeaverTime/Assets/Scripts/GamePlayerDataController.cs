@@ -2,8 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
-
-
+using System;
 
 public class GamePlayerDataController {
 
@@ -116,7 +115,7 @@ public class GamePlayerDataController {
 
 }
 
-[System.Serializable]
+[Serializable]
 public class PlayerData
 {
     public bool playerExist;

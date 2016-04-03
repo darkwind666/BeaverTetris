@@ -9,6 +9,9 @@ public class ServicesLocator {
     {
         GamePlayerDataController player = new GamePlayerDataController();
         services.Add(typeof(GamePlayerDataController).Name, player);
+
+        PlayersDatabaseController playersRecords = new PlayersDatabaseController();
+        services.Add(typeof(PlayersDatabaseController).Name, playersRecords);
     }
 
     public static void setServiceForKey(object aService, string aKey)
