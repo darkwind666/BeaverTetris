@@ -12,6 +12,7 @@ public class CohessionSpellController : MonoBehaviour, ISpell {
     GameObject[] gameBlocksPatterns;
 
     public GameObject gameBoardPad;
+    public AudioSource tetraminoAppearSoundEffect;
 
     void Start () {
 
@@ -70,6 +71,7 @@ public class CohessionSpellController : MonoBehaviour, ISpell {
             Vector3 blockScale = block.transform.localScale;
             block.transform.localScale = new Vector3(0, 0, 0);
             block.transform.parent = gameBoardPad.transform;
+            explosionSequence.AppendCallback(()=> tetraminoAppearSoundEffect.Play());
             explosionSequence.Append(block.transform.DOScale(blockScale, blockAppearanceDuration));
         }
 

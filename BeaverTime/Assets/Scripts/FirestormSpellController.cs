@@ -16,6 +16,8 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
     float _explosionDuration;
 
     public RemoveBlocksCondition removeBlocksCondition;
+    public AudioSource removeBlockSoundEffect;
+    public AudioSource rocketLaunchSoundEffect;
     GamePlayerDataController _playerData;
 
     void Start () {
@@ -34,6 +36,8 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
 
     public void useSpell()
     {
+        rocketLaunchSoundEffect.Play();
+
         _gameBoard.gameBoardLocked = true;
         Sequence explosionSequence = DOTween.Sequence();
         explosionSequence.AppendCallback(() => runFirestorm());
@@ -112,6 +116,8 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
 
     void destroyBlocksAroundMeteorEndPosition(Vector3 aEndMeteorPosition)
     {
+        removeBlockSoundEffect.Play();
+
         int xPosition = Mathf.RoundToInt(aEndMeteorPosition.x);
         int yPosition = Mathf.RoundToInt(aEndMeteorPosition.y);
         destroyBlockOnPositionXY(xPosition - 1, yPosition + 1);

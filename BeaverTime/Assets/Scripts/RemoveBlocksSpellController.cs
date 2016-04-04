@@ -6,6 +6,7 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
 
     public GameShapesSpawner shapesController;
     public RemoveBlocksCondition removeBlocksCondition;
+    public AudioSource removeBlockSoundEffect;
 
     GameBoard _gameBoard;
     int randomExplosionsCount;
@@ -111,6 +112,8 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
 
     void removeBlocks(List<GameObject> aBlocksForRemoving)
     {
+        removeBlockSoundEffect.Play();
+
         foreach (GameObject block in aBlocksForRemoving)
         {
             BlockLiveController blockLives = block.GetComponent<BlockLiveController>();

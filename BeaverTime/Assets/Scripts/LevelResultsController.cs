@@ -8,6 +8,10 @@ public class LevelResultsController : MonoBehaviour {
     public GameObject resultPopUp;
     public GameLevelsCollection gameLevelsCollection;
     public GameObject[] results;
+    public AudioSource winLevelSound;
+    public AudioSource loseLevelSound;
+    public AudioSource winGameSound;
+    public MainGameSoundsController soundController;
 
     GamePlayerDataController _playerData;
     GameLevel _currentLevelData;
@@ -32,6 +36,10 @@ public class LevelResultsController : MonoBehaviour {
 
     public void winLevel()
     {
+
+        soundController.backgroundSound.Stop();
+        float volume = soundController.backgroundSound.volume;
+
         gameSpeedController.stopGame = true;
         resultPopUp.SetActive(true);
 
@@ -41,6 +49,7 @@ public class LevelResultsController : MonoBehaviour {
         if (_playerData.selectedLevelIndex >= (gameLevelsCollection.gameLevels.Length - 1))
         {
             result = results[2];
+            soundController.backgroundSound = winGameSound;
         }
         else
         {
@@ -50,12 +59,15 @@ public class LevelResultsController : MonoBehaviour {
             {
                 _playerData.completedLevelsCount = _playerData.completedLevelsCount + 1;
             }
-
+            soundController.backgroundSound = winLevelSound;
         }
 
         _playerData.savePlayerData();
 
         result.SetActive(true);
+
+        soundController.backgroundSound.volume = volume;
+        soundController.backgroundSound.Play();
     }
 
     public void loseLevel()
@@ -65,6 +77,13 @@ public class LevelResultsController : MonoBehaviour {
         resultPopUp.SetActive(true);
         GameObject result = results[0];
         result.SetActive(true);
+
+        soundController.backgroundSound.Stop();
+        float volume = soundController.backgroundSound.volume;
+        soundController.backgroundSound = loseLevelSound;
+        soundController.backgroundSound.volume = volume;
+        soundController.backgroundSound.Play();
+
     }
 
     public void finishGame()

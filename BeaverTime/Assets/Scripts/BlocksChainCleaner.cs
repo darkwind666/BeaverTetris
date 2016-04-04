@@ -16,6 +16,7 @@ public class BlocksChainCleaner : MonoBehaviour {
     VerticalBlocksChainCleaner _verticalCleaner;
 
     public RemoveBlocksCondition removeBlocksCondition;
+    public AudioSource removeBlockSoundEffect;
 
     GamePlayerDataController _playerData;
 
@@ -38,6 +39,8 @@ public class BlocksChainCleaner : MonoBehaviour {
             cleanBlockChains();
             if (_blocksForDeleting.Count > 0)
             {
+                removeBlockSoundEffect.Play();
+
                 _gameBoard.gameBoardLocked = true;
                 Sequence explosionSequence = DOTween.Sequence();
 

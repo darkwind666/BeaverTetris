@@ -7,8 +7,8 @@ public class GameBoardCleaner : MonoBehaviour {
 
     public int rewardForLine;
     public float moveTimeForOneBlock;
-
-    public RemoveBlocksCondition _removeBlocksCondition;
+    public RemoveBlocksCondition removeBlocksCondition;
+    public AudioSource removeBlockSoundEffect;
 
     GameBoard _gameBoard;
     GamePlayerDataController _playerData;
@@ -91,6 +91,9 @@ public class GameBoardCleaner : MonoBehaviour {
 
     void showExplosionEffectInLineForIndex(int aLineIndex)
     {
+
+        removeBlockSoundEffect.Play();
+
         for (int xIndex = 0; xIndex < _gameBoard.getBoardWidth(); xIndex++)
         {
             GameObject block = _gameBoard.getObjectForXY(xIndex, aLineIndex);
@@ -110,7 +113,7 @@ public class GameBoardCleaner : MonoBehaviour {
             if (blockLives.blockLivesCount <= 0)
             {
                 BlockType type = block.GetComponent<BlockType>();
-                _removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
+                removeBlocksCondition.blockWasRemoovedWithType(type.blockType);
                 _playerData.playerScore = _playerData.playerScore + type.blockReward;
                 Destroy(block);
                 _gameBoard.deleteObjectForXY(xIndex, aLineIndex);

@@ -11,6 +11,7 @@ public class AddLineToBoardBottomSpell : MonoBehaviour {
     public GameShapesSpawner gameShapesSpawner;
     GameObject[] gameBlocksPatterns;
     public GameObject gameBoardPad;
+    public AudioSource tetraminoAppearSoundEffect;
 
     void Start ()
     {
@@ -101,6 +102,7 @@ public class AddLineToBoardBottomSpell : MonoBehaviour {
         block.transform.parent = gameBoardPad.transform;
 
         aSequence.AppendCallback(() => _gameBoard.setObjectForXY(block, (int)blockPosition.x, (int)blockPosition.y));
+        aSequence.AppendCallback(() => tetraminoAppearSoundEffect.Play());
         aSequence.Append(block.transform.DOScale(blockScale, blockAppearanceDuration));
     }
 

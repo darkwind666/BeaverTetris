@@ -5,6 +5,7 @@ using DG.Tweening;
 public class DamageToPlayerSpell : MonoBehaviour {
 
     public int minNonEmptyBlocksCount;
+    public AudioSource removeBlockSoundEffect;
     GameBoard _gameBoard;
 
     void Start () {
@@ -75,6 +76,8 @@ public class DamageToPlayerSpell : MonoBehaviour {
 
     void removeBlocksInLines(List<int> aLines)
     {
+        removeBlockSoundEffect.Play();
+
         _gameBoard.gameBoardLocked = true;
         Sequence explosionSequence = DOTween.Sequence();
         explosionSequence.AppendCallback(() => makeExplosionsInLines(aLines));

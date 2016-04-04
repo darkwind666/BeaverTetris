@@ -14,6 +14,7 @@ public class FallSomeShapesController : MonoBehaviour {
 
     public GameShapesSpawner shapeController;
     ShapeFinalPositionHelper _shapeFinalPositionHelper;
+    public AudioSource fallenShapeSoundEffect;
 
     bool _eventActive;
 
@@ -175,6 +176,8 @@ public class FallSomeShapesController : MonoBehaviour {
 
     void placeShapesBlocksOnGamePadOnPosition(GameObject aShape, Vector3 aPosition)
     {
+        fallenShapeSoundEffect.Play();
+
         List<GameObject> children = new List<GameObject>();
 
         foreach (Transform child in aShape.transform)

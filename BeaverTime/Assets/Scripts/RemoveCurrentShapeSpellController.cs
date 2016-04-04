@@ -13,6 +13,8 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
     Vector3 _startMeteorPosition;
 
     public float meteorSpeed;
+    public AudioSource removeBlockSoundEffect;
+    public AudioSource rocketLaunchSoundEffect;
 
     GamePlayerDataController _playerData;
 
@@ -31,6 +33,8 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 
     public void useSpell()
     {
+        rocketLaunchSoundEffect.Play();
+
         _gameBoard.gameBoardLocked = true;
         Sequence explosionSequence = DOTween.Sequence();
 
@@ -66,6 +70,7 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 
     void showBlockExplosionsInCurrentShape()
     {
+        removeBlockSoundEffect.Play();
         GameObject shape = shapesController.currentShape();
         foreach (Transform child in shape.transform)
         {
