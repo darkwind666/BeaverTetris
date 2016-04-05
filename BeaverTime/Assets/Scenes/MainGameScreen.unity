@@ -469,6 +469,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &34782527
@@ -1644,7 +1655,7 @@ RectTransform:
   m_Children:
   - {fileID: 855404737}
   m_Father: {fileID: 964006970}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 16.00003, y: -314}
@@ -1703,6 +1714,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1969532240}
         m_MethodName: goToSelectLevelScreenFromPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1889,7 +1911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardForLine: 5
-  moveTimeForOneBlock: 0.31
+  moveTimeForOneBlock: 0.16
   removeBlocksCondition: {fileID: 47340686}
   removeBlockSoundEffect: {fileID: 1309608181}
 --- !u!1 &202656673
@@ -2145,6 +2167,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: RotateShape
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2734,6 +2767,17 @@ MonoBehaviour:
           m_StringArgument: MoveShapeLeft
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &352205355
@@ -3004,9 +3048,9 @@ RectTransform:
   m_Children:
   - {fileID: 501910578}
   - {fileID: 1658619375}
-  - {fileID: 1311843881}
   - {fileID: 1648247899}
   - {fileID: 388203748}
+  - {fileID: 1311843881}
   m_Father: {fileID: 10990537}
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3044,7 +3088,7 @@ RectTransform:
   m_Children:
   - {fileID: 120523977}
   m_Father: {fileID: 384112628}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -4, y: -357}
@@ -3092,6 +3136,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1969532240}
         m_MethodName: goToSelectLevelScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3803,6 +3858,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 47108836}
     m_Modifications:
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 22481748, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3919,6 +3978,26 @@ Prefab:
     - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: RemoveRandomBlocks
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1137680681}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 524503925542207498b76f5c4131fef3, type: 2}
@@ -6066,6 +6145,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 47108836}
     m_Modifications:
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 22481748, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6165,6 +6248,26 @@ Prefab:
     - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: RemoveShape
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1137680681}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 524503925542207498b76f5c4131fef3, type: 2}
@@ -7006,12 +7109,12 @@ RectTransform:
   m_LocalScale: {x: 0.84559625, y: 0.84559625, z: 0.84559625}
   m_Children:
   - {fileID: 810626771}
-  - {fileID: 1768216252}
   - {fileID: 1016328213}
   - {fileID: 1902492955}
   - {fileID: 1290893145}
   - {fileID: 1786137451}
   - {fileID: 147136465}
+  - {fileID: 1768216252}
   m_Father: {fileID: 899838064}
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7409,7 +7512,7 @@ RectTransform:
   m_Children:
   - {fileID: 1671738746}
   m_Father: {fileID: 964006970}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 12.999985, y: 80.999954}
@@ -8953,8 +9056,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloksIndicators:
-  - {fileID: 993075609}
   - {fileID: 709658173}
+  - {fileID: 993075609}
   - {fileID: 1555454125}
   removeBlocksCondition: {fileID: 47340686}
 --- !u!1 &1273360297
@@ -9179,6 +9282,17 @@ MonoBehaviour:
           m_StringArgument: MoveShapeRight
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1284141528
@@ -9242,7 +9356,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 964006970}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -249, y: 80.999954}
@@ -9563,7 +9677,7 @@ RectTransform:
   m_Children:
   - {fileID: 445973504}
   m_Father: {fileID: 384112628}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -4, y: -293}
@@ -9611,6 +9725,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1969532240}
         m_MethodName: nextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11069,6 +11194,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 47108836}
     m_Modifications:
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 22481748, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11185,6 +11314,26 @@ Prefab:
     - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: FirestormSpell
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1137680681}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 524503925542207498b76f5c4131fef3, type: 2}
@@ -11675,7 +11824,7 @@ RectTransform:
   m_Children:
   - {fileID: 1719002195}
   m_Father: {fileID: 384112628}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -9, y: -210}
@@ -11801,6 +11950,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1651461248
@@ -11843,6 +12003,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 47108836}
     m_Modifications:
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 22481748, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11959,6 +12123,26 @@ Prefab:
     - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: CohessionSpell
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1137680681}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430326, guid: 524503925542207498b76f5c4131fef3, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 524503925542207498b76f5c4131fef3, type: 2}
@@ -12866,6 +13050,17 @@ MonoBehaviour:
           m_StringArgument: AccelerateShape
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1747686997
@@ -13055,6 +13250,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1753583600
@@ -13187,7 +13393,7 @@ RectTransform:
   m_Children:
   - {fileID: 135255619}
   m_Father: {fileID: 964006970}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 12, y: -235}
@@ -13247,6 +13453,17 @@ MonoBehaviour:
       - m_Target: {fileID: 899838060}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13507,7 +13724,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 964006970}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -260, y: -54.00003}
@@ -14012,7 +14229,7 @@ RectTransform:
   m_Children:
   - {fileID: 1396543574}
   m_Father: {fileID: 964006970}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 12.000057, y: -63.00003}
@@ -16184,6 +16401,17 @@ MonoBehaviour:
       - m_Target: {fileID: 899838060}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1137680681}
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
