@@ -23,35 +23,15 @@ public class SelectLevelUIController : MonoBehaviour {
     public Text playerName;
     public Text playerScore;
 
+    GamePlayerDataController _playerData;
 
-    public void backButtonPressed()
-    {
-        fadingController.startFade("MainMenuScreen", false);
-    }
-
-    public void selectLevelButtonPressedWithIndex(int aIndex)
-    {
-        fadingController.startFade("MainGameScreen", false);
-    }
-
-    public void setNewPlayer()
-    {
-        string newPlayerName = newPlayerNameSource.text;
-
-        GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-        playerData.createNewPlayerWithName(newPlayerName);
-
-        setupPlayerStatusPad();
-        newPlayerPopUp.SetActive(false);
-        SelectLevelAnimationController animationController = animationContainer.GetComponent<SelectLevelAnimationController>();
-        animationController.playStartAnimation();
-    }
 
 	void Start () {
         GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
         setUpBeaverPositionOnRaftWithPlayerData(playerData);
         setupSoundWithPlayerData(playerData);
         setupCreatePlayerPopUpWithPlayerData(playerData);
+        _playerData = playerData;
         setupPlayerStatusPad();
     }
 
@@ -92,5 +72,29 @@ public class SelectLevelUIController : MonoBehaviour {
     void Update () {
 	
 	}
+
+    public void setNewPlayer()
+    {
+        string newPlayerName = newPlayerNameSource.text;
+
+        GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+        playerData.createNewPlayerWithName(newPlayerName);
+
+        setupPlayerStatusPad();
+        newPlayerPopUp.SetActive(false);
+        SelectLevelAnimationController animationController = animationContainer.GetComponent<SelectLevelAnimationController>();
+        animationController.playStartAnimation();
+    }
+
+    public void backButtonPressed()
+    {
+        fadingController.startFade("MainMenuScreen", false);
+    }
+
+    public void selectLevelButtonPressedWithIndex(int aIndex)
+    {
+        _playerData.selectedLevelIndex = aIndex;
+        fadingController.startFade("MainGameScreen", false);
+    }
 
 }

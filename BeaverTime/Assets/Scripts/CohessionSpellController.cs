@@ -26,6 +26,11 @@ public class CohessionSpellController : MonoBehaviour, ISpell {
 	
 	}
 
+    public bool availableSpell()
+    {
+        return true;
+    }
+
     public void useSpell()
     {
         List<Vector3> newBlockPositions = getNewBlocksPositions();

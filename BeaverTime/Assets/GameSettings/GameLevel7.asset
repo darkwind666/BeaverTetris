@@ -24,8 +24,7 @@ MonoBehaviour:
     eventDuration: 110
     detailsCount: 0
     fallingSpeed: 10
-  availableBoss: 0
-  bossType: 0
+  bossType: 1
   winConditionType: 3
   needToPlaceDetailsCount: 0
   remainTimes: 0

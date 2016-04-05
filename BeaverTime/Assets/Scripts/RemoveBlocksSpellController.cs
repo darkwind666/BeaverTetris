@@ -24,6 +24,12 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
 	
 	}
 
+    public bool availableSpell()
+    {
+        List<GameObject> blocksInGameBoard = getAvailableBlocksInGameBoard();
+        return (blocksInGameBoard.Count > randomExplosionsCount);
+    }
+
     public void useSpell()
     {
         List<GameObject> blocksInGameBoard = getAvailableBlocksInGameBoard();

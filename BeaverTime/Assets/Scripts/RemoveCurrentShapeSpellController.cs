@@ -31,6 +31,11 @@ public class RemoveCurrentShapeSpellController : MonoBehaviour, ISpell
 	
 	}
 
+    public bool availableSpell()
+    {
+        return true;
+    }
+
     public void useSpell()
     {
         rocketLaunchSoundEffect.Play();

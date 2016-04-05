@@ -88,6 +88,10 @@ public class GamePlayerDataController {
         playerName = "";
         completedLevelsCount = 0;
         playerScore = 0;
+        _playerSpells = new List<LevelSpell>();
+        gameMusicVolume = 0.5f;
+        gameSoundEffectsVolume = 0.5f;
+        selectedLevelIndex = 0;
         savePlayerData();
     }
 

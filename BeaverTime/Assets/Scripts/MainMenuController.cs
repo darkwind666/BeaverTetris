@@ -60,7 +60,7 @@ public class MainMenuController : MonoBehaviour {
 
     public void recordsButtonPressed()
     {
-
+        fadingController.startFade("GameRecordsScene", false);
     }
 
     public void settingsButtonPressed()

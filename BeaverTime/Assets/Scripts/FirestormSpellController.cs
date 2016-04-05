@@ -34,6 +34,11 @@ public class FirestormSpellController : MonoBehaviour, ISpell {
 	
 	}
 
+    public bool availableSpell()
+    {
+        return true;
+    }
+
     public void useSpell()
     {
         rocketLaunchSoundEffect.Play();

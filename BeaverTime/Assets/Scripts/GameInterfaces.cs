@@ -10,5 +10,6 @@ public interface ISpell
 {
 
     void useSpell();
+    bool availableSpell();
 
 }

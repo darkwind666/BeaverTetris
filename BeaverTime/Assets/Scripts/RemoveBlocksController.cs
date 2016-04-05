@@ -18,12 +18,15 @@ public class RemoveBlocksController : MonoBehaviour {
 	
 	void Update () {
 
-        for (int indicatorIndex = 0; indicatorIndex < bloksIndicators.Length; indicatorIndex++)
+        if (removeBlocksCondition.removeBlocksToWin != null)
         {
-            Text indicator = bloksIndicators[indicatorIndex].GetComponent<Text>();
-            BlocksForRemoving block = _levelData.blocks[indicatorIndex];
-            int indicatorValue = removeBlocksCondition.removeBlocksToWin[block.blockType];
-            indicator.text = indicatorValue.ToString();
+            for (int indicatorIndex = 0; indicatorIndex < bloksIndicators.Length; indicatorIndex++)
+            {
+                Text indicator = bloksIndicators[indicatorIndex].GetComponent<Text>();
+                BlocksForRemoving block = _levelData.blocks[indicatorIndex];
+                int indicatorValue = removeBlocksCondition.removeBlocksToWin[block.blockType];
+                indicator.text = indicatorValue.ToString();
+            }
         }
 
 	}

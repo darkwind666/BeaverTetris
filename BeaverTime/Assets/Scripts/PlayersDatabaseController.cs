@@ -44,6 +44,16 @@ public class PlayersDatabaseController {
 
     }
 
+    public int getRecordsCount()
+    {
+        return _records.Count;
+    }
+
+    public PlayerRecordData getRecordForIndex(int aIndex)
+    {
+        return _records[aIndex];
+    }
+
     public void saveNewPlayerRecord(PlayerRecordData aPlayerRecord)
     {
         _records.Add(aPlayerRecord);

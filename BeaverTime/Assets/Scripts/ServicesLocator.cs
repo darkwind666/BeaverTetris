@@ -16,7 +16,7 @@ public class ServicesLocator {
 
     public static void setServiceForKey(object aService, string aKey)
     {
-        services.Add(aKey, aService);
+        services[aKey] = aService;
     }
 
     public static object getServiceForKey(string aKey)
