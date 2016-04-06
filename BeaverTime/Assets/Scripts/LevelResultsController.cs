@@ -49,6 +49,11 @@ public class LevelResultsController : MonoBehaviour {
         if (_playerData.selectedLevelIndex >= (gameLevelsCollection.gameLevels.Length - 1))
         {
             result = results[2];
+
+            PlayerRecordData newRecord = new PlayerRecordData(_playerData.playerName, _playerData.playerScore);
+            _playersRecords.saveNewPlayerRecord(newRecord);
+            _playerData.cleanPlayer();
+
             soundController.backgroundSound = winGameSound;
         }
         else
@@ -59,10 +64,11 @@ public class LevelResultsController : MonoBehaviour {
             {
                 _playerData.completedLevelsCount = _playerData.completedLevelsCount + 1;
             }
+
+            _playerData.savePlayerData();
+
             soundController.backgroundSound = winLevelSound;
         }
-
-        _playerData.savePlayerData();
 
         result.SetActive(true);
 
@@ -86,28 +92,10 @@ public class LevelResultsController : MonoBehaviour {
 
     }
 
-    public void finishGame()
-    {
-        PlayerRecordData newRecord = new PlayerRecordData(_playerData.playerName, _playerData.playerScore);
-        _playersRecords.saveNewPlayerRecord(newRecord);
-        _playerData.cleanPlayer();
-        fadingController.startFade("SelectLevelScreen", false);
-    }
-
     public void nextLevel()
     {
         _playerData.selectedLevelIndex = _playerData.selectedLevelIndex + 1;
         fadingController.startFade("MainGameScreen", false);
-    }
-
-    public void replayLevel()
-    {
-        fadingController.startFade("MainGameScreen", false);
-    }
-
-    public void goToSelectLevelScreen()
-    {
-        fadingController.startFade("SelectLevelScreen", false);
     }
 
     public void goToSelectLevelScreenFromPause()

@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/GameRecordsScene.unity
   - enabled: 1
     path: Assets/Scenes/GameDevelopersScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/FinalGameScreen.unity

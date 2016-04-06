@@ -458,15 +458,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969532240}
-        m_MethodName: goToSelectLevelScreen
-        m_Mode: 1
+      - m_Target: {fileID: 787125129}
+        m_MethodName: goToScreen
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SelectLevelScreen
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1137680681}
@@ -3134,15 +3134,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969532240}
-        m_MethodName: goToSelectLevelScreen
-        m_Mode: 1
+      - m_Target: {fileID: 787125129}
+        m_MethodName: goToScreen
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SelectLevelScreen
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1137680681}
@@ -11939,15 +11939,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969532240}
-        m_MethodName: finishGame
-        m_Mode: 1
+      - m_Target: {fileID: 787125129}
+        m_MethodName: goToScreen
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: FinalGameScreen
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1137680681}
@@ -13239,15 +13239,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969532240}
-        m_MethodName: replayLevel
-        m_Mode: 1
+      - m_Target: {fileID: 787125129}
+        m_MethodName: goToScreen
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainGameScreen
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1137680681}
@@ -14913,7 +14913,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6490192975eb28c4797f8fb427124799, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3603de17a3072df4fad2a357219443e5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
