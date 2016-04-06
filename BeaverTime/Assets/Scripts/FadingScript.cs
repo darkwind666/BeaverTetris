@@ -25,6 +25,11 @@ public class FadingScript : MonoBehaviour {
         startFade(null, true);
 	}
 
+    public void goToScreen(string aScreenName)
+    {
+        startFade(aScreenName, false);
+    }
+
     public void startFade(string aSceneName, bool aMode = false)
     {
         if(_doFade)

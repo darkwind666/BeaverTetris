@@ -13,3 +13,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectLevelScreen.unity
   - enabled: 1
     path: Assets/Scenes/MainGameScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/GameRecordsScene.unity
+  - enabled: 1
+    path: Assets/Scenes/GameDevelopersScreen.unity
