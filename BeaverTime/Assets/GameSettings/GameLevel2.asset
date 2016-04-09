@@ -24,7 +24,6 @@ MonoBehaviour:
     eventDuration: 250
     detailsCount: 0
     fallingSpeed: 20
-  availableBoss: 0
   bossType: 0
   winConditionType: 1
   needToPlaceDetailsCount: 0
@@ -38,14 +37,4 @@ MonoBehaviour:
   - spellType: 0
     spellCount: 0
     spellRechargeInterval: 60
-  availableRocketSpell: 1
-  rocketSpellRechargeInterval: 60
-  availableRandomExplosionsSpell: 0
-  randomExplosionsCount: 0
-  randomExplosionsRechargeInterval: 0
-  availableFirestormSpell: 0
-  firestormCount: 0
-  firestormRechargeInterval: 0
-  availableCohessionSpell: 0
-  cohessionCount: 0
-  cohessionRechargeInterval: 0
+  tutorialIndex: 2

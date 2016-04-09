@@ -13,12 +13,15 @@ public class WinBossCondition : MonoBehaviour, IWinCondition {
 
     void Start () {
 
+    }
+
+    public void loadGameBoss()
+    {
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
         int bossType = getBossType();
         saveBossesWithType(bossType);
         placeAllBlocksFromPad(bossEnvironmentContainer);
         placeAllBlocksFromPad(bosses[bossType]);
-
     }
 
     void saveBossesWithType(int aBossType)

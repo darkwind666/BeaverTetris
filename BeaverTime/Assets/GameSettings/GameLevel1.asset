@@ -28,3 +28,4 @@ MonoBehaviour:
   - spellType: 0
     spellCount: 0
     spellRechargeInterval: 60
+  tutorialIndex: 1

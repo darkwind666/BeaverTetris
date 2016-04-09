@@ -16,6 +16,7 @@ public class GamePlayerDataController {
     public int completedLevelsCount { get; set; }
     public int playerScore { get; set; }
     public int selectedLevelIndex { get; set; }
+    public int completedTutorialsCount { get; set; }
 
     string _dataPath;
 
@@ -44,6 +45,7 @@ public class GamePlayerDataController {
             completedLevelsCount = data.completedLevelsCount;
             playerScore = data.playerScore;
             _playerSpells = data.playerSpells;
+            completedTutorialsCount = data.completedTutorialsCount;
 
             if (_playerSpells == null)
             {
@@ -68,6 +70,7 @@ public class GamePlayerDataController {
         savingData.completedLevelsCount = completedLevelsCount;
         savingData.playerScore = playerScore;
         savingData.playerSpells = _playerSpells;
+        savingData.completedTutorialsCount = completedTutorialsCount;
 
         formatter.Serialize(file, savingData);
         file.Close();
@@ -79,6 +82,10 @@ public class GamePlayerDataController {
         playerName = aPlayerName;
         completedLevelsCount = 0;
         playerScore = 0;
+        completedTutorialsCount = 0;
+        _playerSpells = new List<LevelSpell>();
+        selectedLevelIndex = 0;
+        completedTutorialsCount = 0;
         savePlayerData();
     }
 
@@ -92,6 +99,7 @@ public class GamePlayerDataController {
         gameMusicVolume = 0.5f;
         gameSoundEffectsVolume = 0.5f;
         selectedLevelIndex = 0;
+        completedTutorialsCount = 0;
         savePlayerData();
     }
 
@@ -129,5 +137,5 @@ public class PlayerData
     public int completedLevelsCount;
     public int playerScore;
     public List<LevelSpell> playerSpells;
-
+    public int completedTutorialsCount;
 }

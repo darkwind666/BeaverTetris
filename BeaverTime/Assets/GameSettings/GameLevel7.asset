@@ -39,3 +39,4 @@ MonoBehaviour:
   - spellType: 2
     spellCount: 4
     spellRechargeInterval: 60
+  tutorialIndex: 5

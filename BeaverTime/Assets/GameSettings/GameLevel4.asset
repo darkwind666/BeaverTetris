@@ -24,7 +24,6 @@ MonoBehaviour:
     eventDuration: 100
     detailsCount: 0
     fallingSpeed: 15
-  availableBoss: 1
   bossType: 0
   winConditionType: 3
   needToPlaceDetailsCount: 0
@@ -34,3 +33,4 @@ MonoBehaviour:
   - spellType: 1
     spellCount: 10
     spellRechargeInterval: 60
+  tutorialIndex: 4

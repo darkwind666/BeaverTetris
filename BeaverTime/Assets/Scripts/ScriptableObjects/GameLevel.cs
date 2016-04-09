@@ -44,4 +44,6 @@ public class GameLevel : ScriptableObject {
     public BlocksForRemoving[] blocks;
     public LevelSpell[] levelSpells;
 
+    public int tutorialIndex;
+
 }
