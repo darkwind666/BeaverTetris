@@ -232,7 +232,6 @@ $RECYCLE.BIN/
 *.unsuccessfulbuild
 *.idb
 *.lib
-*.dll
 *.exe
 *.exp
 *.res
