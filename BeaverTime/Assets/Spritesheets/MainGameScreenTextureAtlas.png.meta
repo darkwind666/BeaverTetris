@@ -1,0 +1,729 @@
+fileFormatVersion: 2
+guid: 797021f2831b1ec4e9822742c4517afd
+timeCreated: 1456161840
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MainGameScreenTextureAtlas_0
+    21300002: MainGameScreenTextureAtlas_1
+    21300004: MainGameScreenTextureAtlas_2
+    21300006: MainGameScreenTextureAtlas_3
+    21300008: MainGameScreenTextureAtlas_4
+    21300010: MainGameScreenTextureAtlas_5
+    21300012: MainGameScreenTextureAtlas_6
+    21300014: MainGameScreenTextureAtlas_7
+    21300016: MainGameScreenTextureAtlas_8
+    21300018: MainGameScreenTextureAtlas_9
+    21300020: MainGameScreenTextureAtlas_10
+    21300022: MainGameScreenTextureAtlas_11
+    21300024: MainGameScreenTextureAtlas_12
+    21300026: MainGameScreenTextureAtlas_13
+    21300028: MainGameScreenTextureAtlas_14
+    21300030: MainGameScreenTextureAtlas_15
+    21300032: MainGameScreenTextureAtlas_16
+    21300034: MainGameScreenTextureAtlas_17
+    21300036: MainGameScreenTextureAtlas_18
+    21300038: MainGameScreenTextureAtlas_19
+    21300040: MainGameScreenTextureAtlas_20
+    21300042: MainGameScreenTextureAtlas_21
+    21300044: MainGameScreenTextureAtlas_22
+    21300046: MainGameScreenTextureAtlas_23
+    21300048: MainGameScreenTextureAtlas_24
+    21300050: MainGameScreenTextureAtlas_25
+    21300052: MainGameScreenTextureAtlas_26
+    21300054: MainGameScreenTextureAtlas_27
+    21300056: MainGameScreenTextureAtlas_28
+    21300058: MainGameScreenTextureAtlas_29
+    21300060: MainGameScreenTextureAtlas_30
+    21300062: MainGameScreenTextureAtlas_31
+    21300064: MainGameScreenTextureAtlas_32
+    21300066: MainGameScreenTextureAtlas_33
+    21300068: MainGameScreenTextureAtlas_34
+    21300070: MainGameScreenTextureAtlas_35
+    21300072: MainGameScreenTextureAtlas_36
+    21300074: MainGameScreenTextureAtlas_37
+    21300076: MainGameScreenTextureAtlas_38
+    21300078: MainGameScreenTextureAtlas_39
+    21300080: MainGameScreenTextureAtlas_40
+    21300082: MainGameScreenTextureAtlas_41
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MainGameScreenTextureAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 2024
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 2023
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2020
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 2021
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 2021
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 2020
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 2020
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 2020
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 2020
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 2020
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 2018
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: MainGameScreenTextureAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 2007
+        width: 61
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 16.5}
+        - {x: -30.5, y: 10.5}
+        - {x: -30.5, y: -9.5}
+        - {x: -23.5, y: -16.5}
+        - {x: 10.5, y: -16.5}
+        - {x: 30.5, y: -12.5}
+        - {x: 30.5, y: 16.5}
+    - name: MainGameScreenTextureAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 2006
+        width: 64
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 17}
+        - {x: -32, y: -10}
+        - {x: -25, y: -17}
+        - {x: 29, y: -17}
+        - {x: 32, y: -13}
+        - {x: 32, y: 17}
+    - name: MainGameScreenTextureAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 2003
+        width: 80
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37, y: 13.5}
+        - {x: 19, y: 18.5}
+        - {x: -30, y: 18.5}
+        - {x: -39, y: 17.5}
+        - {x: -40, y: 15.5}
+        - {x: -40, y: -16.5}
+        - {x: -39, y: -18.5}
+        - {x: 23, y: -18.5}
+        - {x: 40, y: -15.5}
+        - {x: 40, y: 12.5}
+        - {x: 39, y: 13.5}
+    - name: MainGameScreenTextureAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 2000
+        width: 56
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 20}
+        - {x: -28, y: 20}
+        - {x: -28, y: -19}
+        - {x: -6, y: -19}
+        - {x: -2, y: -14}
+        - {x: 27, y: -2}
+        - {x: 28, y: -1}
+    - name: MainGameScreenTextureAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 2001
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 19.5}
+        - {x: -18.5, y: -19.5}
+        - {x: 18.5, y: -19.5}
+        - {x: 18.5, y: 19.5}
+    - name: MainGameScreenTextureAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 2001
+        width: 62
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 19.5}
+        - {x: -31, y: 16.5}
+        - {x: -31, y: -18.5}
+        - {x: -29, y: -19.5}
+        - {x: 16, y: -19.5}
+        - {x: 31, y: -8.5}
+        - {x: 31, y: 3.5}
+        - {x: 17, y: 19.5}
+    - name: MainGameScreenTextureAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 2000
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 20}
+        - {x: -19.5, y: -20}
+        - {x: 19.5, y: -20}
+        - {x: 19.5, y: 20}
+    - name: MainGameScreenTextureAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 2000
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 20}
+        - {x: -19.5, y: -20}
+        - {x: 19.5, y: -20}
+        - {x: 19.5, y: 20}
+    - name: MainGameScreenTextureAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 2000
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 20}
+        - {x: -19.5, y: -20}
+        - {x: 19.5, y: -20}
+        - {x: 19.5, y: 20}
+    - name: MainGameScreenTextureAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 2000
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 20}
+        - {x: -20, y: -20}
+        - {x: 20, y: -20}
+        - {x: 20, y: 20}
+    - name: MainGameScreenTextureAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 2000
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 20}
+        - {x: -19.5, y: -20}
+        - {x: 19.5, y: -20}
+        - {x: 19.5, y: 20}
+    - name: MainGameScreenTextureAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1999
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 20.5}
+        - {x: -20.5, y: -20.5}
+        - {x: 20.5, y: -20.5}
+        - {x: 20.5, y: 20.5}
+    - name: MainGameScreenTextureAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 1999
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 20.5}
+        - {x: -20, y: -20.5}
+        - {x: 20, y: -20.5}
+        - {x: 20, y: 20.5}
+    - name: MainGameScreenTextureAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 1996
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: 22}
+        - {x: -22.5, y: -22}
+        - {x: 22.5, y: -22}
+        - {x: 22.5, y: 22}
+    - name: MainGameScreenTextureAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 1995
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 22.5}
+        - {x: -23.5, y: -22.5}
+        - {x: 23.5, y: -22.5}
+        - {x: 23.5, y: 22.5}
+    - name: MainGameScreenTextureAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 1994
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 23}
+        - {x: -23, y: -23}
+        - {x: 23, y: -23}
+        - {x: 23, y: 23}
+    - name: MainGameScreenTextureAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1993
+        width: 46
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 23.5}
+        - {x: -23, y: -23.5}
+        - {x: 23, y: -23.5}
+        - {x: 23, y: 23.5}
+    - name: MainGameScreenTextureAtlas_28
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 1992
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 24}
+        - {x: -23.5, y: -23}
+        - {x: -22.5, y: -24}
+        - {x: 23.5, y: -24}
+        - {x: 23.5, y: 24}
+    - name: MainGameScreenTextureAtlas_29
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 1992
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 24}
+        - {x: -25, y: -7}
+        - {x: -17, y: -24}
+        - {x: 24, y: -24}
+        - {x: 26, y: -17}
+        - {x: 26, y: 24}
+    - name: MainGameScreenTextureAtlas_30
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1988
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 26}
+        - {x: -26, y: 25}
+        - {x: -26, y: -23}
+        - {x: -22, y: -26}
+        - {x: 18, y: -26}
+        - {x: 26, y: -24}
+        - {x: 26, y: 20}
+        - {x: 22, y: 26}
+    - name: MainGameScreenTextureAtlas_31
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 1988
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 26}
+        - {x: -26.5, y: 20}
+        - {x: -26.5, y: -26}
+        - {x: 18.5, y: -26}
+        - {x: 26.5, y: -23}
+        - {x: 26.5, y: 26}
+    - name: MainGameScreenTextureAtlas_32
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1988
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 26}
+        - {x: -26.5, y: 23}
+        - {x: -26.5, y: -24}
+        - {x: -24.5, y: -26}
+        - {x: 19.5, y: -26}
+        - {x: 26.5, y: -24}
+        - {x: 26.5, y: 19}
+        - {x: 22.5, y: 26}
+    - name: MainGameScreenTextureAtlas_33
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 1988
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 26}
+        - {x: -26.5, y: 23}
+        - {x: -26.5, y: -24}
+        - {x: -24.5, y: -26}
+        - {x: 19.5, y: -26}
+        - {x: 26.5, y: -24}
+        - {x: 26.5, y: 19}
+        - {x: 22.5, y: 26}
+    - name: MainGameScreenTextureAtlas_34
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 1988
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 26}
+        - {x: -26, y: 16}
+        - {x: -26, y: -15}
+        - {x: -16, y: -26}
+        - {x: 18, y: -26}
+        - {x: 26, y: -19}
+        - {x: 26, y: 17}
+        - {x: 23, y: 26}
+    - name: MainGameScreenTextureAtlas_35
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 1987
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 26.5}
+        - {x: -26.5, y: 20.5}
+        - {x: -26.5, y: -24.5}
+        - {x: -19.5, y: -26.5}
+        - {x: 24.5, y: -26.5}
+        - {x: 26.5, y: -24.5}
+        - {x: 26.5, y: 16.5}
+        - {x: 22.5, y: 26.5}
+    - name: MainGameScreenTextureAtlas_36
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1978
+        width: 108
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: 31}
+        - {x: -54, y: -31}
+        - {x: 54, y: -31}
+        - {x: 54, y: 31}
+    - name: MainGameScreenTextureAtlas_37
+      rect:
+        serializedVersion: 2
+        x: 1914
+        y: 1944
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53.5, y: 48}
+        - {x: -53.5, y: -48}
+        - {x: 53.5, y: -48}
+        - {x: 53.5, y: 48}
+    - name: MainGameScreenTextureAtlas_38
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1170
+        width: 384
+        height: 766
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -192, y: 383}
+        - {x: -192, y: -383}
+        - {x: 192, y: -383}
+        - {x: 192, y: 383}
+    - name: MainGameScreenTextureAtlas_39
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1169
+        width: 106
+        height: 767
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53, y: 383.5}
+        - {x: -53, y: -383.5}
+        - {x: 53, y: -383.5}
+        - {x: 53, y: 383.5}
+    - name: MainGameScreenTextureAtlas_40
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 1084
+        width: 561
+        height: 852
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -280.5, y: 426}
+        - {x: -280.5, y: -426}
+        - {x: 280.5, y: -426}
+        - {x: 280.5, y: 426}
+    - name: MainGameScreenTextureAtlas_41
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 175
+        width: 1601
+        height: 901
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -800.5, y: 450.5}
+        - {x: -800.5, y: -450.5}
+        - {x: 800.5, y: -450.5}
+        - {x: 800.5, y: 450.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 448608a4b7c077f4798cded0924f0a76
+timeCreated: 1452626256
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FinalScreenTextureAtlas_0
+    21300002: FinalScreenTextureAtlas_1
+    21300004: FinalScreenTextureAtlas_2
+    21300006: FinalScreenTextureAtlas_3
+    21300008: FinalScreenTextureAtlas_4
+    21300010: FinalScreenTextureAtlas_5
+    21300012: FinalScreenTextureAtlas_6
+    21300014: FinalScreenTextureAtlas_7
+    21300016: FinalScreenTextureAtlas_8
+    21300018: FinalScreenTextureAtlas_9
+    21300020: FinalScreenTextureAtlas_10
+    21300022: FinalScreenTextureAtlas_11
+    21300024: FinalScreenTextureAtlas_12
+    21300026: FinalScreenTextureAtlas_13
+    21300028: FinalScreenTextureAtlas_14
+    21300030: FinalScreenTextureAtlas_16
+    21300032: FinalScreenTextureAtlas_17
+    21300034: FinalScreenTextureAtlas_18
+    21300036: FinalScreenTextureAtlas_19
+    21300038: FinalScreenTextureAtlas_20
+    21300040: FinalScreenTextureAtlas_22
+    21300042: FinalScreenTextureAtlas_23
+    21300044: FinalScreenTextureAtlas_24
+    21300046: FinalScreenTextureAtlas_26
+    21300048: FinalScreenTextureAtlas_27
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FinalScreenTextureAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1763
+        width: 384
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 147, y: -105.5}
+        - {x: 172, y: -82.5}
+        - {x: 186, y: -53.5}
+        - {x: 187, y: -40.5}
+        - {x: 186, y: 4.5}
+        - {x: 192, y: 9.5}
+        - {x: 192, y: 66.5}
+        - {x: 187, y: 74.5}
+        - {x: 166, y: 99.5}
+        - {x: 155, y: 103.5}
+        - {x: 125, y: 104.5}
+        - {x: 103, y: 118.5}
+        - {x: 67, y: 134.5}
+        - {x: 32, y: 140.5}
+        - {x: -32, y: 140.5}
+        - {x: -69, y: 134.5}
+        - {x: -110, y: 114.5}
+        - {x: -156, y: 106.5}
+        - {x: -179, y: 88.5}
+        - {x: -189, y: 74.5}
+        - {x: -192, y: 60.5}
+        - {x: -192, y: 32.5}
+        - {x: -188, y: 26.5}
+        - {x: -188, y: -1.5}
+        - {x: -191, y: -43.5}
+        - {x: -187, y: -57.5}
+        - {x: -174, y: -84.5}
+        - {x: -151, y: -106.5}
+        - {x: -118, y: -124.5}
+        - {x: -82, y: -135.5}
+        - {x: -59, y: -140.5}
+        - {x: 50, y: -140.5}
+        - {x: 57, y: -139.5}
+        - {x: 97, y: -129.5}
+        - {x: 118, y: -121.5}
+    - name: FinalScreenTextureAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 1647
+        width: 458
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 216, y: -122.5}
+        - {x: 150, y: -109.5}
+        - {x: 99, y: -117.5}
+        - {x: 79, y: -104.5}
+        - {x: 87, y: -50.5}
+        - {x: 91, y: 32.5}
+        - {x: 89, y: 58.5}
+        - {x: 62, y: 121.5}
+        - {x: 53, y: 147.5}
+        - {x: 68, y: 175.5}
+        - {x: 48, y: 186.5}
+        - {x: 23, y: 182.5}
+        - {x: -21, y: 185.5}
+        - {x: -96, y: 176.5}
+        - {x: -96, y: 188.5}
+        - {x: -103, y: 198.5}
+        - {x: -118, y: 198.5}
+        - {x: -133, y: 191.5}
+        - {x: -169, y: 121.5}
+        - {x: -170, y: 86.5}
+        - {x: -212, y: 54.5}
+        - {x: -167, y: -48.5}
+        - {x: -192, y: -53.5}
+        - {x: -223, y: -61.5}
+        - {x: -229, y: -73.5}
+        - {x: -229, y: -122.5}
+        - {x: -175, y: -146.5}
+        - {x: -113, y: -154.5}
+        - {x: -72, y: -159.5}
+        - {x: -36, y: -198.5}
+        - {x: -31, y: -198.5}
+        - {x: 2, y: -196.5}
+        - {x: 32, y: -179.5}
+        - {x: 67, y: -190.5}
+        - {x: 105, y: -198.5}
+        - {x: 182, y: -198.5}
+        - {x: 221, y: -185.5}
+        - {x: 229, y: -166.5}
+        - {x: 229, y: -132.5}
+      - - {x: 87, y: -72.5}
+        - {x: 86, y: -79.5}
+        - {x: 88, y: -81.5}
+        - {x: 90, y: -81.5}
+        - {x: 92, y: -80.5}
+        - {x: 92, y: -72.5}
+        - {x: 90, y: -71.5}
+      - - {x: -197, y: 32.5}
+        - {x: -198, y: 31.5}
+        - {x: -198, y: 26.5}
+        - {x: -197, y: 25.5}
+        - {x: -192, y: 25.5}
+        - {x: -192, y: 32.5}
+      - - {x: -178, y: 95.5}
+        - {x: -176, y: 93.5}
+        - {x: -173, y: 94.5}
+        - {x: -173, y: 97.5}
+        - {x: -175, y: 99.5}
+        - {x: -178, y: 98.5}
+      - - {x: -133, y: 195.5}
+        - {x: -130, y: 190.5}
+        - {x: -127, y: 191.5}
+        - {x: -127, y: 195.5}
+        - {x: -129, y: 197.5}
+        - {x: -131, y: 197.5}
+    - name: FinalScreenTextureAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1971
+        width: 68
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 36.5}
+        - {x: -32, y: 31.5}
+        - {x: -34, y: 21.5}
+        - {x: -34, y: -36.5}
+        - {x: 22, y: -36.5}
+        - {x: 34, y: -24.5}
+        - {x: 34, y: 26.5}
+        - {x: 31, y: 36.5}
+    - name: FinalScreenTextureAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1880
+        width: 72
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 82}
+        - {x: -36, y: 18}
+        - {x: -36, y: -82}
+        - {x: 36, y: -82}
+        - {x: 36, y: 82}
+    - name: FinalScreenTextureAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 1964
+        width: 81
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 40}
+        - {x: -40.5, y: 21}
+        - {x: -40.5, y: -32}
+        - {x: -33.5, y: -40}
+        - {x: 34.5, y: -40}
+        - {x: 40.5, y: -38}
+        - {x: 40.5, y: 39}
+        - {x: 34.5, y: 40}
+    - name: FinalScreenTextureAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 1844
+        width: 142
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 100}
+        - {x: -71, y: -3}
+        - {x: -71, y: -60}
+        - {x: -63, y: -80}
+        - {x: -49, y: -100}
+        - {x: -14, y: -100}
+        - {x: -3, y: -97}
+        - {x: 71, y: 39}
+        - {x: 71, y: 90}
+        - {x: 65, y: 100}
+      - - {x: -61, y: 9}
+        - {x: -61, y: 5}
+        - {x: -58, y: 4}
+        - {x: -55, y: 6}
+        - {x: -55, y: 8}
+        - {x: -56, y: 4}
+        - {x: -55, y: 2}
+        - {x: -53, y: 2}
+        - {x: -43, y: 10}
+        - {x: -43, y: 13}
+        - {x: -45, y: 17}
+        - {x: -47, y: 19}
+        - {x: -54, y: 19}
+        - {x: -60, y: 16}
+      - - {x: -60, y: 29}
+        - {x: -57, y: 30}
+        - {x: -57, y: 33}
+        - {x: -60, y: 34}
+        - {x: -62, y: 32}
+      - - {x: -55, y: 36}
+        - {x: -57, y: 35}
+        - {x: -57, y: 29}
+        - {x: -50, y: 29}
+        - {x: -50, y: 34}
+        - {x: -51, y: 36}
+    - name: FinalScreenTextureAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 1868
+        width: 154
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 87.5}
+        - {x: -31, y: 57.5}
+        - {x: -39, y: 53.5}
+        - {x: -37, y: 54.5}
+        - {x: -30, y: 61.5}
+        - {x: -29, y: 64.5}
+        - {x: -42, y: 73.5}
+        - {x: -62, y: 71.5}
+        - {x: -77, y: 58.5}
+        - {x: -77, y: -87.5}
+        - {x: 61, y: -87.5}
+        - {x: 77, y: -30.5}
+        - {x: 77, y: 79.5}
+        - {x: 40, y: 87.5}
+    - name: FinalScreenTextureAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1923
+        width: 483
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 238.5, y: -25.5}
+        - {x: 241.5, y: -17.5}
+        - {x: 241.5, y: 25.5}
+        - {x: 236.5, y: 38.5}
+        - {x: 224.5, y: 52.5}
+        - {x: 205.5, y: 60.5}
+        - {x: -199.5, y: 60.5}
+        - {x: -215.5, y: 52.5}
+        - {x: -227.5, y: 40.5}
+        - {x: -235.5, y: 28.5}
+        - {x: -241.5, y: 12.5}
+        - {x: -241.5, y: -17.5}
+        - {x: -230.5, y: -39.5}
+        - {x: -219.5, y: -51.5}
+        - {x: -215.5, y: -55.5}
+        - {x: -203.5, y: -60.5}
+        - {x: 198.5, y: -60.5}
+        - {x: 213.5, y: -55.5}
+        - {x: 235.5, y: -36.5}
+    - name: FinalScreenTextureAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1830
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: FinalScreenTextureAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 1530
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: FinalScreenTextureAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1395
+        width: 483
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 239.5, y: -24}
+        - {x: 241.5, y: -12}
+        - {x: 241.5, y: 21}
+        - {x: 239.5, y: 29}
+        - {x: 230.5, y: 46}
+        - {x: 208.5, y: 60}
+        - {x: -199.5, y: 60}
+        - {x: -215.5, y: 54}
+        - {x: -232.5, y: 38}
+        - {x: -241.5, y: 20}
+        - {x: -241.5, y: -22}
+        - {x: -238.5, y: -29}
+        - {x: -230.5, y: -42}
+        - {x: -219.5, y: -53}
+        - {x: -205.5, y: -60}
+        - {x: 198.5, y: -60}
+        - {x: 204.5, y: -59}
+        - {x: 216.5, y: -51}
+        - {x: 225.5, y: -44}
+    - name: FinalScreenTextureAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1173
+        width: 368
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 184, y: -56.5}
+        - {x: 181, y: -34.5}
+        - {x: 184, y: -9.5}
+        - {x: 184, y: -5.5}
+        - {x: 173, y: 28.5}
+        - {x: 166, y: 56.5}
+        - {x: 140, y: 84.5}
+        - {x: 118, y: 96.5}
+        - {x: 107, y: 109.5}
+        - {x: 119, y: 117.5}
+        - {x: 137, y: 130.5}
+        - {x: 143, y: 160.5}
+        - {x: 128, y: 171.5}
+        - {x: 92, y: 171.5}
+        - {x: 76, y: 160.5}
+        - {x: 48, y: 133.5}
+        - {x: -22, y: 133.5}
+        - {x: -93, y: 157.5}
+        - {x: -124, y: 151.5}
+        - {x: -133, y: 146.5}
+        - {x: -149, y: 124.5}
+        - {x: -147, y: 108.5}
+        - {x: -136, y: 98.5}
+        - {x: -110, y: 97.5}
+        - {x: -123, y: 89.5}
+        - {x: -141, y: 87.5}
+        - {x: -175, y: 53.5}
+        - {x: -184, y: 32.5}
+        - {x: -184, y: -0.5}
+        - {x: -174, y: -27.5}
+        - {x: -156, y: -58.5}
+        - {x: -168, y: -73.5}
+        - {x: -171, y: -86.5}
+        - {x: -160, y: -102.5}
+        - {x: -153, y: -107.5}
+        - {x: -141, y: -162.5}
+        - {x: -134, y: -171.5}
+        - {x: 167, y: -171.5}
+        - {x: 168, y: -170.5}
+        - {x: 179, y: -161.5}
+        - {x: 184, y: -148.5}
+    - name: FinalScreenTextureAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1227
+        width: 428
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 168, y: 0}
+        - {x: 173, y: 22}
+        - {x: 179, y: 51}
+        - {x: 206, y: 55}
+        - {x: 214, y: 60}
+        - {x: 214, y: 94}
+        - {x: 188, y: 135}
+        - {x: 132, y: 128}
+        - {x: 121, y: 107}
+        - {x: 119, y: 65}
+        - {x: 93, y: 31}
+        - {x: 64, y: 58}
+        - {x: 90, y: 74}
+        - {x: 102, y: 105}
+        - {x: 49, y: 115}
+        - {x: 26, y: 96}
+        - {x: 0, y: 110}
+        - {x: -20, y: 96}
+        - {x: -92, y: 117}
+        - {x: -103, y: 130}
+        - {x: -140, y: 144}
+        - {x: -183, y: 144}
+        - {x: -197, y: 123}
+        - {x: -205, y: 54}
+        - {x: -213, y: 41}
+        - {x: -214, y: 31}
+        - {x: -214, y: -59}
+        - {x: -186, y: -135}
+        - {x: -182, y: -142}
+        - {x: -178, y: -144}
+        - {x: 120, y: -144}
+        - {x: 132, y: -53}
+        - {x: 142, y: -39}
+    - name: FinalScreenTextureAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 1455
+        width: 231
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -113.5, y: 30}
+        - {x: -115.5, y: 22}
+        - {x: -115.5, y: -23}
+        - {x: -108.5, y: -30}
+        - {x: 110.5, y: -30}
+        - {x: 115.5, y: -20}
+        - {x: 115.5, y: 26}
+        - {x: 106.5, y: 30}
+    - name: FinalScreenTextureAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 1454
+        width: 231
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -115.5, y: 31}
+        - {x: -115.5, y: -26}
+        - {x: -110.5, y: -31}
+        - {x: 109.5, y: -31}
+        - {x: 115.5, y: -21}
+        - {x: 115.5, y: 31}
+    - name: FinalScreenTextureAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 801
+        width: 203
+        height: 714
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -99.5, y: 357}
+        - {x: -101.5, y: 248}
+        - {x: -101.5, y: -356}
+        - {x: -80.5, y: -356}
+        - {x: -66.5, y: -347}
+        - {x: -66.5, y: 357}
+      - - {x: 57.5, y: 357}
+        - {x: 27.5, y: 357}
+        - {x: 28.5, y: 316}
+        - {x: 38.5, y: 193}
+        - {x: 54.5, y: -29}
+        - {x: 68.5, y: -222}
+        - {x: 76.5, y: -339}
+        - {x: 85.5, y: -345}
+        - {x: 95.5, y: -345}
+        - {x: 101.5, y: -343}
+        - {x: 101.5, y: -237}
+        - {x: 58.5, y: 356}
+    - name: FinalScreenTextureAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 732
+        width: 132
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: 29}
+        - {x: -66, y: 28}
+        - {x: -66, y: -26}
+        - {x: -59, y: -30}
+        - {x: 64, y: -30}
+        - {x: 66, y: -25}
+        - {x: 66, y: 25}
+        - {x: 61, y: 29}
+    - name: FinalScreenTextureAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 732
+        width: 131
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -58.5, y: 28.5}
+        - {x: -65.5, y: 20.5}
+        - {x: -65.5, y: -23.5}
+        - {x: -55.5, y: -28.5}
+        - {x: 63.5, y: -28.5}
+        - {x: 65.5, y: -22.5}
+        - {x: 65.5, y: 24.5}
+        - {x: 59.5, y: 28.5}
+    - name: FinalScreenTextureAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 424
+        width: 368
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 115, y: -144.5}
+        - {x: 139, y: -121.5}
+        - {x: 148, y: -110.5}
+        - {x: 163, y: -88.5}
+        - {x: 177, y: -55.5}
+        - {x: 183, y: -29.5}
+        - {x: 184, y: -7.5}
+        - {x: 184, y: 16.5}
+        - {x: 183, y: 29.5}
+        - {x: 176, y: 58.5}
+        - {x: 168, y: 79.5}
+        - {x: 151, y: 109.5}
+        - {x: 123, y: 139.5}
+        - {x: 104, y: 154.5}
+        - {x: 73, y: 171.5}
+        - {x: 54, y: 178.5}
+        - {x: 34, y: 182.5}
+        - {x: -38, y: 182.5}
+        - {x: -65, y: 175.5}
+        - {x: -98, y: 159.5}
+        - {x: -128, y: 136.5}
+        - {x: -149, y: 113.5}
+        - {x: -159, y: 97.5}
+        - {x: -171, y: 73.5}
+        - {x: -179, y: 54.5}
+        - {x: -183, y: 33.5}
+        - {x: -184, y: 27.5}
+        - {x: -184, y: -26.5}
+        - {x: -182, y: -37.5}
+        - {x: -181, y: -46.5}
+        - {x: -172, y: -70.5}
+        - {x: -161, y: -93.5}
+        - {x: -146, y: -116.5}
+        - {x: -125, y: -137.5}
+        - {x: -108, y: -150.5}
+        - {x: -95, y: -160.5}
+        - {x: -65, y: -175.5}
+        - {x: -35, y: -182.5}
+        - {x: 29, y: -182.5}
+        - {x: 48, y: -179.5}
+        - {x: 69, y: -171.5}
+        - {x: 95, y: -159.5}
+    - name: FinalScreenTextureAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 747
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 21}
+        - {x: -24, y: 9}
+        - {x: -24, y: -17}
+        - {x: -10, y: -21}
+        - {x: 24, y: -21}
+        - {x: 24, y: 13}
+        - {x: 21, y: 21}
+    - name: FinalScreenTextureAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 752
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 18.5}
+        - {x: -17, y: 7.5}
+        - {x: -17, y: -18.5}
+        - {x: 4, y: -18.5}
+        - {x: 17, y: -16.5}
+        - {x: 17, y: 18.5}
+    - name: FinalScreenTextureAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 712
+        width: 353
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 162.5, y: 38.5}
+        - {x: -150.5, y: 38.5}
+        - {x: -159.5, y: 36.5}
+        - {x: -175.5, y: 25.5}
+        - {x: -176.5, y: 22.5}
+        - {x: -176.5, y: -22.5}
+        - {x: -162.5, y: -38.5}
+        - {x: 172.5, y: -38.5}
+        - {x: 176.5, y: -23.5}
+        - {x: 176.5, y: 28.5}
+    - name: FinalScreenTextureAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 778
+        width: 295
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: FinalScreenTextureAtlas_26
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 24
+        width: 225
+        height: 765
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -106.5, y: 382.5}
+        - {x: -111.5, y: 376.5}
+        - {x: -112.5, y: 113.5}
+        - {x: -112.5, y: -382.5}
+        - {x: -80.5, y: -382.5}
+        - {x: -75.5, y: 82.5}
+        - {x: -75.5, y: 381.5}
+        - {x: -77.5, y: 382.5}
+      - - {x: 101.5, y: -161.5}
+        - {x: 94.5, y: -64.5}
+        - {x: 91.5, y: -37.5}
+        - {x: 61.5, y: 376.5}
+        - {x: 60.5, y: 382.5}
+        - {x: 27.5, y: 382.5}
+        - {x: 27.5, y: 375.5}
+        - {x: 37.5, y: 237.5}
+        - {x: 71.5, y: -231.5}
+        - {x: 81.5, y: -373.5}
+        - {x: 88.5, y: -382.5}
+        - {x: 106.5, y: -382.5}
+        - {x: 112.5, y: -377.5}
+        - {x: 112.5, y: -327.5}
+        - {x: 101.5, y: -175.5}
+    - name: FinalScreenTextureAtlas_27
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 754
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17.5}
+        - {x: -17, y: -17.5}
+        - {x: 13, y: -17.5}
+        - {x: 17, y: -15.5}
+        - {x: 17, y: 11.5}
+        - {x: 11, y: 17.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
