@@ -28,7 +28,11 @@ public class PlayerTutorialController : MonoBehaviour {
             gameSpeedController.stopGame = true;
             tutorialsBeaver.SetActive(true);
             currentTutorialPartIndex = 0;
-            beaverTalk.text = talks.talks[activeTutorialIndex].talk[currentTutorialPartIndex];
+
+            string tutorialKey = string.Format("BeaverTime.Tutorial{0}{1}", (activeTutorialIndex + 1), (currentTutorialPartIndex + 1));
+            string beaverText = SmartLocalization.LanguageManager.Instance.GetTextValue(tutorialKey);
+            beaverTalk.text = beaverText;
+
         }
         else
         {
@@ -63,7 +67,11 @@ public class PlayerTutorialController : MonoBehaviour {
     {
         currentTutorialPartIndex++;
         int tutorialIndex = getTutorialIndex();
-        beaverTalk.text = talks.talks[tutorialIndex - 1].talk[currentTutorialPartIndex];
+
+        string tutorialKey = string.Format("BeaverTime.Tutorial{0}{1}", tutorialIndex, (currentTutorialPartIndex + 1));
+        string beaverText = SmartLocalization.LanguageManager.Instance.GetTextValue(tutorialKey);
+        beaverTalk.text = beaverText;
+
     }
 
     public void endTutorial()

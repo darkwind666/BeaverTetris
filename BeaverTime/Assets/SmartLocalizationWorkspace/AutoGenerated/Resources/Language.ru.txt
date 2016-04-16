@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root><!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+	<data name="BeaverTime.Back" xml:space="preserve">
+		<value>Назад</value>
+	</data>
+	<data name="BeaverTime.Designer" xml:space="preserve">
+		<value>Дизайнер</value>
+	</data>
+	<data name="BeaverTime.DesignerName" xml:space="preserve">
+		<value>Хотяшова Вероника</value>
+	</data>
+	<data name="BeaverTime.EnterPlayerName" xml:space="preserve">
+		<value>Введите имя игрока.</value>
+	</data>
+	<data name="BeaverTime.FinishGame" xml:space="preserve">
+		<value>Закончить игру.</value>
+	</data>
+	<data name="BeaverTime.GameDevelopers" xml:space="preserve">
+		<value>Авторы</value>
+	</data>
+	<data name="BeaverTime.GameExit" xml:space="preserve">
+		<value>Выход</value>
+	</data>
+	<data name="BeaverTime.GameName" xml:space="preserve">
+		<value>Время
+
+Бобра</value>
+	</data>
+	<data name="BeaverTime.GameRecords" xml:space="preserve">
+		<value>Рекорды</value>
+	</data>
+	<data name="BeaverTime.GameSettings" xml:space="preserve">
+		<value>Настройки</value>
+	</data>
+	<data name="BeaverTime.Level1" xml:space="preserve">
+		<value>Привет, я рад тебя видеть в игре. Помоги мне найти часы.</value>
+	</data>
+	<data name="BeaverTime.Level10" xml:space="preserve">
+		<value>Ура. Ты нашёл мои часы. Ты готов к последнему испытанию.</value>
+	</data>
+	<data name="BeaverTime.Level2" xml:space="preserve">
+		<value>Собери пару блоков. Используй заклинание когда захочешь.</value>
+	</data>
+	<data name="BeaverTime.Level3" xml:space="preserve">
+		<value>Продержись немного времени для победы. Я в тебя верю.</value>
+	</data>
+	<data name="BeaverTime.Level4" xml:space="preserve">
+		<value>Сразись с боссом. Покажи кто тут главный.</value>
+	</data>
+	<data name="BeaverTime.Level5" xml:space="preserve">
+		<value>Эта середина игры. Я горжусь тобой.</value>
+	</data>
+	<data name="BeaverTime.Level6" xml:space="preserve">
+		<value>Отличная работа. Используй заклинания в тяжёлую минуту</value>
+	</data>
+	<data name="BeaverTime.Level7" xml:space="preserve">
+		<value>Второй босс. Огненная буря поможет тебе.</value>
+	</data>
+	<data name="BeaverTime.Level8" xml:space="preserve">
+		<value>Я уже вижу свои часы. Осталось совсем чуть-чуть.</value>
+	</data>
+	<data name="BeaverTime.Level9" xml:space="preserve">
+		<value>Это будет сложный уровень. Будь быстрым как тигр.</value>
+	</data>
+	<data name="BeaverTime.LoseLevel" xml:space="preserve">
+		<value>Вы проиграли!</value>
+	</data>
+	<data name="BeaverTime.Map" xml:space="preserve">
+		<value>Карта</value>
+	</data>
+	<data name="BeaverTime.NewGame" xml:space="preserve">
+		<value>Новая игра</value>
+	</data>
+	<data name="BeaverTime.NextLevel" xml:space="preserve">
+		<value>Вперёд</value>
+	</data>
+	<data name="BeaverTime.NextStep" xml:space="preserve">
+		<value>Вперёд</value>
+	</data>
+	<data name="BeaverTime.Programmer" xml:space="preserve">
+		<value>Пррограммист</value>
+	</data>
+	<data name="BeaverTime.ProgrammerName" xml:space="preserve">
+		<value>Хотяшов Александр</value>
+	</data>
+	<data name="BeaverTime.Replay" xml:space="preserve">
+		<value>Переиграть</value>
+	</data>
+	<data name="BeaverTime.Score" xml:space="preserve">
+		<value>Очки</value>
+	</data>
+	<data name="BeaverTime.SelectLevel" xml:space="preserve">
+		<value>Выбор уровня</value>
+	</data>
+	<data name="BeaverTime.Tutorial11" xml:space="preserve">
+		<value>Ты можешь перемещать формы влемо, вправо, вращать и ускорять. </value>
+	</data>
+	<data name="BeaverTime.Tutorial12" xml:space="preserve">
+		<value>Собери полную линию и получи очки.</value>
+	</data>
+	<data name="BeaverTime.Tutorial13" xml:space="preserve">
+		<value>Собери 4 и более одинаковых кубиков в горизонтальный ряд и получи очки.</value>
+	</data>
+	<data name="BeaverTime.Tutorial14" xml:space="preserve">
+		<value>Собери 4 и более одинаковых кубиков в вертикальный ряд и получи очки.</value>
+	</data>
+	<data name="BeaverTime.Tutorial15" xml:space="preserve">
+		<value>Положи несколько деталей на игровую доску для победы!</value>
+	</data>
+	<data name="BeaverTime.Tutorial21" xml:space="preserve">
+		<value>Использую первое заклинание чтобы уничтожить ненужные детали</value>
+	</data>
+	<data name="BeaverTime.Tutorial22" xml:space="preserve">
+		<value>Уничтожь некоторое количество блоков определённого цвета, чтобы пройти уровень.</value>
+	</data>
+	<data name="BeaverTime.Tutorial31" xml:space="preserve">
+		<value>Используй второе заклинание чтобы уничтожить случайные блоки на доске.</value>
+	</data>
+	<data name="BeaverTime.Tutorial32" xml:space="preserve">
+		<value>Одолей босса. Для этого собирай целые линии блоков вместе с боссом или использую заклинания. Его жизни показанны в правом верхнем углу с рыбой.</value>
+	</data>
+	<data name="BeaverTime.Tutorial41" xml:space="preserve">
+		<value>Использую третье заклинание - огненный дождь. Врагу это понравиться)</value>
+	</data>
+	<data name="BeaverTime.Tutorial42" xml:space="preserve">
+		<value>Используй четвёртое заклинание для заполнения дыр между блоками.</value>
+	</data>
+	<data name="BeaverTime.Victory" xml:space="preserve">
+		<value>Победа!!!</value>
+	</data>
+	<data name="BeaverTime.WinLevel" xml:space="preserve">
+		<value>Вы выиграли!</value>
+	</data>
+</root>

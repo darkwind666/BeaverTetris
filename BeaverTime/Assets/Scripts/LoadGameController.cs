@@ -12,9 +12,21 @@ public class LoadGameController : MonoBehaviour {
     {
         circularLoader = GetComponent<Image>();
         circularLoader.fillAmount = 1f;
+        setUpGameLanguage();
     }
-	
-	void Update ()
+
+    void setUpGameLanguage()
+    {
+        SmartLocalization.LanguageManager languageManager = SmartLocalization.LanguageManager.Instance;
+        SmartLocalization.SmartCultureInfo deviceCulture = languageManager.GetDeviceCultureIfSupported();
+        if (deviceCulture != null)
+        {
+            languageManager.ChangeLanguage(deviceCulture);
+        }
+        SmartLocalization.LanguageManager.SetDontDestroyOnLoad();
+    }
+
+    void Update ()
     {
         if (circularLoader.fillAmount > 0f)
         {

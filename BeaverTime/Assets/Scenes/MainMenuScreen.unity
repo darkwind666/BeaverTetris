@@ -1184,6 +1184,7 @@ GameObject:
   - 224: {fileID: 498882216}
   - 222: {fileID: 498882218}
   - 114: {fileID: 498882217}
+  - 114: {fileID: 498882219}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1247,6 +1248,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 498882215}
+--- !u!114 &498882219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 498882215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.Back
 --- !u!1 &510407005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,6 +1270,7 @@ GameObject:
   - 224: {fileID: 510407006}
   - 222: {fileID: 510407008}
   - 114: {fileID: 510407007}
+  - 114: {fileID: 510407009}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1278,7 +1292,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -10}
+  m_AnchoredPosition: {x: 21.9, y: 2.7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &510407007
@@ -1313,15 +1327,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Select level
-
-'
+  m_Text: Select level
 --- !u!222 &510407008
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 510407005}
+--- !u!114 &510407009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510407005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.SelectLevel
 --- !u!1 &552136835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1442,7 @@ GameObject:
   - 224: {fileID: 558879704}
   - 222: {fileID: 558879706}
   - 114: {fileID: 558879705}
+  - 114: {fileID: 558879707}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1439,7 +1464,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -10}
+  m_AnchoredPosition: {x: 6.7, y: 1.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558879705
@@ -1474,15 +1499,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Records
-
-'
+  m_Text: Records
 --- !u!222 &558879706
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 558879703}
+--- !u!114 &558879707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 558879703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.GameRecords
 --- !u!1 &577583055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +1965,7 @@ GameObject:
   - 224: {fileID: 808543667}
   - 222: {fileID: 808543669}
   - 114: {fileID: 808543668}
+  - 114: {fileID: 808543670}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1951,7 +1987,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -10}
+  m_AnchoredPosition: {x: 6.3, y: 1.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808543668
@@ -1986,15 +2022,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Developers
-
-'
+  m_Text: Developers
 --- !u!222 &808543669
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 808543666}
+--- !u!114 &808543670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 808543666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.GameDevelopers
 --- !u!1 &854392799
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,6 +2188,7 @@ GameObject:
   - 224: {fileID: 868598804}
   - 222: {fileID: 868598806}
   - 114: {fileID: 868598805}
+  - 114: {fileID: 868598807}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2205,6 +2252,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 868598803}
+--- !u!114 &868598807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868598803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.NewGame
 --- !u!1 &939672643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,6 +2638,7 @@ GameObject:
   - 224: {fileID: 1188230009}
   - 222: {fileID: 1188230011}
   - 114: {fileID: 1188230010}
+  - 114: {fileID: 1188230012}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2600,7 +2660,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -10}
+  m_AnchoredPosition: {x: 6.9, y: -2.1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188230010
@@ -2635,15 +2695,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Exit
-
-'
+  m_Text: Exit
 --- !u!222 &1188230011
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1188230008}
+--- !u!114 &1188230012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1188230008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.GameExit
 --- !u!1 &1190614264
 GameObject:
   m_ObjectHideFlags: 0
@@ -3784,6 +3854,7 @@ GameObject:
   - 224: {fileID: 2037419568}
   - 222: {fileID: 2037419570}
   - 114: {fileID: 2037419569}
+  - 114: {fileID: 2037419571}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3805,7 +3876,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -10}
+  m_AnchoredPosition: {x: 8.8, y: -1.1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037419569
@@ -3840,15 +3911,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Settings
-
-'
+  m_Text: Settings
 --- !u!222 &2037419570
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2037419567}
+--- !u!114 &2037419571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2037419567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.GameSettings
 --- !u!1 &2076128909
 GameObject:
   m_ObjectHideFlags: 0

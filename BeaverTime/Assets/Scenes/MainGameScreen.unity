@@ -8956,6 +8956,7 @@ GameObject:
   - 224: {fileID: 120523977}
   - 222: {fileID: 120523979}
   - 114: {fileID: 120523978}
+  - 114: {fileID: 120523980}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -9019,6 +9020,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 120523976}
+--- !u!114 &120523980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 120523976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.Map
 --- !u!1 &123243164
 GameObject:
   m_ObjectHideFlags: 0
@@ -10837,6 +10850,7 @@ GameObject:
   - 224: {fileID: 135255619}
   - 222: {fileID: 135255621}
   - 114: {fileID: 135255620}
+  - 114: {fileID: 135255622}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -10900,6 +10914,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 135255618}
+--- !u!114 &135255622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 135255618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.Back
 --- !u!1 &147136464
 GameObject:
   m_ObjectHideFlags: 0
@@ -38031,6 +38057,7 @@ GameObject:
   - 224: {fileID: 445973504}
   - 222: {fileID: 445973506}
   - 114: {fileID: 445973505}
+  - 114: {fileID: 445973507}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -38094,6 +38121,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 445973503}
+--- !u!114 &445973507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 445973503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.NextLevel
 --- !u!1 &452154978
 GameObject:
   m_ObjectHideFlags: 0
@@ -45839,6 +45878,7 @@ GameObject:
   - 224: {fileID: 622589700}
   - 222: {fileID: 622589702}
   - 114: {fileID: 622589701}
+  - 114: {fileID: 622589703}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -45902,6 +45942,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 622589699}
+--- !u!114 &622589703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 622589699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.WinLevel
 --- !u!1 &623770815
 GameObject:
   m_ObjectHideFlags: 0
@@ -57960,6 +58012,7 @@ GameObject:
   - 224: {fileID: 799444037}
   - 222: {fileID: 799444039}
   - 114: {fileID: 799444038}
+  - 114: {fileID: 799444040}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -58023,6 +58076,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 799444036}
+--- !u!114 &799444040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 799444036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.Victory
 --- !u!1 &810626770
 GameObject:
   m_ObjectHideFlags: 0
@@ -64372,6 +64437,7 @@ GameObject:
   - 224: {fileID: 855404737}
   - 222: {fileID: 855404739}
   - 114: {fileID: 855404738}
+  - 114: {fileID: 855404740}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -64435,6 +64501,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855404736}
+--- !u!114 &855404740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855404736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.Map
 --- !u!1001 &862969762
 Prefab:
   m_ObjectHideFlags: 0
@@ -78728,6 +78806,7 @@ GameObject:
   - 224: {fileID: 1046116094}
   - 222: {fileID: 1046116096}
   - 114: {fileID: 1046116095}
+  - 114: {fileID: 1046116097}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -78791,6 +78870,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1046116093}
+--- !u!114 &1046116097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046116093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.Map
 --- !u!1 &1055644206
 GameObject:
   m_ObjectHideFlags: 0
@@ -80331,8 +80422,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21, y: 28}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -11.7, y: 12}
+  m_SizeDelta: {x: 217, y: 94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063529249
 MonoBehaviour:
@@ -80360,7 +80451,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -110233,6 +110324,7 @@ GameObject:
   - 224: {fileID: 1441851423}
   - 222: {fileID: 1441851425}
   - 114: {fileID: 1441851424}
+  - 114: {fileID: 1441851426}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -110296,6 +110388,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1441851422}
+--- !u!114 &1441851426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441851422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.FinishGame
 --- !u!1 &1444879204
 GameObject:
   m_ObjectHideFlags: 0
@@ -154167,6 +154271,7 @@ GameObject:
   - 224: {fileID: 2000674226}
   - 222: {fileID: 2000674228}
   - 114: {fileID: 2000674227}
+  - 114: {fileID: 2000674229}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -154230,6 +154335,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2000674225}
+--- !u!114 &2000674229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2000674225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.Replay
 --- !u!1 &2002781972
 GameObject:
   m_ObjectHideFlags: 0
@@ -156297,6 +156414,7 @@ GameObject:
   - 224: {fileID: 2039808760}
   - 222: {fileID: 2039808762}
   - 114: {fileID: 2039808761}
+  - 114: {fileID: 2039808763}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -156360,6 +156478,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2039808759}
+--- !u!114 &2039808763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2039808759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c235e1acae14f3a95fa7fc84078f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizedKey: BeaverTime.LoseLevel
 --- !u!1 &2045741283
 GameObject:
   m_ObjectHideFlags: 0
