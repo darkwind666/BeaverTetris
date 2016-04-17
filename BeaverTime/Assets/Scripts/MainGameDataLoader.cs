@@ -5,6 +5,7 @@ public class MainGameDataLoader : MonoBehaviour {
 
     public int shapeSideInBlocks;
     public GameLevelsCollection gameLevelsCollection;
+    public GameAnaliticsController gameAnaliticsController;
 
     void Awake ()
     {
@@ -15,6 +16,7 @@ public class MainGameDataLoader : MonoBehaviour {
         ServicesLocator.setServiceForKey(levelDataController, typeof(LevelDataStore).Name);
 
         setUpPlayer();
+        gameAnaliticsController.sendCurrentGameLevel();
     }
 
     void setUpPlayer()

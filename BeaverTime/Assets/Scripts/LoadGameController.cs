@@ -5,6 +5,7 @@ public class LoadGameController : MonoBehaviour {
 
     public float time;
     public FadingScript fadingController;
+    public GameAnaliticsController gameAnaliticsController;
 
     Image circularLoader;
 
@@ -12,6 +13,7 @@ public class LoadGameController : MonoBehaviour {
     {
         circularLoader = GetComponent<Image>();
         circularLoader.fillAmount = 1f;
+        gameAnaliticsController.sendPlayerPlatformData();
         setUpGameLanguage();
     }
 

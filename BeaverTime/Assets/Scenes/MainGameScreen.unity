@@ -11510,6 +11510,7 @@ MonoBehaviour:
   - {fileID: 409092498}
   - {fileID: 1557092449}
   - {fileID: 1905852756}
+  gameAnaliticsController: {fileID: 1866523325}
 --- !u!1 &207047700
 GameObject:
   m_ObjectHideFlags: 0
@@ -83698,6 +83699,7 @@ MonoBehaviour:
   shapeSideInBlocks: 3
   gameLevelsCollection: {fileID: 11400000, guid: 916d003f2f9225e49b3dc4c40d9be41e,
     type: 2}
+  gameAnaliticsController: {fileID: 1866523325}
 --- !u!4 &1098217002
 Transform:
   m_ObjectHideFlags: 0
@@ -148450,6 +148452,58 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 477236, guid: 7f0090804ce148c4b8c914c311a07171, type: 2}
   m_PrefabInternal: {fileID: 1865006698}
+--- !u!1001 &1866523324
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 464086, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464086, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464086, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464086, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464086, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464086, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464086, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 464086, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424810, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: currentSceneName
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &1866523325 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11424810, guid: b49b8ac55981b3f449a43a832ca44fc0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1866523324}
+  m_Script: {fileID: 11500000, guid: 30053cc66235f1c4bab88370004ddc3b, type: 3}
 --- !u!1001 &1873077740
 Prefab:
   m_ObjectHideFlags: 0
@@ -150905,6 +150959,7 @@ MonoBehaviour:
   loseLevelSound: {fileID: 530556994}
   winGameSound: {fileID: 1993667236}
   soundController: {fileID: 514097763}
+  gameAnaliticsController: {fileID: 1866523325}
 --- !u!4 &1969532241
 Transform:
   m_ObjectHideFlags: 0
@@ -160378,6 +160433,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1866523325}
+        m_MethodName: sendAnaliticMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Main game pause
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

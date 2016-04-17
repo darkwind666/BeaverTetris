@@ -5,6 +5,7 @@ using System;
 public class SpellsController : MonoBehaviour {
 
     public GameObject[] spells;
+    public GameAnaliticsController gameAnaliticsController;
     GamePlayerDataController _gamePlayerData;
 
     void Start ()
@@ -67,6 +68,7 @@ public class SpellsController : MonoBehaviour {
                 spell.useSpell();
                 spellCountdown.useSpell();
                 _gamePlayerData.playerScore = _gamePlayerData.playerScore - spellCountdown.spellScorePrice;
+                gameAnaliticsController.sendUseSpellMessage(spellCountdown.spellType + 1);
             }
 
         }

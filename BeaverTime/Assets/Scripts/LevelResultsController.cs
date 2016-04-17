@@ -12,6 +12,7 @@ public class LevelResultsController : MonoBehaviour {
     public AudioSource loseLevelSound;
     public AudioSource winGameSound;
     public MainGameSoundsController soundController;
+    public GameAnaliticsController gameAnaliticsController;
 
     GamePlayerDataController _playerData;
     GameLevel _currentLevelData;
@@ -36,15 +37,23 @@ public class LevelResultsController : MonoBehaviour {
 
     public void winLevel()
     {
-
         soundController.backgroundSound.Stop();
-        float volume = soundController.backgroundSound.volume;
-
         gameSpeedController.stopGame = true;
         resultPopUp.SetActive(true);
-
         _playerData.playerScore = _playerData.playerScore + _currentLevelData.levelAward;
 
+        GameObject result = getPlayerResult();
+        result.SetActive(true);
+
+        gameAnaliticsController.sendWinlevelMessage();
+
+        float volume = soundController.backgroundSound.volume;
+        soundController.backgroundSound.volume = volume;
+        soundController.backgroundSound.Play();
+    }
+
+    GameObject getPlayerResult()
+    {
         GameObject result;
         if (_playerData.selectedLevelIndex >= (gameLevelsCollection.gameLevels.Length - 1))
         {
@@ -70,10 +79,7 @@ public class LevelResultsController : MonoBehaviour {
             soundController.backgroundSound = winLevelSound;
         }
 
-        result.SetActive(true);
-
-        soundController.backgroundSound.volume = volume;
-        soundController.backgroundSound.Play();
+        return result;
     }
 
     public void loseLevel()
@@ -83,6 +89,8 @@ public class LevelResultsController : MonoBehaviour {
         resultPopUp.SetActive(true);
         GameObject result = results[0];
         result.SetActive(true);
+
+        gameAnaliticsController.sendLoselevelMessage();
 
         soundController.backgroundSound.Stop();
         float volume = soundController.backgroundSound.volume;

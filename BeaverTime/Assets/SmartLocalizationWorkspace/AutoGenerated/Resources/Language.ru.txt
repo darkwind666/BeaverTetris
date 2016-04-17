@@ -209,7 +209,7 @@
 		<value>Выбор уровня</value>
 	</data>
 	<data name="BeaverTime.Tutorial11" xml:space="preserve">
-		<value>Ты можешь перемещать формы влемо, вправо, вращать и ускорять. </value>
+		<value>Ты можешь перемещать формы влево, вправо, вращать и ускорять. </value>
 	</data>
 	<data name="BeaverTime.Tutorial12" xml:space="preserve">
 		<value>Собери полную линию и получи очки.</value>
@@ -230,15 +230,18 @@
 		<value>Уничтожь некоторое количество блоков определённого цвета, чтобы пройти уровень.</value>
 	</data>
 	<data name="BeaverTime.Tutorial31" xml:space="preserve">
-		<value>Используй второе заклинание чтобы уничтожить случайные блоки на доске.</value>
-	</data>
-	<data name="BeaverTime.Tutorial32" xml:space="preserve">
-		<value>Одолей босса. Для этого собирай целые линии блоков вместе с боссом или использую заклинания. Его жизни показанны в правом верхнем углу с рыбой.</value>
+		<value>Продержись некоторое время. Время в правом верхнем углу.</value>
 	</data>
 	<data name="BeaverTime.Tutorial41" xml:space="preserve">
-		<value>Использую третье заклинание - огненный дождь. Врагу это понравиться)</value>
+		<value>Используй второе заклинание чтобы уничтожить случайные блоки на доске.</value>
 	</data>
 	<data name="BeaverTime.Tutorial42" xml:space="preserve">
+		<value>Одолей босса. Для этого собирай целые линии блоков вместе с боссом или использую заклинания. Его жизни показанны в правом верхнем углу с рыбой.</value>
+	</data>
+	<data name="BeaverTime.Tutorial51" xml:space="preserve">
+		<value>Использую третье заклинание - огненный дождь. Врагу это понравиться)</value>
+	</data>
+	<data name="BeaverTime.Tutorial52" xml:space="preserve">
 		<value>Используй четвёртое заклинание для заполнения дыр между блоками.</value>
 	</data>
 	<data name="BeaverTime.Victory" xml:space="preserve">

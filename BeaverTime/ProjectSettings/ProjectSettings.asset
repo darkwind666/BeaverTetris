@@ -9,7 +9,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: darkwinddev
+  companyName: DefaultCompany
   productName: BeaverTime
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -96,7 +96,7 @@ PlayerSettings:
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
-  productGUID: 19d0c2a2cf7702847a145f0a80bab7d8
+  productGUID: d9e7ac778bac2dd4eadacf3eacd293d5
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
@@ -169,13 +169,7 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons:
-  - m_BuildTarget: 
-    m_Icons:
-    - serializedVersion: 2
-      m_Icon: {fileID: 0}
-      m_Width: 128
-      m_Height: 128
+  m_BuildTargetIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   webPlayerTemplate: APPLICATION:Default
@@ -330,8 +324,7 @@ PlayerSettings:
   psp2InfoBarColor: 0
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
-  scriptingDefineSymbols:
-    1: LoadingScreenWave
+  scriptingDefineSymbols: {}
   metroPackageName: BeaverTime
   metroPackageVersion: 
   metroCertificatePath: 
@@ -428,12 +421,8 @@ PlayerSettings:
   XboxOne::enus: 1
   stringPropertyNames:
   - Build_ServiceEnabled::Build_ServiceEnabled
-  - ErrorHub_ServiceEnabled::ErrorHub_ServiceEnabled
-  - Hub_ServiceEnabled::Hub_ServiceEnabled
   - UNet_ServiceEnabled::UNet_ServiceEnabled
   Build_ServiceEnabled::Build_ServiceEnabled: True
-  ErrorHub_ServiceEnabled::ErrorHub_ServiceEnabled: False
-  Hub_ServiceEnabled::Hub_ServiceEnabled: False
   UNet_ServiceEnabled::UNet_ServiceEnabled: True
   cloudProjectId: 6eef7ff3-3870-4b0d-9eb3-4fec082dec9e
   projectName: BeaverTime

@@ -23,10 +23,13 @@ public class SelectLevelUIController : MonoBehaviour {
     public Text playerName;
     public Text playerScore;
 
+    public GameAnaliticsController gameAnaliticsController;
+
     GamePlayerDataController _playerData;
 
 
-	void Start () {
+	void Start ()
+    {
         GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
         setUpBeaverPositionOnRaftWithPlayerData(playerData);
         setupSoundWithPlayerData(playerData);
@@ -79,6 +82,8 @@ public class SelectLevelUIController : MonoBehaviour {
 
         GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
         playerData.createNewPlayerWithName(newPlayerName);
+
+        gameAnaliticsController.sendCreateNewPlayerMessage();
 
         setupPlayerStatusPad();
         newPlayerPopUp.SetActive(false);
