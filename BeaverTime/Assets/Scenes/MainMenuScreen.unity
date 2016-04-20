@@ -1303,7 +1303,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21.9, y: 2.7}
+  m_AnchoredPosition: {x: 15, y: 1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &510407007
@@ -1327,7 +1327,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 18
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -1625,6 +1625,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: GameDevelopersScreen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1128258787}
+        m_MethodName: pushCurrentSceneName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1931,6 +1942,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1128258787}
+        m_MethodName: pushCurrentSceneName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &771145127
@@ -1998,7 +2020,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.3, y: 1.5}
+  m_AnchoredPosition: {x: 8.4, y: 1.8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808543668
@@ -2273,7 +2295,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: 0}
+  m_AnchoredPosition: {x: 8, y: 2}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868598805
@@ -2558,6 +2580,58 @@ Transform:
   - {fileID: 32423161}
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!1001 &1128258786
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 349.50168
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 371.36343
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459030, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: fadingController
+      value: 
+      objectReference: {fileID: 1403923285}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &1128258787 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11459030, guid: 5045ca1242c4db44c9ecfd32827f4c4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1128258786}
+  m_Script: {fileID: 11500000, guid: 685ddd8181e102f49a907fdc80d0b6e8, type: 3}
 --- !u!1 &1130277619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3434,6 +3508,17 @@ MonoBehaviour:
           m_StringArgument: GameRecordsScene
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1128258787}
+        m_MethodName: pushCurrentSceneName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1784105857
@@ -3814,6 +3899,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: SelectLevelScreen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1128258787}
+        m_MethodName: pushCurrentSceneName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

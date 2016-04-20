@@ -85,6 +85,58 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &114655034
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 349.50168
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 371.36343
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410910, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459030, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+      propertyPath: fadingController
+      value: 
+      objectReference: {fileID: 392086527}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5045ca1242c4db44c9ecfd32827f4c4b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &114655035 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11459030, guid: 5045ca1242c4db44c9ecfd32827f4c4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 114655034}
+  m_Script: {fileID: 11500000, guid: 685ddd8181e102f49a907fdc80d0b6e8, type: 3}
 --- !u!1 &185901074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1685,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: MainMenuScreen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114655035}
+        m_MethodName: popPreviousSceneName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

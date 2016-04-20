@@ -18,13 +18,17 @@ public class GamePlayerDataController {
     public int selectedLevelIndex { get; set; }
     public int completedTutorialsCount { get; set; }
 
+    public int playerStartLevelScore { get; set; }
+
     string _dataPath;
 
     List<LevelSpell> _playerSpells;
+    List<string> _previousScenes;
 
     public GamePlayerDataController()
     {
         _dataPath = Application.persistentDataPath + playerDataFileName;
+        _previousScenes = new List<string>();
         loadPlayerData();
         selectedLevelIndex = 0;
     }
@@ -123,6 +127,18 @@ public class GamePlayerDataController {
     public LevelSpell getPlayerSpellForIndex(int aSpellIndex)
     {
         return _playerSpells[aSpellIndex];
+    }
+
+    public void pushCurrentSceneName(string aSceneName)
+    {
+        _previousScenes.Add(aSceneName);
+    }
+
+    public string popPreviousScene()
+    {
+        string previousSceneName = _previousScenes[_previousScenes.Count - 1];
+        _previousScenes.RemoveAt(_previousScenes.Count - 1);
+        return previousSceneName;
     }
 
 }

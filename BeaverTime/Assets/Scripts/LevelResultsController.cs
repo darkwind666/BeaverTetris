@@ -18,7 +18,7 @@ public class LevelResultsController : MonoBehaviour {
     GameLevel _currentLevelData;
     PlayersDatabaseController _playersRecords;
 
-    int _playerStartScore;
+    const string escape = "Cancel";
 
     void Start () {
 
@@ -26,14 +26,14 @@ public class LevelResultsController : MonoBehaviour {
         _playersRecords = ServicesLocator.getServiceForKey(typeof(PlayersDatabaseController).Name) as PlayersDatabaseController;
         LevelDataStore levelsDataStore = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
         _currentLevelData = levelsDataStore.getCurrentLevelData();
-        _playerStartScore = _playerData.playerScore;
+        _playerData.playerStartLevelScore = _playerData.playerScore;
 
     }
 	
 	
 	void Update () {
-	
-	}
+
+    }
 
     public void winLevel()
     {
@@ -41,6 +41,7 @@ public class LevelResultsController : MonoBehaviour {
         gameSpeedController.stopGame = true;
         resultPopUp.SetActive(true);
         _playerData.playerScore = _playerData.playerScore + _currentLevelData.levelAward;
+        _playerData.playerStartLevelScore = _playerData.playerScore;
 
         GameObject result = getPlayerResult();
         result.SetActive(true);
@@ -84,7 +85,7 @@ public class LevelResultsController : MonoBehaviour {
 
     public void loseLevel()
     {
-        _playerData.playerScore = _playerStartScore;
+        _playerData.playerScore = _playerData.playerStartLevelScore;
         gameSpeedController.stopGame = true;
         resultPopUp.SetActive(true);
         GameObject result = results[0];
@@ -108,7 +109,7 @@ public class LevelResultsController : MonoBehaviour {
 
     public void goToSelectLevelScreenFromPause()
     {
-        _playerData.playerScore = _playerStartScore;
+        _playerData.playerScore = _playerData.playerStartLevelScore;
         fadingController.startFade("SelectLevelScreen", false);
     }
 
