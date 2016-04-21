@@ -21,40 +21,54 @@ public class ESCButtonController : MonoBehaviour {
         if (Input.GetButtonDown(escape) && _escButtonPressed == false)
         {
             _escButtonPressed = true;
-
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            if (currentSceneName == "GameLoadingScene" || currentSceneName == "MainMenuScreen")
-            {
-                Application.Quit();
-            }
-            else if (currentSceneName == "GameRecordsScene")
-            {
-                fadingController.goToScreen("MainMenuScreen");
-            }
-            else if (currentSceneName == "MainGameScreen")
-            {
-                GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-                string previouseSceneName = playerData.popPreviousScene();
-
-                if (playerData.playerExist)
-                {
-                    playerData.playerScore = playerData.playerStartLevelScore;
-                    fadingController.goToScreen(previouseSceneName);
-                }
-                else
-                {
-                    fadingController.goToScreen("MainMenuScreen");
-                }
-            }
-            else
-            {
-                GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-                string previouseSceneName = playerData.popPreviousScene();
-                fadingController.goToScreen(previouseSceneName);
-            }
+            changeSceneForEscapeButtonClick();
         }
     }
-       
+
+    void changeSceneForEscapeButtonClick()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        if (currentSceneName == "GameLoadingScene" || currentSceneName == "MainMenuScreen")
+        {
+            Application.Quit();
+        }
+        else if (currentSceneName == "GameRecordsScene")
+        {
+            fadingController.goToScreen("MainMenuScreen");
+        }
+        else if (currentSceneName == "MainGameScreen")
+        {
+            exitFromMainGameScene();
+        }
+        else
+        {
+            goToPreviousScene();
+        }
+    }
+
+    void exitFromMainGameScene()
+    {
+        GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+        string previouseSceneName = playerData.popPreviousScene();
+
+        if (playerData.playerExist)
+        {
+            playerData.playerScore = playerData.playerStartLevelScore;
+            fadingController.goToScreen(previouseSceneName);
+        }
+        else
+        {
+            fadingController.goToScreen("MainMenuScreen");
+        }
+    }
+
+    public void goToPreviousScene()
+    {
+        GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+        string previouseSceneName = playerData.popPreviousScene();
+        fadingController.goToScreen(previouseSceneName);
+    }
+
     public void pushCurrentSceneName()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
