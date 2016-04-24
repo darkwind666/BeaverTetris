@@ -68,11 +68,6 @@ public class MainMenuController : MonoBehaviour {
         soundSettingsPopUp.SetActive(true);
     }
 
-    public void developersButtonPressed()
-    {
-
-    }
-
     public void exitButtonPressed()
     {
         Application.Quit();

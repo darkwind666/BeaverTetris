@@ -199,6 +199,10 @@
 	<data name="BeaverTime.NextStep" xml:space="preserve">
 		<value>Вперёд</value>
 	</data>
+	<data name="BeaverTime.PrivacyPolicy" xml:space="preserve">
+		<value>Политика
+конфиденциальности</value>
+	</data>
 	<data name="BeaverTime.Programmer" xml:space="preserve">
 		<value>Пррограммист</value>
 	</data>

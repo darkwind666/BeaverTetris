@@ -206,6 +206,9 @@
 	<data name="BeaverTime.Replay" xml:space="preserve">
 		<value>Replay</value>
 	</data>
+	<data name="BeaverTime.ReviewGameButton" xml:space="preserve">
+		<value>Review game</value>
+	</data>
 	<data name="BeaverTime.ReviewGameSuggestion" xml:space="preserve">
 		<value>You can review 
  game :)</value>
@@ -276,7 +279,8 @@
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>You win!</value>
 	</data>
-	<data name="BeaverTime.ReviewGameButton" xml:space="preserve">
-		<value>Review game</value>
+	<data name="BeaverTime.PrivacyPolicy" xml:space="preserve">
+		<value>Privacy
+policy</value>
 	</data>
 </root>
