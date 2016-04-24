@@ -86,6 +86,7 @@ public class LevelResultsController : MonoBehaviour {
     public void loseLevel()
     {
         _playerData.playerScore = _playerData.playerStartLevelScore;
+        _playerData.savePlayerData();
         gameSpeedController.stopGame = true;
         resultPopUp.SetActive(true);
         GameObject result = results[0];
@@ -110,6 +111,7 @@ public class LevelResultsController : MonoBehaviour {
     public void goToSelectLevelScreenFromPause()
     {
         _playerData.playerScore = _playerData.playerStartLevelScore;
+        _playerData.savePlayerData();
         fadingController.startFade("SelectLevelScreen", false);
     }
 

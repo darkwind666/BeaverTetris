@@ -206,6 +206,10 @@
 	<data name="BeaverTime.Replay" xml:space="preserve">
 		<value>Replay</value>
 	</data>
+	<data name="BeaverTime.ReviewGameSuggestion" xml:space="preserve">
+		<value>You can review 
+ game :)</value>
+	</data>
 	<data name="BeaverTime.Score" xml:space="preserve">
 		<value>Score</value>
 	</data>
@@ -223,6 +227,9 @@
 	</data>
 	<data name="BeaverTime.ShareWinDescription" xml:space="preserve">
 		<value>I win level {0} in game Beaver time. I get {1} scores.</value>
+	</data>
+	<data name="BeaverTime.ShareWinFriends" xml:space="preserve">
+		<value>Share</value>
 	</data>
 	<data name="BeaverTime.Subscribe" xml:space="preserve">
 		<value>Subscribe</value>
@@ -269,7 +276,7 @@
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>You win!</value>
 	</data>
-	<data name="BeaverTime.ShareWinFriends" xml:space="preserve">
-		<value>Share</value>
+	<data name="BeaverTime.ReviewGameButton" xml:space="preserve">
+		<value>Review game</value>
 	</data>
 </root>

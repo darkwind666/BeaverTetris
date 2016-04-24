@@ -17,6 +17,7 @@ public class GamePlayerDataController {
     public int playerScore { get; set; }
     public int selectedLevelIndex { get; set; }
     public int completedTutorialsCount { get; set; }
+    public bool showReviewSuggestion { get; set; }
 
     public int playerStartLevelScore { get; set; }
 
@@ -50,6 +51,7 @@ public class GamePlayerDataController {
             playerScore = data.playerScore;
             _playerSpells = data.playerSpells;
             completedTutorialsCount = data.completedTutorialsCount;
+            showReviewSuggestion = data.showReviewSuggestion;
 
             if (_playerSpells == null)
             {
@@ -75,6 +77,7 @@ public class GamePlayerDataController {
         savingData.playerScore = playerScore;
         savingData.playerSpells = _playerSpells;
         savingData.completedTutorialsCount = completedTutorialsCount;
+        savingData.showReviewSuggestion = showReviewSuggestion;
 
         formatter.Serialize(file, savingData);
         file.Close();
@@ -90,6 +93,7 @@ public class GamePlayerDataController {
         _playerSpells = new List<LevelSpell>();
         selectedLevelIndex = 0;
         completedTutorialsCount = 0;
+        showReviewSuggestion = false;
         savePlayerData();
     }
 
@@ -154,4 +158,5 @@ public class PlayerData
     public int playerScore;
     public List<LevelSpell> playerSpells;
     public int completedTutorialsCount;
+    public bool showReviewSuggestion;
 }

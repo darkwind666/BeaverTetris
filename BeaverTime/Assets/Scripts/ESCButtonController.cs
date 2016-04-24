@@ -54,6 +54,7 @@ public class ESCButtonController : MonoBehaviour {
         if (playerData.playerExist)
         {
             playerData.playerScore = playerData.playerStartLevelScore;
+            playerData.savePlayerData();
             fadingController.goToScreen(previouseSceneName);
         }
         else

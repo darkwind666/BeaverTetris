@@ -208,6 +208,13 @@
 	<data name="BeaverTime.Replay" xml:space="preserve">
 		<value>Переиграть</value>
 	</data>
+	<data name="BeaverTime.ReviewGameButton" xml:space="preserve">
+		<value>Оценить игру</value>
+	</data>
+	<data name="BeaverTime.ReviewGameSuggestion" xml:space="preserve">
+		<value>Вы можете оценить
+игру :)</value>
+	</data>
 	<data name="BeaverTime.Score" xml:space="preserve">
 		<value>Очки</value>
 	</data>

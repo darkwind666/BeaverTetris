@@ -208,6 +208,13 @@ time</value>
 	<data name="BeaverTime.Replay" xml:space="preserve">
 		<value>Replay</value>
 	</data>
+	<data name="BeaverTime.ReviewGameButton" xml:space="preserve">
+		<value>Review game</value>
+	</data>
+	<data name="BeaverTime.ReviewGameSuggestion" xml:space="preserve">
+		<value>You can review 
+ game :)</value>
+	</data>
 	<data name="BeaverTime.Score" xml:space="preserve">
 		<value>Score</value>
 	</data>
