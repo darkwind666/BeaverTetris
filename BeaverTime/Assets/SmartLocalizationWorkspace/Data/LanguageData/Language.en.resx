@@ -119,6 +119,9 @@
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Back</value>
 	</data>
+	<data name="BeaverTime.ComplainFriends" xml:space="preserve">
+		<value>Complain</value>
+	</data>
 	<data name="BeaverTime.Designer" xml:space="preserve">
 		<value>Designer</value>
 	</data>
@@ -147,6 +150,9 @@ time</value>
 	</data>
 	<data name="BeaverTime.GameSettings" xml:space="preserve">
 		<value>Settings</value>
+	</data>
+	<data name="BeaverTime.GoToFriends" xml:space="preserve">
+		<value>Go to friends</value>
 	</data>
 	<data name="BeaverTime.Level1" xml:space="preserve">
 		<value>Hello, I am glad to see you in game. Help me found my watch please.</value>
@@ -207,6 +213,24 @@ time</value>
 	</data>
 	<data name="BeaverTime.SelectLevel" xml:space="preserve">
 		<value>Select level</value>
+	</data>
+	<data name="BeaverTime.ShareLoseDescription" xml:space="preserve">
+		<value>I lose level {0} in game Beaver time :(</value>
+	</data>
+	<data name="BeaverTime.ShareTitle" xml:space="preserve">
+		<value>#BeaverTime</value>
+	</data>
+	<data name="BeaverTime.ShareWinAllGame" xml:space="preserve">
+		<value>I win all game Beaver time!</value>
+	</data>
+	<data name="BeaverTime.ShareWinDescription" xml:space="preserve">
+		<value>I win level {0} in game Beaver time. I get {1} scores.</value>
+	</data>
+	<data name="BeaverTime.ShareWinFriends" xml:space="preserve">
+		<value>Share</value>
+	</data>
+	<data name="BeaverTime.Subscribe" xml:space="preserve">
+		<value>Subscribe</value>
 	</data>
 	<data name="BeaverTime.Tutorial11" xml:space="preserve">
 		<value>You can move shape right and left, rotate clockwise and accelerate.</value>

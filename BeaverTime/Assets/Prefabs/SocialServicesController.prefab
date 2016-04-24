@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &174738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 451342}
+  - 114: {fileID: 11459822}
+  m_Layer: 0
+  m_Name: SocialServicesController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &451342
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 349.50168, y: 371.36343, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11459822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f605d9ec756c2542859c2c7a9508134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loseLevelImage: https://www.dropbox.com/s/xqpezub42fw12ls/MainGameEndPopResultLoseBeaverImage.png?dl=1
+  winLevelImage: https://www.dropbox.com/s/jxvw93u9g6p0kaa/MainGameEndPopResultWinImage.png?dl=1
+  winAllGameImage: https://www.dropbox.com/s/tbq85llmnn3rs4g/GameRecordsBeaver.png?dl=1
+  vkPublicURL: https://vk.com/BeaverTime
+  facebookPageURL: https://www.facebook.com/BeaverTimeRu/
+  twitterURL: https://twitter.com/dark_wind_dev
+  gameVideoUrl: https://youtu.be/6Z5nQ72sLqA
+  vkProgrammerProfileURL: https://vk.com/id320495454
+  facebookProgrammerProfileURL: https://ru-ru.facebook.com/people/DarkWind-Dev/100010604675564
+  twitterProgrammerProfileURL: https://twitter.com/dark_wind_dev
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: vkProgrammerProfileURL
+      value: https://vk.com/id320495454
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: facebookProgrammerProfileURL
+      value: https://www.facebook.com/profile.php?id=100010604675564
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: twitterProgrammerProfileURL
+      value: https://twitter.com/dark_wind_dev
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: winAllGameImage
+      value: https://www.dropbox.com/s/tbq85llmnn3rs4g/GameRecordsBeaver.png?dl=1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: loseLevelImage
+      value: https://www.dropbox.com/s/xqpezub42fw12ls/MainGameEndPopResultLoseBeaverImage.png?dl=1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: winLevelImage
+      value: https://www.dropbox.com/s/jxvw93u9g6p0kaa/MainGameEndPopResultWinImage.png?dl=1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 174738}
+  m_IsPrefabParent: 1

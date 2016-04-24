@@ -38,7 +38,7 @@ public class GameAnaliticsController : MonoBehaviour {
         GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
         Analytics.CustomEvent("Current level", new Dictionary<string, object> {
-                                                            { "Current level", playerData.selectedLevelIndex}
+                                                            { "Current level", playerData.selectedLevelIndex.ToString()}
                                                                               });
     }
 
@@ -47,8 +47,8 @@ public class GameAnaliticsController : MonoBehaviour {
         GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
         Analytics.CustomEvent("Use spell", new Dictionary<string, object> {
-                                                            { "Current level", playerData.selectedLevelIndex},
-                                                            { "Spell type", spellType},
+                                                            { "Current level", playerData.selectedLevelIndex.ToString()},
+                                                            { "Spell type", spellType.ToString()},
                                                                               });
     }
 
@@ -57,7 +57,7 @@ public class GameAnaliticsController : MonoBehaviour {
         GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
         Analytics.CustomEvent("Win level", new Dictionary<string, object> {
-                                                            { "Current level", playerData.selectedLevelIndex},
+                                                            { "Current level", playerData.selectedLevelIndex.ToString()},
                                                             { "Level award", playerData.playerScore},
                                                                               });
     }
@@ -67,7 +67,7 @@ public class GameAnaliticsController : MonoBehaviour {
         GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
         Analytics.CustomEvent("Lose level", new Dictionary<string, object> {
-                                                            { "Current level", playerData.selectedLevelIndex},
+                                                            { "Current level", playerData.selectedLevelIndex.ToString()},
                                                                               });
     }
 

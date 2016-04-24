@@ -119,6 +119,9 @@
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Назад</value>
 	</data>
+	<data name="BeaverTime.ComplainFriends" xml:space="preserve">
+		<value>Пожаловаться</value>
+	</data>
 	<data name="BeaverTime.Designer" xml:space="preserve">
 		<value>Дизайнер</value>
 	</data>
@@ -147,6 +150,9 @@
 	</data>
 	<data name="BeaverTime.GameSettings" xml:space="preserve">
 		<value>Настройки</value>
+	</data>
+	<data name="BeaverTime.GoToFriends" xml:space="preserve">
+		<value>Подружиться</value>
 	</data>
 	<data name="BeaverTime.Level1" xml:space="preserve">
 		<value>Привет, я рад тебя видеть в игре. Помоги мне найти часы.</value>
@@ -207,6 +213,24 @@
 	</data>
 	<data name="BeaverTime.SelectLevel" xml:space="preserve">
 		<value>Выбор уровня</value>
+	</data>
+	<data name="BeaverTime.ShareLoseDescription" xml:space="preserve">
+		<value>Я проиграл уровень {0} в игре Время бобра :(</value>
+	</data>
+	<data name="BeaverTime.ShareTitle" xml:space="preserve">
+		<value>#ВремяБобра</value>
+	</data>
+	<data name="BeaverTime.ShareWinAllGame" xml:space="preserve">
+		<value>Я прошёл всю игру Время Бобра! А вам слабо? :)</value>
+	</data>
+	<data name="BeaverTime.ShareWinDescription" xml:space="preserve">
+		<value>Я выиграл уровень {0} в игре Время бобра и получил {1} очков :)</value>
+	</data>
+	<data name="BeaverTime.ShareWinFriends" xml:space="preserve">
+		<value>Поделиться</value>
+	</data>
+	<data name="BeaverTime.Subscribe" xml:space="preserve">
+		<value>Соцсети</value>
 	</data>
 	<data name="BeaverTime.Tutorial11" xml:space="preserve">
 		<value>Ты можешь перемещать формы влево, вправо, вращать и ускорять. </value>
