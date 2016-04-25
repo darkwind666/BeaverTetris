@@ -9,8 +9,8 @@ public class SelectLevelUIController : MonoBehaviour {
 
     public FadingScript fadingController;
 
-    public GameObject background;
-    public GameObject buttonClick;
+    public AudioSource backgroundSound;
+    public AudioSource buttonClickEffect;
 
     public GameObject beaverOnRaft;
     public GameObject[] beaverPositions;
@@ -18,12 +18,14 @@ public class SelectLevelUIController : MonoBehaviour {
     public GameObject newPlayerPopUp;
     public InputField newPlayerNameSource;
 
-    public GameObject animationContainer;
+    public SelectLevelAnimationController animationController;
 
     public Text playerName;
     public Text playerScore;
 
     public GameAnaliticsController gameAnaliticsController;
+
+    public string mainGameSceneName;
 
     GamePlayerDataController _playerData;
 
@@ -54,9 +56,6 @@ public class SelectLevelUIController : MonoBehaviour {
 
     void setupSoundWithPlayerData(GamePlayerDataController aPlayerData)
     {
-        AudioSource buttonClickEffect = buttonClick.GetComponent<AudioSource>();
-        AudioSource backgroundSound = background.GetComponent<AudioSource>();
-
         backgroundSound.volume = aPlayerData.gameMusicVolume;
         buttonClickEffect.volume = aPlayerData.gameSoundEffectsVolume;
     }
@@ -87,19 +86,13 @@ public class SelectLevelUIController : MonoBehaviour {
 
         setupPlayerStatusPad();
         newPlayerPopUp.SetActive(false);
-        SelectLevelAnimationController animationController = animationContainer.GetComponent<SelectLevelAnimationController>();
         animationController.playStartAnimation();
-    }
-
-    public void backButtonPressed()
-    {
-        fadingController.startFade("MainMenuScreen", false);
     }
 
     public void selectLevelButtonPressedWithIndex(int aIndex)
     {
         _playerData.selectedLevelIndex = aIndex;
-        fadingController.startFade("MainGameScreen", false);
+        fadingController.startFade(mainGameSceneName, false);
     }
 
 }

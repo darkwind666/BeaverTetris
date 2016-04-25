@@ -2530,10 +2530,10 @@ MonoBehaviour:
   fadingController: {fileID: 1403923285}
   selectLevelButton: {fileID: 2028977782}
   soundSettingsPopUp: {fileID: 2076128909}
-  background: {fileID: 939672643}
-  buttonClick: {fileID: 32423160}
   musicSlider: {fileID: 15696401}
   effectsSlider: {fileID: 854392801}
+  buttonClickEffect: {fileID: 32423162}
+  backgroundSound: {fileID: 939672645}
 --- !u!4 &616641348
 Transform:
   m_ObjectHideFlags: 0

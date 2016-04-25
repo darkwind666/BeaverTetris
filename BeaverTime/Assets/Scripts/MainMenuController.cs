@@ -8,22 +8,19 @@ public class MainMenuController : MonoBehaviour {
     public GameObject selectLevelButton;
     public GameObject soundSettingsPopUp;
 
-    public GameObject background;
-    public GameObject buttonClick;
-
     public Slider musicSlider;
     public Slider effectsSlider;
 
+    public AudioSource buttonClickEffect;
+    public AudioSource backgroundSound;
+
     GamePlayerDataController _playerData;
-    AudioSource _buttonClickEffect;
-    AudioSource _backgroundSound;
+
+    public string selectLevelSceneName;
 
     void Start () {
 
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-
-        _buttonClickEffect = buttonClick.GetComponent<AudioSource>();
-        _backgroundSound = background.GetComponent<AudioSource>();
 
         if (_playerData.playerExist == false) {
             selectLevelButton.SetActive(false);
@@ -38,8 +35,8 @@ public class MainMenuController : MonoBehaviour {
         musicSlider.value = _playerData.gameMusicVolume;
         effectsSlider.value = _playerData.gameSoundEffectsVolume;
 
-        _backgroundSound.volume = _playerData.gameMusicVolume;
-        _buttonClickEffect.volume = _playerData.gameSoundEffectsVolume;
+        backgroundSound.volume = _playerData.gameMusicVolume;
+        buttonClickEffect.volume = _playerData.gameSoundEffectsVolume;
     }
 
 
@@ -50,17 +47,7 @@ public class MainMenuController : MonoBehaviour {
     public void newGameButtonPressed()
     {
         _playerData.cleanPlayer();
-        fadingController.startFade("SelectLevelScreen", false);
-    }
-
-    public void selectLevelButtonPressed()
-    {
-        fadingController.startFade("SelectLevelScreen", false);
-    }
-
-    public void recordsButtonPressed()
-    {
-        fadingController.startFade("GameRecordsScene", false);
+        fadingController.startFade(selectLevelSceneName, false);
     }
 
     public void settingsButtonPressed()

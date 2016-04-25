@@ -1868,15 +1868,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 889105727}
-        m_MethodName: backButtonPressed
-        m_Mode: 1
+      - m_Target: {fileID: 1866382933}
+        m_MethodName: goToScreen
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenuScreen
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 47420904}
@@ -2064,8 +2064,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadingController: {fileID: 1866382933}
-  background: {fileID: 62205723}
-  buttonClick: {fileID: 47420902}
+  backgroundSound: {fileID: 62205725}
+  buttonClickEffect: {fileID: 47420904}
   beaverOnRaft: {fileID: 1674517266}
   beaverPositions:
   - {fileID: 829944507}
@@ -2080,10 +2080,11 @@ MonoBehaviour:
   - {fileID: 1311283328}
   newPlayerPopUp: {fileID: 1500613639}
   newPlayerNameSource: {fileID: 1209497485}
-  animationContainer: {fileID: 1022275679}
+  animationController: {fileID: 1022275687}
   playerName: {fileID: 732087876}
   playerScore: {fileID: 1768751286}
   gameAnaliticsController: {fileID: 370642613}
+  mainGameSceneName: MainGameScreen
 --- !u!4 &889105728
 Transform:
   m_ObjectHideFlags: 0
