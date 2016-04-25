@@ -35247,7 +35247,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0.86510104}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: 9.3}
+  m_AnchoredPosition: {x: -8, y: 9.3}
   m_SizeDelta: {x: 84.9, y: 40.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433918712
@@ -35285,7 +35285,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 6
@@ -35296,7 +35296,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Subscribe
+  m_Text: Share
 --- !u!222 &433918714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43701,7 +43701,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -5}
+  m_AnchoredPosition: {x: 2, y: -11}
   m_SizeDelta: {x: 327, y: 61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526415088
@@ -43725,7 +43725,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 41
+    m_FontSize: 34
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -46281,7 +46281,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -5}
+  m_AnchoredPosition: {x: 4, y: -9}
   m_SizeDelta: {x: 327, y: 61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622589701
@@ -46305,7 +46305,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 41
+    m_FontSize: 34
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -58518,7 +58518,7 @@ RectTransform:
   m_Father: {fileID: 1792875553}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -65466,7 +65466,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit level
+  m_Text: Map
 --- !u!222 &855404739
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -67651,7 +67651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &899838061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74699,7 +74699,7 @@ RectTransform:
   m_Father: {fileID: 1965346209}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -80181,7 +80181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit level
+  m_Text: Map
 --- !u!222 &1046116096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96286,7 +96286,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0.86510104}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: 9.3}
+  m_AnchoredPosition: {x: -6, y: 11}
   m_SizeDelta: {x: 84.9, y: 40.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271930985
@@ -96324,7 +96324,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 17
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 6
@@ -110845,7 +110845,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0.86510104}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: 9.3}
+  m_AnchoredPosition: {x: -6, y: 13}
   m_SizeDelta: {x: 84.9, y: 40.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426397339
@@ -110883,7 +110883,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 6
@@ -110894,7 +110894,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Subscribe
+  m_Text: Share
 --- !u!222 &1426397341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -135696,7 +135696,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -5}
+  m_AnchoredPosition: {x: 4, y: -11}
   m_SizeDelta: {x: 327, y: 61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719002196
@@ -135720,7 +135720,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 41
+    m_FontSize: 34
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -153781,7 +153781,7 @@ RectTransform:
   m_Father: {fileID: 1273360298}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -153848,7 +153848,7 @@ RectTransform:
   m_Father: {fileID: 674537300}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -159704,7 +159704,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13, y: -5}
+  m_AnchoredPosition: {x: 4, y: -9}
   m_SizeDelta: {x: 327, y: 61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039808761
@@ -159728,7 +159728,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 41
+    m_FontSize: 34
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
