@@ -190,6 +190,9 @@
 	<data name="BeaverTime.Map" xml:space="preserve">
 		<value>Карта</value>
 	</data>
+	<data name="BeaverTime.MoreGames" xml:space="preserve">
+		<value>Ещё игры</value>
+	</data>
 	<data name="BeaverTime.NewGame" xml:space="preserve">
 		<value>Новая игра</value>
 	</data>
@@ -198,6 +201,9 @@
 	</data>
 	<data name="BeaverTime.NextStep" xml:space="preserve">
 		<value>Вперёд</value>
+	</data>
+	<data name="BeaverTime.Partners" xml:space="preserve">
+		<value>Партнёры</value>
 	</data>
 	<data name="BeaverTime.PrivacyPolicy" xml:space="preserve">
 		<value>Политика

@@ -190,6 +190,9 @@ time</value>
 	<data name="BeaverTime.Map" xml:space="preserve">
 		<value>Map</value>
 	</data>
+	<data name="BeaverTime.MoreGames" xml:space="preserve">
+		<value>More games</value>
+	</data>
 	<data name="BeaverTime.NewGame" xml:space="preserve">
 		<value>New game</value>
 	</data>
@@ -198,6 +201,9 @@ time</value>
 	</data>
 	<data name="BeaverTime.NextStep" xml:space="preserve">
 		<value>Next</value>
+	</data>
+	<data name="BeaverTime.Partners" xml:space="preserve">
+		<value>Partners</value>
 	</data>
 	<data name="BeaverTime.PrivacyPolicy" xml:space="preserve">
 		<value>Privacy

@@ -197,6 +197,13 @@
 	<data name="BeaverTime.NextStep" xml:space="preserve">
 		<value>Next</value>
 	</data>
+	<data name="BeaverTime.Partners" xml:space="preserve">
+		<value>Partners</value>
+	</data>
+	<data name="BeaverTime.PrivacyPolicy" xml:space="preserve">
+		<value>Privacy
+policy</value>
+	</data>
 	<data name="BeaverTime.Programmer" xml:space="preserve">
 		<value>Programmer</value>
 	</data>
@@ -279,8 +286,7 @@
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>You win!</value>
 	</data>
-	<data name="BeaverTime.PrivacyPolicy" xml:space="preserve">
-		<value>Privacy
-policy</value>
+	<data name="BeaverTime.MoreGames" xml:space="preserve">
+		<value>More games</value>
 	</data>
 </root>
