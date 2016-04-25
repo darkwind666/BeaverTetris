@@ -39,15 +39,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30053cc66235f1c4bab88370004ddc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSceneName: 
-  playerShop: 
+  globalSettings: {fileID: 11400000, guid: aef59761d362a1642bb3067cdf5192fb, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: globalSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: aef59761d362a1642bb3067cdf5192fb,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139520}

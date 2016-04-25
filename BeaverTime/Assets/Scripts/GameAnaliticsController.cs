@@ -4,7 +4,7 @@ using UnityEngine.Analytics;
 
 public class GameAnaliticsController : MonoBehaviour {
 
-    public string playerShop;
+    public GameGlobalSettings globalSettings;
 
     void Start () {
 
@@ -19,7 +19,7 @@ public class GameAnaliticsController : MonoBehaviour {
                                                             { "Player language", deviceCulture.nativeName},
                                                             { "Player device type", SystemInfo.deviceType.ToString()},
                                                             { "Player operation system", SystemInfo.operatingSystem},
-                                                            { "Shop", playerShop},
+                                                            { "Shop", globalSettings.gameShopName},
                                                                               });
     }
 

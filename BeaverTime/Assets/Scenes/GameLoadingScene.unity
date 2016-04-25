@@ -306,6 +306,11 @@ Prefab:
       propertyPath: playerShop
       value: "\u0422\u0435\u0441\u0442\u043E\u0432\u044B\u0439 \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
       objectReference: {fileID: 0}
+    - target: {fileID: 11424810, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
+      propertyPath: globalSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: aef59761d362a1642bb3067cdf5192fb,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b49b8ac55981b3f449a43a832ca44fc0, type: 2}
   m_IsPrefabParent: 0

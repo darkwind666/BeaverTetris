@@ -7,7 +7,6 @@ public class PlayerTutorialController : MonoBehaviour {
     public GameObject[] tutorials;
     public GameObject tutorialsBeaver;
     public Text beaverTalk;
-    public BeaverTutorialTalks talks;
     public GameSpeedController gameSpeedController;
     public WinBossCondition winBossCondition;
 

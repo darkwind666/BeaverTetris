@@ -9,26 +9,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cb69157ce5ee314eb7b61704da33a23, type: 3}
-  m_Name: GameLevel5
+  m_Name: GameLevel8
   m_EditorClassIdentifier: 
-  levelAward: 230
+  levelAward: 385
   availableBlockTypesCount: 4
   levelEvents:
+  - gameEventType: 0
+    eventInterval: 70
+    eventDuration: 0
+    detailsCount: 5
+    fallingSpeed: 0
   - gameEventType: 1
-    eventInterval: 30
-    eventDuration: 370
+    eventInterval: 40
+    eventDuration: 170
     detailsCount: 0
     fallingSpeed: 10
-  availableBoss: 0
   bossType: 0
-  winConditionType: 0
-  needToPlaceDetailsCount: 60
+  winConditionType: 1
+  needToPlaceDetailsCount: 0
   remainTimes: 0
-  blocks: []
+  blocks:
+  - blockType: 2
+    blocksCount: 50
+  - blockType: 3
+    blocksCount: 50
+  - blockType: 4
+    blocksCount: 37
   levelSpells:
-  - spellType: 0
-    spellCount: 0
-    spellRechargeInterval: 40
   - spellType: 1
-    spellCount: 14
+    spellCount: 21
+    spellRechargeInterval: 20
+  - spellType: 2
+    spellCount: 6
     spellRechargeInterval: 50
+  tutorialIndex: 0

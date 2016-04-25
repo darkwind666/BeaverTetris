@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameReviewController : MonoBehaviour {
 
-    public string reviewStoreUrl;
+    public GameGlobalSettings gameGlobalSettings;
     public int reviewLevel;
     public int reviewTimeInterval;
     public GameObject reviewPopUp;
@@ -51,7 +51,7 @@ public class GameReviewController : MonoBehaviour {
 
     public void goToGameReview()
     {
-        Application.OpenURL(reviewStoreUrl);
+        Application.OpenURL(gameGlobalSettings.gameShopForReviewUrl);
     }
 
     public void backToGame()
