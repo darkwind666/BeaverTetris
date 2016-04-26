@@ -2534,6 +2534,7 @@ MonoBehaviour:
   effectsSlider: {fileID: 854392801}
   buttonClickEffect: {fileID: 32423162}
   backgroundSound: {fileID: 939672645}
+  selectLevelSceneName: SelectLevelScreen
 --- !u!4 &616641348
 Transform:
   m_ObjectHideFlags: 0
