@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 using System.Collections.Generic;
 using System;
 
 public class GamePlayerDataController {
 
-    const string playerDataFileName = "/playerData.bt";
+    const string playerDataFileName = "/playerData.xml";
 
     public bool playerExist { get; set; }
     public float gameMusicVolume { get; set; }
@@ -39,7 +39,7 @@ public class GamePlayerDataController {
 
         if(File.Exists(_dataPath))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
+            XmlSerializer formatter = new XmlSerializer(typeof(PlayerData));
             FileStream file = File.Open(_dataPath, FileMode.Open);
             PlayerData data = formatter.Deserialize(file) as PlayerData;
 
@@ -65,7 +65,7 @@ public class GamePlayerDataController {
 
     public void savePlayerData()
     {
-        BinaryFormatter formatter = new BinaryFormatter();
+        XmlSerializer formatter = new XmlSerializer(typeof(PlayerData));
         FileStream file = File.Create(_dataPath);
         PlayerData savingData = new PlayerData();
 

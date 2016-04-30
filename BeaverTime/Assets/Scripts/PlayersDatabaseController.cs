@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 [Serializable]
 public class PlayerRecordData
@@ -19,7 +19,7 @@ public class PlayerRecordData
 
 public class PlayersDatabaseController {
 
-    const string playersRecordsDataFileName = "/playersRecords.bt";
+    const string playersRecordsDataFileName = "/playersRecords.xml";
     string _dataPath;
 
     List<PlayerRecordData> _records;
@@ -36,7 +36,7 @@ public class PlayersDatabaseController {
 
         if (File.Exists(_dataPath))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
+            XmlSerializer formatter = new XmlSerializer(typeof(List<PlayerRecordData>));
             FileStream file = File.Open(_dataPath, FileMode.Open);
             _records = formatter.Deserialize(file) as List<PlayerRecordData>;
             file.Close();
@@ -63,7 +63,7 @@ public class PlayersDatabaseController {
 
     public void savePlayersRecordsData()
     {
-        BinaryFormatter formatter = new BinaryFormatter();
+        XmlSerializer formatter = new XmlSerializer(typeof(List<PlayerRecordData>));
         FileStream file = File.Create(_dataPath);
         formatter.Serialize(file, _records);
         file.Close();
