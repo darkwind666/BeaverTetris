@@ -125,7 +125,7 @@ public class FadingScript : MonoBehaviour {
         else
         {
             _doFade = false;
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadSceneAsync(sceneName);
         }
     }
 
