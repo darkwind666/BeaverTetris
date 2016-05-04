@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root><!-- 
     Microsoft ResX Schema 
     
@@ -141,9 +141,7 @@
 		<value>Exit</value>
 	</data>
 	<data name="BeaverTime.GameName" xml:space="preserve">
-		<value>Beaver
-
-time</value>
+		<value>Beaver time</value>
 	</data>
 	<data name="BeaverTime.GameRecords" xml:space="preserve">
 		<value>Records</value>
@@ -262,12 +260,18 @@ policy</value>
 		<value>Match 4 and more blocks in one virticle line.</value>
 	</data>
 	<data name="BeaverTime.Tutorial15" xml:space="preserve">
+		<value>You can use spell to remove unnesessary shape!</value>
+	</data>
+	<data name="BeaverTime.Tutorial16" xml:space="preserve">
 		<value>Place some shapes in game board to finish level.</value>
 	</data>
 	<data name="BeaverTime.Tutorial21" xml:space="preserve">
-		<value>You can use spell to remove unnesessary shape!</value>
+		<value>Some block have more than one life. You should destroy all red points on blocks.</value>
 	</data>
 	<data name="BeaverTime.Tutorial22" xml:space="preserve">
+		<value>Sometimes random shapes fallen from bottom. Be ware!</value>
+	</data>
+	<data name="BeaverTime.Tutorial23" xml:space="preserve">
 		<value>Destroy some block types to win that level.</value>
 	</data>
 	<data name="BeaverTime.Tutorial31" xml:space="preserve">

@@ -117,178 +117,184 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 	<data name="BeaverTime.Back" xml:space="preserve">
-		<value>Back</value>
+		<value>Назад</value>
 	</data>
 	<data name="BeaverTime.ComplainFriends" xml:space="preserve">
-		<value>Complain</value>
+		<value>Пожаловаться</value>
 	</data>
 	<data name="BeaverTime.Designer" xml:space="preserve">
-		<value>Designer</value>
+		<value>Дизайнер</value>
 	</data>
 	<data name="BeaverTime.DesignerName" xml:space="preserve">
-		<value>Hotyashova Veronika</value>
+		<value>Хотяшова Вероника</value>
 	</data>
 	<data name="BeaverTime.EnterPlayerName" xml:space="preserve">
-		<value>Enter player name</value>
+		<value>Введите имя игрока.</value>
 	</data>
 	<data name="BeaverTime.FinishGame" xml:space="preserve">
-		<value>Finish game</value>
+		<value>Закончить игру.</value>
 	</data>
 	<data name="BeaverTime.GameDevelopers" xml:space="preserve">
-		<value>Developers</value>
+		<value>Авторы</value>
 	</data>
 	<data name="BeaverTime.GameExit" xml:space="preserve">
-		<value>Exit</value>
+		<value>Выход</value>
 	</data>
 	<data name="BeaverTime.GameName" xml:space="preserve">
-		<value>Beaver
+		<value>Время
 
-time</value>
+Бобра</value>
 	</data>
 	<data name="BeaverTime.GameRecords" xml:space="preserve">
-		<value>Records</value>
+		<value>Рекорды</value>
 	</data>
 	<data name="BeaverTime.GameSettings" xml:space="preserve">
-		<value>Settings</value>
+		<value>Настройки</value>
 	</data>
 	<data name="BeaverTime.GoToFriends" xml:space="preserve">
-		<value>Go to friends</value>
+		<value>Подружиться</value>
 	</data>
 	<data name="BeaverTime.Level1" xml:space="preserve">
-		<value>Hello, I am glad to see you in game. Help me found my watch please.</value>
+		<value>Привет, я рад тебя видеть в игре. Помоги мне найти часы.</value>
 	</data>
 	<data name="BeaverTime.Level10" xml:space="preserve">
-		<value>You found my watch. Cool. It is final challenge.</value>
+		<value>Ура. Ты нашёл мои часы. Ты готов к последнему испытанию.</value>
 	</data>
 	<data name="BeaverTime.Level2" xml:space="preserve">
-		<value>Collect some blocks, and use spells.</value>
+		<value>Собери пару блоков. Используй заклинание когда захочешь.</value>
 	</data>
 	<data name="BeaverTime.Level3" xml:space="preserve">
-		<value>Remain some time for victory. I am sure in your skills.</value>
+		<value>Продержись немного времени для победы. Я в тебя верю.</value>
 	</data>
 	<data name="BeaverTime.Level4" xml:space="preserve">
-		<value>Fight with boss. Show who is boss here.</value>
+		<value>Сразись с боссом. Покажи кто тут главный.</value>
 	</data>
 	<data name="BeaverTime.Level5" xml:space="preserve">
-		<value>It is a middle game. I am proud of you bravery.</value>
+		<value>Эта середина игры. Я горжусь тобой.</value>
 	</data>
 	<data name="BeaverTime.Level6" xml:space="preserve">
-		<value>Great job. You always can use spell to reduce blocks.</value>
+		<value>Отличная работа. Используй заклинания в тяжёлую минуту</value>
 	</data>
 	<data name="BeaverTime.Level7" xml:space="preserve">
-		<value>Second boss. Firestorm help you.</value>
+		<value>Второй босс. Огненная буря поможет тебе.</value>
 	</data>
 	<data name="BeaverTime.Level8" xml:space="preserve">
-		<value>I see my watch. Some steps remain</value>
+		<value>Я уже вижу свои часы. Осталось совсем чуть-чуть.</value>
 	</data>
 	<data name="BeaverTime.Level9" xml:space="preserve">
-		<value>It is will be difficult level. You should be fast as tiger.</value>
+		<value>Это будет сложный уровень. Будь быстрым как тигр.</value>
 	</data>
 	<data name="BeaverTime.LoseLevel" xml:space="preserve">
-		<value>You lose!</value>
+		<value>Вы проиграли!</value>
 	</data>
 	<data name="BeaverTime.Map" xml:space="preserve">
-		<value>Map</value>
+		<value>Карта</value>
 	</data>
 	<data name="BeaverTime.MoreGames" xml:space="preserve">
-		<value>More games</value>
+		<value>Ещё игры</value>
 	</data>
 	<data name="BeaverTime.NewGame" xml:space="preserve">
-		<value>New game</value>
+		<value>Новая игра</value>
 	</data>
 	<data name="BeaverTime.NextLevel" xml:space="preserve">
-		<value>Next level</value>
+		<value>Вперёд</value>
 	</data>
 	<data name="BeaverTime.NextStep" xml:space="preserve">
-		<value>Next</value>
+		<value>Вперёд</value>
 	</data>
 	<data name="BeaverTime.Partners" xml:space="preserve">
-		<value>Partners</value>
+		<value>Партнёры</value>
 	</data>
 	<data name="BeaverTime.PrivacyPolicy" xml:space="preserve">
-		<value>Privacy
-policy</value>
+		<value>Политика
+конфиденциальности</value>
 	</data>
 	<data name="BeaverTime.Programmer" xml:space="preserve">
-		<value>Programmer</value>
+		<value>Пррограммист</value>
 	</data>
 	<data name="BeaverTime.ProgrammerName" xml:space="preserve">
-		<value>Hotyashov Alexander</value>
+		<value>Хотяшов Александр</value>
 	</data>
 	<data name="BeaverTime.Replay" xml:space="preserve">
-		<value>Replay</value>
+		<value>Переиграть</value>
 	</data>
 	<data name="BeaverTime.ReviewGameButton" xml:space="preserve">
-		<value>Review game</value>
+		<value>Оценить игру</value>
 	</data>
 	<data name="BeaverTime.ReviewGameSuggestion" xml:space="preserve">
-		<value>You can review 
- game :)</value>
+		<value>Вы можете оценить
+игру :)</value>
 	</data>
 	<data name="BeaverTime.Score" xml:space="preserve">
-		<value>Score</value>
+		<value>Очки</value>
 	</data>
 	<data name="BeaverTime.SelectLevel" xml:space="preserve">
-		<value>Select level</value>
+		<value>Выбор уровня</value>
 	</data>
 	<data name="BeaverTime.ShareLoseDescription" xml:space="preserve">
-		<value>I lose level {0} in game Beaver time :(</value>
+		<value>Я проиграл уровень {0} в игре Время бобра :(</value>
 	</data>
 	<data name="BeaverTime.ShareTitle" xml:space="preserve">
-		<value>#BeaverTime</value>
+		<value>#ВремяБобра</value>
 	</data>
 	<data name="BeaverTime.ShareWinAllGame" xml:space="preserve">
-		<value>I win all game Beaver time!</value>
+		<value>Я прошёл всю игру Время Бобра! А вам слабо? :)</value>
 	</data>
 	<data name="BeaverTime.ShareWinDescription" xml:space="preserve">
-		<value>I win level {0} in game Beaver time. I get {1} scores.</value>
+		<value>Я выиграл уровень {0} в игре Время бобра и получил {1} очков :)</value>
 	</data>
 	<data name="BeaverTime.ShareWinFriends" xml:space="preserve">
-		<value>Share</value>
+		<value>Поделиться</value>
 	</data>
 	<data name="BeaverTime.Subscribe" xml:space="preserve">
-		<value>Subscribe</value>
+		<value>Соцсети</value>
 	</data>
 	<data name="BeaverTime.Tutorial11" xml:space="preserve">
-		<value>You can move shape right and left, rotate clockwise and accelerate.</value>
+		<value>Ты можешь перемещать формы влево, вправо, вращать и ускорять. </value>
 	</data>
 	<data name="BeaverTime.Tutorial12" xml:space="preserve">
-		<value>Collect full blocks line and get more scores.</value>
+		<value>Собери полную линию и получи очки.</value>
 	</data>
 	<data name="BeaverTime.Tutorial13" xml:space="preserve">
-		<value>Match 4 and more blocks in one horizontal line.</value>
+		<value>Собери 4 и более одинаковых кубиков в горизонтальный ряд и получи очки.</value>
 	</data>
 	<data name="BeaverTime.Tutorial14" xml:space="preserve">
-		<value>Match 4 and more blocks in one virticle line.</value>
+		<value>Собери 4 и более одинаковых кубиков в вертикальный ряд и получи очки.</value>
 	</data>
 	<data name="BeaverTime.Tutorial15" xml:space="preserve">
-		<value>Place some shapes in game board to finish level.</value>
+		<value>Использую первое заклинание чтобы уничтожить ненужные детали</value>
+	</data>
+	<data name="BeaverTime.Tutorial16" xml:space="preserve">
+		<value>Положи несколько деталей на игровую доску для победы!</value>
 	</data>
 	<data name="BeaverTime.Tutorial21" xml:space="preserve">
-		<value>You can use spell to remove unnesessary shape!</value>
+		<value>Некоторые блоки имеют несколько жизней. Необходимо уничтожить все красные точки на блоках.</value>
 	</data>
 	<data name="BeaverTime.Tutorial22" xml:space="preserve">
-		<value>Destroy some block types to win that level.</value>
+		<value>Иногда случайные блоки падают сверху. Будь бдительным!</value>
+	</data>
+	<data name="BeaverTime.Tutorial23" xml:space="preserve">
+		<value>Уничтожь некоторое количество блоков определённого цвета, чтобы пройти уровень.</value>
 	</data>
 	<data name="BeaverTime.Tutorial31" xml:space="preserve">
-		<value>Remain some times for victory. Time indicator placed on the right corner.</value>
+		<value>Продержись некоторое время. Время в правом верхнем углу.</value>
 	</data>
 	<data name="BeaverTime.Tutorial41" xml:space="preserve">
-		<value>Use spell to destroy some random blocks in board.</value>
+		<value>Используй второе заклинание чтобы уничтожить случайные блоки на доске.</value>
 	</data>
 	<data name="BeaverTime.Tutorial42" xml:space="preserve">
-		<value>Kill boss for finish level. You can kill it by combining lines or by spell.</value>
+		<value>Одолей босса. Для этого собирай целые линии блоков вместе с боссом или использую заклинания. Его жизни показанны в правом верхнем углу с рыбой.</value>
 	</data>
 	<data name="BeaverTime.Tutorial51" xml:space="preserve">
-		<value>You can use spell to invoke firestorm on board!</value>
+		<value>Использую третье заклинание - огненный дождь. Врагу это понравиться)</value>
 	</data>
 	<data name="BeaverTime.Tutorial52" xml:space="preserve">
-		<value>You can use spell to fill gaps in board!</value>
+		<value>Используй четвёртое заклинание для заполнения дыр между блоками.</value>
 	</data>
 	<data name="BeaverTime.Victory" xml:space="preserve">
-		<value>Victory!</value>
+		<value>Победа!!!</value>
 	</data>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
-		<value>You win!</value>
+		<value>Вы выиграли!</value>
 	</data>
 </root>

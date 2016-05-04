@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root><!-- 
     Microsoft ResX Schema 
     
@@ -262,12 +262,18 @@
 		<value>Собери 4 и более одинаковых кубиков в вертикальный ряд и получи очки.</value>
 	</data>
 	<data name="BeaverTime.Tutorial15" xml:space="preserve">
+		<value>Использую первое заклинание чтобы уничтожить ненужные детали</value>
+	</data>
+	<data name="BeaverTime.Tutorial16" xml:space="preserve">
 		<value>Положи несколько деталей на игровую доску для победы!</value>
 	</data>
 	<data name="BeaverTime.Tutorial21" xml:space="preserve">
-		<value>Использую первое заклинание чтобы уничтожить ненужные детали</value>
+		<value>Некоторые блоки имеют несколько жизней. Необходимо уничтожить все красные точки на блоках.</value>
 	</data>
 	<data name="BeaverTime.Tutorial22" xml:space="preserve">
+		<value>Иногда случайные блоки падают сверху. Будь бдительным!</value>
+	</data>
+	<data name="BeaverTime.Tutorial23" xml:space="preserve">
 		<value>Уничтожь некоторое количество блоков определённого цвета, чтобы пройти уровень.</value>
 	</data>
 	<data name="BeaverTime.Tutorial31" xml:space="preserve">
