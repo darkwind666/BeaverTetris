@@ -9,7 +9,6 @@ public class MainGameDataLoader : MonoBehaviour {
 
     void Awake ()
     {
-        ServicesLocator.loadGameServices();
         GameBoard newGameBoard = new GameBoard(shapeSideInBlocks);
         ServicesLocator.setServiceForKey(newGameBoard, typeof(GameBoard).Name);
 

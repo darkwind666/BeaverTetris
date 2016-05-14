@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &432946
 Transform:
   m_ObjectHideFlags: 1
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 1, z: 0}
+  m_LocalPosition: {x: 6, y: 1, z: 0}
   m_LocalScale: {x: 2.622893, y: 2.622893, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7c8bee5c9a0764aaeb2d6821dd7f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockLivesCount: 9
+  blockLivesCount: 6
   blockLivesPoints: []
 --- !u!198 &19881900
 ParticleSystem:

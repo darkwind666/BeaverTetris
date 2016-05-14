@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &498556
 Transform:
   m_ObjectHideFlags: 1
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7c8bee5c9a0764aaeb2d6821dd7f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockLivesCount: 6
+  blockLivesCount: 5
   blockLivesPoints: []
 --- !u!114 &11441700
 MonoBehaviour:

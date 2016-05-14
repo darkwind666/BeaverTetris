@@ -21180,7 +21180,7 @@ GameObject:
   - 4: {fileID: 275326942}
   - 95: {fileID: 275326943}
   m_Layer: 0
-  m_Name: FirstPart
+  m_Name: FifthPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21201,8 +21201,8 @@ Transform:
   - {fileID: 1320197617}
   - {fileID: 2017054582}
   - {fileID: 1930167538}
-  m_Father: {fileID: 1025395337}
-  m_RootOrder: 0
+  m_Father: {fileID: 1369389290}
+  m_RootOrder: 4
 --- !u!95 &275326943
 Animator:
   serializedVersion: 3
@@ -39864,7 +39864,7 @@ Transform:
   - {fileID: 1348145929}
   - {fileID: 1864345841}
   m_Father: {fileID: 1025395337}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!95 &434849351
 Animator:
   serializedVersion: 3
@@ -54008,7 +54008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &625609756
 Transform:
   m_ObjectHideFlags: 0
@@ -54020,7 +54020,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1025395337}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &647444460
 GameObject:
   m_ObjectHideFlags: 0
@@ -76346,7 +76346,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1369389290}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.00000166893, y: 0.0000009536743}
@@ -90652,7 +90652,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 275326942}
   - {fileID: 434849350}
   - {fileID: 625609756}
   - {fileID: 1587080424}
@@ -90670,7 +90669,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorials:
-  - {fileID: 275326941}
   - {fileID: 434849349}
   - {fileID: 625609755}
   - {fileID: 1587080423}
@@ -119915,6 +119913,7 @@ Transform:
   - {fileID: 2069764221}
   - {fileID: 1834187763}
   - {fileID: 1419647477}
+  - {fileID: 275326942}
   - {fileID: 867094270}
   m_Father: {fileID: 1604482662}
   m_RootOrder: 0
@@ -119934,6 +119933,7 @@ MonoBehaviour:
   - {fileID: 2069764220}
   - {fileID: 1834187762}
   - {fileID: 1419647476}
+  - {fileID: 275326941}
   - {fileID: 867094269}
   playerTutorialController: {fileID: 931376382}
 --- !u!1001 &1371984350
@@ -136863,10 +136863,6 @@ Prefab:
       propertyPath: m_Name
       value: PrincessBoss (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 196346, guid: 54d3ec837b19e8e43b98e1a923e5f24d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54d3ec837b19e8e43b98e1a923e5f24d, type: 2}
   m_IsPrefabParent: 0
@@ -141979,7 +141975,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1025395337}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1589449534
 GameObject:
   m_ObjectHideFlags: 0
@@ -148608,7 +148604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1649090086
 Transform:
   m_ObjectHideFlags: 0
@@ -154917,6 +154913,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11459506, guid: 54d3ec837b19e8e43b98e1a923e5f24d, type: 2}
+      propertyPath: blockLivesCount
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 54d3ec837b19e8e43b98e1a923e5f24d, type: 2}
   m_IsPrefabParent: 0
@@ -158678,10 +158678,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 498556, guid: 2c52bb6bbb2b546409bc16a4f2bc29ad, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 120494, guid: 2c52bb6bbb2b546409bc16a4f2bc29ad, type: 2}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

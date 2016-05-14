@@ -333,13 +333,32 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   metroPackageName: BeaverTime
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: Assets\WSATestCertificate.pfx
+  metroCertificatePath: D:\Downloads\BeaverTetris\BeaverTime\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: Darkwinddev
   metroCertificateIssuer: Darkwinddev
   metroCertificateNotAfter: 80eb7891d8bed201
   metroApplicationDescription: BeaverTime
-  wsaImages: {}
+  wsaImages:
+    65636: "D:/\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B/\u041A\u043E\u0434\u044B
+      \u0438 \u043F\u0430\u0440\u043E\u043B\u0438/\u0420\u0430\u0431\u043E\u0442\u0430/BeaverTetris/\u041D\u043E\u0432\u043E\u0435/\u0418\u043A\u043E\u043D\u043A\u0438\u0412\u0438\u043D\u0434\u043E\u0443\u0441\u0421\u0442\u043E\u0440/50\u043D\u043050
+      \u043A\u043E\u043F\u0438\u044F.png"
+    65661: 
+    720976: 
+    720996: "D:/\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B/\u041A\u043E\u0434\u044B
+      \u0438 \u043F\u0430\u0440\u043E\u043B\u0438/\u0420\u0430\u0431\u043E\u0442\u0430/BeaverTetris/\u041D\u043E\u0432\u043E\u0435/\u0418\u043A\u043E\u043D\u043A\u0438\u0412\u0438\u043D\u0434\u043E\u0443\u0441\u0421\u0442\u043E\u0440/150\u043D\u0430150
+      \u043A\u043E\u043F\u0438\u044F.png"
+    721076: 
+    786512: 
+    786532: "D:/\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B/\u041A\u043E\u0434\u044B
+      \u0438 \u043F\u0430\u0440\u043E\u043B\u0438/\u0420\u0430\u0431\u043E\u0442\u0430/BeaverTetris/\u041D\u043E\u0432\u043E\u0435/\u0418\u043A\u043E\u043D\u043A\u0438\u0412\u0438\u043D\u0434\u043E\u0443\u0441\u0421\u0442\u043E\u0440/310x150.png"
+    852048: 
+    852068: "D:/\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B/\u041A\u043E\u0434\u044B
+      \u0438 \u043F\u0430\u0440\u043E\u043B\u0438/\u0420\u0430\u0431\u043E\u0442\u0430/BeaverTetris/\u041D\u043E\u0432\u043E\u0435/\u0418\u043A\u043E\u043D\u043A\u0438\u0412\u0438\u043D\u0434\u043E\u0443\u0441\u0421\u0442\u043E\u0440/30\u043D\u043030
+      \u043A\u043E\u043F\u0438\u044F.png"
+    852108: 
+    917584: 
+    983140: 
   metroTileShortName: BeaverTime
   metroCommandLineArgsFile: 
   metroTileShowName: 0
