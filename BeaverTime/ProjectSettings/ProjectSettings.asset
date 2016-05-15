@@ -333,7 +333,7 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   metroPackageName: BeaverTime
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: D:\Downloads\BeaverTetris\BeaverTime\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: Darkwinddev
   metroCertificateIssuer: Darkwinddev
