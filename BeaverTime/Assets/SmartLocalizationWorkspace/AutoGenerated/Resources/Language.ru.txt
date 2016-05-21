@@ -288,7 +288,7 @@
 	<data name="BeaverTime.Tutorial51" xml:space="preserve">
 		<value>Использую третье заклинание - огненный дождь. Врагу это понравиться)</value>
 	</data>
-	<data name="BeaverTime.Tutorial52" xml:space="preserve">
+	<data name="BeaverTime.Tutorial61" xml:space="preserve">
 		<value>Используй четвёртое заклинание для заполнения дыр между блоками.</value>
 	</data>
 	<data name="BeaverTime.Victory" xml:space="preserve">
