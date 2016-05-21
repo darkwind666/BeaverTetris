@@ -35,14 +35,14 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 220
-        inSlope: -394.8
-        outSlope: -394.8
+        value: 416.57
+        inSlope: -783.87
+        outSlope: -783.87
         tangentMode: 10
       - time: 1
-        value: -174.8
-        inSlope: -394.8
-        outSlope: -394.8
+        value: -367.3
+        inSlope: -783.87
+        outSlope: -783.87
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -55,17 +55,17 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 92
+        value: 203.9
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - time: 1
-        value: 92
+        value: 203.9
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - time: 2
-        value: 92
+        value: 203.9
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -90,7 +90,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 0
       - time: 2
-        value: -130.4
+        value: -272.7
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -174,14 +174,14 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 220
-        inSlope: -394.8
-        outSlope: -394.8
+        value: 416.57
+        inSlope: -783.87
+        outSlope: -783.87
         tangentMode: 10
       - time: 1
-        value: -174.8
-        inSlope: -394.8
-        outSlope: -394.8
+        value: -367.3
+        inSlope: -783.87
+        outSlope: -783.87
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -194,17 +194,17 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 92
+        value: 203.9
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - time: 1
-        value: 92
+        value: 203.9
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - time: 2
-        value: 92
+        value: 203.9
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -229,7 +229,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 0
       - time: 2
-        value: -130.4
+        value: -272.7
         inSlope: 0
         outSlope: 0
         tangentMode: 0
