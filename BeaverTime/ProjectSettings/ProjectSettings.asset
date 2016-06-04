@@ -89,7 +89,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: comDarkWind.BeaverTime
+  bundleIdentifier: comDarkWind.BeaverTimePro
   bundleVersion: 1.2
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
@@ -158,8 +158,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Users/sasha/Desktop/android.keystore
-  AndroidKeyaliasName: androidkey
+  AndroidKeystoreName: /Users/sasha/Desktop/BeaverTimePaid.keystore
+  AndroidKeyaliasName: beavertimepaid
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1
