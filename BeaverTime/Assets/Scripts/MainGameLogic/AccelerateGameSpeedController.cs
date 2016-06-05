@@ -4,28 +4,31 @@ using System.Collections;
 public class AccelerateGameSpeedController : MonoBehaviour {
 
     public int eventType;
-    int maxUpdateTime;
+	public int maxUpdateTime;
     int acceleratedSpeed;
 
     int _standardShapeSpeed;
-    int _currentUpdateState;
+	public int currentUpdateState;
     GameBoard _gameBoard;
+	public int negativeMomentReward;
 
     public GameSpeedController gameSpeedController;
     public GameShapesSpawner shapeController;
 
     int activeDuration;
-    bool _activeAcceleration;
+	public bool activeAcceleration;
     int _currentActiveAccelerationState;
 
     bool _eventActive;
+	GamePlayerDataController _playerData;
 
     void Start () {
 
-        _currentUpdateState = 0;
+        currentUpdateState = 0;
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
+		_playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
         _standardShapeSpeed = gameSpeedController.standardUpdateTime;
-        _activeAcceleration = false;
+        activeAcceleration = false;
         _currentActiveAccelerationState = 0;
         _eventActive = false;
         setAccelerateEventSettings();
@@ -64,7 +67,7 @@ public class AccelerateGameSpeedController : MonoBehaviour {
 
     void updateAccelerateNegativeMoment()
     {
-        if (_activeAcceleration)
+        if (activeAcceleration)
         {
             updateActiveAcceleration();
         }
@@ -96,19 +99,30 @@ public class AccelerateGameSpeedController : MonoBehaviour {
         }
 
         _currentActiveAccelerationState = 0;
-        _activeAcceleration = false;
+        activeAcceleration = false;
     }
 
     void updateInactiveAcceleration()
     {
-        _currentUpdateState++;
-        if (_currentUpdateState >= maxUpdateTime)
+        currentUpdateState++;
+        if (currentUpdateState >= maxUpdateTime)
         {
-            _currentUpdateState = 0;
-            gameSpeedController.setStandardShapeSpeed(acceleratedSpeed);
-            gameSpeedController.stopShapeAcceleration();
-            _activeAcceleration = true;
+			makeNegativeMoment();
         }
     }
+
+	void makeNegativeMoment()
+	{
+		currentUpdateState = 0;
+		gameSpeedController.setStandardShapeSpeed(acceleratedSpeed);
+		gameSpeedController.stopShapeAcceleration();
+		activeAcceleration = true;
+	}
+
+	public void breakNegativeMomentWithReward(int aReward)
+	{
+		_playerData.playerScore = _playerData.playerScore + aReward;
+		makeNegativeMoment();
+	}
 
 }

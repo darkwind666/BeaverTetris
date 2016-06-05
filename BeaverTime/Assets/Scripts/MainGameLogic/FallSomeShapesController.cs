@@ -5,23 +5,26 @@ using DG.Tweening;
 public class FallSomeShapesController : MonoBehaviour {
 
     public int eventType;
-    int maxUpdateTime;
+	public int maxUpdateTime;
     int fallShapesCount;
     public float fallSpeed;
     public GameObject gameBoardPad;
-    int _currentUpdateState;
+	public int currentUpdateState;
     GameBoard _gameBoard;
+	public int negativeMomentReward;
 
     public GameShapesSpawner shapeController;
     ShapeFinalPositionHelper _shapeFinalPositionHelper;
     public AudioSource fallenShapeSoundEffect;
 
     bool _eventActive;
+	GamePlayerDataController _playerData;
 
     void Start() {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        _currentUpdateState = 0;
+		_playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+        currentUpdateState = 0;
         _shapeFinalPositionHelper = new ShapeFinalPositionHelper();
         _eventActive = false;
         setFallEventSettings();
@@ -52,14 +55,25 @@ public class FallSomeShapesController : MonoBehaviour {
     {
         if (_gameBoard.gameBoardLocked == false && shapeController.currentShapeAvailable() && _eventActive == true)
         {
-            _currentUpdateState++;
-            if (_currentUpdateState >= maxUpdateTime)
+            currentUpdateState++;
+            if (currentUpdateState >= maxUpdateTime)
             {
-                _currentUpdateState = 0;
-                fallSomeShapes();
+				makeNegativeMoment();
             }
         }
     }
+
+	public void breakNegativeMomentWithReward(int aReward)
+	{
+		_playerData.playerScore = _playerData.playerScore + aReward;
+		makeNegativeMoment();
+	}
+
+	void makeNegativeMoment()
+	{
+		currentUpdateState = 0;
+		fallSomeShapes();
+	}
 
     void fallSomeShapes()
     {
