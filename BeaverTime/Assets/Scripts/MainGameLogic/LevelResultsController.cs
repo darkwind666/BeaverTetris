@@ -13,6 +13,7 @@ public class LevelResultsController : MonoBehaviour {
     public AudioSource winGameSound;
     public MainGameSoundsController soundController;
     public GameAnaliticsController gameAnaliticsController;
+	public int endlessLevelStartScore;
 
     GamePlayerDataController _playerData;
     GameLevel _currentLevelData;
@@ -27,6 +28,11 @@ public class LevelResultsController : MonoBehaviour {
         LevelDataStore levelsDataStore = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
         _currentLevelData = levelsDataStore.getCurrentLevelData();
         _playerData.playerStartLevelScore = _playerData.playerScore;
+
+		if (_playerData.selectEndlessLevel) 
+		{
+			_playerData.playerScore = endlessLevelStartScore;
+		}
 
     }
 	

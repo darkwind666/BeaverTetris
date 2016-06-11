@@ -20,13 +20,7 @@ public class PlayerSpellsPadController : MonoBehaviour {
 
         _gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-
-        for (int spellIndicatorIndex = 0; spellIndicatorIndex < _gamePlayerData.getPlayerSpellsCount(); spellIndicatorIndex++)
-        {
-            GameObject spellIndicator = playerSpells[spellIndicatorIndex];
-            spellIndicator.SetActive(true);
-        }
-        
+		showAvailableSpells();
     }
 	
 	void Update () {
@@ -35,8 +29,26 @@ public class PlayerSpellsPadController : MonoBehaviour {
         {
             checkUserInput();
         }
-    
     }
+
+	void showAvailableSpells()
+	{
+		if (_gamePlayerData.selectEndlessLevel) {
+
+			foreach (GameObject spell in playerSpells) {
+				spell.SetActive (true);
+			}
+
+		} else {
+
+			for (int spellIndicatorIndex = 0; spellIndicatorIndex < _gamePlayerData.getPlayerSpellsCount(); spellIndicatorIndex++)
+			{
+				GameObject spellIndicator = playerSpells[spellIndicatorIndex];
+				spellIndicator.SetActive(true);
+			}
+
+		}
+	}
 
     void checkUserInput()
     {

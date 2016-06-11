@@ -6,5 +6,6 @@ using System;
 public class GameLevelsCollection : ScriptableObject {
 
    public  GameLevel[] gameLevels;
+	public GameLevel endlessLevel;
 
 }

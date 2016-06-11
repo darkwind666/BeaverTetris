@@ -20,14 +20,33 @@ public class FallSomeShapesController : MonoBehaviour {
     bool _eventActive;
 	GamePlayerDataController _playerData;
 
+	public int minDetailsCount;
+	public int minUpdateTimeForEvent;
+	public int endlessLevelWaveTimeInterval;
+	int _maxDetailsCount;
+	int _maxUpdateTimeForEvent;
+
+	int _currentWaveTimeState;
+
     void Start() {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
 		_playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-        currentUpdateState = 0;
-        _shapeFinalPositionHelper = new ShapeFinalPositionHelper();
-        _eventActive = false;
-        setFallEventSettings();
+		_shapeFinalPositionHelper = new ShapeFinalPositionHelper();
+		currentUpdateState = 0;
+		_eventActive = false;
+
+		setFallEventSettings();
+		_maxDetailsCount = fallShapesCount;
+		_maxUpdateTimeForEvent = maxUpdateTime;
+
+		if (_playerData.selectEndlessLevel) {
+			
+			maxUpdateTime = minUpdateTimeForEvent;
+			fallShapesCount = minDetailsCount;
+			_currentWaveTimeState = 0;
+			_eventActive = true;
+		}
     }
 
     void setFallEventSettings()
@@ -60,8 +79,33 @@ public class FallSomeShapesController : MonoBehaviour {
             {
 				makeNegativeMoment();
             }
+
+			if (_playerData.selectEndlessLevel) 
+			{
+				updateEndlessLevelWave();
+			}
         }
     }
+
+	void updateEndlessLevelWave()
+	{
+		_currentWaveTimeState++;
+
+		if(_currentWaveTimeState >= endlessLevelWaveTimeInterval)
+		{
+			_currentWaveTimeState = 0;
+
+			maxUpdateTime = Mathf.Min(maxUpdateTime - 10, minUpdateTimeForEvent);
+			if (maxUpdateTime <= _maxUpdateTimeForEvent) {
+				maxUpdateTime = minUpdateTimeForEvent;
+			}
+
+			fallShapesCount = Mathf.Min(fallShapesCount + 1, _maxDetailsCount);
+			if (fallShapesCount >= _maxDetailsCount) {
+				fallShapesCount = minDetailsCount;
+			}
+		}
+	}
 
 	public void breakNegativeMomentWithReward(int aReward)
 	{

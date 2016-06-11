@@ -22,6 +22,16 @@ public class AccelerateGameSpeedController : MonoBehaviour {
     bool _eventActive;
 	GamePlayerDataController _playerData;
 
+	public int minActiveDuration;
+	public int minUpdateTimeForEvent;
+	public int minAcceleratedSpeed;
+	public int endlessLevelWaveTimeInterval;
+	int _maxActiveDuration;
+	int _maxUpdateTimeForEvent;
+	int _maxAcceleratedSpeed;
+
+	int _currentWaveTimeState;
+
     void Start () {
 
         currentUpdateState = 0;
@@ -31,7 +41,22 @@ public class AccelerateGameSpeedController : MonoBehaviour {
         activeAcceleration = false;
         _currentActiveAccelerationState = 0;
         _eventActive = false;
+
         setAccelerateEventSettings();
+
+		_maxActiveDuration = activeDuration;
+		_maxUpdateTimeForEvent = maxUpdateTime;
+		_maxAcceleratedSpeed = acceleratedSpeed;
+
+		if (_playerData.selectEndlessLevel) {
+
+			maxUpdateTime = minUpdateTimeForEvent;
+			acceleratedSpeed = minAcceleratedSpeed;
+			activeDuration = minActiveDuration;
+			_currentWaveTimeState = 0;
+			_eventActive = true;
+		}
+
     }
 
     void setAccelerateEventSettings()
@@ -75,6 +100,12 @@ public class AccelerateGameSpeedController : MonoBehaviour {
         {
             updateInactiveAcceleration();
         }
+
+		if (_playerData.selectEndlessLevel) 
+		{
+			updateEndlessLevelWave();
+		}
+
     }
 
     void updateActiveAcceleration()
@@ -117,6 +148,31 @@ public class AccelerateGameSpeedController : MonoBehaviour {
 		gameSpeedController.setStandardShapeSpeed(acceleratedSpeed);
 		gameSpeedController.stopShapeAcceleration();
 		activeAcceleration = true;
+	}
+
+	void updateEndlessLevelWave()
+	{
+		_currentWaveTimeState++;
+
+		if(_currentWaveTimeState >= endlessLevelWaveTimeInterval)
+		{
+			_currentWaveTimeState = 0;
+
+			maxUpdateTime = Mathf.Min(maxUpdateTime - 10, minUpdateTimeForEvent);
+			if (maxUpdateTime <= _maxUpdateTimeForEvent) {
+				maxUpdateTime = minUpdateTimeForEvent;
+			}
+
+			activeDuration = Mathf.Min(activeDuration + 10, _maxActiveDuration);
+			if (activeDuration >= _maxActiveDuration) {
+				activeDuration = minActiveDuration;
+			}
+
+			acceleratedSpeed = Mathf.Max(acceleratedSpeed - 2, _maxAcceleratedSpeed);
+			if (acceleratedSpeed <= _maxAcceleratedSpeed) {
+				acceleratedSpeed = minAcceleratedSpeed;
+			}
+		}
 	}
 
 	public void breakNegativeMomentWithReward(int aReward)

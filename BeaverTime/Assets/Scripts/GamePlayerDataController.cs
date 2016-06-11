@@ -20,6 +20,7 @@ public class GamePlayerDataController {
     public bool showReviewSuggestion { get; set; }
 
     public int playerStartLevelScore { get; set; }
+	public bool selectEndlessLevel { get; set; }
 
     string _dataPath;
 

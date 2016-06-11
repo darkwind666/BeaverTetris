@@ -28,7 +28,6 @@ public class WinGameConditionsController : MonoBehaviour {
 
     public void updateWithGameTime()
     {
-
         if (_gameBoard.gameBoardLocked == false)
         {
             IWinCondition winCondition = _currentWinCondition.GetComponent<IWinCondition>();
@@ -41,7 +40,6 @@ public class WinGameConditionsController : MonoBehaviour {
                 checkLoseGameCondition();
             }
         }
-
     }
 
     void checkLoseGameCondition()

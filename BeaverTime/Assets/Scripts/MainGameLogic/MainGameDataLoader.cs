@@ -23,13 +23,16 @@ public class MainGameDataLoader : MonoBehaviour {
     {
         GamePlayerDataController gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
 
-        LevelDataStore levelDataStore = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
-        GameLevel level = levelDataStore.getCurrentLevelData();
+		if(gamePlayerData.selectEndlessLevel == false)
+		{
+			LevelDataStore levelDataStore = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
+			GameLevel level = levelDataStore.getCurrentLevelData();
 
-        foreach (LevelSpell spell in level.levelSpells)
-        {
-            gamePlayerData.setPlayerSpell(spell);
-        }
+			foreach (LevelSpell spell in level.levelSpells)
+			{
+				gamePlayerData.setPlayerSpell(spell);
+			}
+		}
     }
 
 	void Start () {

@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour {
 
     public GameObject selectLevelButton;
     public GameObject soundSettingsPopUp;
+	public GameObject endlessLevelButton;
 
     public Slider musicSlider;
     public Slider effectsSlider;
@@ -17,6 +18,7 @@ public class MainMenuController : MonoBehaviour {
     GamePlayerDataController _playerData;
 
     public string selectLevelSceneName;
+	public string endlessLevelSceneName;
 
     void Start () {
 
@@ -24,6 +26,7 @@ public class MainMenuController : MonoBehaviour {
 
         if (_playerData.playerExist == false) {
             selectLevelButton.SetActive(false);
+			endlessLevelButton.SetActive(false);
         }
 
         setupAudio();
@@ -49,6 +52,12 @@ public class MainMenuController : MonoBehaviour {
         _playerData.cleanPlayer();
         fadingController.startFade(selectLevelSceneName, false);
     }
+
+	public void endlessLevelButtonPressed()
+	{
+		_playerData.selectEndlessLevel = true;
+		fadingController.startFade(endlessLevelSceneName, false);
+	}
 
     public void settingsButtonPressed()
     {

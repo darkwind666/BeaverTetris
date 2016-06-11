@@ -49,7 +49,7 @@ public class SpellsController : MonoBehaviour {
 
     void useSpellForIndex(int aSpellIndex)
     {
-        if (aSpellIndex < _gamePlayerData.getPlayerSpellsCount())
+		if (aSpellIndex < _gamePlayerData.getPlayerSpellsCount() || _gamePlayerData.selectEndlessLevel == true)
         {
             GameObject spellContainer = spells[aSpellIndex];
             useSpellFromSpellContainer(spellContainer);

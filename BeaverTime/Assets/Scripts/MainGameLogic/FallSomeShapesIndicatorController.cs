@@ -5,15 +5,17 @@ using UnityEngine.UI;
 public class FallSomeShapesIndicatorController : MonoBehaviour {
 
 	public FallSomeShapesController shapesController;
+	public GameObject awardText;
 
 	Image circularIndicator;
-	public GameObject awardText;
+	GameBoard _gameBoard;
 
 	void Start () {
 
 		circularIndicator = GetComponent<Image>();
 		circularIndicator.fillAmount = 1f;
 
+		_gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
 		checkActiveEvent();
 	}
 
@@ -46,16 +48,19 @@ public class FallSomeShapesIndicatorController : MonoBehaviour {
 
 	public void breakFallShapesEvent()
 	{
-		float breakPart = 1.0f - (float)shapesController.currentUpdateState / (float)shapesController.maxUpdateTime;
-		float breakReward = (float)shapesController.negativeMomentReward * breakPart;
-		int reward = (int)breakReward;
+		if(_gameBoard.gameBoardLocked == false)
+		{
+			float breakPart = 1.0f - (float)shapesController.currentUpdateState / (float)shapesController.maxUpdateTime;
+			float breakReward = (float)shapesController.negativeMomentReward * breakPart;
+			int reward = (int)breakReward;
 
-		shapesController.breakNegativeMomentWithReward(reward);
+			shapesController.breakNegativeMomentWithReward(reward);
 
-		Text text = awardText.GetComponent<Text>();
-		text.text = reward.ToString();
+			Text text = awardText.GetComponent<Text>();
+			text.text = reward.ToString();
 
-		Animator awardTextAnimator = awardText.GetComponent<Animator>();
-		awardTextAnimator.SetTrigger("ShowScore");
+			Animator awardTextAnimator = awardText.GetComponent<Animator>();
+			awardTextAnimator.SetTrigger("ShowScore");
+		}
 	}
 }

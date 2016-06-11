@@ -14,14 +14,8 @@ public class SpellCountdownController : MonoBehaviour {
 
         _playerHasSpell = false;
 
-        GamePlayerDataController gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-
-        if(spellType <  gamePlayerData.getPlayerSpellsCount())
-        {
-            LevelSpell spellData = gamePlayerData.getPlayerSpellForIndex(spellType);
-            spellRechargeInterval = spellData.spellRechargeInterval;
-            _playerHasSpell = true;
-        }
+		checkEndlessLevel();
+		checkPlayerSpellsCount();
 
         spellRechargeState = spellRechargeInterval;
     }
@@ -50,16 +44,50 @@ public class SpellCountdownController : MonoBehaviour {
 
     public int getSpellCount()
     {
-        int spellCount = 0;
-
-        GamePlayerDataController gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-        if (spellType < gamePlayerData.getPlayerSpellsCount())
-        {
-            LevelSpell spellData = gamePlayerData.getPlayerSpellForIndex(spellType);
-            spellCount = spellData.spellCount;
-        }
-
-        return spellCount;
+		LevelSpell spellData = getCurrentLevelSpellData();
+		return spellData.spellCount;
     }
+
+	void checkEndlessLevel()
+	{
+		GamePlayerDataController gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+		if(gamePlayerData.selectEndlessLevel)
+		{
+			LevelSpell spellData = getCurrentLevelSpellData();
+			spellRechargeInterval = spellData.spellRechargeInterval;
+			_playerHasSpell = true;
+		}
+	}
+
+	void checkPlayerSpellsCount()
+	{
+		GamePlayerDataController gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+		if(spellType <  gamePlayerData.getPlayerSpellsCount())
+		{
+			LevelSpell spellData = getCurrentLevelSpellData();
+			spellRechargeInterval = spellData.spellRechargeInterval;
+			_playerHasSpell = true;
+		}
+	}
+
+	LevelSpell getCurrentLevelSpellData()
+	{
+		LevelSpell spellData = new LevelSpell();
+		GamePlayerDataController gamePlayerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+
+		if (gamePlayerData.selectEndlessLevel) {
+			LevelDataStore currentLevelData = ServicesLocator.getServiceForKey (typeof(LevelDataStore).Name) as LevelDataStore;
+			spellData = currentLevelData.getCurrentLevelData ().levelSpells [spellType];
+		} else {
+			
+			if(spellType <  gamePlayerData.getPlayerSpellsCount())
+			{
+				spellData = gamePlayerData.getPlayerSpellForIndex(spellType);
+			}
+
+		}
+
+		return spellData;
+	}
 
 }
