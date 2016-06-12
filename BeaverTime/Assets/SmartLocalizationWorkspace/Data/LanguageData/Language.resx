@@ -128,6 +128,12 @@
 	<data name="BeaverTime.DesignerName" xml:space="preserve">
 		<value>Hotyashova Veronika</value>
 	</data>
+	<data name="BeaverTime.EndEndlessLevel" xml:space="preserve">
+		<value>You time:</value>
+	</data>
+	<data name="BeaverTime.EndlessLevelResult" xml:space="preserve">
+		<value>I finish survival level in game Beaver time. My time is {0} .</value>
+	</data>
 	<data name="BeaverTime.EnterPlayerName" xml:space="preserve">
 		<value>Enter player name</value>
 	</data>
@@ -294,5 +300,8 @@ policy</value>
 	</data>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>You win!</value>
+	</data>
+	<data name="BeaverTime.SurvivalLevelButton" xml:space="preserve">
+		<value>Survival</value>
 	</data>
 </root>

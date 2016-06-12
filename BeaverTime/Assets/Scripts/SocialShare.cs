@@ -24,12 +24,14 @@ public class SocialShare : MonoBehaviour
     string loseLevelKey = "BeaverTime.ShareLoseDescription";
     string winLevelKey = "BeaverTime.ShareWinDescription";
     string winAllGameKey = "BeaverTime.ShareWinAllGame";
+	string endlessLevelResultKey = "BeaverTime.EndlessLevelResult";
 
     private enum LevelResult
     {
         Win,
         Lose,
-        WinAllGame
+        WinAllGame,
+		EndEndlessLevel
     }
 
     string EscapeURL(string url)
@@ -121,6 +123,24 @@ public class SocialShare : MonoBehaviour
         Publish(url);
     }
 
+	public void winEndlessLevelVK()
+	{
+		string url = getUrlWithTemplateAndWinResultAndPageUrl(vkTemplate, LevelResult.EndEndlessLevel, vkPublicURL);
+		Publish(url);
+	}
+
+	public void winEndlessLevelFacebook()
+	{
+		string url = getUrlWithTemplateAndWinResultAndPageUrl(facebookTemplate, LevelResult.EndEndlessLevel, facebookPageURL);
+		Publish(url);
+	}
+
+	public void winEndlessLevelTwitter()
+	{
+		string url = getUrlWithTemplateAndWinResultAndPageUrl(twitterTemplate, LevelResult.EndEndlessLevel, gameVideoUrl);
+		Publish(url);
+	}
+
     string getUrlWithTemplateAndWinResultAndPageUrl(string aTemplate, LevelResult aLevelResult, string aPage)
     {
         string levelResultDescription = "";
@@ -140,6 +160,10 @@ public class SocialShare : MonoBehaviour
                 levelResultDescription = SmartLocalization.LanguageManager.Instance.GetTextValue(winAllGameKey);
                 levelResultImage = winAllGameImage;
                 break;
+			case LevelResult.EndEndlessLevel:
+				levelResultDescription = getEndlessLevelDescription();
+				levelResultImage = winAllGameImage;
+				break;
             default:
                 break;
         }
@@ -158,6 +182,15 @@ public class SocialShare : MonoBehaviour
         string levelResultDescription = string.Format(localizedDescription, currentLevel, playeScore);
         return levelResultDescription;
     }
+
+	string getEndlessLevelDescription()
+	{
+		GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+		string playerScoreTime = EndlessLevelIndicatorController.endlessLevelTimeFromInt(playerData.endlessLevelPlayedTime);
+		string localizedDescription = SmartLocalization.LanguageManager.Instance.GetTextValue(endlessLevelResultKey);
+		string levelResultDescription = string.Format(localizedDescription, playerScoreTime);
+		return levelResultDescription;
+	}
 
     void Publish(string url)
     {

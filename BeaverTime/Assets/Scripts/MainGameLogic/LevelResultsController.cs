@@ -13,27 +13,28 @@ public class LevelResultsController : MonoBehaviour {
     public AudioSource winGameSound;
     public MainGameSoundsController soundController;
     public GameAnaliticsController gameAnaliticsController;
+	public EndlessLevelCondition endlessLevelCondition;
 	public int endlessLevelStartScore;
 
     GamePlayerDataController _playerData;
     GameLevel _currentLevelData;
-    PlayersDatabaseController _playersRecords;
 
     const string escape = "Cancel";
+	string _previousScreen;
 
     void Start () {
 
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-        _playersRecords = ServicesLocator.getServiceForKey(typeof(PlayersDatabaseController).Name) as PlayersDatabaseController;
-        LevelDataStore levelsDataStore = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
+		LevelDataStore levelsDataStore = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
         _currentLevelData = levelsDataStore.getCurrentLevelData();
         _playerData.playerStartLevelScore = _playerData.playerScore;
+		_previousScreen = "SelectLevelScreen";
 
 		if (_playerData.selectEndlessLevel) 
 		{
 			_playerData.playerScore = endlessLevelStartScore;
+			_previousScreen = "MainMenuScreen";
 		}
-
     }
 	
 	
@@ -66,8 +67,6 @@ public class LevelResultsController : MonoBehaviour {
         {
             result = results[2];
 
-            PlayerRecordData newRecord = new PlayerRecordData(_playerData.playerName, _playerData.playerScore);
-            _playersRecords.saveNewPlayerRecord(newRecord);
             _playerData.cleanPlayer();
 
             soundController.backgroundSound = winGameSound;
@@ -105,8 +104,26 @@ public class LevelResultsController : MonoBehaviour {
         soundController.backgroundSound = loseLevelSound;
         soundController.backgroundSound.volume = volume;
         soundController.backgroundSound.Play();
-
     }
+
+	public void finishEndlessLevel()
+	{
+		_playerData.playerScore = _playerData.playerStartLevelScore;
+
+		if (_playerData.endlessLevelPlayedTime < endlessLevelCondition.playedTime) 
+		{
+			_playerData.endlessLevelPlayedTime = endlessLevelCondition.playedTime;
+		}
+
+		_playerData.savePlayerData();
+		gameSpeedController.stopGame = true;
+		resultPopUp.SetActive(true);
+		GameObject result = results[3];
+		result.SetActive(true);
+		_playerData.selectEndlessLevel = false;
+
+		gameAnaliticsController.sendFinishEndlessLevelMessage();
+	}
 
     public void nextLevel()
     {
@@ -117,8 +134,9 @@ public class LevelResultsController : MonoBehaviour {
     public void goToSelectLevelScreenFromPause()
     {
         _playerData.playerScore = _playerData.playerStartLevelScore;
+		_playerData.selectEndlessLevel = false;
         _playerData.savePlayerData();
-        fadingController.startFade("SelectLevelScreen", false);
+		fadingController.startFade(_previousScreen, false);
     }
 
 }

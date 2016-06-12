@@ -21,6 +21,7 @@ public class GamePlayerDataController {
 
     public int playerStartLevelScore { get; set; }
 	public bool selectEndlessLevel { get; set; }
+	public int endlessLevelPlayedTime { get; set; }
 
     string _dataPath;
 
@@ -50,6 +51,7 @@ public class GamePlayerDataController {
             playerName = data.playerName;
             completedLevelsCount = data.completedLevelsCount;
             playerScore = data.playerScore;
+			endlessLevelPlayedTime = data.endlessLevelPlayedTime;
             _playerSpells = data.playerSpells;
             completedTutorialsCount = data.completedTutorialsCount;
             showReviewSuggestion = data.showReviewSuggestion;
@@ -79,6 +81,7 @@ public class GamePlayerDataController {
         savingData.playerSpells = _playerSpells;
         savingData.completedTutorialsCount = completedTutorialsCount;
         savingData.showReviewSuggestion = showReviewSuggestion;
+		savingData.endlessLevelPlayedTime = endlessLevelPlayedTime;
 
         formatter.Serialize(file, savingData);
         file.Close();
@@ -90,6 +93,7 @@ public class GamePlayerDataController {
         playerName = aPlayerName;
         completedLevelsCount = 0;
         playerScore = 0;
+		endlessLevelPlayedTime = 0;
         completedTutorialsCount = 0;
         _playerSpells = new List<LevelSpell>();
         selectedLevelIndex = 0;
@@ -104,6 +108,7 @@ public class GamePlayerDataController {
         playerName = "";
         completedLevelsCount = 0;
         playerScore = 0;
+		endlessLevelPlayedTime = 0;
         _playerSpells = new List<LevelSpell>();
         gameMusicVolume = 0.5f;
         gameSoundEffectsVolume = 0.5f;
@@ -160,4 +165,5 @@ public class PlayerData
     public List<LevelSpell> playerSpells;
     public int completedTutorialsCount;
     public bool showReviewSuggestion;
+	public int endlessLevelPlayedTime;
 }

@@ -9,11 +9,13 @@ public class WinGameConditionsController : MonoBehaviour {
     GameObject _currentWinCondition;
     GameBoard _gameBoard;
 
+	GamePlayerDataController _playerData;
 
     void Start () {
 
         _gameBoard = ServicesLocator.getServiceForKey(typeof(GameBoard).Name) as GameBoard;
-        
+		_playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+
         LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
         GameLevel level = levelData.getCurrentLevelData();
         int winConditionIndex = level.winConditionType;
@@ -46,7 +48,11 @@ public class WinGameConditionsController : MonoBehaviour {
     {
         if(blockExistOnFinalLine())
         {
-            resultController.loseLevel();
+			if (_playerData.selectEndlessLevel) {
+				resultController.finishEndlessLevel();
+			} else {
+				resultController.loseLevel();
+			}
         }
     }
 

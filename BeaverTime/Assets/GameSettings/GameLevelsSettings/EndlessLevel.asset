@@ -20,7 +20,7 @@ MonoBehaviour:
     detailsCount: 5
     fallingSpeed: 0
   - gameEventType: 1
-    eventInterval: 50
+    eventInterval: 30
     eventDuration: 120
     detailsCount: 0
     fallingSpeed: 1

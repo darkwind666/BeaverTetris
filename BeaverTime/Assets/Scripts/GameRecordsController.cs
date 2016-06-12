@@ -32,7 +32,8 @@ public class GameRecordsController : MonoBehaviour {
         {
             Text recordLable = playersRecords[recordIndex];
             PlayerRecordData record = playersRecordsController.getRecordForIndex(recordIndex);
-            recordLable.text = string.Format("{0} {1}", record.playerName, record.playerScore);
+			string playerTime = EndlessLevelIndicatorController.endlessLevelTimeFromInt(record.playerScore);
+			recordLable.text = string.Format("{0} {1}", record.playerName, playerTime);
         }
 
     }
