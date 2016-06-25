@@ -206,6 +206,10 @@
 	<data name="BeaverTime.NextStep" xml:space="preserve">
 		<value>Next</value>
 	</data>
+	<data name="BeaverTime.OnlineLeaderboardButton" xml:space="preserve">
+		<value>Online 
+leaderboard</value>
+	</data>
 	<data name="BeaverTime.Partners" xml:space="preserve">
 		<value>Partners</value>
 	</data>
@@ -253,6 +257,9 @@ policy</value>
 	<data name="BeaverTime.Subscribe" xml:space="preserve">
 		<value>Subscribe</value>
 	</data>
+	<data name="BeaverTime.SurvivalLevelButton" xml:space="preserve">
+		<value>Survival</value>
+	</data>
 	<data name="BeaverTime.Tutorial11" xml:space="preserve">
 		<value>You can move shape right and left, rotate clockwise and accelerate.</value>
 	</data>
@@ -292,7 +299,7 @@ policy</value>
 	<data name="BeaverTime.Tutorial51" xml:space="preserve">
 		<value>You can use spell to invoke firestorm on board!</value>
 	</data>
-	<data name="BeaverTime.Tutorial52" xml:space="preserve">
+	<data name="BeaverTime.Tutorial61" xml:space="preserve">
 		<value>You can use spell to fill gaps in board!</value>
 	</data>
 	<data name="BeaverTime.Victory" xml:space="preserve">
@@ -301,7 +308,7 @@ policy</value>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>You win!</value>
 	</data>
-	<data name="BeaverTime.SurvivalLevelButton" xml:space="preserve">
-		<value>Survival</value>
+	<data name="BeaverTime.YouRank" xml:space="preserve">
+		<value>You rank</value>
 	</data>
 </root>

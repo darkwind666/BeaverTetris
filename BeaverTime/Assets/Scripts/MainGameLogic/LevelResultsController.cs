@@ -14,6 +14,7 @@ public class LevelResultsController : MonoBehaviour {
     public MainGameSoundsController soundController;
     public GameAnaliticsController gameAnaliticsController;
 	public EndlessLevelCondition endlessLevelCondition;
+	public GlobalLeaderboardController globalLeaderboardController;
 	public int endlessLevelStartScore;
 
     GamePlayerDataController _playerData;
@@ -109,11 +110,7 @@ public class LevelResultsController : MonoBehaviour {
 	public void finishEndlessLevel()
 	{
 		_playerData.playerScore = _playerData.playerStartLevelScore;
-
-		if (_playerData.endlessLevelPlayedTime < endlessLevelCondition.playedTime) 
-		{
-			_playerData.endlessLevelPlayedTime = endlessLevelCondition.playedTime;
-		}
+		saveEndlessLevelResult();
 
 		_playerData.savePlayerData();
 		gameSpeedController.stopGame = true;
@@ -133,10 +130,28 @@ public class LevelResultsController : MonoBehaviour {
 
     public void goToSelectLevelScreenFromPause()
     {
+		if (_playerData.selectEndlessLevel) 
+		{
+			saveEndlessLevelResult();
+		} 
+
         _playerData.playerScore = _playerData.playerStartLevelScore;
 		_playerData.selectEndlessLevel = false;
         _playerData.savePlayerData();
 		fadingController.startFade(_previousScreen, false);
     }
+
+	void saveEndlessLevelResult()
+	{
+		GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+		if (playerData.endlessLevelPlayedTime < endlessLevelCondition.playedTime) 
+		{
+			playerData.endlessLevelPlayedTime = endlessLevelCondition.playedTime;
+			PlayerRecordData newRecord = new PlayerRecordData (playerData.playerName, playerData.endlessLevelPlayedTime);
+			PlayersDatabaseController playersRecords = ServicesLocator.getServiceForKey (typeof(PlayersDatabaseController).Name) as PlayersDatabaseController;
+			playersRecords.saveNewPlayerRecord (newRecord);
+			globalLeaderboardController.sendPlayerRecord();
+		}
+	}
 
 }

@@ -6,12 +6,14 @@ public class GameRecordsController : MonoBehaviour {
 
     public FadingScript fadingController;
     public Text[] playersRecords;
-
+	public Text playerName;
+	public Text playerTime;
 
     void Start ()
     {
         cleanRecordsPads();
         fillRecordsPads();
+		setUpPlayerStatePad();
     }
 
     void cleanRecordsPads()
@@ -37,6 +39,20 @@ public class GameRecordsController : MonoBehaviour {
         }
 
     }
+
+	void setUpPlayerStatePad()
+	{
+		GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+
+		if (playerData.playerExist) {
+			playerName.text = playerData.playerName;
+			playerTime.text = EndlessLevelIndicatorController.endlessLevelTimeFromInt (playerData.endlessLevelPlayedTime);
+		} 
+		else {
+			playerName.text = "";
+			playerTime.text = "";
+		}
+	}
 
     void Update () {
 	

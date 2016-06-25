@@ -16,7 +16,6 @@ public class MainMenuController : MonoBehaviour {
     public AudioSource backgroundSound;
 
     GamePlayerDataController _playerData;
-	PlayersDatabaseController _playersRecords;
 
     public string selectLevelSceneName;
 	public string endlessLevelSceneName;
@@ -24,7 +23,6 @@ public class MainMenuController : MonoBehaviour {
     void Start () {
 
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-		_playersRecords = ServicesLocator.getServiceForKey(typeof(PlayersDatabaseController).Name) as PlayersDatabaseController;
 
         if (_playerData.playerExist == false) {
             selectLevelButton.SetActive(false);
@@ -51,8 +49,6 @@ public class MainMenuController : MonoBehaviour {
 
     public void newGameButtonPressed()
     {
-		PlayerRecordData newRecord = new PlayerRecordData(_playerData.playerName, _playerData.endlessLevelPlayedTime);
-		_playersRecords.saveNewPlayerRecord(newRecord);
         _playerData.cleanPlayer();
         fadingController.startFade(selectLevelSceneName, false);
     }

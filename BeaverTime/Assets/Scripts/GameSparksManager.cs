@@ -11,6 +11,7 @@ public class GameSparksManager : MonoBehaviour
 {
 	/// <summary>The GameSparks Manager singleton</summary>
 	private static GameSparksManager instance = null;
+	public GameGlobalSettings settings;
 
 	void Awake()
 	{
@@ -28,16 +29,20 @@ public class GameSparksManager : MonoBehaviour
 
 	void OnAvailable (bool _true)
 	{
-		new GameSparks.Api.Requests.DeviceAuthenticationRequest()
-			.Send((responses) => {
-				if(!responses.HasErrors)
-				{
-					Debug.Log("Device Authenticated...");
-				}
-				else
-				{
-					Debug.Log("Error Authenticating Device...");
-				}
-			});
+
+		if (settings.gameSparkLeaderboard == true) 
+		{
+			new GameSparks.Api.Requests.DeviceAuthenticationRequest()
+				.Send((responses) => {
+					if(!responses.HasErrors)
+					{
+						Debug.Log("Device Authenticated...");
+					}
+					else
+					{
+						Debug.Log("Error Authenticating Device...");
+					}
+				});
+		} 
 	}
 }

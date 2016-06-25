@@ -73,8 +73,6 @@ public class GameAnaliticsController : MonoBehaviour {
 
 	public void sendFinishEndlessLevelMessage()
 	{
-		GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
-
 		Analytics.CustomEvent("Finish survival level", new Dictionary<string, object> {});
 	}
 

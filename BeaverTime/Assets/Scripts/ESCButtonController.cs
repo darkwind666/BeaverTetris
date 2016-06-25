@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class ESCButtonController : MonoBehaviour {
 
     public FadingScript fadingController;
+	public EndlessLevelCondition endlessLevelCondition;
+	public GlobalLeaderboardController globalLeaderboardController;
 
     const string escape = "Cancel";
 
@@ -53,16 +55,34 @@ public class ESCButtonController : MonoBehaviour {
 
         if (playerData.playerExist)
         {
-            playerData.playerScore = playerData.playerStartLevelScore;
+			if (playerData.selectEndlessLevel) 
+			{
+				saveEndlessLevelResult();
+			} 
+
+			playerData.playerScore = playerData.playerStartLevelScore;
 			playerData.selectEndlessLevel = false;
-            playerData.savePlayerData();
-            fadingController.goToScreen(previouseSceneName);
+			playerData.savePlayerData();
+			fadingController.goToScreen(previouseSceneName);
         }
         else
         {
             fadingController.goToScreen("MainMenuScreen");
         }
     }
+
+	void saveEndlessLevelResult()
+	{
+		GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+		if (playerData.endlessLevelPlayedTime < endlessLevelCondition.playedTime) 
+		{
+			playerData.endlessLevelPlayedTime = endlessLevelCondition.playedTime;
+			PlayerRecordData newRecord = new PlayerRecordData (playerData.playerName, playerData.endlessLevelPlayedTime);
+			PlayersDatabaseController playersRecords = ServicesLocator.getServiceForKey (typeof(PlayersDatabaseController).Name) as PlayersDatabaseController;
+			playersRecords.saveNewPlayerRecord (newRecord);
+			globalLeaderboardController.sendPlayerRecord();
+		}
+	}
 
     public void goToPreviousScene()
     {

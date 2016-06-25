@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
 using System.IO;
-using System.Xml.Serialization;
+
 using System.Collections.Generic;
 using System;
 
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
+
+#if UNITY_STANDALONE_OSX
+using System.Runtime.Serialization.Formatters.Binary;
+#endif
+
 public class GamePlayerDataController {
 
-    const string playerDataFileName = "/playerData.xml";
+	string playerDataFileName;
 
     public bool playerExist { get; set; }
     public float gameMusicVolume { get; set; }
@@ -30,18 +37,40 @@ public class GamePlayerDataController {
 
     public GamePlayerDataController()
     {
+		playerDataFileName = getPlayerDataFileName();
         _dataPath = Application.persistentDataPath + playerDataFileName;
         _previousScenes = new List<string>();
         loadPlayerData();
         selectedLevelIndex = 0;
     }
 
+	string getPlayerDataFileName()
+	{
+		string fileName = "/playerData.xml";
+
+		#if UNITY_STANDALONE_OSX
+		fileName = "/playerData.bt";
+		#endif
+
+		return fileName;
+	}
+
+	IFormatter getDataFormatter()
+	{
+		IFormatter formatter = new PlayerDataXMLFormatter();
+
+		#if UNITY_STANDALONE_OSX
+		formatter = new BinaryFormatter();
+		#endif
+
+		return formatter;
+	}
+
     void loadPlayerData()
     {
-
         if(File.Exists(_dataPath))
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(PlayerData));
+			IFormatter formatter = getDataFormatter();
             FileStream file = File.Open(_dataPath, FileMode.Open);
             PlayerData data = formatter.Deserialize(file) as PlayerData;
 
@@ -63,12 +92,11 @@ public class GamePlayerDataController {
 
             file.Close();
         }
-
     }
 
     public void savePlayerData()
     {
-        XmlSerializer formatter = new XmlSerializer(typeof(PlayerData));
+		IFormatter formatter = getDataFormatter();
         FileStream file = File.Create(_dataPath);
         PlayerData savingData = new PlayerData();
 
@@ -78,10 +106,10 @@ public class GamePlayerDataController {
         savingData.playerName = playerName;
         savingData.completedLevelsCount = completedLevelsCount;
         savingData.playerScore = playerScore;
+		savingData.endlessLevelPlayedTime = endlessLevelPlayedTime;
         savingData.playerSpells = _playerSpells;
         savingData.completedTutorialsCount = completedTutorialsCount;
         savingData.showReviewSuggestion = showReviewSuggestion;
-		savingData.endlessLevelPlayedTime = endlessLevelPlayedTime;
 
         formatter.Serialize(file, savingData);
         file.Close();
@@ -162,8 +190,28 @@ public class PlayerData
     public string playerName;
     public int completedLevelsCount;
     public int playerScore;
+	public int endlessLevelPlayedTime;
     public List<LevelSpell> playerSpells;
     public int completedTutorialsCount;
     public bool showReviewSuggestion;
-	public int endlessLevelPlayedTime;
+}
+
+public class PlayerDataXMLFormatter: IFormatter
+{
+	public ISurrogateSelector SurrogateSelector { get; set; }
+	public SerializationBinder Binder { get; set; }
+	public StreamingContext Context { get; set; }
+
+	public void Serialize(Stream serializationStream, object graph)
+	{
+		XmlSerializer formatter = new XmlSerializer(typeof(PlayerData));
+		formatter.Serialize(serializationStream, graph);
+	}
+
+	public object Deserialize(Stream serializationStream)
+	{
+		XmlSerializer formatter = new XmlSerializer(typeof(PlayerData));
+		PlayerData data = formatter.Deserialize(serializationStream) as PlayerData;
+		return data;
+	}
 }
