@@ -119,6 +119,9 @@
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Назад</value>
 	</data>
+	<data name="BeaverTime.BreakRecordMessage" xml:space="preserve">
+		<value>Новый рекорд :)</value>
+	</data>
 	<data name="BeaverTime.ComplainFriends" xml:space="preserve">
 		<value>Пожаловаться</value>
 	</data>
@@ -156,6 +159,9 @@
 	</data>
 	<data name="BeaverTime.GameSettings" xml:space="preserve">
 		<value>Настройки</value>
+	</data>
+	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
+		<value>Самый большой онлайн рекорд:</value>
 	</data>
 	<data name="BeaverTime.GoToFriends" xml:space="preserve">
 		<value>Подружиться</value>

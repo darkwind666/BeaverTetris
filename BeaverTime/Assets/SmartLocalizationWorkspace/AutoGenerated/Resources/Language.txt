@@ -311,4 +311,10 @@ policy</value>
 	<data name="BeaverTime.YouRank" xml:space="preserve">
 		<value>You rank</value>
 	</data>
+	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
+		<value>Heights online record:</value>
+	</data>
+	<data name="BeaverTime.BreakRecordMessage" xml:space="preserve">
+		<value>New record :)</value>
+	</data>
 </root>

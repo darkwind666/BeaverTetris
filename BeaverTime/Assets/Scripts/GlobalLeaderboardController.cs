@@ -22,9 +22,7 @@ public class GlobalLeaderboardController : MonoBehaviour {
 		if(gameSettings.googlePlayServiceLeaderboard)
 		{
 			#if UNITY_ANDROID
-
 			GooglePlayGames.PlayGamesPlatform.Activate();
-
 			#endif
 		}
 			
@@ -45,6 +43,7 @@ public class GlobalLeaderboardController : MonoBehaviour {
 		if (gameSettings.googlePlayServiceLeaderboard == true || gameSettings.gameCenterLeaderboard == true) 
 		{
 			Social.localUser.Authenticate (logInDebug);
+			setHeightsScore();
 		} 
 		else 
 		{
@@ -55,9 +54,9 @@ public class GlobalLeaderboardController : MonoBehaviour {
 					if(_playerData.playerExist)
 					{
 						setPlayerName();
+						setHeightsScore();
 					}
-
-				} 
+				}
 
 			});
 		}
@@ -66,6 +65,41 @@ public class GlobalLeaderboardController : MonoBehaviour {
 	void logInDebug(bool success)
 	{
 		Debug.Log("success: " + success);
+	}
+
+	public void setPlayerName()
+	{
+		if (gameSettings.gameSparkLeaderboard == true) 
+		{
+			new GameSparks.Api.Requests.ChangeUserDetailsRequest().SetDisplayName(_playerData.playerName).Send((response) => {
+			});
+		} 
+	}
+
+	public void setHeightsScore()
+	{
+		if (gameSettings.googlePlayServiceLeaderboard == true || gameSettings.gameCenterLeaderboard == true) 
+		{
+			ILeaderboard  highScoresBoard = Social.CreateLeaderboard();
+			highScoresBoard.id = googlePlayLeaderboardId;
+			highScoresBoard.LoadScores((bool success) => {
+				int score = (int)highScoresBoard.scores[0].value;
+				_playerData.globalHeightScore = score;
+			});
+		} 
+		else 
+		{
+			new GameSparks.Api.Requests.LeaderboardDataRequest().SetLeaderboardShortCode("hightScoreLeaderboard").SetEntryCount(1).Send((response) => {
+				if (!response.HasErrors) {
+
+					foreach(GameSparks.Api.Responses.LeaderboardDataResponse._LeaderboardData entry in response.Data) {
+						string scoreString = entry.JSONData["score"].ToString();
+						int score = Int32.Parse(scoreString);
+						_playerData.globalHeightScore = score;
+					}
+				}
+			});
+		}
 	}
 
 	public void sendPlayerRecord()
@@ -121,8 +155,6 @@ public class GlobalLeaderboardController : MonoBehaviour {
 
 	public void showPlayerRank()
 	{
-		
-
 		if (gameSettings.gameSparkLeaderboard == true) 
 		{
 			List <string> leaderBoards = new List <string>();
@@ -143,14 +175,4 @@ public class GlobalLeaderboardController : MonoBehaviour {
 	{
 		Debug.Log("onLeaderboardLoadComplete: " + success);
 	}
-
-	public void setPlayerName()
-	{
-		if (gameSettings.gameSparkLeaderboard == true) 
-		{
-			new GameSparks.Api.Requests.ChangeUserDetailsRequest().SetDisplayName(_playerData.playerName).Send((response) => {
-			});
-		} 
-	}
-
 }
