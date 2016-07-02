@@ -30,11 +30,20 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
         return (blocksInGameBoard.Count > randomExplosionsCount);
     }
 
+	public void removeAllBlocks()
+	{
+		List<GameObject> blocksInGameBoard = getAvailableBlocksInGameBoard();
+		int spellCount = randomExplosionsCount;
+		randomExplosionsCount = blocksInGameBoard.Count;
+		useSpell ();
+		randomExplosionsCount = spellCount;
+	}
+
     public void useSpell()
     {
         List<GameObject> blocksInGameBoard = getAvailableBlocksInGameBoard();
 
-        if (blocksInGameBoard.Count > randomExplosionsCount)
+        if (blocksInGameBoard.Count >= randomExplosionsCount)
         {
             _gameBoard.gameBoardLocked = true;
             List<GameObject> blocksForRemoving = getBlocksForRemovingFromAvailableBlocks(blocksInGameBoard);
@@ -45,7 +54,6 @@ public class RemoveBlocksSpellController : MonoBehaviour, ISpell {
             explosionSequence.AppendCallback(() => removeBlocks(blocksForRemoving));
             explosionSequence.AppendCallback(() => _gameBoard.gameBoardLocked = false);
         }
-
     }
 
     List<GameObject> getAvailableBlocksInGameBoard()

@@ -16,6 +16,7 @@ public class GameSpeedController : MonoBehaviour {
     public PlayerInputController playerInputController;
     public FallSomeShapesController fallSomeShapesController;
     public AccelerateGameSpeedController accelerateGameSpeedController;
+	public FinalChanceController finalChanceController;
     public WinGameConditionsController winGameConditionsController;
     public GameObject[] moveBosses;
     public GameObject bossSpells;
@@ -66,8 +67,8 @@ public class GameSpeedController : MonoBehaviour {
                 spellsController.updateWithGameTime();
                 accelerateGameSpeedController.updateWithGameTime();
                 fallSomeShapesController.updateWithGameTime();
+				finalChanceController.updateWithGameTime();
                 winGameConditionsController.updateWithGameTime();
-
             }
 
         }
@@ -93,17 +94,5 @@ public class GameSpeedController : MonoBehaviour {
     {
         _currentStandardUpdateTime = aSpeed;
     }
-
-    /*
-    public void stopGame()
-    {
-        stopGame = true;
-    }
-
-    public void continueGame()
-    {
-        stopGame = false;
-    }
-    */
 
 }

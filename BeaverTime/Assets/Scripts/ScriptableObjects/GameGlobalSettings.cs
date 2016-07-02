@@ -9,5 +9,8 @@ public class GameGlobalSettings : ScriptableObject {
 	public bool gameSparkLeaderboard;
 	public bool googlePlayServiceLeaderboard;
 	public bool gameCenterLeaderboard;
+	public bool showAds;
+	public bool showVungleAds;
+	public bool showAppodealAds;
 
 }

@@ -16,3 +16,6 @@ MonoBehaviour:
   gameSparkLeaderboard: 1
   googlePlayServiceLeaderboard: 0
   gameCenterLeaderboard: 0
+  showAds: 1
+  showVungleAds: 1
+  showAppodealAds: 0

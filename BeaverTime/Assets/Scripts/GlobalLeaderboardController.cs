@@ -126,7 +126,7 @@ public class GlobalLeaderboardController : MonoBehaviour {
 		if (gameSettings.googlePlayServiceLeaderboard == true || gameSettings.gameCenterLeaderboard == true) 
 		{
 			#if UNITY_ANDROID
-			(Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI("LEADERBOARD_ID");
+			(Social.Active as GooglePlayGames.PlayGamesPlatform).SetDefaultLeaderboardForUI(googlePlayLeaderboardId);
 			#endif
 
 			Social.ShowLeaderboardUI();
