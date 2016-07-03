@@ -160,6 +160,9 @@
 	<data name="BeaverTime.GameSettings" xml:space="preserve">
 		<value>Настройки</value>
 	</data>
+	<data name="BeaverTime.GetAdditionalScoreForAd" xml:space="preserve">
+		<value>Получить + 100 очков</value>
+	</data>
 	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
 		<value>Самый большой онлайн рекорд:</value>
 	</data>

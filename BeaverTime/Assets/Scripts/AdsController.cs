@@ -10,6 +10,7 @@ public class AdsController : MonoBehaviour {
 
 	bool _finalChanceAd;
 	bool _simplifyGameAd;
+	bool _additionalScoreAd;
 
 	void Start () {
 	
@@ -65,6 +66,12 @@ public class AdsController : MonoBehaviour {
 			levelResultsController.simplifyGame();
 			_simplifyGameAd = false;
 		}
+
+		if(_additionalScoreAd)
+		{
+			levelResultsController.getAdditionalScores();
+			_additionalScoreAd = false;
+		}
 	}
 
 	public bool adAvailable() {
@@ -95,6 +102,16 @@ public class AdsController : MonoBehaviour {
 	public void showSimplifyGameAd() {
 
 		_simplifyGameAd = true;
+
+		if (settings.showVungleAds) 
+		{
+			Vungle.playAd();
+		}
+	}
+
+	public void showAdditionalScoreAd() {
+
+		_additionalScoreAd = true;
 
 		if (settings.showVungleAds) 
 		{

@@ -19,6 +19,9 @@ public class LevelResultsController : MonoBehaviour {
 	public AdsController adsController;
 	public GameObject simplifyGameButton;
 
+	public GameObject loseGameAdditionalScore;
+	public GameObject winGameAdditionalScore;
+
     GamePlayerDataController _playerData;
     GameLevel _currentLevelData;
 
@@ -84,8 +87,12 @@ public class LevelResultsController : MonoBehaviour {
             }
 
             _playerData.savePlayerData();
-
             soundController.backgroundSound = winLevelSound;
+
+			if(adsController.adAvailable())
+			{
+				winGameAdditionalScore.SetActive(true);
+			}
         }
 
         return result;
@@ -111,8 +118,8 @@ public class LevelResultsController : MonoBehaviour {
 		if(adsController.adAvailable())
 		{
 			simplifyGameButton.SetActive(true);
+			loseGameAdditionalScore.SetActive(true);
 		}
-
     }
 
 	public void finishEndlessLevel()
@@ -171,9 +178,23 @@ public class LevelResultsController : MonoBehaviour {
 		}
 	}
 
+	public void showAdditionalScoreAd()
+	{
+		if (adsController.adAvailable()) 
+		{
+			
+		}
+	}
+
 	public void simplifyGame()
 	{
 		_playerData.simplifyLevel = true;
+	}
+
+	public void getAdditionalScores()
+	{
+		_playerData.playerScore = _playerData.playerScore + 100;
+		_playerData.savePlayerData();
 	}
 
 }

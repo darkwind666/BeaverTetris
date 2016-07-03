@@ -158,6 +158,9 @@
 	<data name="BeaverTime.GameSettings" xml:space="preserve">
 		<value>Settings</value>
 	</data>
+	<data name="BeaverTime.GetAdditionalScoreForAd" xml:space="preserve">
+		<value>Get + 100 score</value>
+	</data>
 	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
 		<value>Heights online record:</value>
 	</data>
