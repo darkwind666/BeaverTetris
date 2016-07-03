@@ -182,7 +182,7 @@ public class LevelResultsController : MonoBehaviour {
 	{
 		if (adsController.adAvailable()) 
 		{
-			
+			adsController.showAdditionalScoreAd();
 		}
 	}
 
