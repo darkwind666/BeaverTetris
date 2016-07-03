@@ -6,20 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/GameFiles/Scenes/GameLoadingScene.unity
+    path: Assets/Scenes/GameLoadingScene.unity
   - enabled: 1
-    path: Assets/GameFiles/Scenes/MainMenuScreen.unity
+    path: Assets/Scenes/MainMenuScreen.unity
   - enabled: 1
-    path: Assets/GameFiles/Scenes/SelectLevelScreen.unity
+    path: Assets/Scenes/SelectLevelScreen.unity
   - enabled: 1
-    path: Assets/GameFiles/Scenes/MainGameScreen.unity
+    path: Assets/Scenes/MainGameScreen.unity
   - enabled: 1
-    path: Assets/GameFiles/Scenes/GameRecordsScene.unity
+    path: Assets/Scenes/GameRecordsScene.unity
   - enabled: 1
-    path: Assets/GameFiles/Scenes/GameDevelopersScreen.unity
+    path: Assets/Scenes/GameDevelopersScreen.unity
   - enabled: 1
-    path: Assets/GameFiles/Scenes/FinalGameScreen.unity
+    path: Assets/Scenes/FinalGameScreen.unity
   - enabled: 1
-    path: Assets/GameFiles/Scenes/PartnersScreen.unity
+    path: Assets/Scenes/PartnersScreen.unity
   - enabled: 1
-    path: Assets/GameFiles/Scenes/MoreGamesScreen.unity
+    path: Assets/Scenes/MoreGamesScreen.unity
