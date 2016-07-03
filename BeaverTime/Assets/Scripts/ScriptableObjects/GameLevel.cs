@@ -40,6 +40,7 @@ public class GameLevel : ScriptableObject {
     public int winConditionType;
     public int needToPlaceDetailsCount;
     public int remainTimes;
+	public int bossLivesCount;
 
     public BlocksForRemoving[] blocks;
     public LevelSpell[] levelSpells;

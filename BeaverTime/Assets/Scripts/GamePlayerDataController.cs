@@ -30,6 +30,7 @@ public class GamePlayerDataController {
 	public bool selectEndlessLevel { get; set; }
 	public int endlessLevelPlayedTime { get; set; }
 	public int globalHeightScore { get; set; }
+	public bool simplifyLevel { get; set; }
 
     string _dataPath;
 

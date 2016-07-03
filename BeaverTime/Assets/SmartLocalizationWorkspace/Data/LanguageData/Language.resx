@@ -119,6 +119,9 @@
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Back</value>
 	</data>
+	<data name="BeaverTime.BreakRecordMessage" xml:space="preserve">
+		<value>New record :)</value>
+	</data>
 	<data name="BeaverTime.ComplainFriends" xml:space="preserve">
 		<value>Complain</value>
 	</data>
@@ -154,6 +157,9 @@
 	</data>
 	<data name="BeaverTime.GameSettings" xml:space="preserve">
 		<value>Settings</value>
+	</data>
+	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
+		<value>Heights online record:</value>
 	</data>
 	<data name="BeaverTime.GoToFriends" xml:space="preserve">
 		<value>Go to friends</value>
@@ -254,6 +260,9 @@ policy</value>
 	<data name="BeaverTime.ShareWinFriends" xml:space="preserve">
 		<value>Share</value>
 	</data>
+	<data name="BeaverTime.SimplifyGame" xml:space="preserve">
+		<value>Simplify game</value>
+	</data>
 	<data name="BeaverTime.Subscribe" xml:space="preserve">
 		<value>Subscribe</value>
 	</data>
@@ -310,11 +319,5 @@ policy</value>
 	</data>
 	<data name="BeaverTime.YouRank" xml:space="preserve">
 		<value>You rank</value>
-	</data>
-	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
-		<value>Heights online record:</value>
-	</data>
-	<data name="BeaverTime.BreakRecordMessage" xml:space="preserve">
-		<value>New record :)</value>
 	</data>
 </root>

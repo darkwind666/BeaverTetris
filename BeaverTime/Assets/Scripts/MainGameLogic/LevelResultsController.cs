@@ -16,6 +16,8 @@ public class LevelResultsController : MonoBehaviour {
 	public EndlessLevelCondition endlessLevelCondition;
 	public GlobalLeaderboardController globalLeaderboardController;
 	public int endlessLevelStartScore;
+	public AdsController adsController;
+	public GameObject simplifyGameButton;
 
     GamePlayerDataController _playerData;
     GameLevel _currentLevelData;
@@ -105,6 +107,12 @@ public class LevelResultsController : MonoBehaviour {
         soundController.backgroundSound = loseLevelSound;
         soundController.backgroundSound.volume = volume;
         soundController.backgroundSound.Play();
+
+		if(adsController.adAvailable())
+		{
+			simplifyGameButton.SetActive(true);
+		}
+
     }
 
 	public void finishEndlessLevel()
@@ -152,6 +160,20 @@ public class LevelResultsController : MonoBehaviour {
 			playersRecords.saveNewPlayerRecord (newRecord);
 			globalLeaderboardController.sendPlayerRecord();
 		}
+	}
+
+	public void showSimplifyGameAd()
+	{
+		if (adsController.adAvailable()) 
+		{
+			simplifyGameButton.SetActive(false);
+			adsController.showSimplifyGameAd();
+		}
+	}
+
+	public void simplifyGame()
+	{
+		_playerData.simplifyLevel = true;
 	}
 
 }

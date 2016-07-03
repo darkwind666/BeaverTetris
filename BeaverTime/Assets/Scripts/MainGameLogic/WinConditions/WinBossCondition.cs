@@ -26,8 +26,14 @@ public class WinBossCondition : MonoBehaviour, IWinCondition {
 
     void saveBossesWithType(int aBossType)
     {
+		LevelDataStore levelData = ServicesLocator.getServiceForKey(typeof(LevelDataStore).Name) as LevelDataStore;
+		GameLevel level = levelData.getCurrentLevelData();
+		int bossLivesCount = level.bossLivesCount;
+
         foreach (Transform child in bosses[aBossType].transform)
         {
+			BlockLiveController liveController = child.GetComponent<BlockLiveController>();
+			liveController.blockLivesCount = bossLivesCount;
             currentBosses.Add(child.gameObject);
         }
     }

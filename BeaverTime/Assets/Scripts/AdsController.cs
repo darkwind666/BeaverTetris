@@ -5,9 +5,11 @@ public class AdsController : MonoBehaviour {
 
 	public GameGlobalSettings settings;
 	public FinalChanceController chanceController;
+	public LevelResultsController levelResultsController;
 	public string vungleID;
 
 	bool _finalChanceAd;
+	bool _simplifyGameAd;
 
 	void Start () {
 	
@@ -15,7 +17,6 @@ public class AdsController : MonoBehaviour {
 		{
 			Vungle.init("5771811c74088aef5400016b", "Test_iOS", vungleID);
 		}
-
 	}
 
 	void Update () {
@@ -58,16 +59,26 @@ public class AdsController : MonoBehaviour {
 			chanceController.getReward();
 			_finalChanceAd = false;
 		}
+
+		if(_simplifyGameAd)
+		{
+			levelResultsController.simplifyGame();
+			_simplifyGameAd = false;
+		}
 	}
 
 	public bool adAvailable() {
 
 		bool adAvailable = false;
-		if (settings.showVungleAds) 
-		{
-			adAvailable = Vungle.isAdvertAvailable ();
-		}
 
+		if(settings.showAds)
+		{
+			if (settings.showVungleAds) 
+			{
+				adAvailable = Vungle.isAdvertAvailable ();
+			}
+		}
+			
 		return adAvailable;
 	}
 
@@ -81,6 +92,14 @@ public class AdsController : MonoBehaviour {
 		}
 	}
 
+	public void showSimplifyGameAd() {
 
+		_simplifyGameAd = true;
+
+		if (settings.showVungleAds) 
+		{
+			Vungle.playAd();
+		}
+	}
 
 }

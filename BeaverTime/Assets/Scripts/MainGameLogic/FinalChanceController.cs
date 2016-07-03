@@ -3,7 +3,6 @@ using System.Collections;
 
 public class FinalChanceController : MonoBehaviour {
 
-	public GameGlobalSettings settings;
 	public GameObject button;
 	public RemoveBlocksSpellController spellController;
 	public AdsController adsController;
@@ -24,7 +23,7 @@ public class FinalChanceController : MonoBehaviour {
 
 	public void updateWithGameTime()
 	{
-		if(_gameBoard.gameBoardLocked == false && settings.showAds)
+		if(_gameBoard.gameBoardLocked == false && adsController.adAvailable())
 		{
 			if (button.activeSelf == false)
 			{

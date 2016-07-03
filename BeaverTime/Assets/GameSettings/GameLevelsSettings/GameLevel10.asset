@@ -28,6 +28,7 @@ MonoBehaviour:
   winConditionType: 3
   needToPlaceDetailsCount: 0
   remainTimes: 0
+  bossLivesCount: 15
   blocks: []
   levelSpells:
   - spellType: 2
