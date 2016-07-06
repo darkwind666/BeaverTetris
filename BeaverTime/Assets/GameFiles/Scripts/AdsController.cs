@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using AppodealAds.Unity.Api;
+using AppodealAds.Unity.Common;
 
-public class AdsController : MonoBehaviour {
+public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 	public GameGlobalSettings settings;
 	public FinalChanceController chanceController;
 	public LevelResultsController levelResultsController;
 	public string vungleID;
+	public string appodealID;
 
 	bool _finalChanceAd;
 	bool _simplifyGameAd;
@@ -17,6 +20,12 @@ public class AdsController : MonoBehaviour {
 		if (settings.showVungleAds) 
 		{
 			Vungle.init("5771811c74088aef5400016b", "Test_iOS", vungleID);
+		}
+
+		if (settings.showAppodealAds) 
+		{
+			Appodeal.initialize(appodealID, Appodeal.NON_SKIPPABLE_VIDEO);
+			Appodeal.setNonSkippableVideoCallbacks(this);
 		}
 	}
 
@@ -55,6 +64,21 @@ public class AdsController : MonoBehaviour {
 
 	void onAdFinishedEventVungle(AdFinishedEventArgs arg)
 	{
+		getRewardForAd();
+	}
+
+	public void onNonSkippableVideoFinished()
+	{
+		getRewardForAd();
+	}
+
+	public void onNonSkippableVideoLoaded() { }
+	public void onNonSkippableVideoFailedToLoad() { }
+	public void onNonSkippableVideoShown() { }
+	public void onNonSkippableVideoClosed() { }
+
+	void getRewardForAd()
+	{
 		if(_finalChanceAd)
 		{
 			chanceController.getReward();
@@ -84,6 +108,11 @@ public class AdsController : MonoBehaviour {
 			{
 				adAvailable = Vungle.isAdvertAvailable ();
 			}
+
+			if (settings.showAppodealAds) 
+			{
+				adAvailable = Appodeal.isLoaded(Appodeal.NON_SKIPPABLE_VIDEO);
+			}
 		}
 			
 		return adAvailable;
@@ -92,30 +121,31 @@ public class AdsController : MonoBehaviour {
 	public void showFinalChanceAd() {
 
 		_finalChanceAd = true;
-
-		if (settings.showVungleAds) 
-		{
-			Vungle.playAd();
-		}
+		playGameAd();
 	}
 
 	public void showSimplifyGameAd() {
 
 		_simplifyGameAd = true;
-
-		if (settings.showVungleAds) 
-		{
-			Vungle.playAd();
-		}
+		playGameAd();
 	}
 
 	public void showAdditionalScoreAd() {
 
 		_additionalScoreAd = true;
+		playGameAd();
+	}
 
+	public void playGameAd()
+	{
 		if (settings.showVungleAds) 
 		{
 			Vungle.playAd();
+		}
+
+		if (settings.showAppodealAds) 
+		{
+			Appodeal.show(Appodeal.NON_SKIPPABLE_VIDEO);
 		}
 	}
 

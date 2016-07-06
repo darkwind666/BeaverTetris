@@ -29,6 +29,7 @@ public class PlayersDatabaseController {
 	{
 		string fileName = "/playersRecords.xml";
 
+
 		#if UNITY_STANDALONE_OSX
 		fileName = "/playersRecords.bt";
 		#endif
@@ -54,7 +55,7 @@ public class PlayersDatabaseController {
         {
 			IFormatter formatter = getDataFormatter();
             FileStream file = File.Open(_dataPath, FileMode.Open);
-            _records = formatter.Deserialize(file) as List<PlayerRecordData>;
+			_records = formatter.Deserialize(file) as List<PlayerRecordData>;
             file.Close();
         }
 
@@ -125,7 +126,7 @@ public class PlayersDatabaseXMLFormatter: IFormatter
 
 	public void Serialize(Stream serializationStream, object graph)
 	{
-		XmlSerializer formatter = new XmlSerializer(typeof(PlayerRecordData));
+		XmlSerializer formatter = new XmlSerializer(typeof(List<PlayerRecordData>));
 		formatter.Serialize(serializationStream, graph);
 	}
 

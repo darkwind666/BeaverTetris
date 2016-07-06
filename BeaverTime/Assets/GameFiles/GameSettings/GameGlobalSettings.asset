@@ -17,5 +17,5 @@ MonoBehaviour:
   googlePlayServiceLeaderboard: 0
   gameCenterLeaderboard: 0
   showAds: 1
-  showVungleAds: 1
-  showAppodealAds: 0
+  showVungleAds: 0
+  showAppodealAds: 1
