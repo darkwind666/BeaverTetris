@@ -13,9 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameShopName: WindowsStore
   gameShopForReviewUrl: https://www.microsoft.com/ru-ru/store/games/beaver-time/9wzdncrd36s3
-  gameSparkLeaderboard: 1
-  googlePlayServiceLeaderboard: 0
+  gameSparkLeaderboard: 0
+  googlePlayServiceLeaderboard: 1
   gameCenterLeaderboard: 0
   showAds: 1
   showVungleAds: 0
   showAppodealAds: 1
+  paidGame: 1

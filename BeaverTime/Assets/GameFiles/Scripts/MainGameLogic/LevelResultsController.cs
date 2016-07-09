@@ -22,6 +22,8 @@ public class LevelResultsController : MonoBehaviour {
 	public GameObject loseGameAdditionalScore;
 	public GameObject winGameAdditionalScore;
 
+	public GameGlobalSettings gameSettings;
+
     GamePlayerDataController _playerData;
     GameLevel _currentLevelData;
 
@@ -180,9 +182,17 @@ public class LevelResultsController : MonoBehaviour {
 
 	public void showAdditionalScoreAd()
 	{
-		if (adsController.adAvailable()) 
+		if (gameSettings.paidGame) 
 		{
-			adsController.showAdditionalScoreAd();
+			loseGameAdditionalScore.SetActive(false);
+			winGameAdditionalScore.SetActive(false);
+		} 
+		else 
+		{
+			if (adsController.adAvailable()) 
+			{
+				adsController.showAdditionalScoreAd();
+			}
 		}
 	}
 

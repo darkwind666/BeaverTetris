@@ -83,8 +83,13 @@ public class GlobalLeaderboardController : MonoBehaviour {
 			ILeaderboard  highScoresBoard = Social.CreateLeaderboard();
 			highScoresBoard.id = googlePlayLeaderboardId;
 			highScoresBoard.LoadScores((bool success) => {
-				int score = (int)highScoresBoard.scores[0].value;
-				_playerData.globalHeightScore = score;
+
+				if(highScoresBoard.scores.Length > 0)
+				{
+					int score = (int)highScoresBoard.scores[0].value;
+					_playerData.globalHeightScore = score;
+				}
+
 			});
 		} 
 		else 

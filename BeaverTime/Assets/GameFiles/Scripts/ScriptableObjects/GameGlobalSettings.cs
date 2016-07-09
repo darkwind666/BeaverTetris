@@ -12,5 +12,5 @@ public class GameGlobalSettings : ScriptableObject {
 	public bool showAds;
 	public bool showVungleAds;
 	public bool showAppodealAds;
-
+	public bool paidGame;
 }

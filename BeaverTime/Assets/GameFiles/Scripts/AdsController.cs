@@ -138,6 +138,19 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 	public void playGameAd()
 	{
+
+		if (settings.paidGame) 
+		{
+			getRewardForAd();
+		} 
+		else 
+		{
+			showAds();
+		}
+	}
+
+	void showAds()
+	{
 		if (settings.showVungleAds) 
 		{
 			Vungle.playAd();

@@ -3876,7 +3876,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2074024453}
-        m_MethodName: SendMessage
+        m_MethodName: sendAnaliticMessage
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
