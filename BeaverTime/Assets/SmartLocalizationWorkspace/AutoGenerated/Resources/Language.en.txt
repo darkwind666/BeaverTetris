@@ -290,6 +290,9 @@ policy</value>
 		<value>You can use spell to remove unnesessary shape!</value>
 	</data>
 	<data name="BeaverTime.Tutorial16" xml:space="preserve">
+		<value>You can skip negative moments by press buttons. You get additional scores!</value>
+	</data>
+	<data name="BeaverTime.Tutorial17" xml:space="preserve">
 		<value>Place some shapes in game board to finish level.</value>
 	</data>
 	<data name="BeaverTime.Tutorial21" xml:space="preserve">

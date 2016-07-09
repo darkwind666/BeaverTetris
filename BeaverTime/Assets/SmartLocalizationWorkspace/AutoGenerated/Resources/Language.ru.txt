@@ -290,6 +290,9 @@
 		<value>Использую первое заклинание чтобы уничтожить ненужные детали</value>
 	</data>
 	<data name="BeaverTime.Tutorial16" xml:space="preserve">
+		<value>В игре есть негативные события и ты можешь ускорить их за очки!</value>
+	</data>
+	<data name="BeaverTime.Tutorial17" xml:space="preserve">
 		<value>Положи несколько деталей на игровую доску для победы!</value>
 	</data>
 	<data name="BeaverTime.Tutorial21" xml:space="preserve">
