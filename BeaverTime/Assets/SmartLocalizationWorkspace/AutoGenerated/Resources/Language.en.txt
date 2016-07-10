@@ -119,6 +119,9 @@
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Back</value>
 	</data>
+	<data name="BeaverTime.BreakRecordMessage" xml:space="preserve">
+		<value>New record :)</value>
+	</data>
 	<data name="BeaverTime.ComplainFriends" xml:space="preserve">
 		<value>Complain</value>
 	</data>
@@ -127,6 +130,12 @@
 	</data>
 	<data name="BeaverTime.DesignerName" xml:space="preserve">
 		<value>Hotyashova Veronika</value>
+	</data>
+	<data name="BeaverTime.EndEndlessLevel" xml:space="preserve">
+		<value>You time:</value>
+	</data>
+	<data name="BeaverTime.EndlessLevelResult" xml:space="preserve">
+		<value>I finish survival level in game Beaver time. My time is {0} .</value>
 	</data>
 	<data name="BeaverTime.EnterPlayerName" xml:space="preserve">
 		<value>Enter player name</value>
@@ -150,6 +159,12 @@ time Pro</value>
 	</data>
 	<data name="BeaverTime.GameSettings" xml:space="preserve">
 		<value>Settings</value>
+	</data>
+	<data name="BeaverTime.GetAdditionalScoreForAd" xml:space="preserve">
+		<value>Get + 100 score</value>
+	</data>
+	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
+		<value>Heights online record:</value>
 	</data>
 	<data name="BeaverTime.GoToFriends" xml:space="preserve">
 		<value>Go to friends</value>
@@ -202,6 +217,10 @@ time Pro</value>
 	<data name="BeaverTime.NextStep" xml:space="preserve">
 		<value>Next</value>
 	</data>
+	<data name="BeaverTime.OnlineLeaderboardButton" xml:space="preserve">
+		<value>Online 
+leaderboard</value>
+	</data>
 	<data name="BeaverTime.Partners" xml:space="preserve">
 		<value>Partners</value>
 	</data>
@@ -246,8 +265,14 @@ policy</value>
 	<data name="BeaverTime.ShareWinFriends" xml:space="preserve">
 		<value>Share</value>
 	</data>
+	<data name="BeaverTime.SimplifyGame" xml:space="preserve">
+		<value>Simplify game</value>
+	</data>
 	<data name="BeaverTime.Subscribe" xml:space="preserve">
 		<value>Subscribe</value>
+	</data>
+	<data name="BeaverTime.SurvivalLevelButton" xml:space="preserve">
+		<value>Survival</value>
 	</data>
 	<data name="BeaverTime.Tutorial11" xml:space="preserve">
 		<value>You can move shape right and left, rotate clockwise and accelerate.</value>
@@ -265,6 +290,9 @@ policy</value>
 		<value>You can use spell to remove unnesessary shape!</value>
 	</data>
 	<data name="BeaverTime.Tutorial16" xml:space="preserve">
+		<value>You can skip negative moments by press buttons. You get additional scores!</value>
+	</data>
+	<data name="BeaverTime.Tutorial17" xml:space="preserve">
 		<value>Place some shapes in game board to finish level.</value>
 	</data>
 	<data name="BeaverTime.Tutorial21" xml:space="preserve">
@@ -296,5 +324,8 @@ policy</value>
 	</data>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>You win!</value>
+	</data>
+	<data name="BeaverTime.YouRank" xml:space="preserve">
+		<value>You rank</value>
 	</data>
 </root>

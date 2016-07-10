@@ -119,6 +119,9 @@
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Назад</value>
 	</data>
+	<data name="BeaverTime.BreakRecordMessage" xml:space="preserve">
+		<value>Новый рекорд :)</value>
+	</data>
 	<data name="BeaverTime.ComplainFriends" xml:space="preserve">
 		<value>Пожаловаться</value>
 	</data>
@@ -127,6 +130,12 @@
 	</data>
 	<data name="BeaverTime.DesignerName" xml:space="preserve">
 		<value>Хотяшова Вероника</value>
+	</data>
+	<data name="BeaverTime.EndEndlessLevel" xml:space="preserve">
+		<value>Ваше время:</value>
+	</data>
+	<data name="BeaverTime.EndlessLevelResult" xml:space="preserve">
+		<value>Я продержался в уровне на выживание в игре Время бобра. Мой результат {0} :)</value>
 	</data>
 	<data name="BeaverTime.EnterPlayerName" xml:space="preserve">
 		<value>Введите имя игрока.</value>
@@ -150,6 +159,12 @@
 	</data>
 	<data name="BeaverTime.GameSettings" xml:space="preserve">
 		<value>Настройки</value>
+	</data>
+	<data name="BeaverTime.GetAdditionalScoreForAd" xml:space="preserve">
+		<value>Получить + 100 очков</value>
+	</data>
+	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
+		<value>Самый большой онлайн рекорд:</value>
 	</data>
 	<data name="BeaverTime.GoToFriends" xml:space="preserve">
 		<value>Подружиться</value>
@@ -202,6 +217,10 @@
 	<data name="BeaverTime.NextStep" xml:space="preserve">
 		<value>Вперёд</value>
 	</data>
+	<data name="BeaverTime.OnlineLeaderboardButton" xml:space="preserve">
+		<value>Онлайн
+рекорды</value>
+	</data>
 	<data name="BeaverTime.Partners" xml:space="preserve">
 		<value>Партнёры</value>
 	</data>
@@ -246,8 +265,14 @@
 	<data name="BeaverTime.ShareWinFriends" xml:space="preserve">
 		<value>Поделиться</value>
 	</data>
+	<data name="BeaverTime.SimplifyGame" xml:space="preserve">
+		<value>Упростить игру</value>
+	</data>
 	<data name="BeaverTime.Subscribe" xml:space="preserve">
 		<value>Соцсети</value>
+	</data>
+	<data name="BeaverTime.SurvivalLevelButton" xml:space="preserve">
+		<value>Выживание</value>
 	</data>
 	<data name="BeaverTime.Tutorial11" xml:space="preserve">
 		<value>Ты можешь перемещать формы влево, вправо, вращать и ускорять. </value>
@@ -265,6 +290,9 @@
 		<value>Использую первое заклинание чтобы уничтожить ненужные детали</value>
 	</data>
 	<data name="BeaverTime.Tutorial16" xml:space="preserve">
+		<value>В игре есть негативные события и ты можешь ускорить их за очки!</value>
+	</data>
+	<data name="BeaverTime.Tutorial17" xml:space="preserve">
 		<value>Положи несколько деталей на игровую доску для победы!</value>
 	</data>
 	<data name="BeaverTime.Tutorial21" xml:space="preserve">
@@ -296,5 +324,8 @@
 	</data>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>Вы выиграли!</value>
+	</data>
+	<data name="BeaverTime.YouRank" xml:space="preserve">
+		<value>Ваше место</value>
 	</data>
 </root>

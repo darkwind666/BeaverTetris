@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: a706b851874e140b9a426250173ef3bb
 folderAsset: yes
+<<<<<<< HEAD
 timeCreated: 1466588300
+=======
+timeCreated: 1468096520
+>>>>>>> BeaverTetrisUnity
 licenseType: Free
 DefaultImporter:
   userData: 

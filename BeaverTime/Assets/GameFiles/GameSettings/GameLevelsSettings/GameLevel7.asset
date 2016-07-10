@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb69157ce5ee314eb7b61704da33a23, type: 3}
+  m_Name: GameLevel7
+  m_EditorClassIdentifier: 
+  levelAward: 340
+  availableBlockTypesCount: 4
+  levelEvents:
+  - gameEventType: 0
+    eventInterval: 130
+    eventDuration: 0
+    detailsCount: 3
+    fallingSpeed: 0
+  - gameEventType: 1
+    eventInterval: 50
+    eventDuration: 90
+    detailsCount: 0
+    fallingSpeed: 10
+  bossType: 1
+  winConditionType: 3
+  needToPlaceDetailsCount: 0
+  remainTimes: 0
+  bossLivesCount: 6
+  blocks: []
+  levelSpells:
+  - spellType: 0
+    spellCount: 0
+    spellRechargeInterval: 30
+  - spellType: 1
+    spellCount: 18
+    spellRechargeInterval: 30
+  - spellType: 2
+    spellCount: 4
+    spellRechargeInterval: 60
+  tutorialIndex: 5

@@ -89,8 +89,13 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
+<<<<<<< HEAD
   bundleIdentifier: comDarkWind.BeaverTimePro
   bundleVersion: 1.4
+=======
+  bundleIdentifier: comDarkWind.BeaverTime
+  bundleVersion: 1.0
+>>>>>>> BeaverTetrisUnity
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
@@ -160,9 +165,15 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
+<<<<<<< HEAD
   AndroidKeystoreName: /Users/sasha/Desktop/BeaverTimePaid.keystore
   AndroidKeyaliasName: beavertimepaid
   AndroidTVCompatibility: 0
+=======
+  AndroidKeystoreName: /Users/sasha/Desktop/android.keystore
+  AndroidKeyaliasName: androidkey
+  AndroidTVCompatibility: 1
+>>>>>>> BeaverTetrisUnity
   AndroidIsGame: 1
   androidEnableBanner: 1
   m_AndroidBanners:

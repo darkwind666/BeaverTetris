@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb69157ce5ee314eb7b61704da33a23, type: 3}
+  m_Name: EndlessLevel
+  m_EditorClassIdentifier: 
+  levelAward: 0
+  availableBlockTypesCount: 4
+  levelEvents:
+  - gameEventType: 0
+    eventInterval: 160
+    eventDuration: 0
+    detailsCount: 5
+    fallingSpeed: 0
+  - gameEventType: 1
+    eventInterval: 30
+    eventDuration: 120
+    detailsCount: 0
+    fallingSpeed: 1
+  bossType: 0
+  winConditionType: 4
+  needToPlaceDetailsCount: 0
+  remainTimes: 0
+  blocks: []
+  levelSpells:
+  - spellType: 0
+    spellCount: 0
+    spellRechargeInterval: 40
+  - spellType: 1
+    spellCount: 21
+    spellRechargeInterval: 20
+  - spellType: 2
+    spellCount: 9
+    spellRechargeInterval: 30
+  - spellType: 3
+    spellCount: 17
+    spellRechargeInterval: 40
+  tutorialIndex: 0
