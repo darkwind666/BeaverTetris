@@ -382,8 +382,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22403856, guid: 8028aa93bfd672e40ac6d5bfd339aa27,
     type: 2}
   m_PrefabInternal: {fileID: 43316631}
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
-=======
 --- !u!1 &60141398
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +469,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60141398}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
 --- !u!1 &80378233
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 241881307}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -298, y: 321}
@@ -960,13 +957,14 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 246733905}
-  - {fileID: 971273899}
   - {fileID: 1985389570}
-  - {fileID: 96454513}
+  - {fileID: 971273899}
+  - {fileID: 945282419}
   - {fileID: 307747533}
+  - {fileID: 96454513}
   - {fileID: 1869928148}
   - {fileID: 1120525306}
+  - {fileID: 246733905}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
@@ -1027,7 +1025,7 @@ RectTransform:
   - {fileID: 577583056}
   - {fileID: 1130277620}
   m_Father: {fileID: 241881307}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -17, y: -113}
@@ -1066,8 +1064,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246733904}
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
-=======
 --- !u!1 &260621810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,7 +1133,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 260621810}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
 --- !u!1 &307747532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 241881307}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -296, y: 170}
@@ -1611,13 +1606,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
   m_AnchoredPosition: {x: -19, y: 84}
   m_SizeDelta: {x: 342, y: 130}
-=======
-  m_AnchoredPosition: {x: -8.5, y: 19.9}
-  m_SizeDelta: {x: 203.3, y: 77.1}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &451422671
 MonoBehaviour:
@@ -2271,13 +2261,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
   m_AnchoredPosition: {x: -16, y: 33}
   m_SizeDelta: {x: 342, y: 130}
-=======
-  m_AnchoredPosition: {x: -10.6, y: -8.5}
-  m_SizeDelta: {x: 203.3, y: 77.1}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577583057
 MonoBehaviour:
@@ -2841,13 +2826,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
   m_AnchoredPosition: {x: 4, y: 264}
   m_SizeDelta: {x: 412, y: 162}
-=======
-  m_AnchoredPosition: {x: 0.1, y: 136}
-  m_SizeDelta: {x: 245.3, y: 96.1}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771145126
 MonoBehaviour:
@@ -3569,8 +3549,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
-=======
 --- !u!1 &945282418
 GameObject:
   m_ObjectHideFlags: 0
@@ -3641,7 +3619,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 945282418}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
 --- !u!1 &971273898
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,13 +3907,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
   m_AnchoredPosition: {x: -14, y: -19}
   m_SizeDelta: {x: 342, y: 130}
-=======
-  m_AnchoredPosition: {x: -10.9, y: -35.1}
-  m_SizeDelta: {x: 203.3, y: 77.1}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130277621
 MonoBehaviour:
@@ -5172,13 +5144,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
   m_AnchoredPosition: {x: -2, y: 144}
   m_SizeDelta: {x: 342, y: 130}
-=======
-  m_AnchoredPosition: {x: -6.6, y: 48}
-  m_SizeDelta: {x: 203.3, y: 77.1}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1784105856
 MonoBehaviour:
@@ -5752,7 +5719,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 241881307}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -295, y: 473}
@@ -5881,14 +5848,14 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: -0.072407395, w: 0.9973752}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.49133432, y: 0.4913342, z: 0.4913342}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.3046}
   m_Children:
   - {fileID: 711536100}
   m_Father: {fileID: 246733905}
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.4, y: 75.4}
+  m_AnchoredPosition: {x: -149, y: 90}
   m_SizeDelta: {x: 203.3, y: 77.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1988138814
@@ -6033,13 +6000,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
   m_AnchoredPosition: {x: -4, y: 197}
   m_SizeDelta: {x: 342, y: 130}
-=======
-  m_AnchoredPosition: {x: -1.1, y: 106.5}
-  m_SizeDelta: {x: 203.3, y: 77.1}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2028977784
 MonoBehaviour:
@@ -6304,8 +6266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localizedKey: BeaverTime.GameSettings
-<<<<<<< HEAD:BeaverTime/Assets/Scenes/MainMenuScreen.unity
-=======
 --- !u!1 &2057139017
 GameObject:
   m_ObjectHideFlags: 0
@@ -6333,10 +6293,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1985389570}
-  - {fileID: 96454513}
-  - {fileID: 307747533}
+  m_Children: []
   m_Father: {fileID: 945282419}
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6377,7 +6334,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2057139017}
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/Scenes/MainMenuScreen.unity
 --- !u!1 &2076128909
 GameObject:
   m_ObjectHideFlags: 0

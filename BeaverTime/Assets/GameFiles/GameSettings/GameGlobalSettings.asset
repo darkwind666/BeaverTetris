@@ -11,10 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856c4490ea49d7e4789279a610525155, type: 3}
   m_Name: GameGlobalSettings
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:BeaverTime/Assets/GameSettings/GameGlobalSettings.asset
-  gameShopName: GooglePlayPaid
-  gameShopForReviewUrl: https://play.google.com/store/apps/details?id=comDarkWind.BeaverTimePro
-=======
   gameShopName: WindowsStore
   gameShopForReviewUrl: https://www.microsoft.com/ru-ru/store/games/beaver-time/9wzdncrd36s3
   gameSparkLeaderboard: 0
@@ -24,4 +20,3 @@ MonoBehaviour:
   showVungleAds: 0
   showAppodealAds: 1
   paidGame: 1
->>>>>>> BeaverTetrisUnity:BeaverTime/Assets/GameFiles/GameSettings/GameGlobalSettings.asset
