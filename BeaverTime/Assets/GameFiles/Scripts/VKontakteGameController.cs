@@ -23,11 +23,15 @@ public class VKontakteGameController : MonoBehaviour {
 		_vkapi.LoggedIn += onVKLogin;
 		_vkapi.LoggedOut += onLogout;
 
-		if (_vkapi.IsUserLoggedIn) 
-		{
+		if (_vkapi.IsUserLoggedIn) {
 			logInButton.SetActive (false);
 			logOutButton.SetActive (true);
-			getUserInfo();
+			getUserInfo ();
+		} 
+		else 
+		{
+			logInButton.SetActive (true);
+			logOutButton.SetActive (false);
 		}
 	}
 

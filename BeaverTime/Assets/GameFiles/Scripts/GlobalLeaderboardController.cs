@@ -43,21 +43,18 @@ public class GlobalLeaderboardController : MonoBehaviour {
 		if (gameSettings.googlePlayServiceLeaderboard == true || gameSettings.gameCenterLeaderboard == true) 
 		{
 			Social.localUser.Authenticate (logInDebug);
-			setHeightsScore();
 		} 
 		else 
 		{
 			new GameSparks.Api.Requests.DeviceAuthenticationRequest().Send((response) => {
 				
 				if (!response.HasErrors) {
-					
 					if(_playerData.playerExist)
 					{
 						setPlayerName();
 						setHeightsScore();
 					}
 				}
-
 			});
 		}
 	}
@@ -65,6 +62,11 @@ public class GlobalLeaderboardController : MonoBehaviour {
 	void logInDebug(bool success)
 	{
 		Debug.Log("success: " + success);
+
+		if(success)
+		{
+			setHeightsScore();
+		}
 	}
 
 	public void setPlayerName()
