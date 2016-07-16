@@ -23,3 +23,5 @@ EditorBuildSettings:
     path: Assets/GameFiles/Scenes/PartnersScreen.unity
   - enabled: 1
     path: Assets/GameFiles/Scenes/MoreGamesScreen.unity
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/VKontakteScene.unity

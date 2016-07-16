@@ -320,6 +320,21 @@ policy</value>
 	<data name="BeaverTime.Victory" xml:space="preserve">
 		<value>Victory!</value>
 	</data>
+	<data name="BeaverTime.VKInviteFriends" xml:space="preserve">
+		<value>Invite friends</value>
+	</data>
+	<data name="BeaverTime.VKJoinBeaverTimeGroup" xml:space="preserve">
+		<value>Join Beaver Time</value>
+	</data>
+	<data name="BeaverTime.VKJoinVKGamesGroup" xml:space="preserve">
+		<value>Join VK Games</value>
+	</data>
+	<data name="BeaverTime.VKLogIn" xml:space="preserve">
+		<value>Log In</value>
+	</data>
+	<data name="BeaverTime.VKLogOut" xml:space="preserve">
+		<value>Log Out</value>
+	</data>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>You win!</value>
 	</data>

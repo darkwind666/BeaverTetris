@@ -322,6 +322,21 @@
 	<data name="BeaverTime.Victory" xml:space="preserve">
 		<value>Победа!!!</value>
 	</data>
+	<data name="BeaverTime.VKInviteFriends" xml:space="preserve">
+		<value>Пригласить друзей</value>
+	</data>
+	<data name="BeaverTime.VKJoinBeaverTimeGroup" xml:space="preserve">
+		<value>Вступить в группу о бобре </value>
+	</data>
+	<data name="BeaverTime.VKJoinVKGamesGroup" xml:space="preserve">
+		<value>Вступить в группу игр вк </value>
+	</data>
+	<data name="BeaverTime.VKLogIn" xml:space="preserve">
+		<value>Войти</value>
+	</data>
+	<data name="BeaverTime.VKLogOut" xml:space="preserve">
+		<value>Выйти</value>
+	</data>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>Вы выиграли!</value>
 	</data>
