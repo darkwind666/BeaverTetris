@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using com.playGenesis.VkUnityPlugin;
 using com.playGenesis.VkUnityPlugin.MiniJSON;
 using System.Collections.Generic;
+using System;
+using System.Collections;
 
 
 public class VKontakteGameController : MonoBehaviour {
@@ -12,10 +13,12 @@ public class VKontakteGameController : MonoBehaviour {
 	public Image playerImage;
 	public GameObject logInButton;
 	public GameObject logOutButton;
-	string group_id = "101174315";
+	public Downloader downloader;
 
 	VkApi _vkapi;
+	VKUser _currentUser;
 	string testFriendId = "122457260";
+
 
 	void Start () {
 	
@@ -98,7 +101,7 @@ public class VKontakteGameController : MonoBehaviour {
 	{
 		VKRequest r = new VKRequest
 		{
-			url="users.get?&photo_50",
+			url="users.get?&fields=photo_50",
 			CallBackFunction=OnGetUserInfo
 		};
 		_vkapi.Call (r);
@@ -110,18 +113,47 @@ public class VKontakteGameController : MonoBehaviour {
 		logInButton.SetActive (true);
 	}
 
-	public void OnGetUserInfo (VKRequest r)
+	public void OnGetUserInfo (VKRequest request)
 	{
-		if(r.error!=null)
+		if(request.error!=null)
 		{
 			return;
 		}
-			
-		var dict=Json.Deserialize(r.response) as Dictionary<string,object>;
+
+		setUpCurrentUser(request);
+		playerName.text = _currentUser.first_name + " " + _currentUser.last_name;
+		setUpCurrentUserImage();
+	}
+
+	void setUpCurrentUser(VKRequest request)
+	{
+		var dict=Json.Deserialize(request.response) as Dictionary<string,object>;
 		var users=(List<object>)dict["response"];
 		var user = VKUser.Deserialize (users [0]);
-
-		playerName.text = user.first_name + " " + user.last_name;
-
+		_currentUser = user;
 	}
+
+	void setUpCurrentUserImage()
+	{
+		Action<DownloadRequest> doOnFinish =(downloadRequest)=>
+		{
+			Texture2D tex=downloadRequest.DownloadResult.texture;
+
+			if (playerImage.sprite != null)
+			{
+				DestroyObject(playerImage.sprite);
+			}
+
+			playerImage.sprite=Sprite.Create(tex,new Rect(0,0,50,50),new Vector2(0.5f,0.5f));
+		};
+
+		var request = new DownloadRequest
+		{
+			url = _currentUser.photo_50,
+			onFinished = doOnFinish,
+		};
+
+		downloader.download(request);
+	}
+
 }
