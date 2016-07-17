@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bef9393f4c64fe2a3ec0ccc929e1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: {fileID: 104644800}
+  playerName: {fileID: 337103145}
   playerImage: {fileID: 0}
   logInButton: {fileID: 934003654}
   logOutButton: {fileID: 847643059}

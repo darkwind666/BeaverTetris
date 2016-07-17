@@ -41,8 +41,7 @@
     <activity android:name="com.jirbo.adcolony.AdColonyOverlay" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
     <activity android:name="com.jirbo.adcolony.AdColonyFullscreen" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
     <activity android:name="com.jirbo.adcolony.AdColonyBrowser" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
-    <activity android:name="com.vungle.publisher.FullScreenAdActivity" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:label="@string/app_name"
-		  android:screenOrientation="fullSensor"/>
+    <activity android:name="com.vungle.publisher.FullScreenAdActivity" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:label="@string/app_name" android:screenOrientation="fullSensor" />
     <activity android:name="com.startapp.android.publish.list3d.List3DActivity" android:theme="@android:style/Theme" />
     <activity android:name="com.startapp.android.publish.OverlayActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent" />
     <activity android:name="com.startapp.android.publish.FullScreenActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme" />
