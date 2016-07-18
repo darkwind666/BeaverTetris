@@ -14,6 +14,7 @@ public class VKontakteGameController : MonoBehaviour {
 	public GameObject logInButton;
 	public GameObject logOutButton;
 	public Downloader downloader;
+	public InviteFriendsController inviteFriendsController;
 
 	VkApi _vkapi;
 	VKUser _currentUser;
@@ -25,6 +26,8 @@ public class VKontakteGameController : MonoBehaviour {
 		_vkapi=VkApi.VkApiInstance;
 		_vkapi.LoggedIn += onVKLogin;
 		_vkapi.LoggedOut += onLogout;
+
+		playerImage.enabled = false;
 
 		if (_vkapi.IsUserLoggedIn) {
 			logInButton.SetActive (false);
@@ -111,6 +114,17 @@ public class VKontakteGameController : MonoBehaviour {
 	{
 		logOutButton.SetActive (false);
 		logInButton.SetActive (true);
+		playerName.text = "";
+		DestroyObject(playerImage.sprite);
+		playerImage.sprite = null;
+		playerImage.enabled = false;
+
+		inviteFriendsController.friendsDataSource = new List<VKUser>();
+
+//		if(inviteFriendsController.m_tableView.isActiveAndEnabled == true)
+//		{
+//			inviteFriendsController.m_tableView.ReloadData();
+//		}
 	}
 
 	public void OnGetUserInfo (VKRequest request)
@@ -123,6 +137,7 @@ public class VKontakteGameController : MonoBehaviour {
 		setUpCurrentUser(request);
 		playerName.text = _currentUser.first_name + " " + _currentUser.last_name;
 		setUpCurrentUserImage();
+		setUpCurrentUserFriends();
 	}
 
 	void setUpCurrentUser(VKRequest request)
@@ -145,6 +160,7 @@ public class VKontakteGameController : MonoBehaviour {
 			}
 
 			playerImage.sprite=Sprite.Create(tex,new Rect(0,0,50,50),new Vector2(0.5f,0.5f));
+			playerImage.enabled = true;
 		};
 
 		var request = new DownloadRequest
@@ -154,6 +170,41 @@ public class VKontakteGameController : MonoBehaviour {
 		};
 
 		downloader.download(request);
+	}
+
+	void setUpCurrentUserFriends()
+	{
+		VKRequest r1 = new VKRequest (){
+			url="apps.getFriendsList?extended=1&count=30&fields=photo_50",
+			CallBackFunction=getFriendsHandler
+		};
+		_vkapi.Call (r1);
+	}
+
+	public void getFriendsHandler(VKRequest request)
+	{
+		if(request.error!=null)
+		{
+			return;
+		}
+
+		var dict = Json.Deserialize(request.response) as Dictionary<string,object>;
+		var resp = (Dictionary<string,object>)dict["response"];
+		var items = (List<object>)resp["items"];
+
+		List<VKUser> friends = new List<VKUser>();
+
+		foreach(var item in items)
+		{
+			friends.Add(VKUser.Deserialize(item));
+		}
+
+		inviteFriendsController.friendsDataSource = friends;
+
+		if(inviteFriendsController.m_tableView.isActiveAndEnabled == true)
+		{
+			inviteFriendsController.m_tableView.ReloadData();
+		}
 	}
 
 }

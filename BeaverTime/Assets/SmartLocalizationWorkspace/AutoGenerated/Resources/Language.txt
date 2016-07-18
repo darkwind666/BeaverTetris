@@ -167,6 +167,9 @@
 	<data name="BeaverTime.GoToFriends" xml:space="preserve">
 		<value>Go to friends</value>
 	</data>
+	<data name="BeaverTime.InviteButton" xml:space="preserve">
+		<value>Invite</value>
+	</data>
 	<data name="BeaverTime.Level1" xml:space="preserve">
 		<value>Hello, I am glad to see you in game. Help me found my watch please.</value>
 	</data>

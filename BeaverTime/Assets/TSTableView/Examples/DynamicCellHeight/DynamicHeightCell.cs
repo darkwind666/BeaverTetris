@@ -31,7 +31,5 @@ namespace Tacticsoft.Examples
             get { return m_cellHeightSlider.value; }
             set { m_cellHeightSlider.value = value; }
         }
-
-
     }
 }

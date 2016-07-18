@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using Tacticsoft;
 
@@ -32,7 +33,7 @@ namespace Tacticsoft.Examples
 
         //Will be called by the TableView to know what is the height of each row
         public float GetHeightForRowInTableView(TableView tableView, int row) {
-            return (m_cellPrefab.transform as RectTransform).rect.height;
+			return (m_cellPrefab.transform as RectTransform).rect.height;
         }
 
         //Will be called by the TableView when a cell needs to be created for display
