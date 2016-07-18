@@ -172,6 +172,9 @@ time Pro</value>
 	<data name="BeaverTime.InviteButton" xml:space="preserve">
 		<value>Invite</value>
 	</data>
+	<data name="BeaverTime.InviteFriendText" xml:space="preserve">
+		<value>Ку {0} . Я тут играю в Время Бобра. Может и тебе понравиться :)</value>
+	</data>
 	<data name="BeaverTime.Level1" xml:space="preserve">
 		<value>Hello, I am glad to see you in game. Help me found my watch please.</value>
 	</data>

@@ -18,7 +18,7 @@ public class VKontakteGameController : MonoBehaviour {
 
 	VkApi _vkapi;
 	VKUser _currentUser;
-	string testFriendId = "122457260";
+	string inviteTextKey = "BeaverTime.InviteFriendText";
 
 
 	void Start () {
@@ -60,10 +60,12 @@ public class VKontakteGameController : MonoBehaviour {
 		_vkapi.Call (r1);
 	}
 
-	public void inviteFriend()
+	public void inviteFriend(string friendId, string friendName)
 	{
+		string inviteTextTemplate = SmartLocalization.LanguageManager.Instance.GetTextValue(inviteTextKey);
+		string inviteText = string.Format(inviteTextTemplate, friendName);
 		VKRequest r1 = new VKRequest (){
-			url="apps.sendRequest?user_id="+testFriendId+"&text=Новая викторина Вконтакте бросает тебе вызов! Установи игру прямо сейчас!&type=request&name=test1",
+			url="apps.sendRequest?user_id="+friendId+"&text=" + inviteText + "&type=invite&name=BeaverTime",
 			CallBackFunction=inviteFriendHandler
 		};
 		_vkapi.Call (r1);
@@ -88,9 +90,13 @@ public class VKontakteGameController : MonoBehaviour {
 		}
 	}
 
-	void inviteFriendHandler(VKRequest r)
+	void inviteFriendHandler(VKRequest request)
 	{
-		
+		if(request.error!=null)
+		{
+			Debug.Log(request.error.error_msg);
+			return;
+		}
 	}
 
 	void onVKLogin()
@@ -120,11 +126,6 @@ public class VKontakteGameController : MonoBehaviour {
 		playerImage.enabled = false;
 
 		inviteFriendsController.friendsDataSource = new List<VKUser>();
-
-//		if(inviteFriendsController.m_tableView.isActiveAndEnabled == true)
-//		{
-//			inviteFriendsController.m_tableView.ReloadData();
-//		}
 	}
 
 	public void OnGetUserInfo (VKRequest request)
@@ -180,7 +181,7 @@ public class VKontakteGameController : MonoBehaviour {
 	void setUpCurrentUserFriends()
 	{
 		VKRequest r1 = new VKRequest (){
-			url="apps.getFriendsList?extended=1&count=30&fields=photo_50",
+			url="apps.getFriendsList?extended=1&count=30&type=invite&fields=photo_50",
 			CallBackFunction=getFriendsHandler
 		};
 		_vkapi.Call (r1);

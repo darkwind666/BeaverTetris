@@ -172,6 +172,9 @@
 	<data name="BeaverTime.InviteButton" xml:space="preserve">
 		<value>Пригласить</value>
 	</data>
+	<data name="BeaverTime.InviteFriendText" xml:space="preserve">
+		<value>Ку {0} . Я тут играю в Время Бобра. Может и тебе понравиться :)</value>
+	</data>
 	<data name="BeaverTime.Level1" xml:space="preserve">
 		<value>Привет, я рад тебя видеть в игре. Помоги мне найти часы.</value>
 	</data>

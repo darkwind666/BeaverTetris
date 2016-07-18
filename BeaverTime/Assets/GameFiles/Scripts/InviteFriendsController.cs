@@ -54,7 +54,6 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 		VKUser cellData = friendsDataSource[row];
 		cell.friendName.text = cellData.first_name + " " + cellData.last_name;
 
-
 		Action<DownloadRequest> doOnFinish =(downloadRequest)=>
 		{
 			Texture2D tex=downloadRequest.DownloadResult.texture;
@@ -68,6 +67,10 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 		};
 
 		vkontakteGameController.loadImageWithUrlAndCallback (cellData.photo_50, doOnFinish);
+
+		cell.inviteButton.onClick.AddListener(() => { 
+			vkontakteGameController.inviteFriend(cellData.id.ToString(), cellData.first_name);
+		});
 
 		return cell;
 	}

@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friendImage: {fileID: 11498118}
   friendName: {fileID: 11455474}
+  inviteButton: {fileID: 11483292}
 --- !u!114 &11498118
 MonoBehaviour:
   m_ObjectHideFlags: 1
