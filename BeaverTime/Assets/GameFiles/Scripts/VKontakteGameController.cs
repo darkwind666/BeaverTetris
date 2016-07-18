@@ -163,10 +163,15 @@ public class VKontakteGameController : MonoBehaviour {
 			playerImage.enabled = true;
 		};
 
+		loadImageWithUrlAndCallback (_currentUser.photo_50, doOnFinish);
+	}
+
+	public void loadImageWithUrlAndCallback (string aUrl, Action<DownloadRequest> aCallback)
+	{
 		var request = new DownloadRequest
 		{
-			url = _currentUser.photo_50,
-			onFinished = doOnFinish,
+			url = aUrl,
+			onFinished = aCallback,
 		};
 
 		downloader.download(request);

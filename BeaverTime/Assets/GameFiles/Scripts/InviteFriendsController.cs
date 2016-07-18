@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Tacticsoft;
@@ -11,6 +12,7 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 	public TableView m_tableView;
 
 	public List<VKUser> friendsDataSource;
+	public VKontakteGameController vkontakteGameController;
 
 	void Start () {
 		m_tableView.dataSource = this;
@@ -51,10 +53,25 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 		}
 		VKUser cellData = friendsDataSource[row];
 		cell.friendName.text = cellData.first_name + " " + cellData.last_name;
+
+
+		Action<DownloadRequest> doOnFinish =(downloadRequest)=>
+		{
+			Texture2D tex=downloadRequest.DownloadResult.texture;
+
+			if (cell.friendImage.sprite != null)
+			{
+				DestroyObject(cell.friendImage.sprite);
+			}
+
+			cell.friendImage.sprite = Sprite.Create(tex,new Rect(0,0,50,50),new Vector2(0.5f,0.5f));
+		};
+
+		vkontakteGameController.loadImageWithUrlAndCallback (cellData.photo_50, doOnFinish);
+
 		return cell;
 	}
 
 	#endregion
-
 
 }

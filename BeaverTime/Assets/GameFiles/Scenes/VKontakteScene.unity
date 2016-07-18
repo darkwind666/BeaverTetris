@@ -900,6 +900,7 @@ RectTransform:
   - {fileID: 408449793}
   - {fileID: 151706029}
   - {fileID: 1336252984}
+  - {fileID: 930036648}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
@@ -1204,7 +1205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cellPrefab: {fileID: 11497252, guid: 599b1934dd96f489b8bb12645de30610, type: 2}
   m_tableView: {fileID: 151706030}
-  m_numRows: 10
+  vkontakteGameController: {fileID: 315742385}
 --- !u!4 &930036648
 Transform:
   m_ObjectHideFlags: 0
@@ -1212,12 +1213,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 930036646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 155.49275, y: 450.66574, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 572809683}
+  m_RootOrder: 3
 --- !u!1 &934003654
 GameObject:
   m_ObjectHideFlags: 0
