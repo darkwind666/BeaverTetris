@@ -597,7 +597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bef9393f4c64fe2a3ec0ccc929e1ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  downloader: {fileID: 451019751}
   playerName: {fileID: 337103145}
   playerImage: {fileID: 1321182859}
   logInButton: {fileID: 934003654}
@@ -890,12 +889,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22403856, guid: 8028aa93bfd672e40ac6d5bfd339aa27,
     type: 2}
   m_PrefabInternal: {fileID: 408449792}
---- !u!114 &451019751 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11445708, guid: fe9ed65d7346c4d498e9540d61eab1b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1637064752}
-  m_Script: {fileID: 11500000, guid: 59161f33432bcb2489fddfbd31df33a7, type: 3}
 --- !u!1 &572809679
 GameObject:
   m_ObjectHideFlags: 0

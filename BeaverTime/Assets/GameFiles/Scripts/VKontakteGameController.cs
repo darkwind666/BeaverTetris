@@ -104,18 +104,20 @@ public class VKontakteGameController : MonoBehaviour {
 		joinVKGamesGroupButton.SetActive (true);
 		goToVKGamesGroupButton.SetActive (false);
 
-		inviteFriendsController.friendsDataSource = new List<VKUser>();
+		inviteFriendsController.friendsDataSource = new List<BeaverTimeVKFriend>();
 	}
 
 
 
-	public void inviteFriend(string friendId, string friendName)
+	public void inviteFriend(string friendId, string friendName, Action aCallback)
 	{
 		string inviteTextTemplate = SmartLocalization.LanguageManager.Instance.GetTextValue(inviteTextKey);
 		string inviteText = string.Format(inviteTextTemplate, friendName);
+		Action[] list = new Action[] {aCallback};
 		VKRequest r1 = new VKRequest (){
 			url="apps.sendRequest?user_id="+friendId+"&text=" + inviteText + "&type=invite&name=BeaverTime",
-			CallBackFunction=inviteFriendHandler
+			CallBackFunction=inviteFriendHandler,
+			data = list,
 		};
 		_vkapi.Call (r1);
 	}
@@ -124,9 +126,13 @@ public class VKontakteGameController : MonoBehaviour {
 	{
 		if(request.error!=null)
 		{
-			Debug.Log(request.error.error_msg);
 			return;
 		}
+
+		_playerData.playerScore += inviteFriendReward;
+		_playerData.savePlayerData();
+		Action callback = request.data[0] as Action;
+		callback();
 	}
 
 	public void getFriendsHandler(VKRequest request)
@@ -140,11 +146,13 @@ public class VKontakteGameController : MonoBehaviour {
 		var resp = (Dictionary<string,object>)dict["response"];
 		var items = (List<object>)resp["items"];
 
-		List<VKUser> friends = new List<VKUser>();
+		List<BeaverTimeVKFriend> friends = new List<BeaverTimeVKFriend>();
 
 		foreach(var item in items)
 		{
-			friends.Add(VKUser.Deserialize(item));
+			BeaverTimeVKFriend friend = new BeaverTimeVKFriend();
+			friend.friend = VKUser.Deserialize(item);
+			friends.Add(friend);
 		}
 
 		inviteFriendsController.friendsDataSource = friends;

@@ -11,14 +11,14 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 	public VKFriendCell m_cellPrefab;
 	public TableView m_tableView;
 
-	public List<VKUser> friendsDataSource;
+	public List<BeaverTimeVKFriend> friendsDataSource;
 	public VKontakteGameController vkontakteGameController;
 
 	void Start () {
 		m_tableView.dataSource = this;
 		if(friendsDataSource == null)
 		{
-			friendsDataSource = new List<VKUser>();
+			friendsDataSource = new List<BeaverTimeVKFriend>();
 		}
 	}
 
@@ -51,8 +51,14 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 		if (cell == null) {
 			cell = (VKFriendCell)GameObject.Instantiate(m_cellPrefab);
 		}
-		VKUser cellData = friendsDataSource[row];
+		VKUser cellData = friendsDataSource[row].friend;
 		cell.friendName.text = cellData.first_name + " " + cellData.last_name;
+
+		if (friendsDataSource [row].invited == true) {
+			cell.inviteButton.gameObject.SetActive (false);
+		} else {
+			cell.inviteButton.gameObject.SetActive (true);
+		}
 
 		Action<DownloadRequest> doOnFinish =(downloadRequest)=>
 		{
@@ -69,12 +75,22 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 		vkontakteGameController.loadImageWithUrlAndCallback (cellData.photo_50, doOnFinish);
 
 		cell.inviteButton.onClick.AddListener(() => { 
-			vkontakteGameController.inviteFriend(cellData.id.ToString(), cellData.first_name);
+			vkontakteGameController.inviteFriend(cellData.id.ToString(), cellData.first_name, () => {
+				cell.inviteButton.gameObject.SetActive(false);
+				friendsDataSource[row].invited = true;
+			});
 		});
 
 		return cell;
 	}
 
 	#endregion
+
+}
+
+public class BeaverTimeVKFriend {
+
+	public bool invited;
+	public VKUser friend;
 
 }
