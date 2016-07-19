@@ -31,6 +31,8 @@ public class GamePlayerDataController {
 	public int endlessLevelPlayedTime { get; set; }
 	public int globalHeightScore { get; set; }
 	public bool simplifyLevel { get; set; }
+	public bool logInVk { get; set; }
+	public bool inVkGameGroup { get; set; }
 
     string _dataPath;
 
@@ -86,6 +88,8 @@ public class GamePlayerDataController {
             _playerSpells = data.playerSpells;
             completedTutorialsCount = data.completedTutorialsCount;
             showReviewSuggestion = data.showReviewSuggestion;
+			logInVk = data.logInVk;
+			inVkGameGroup = data.inVkGameGroup;
 
             if (_playerSpells == null)
             {
@@ -112,6 +116,8 @@ public class GamePlayerDataController {
         savingData.playerSpells = _playerSpells;
         savingData.completedTutorialsCount = completedTutorialsCount;
         savingData.showReviewSuggestion = showReviewSuggestion;
+		savingData.logInVk = logInVk;
+		savingData.inVkGameGroup = inVkGameGroup;
 
         formatter.Serialize(file, savingData);
         file.Close();
@@ -129,6 +135,8 @@ public class GamePlayerDataController {
         selectedLevelIndex = 0;
         completedTutorialsCount = 0;
         showReviewSuggestion = false;
+		logInVk = false;
+		inVkGameGroup = false;
         savePlayerData();
     }
 
@@ -144,6 +152,8 @@ public class GamePlayerDataController {
         gameSoundEffectsVolume = 0.5f;
         selectedLevelIndex = 0;
         completedTutorialsCount = 0;
+		logInVk = false;
+		inVkGameGroup = false;
         savePlayerData();
     }
 
@@ -180,7 +190,6 @@ public class GamePlayerDataController {
         _previousScenes.RemoveAt(_previousScenes.Count - 1);
         return previousSceneName;
     }
-
 }
 
 [Serializable]
@@ -196,6 +205,8 @@ public class PlayerData
     public List<LevelSpell> playerSpells;
     public int completedTutorialsCount;
     public bool showReviewSuggestion;
+	public bool logInVk;
+	public bool inVkGameGroup;
 }
 
 public class PlayerDataXMLFormatter: IFormatter

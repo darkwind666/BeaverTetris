@@ -11,27 +11,47 @@ public class VKontakteGameController : MonoBehaviour {
 
 	public Text playerName;
 	public Image playerImage;
+
 	public GameObject logInButton;
+	public GameObject logInRewardText;
+
 	public GameObject logOutButton;
-	public Downloader downloader;
 	public InviteFriendsController inviteFriendsController;
+
+	public GameObject joinBeaverTimeGroupButton;
+	public GameObject goToBeaverTimeGroupButton;
+
+	public GameObject joinVKGamesGroupButton;
+	public GameObject goToVKGamesGroupButton;
+
+	public int logInReward;
+	public int joinGroupReward;
+	public int inviteFriendReward;
+	public string gameGroupId;
+	public string vkGamesOfficialGroupId;
 
 	VkApi _vkapi;
 	VKUser _currentUser;
 	string inviteTextKey = "BeaverTime.InviteFriendText";
+	GamePlayerDataController _playerData;
+	string vkURLTemplate = "https://vk.com/public";
+	Downloader _downloader;
 
 
 	void Start () {
-	
-		_vkapi=VkApi.VkApiInstance;
+
+		_playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
+		_vkapi = VkApi.VkApiInstance;
 		_vkapi.LoggedIn += onVKLogin;
 		_vkapi.LoggedOut += onLogout;
+		_downloader = _vkapi.gameObject.GetComponent<Downloader> ();
 
 		playerImage.enabled = false;
 
 		if (_vkapi.IsUserLoggedIn) {
 			logInButton.SetActive (false);
 			logOutButton.SetActive (true);
+			logInRewardText.SetActive (false);
 			getUserInfo ();
 		} 
 		else 
@@ -51,14 +71,43 @@ public class VKontakteGameController : MonoBehaviour {
 		_vkapi.LoggedOut -= onLogout;
 	}
 
-	public void joinGroup(string aGroup)
+
+	public void logIn()
 	{
-		VKRequest r1 = new VKRequest (){
-			url="groups.join?group_id="+aGroup,
-			CallBackFunction=joinGroupHandler
-		};
-		_vkapi.Call (r1);
+		_vkapi.Login ();
 	}
+
+	public void logOut()
+	{
+		_vkapi.Logout ();
+	}
+
+	void onVKLogin()
+	{
+		logInButton.SetActive (false);
+		logOutButton.SetActive (true);
+		getUserInfo();
+	}
+
+	void onLogout()
+	{
+		logOutButton.SetActive (false);
+		logInButton.SetActive (true);
+		playerName.text = "";
+		DestroyObject(playerImage.sprite);
+		playerImage.sprite = null;
+		playerImage.enabled = false;
+
+		joinBeaverTimeGroupButton.SetActive (true);
+		goToBeaverTimeGroupButton.SetActive (false);
+
+		joinVKGamesGroupButton.SetActive (true);
+		goToVKGamesGroupButton.SetActive (false);
+
+		inviteFriendsController.friendsDataSource = new List<VKUser>();
+	}
+
+
 
 	public void inviteFriend(string friendId, string friendName)
 	{
@@ -71,25 +120,6 @@ public class VKontakteGameController : MonoBehaviour {
 		_vkapi.Call (r1);
 	}
 
-	public void logIn()
-	{
-		_vkapi.Login ();
-	}
-
-	public void logOut()
-	{
-		_vkapi.Logout ();
-	}
-
-	public void joinGroupHandler(VKRequest r)
-	{
-		if(r.error!=null)
-		{
-			Debug.Log(r.error.error_msg);
-			return;
-		}
-	}
-
 	void inviteFriendHandler(VKRequest request)
 	{
 		if(request.error!=null)
@@ -97,94 +127,6 @@ public class VKontakteGameController : MonoBehaviour {
 			Debug.Log(request.error.error_msg);
 			return;
 		}
-	}
-
-	void onVKLogin()
-	{
-		logInButton.SetActive (false);
-		logOutButton.SetActive (true);
-		getUserInfo();
-	}
-
-	void getUserInfo()
-	{
-		VKRequest r = new VKRequest
-		{
-			url="users.get?&fields=photo_50",
-			CallBackFunction=OnGetUserInfo
-		};
-		_vkapi.Call (r);
-	}
-
-	void onLogout()
-	{
-		logOutButton.SetActive (false);
-		logInButton.SetActive (true);
-		playerName.text = "";
-		DestroyObject(playerImage.sprite);
-		playerImage.sprite = null;
-		playerImage.enabled = false;
-
-		inviteFriendsController.friendsDataSource = new List<VKUser>();
-	}
-
-	public void OnGetUserInfo (VKRequest request)
-	{
-		if(request.error!=null)
-		{
-			return;
-		}
-
-		setUpCurrentUser(request);
-		playerName.text = _currentUser.first_name + " " + _currentUser.last_name;
-		setUpCurrentUserImage();
-		setUpCurrentUserFriends();
-	}
-
-	void setUpCurrentUser(VKRequest request)
-	{
-		var dict=Json.Deserialize(request.response) as Dictionary<string,object>;
-		var users=(List<object>)dict["response"];
-		var user = VKUser.Deserialize (users [0]);
-		_currentUser = user;
-	}
-
-	void setUpCurrentUserImage()
-	{
-		Action<DownloadRequest> doOnFinish =(downloadRequest)=>
-		{
-			Texture2D tex=downloadRequest.DownloadResult.texture;
-
-			if (playerImage.sprite != null)
-			{
-				DestroyObject(playerImage.sprite);
-			}
-
-			playerImage.sprite=Sprite.Create(tex,new Rect(0,0,50,50),new Vector2(0.5f,0.5f));
-			playerImage.enabled = true;
-		};
-
-		loadImageWithUrlAndCallback (_currentUser.photo_50, doOnFinish);
-	}
-
-	public void loadImageWithUrlAndCallback (string aUrl, Action<DownloadRequest> aCallback)
-	{
-		var request = new DownloadRequest
-		{
-			url = aUrl,
-			onFinished = aCallback,
-		};
-
-		downloader.download(request);
-	}
-
-	void setUpCurrentUserFriends()
-	{
-		VKRequest r1 = new VKRequest (){
-			url="apps.getFriendsList?extended=1&count=30&type=invite&fields=photo_50",
-			CallBackFunction=getFriendsHandler
-		};
-		_vkapi.Call (r1);
 	}
 
 	public void getFriendsHandler(VKRequest request)
@@ -211,6 +153,229 @@ public class VKontakteGameController : MonoBehaviour {
 		{
 			inviteFriendsController.m_tableView.ReloadData();
 		}
+	}
+
+
+
+
+	void getUserInfo()
+	{
+		VKRequest r = new VKRequest
+		{
+			url="users.get?&fields=photo_50",
+			CallBackFunction=OnGetUserInfo
+		};
+		_vkapi.Call (r);
+	}
+		
+	public void OnGetUserInfo (VKRequest request)
+	{
+		if(request.error!=null)
+		{
+			return;
+		}
+
+		setUpCurrentUser(request);
+		string fullPlayerName = _currentUser.first_name + " " + _currentUser.last_name;
+		playerName.text = fullPlayerName;
+		setUpCurrentUserImage();
+		setUpCurrentUserFriends();
+		setUpVKGamesButton();
+		createNewPlayerWithName(fullPlayerName);
+		getPlayerRewardForLogIn();
+		getPlayerRewardForGroup();
+	}
+
+	void setUpCurrentUser(VKRequest request)
+	{
+		var dict=Json.Deserialize(request.response) as Dictionary<string,object>;
+		var users=(List<object>)dict["response"];
+		var user = VKUser.Deserialize (users [0]);
+		_currentUser = user;
+	}
+		
+	void setUpCurrentUserImage()
+	{
+		Action<DownloadRequest> doOnFinish =(downloadRequest)=>
+		{
+			Texture2D tex=downloadRequest.DownloadResult.texture;
+
+			if (playerImage.sprite != null)
+			{
+				DestroyObject(playerImage.sprite);
+			}
+
+			playerImage.sprite=Sprite.Create(tex,new Rect(0,0,50,50),new Vector2(0.5f,0.5f));
+			playerImage.enabled = true;
+		};
+
+		loadImageWithUrlAndCallback (_currentUser.photo_50, doOnFinish);
+	}
+
+	public void loadImageWithUrlAndCallback (string aUrl, Action<DownloadRequest> aCallback)
+	{
+		var request = new DownloadRequest
+		{
+			url = aUrl,
+			onFinished = aCallback,
+		};
+
+		_downloader.download(request);
+	}
+
+	void setUpCurrentUserFriends()
+	{
+		VKRequest r1 = new VKRequest (){
+			url="apps.getFriendsList?extended=1&count=30&type=invite&fields=photo_50",
+			CallBackFunction=getFriendsHandler
+		};
+		_vkapi.Call (r1);
+	}
+
+	void createNewPlayerWithName(string aPlayerName)
+	{
+		if (_playerData.playerExist == false) {
+			_playerData.createNewPlayerWithName (aPlayerName);
+			_playerData.savePlayerData();
+		}
+	}
+
+	void getPlayerRewardForLogIn()
+	{
+		if (_playerData.logInVk == false) {
+			_playerData.playerScore += logInReward;
+			_playerData.logInVk = true;
+			_playerData.savePlayerData ();
+			logInRewardText.SetActive (false);
+		} 
+
+		logInRewardText.SetActive (false);
+	}
+		
+	void getPlayerRewardForGroup()
+	{
+		VKRequest r1 = new VKRequest (){
+			url="groups.isMember?group_id=" + gameGroupId,
+			CallBackFunction=onPlayerRewardForGroup
+		};
+		_vkapi.Call (r1);
+	}
+
+	void onPlayerRewardForGroup(VKRequest request)
+	{
+		var dict = Json.Deserialize(request.response) as Dictionary<string,object>;
+		bool inGroup = Convert.ToBoolean(dict ["response"]);
+
+		if (_playerData.inVkGameGroup == true) {
+			joinBeaverTimeGroupButton.SetActive (false);
+			goToBeaverTimeGroupButton.SetActive (true);
+		} 
+		else 
+		{
+			if (inGroup) {
+				getRewardForBeaverTimeGroup ();
+				joinBeaverTimeGroupButton.SetActive (false);
+				goToBeaverTimeGroupButton.SetActive (true);
+			} else {
+				joinBeaverTimeGroupButton.SetActive (true);
+				goToBeaverTimeGroupButton.SetActive (false);
+			}
+		}
+
+	}
+
+	void getRewardForBeaverTimeGroup()
+	{
+		_playerData.playerScore += joinGroupReward;
+		_playerData.inVkGameGroup = true;
+		_playerData.savePlayerData();
+	}
+
+	public void joinVKGamesGroup()
+	{
+		if (_vkapi.IsUserLoggedIn) {
+			VKRequest r1 = new VKRequest (){
+				url="groups.join?group_id="+vkGamesOfficialGroupId,
+				CallBackFunction=joinVKGamesHandler
+			};
+			_vkapi.Call (r1);
+		} else {
+			logIn();
+		}
+	}
+
+	void joinVKGamesHandler(VKRequest r)
+	{
+		if(r.error!=null)
+		{
+			return;
+		}
+
+		joinVKGamesGroupButton.SetActive (false);
+		goToVKGamesGroupButton.SetActive (true);
+	}
+
+	public void joinBeaverTimeGroup()
+	{
+		if (_vkapi.IsUserLoggedIn) {
+			VKRequest r1 = new VKRequest () {
+				url = "groups.join?group_id=" + gameGroupId,
+				CallBackFunction = joinBeaverTimeGroupHandler
+			};
+			_vkapi.Call (r1);
+		} else {
+			logIn();
+		}
+	}
+
+	void joinBeaverTimeGroupHandler(VKRequest r)
+	{
+		if(r.error!=null)
+		{
+			return;
+		}
+
+		getRewardForBeaverTimeGroup();
+		joinBeaverTimeGroupButton.SetActive (false);
+		goToBeaverTimeGroupButton.SetActive (true);
+	}
+
+	void setUpVKGamesButton()
+	{
+		VKRequest r1 = new VKRequest (){
+			url="groups.isMember?group_id=" + vkGamesOfficialGroupId,
+			CallBackFunction=onVkGamesOfficialGroup
+		};
+		_vkapi.Call (r1);
+	}
+
+	void onVkGamesOfficialGroup(VKRequest request)
+	{
+		if(request.error!=null)
+		{
+			return;
+		}
+
+		var dict = Json.Deserialize(request.response) as Dictionary<string,object>;
+		bool inGroup = Convert.ToBoolean(dict ["response"]);
+
+		if (inGroup) {
+			joinVKGamesGroupButton.SetActive (false);
+			goToVKGamesGroupButton.SetActive (true);
+		} else {
+			joinVKGamesGroupButton.SetActive (true);
+			goToVKGamesGroupButton.SetActive (false);
+		}
+	}
+
+	public void goToBeaverTimeGroup()
+	{
+		Application.OpenURL(vkURLTemplate + gameGroupId);
+	}
+
+	public void goToVkGamesGroup()
+	{
+		Application.OpenURL(vkURLTemplate + vkGamesOfficialGroupId);
 	}
 
 }

@@ -166,14 +166,20 @@
 	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
 		<value>Самый большой онлайн рекорд:</value>
 	</data>
+	<data name="BeaverTime.GoToBeaverTimeGroup" xml:space="preserve">
+		<value>Группа Время Бобра</value>
+	</data>
 	<data name="BeaverTime.GoToFriends" xml:space="preserve">
 		<value>Подружиться</value>
+	</data>
+	<data name="BeaverTime.GoToVkGamesGroup" xml:space="preserve">
+		<value>Группа Игры ВК</value>
 	</data>
 	<data name="BeaverTime.InviteButton" xml:space="preserve">
 		<value>Пригласить</value>
 	</data>
 	<data name="BeaverTime.InviteFriendText" xml:space="preserve">
-		<value>Ку {0} . Я тут играю в Время Бобра. Может и тебе понравиться :)</value>
+		<value>Привет {0} . Я тут играю в Время Бобра. Может и тебе понравиться :)</value>
 	</data>
 	<data name="BeaverTime.Level1" xml:space="preserve">
 		<value>Привет, я рад тебя видеть в игре. Помоги мне найти часы.</value>

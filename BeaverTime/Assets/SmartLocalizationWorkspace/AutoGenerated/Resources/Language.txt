@@ -164,14 +164,20 @@
 	<data name="BeaverTime.GlobalRecordMessage" xml:space="preserve">
 		<value>Heights online record:</value>
 	</data>
+	<data name="BeaverTime.GoToBeaverTimeGroup" xml:space="preserve">
+		<value>Beaver Time group</value>
+	</data>
 	<data name="BeaverTime.GoToFriends" xml:space="preserve">
 		<value>Go to friends</value>
+	</data>
+	<data name="BeaverTime.GoToVkGamesGroup" xml:space="preserve">
+		<value>VK Games group</value>
 	</data>
 	<data name="BeaverTime.InviteButton" xml:space="preserve">
 		<value>Invite</value>
 	</data>
 	<data name="BeaverTime.InviteFriendText" xml:space="preserve">
-		<value>Ку {0} . Я тут играю в Время Бобра. Может и тебе понравиться :)</value>
+		<value>Привет {0} . Я тут играю в Время Бобра. Может и тебе понравиться :)</value>
 	</data>
 	<data name="BeaverTime.Level1" xml:space="preserve">
 		<value>Hello, I am glad to see you in game. Help me found my watch please.</value>
