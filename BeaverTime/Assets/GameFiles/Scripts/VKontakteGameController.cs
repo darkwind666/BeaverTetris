@@ -24,6 +24,9 @@ public class VKontakteGameController : MonoBehaviour {
 	public GameObject joinVKGamesGroupButton;
 	public GameObject goToVKGamesGroupButton;
 
+	public GameObject acceptOperationController;
+	public Button acceptButton;
+
 	public int logInReward;
 	public int joinGroupReward;
 	public int inviteFriendReward;
@@ -113,13 +116,17 @@ public class VKontakteGameController : MonoBehaviour {
 	{
 		string inviteTextTemplate = SmartLocalization.LanguageManager.Instance.GetTextValue(inviteTextKey);
 		string inviteText = string.Format(inviteTextTemplate, friendName);
-		Action[] list = new Action[] {aCallback};
+
 		VKRequest r1 = new VKRequest (){
 			url="apps.sendRequest?user_id="+friendId+"&text=" + inviteText + "&type=invite&name=BeaverTime",
 			CallBackFunction=inviteFriendHandler,
-			data = list,
+			data = new Action[] {aCallback},
 		};
-		_vkapi.Call (r1);
+
+		acceptOperationController.SetActive(true);
+		acceptButton.onClick.AddListener(() => { 
+			_vkapi.Call (r1);
+		});
 	}
 
 	void inviteFriendHandler(VKRequest request)
@@ -306,7 +313,12 @@ public class VKontakteGameController : MonoBehaviour {
 				url="groups.join?group_id="+vkGamesOfficialGroupId,
 				CallBackFunction=joinVKGamesHandler
 			};
-			_vkapi.Call (r1);
+
+			acceptOperationController.SetActive(true);
+			acceptButton.onClick.AddListener(() => { 
+				_vkapi.Call (r1);
+			});
+
 		} else {
 			logIn();
 		}
@@ -330,7 +342,12 @@ public class VKontakteGameController : MonoBehaviour {
 				url = "groups.join?group_id=" + gameGroupId,
 				CallBackFunction = joinBeaverTimeGroupHandler
 			};
-			_vkapi.Call (r1);
+
+			acceptOperationController.SetActive(true);
+			acceptButton.onClick.AddListener(() => { 
+				_vkapi.Call (r1);
+			});
+
 		} else {
 			logIn();
 		}

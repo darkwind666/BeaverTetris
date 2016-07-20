@@ -116,6 +116,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+	<data name="BeaverTime.AcceptQuestion" xml:space="preserve">
+		<value>Are you sure?</value>
+	</data>
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Back</value>
 	</data>
@@ -228,6 +231,9 @@ time Pro</value>
 	</data>
 	<data name="BeaverTime.NextStep" xml:space="preserve">
 		<value>Next</value>
+	</data>
+	<data name="BeaverTime.No" xml:space="preserve">
+		<value>No</value>
 	</data>
 	<data name="BeaverTime.OnlineLeaderboardButton" xml:space="preserve">
 		<value>Online 
@@ -351,6 +357,9 @@ policy</value>
 	</data>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>You win!</value>
+	</data>
+	<data name="BeaverTime.Yes" xml:space="preserve">
+		<value>Yes</value>
 	</data>
 	<data name="BeaverTime.YouRank" xml:space="preserve">
 		<value>You rank</value>
