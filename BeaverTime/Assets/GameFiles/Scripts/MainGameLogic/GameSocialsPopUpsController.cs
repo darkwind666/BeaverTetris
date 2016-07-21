@@ -6,7 +6,7 @@ using com.playGenesis.VkUnityPlugin;
 using com.playGenesis.VkUnityPlugin.MiniJSON;
 using System;
 
-public class GameSocialsPopUpsController : MonoBehaviour {
+public class GameSocialsPopUpsController : MonoBehaviour, VKontakteInviteFriendsInterface {
 
     public GameGlobalSettings gameGlobalSettings;
 
@@ -14,20 +14,27 @@ public class GameSocialsPopUpsController : MonoBehaviour {
     public int reviewTimeInterval;
 	public int joinGroupLevel;
 	public int joinGroupTimeInterval;
+	public int inviteFriendsLevel;
+	public int inviteFriendsTimeInterval;
 
     public GameObject reviewPopUp;
     public GameSpeedController gameSpeedController;
     public GameAnaliticsController gameAnaliticsController;
     public string gameReviewPopUpAnaliticMessage;
 	public string gameJoinGroupPopUpAnaliticMessage;
+	public string gameInviteFriendsAnaliticMessage;
 
 	public Text reviewPopUpText;
 	public string gameReviewText;
 	public string gameJoinGroupText;
+	public string gameInviteFriendsText;
 
 	public GameObject reviewButton;
 	public GameObject joinBeaverTimeGroupButton;
 	public GameObject inviteFriendsButton;
+
+	public InviteFriendsController inviteFriendsController;
+	public GameObject inviteFriendsPopUp;
 
 	public GameObject acceptOperationController;
 	public Button acceptButton;
@@ -38,10 +45,14 @@ public class GameSocialsPopUpsController : MonoBehaviour {
     GamePlayerDataController _playerData;
 
 	VkApi _vkapi;
+	Downloader _downloader;
+
+	string inviteTextKey = "BeaverTime.InviteFriendText";
 
     void Start () {
 		_vkapi = VkApi.VkApiInstance;
 		_vkapi.LoggedIn += onVKLogin;
+		_downloader = _vkapi.gameObject.GetComponent<Downloader> ();
 
 		_showPopUpAvailable = false;
         _playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
@@ -53,12 +64,16 @@ public class GameSocialsPopUpsController : MonoBehaviour {
 			_maxTimeToShowPopUp = reviewTimeInterval;
         }
 
-		// && _playerData.inVkGameGroup == false
-
-		if (_playerData.selectedLevelIndex == joinGroupLevel && _playerData.showJoinGroupSuggestion == false)
+		if (_playerData.selectedLevelIndex == joinGroupLevel && _playerData.showJoinGroupSuggestion == false && _playerData.inVkGameGroup == false)
 		{
 			_showPopUpAvailable = true;
 			_maxTimeToShowPopUp = joinGroupTimeInterval;
+		}
+
+		if (_playerData.selectedLevelIndex == inviteFriendsLevel && _playerData.showInviteFriendsSuggestion == false)
+		{
+			_showPopUpAvailable = true;
+			_maxTimeToShowPopUp = inviteFriendsTimeInterval;
 		}
     }
 	
@@ -91,6 +106,14 @@ public class GameSocialsPopUpsController : MonoBehaviour {
 			reviewPopUpText.text = SmartLocalization.LanguageManager.Instance.GetTextValue(gameJoinGroupText);
 		}
 
+		if (_playerData.selectedLevelIndex == inviteFriendsLevel)
+		{
+			_playerData.showInviteFriendsSuggestion = true;
+			inviteFriendsButton.SetActive(true);
+			gameAnaliticsController.sendAnaliticMessage(gameInviteFriendsAnaliticMessage);
+			reviewPopUpText.text = SmartLocalization.LanguageManager.Instance.GetTextValue(gameInviteFriendsText);
+		}
+
 		reviewPopUp.SetActive(true);
 		_showPopUpAvailable = false;
 		gameSpeedController.stopGame = true;
@@ -118,6 +141,7 @@ public class GameSocialsPopUpsController : MonoBehaviour {
 		_playerData.logInVk = true;
 		_playerData.savePlayerData ();
 		getPlayerRewardForGroup ();
+		setUpCurrentUserFriends();
 	}
 
 	void getPlayerRewardForGroup()
@@ -139,6 +163,43 @@ public class GameSocialsPopUpsController : MonoBehaviour {
 			_playerData.inVkGameGroup = true;
 			_playerData.savePlayerData();
 			joinBeaverTimeGroupButton.SetActive(false);
+		}
+	}
+
+	void setUpCurrentUserFriends()
+	{
+		VKRequest r1 = new VKRequest (){
+			url="apps.getFriendsList?extended=1&count=30&type=invite&fields=photo_50",
+			CallBackFunction=getFriendsHandler
+		};
+		_vkapi.Call (r1);
+	}
+
+	void getFriendsHandler(VKRequest request)
+	{
+		if(request.error!=null)
+		{
+			return;
+		}
+
+		var dict = Json.Deserialize(request.response) as Dictionary<string,object>;
+		var resp = (Dictionary<string,object>)dict["response"];
+		var items = (List<object>)resp["items"];
+
+		List<BeaverTimeVKFriend> friends = new List<BeaverTimeVKFriend>();
+
+		foreach(var item in items)
+		{
+			BeaverTimeVKFriend friend = new BeaverTimeVKFriend();
+			friend.friend = VKUser.Deserialize(item);
+			friends.Add(friend);
+		}
+
+		inviteFriendsController.friendsDataSource = friends;
+
+		if(inviteFriendsController.m_tableView.isActiveAndEnabled == true)
+		{
+			inviteFriendsController.m_tableView.ReloadData();
 		}
 	}
 
@@ -167,5 +228,56 @@ public class GameSocialsPopUpsController : MonoBehaviour {
 			return;
 		}
 		getPlayerRewardForGroup();
+	}
+
+	public void inviteFriends()
+	{
+		if (_vkapi.IsUserLoggedIn) {
+			setUpCurrentUserFriends();
+			inviteFriendsPopUp.SetActive(true);
+		} else {
+			_vkapi.Login();
+		}
+	}
+
+	public void loadImageWithUrlAndCallback (string aUrl, Action<DownloadRequest> aCallback)
+	{
+		var request = new DownloadRequest
+		{
+			url = aUrl,
+			onFinished = aCallback,
+		};
+
+		_downloader.download(request);
+	}
+
+	public void inviteFriend(string friendId, string friendName, Action aCallback)
+	{
+		string inviteTextTemplate = SmartLocalization.LanguageManager.Instance.GetTextValue(inviteTextKey);
+		string inviteText = string.Format(inviteTextTemplate, friendName);
+
+		VKRequest r1 = new VKRequest (){
+			url="apps.sendRequest?user_id="+friendId+"&text=" + inviteText + "&type=invite&name=BeaverTime",
+			CallBackFunction=inviteFriendHandler,
+			data = new Action[] {aCallback},
+		};
+
+		acceptOperationController.SetActive(true);
+		acceptButton.onClick.AddListener(() => { 
+			_vkapi.Call (r1);
+		});
+	}
+
+	void inviteFriendHandler(VKRequest request)
+	{
+		if(request.error!=null)
+		{
+			return;
+		}
+
+		_playerData.playerScore += gameGlobalSettings.inviteFriendReward;
+		_playerData.savePlayerData();
+		Action callback = request.data[0] as Action;
+		callback();
 	}
 }

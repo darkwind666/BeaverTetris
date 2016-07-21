@@ -26,6 +26,7 @@ public class GamePlayerDataController {
     public int completedTutorialsCount { get; set; }
     public bool showReviewSuggestion { get; set; }
 	public bool showJoinGroupSuggestion { get; set; }
+	public bool showInviteFriendsSuggestion { get; set; }
 
     public int playerStartLevelScore { get; set; }
 	public bool selectEndlessLevel { get; set; }
@@ -91,6 +92,7 @@ public class GamePlayerDataController {
             completedTutorialsCount = data.completedTutorialsCount;
             showReviewSuggestion = data.showReviewSuggestion;
 			showJoinGroupSuggestion = data.showJoinGroupSuggestion;
+			showInviteFriendsSuggestion = data.showInviteFriendsSuggestion;
 			logInVk = data.logInVk;
 			inVkGameGroup = data.inVkGameGroup;
 
@@ -120,6 +122,7 @@ public class GamePlayerDataController {
         savingData.completedTutorialsCount = completedTutorialsCount;
         savingData.showReviewSuggestion = showReviewSuggestion;
 		savingData.showJoinGroupSuggestion = showJoinGroupSuggestion;
+		savingData.showInviteFriendsSuggestion = showInviteFriendsSuggestion;
 		savingData.logInVk = logInVk;
 		savingData.inVkGameGroup = inVkGameGroup;
 
@@ -140,6 +143,7 @@ public class GamePlayerDataController {
         completedTutorialsCount = 0;
         showReviewSuggestion = false;
 		showJoinGroupSuggestion = false;
+		showInviteFriendsSuggestion = false;
 		logInVk = false;
 		inVkGameGroup = false;
         savePlayerData();
@@ -159,6 +163,7 @@ public class GamePlayerDataController {
         completedTutorialsCount = 0;
 		showJoinGroupSuggestion = false;
 		showReviewSuggestion = false;
+		showInviteFriendsSuggestion = false;
 		logInVk = false;
 		inVkGameGroup = false;
         savePlayerData();
@@ -213,6 +218,7 @@ public class PlayerData
     public int completedTutorialsCount;
     public bool showReviewSuggestion;
 	public bool showJoinGroupSuggestion;
+	public bool showInviteFriendsSuggestion;
 	public bool logInVk;
 	public bool inVkGameGroup;
 }

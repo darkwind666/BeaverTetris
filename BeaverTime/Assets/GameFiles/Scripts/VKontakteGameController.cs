@@ -7,7 +7,7 @@ using System;
 using System.Collections;
 
 
-public class VKontakteGameController : MonoBehaviour {
+public class VKontakteGameController : MonoBehaviour, VKontakteInviteFriendsInterface {
 
 	public Text playerName;
 	public Image playerImage;

@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cellPrefab: {fileID: 11497252, guid: 599b1934dd96f489b8bb12645de30610, type: 2}
   m_tableView: {fileID: 151706030}
-  vkontakteGameController: {fileID: 315742385}
+  vkontakteControllerContainer: {fileID: 315742384}
 --- !u!4 &930036648
 Transform:
   m_ObjectHideFlags: 0

@@ -12,9 +12,12 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 	public TableView m_tableView;
 
 	public List<BeaverTimeVKFriend> friendsDataSource;
-	public VKontakteGameController vkontakteGameController;
+	public GameObject vkontakteControllerContainer;
+
+	VKontakteInviteFriendsInterface _vkontakteGameController;
 
 	void Start () {
+		_vkontakteGameController = vkontakteControllerContainer.GetComponent<VKontakteInviteFriendsInterface>();
 		m_tableView.dataSource = this;
 		if(friendsDataSource == null)
 		{
@@ -72,10 +75,10 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 			cell.friendImage.sprite = Sprite.Create(tex,new Rect(0,0,50,50),new Vector2(0.5f,0.5f));
 		};
 
-		vkontakteGameController.loadImageWithUrlAndCallback (cellData.photo_50, doOnFinish);
+		_vkontakteGameController.loadImageWithUrlAndCallback (cellData.photo_50, doOnFinish);
 
 		cell.inviteButton.onClick.AddListener(() => { 
-			vkontakteGameController.inviteFriend(cellData.id.ToString(), cellData.first_name, () => {
+			_vkontakteGameController.inviteFriend(cellData.id.ToString(), cellData.first_name, () => {
 				cell.inviteButton.gameObject.SetActive(false);
 				friendsDataSource[row].invited = true;
 			});
@@ -92,5 +95,11 @@ public class BeaverTimeVKFriend {
 
 	public bool invited;
 	public VKUser friend;
+}
+
+public interface VKontakteInviteFriendsInterface {
+
+	void loadImageWithUrlAndCallback (string aUrl, Action<DownloadRequest> aCallback);
+	void inviteFriend(string friendId, string friendName, Action aCallback);
 
 }

@@ -181,6 +181,10 @@ time Pro</value>
 	<data name="BeaverTime.InviteButton" xml:space="preserve">
 		<value>Invite</value>
 	</data>
+	<data name="BeaverTime.InviteFriendsToGameSuggestion" xml:space="preserve">
+		<value>You can invite friends 
+ to game :)</value>
+	</data>
 	<data name="BeaverTime.InviteFriendText" xml:space="preserve">
 		<value>Привет {0} . Я тут играю в Время Бобра. Может и тебе понравиться :)</value>
 	</data>
