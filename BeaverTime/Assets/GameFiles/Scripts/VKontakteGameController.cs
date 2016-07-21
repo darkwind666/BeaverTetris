@@ -16,6 +16,7 @@ public class VKontakteGameController : MonoBehaviour {
 	public GameObject logInRewardText;
 
 	public GameObject logOutButton;
+	public GameObject inviteFriendsPopUp;
 	public InviteFriendsController inviteFriendsController;
 
 	public GameObject joinBeaverTimeGroupButton;
@@ -27,10 +28,8 @@ public class VKontakteGameController : MonoBehaviour {
 	public GameObject acceptOperationController;
 	public Button acceptButton;
 
-	public int logInReward;
-	public int joinGroupReward;
-	public int inviteFriendReward;
-	public string gameGroupId;
+	public GameGlobalSettings gameSettings;
+
 	public string vkGamesOfficialGroupId;
 
 	VkApi _vkapi;
@@ -39,7 +38,6 @@ public class VKontakteGameController : MonoBehaviour {
 	GamePlayerDataController _playerData;
 	string vkURLTemplate = "https://vk.com/public";
 	Downloader _downloader;
-
 
 	void Start () {
 
@@ -112,6 +110,15 @@ public class VKontakteGameController : MonoBehaviour {
 
 
 
+	public void inviteFriends()
+	{
+		if (_vkapi.IsUserLoggedIn) {
+			inviteFriendsPopUp.SetActive(true);
+		} else {
+			logIn();
+		}
+	}
+
 	public void inviteFriend(string friendId, string friendName, Action aCallback)
 	{
 		string inviteTextTemplate = SmartLocalization.LanguageManager.Instance.GetTextValue(inviteTextKey);
@@ -136,13 +143,13 @@ public class VKontakteGameController : MonoBehaviour {
 			return;
 		}
 
-		_playerData.playerScore += inviteFriendReward;
+		_playerData.playerScore += gameSettings.inviteFriendReward;
 		_playerData.savePlayerData();
 		Action callback = request.data[0] as Action;
 		callback();
 	}
 
-	public void getFriendsHandler(VKRequest request)
+	void getFriendsHandler(VKRequest request)
 	{
 		if(request.error!=null)
 		{
@@ -258,10 +265,9 @@ public class VKontakteGameController : MonoBehaviour {
 	void getPlayerRewardForLogIn()
 	{
 		if (_playerData.logInVk == false) {
-			_playerData.playerScore += logInReward;
+			_playerData.playerScore += gameSettings.logInReward;
 			_playerData.logInVk = true;
 			_playerData.savePlayerData ();
-			logInRewardText.SetActive (false);
 		} 
 
 		logInRewardText.SetActive (false);
@@ -270,7 +276,7 @@ public class VKontakteGameController : MonoBehaviour {
 	void getPlayerRewardForGroup()
 	{
 		VKRequest r1 = new VKRequest (){
-			url="groups.isMember?group_id=" + gameGroupId,
+			url="groups.isMember?group_id=" + gameSettings.vkGameGroupId,
 			CallBackFunction=onPlayerRewardForGroup
 		};
 		_vkapi.Call (r1);
@@ -296,15 +302,17 @@ public class VKontakteGameController : MonoBehaviour {
 				goToBeaverTimeGroupButton.SetActive (false);
 			}
 		}
-
 	}
 
 	void getRewardForBeaverTimeGroup()
 	{
-		_playerData.playerScore += joinGroupReward;
+		_playerData.playerScore += gameSettings.joinGroupReward;
 		_playerData.inVkGameGroup = true;
 		_playerData.savePlayerData();
 	}
+
+
+
 
 	public void joinVKGamesGroup()
 	{
@@ -339,7 +347,7 @@ public class VKontakteGameController : MonoBehaviour {
 	{
 		if (_vkapi.IsUserLoggedIn) {
 			VKRequest r1 = new VKRequest () {
-				url = "groups.join?group_id=" + gameGroupId,
+				url = "groups.join?group_id=" + gameSettings.vkGameGroupId,
 				CallBackFunction = joinBeaverTimeGroupHandler
 			};
 
@@ -395,7 +403,7 @@ public class VKontakteGameController : MonoBehaviour {
 
 	public void goToBeaverTimeGroup()
 	{
-		Application.OpenURL(vkURLTemplate + gameGroupId);
+		Application.OpenURL(vkURLTemplate + gameSettings.vkGameGroupId);
 	}
 
 	public void goToVkGamesGroup()

@@ -25,6 +25,7 @@ public class GamePlayerDataController {
     public int selectedLevelIndex { get; set; }
     public int completedTutorialsCount { get; set; }
     public bool showReviewSuggestion { get; set; }
+	public bool showJoinGroupSuggestion { get; set; }
 
     public int playerStartLevelScore { get; set; }
 	public bool selectEndlessLevel { get; set; }
@@ -33,6 +34,7 @@ public class GamePlayerDataController {
 	public bool simplifyLevel { get; set; }
 	public bool logInVk { get; set; }
 	public bool inVkGameGroup { get; set; }
+
 
     string _dataPath;
 
@@ -88,6 +90,7 @@ public class GamePlayerDataController {
             _playerSpells = data.playerSpells;
             completedTutorialsCount = data.completedTutorialsCount;
             showReviewSuggestion = data.showReviewSuggestion;
+			showJoinGroupSuggestion = data.showJoinGroupSuggestion;
 			logInVk = data.logInVk;
 			inVkGameGroup = data.inVkGameGroup;
 
@@ -116,6 +119,7 @@ public class GamePlayerDataController {
         savingData.playerSpells = _playerSpells;
         savingData.completedTutorialsCount = completedTutorialsCount;
         savingData.showReviewSuggestion = showReviewSuggestion;
+		savingData.showJoinGroupSuggestion = showJoinGroupSuggestion;
 		savingData.logInVk = logInVk;
 		savingData.inVkGameGroup = inVkGameGroup;
 
@@ -135,6 +139,7 @@ public class GamePlayerDataController {
         selectedLevelIndex = 0;
         completedTutorialsCount = 0;
         showReviewSuggestion = false;
+		showJoinGroupSuggestion = false;
 		logInVk = false;
 		inVkGameGroup = false;
         savePlayerData();
@@ -152,6 +157,8 @@ public class GamePlayerDataController {
         gameSoundEffectsVolume = 0.5f;
         selectedLevelIndex = 0;
         completedTutorialsCount = 0;
+		showJoinGroupSuggestion = false;
+		showReviewSuggestion = false;
 		logInVk = false;
 		inVkGameGroup = false;
         savePlayerData();
@@ -205,6 +212,7 @@ public class PlayerData
     public List<LevelSpell> playerSpells;
     public int completedTutorialsCount;
     public bool showReviewSuggestion;
+	public bool showJoinGroupSuggestion;
 	public bool logInVk;
 	public bool inVkGameGroup;
 }

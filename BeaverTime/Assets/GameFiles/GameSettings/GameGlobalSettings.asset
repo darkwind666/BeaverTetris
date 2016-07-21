@@ -13,6 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameShopName: WindowsStore
   gameShopForReviewUrl: https://www.microsoft.com/ru-ru/store/games/beaver-time/9wzdncrd36s3
+  vkGameGroupId: 101174315
+  logInReward: 100
+  joinGroupReward: 200
+  inviteFriendReward: 20
   gameSparkLeaderboard: 0
   googlePlayServiceLeaderboard: 1
   gameCenterLeaderboard: 0

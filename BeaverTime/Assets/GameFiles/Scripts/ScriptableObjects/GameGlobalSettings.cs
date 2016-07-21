@@ -6,6 +6,12 @@ public class GameGlobalSettings : ScriptableObject {
     public string gameShopName;
     public string gameShopForReviewUrl;
 
+	public string vkGameGroupId;
+
+	public int logInReward;
+	public int joinGroupReward;
+	public int inviteFriendReward;
+
 	public bool gameSparkLeaderboard;
 	public bool googlePlayServiceLeaderboard;
 	public bool gameCenterLeaderboard;

@@ -979,6 +979,7 @@ MonoBehaviour:
   logInButton: {fileID: 934003654}
   logInRewardText: {fileID: 35841693}
   logOutButton: {fileID: 847643059}
+  inviteFriendsPopUp: {fileID: 572809679}
   inviteFriendsController: {fileID: 930036647}
   joinBeaverTimeGroupButton: {fileID: 2080475652}
   goToBeaverTimeGroupButton: {fileID: 885359851}
@@ -986,10 +987,7 @@ MonoBehaviour:
   goToVKGamesGroupButton: {fileID: 1698983722}
   acceptOperationController: {fileID: 1088842177}
   acceptButton: {fileID: 290484054}
-  logInReward: 100
-  joinGroupReward: 200
-  inviteFriendReward: 10
-  gameGroupId: 101174315
+  gameSettings: {fileID: 11400000, guid: aef59761d362a1642bb3067cdf5192fb, type: 2}
   vkGamesOfficialGroupId: 78616012
 --- !u!4 &315742386
 Transform:
@@ -2919,16 +2917,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 572809679}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 315742385}
+        m_MethodName: inviteFriends
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMenuScreen
-          m_BoolArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
