@@ -161,7 +161,7 @@
 	<data name="BeaverTime.GameName" xml:space="preserve">
 		<value>Beaver
 
-time Pro</value>
+time</value>
 	</data>
 	<data name="BeaverTime.GameRecords" xml:space="preserve">
 		<value>Records</value>
@@ -374,6 +374,9 @@ policy</value>
 	</data>
 	<data name="BeaverTime.VKLogOut" xml:space="preserve">
 		<value>Log Out</value>
+	</data>
+	<data name="BeaverTime.VKontakteButton" xml:space="preserve">
+		<value>VKontakte</value>
 	</data>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>You win!</value>

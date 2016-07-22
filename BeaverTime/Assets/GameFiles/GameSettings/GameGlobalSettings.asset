@@ -16,7 +16,7 @@ MonoBehaviour:
   vkGameGroupId: 101174315
   logInReward: 100
   joinGroupReward: 200
-  inviteFriendReward: 20
+  inviteFriendReward: 30
   gameSparkLeaderboard: 0
   googlePlayServiceLeaderboard: 1
   gameCenterLeaderboard: 0

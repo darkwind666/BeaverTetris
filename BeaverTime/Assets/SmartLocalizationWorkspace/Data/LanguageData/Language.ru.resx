@@ -161,7 +161,7 @@
 	<data name="BeaverTime.GameName" xml:space="preserve">
 		<value>Время
 
-Бобра Про</value>
+Бобра</value>
 	</data>
 	<data name="BeaverTime.GameRecords" xml:space="preserve">
 		<value>Рекорды</value>
@@ -375,6 +375,9 @@
 	</data>
 	<data name="BeaverTime.VKLogOut" xml:space="preserve">
 		<value>Выйти</value>
+	</data>
+	<data name="BeaverTime.VKontakteButton" xml:space="preserve">
+		<value>ВКонтакте</value>
 	</data>
 	<data name="BeaverTime.WinLevel" xml:space="preserve">
 		<value>Вы выиграли!</value>
