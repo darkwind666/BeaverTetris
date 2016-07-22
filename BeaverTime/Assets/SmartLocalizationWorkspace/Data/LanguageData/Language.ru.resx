@@ -222,6 +222,10 @@
 	<data name="BeaverTime.Level9" xml:space="preserve">
 		<value>Это будет сложный уровень. Будь быстрым как тигр.</value>
 	</data>
+	<data name="BeaverTime.LogInVKSuggestion" xml:space="preserve">
+		<value>Вы можете подключить к игре вк аккаунт
+и заработать награду!</value>
+	</data>
 	<data name="BeaverTime.LoseLevel" xml:space="preserve">
 		<value>Вы проиграли!</value>
 	</data>
@@ -242,6 +246,9 @@
 	</data>
 	<data name="BeaverTime.No" xml:space="preserve">
 		<value>Нет</value>
+	</data>
+	<data name="BeaverTime.NotNowLogInVk" xml:space="preserve">
+		<value>Не сейчас.</value>
 	</data>
 	<data name="BeaverTime.OnlineLeaderboardButton" xml:space="preserve">
 		<value>Онлайн

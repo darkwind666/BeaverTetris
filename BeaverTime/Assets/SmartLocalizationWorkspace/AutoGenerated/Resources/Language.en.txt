@@ -222,6 +222,9 @@ time Pro</value>
 	<data name="BeaverTime.Level9" xml:space="preserve">
 		<value>It is will be difficult level. You should be fast as tiger.</value>
 	</data>
+	<data name="BeaverTime.LogInVKSuggestion" xml:space="preserve">
+		<value>Would you like to link vk account?</value>
+	</data>
 	<data name="BeaverTime.LoseLevel" xml:space="preserve">
 		<value>You lose!</value>
 	</data>
@@ -242,6 +245,9 @@ time Pro</value>
 	</data>
 	<data name="BeaverTime.No" xml:space="preserve">
 		<value>No</value>
+	</data>
+	<data name="BeaverTime.NotNowLogInVk" xml:space="preserve">
+		<value>Not now</value>
 	</data>
 	<data name="BeaverTime.OnlineLeaderboardButton" xml:space="preserve">
 		<value>Online 
