@@ -119,6 +119,9 @@
 	<data name="BeaverTime.AcceptQuestion" xml:space="preserve">
 		<value>Are you sure?</value>
 	</data>
+	<data name="BeaverTime.AddDeveloperToFriendText" xml:space="preserve">
+		<value>Hi! Thank a lot for Beaver time game) (Send from game app)</value>
+	</data>
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Back</value>
 	</data>
@@ -243,6 +246,9 @@
 	</data>
 	<data name="BeaverTime.No" xml:space="preserve">
 		<value>No</value>
+	</data>
+	<data name="BeaverTime.NotNowLogInVk" xml:space="preserve">
+		<value>Not now</value>
 	</data>
 	<data name="BeaverTime.OnlineLeaderboardButton" xml:space="preserve">
 		<value>Online 
@@ -373,7 +379,7 @@ policy</value>
 	<data name="BeaverTime.YouRank" xml:space="preserve">
 		<value>You rank</value>
 	</data>
-	<data name="BeaverTime.NotNowLogInVk" xml:space="preserve">
-		<value>Not now</value>
+	<data name="BeaverTime.AddDeveloperToFriendsButton" xml:space="preserve">
+		<value>Add to friend</value>
 	</data>
 </root>

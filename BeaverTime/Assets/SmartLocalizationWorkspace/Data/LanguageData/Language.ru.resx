@@ -119,6 +119,12 @@
 	<data name="BeaverTime.AcceptQuestion" xml:space="preserve">
 		<value>Вы уверенны?</value>
 	</data>
+	<data name="BeaverTime.AddDeveloperToFriendsButton" xml:space="preserve">
+		<value>Добавить в друзья</value>
+	</data>
+	<data name="BeaverTime.AddDeveloperToFriendText" xml:space="preserve">
+		<value>Привет! Спасибо за игру Время Бобра) (Отправленно из игры)</value>
+	</data>
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Назад</value>
 	</data>

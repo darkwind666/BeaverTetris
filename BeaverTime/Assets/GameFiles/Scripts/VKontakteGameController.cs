@@ -31,10 +31,12 @@ public class VKontakteGameController : MonoBehaviour, VKontakteInviteFriendsInte
 	public GameGlobalSettings gameSettings;
 
 	public string vkGamesOfficialGroupId;
+	public string vkDeveloperId;
 
 	VkApi _vkapi;
 	VKUser _currentUser;
 	string inviteTextKey = "BeaverTime.InviteFriendText";
+	string addDeveloperToFriendKey = "BeaverTime.AddDeveloperToFriendText";
 	GamePlayerDataController _playerData;
 	string vkURLTemplate = "https://vk.com/public";
 	Downloader _downloader;
@@ -177,7 +179,22 @@ public class VKontakteGameController : MonoBehaviour, VKontakteInviteFriendsInte
 		}
 	}
 
+	public void addDeveloperToFriends()
+	{
+		string developerToFriendText = SmartLocalization.LanguageManager.Instance.GetTextValue(addDeveloperToFriendKey);
+		if (_vkapi.IsUserLoggedIn) {
+			VKRequest r1 = new VKRequest (){
+				url="friends.add?user_id="+vkDeveloperId+"&text="+developerToFriendText,
+			};
 
+			acceptOperationController.SetActive(true);
+			acceptButton.onClick.AddListener(() => { 
+				_vkapi.Call (r1);
+			});
+		} else {
+			logIn();
+		}
+	}
 
 
 	void getUserInfo()
