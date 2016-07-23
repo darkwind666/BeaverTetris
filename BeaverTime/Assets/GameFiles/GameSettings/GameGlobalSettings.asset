@@ -17,8 +17,8 @@ MonoBehaviour:
   logInReward: 100
   joinGroupReward: 200
   inviteFriendReward: 30
-  gameSparkLeaderboard: 0
-  googlePlayServiceLeaderboard: 1
+  gameSparkLeaderboard: 1
+  googlePlayServiceLeaderboard: 0
   gameCenterLeaderboard: 0
   showAds: 1
   showVungleAds: 0

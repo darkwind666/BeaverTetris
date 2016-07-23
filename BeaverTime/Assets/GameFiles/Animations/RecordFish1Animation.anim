@@ -20,20 +20,20 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -255
+        value: -338.1
         inSlope: 0
         outSlope: 0
-        tangentMode: 10
+        tangentMode: 0
       - time: 3
-        value: -255
+        value: -338.1
         inSlope: 0
         outSlope: 0
-        tangentMode: 10
+        tangentMode: 0
       - time: 6
-        value: -255
+        value: -338.1
         inSlope: 0
         outSlope: 0
-        tangentMode: 10
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -45,65 +45,25 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -197
-        inSlope: 33.133335
-        outSlope: 33.133335
-        tangentMode: 10
+        value: -400.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
       - time: 3
-        value: -97.6
-        inSlope: -1.5
-        outSlope: -1.5
-        tangentMode: 10
+        value: -330.9
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
       - time: 6
-        value: -206
-        inSlope: -36.133335
-        outSlope: -36.133335
-        tangentMode: 10
+        value: -400.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
     path: 
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 97
-        inSlope: 2.413793
-        outSlope: 2.413793
-        tangentMode: 10
-      - time: 2.9
-        value: 104
-        inSlope: 2.413793
-        outSlope: 2.413793
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_SizeDelta.x
-    path: MainMenuBeaver
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 160
-        inSlope: 4.137931
-        outSlope: 4.137931
-        tangentMode: 10
-      - time: 2.9
-        value: 172
-        inSlope: 4.137931
-        outSlope: 4.137931
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_SizeDelta.y
-    path: MainMenuBeaver
     classID: 224
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -113,7 +73,19 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
+    genericBindings:
+    - path: 0
+      attribute: 538195251
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - path: 0
+      attribute: 1460864421
+      script: {fileID: 0}
+      classID: 224
+      customType: 0
+      isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -140,20 +112,20 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -255
+        value: -338.1
         inSlope: 0
         outSlope: 0
-        tangentMode: 10
+        tangentMode: 0
       - time: 3
-        value: -255
+        value: -338.1
         inSlope: 0
         outSlope: 0
-        tangentMode: 10
+        tangentMode: 0
       - time: 6
-        value: -255
+        value: -338.1
         inSlope: 0
         outSlope: 0
-        tangentMode: 10
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -165,65 +137,25 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: -197
-        inSlope: 33.133335
-        outSlope: 33.133335
-        tangentMode: 10
+        value: -400.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
       - time: 3
-        value: -97.6
-        inSlope: -1.5
-        outSlope: -1.5
-        tangentMode: 10
+        value: -330.9
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
       - time: 6
-        value: -206
-        inSlope: -36.133335
-        outSlope: -36.133335
-        tangentMode: 10
+        value: -400.6
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
     path: 
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 97
-        inSlope: 2.413793
-        outSlope: 2.413793
-        tangentMode: 10
-      - time: 2.9
-        value: 104
-        inSlope: 2.413793
-        outSlope: 2.413793
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_SizeDelta.x
-    path: MainMenuBeaver
-    classID: 224
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 160
-        inSlope: 4.137931
-        outSlope: 4.137931
-        tangentMode: 10
-      - time: 2.9
-        value: 172
-        inSlope: 4.137931
-        outSlope: 4.137931
-        tangentMode: 10
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_SizeDelta.y
-    path: MainMenuBeaver
     classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []

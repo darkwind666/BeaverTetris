@@ -174,7 +174,7 @@ public class GameSparksTestUI : MonoBehaviour
 
 
 		if (GUILayout.Button ("leaderboardData", GUILayout.Width (itemWidth), GUILayout.Height (itemHeight))) {
-            new LeaderboardDataRequest ().SetLeaderboardShortCode ("HSCORE").SetEntryCount (10) .Send ((leadResponse) => {
+			new LeaderboardDataRequest ().SetLeaderboardShortCode ("hightScoreLeaderboard").SetEntryCount (10) .Send ((leadResponse) => {
 
                 
     			if (leadResponse.HasErrors) {
