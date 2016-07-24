@@ -289,7 +289,6 @@ namespace AppodealAds.Unity.iOS
 			
 			if ((adTypes & Appodeal.BANNER) > 0 || 
 			    (adTypes & Appodeal.BANNER_TOP) > 0 || 
-			    (adTypes & Appodeal.BANNER_CENTER) > 0 || 
 			    (adTypes & Appodeal.BANNER_BOTTOM) > 0) {
 				
 				nativeAdTypes |= AppodealAdTypeBanner;
@@ -317,10 +316,6 @@ namespace AppodealAds.Unity.iOS
 			
 			if ((adTypes & Appodeal.BANNER_TOP) > 0) {
 				return AppodealShowStyleBannerTop;
-			}
-			
-			if ((adTypes & Appodeal.BANNER_CENTER) > 0) {
-				return AppodealShowStyleBannerCenter;
 			}
 			
 			if ((adTypes & Appodeal.BANNER_BOTTOM) > 0) {
@@ -503,6 +498,11 @@ namespace AppodealAds.Unity.iOS
 		}
 		
 		public void setCustomSegment(string name, string value)
+		{
+			//TODO;
+		}
+
+		public void setSmartBanners(Boolean value)
 		{
 			//TODO;
 		}

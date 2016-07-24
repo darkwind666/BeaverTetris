@@ -31,9 +31,10 @@ namespace AppodealAds.Unity.Common {
 		void setOnLoadedTriggerBoth (int adTypes, Boolean onLoadedTriggerBoth);
 		void setTesting(Boolean test);
 		void setLogging(Boolean logging);
+		void setSmartBanners(Boolean value);
 
 		void trackInAppPurchase(double amount, string currency);
-		void setCustomSegment(string name, bool value);
+		void setCustomSegment(string name, Boolean value);
 		void setCustomSegment(string name, int value);
 		void setCustomSegment(string name, double value);
 		void setCustomSegment(string name, string value);

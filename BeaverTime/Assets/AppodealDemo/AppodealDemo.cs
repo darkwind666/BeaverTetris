@@ -90,14 +90,7 @@ public class AppodealDemo : MonoBehaviour, IInterstitialAdListener, IBannerAdLis
 				showBannerText = "Showing Banner Top";
 				bannerButton = false;
 			}
-			Rect showBannerCenterRect = new Rect(startWidth * Screen.width, (startHeight + stepHeight * 7) * Screen.height, buttonWidth * Screen.width, buttonHeight * Screen.height);
-			if (GUI.Button(showBannerCenterRect, "Show Banner Center"))
-			{
-				Appodeal.show(Appodeal.BANNER_CENTER);
-				showBannerText = "Showing Banner Center";
-				bannerButton = false;
-			}
-			Rect showBannerBottomRect = new Rect(startWidth * Screen.width, (startHeight + stepHeight * 8) * Screen.height, buttonWidth * Screen.width, buttonHeight * Screen.height);
+			Rect showBannerBottomRect = new Rect(startWidth * Screen.width, (startHeight + stepHeight * 7) * Screen.height, buttonWidth * Screen.width, buttonHeight * Screen.height);
 			if (GUI.Button(showBannerBottomRect, "Show Banner Bottom"))
 			{
 				Appodeal.show(Appodeal.BANNER_BOTTOM);

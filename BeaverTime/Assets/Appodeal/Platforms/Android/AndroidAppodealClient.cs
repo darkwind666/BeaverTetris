@@ -88,7 +88,7 @@ namespace AppodealAds.Unity.Android
 
 		public Boolean show(int adTypes, string placement)
 		{
-			return getAppodealClass().CallStatic<Boolean>("show", getActivity(), adTypes);
+			return getAppodealClass().CallStatic<Boolean>("show", getActivity(), adTypes, placement);
 		}
 		
 		public void hide(int adTypes)
@@ -156,7 +156,7 @@ namespace AppodealAds.Unity.Android
 			getAppodealClass().CallStatic("trackInAppPurchase", getActivity(), amount, currency);
 		}
 
-		public void setCustomSegment(string name, bool value) {
+		public void setCustomSegment(string name, Boolean value) {
 			getAppodealClass().CallStatic("setCustomSegment", name, value);
 		}
 
@@ -170,6 +170,10 @@ namespace AppodealAds.Unity.Android
 
 		public void setCustomSegment(string name, string value) {
 			getAppodealClass().CallStatic("setCustomSegment", name, value);
+		}
+
+		public void setSmartBanners(Boolean value) {
+			getAppodealClass().CallStatic("setSmartBanners", value);
 		}
 
 		//User Settings

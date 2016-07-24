@@ -39,7 +39,7 @@ public class AppodealAndroidManifestMod {
 	public const string nexageVpaidActivityName = "org.nexage.sourcekit.vast.activity.VPAIDActivity";
 	public const string appodealVpaidActivityName = "com.appodeal.ads.networks.vpaid.VPAIDActivity";
 	public const string amazonAdsActivityName = "com.amazon.device.ads.AdActivity";
-	public const string mailruActivityName = "ru.mail.android.mytarget.ads.MyTargetActivity";
+	public const string mailruActivityName = "com.my.target.ads.MyTargetActivity";
 	public const string spotxActivityName = "com.appodeal.ads.networks.SpotXActivity";
 	public const string facebookActivityName = "com.facebook.ads.InterstitialAdActivity";
 	public const string unityAdsFullscreenActivityName = "com.unity3d.ads.android.view.UnityAdsFullscreenActivity";
@@ -653,7 +653,7 @@ public class AppodealAndroidManifestMod {
 					yandexService.AppendChild(yandexMetaDataElement);
 					intentElement.AppendChild(categoryElement);
 					intentElement.AppendChild(actionElement);
-					intentElement.AppendChild(categoryElement);
+					intentElement.AppendChild(dataElement);
 				}
 			} else {
 				yandexService = doc.CreateElement(service);
@@ -676,7 +676,7 @@ public class AppodealAndroidManifestMod {
 				yandexService.AppendChild(yandexMetaDataElement);
 				intentElement.AppendChild(categoryElement);
 				intentElement.AppendChild(actionElement);
-				intentElement.AppendChild(categoryElement);
+				intentElement.AppendChild(dataElement);
 			}
 		}
 		XmlElement yandexReceiver = FindElementWithAndroidName(receiver, "name", ns, yandexReceiverName, dict);

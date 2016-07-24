@@ -14,7 +14,6 @@ namespace AppodealAds.Unity.Api
 		public const int BANNER              = 4;
 		public const int BANNER_BOTTOM       = 8;
 		public const int BANNER_TOP          = 16;
-		public const int BANNER_CENTER       = 32;
 		public const int REWARDED_VIDEO      = 128;
 		public const int NON_SKIPPABLE_VIDEO = 128;
 
@@ -236,6 +235,13 @@ namespace AppodealAds.Unity.Api
 		{
 			#if UNITY_ANDROID && !UNITY_EDITOR || UNITY_IPHONE && !UNITY_EDITOR
 			getInstance().setCustomSegment(name, value);
+			#endif
+		}
+
+		public static void setSmartBanners(Boolean value)
+		{
+			#if UNITY_ANDROID && !UNITY_EDITOR || UNITY_IPHONE && !UNITY_EDITOR
+			getInstance().setSmartBanners(value);
 			#endif
 		}
 

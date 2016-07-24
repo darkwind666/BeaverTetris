@@ -45,7 +45,7 @@ public class AppodealDemo1 : MonoBehaviour, IInterstitialAdListener, IBannerAdLi
 	}
 
 	public void showInterstitial() {
-		Appodeal.show (Appodeal.INTERSTITIAL, "interstitial_button_click");
+		Appodeal.show (Appodeal.INTERSTITIAL, "asd");
 	}
 
 	public void showSkippableVideo() {

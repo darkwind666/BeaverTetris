@@ -31,7 +31,7 @@
     <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
     <activity android:name="org.nexage.sourcekit.mraid.MRAIDBrowser" android:configChanges="orientation|keyboard|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent" />
     <activity android:name="com.amazon.device.ads.AdActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent" />
-    <activity android:name="ru.mail.android.mytarget.ads.MyTargetActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+    <activity android:name="com.my.target.ads.MyTargetActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
     <activity android:name="org.nexage.sourcekit.vast.activity.VPAIDActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
     <activity android:name="org.nexage.sourcekit.vast.activity.VASTActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
     <activity android:name="com.appodeal.ads.networks.SpotXActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
@@ -45,13 +45,15 @@
     <activity android:name="com.startapp.android.publish.list3d.List3DActivity" android:theme="@android:style/Theme" />
     <activity android:name="com.startapp.android.publish.OverlayActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme.Translucent" />
     <activity android:name="com.startapp.android.publish.FullScreenActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@android:style/Theme" />
-    <service android:name="com.yandex.metrica.MetricaService" android:enabled="true" android:exported="true" android:process=":Metrica">
-      <intent-filter>
-        <action android:name="com.yandex.metrica.IMetricaService" />
-        <category android:name="android.intent.category.DEFAULT" />
-      </intent-filter>
-      <meta-data android:name="metrica:api:level" android:value="44" />
-    </service>
+    <service android:name="com.yandex.metrica.MetricaService" android:enabled="true"
+     android:exported="true" android:process=":Metrica">
+	<intent-filter>
+		<category android:name="android.intent.category.DEFAULT" />
+		<action android:name="com.yandex.metrica.IMetricaService" />
+		<data android:scheme="metrica" />
+	</intent-filter>
+	<meta-data android:name="metrica:api:level" android:value="44" />
+	</service>
     <receiver android:name="com.yandex.metrica.MetricaEventHandler" android:enabled="true" android:exported="true">
       <intent-filter>
         <action android:name="com.android.vending.INSTALL_REFERRER" />
