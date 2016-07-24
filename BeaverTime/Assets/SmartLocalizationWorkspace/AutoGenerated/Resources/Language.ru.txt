@@ -229,8 +229,7 @@
 		<value>Это будет сложный уровень. Будь быстрым как тигр.</value>
 	</data>
 	<data name="BeaverTime.LogInVKSuggestion" xml:space="preserve">
-		<value>Вы можете подключить к игре вк аккаунт
-и заработать награду!</value>
+		<value>Вы можете войти в игру с вк аккаунтом!</value>
 	</data>
 	<data name="BeaverTime.LoseLevel" xml:space="preserve">
 		<value>Вы проиграли!</value>
@@ -365,7 +364,7 @@
 		<value>Пригласить друзей</value>
 	</data>
 	<data name="BeaverTime.VKJoinBeaverTimeGroup" xml:space="preserve">
-		<value>Вступить в группу о бобре </value>
+		<value>Вступить в группу бобра </value>
 	</data>
 	<data name="BeaverTime.VKJoinVKGamesGroup" xml:space="preserve">
 		<value>Вступить в группу игр вк </value>

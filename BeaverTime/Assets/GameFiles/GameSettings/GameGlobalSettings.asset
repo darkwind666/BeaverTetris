@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: GameGlobalSettings
   m_EditorClassIdentifier: 
   gameShopName: WindowsStore
-  gameShopForReviewUrl: https://www.microsoft.com/ru-ru/store/games/beaver-time/9wzdncrd36s3
+  gameShopForReviewUrl: https://play.google.com/store/apps/details?id=comDarkWind.BeaverTime
   vkGameGroupId: 101174315
   logInReward: 100
   joinGroupReward: 200
