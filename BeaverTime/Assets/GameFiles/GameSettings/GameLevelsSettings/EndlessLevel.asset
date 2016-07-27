@@ -28,6 +28,7 @@ MonoBehaviour:
   winConditionType: 4
   needToPlaceDetailsCount: 0
   remainTimes: 0
+  bossLivesCount: 0
   blocks: []
   levelSpells:
   - spellType: 0
@@ -35,11 +36,11 @@ MonoBehaviour:
     spellRechargeInterval: 40
   - spellType: 1
     spellCount: 21
-    spellRechargeInterval: 20
+    spellRechargeInterval: 60
   - spellType: 2
     spellCount: 9
-    spellRechargeInterval: 30
+    spellRechargeInterval: 70
   - spellType: 3
     spellCount: 17
-    spellRechargeInterval: 40
+    spellRechargeInterval: 80
   tutorialIndex: 0

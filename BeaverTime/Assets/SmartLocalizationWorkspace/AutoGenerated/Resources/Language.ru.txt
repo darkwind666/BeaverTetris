@@ -345,6 +345,12 @@
 	<data name="BeaverTime.Tutorial31" xml:space="preserve">
 		<value>Продержись некоторое время. Время в правом верхнем углу.</value>
 	</data>
+	<data name="BeaverTime.Tutorial32" xml:space="preserve">
+		<value>В игре есть уровень на выживание (третья кнопка в главном меню)</value>
+	</data>
+	<data name="BeaverTime.Tutorial33" xml:space="preserve">
+		<value>Ты можешь заработать ещё очков, залогинившись в вк)</value>
+	</data>
 	<data name="BeaverTime.Tutorial41" xml:space="preserve">
 		<value>Используй второе заклинание чтобы уничтожить случайные блоки на доске.</value>
 	</data>

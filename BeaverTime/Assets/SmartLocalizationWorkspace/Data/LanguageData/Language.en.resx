@@ -345,6 +345,12 @@ policy</value>
 	<data name="BeaverTime.Tutorial31" xml:space="preserve">
 		<value>Remain some times for victory. Time indicator placed on the right corner.</value>
 	</data>
+	<data name="BeaverTime.Tutorial32" xml:space="preserve">
+		<value>You can play survival level (third button in main menu) :)</value>
+	</data>
+	<data name="BeaverTime.Tutorial33" xml:space="preserve">
+		<value>You can log in vk to get more scores!</value>
+	</data>
 	<data name="BeaverTime.Tutorial41" xml:space="preserve">
 		<value>Use spell to destroy some random blocks in board.</value>
 	</data>

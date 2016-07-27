@@ -56,7 +56,8 @@ public class GameShapesCleaner : MonoBehaviour {
             _mainGameBoard.gameBoardLocked = true;
             Sequence explosionSequence = DOTween.Sequence();
             explosionSequence.AppendCallback(() => showShapesFollenAnimationWithDeltas(aShapes, shapesDeltas));
-            explosionSequence.AppendInterval(maxDelta * _moveTimeForOneBlock);
+			float interval = (float)maxDelta * _moveTimeForOneBlock;
+			explosionSequence.AppendInterval(interval);
             explosionSequence.AppendCallback(() => _mainGameBoard.gameBoardLocked = false);
         }
 
@@ -101,7 +102,7 @@ public class GameShapesCleaner : MonoBehaviour {
                     int xPosition = (int)Mathf.Round(block.transform.localPosition.x);
                     int yPosition = (int)Mathf.Round(block.transform.localPosition.y);
                     Vector3 newPosition = new Vector3(xPosition, yPosition - yDelta, block.transform.localPosition.z);
-                    block.transform.DOLocalMove(newPosition, yDelta * _moveTimeForOneBlock);
+					block.transform.DOLocalMove(newPosition, (float)yDelta * _moveTimeForOneBlock);
                 }
             }
         }

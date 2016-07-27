@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 63d24f39bd2c84340a6959778c42ebc5
+timeCreated: 1469480370
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ikonki-01_0
+    21300002: ikonki-01_1
+    21300004: ikonki-01_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ikonki-01_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 441
+        width: 405
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 102.5, y: -178.5}
+        - {x: 115.5, y: -170.5}
+        - {x: 127.5, y: -161.5}
+        - {x: 150.5, y: -140.5}
+        - {x: 165.5, y: -122.5}
+        - {x: 183.5, y: -95.5}
+        - {x: 192.5, y: -75.5}
+        - {x: 201.5, y: -46.5}
+        - {x: 202.5, y: -36.5}
+        - {x: 202.5, y: 35.5}
+        - {x: 201.5, y: 46.5}
+        - {x: 194.5, y: 70.5}
+        - {x: 182.5, y: 95.5}
+        - {x: 166.5, y: 122.5}
+        - {x: 158.5, y: 132.5}
+        - {x: 132.5, y: 158.5}
+        - {x: 107.5, y: 176.5}
+        - {x: 81.5, y: 188.5}
+        - {x: 56.5, y: 198.5}
+        - {x: 48.5, y: 199.5}
+        - {x: 33.5, y: 202.5}
+        - {x: -34.5, y: 202.5}
+        - {x: -39.5, y: 201.5}
+        - {x: -60.5, y: 196.5}
+        - {x: -78.5, y: 189.5}
+        - {x: -98.5, y: 181.5}
+        - {x: -120.5, y: 166.5}
+        - {x: -135.5, y: 154.5}
+        - {x: -159.5, y: 129.5}
+        - {x: -177.5, y: 103.5}
+        - {x: -185.5, y: 87.5}
+        - {x: -192.5, y: 70.5}
+        - {x: -198.5, y: 55.5}
+        - {x: -201.5, y: 38.5}
+        - {x: -202.5, y: 32.5}
+        - {x: -202.5, y: -32.5}
+        - {x: -201.5, y: -38.5}
+        - {x: -197.5, y: -59.5}
+        - {x: -190.5, y: -79.5}
+        - {x: -175.5, y: -108.5}
+        - {x: -154.5, y: -135.5}
+        - {x: -135.5, y: -154.5}
+        - {x: -113.5, y: -172.5}
+        - {x: -98.5, y: -180.5}
+        - {x: -72.5, y: -193.5}
+        - {x: -45.5, y: -201.5}
+        - {x: -35.5, y: -202.5}
+        - {x: 36.5, y: -202.5}
+        - {x: 60.5, y: -197.5}
+        - {x: 79.5, y: -189.5}
+    - name: ikonki-01_1
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 441
+        width: 405
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107.5, y: -175.5}
+        - {x: 119.5, y: -167.5}
+        - {x: 127.5, y: -161.5}
+        - {x: 157.5, y: -132.5}
+        - {x: 161.5, y: -126.5}
+        - {x: 169.5, y: -116.5}
+        - {x: 178.5, y: -102.5}
+        - {x: 193.5, y: -72.5}
+        - {x: 200.5, y: -49.5}
+        - {x: 202.5, y: -35.5}
+        - {x: 202.5, y: 35.5}
+        - {x: 198.5, y: 57.5}
+        - {x: 189.5, y: 82.5}
+        - {x: 175.5, y: 107.5}
+        - {x: 161.5, y: 127.5}
+        - {x: 156.5, y: 133.5}
+        - {x: 127.5, y: 161.5}
+        - {x: 107.5, y: 175.5}
+        - {x: 72.5, y: 193.5}
+        - {x: 45.5, y: 200.5}
+        - {x: 34.5, y: 202.5}
+        - {x: -33.5, y: 202.5}
+        - {x: -39.5, y: 201.5}
+        - {x: -52.5, y: 198.5}
+        - {x: -77.5, y: 190.5}
+        - {x: -100.5, y: 179.5}
+        - {x: -124.5, y: 164.5}
+        - {x: -156.5, y: 134.5}
+        - {x: -163.5, y: 124.5}
+        - {x: -176.5, y: 105.5}
+        - {x: -187.5, y: 83.5}
+        - {x: -197.5, y: 60.5}
+        - {x: -199.5, y: 48.5}
+        - {x: -202.5, y: 34.5}
+        - {x: -202.5, y: -34.5}
+        - {x: -199.5, y: -52.5}
+        - {x: -190.5, y: -76.5}
+        - {x: -179.5, y: -100.5}
+        - {x: -165.5, y: -123.5}
+        - {x: -134.5, y: -156.5}
+        - {x: -110.5, y: -174.5}
+        - {x: -81.5, y: -189.5}
+        - {x: -69.5, y: -194.5}
+        - {x: -49.5, y: -200.5}
+        - {x: -34.5, y: -202.5}
+        - {x: 35.5, y: -202.5}
+        - {x: 57.5, y: -198.5}
+        - {x: 81.5, y: -188.5}
+    - name: ikonki-01_2
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 0
+        width: 406
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 128, y: -161}
+        - {x: 156, y: -134}
+        - {x: 161, y: -128}
+        - {x: 175, y: -108}
+        - {x: 183, y: -94}
+        - {x: 194, y: -71}
+        - {x: 201, y: -42}
+        - {x: 203, y: -35}
+        - {x: 203, y: 37}
+        - {x: 194, y: 71}
+        - {x: 178, y: 103}
+        - {x: 172, y: 114}
+        - {x: 155, y: 135}
+        - {x: 134, y: 157}
+        - {x: 108, y: 176}
+        - {x: 94, y: 183}
+        - {x: 71, y: 194}
+        - {x: 43, y: 202}
+        - {x: 35, y: 203}
+        - {x: -31, y: 203}
+        - {x: -37, y: 202}
+        - {x: -42, y: 201}
+        - {x: -50, y: 199}
+        - {x: -61, y: 196}
+        - {x: -81, y: 190}
+        - {x: -108, y: 176}
+        - {x: -120, y: 167}
+        - {x: -133, y: 156}
+        - {x: -156, y: 133}
+        - {x: -164, y: 124}
+        - {x: -177, y: 105}
+        - {x: -194, y: 71}
+        - {x: -200, y: 48}
+        - {x: -203, y: 30}
+        - {x: -203, y: -32}
+        - {x: -198, y: -59}
+        - {x: -188, y: -86}
+        - {x: -174, y: -110}
+        - {x: -166, y: -123}
+        - {x: -133, y: -158}
+        - {x: -116, y: -170}
+        - {x: -98, y: -181}
+        - {x: -85, y: -187}
+        - {x: -65, y: -196}
+        - {x: -43, y: -202}
+        - {x: -37, y: -203}
+        - {x: 35, y: -203}
+        - {x: 59, y: -198}
+        - {x: 88, y: -187}
+        - {x: 108, y: -176}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
