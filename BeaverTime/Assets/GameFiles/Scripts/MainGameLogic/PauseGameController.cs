@@ -22,7 +22,6 @@ public class PauseGameController : MonoBehaviour {
     {
         if (Input.GetButtonDown(pause) && gameResultPad.activeSelf == false)
         {
-
             if(pausePopUp.activeSelf)
             {
                 closePausePopUpButton.onClick.Invoke();
@@ -31,7 +30,6 @@ public class PauseGameController : MonoBehaviour {
             {
                 _pauseButton.onClick.Invoke();
             }
-            
         }
     }
 

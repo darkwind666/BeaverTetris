@@ -24,7 +24,7 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 		if (settings.showAppodealAds) 
 		{
-			Appodeal.initialize(appodealID, Appodeal.NON_SKIPPABLE_VIDEO);
+			Appodeal.initialize(appodealID, Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.INTERSTITIAL | Appodeal.BANNER_BOTTOM);
 			Appodeal.setNonSkippableVideoCallbacks(this);
 		}
 	}
@@ -159,6 +159,41 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 		if (settings.showAppodealAds) 
 		{
 			Appodeal.show(Appodeal.NON_SKIPPABLE_VIDEO);
+		}
+	}
+
+	public void showInterstitial()
+	{
+		int randomNumber = UnityEngine.Random.Range(0, 3);
+
+		if(randomNumber == 0)
+		{
+			if (settings.showAppodealAds) 
+			{
+				if (Appodeal.isLoaded (Appodeal.INTERSTITIAL)) 
+				{
+					Appodeal.show(Appodeal.INTERSTITIAL);
+				}
+			}
+		}
+	}
+
+	public void showBottomBanner()
+	{
+		if (settings.showAppodealAds) 
+		{
+			if (Appodeal.isLoaded (Appodeal.BANNER_BOTTOM)) 
+			{
+				Appodeal.show(Appodeal.BANNER_BOTTOM);
+			}
+		}
+	}
+
+	public void hideBottomBanner()
+	{
+		if (settings.showAppodealAds) 
+		{
+			Appodeal.hide(Appodeal.BANNER_BOTTOM);
 		}
 	}
 
