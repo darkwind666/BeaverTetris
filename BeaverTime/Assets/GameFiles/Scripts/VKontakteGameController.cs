@@ -132,10 +132,12 @@ public class VKontakteGameController : MonoBehaviour, VKontakteInviteFriendsInte
 			data = new Action[] {aCallback},
 		};
 
-		acceptOperationController.SetActive(true);
-		acceptButton.onClick.AddListener(() => { 
-			_vkapi.Call (r1);
-		});
+		_vkapi.Call (r1);
+
+//		acceptOperationController.SetActive(true);
+//		acceptButton.onClick.AddListener(() => { 
+//			_vkapi.Call (r1);
+//		});
 	}
 
 	void inviteFriendHandler(VKRequest request)

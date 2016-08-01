@@ -42,7 +42,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: aef59761d362a1642bb3067cdf5192fb, type: 2}
   chanceController: {fileID: 0}
+  levelResultsController: {fileID: 0}
   vungleID: 57717edb94c4feab4000016e
+  appodealID: 6efe0ace3a0172df3d69dcd7af6b91333f355dc5072417ab
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

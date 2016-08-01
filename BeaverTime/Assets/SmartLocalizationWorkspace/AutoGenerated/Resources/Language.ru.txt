@@ -234,6 +234,12 @@
 	<data name="BeaverTime.LoseLevel" xml:space="preserve">
 		<value>Вы проиграли!</value>
 	</data>
+	<data name="BeaverTime.MainGameCompetition" xml:space="preserve">
+		<value>Ты можешь принять участие в конкурсе! Нажми</value>
+	</data>
+	<data name="BeaverTime.MainMenuCompetition" xml:space="preserve">
+		<value>Ты можешь принять участие в конкурсе! Нажми "Выживание" и поделись рекордом в вк :)</value>
+	</data>
 	<data name="BeaverTime.Map" xml:space="preserve">
 		<value>Карта</value>
 	</data>

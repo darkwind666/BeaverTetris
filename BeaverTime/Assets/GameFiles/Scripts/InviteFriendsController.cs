@@ -77,6 +77,7 @@ public class InviteFriendsController : MonoBehaviour, ITableViewDataSource {
 
 		_vkontakteGameController.loadImageWithUrlAndCallback (cellData.photo_50, doOnFinish);
 
+		cell.inviteButton.onClick.RemoveAllListeners();
 		cell.inviteButton.onClick.AddListener(() => { 
 			_vkontakteGameController.inviteFriend(cellData.id.ToString(), cellData.first_name, () => {
 				cell.inviteButton.gameObject.SetActive(false);

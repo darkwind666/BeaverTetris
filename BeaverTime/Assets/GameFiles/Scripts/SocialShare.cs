@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using com.playGenesis.VkUnityPlugin;
 
 public class SocialShare : MonoBehaviour
 {
@@ -125,8 +126,13 @@ public class SocialShare : MonoBehaviour
 
 	public void winEndlessLevelVK()
 	{
-		string url = getUrlWithTemplateAndWinResultAndPageUrl(vkTemplate, LevelResult.EndEndlessLevel, vkPublicURL);
-		Publish(url);
+		VkApi vkapi = VkApi.VkApiInstance;
+		if (vkapi.IsUserLoggedIn) {
+			string url = getUrlWithTemplateAndWinResultAndPageUrl(vkTemplate, LevelResult.EndEndlessLevel, vkPublicURL);
+			Publish(url);
+		} else {
+			vkapi.Login();
+		}
 	}
 
 	public void winEndlessLevelFacebook()

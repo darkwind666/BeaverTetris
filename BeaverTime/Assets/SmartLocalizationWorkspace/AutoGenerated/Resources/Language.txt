@@ -232,6 +232,9 @@
 	<data name="BeaverTime.LoseLevel" xml:space="preserve">
 		<value>You lose!</value>
 	</data>
+	<data name="BeaverTime.MainMenuCompetition" xml:space="preserve">
+		<value>You can take part in competition ! Press Survival and share you result in vk :)</value>
+	</data>
 	<data name="BeaverTime.Map" xml:space="preserve">
 		<value>Map</value>
 	</data>
@@ -390,5 +393,8 @@ policy</value>
 	</data>
 	<data name="BeaverTime.YouRank" xml:space="preserve">
 		<value>You rank</value>
+	</data>
+	<data name="BeaverTime.MainGameCompetition" xml:space="preserve">
+		<value>You can take part in competition ! Press </value>
 	</data>
 </root>

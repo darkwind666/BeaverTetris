@@ -262,10 +262,7 @@ public class GameSocialsPopUpsController : MonoBehaviour, VKontakteInviteFriends
 			data = new Action[] {aCallback},
 		};
 
-		acceptOperationController.SetActive(true);
-		acceptButton.onClick.AddListener(() => { 
-			_vkapi.Call (r1);
-		});
+		_vkapi.Call (r1);
 	}
 
 	void inviteFriendHandler(VKRequest request)
