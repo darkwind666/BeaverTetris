@@ -34,6 +34,9 @@ public class MainMenuController : MonoBehaviour {
 		_vkapi = VkApi.VkApiInstance;
 		_vkapi.LoggedIn += onVKLogin;
 
+		OneSignal.Init("2afb4003-9a1e-4c34-a4c0-36bdae294fc3", "523641754544", HandleNotification);
+		OneSignal.EnableInAppAlertNotification(true);
+
         if (_playerData.playerExist == false) {
             selectLevelButton.SetActive(false);
 			endlessLevelButton.SetActive(false);
@@ -46,6 +49,9 @@ public class MainMenuController : MonoBehaviour {
 
         setupAudio();
     }
+
+	private static void HandleNotification(string message, Dictionary<string, object> additionalData, bool isActive) {
+	}
 
     void setupAudio()
     {
