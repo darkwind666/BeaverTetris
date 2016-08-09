@@ -67,7 +67,7 @@ public class LevelResultsController : MonoBehaviour {
         soundController.backgroundSound.volume = volume;
         soundController.backgroundSound.Play();
 
-		adsController.showInterstitial();
+		adsController.tryShowInterstitial();
     }
 
     GameObject getPlayerResult()
@@ -125,7 +125,7 @@ public class LevelResultsController : MonoBehaviour {
 			loseGameAdditionalScore.SetActive(true);
 		}
 
-		adsController.showInterstitial();
+		adsController.tryShowInterstitial();
     }
 
 	public void finishEndlessLevel()
@@ -141,7 +141,7 @@ public class LevelResultsController : MonoBehaviour {
 		_playerData.selectEndlessLevel = false;
 
 		gameAnaliticsController.sendFinishEndlessLevelMessage();
-		adsController.showInterstitial();
+		adsController.tryShowInterstitial();
 	}
 
     public void nextLevel()

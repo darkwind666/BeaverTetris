@@ -7,6 +7,7 @@ public class ESCButtonController : MonoBehaviour {
     public FadingScript fadingController;
 	public EndlessLevelCondition endlessLevelCondition;
 	public GlobalLeaderboardController globalLeaderboardController;
+	public AdsController adsController;
 
     const string escape = "Cancel";
 
@@ -52,6 +53,7 @@ public class ESCButtonController : MonoBehaviour {
     {
         GamePlayerDataController playerData = ServicesLocator.getServiceForKey(typeof(GamePlayerDataController).Name) as GamePlayerDataController;
         string previouseSceneName = playerData.popPreviousScene();
+		adsController.hideBottomBanner();
 
         if (playerData.playerExist)
         {

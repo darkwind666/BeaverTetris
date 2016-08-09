@@ -24,6 +24,8 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 		if (settings.showAppodealAds) 
 		{
+//			UserSettings settings = new UserSettings ();
+//			settings.setAge(15);
 			Appodeal.initialize(appodealID, Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.INTERSTITIAL | Appodeal.BANNER_BOTTOM);
 			Appodeal.setNonSkippableVideoCallbacks(this);
 		}
@@ -162,10 +164,9 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 		}
 	}
 
-	public void showInterstitial()
+	public void tryShowInterstitial()
 	{
 		int randomNumber = UnityEngine.Random.Range(0, 3);
-
 		if(randomNumber == 0)
 		{
 			if (settings.showAppodealAds) 
@@ -174,6 +175,17 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 				{
 					Appodeal.show(Appodeal.INTERSTITIAL);
 				}
+			}
+		}
+	}
+
+	public void showInterstitial()
+	{
+		if (settings.showAppodealAds) 
+		{
+			if (Appodeal.isLoaded (Appodeal.INTERSTITIAL)) 
+			{
+				Appodeal.show(Appodeal.INTERSTITIAL);
 			}
 		}
 	}
