@@ -128,6 +128,9 @@
 	<data name="BeaverTime.Back" xml:space="preserve">
 		<value>Назад</value>
 	</data>
+	<data name="BeaverTime.BlockAds" xml:space="preserve">
+		<value>Убрать рекламу</value>
+	</data>
 	<data name="BeaverTime.BreakRecordMessage" xml:space="preserve">
 		<value>Новый рекорд :)</value>
 	</data>
@@ -183,6 +186,9 @@
 	</data>
 	<data name="BeaverTime.GoToVkGamesGroup" xml:space="preserve">
 		<value>Группа Игры ВК</value>
+	</data>
+	<data name="BeaverTime.HDVersion" xml:space="preserve">
+		<value>HD версия</value>
 	</data>
 	<data name="BeaverTime.InviteButton" xml:space="preserve">
 		<value>Пригласить</value>

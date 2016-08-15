@@ -135,7 +135,7 @@ public class GamePlayerDataController {
         playerExist = true;
         playerName = aPlayerName;
         completedLevelsCount = 0;
-        playerScore = 0;
+        playerScore = 60;
 		endlessLevelPlayedTime = 0;
         completedTutorialsCount = 0;
         _playerSpells = new List<LevelSpell>();

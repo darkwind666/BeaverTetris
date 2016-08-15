@@ -19,6 +19,7 @@ public class SelectLevelUIController : MonoBehaviour {
     public InputField newPlayerNameSource;
 
     public SelectLevelAnimationController animationController;
+	public GameObject firstLevelSign;
 
     public Text playerName;
     public Text playerScore;
@@ -87,6 +88,7 @@ public class SelectLevelUIController : MonoBehaviour {
         setupPlayerStatusPad();
         newPlayerPopUp.SetActive(false);
         animationController.playStartAnimation();
+		firstLevelSign.SetActive(true);
     }
 
     public void selectLevelButtonPressedWithIndex(int aIndex)

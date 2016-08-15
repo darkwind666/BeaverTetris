@@ -187,17 +187,9 @@ public class LevelResultsController : MonoBehaviour {
 
 	public void showAdditionalScoreAd()
 	{
-		if (gameSettings.paidGame) 
+		if (adsController.adAvailable()) 
 		{
-			loseGameAdditionalScore.SetActive(false);
-			winGameAdditionalScore.SetActive(false);
-		} 
-		else 
-		{
-			if (adsController.adAvailable()) 
-			{
-				adsController.showAdditionalScoreAd();
-			}
+			adsController.showAdditionalScoreAd();
 		}
 	}
 

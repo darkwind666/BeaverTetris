@@ -13,14 +13,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameShopName: GooglePlay
   gameShopForReviewUrl: https://play.google.com/store/apps/details?id=comDarkWind.BeaverTime
+  paidGameVersionUrl: https://play.google.com/store/apps/details?id=comDarkWind.BeaverTimePro
   vkGameGroupId: 101174315
   logInReward: 100
   joinGroupReward: 200
   inviteFriendReward: 30
+  maxStopAdsCount: 3
   gameSparkLeaderboard: 0
   googlePlayServiceLeaderboard: 1
   gameCenterLeaderboard: 0
-  showAds: 1
+  blockAds: 0
   showVungleAds: 0
   showAppodealAds: 1
   paidGame: 0
+  androidFreeAppodealId: 6efe0ace3a0172df3d69dcd7af6b91333f355dc5072417ab
+  androidHdAppodealId: dc24aa040be74be0fbf58fc63492494b24428fcf5597effe
+  iosFreeAppodealId: 
+  iosHdAppodealId: 
+  freeOneSignalId: 2afb4003-9a1e-4c34-a4c0-36bdae294fc3
+  hdOneSignalId: 04608b1e-4266-4283-ab6b-3baee9df203f
+  freeOneSignalProjectNumber: 523641754544
+  hdOneSignalProjectNumber: 769277685847
+  freeVKId: 5544338
+  hdVKId: 5586326
+  freeGameName: Beaver Time
+  hdGameName: Beaver Time HD
+  freeGameBundleId: comDarkWind.BeaverTime
+  hdGameBundleId: comDarkWind.BeaverTimePro

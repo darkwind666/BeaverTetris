@@ -18,7 +18,6 @@ MonoBehaviour:
   - photos
   - wall
   - groups
-  - messages
   - notifications
   - offline
   forceOAuth: 0

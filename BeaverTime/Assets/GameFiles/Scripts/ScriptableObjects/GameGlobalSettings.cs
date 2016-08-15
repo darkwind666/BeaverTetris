@@ -5,18 +5,35 @@ public class GameGlobalSettings : ScriptableObject {
 
     public string gameShopName;
     public string gameShopForReviewUrl;
+	public string paidGameVersionUrl;
 
 	public string vkGameGroupId;
 
 	public int logInReward;
 	public int joinGroupReward;
 	public int inviteFriendReward;
+	public int maxStopAdsCount;
 
 	public bool gameSparkLeaderboard;
 	public bool googlePlayServiceLeaderboard;
 	public bool gameCenterLeaderboard;
-	public bool showAds;
+	public bool blockAds;
 	public bool showVungleAds;
 	public bool showAppodealAds;
 	public bool paidGame;
+	public string androidFreeAppodealId;
+	public string androidHdAppodealId;
+	public string iosFreeAppodealId;
+	public string iosHdAppodealId;
+	public string freeOneSignalId;
+	public string hdOneSignalId;
+	public string freeOneSignalProjectNumber;
+	public string hdOneSignalProjectNumber;
+	public string freeVKId;
+	public string hdVKId;
+	public string freeGameName;
+	public string hdGameName;
+	public string freeGameBundleId;
+	public string hdGameBundleId;
+
 }

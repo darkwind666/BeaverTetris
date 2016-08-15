@@ -9,11 +9,13 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 	public FinalChanceController chanceController;
 	public LevelResultsController levelResultsController;
 	public string vungleID;
-	public string appodealID;
 
 	bool _finalChanceAd;
 	bool _simplifyGameAd;
 	bool _additionalScoreAd;
+	bool _adToBlockAd;
+
+	BlockAdsController _currentBlockAdsController;
 
 	void Start () {
 	
@@ -24,9 +26,15 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 		if (settings.showAppodealAds) 
 		{
-//			UserSettings settings = new UserSettings ();
-//			settings.setAge(15);
-			Appodeal.initialize(appodealID, Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.INTERSTITIAL | Appodeal.BANNER_BOTTOM);
+			string appodealId;
+
+			if (settings.paidGame) {
+				appodealId = settings.androidHdAppodealId;
+			} else {
+				appodealId = settings.androidFreeAppodealId;
+			}
+
+			Appodeal.initialize(appodealId, Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.INTERSTITIAL | Appodeal.BANNER_TOP);
 			Appodeal.setNonSkippableVideoCallbacks(this);
 		}
 	}
@@ -98,23 +106,26 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 			levelResultsController.getAdditionalScores();
 			_additionalScoreAd = false;
 		}
+
+		if(_adToBlockAd)
+		{
+			_currentBlockAdsController.addFinishShow();
+			_adToBlockAd = false;
+		}
 	}
 
 	public bool adAvailable() {
 
 		bool adAvailable = false;
 
-		if(settings.showAds)
+		if (settings.showVungleAds) 
 		{
-			if (settings.showVungleAds) 
-			{
-				adAvailable = Vungle.isAdvertAvailable ();
-			}
+			adAvailable = Vungle.isAdvertAvailable ();
+		}
 
-			if (settings.showAppodealAds) 
-			{
-				adAvailable = Appodeal.isLoaded(Appodeal.NON_SKIPPABLE_VIDEO);
-			}
+		if (settings.showAppodealAds) 
+		{
+			adAvailable = Appodeal.isLoaded(Appodeal.NON_SKIPPABLE_VIDEO);
 		}
 			
 		return adAvailable;
@@ -138,17 +149,16 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 		playGameAd();
 	}
 
+	public void showAdToBlockAdFromController(BlockAdsController aBlockAdController)
+	{
+		_currentBlockAdsController = aBlockAdController;
+		_adToBlockAd = true;
+		playGameAd();
+	}
+
 	public void playGameAd()
 	{
-
-		if (settings.paidGame) 
-		{
-			getRewardForAd();
-		} 
-		else 
-		{
-			showAds();
-		}
+		showAds();
 	}
 
 	void showAds()
@@ -181,7 +191,7 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 	public void showInterstitial()
 	{
-		if (settings.showAppodealAds) 
+		if (settings.showAppodealAds && settings.paidGame == false && settings.blockAds == false) 
 		{
 			if (Appodeal.isLoaded (Appodeal.INTERSTITIAL)) 
 			{
@@ -192,11 +202,11 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 	public void showBottomBanner()
 	{
-		if (settings.showAppodealAds) 
+		if (settings.showAppodealAds && settings.paidGame == false && settings.blockAds == false)
 		{
-			if (Appodeal.isLoaded (Appodeal.BANNER_BOTTOM)) 
+			if (Appodeal.isLoaded (Appodeal.BANNER_TOP))
 			{
-				Appodeal.show(Appodeal.BANNER_BOTTOM);
+				Appodeal.show(Appodeal.BANNER_TOP);
 			}
 		}
 	}
@@ -205,7 +215,7 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 	{
 		if (settings.showAppodealAds) 
 		{
-			Appodeal.hide(Appodeal.BANNER_BOTTOM);
+			Appodeal.hide(Appodeal.BANNER_TOP);
 		}
 	}
 

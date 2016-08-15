@@ -34,15 +34,19 @@ public class MainMenuController : MonoBehaviour {
 		_vkapi = VkApi.VkApiInstance;
 		_vkapi.LoggedIn += onVKLogin;
 
-		OneSignal.Init("2afb4003-9a1e-4c34-a4c0-36bdae294fc3", "523641754544", HandleNotification);
+		if(gameGlobalSettings.paidGame){
+			OneSignal.Init(gameGlobalSettings.hdOneSignalId, gameGlobalSettings.hdOneSignalProjectNumber, HandleNotification);
+		} else {
+			OneSignal.Init(gameGlobalSettings.freeOneSignalId, gameGlobalSettings.freeOneSignalProjectNumber, HandleNotification);
+		}
+			
 		OneSignal.EnableInAppAlertNotification(true);
 
         if (_playerData.playerExist == false) {
             selectLevelButton.SetActive(false);
 			endlessLevelButton.SetActive(false);
         }
-
-		// _vkapi.IsUserLoggedIn == false &&
+			
 		if (_playerData.playerExist == false) {
 			vkLogInPopUp.SetActive (true);
 		} 
