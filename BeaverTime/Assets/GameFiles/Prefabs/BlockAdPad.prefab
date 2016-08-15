@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce3397b44f126a4184042daa4199a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetUrl: http://www.generateprivacypolicy.com/privacy/view/eP5HBh
+  targetUrl: https://play.google.com/store/apps/details?id=comDarkWind.BeaverTimePro
 --- !u!114 &11440422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -598,8 +598,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0.86510104}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -50}
-  m_SizeDelta: {x: -26.500015, y: 68.456635}
+  m_AnchoredPosition: {x: 10, y: -49}
+  m_SizeDelta: {x: -84, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22449320
 RectTransform:
@@ -609,7 +609,7 @@ RectTransform:
   m_GameObject: {fileID: 126720}
   m_LocalRotation: {x: 0, y: 0, z: 0.0026329411, w: 0.99999654}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.315716, y: 1.315716, z: 1.315716}
+  m_LocalScale: {x: 1.1052015, y: 1.1052015, z: 1.1052015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.3017}
   m_Children:
   - {fileID: 22459326}
@@ -618,7 +618,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 219, y: -116}
+  m_AnchoredPosition: {x: 248, y: -109}
   m_SizeDelta: {x: 216, y: 539}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22459326
