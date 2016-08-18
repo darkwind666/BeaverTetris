@@ -25,7 +25,7 @@ MonoBehaviour:
   blockAds: 0
   showVungleAds: 0
   showAppodealAds: 1
-  paidGame: 0
+  paidGame: 1
   androidFreeAppodealId: 6efe0ace3a0172df3d69dcd7af6b91333f355dc5072417ab
   androidHdAppodealId: dc24aa040be74be0fbf58fc63492494b24428fcf5597effe
   iosFreeAppodealId: 

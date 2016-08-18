@@ -21,7 +21,9 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 	
 		if (settings.showVungleAds) 
 		{
+			#if UNITY_WP_8_1 || UNITY_WINRT_8_1
 			Vungle.init("5771811c74088aef5400016b", "Test_iOS", vungleID);
+			#endif    
 		}
 
 		if (settings.showAppodealAds) 
@@ -48,10 +50,14 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 		if (settings.showVungleAds) 
 		{
 			if (pauseStatus) {
+				#if UNITY_WP_8_1 || UNITY_WINRT_8_1
 				Vungle.onPause();
+				#endif  
 			}
 			else {
+				#if UNITY_WP_8_1 || UNITY_WINRT_8_1
 				Vungle.onResume();
+				#endif  
 			}
 		}
 	}
@@ -60,7 +66,9 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 	{
 		if (settings.showVungleAds) 
 		{
+			#if UNITY_WP_8_1 || UNITY_WINRT_8_1
 			Vungle.onAdFinishedEvent += onAdFinishedEventVungle;
+			#endif 
 		}
 	}
 		
@@ -68,6 +76,10 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 	{
 		if (settings.showVungleAds) 
 		{
+			#if UNITY_WP_8_1 || UNITY_WINRT_8_1
+			Vungle.onAdFinishedEvent += onAdFinishedEventVungle;
+			#endif 
+
 			Vungle.onAdFinishedEvent -= onAdFinishedEventVungle;
 		}
 	}
@@ -120,7 +132,9 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 		if (settings.showVungleAds) 
 		{
+			#if UNITY_WP_8_1 || UNITY_WINRT_8_1
 			adAvailable = Vungle.isAdvertAvailable ();
+			#endif 
 		}
 
 		if (settings.showAppodealAds) 
@@ -165,7 +179,9 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 	{
 		if (settings.showVungleAds) 
 		{
+			#if UNITY_WP_8_1 || UNITY_WINRT_8_1
 			Vungle.playAd();
+			#endif 
 		}
 
 		if (settings.showAppodealAds) 
@@ -179,7 +195,7 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 		int randomNumber = UnityEngine.Random.Range(0, 3);
 		if(randomNumber == 0)
 		{
-			if (settings.showAppodealAds) 
+			if (settings.showAppodealAds && settings.paidGame == false) 
 			{
 				if (Appodeal.isLoaded (Appodeal.INTERSTITIAL)) 
 				{
