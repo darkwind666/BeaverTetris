@@ -179,7 +179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce3397b44f126a4184042daa4199a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetUrl: https://play.google.com/store/apps/details?id=comDarkWind.BeaverTimePro
+  targetUrl: itms-apps://beavertimehd
+  goToPaidGame: 1
+  goToReviewGame: 0
+  gameSettings: {fileID: 11400000, guid: aef59761d362a1642bb3067cdf5192fb, type: 2}
 --- !u!114 &11440422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -618,7 +621,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 248, y: -109}
+  m_AnchoredPosition: {x: 219, y: -116}
   m_SizeDelta: {x: 216, y: 539}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22459326

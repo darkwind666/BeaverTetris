@@ -124,10 +124,10 @@ public class GameSocialsPopUpsController : MonoBehaviour, VKontakteInviteFriends
 		_vkapi.LoggedIn -= onVKLogin;
 	}
 
-    public void goToGameReview()
-    {
-        Application.OpenURL(gameGlobalSettings.gameShopForReviewUrl);
-    }
+//    public void goToGameReview()
+//    {
+//        Application.OpenURL(gameGlobalSettings.gameShopForReviewUrl);
+//    }
 
     public void backToGame()
     {

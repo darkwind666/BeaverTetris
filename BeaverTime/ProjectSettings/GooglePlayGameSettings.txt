@@ -1,10 +1,10 @@
 lastUpgrade=00934
 proj.pluginVersion=0.9.34
 proj.AppId=405708841496
-and.BundleId=comDarkWind.BeaverTime
+and.BundleId=comDarkWind.BeaverTimePro
 proj.classDir=Assets
 proj.ConstantsClassName=GooglePlayConstants
-and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0a%3c%21--%0aGoogle+Play+game+services+IDs.%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0a--%3e%0a%3cresources%3e%0a++%3cstring+name%3d%22app_id%22%3e405708841496%3c%2fstring%3e%0a++%3cstring+name%3d%22package_name%22%3ecomDarkWind.BeaverTime%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement__%22%3eCgkImMSGsecLEAIQAQ%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement__%22%3eCgkImMSGsecLEAIQAg%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement__%22%3eCgkImMSGsecLEAIQAw%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement__%22%3eCgkImMSGsecLEAIQBA%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement___%22%3eCgkImMSGsecLEAIQBQ%3c%2fstring%3e%0a++%3cstring+name%3d%22leaderboard_global_leaderboard%22%3eCgkImMSGsecLEAIQBg%3c%2fstring%3e%0a%3c%2fresources%3e%0a
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0a%3c%21--%0aGoogle+Play+game+services+IDs.%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0a--%3e%0a%3cresources%3e%0a++%3cstring+name%3d%22app_id%22%3e405708841496%3c%2fstring%3e%0a++%3cstring+name%3d%22package_name%22%3ecomDarkWind.BeaverTimePro%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement__%22%3eCgkImMSGsecLEAIQAQ%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement__%22%3eCgkImMSGsecLEAIQAg%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement__%22%3eCgkImMSGsecLEAIQAw%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement__%22%3eCgkImMSGsecLEAIQBA%3c%2fstring%3e%0a++%3cstring+name%3d%22achievement___%22%3eCgkImMSGsecLEAIQBQ%3c%2fstring%3e%0a++%3cstring+name%3d%22leaderboard_global_leaderboard%22%3eCgkImMSGsecLEAIQBg%3c%2fstring%3e%0a%3c%2fresources%3e%0a
 and.ClientId=405708841496-pgh762ie6ab9g757urfro1hamaf8e0o0.apps.googleusercontent.com
 proj.requireGPlus=false
 android.SetupDone=true

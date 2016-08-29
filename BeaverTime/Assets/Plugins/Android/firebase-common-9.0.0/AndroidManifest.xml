@@ -5,7 +5,7 @@
     <application>
 
         <provider
-            android:authorities="comDarkWind.BeaverTime.firebaseinitprovider"
+            android:authorities="comDarkWind.BeaverTimePro.firebaseinitprovider"
             android:name=".provider.FirebaseInitProvider"
             android:exported="false"
             android:initOrder="100" />

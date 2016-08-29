@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DarkWindDev
-  productName: Beaver Time
+  productName: Beaver Time HD
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -89,15 +89,15 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: comDarkWind.BeaverTime
-  bundleVersion: 1.12
+  bundleIdentifier: comDarkWind.BeaverTimePro
+  bundleVersion: 1.16
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: 803ade2c3ea0448349fd749fb1ff999a
-  AndroidBundleVersionCode: 12
+  AndroidBundleVersionCode: 13
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -105,7 +105,7 @@ PlayerSettings:
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
-  iPhoneBuildNumber: 0
+  iPhoneBuildNumber: 16
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
   CreateWallpaper: 0
@@ -160,8 +160,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Users/sasha/Desktop/BeaverTimeKeystores/android.keystore
-  AndroidKeyaliasName: androidkey
+  AndroidKeystoreName: /Users/sasha/Desktop/BeaverTimeKeystores/BeaverTimePaid.keystore
+  AndroidKeyaliasName: beavertimepaid
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1

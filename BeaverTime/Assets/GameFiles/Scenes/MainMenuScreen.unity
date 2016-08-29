@@ -2273,6 +2273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetUrl: http://www.generateprivacypolicy.com/privacy/view/eP5HBh
+  goToPaidGame: 0
+  goToReviewGame: 0
+  gameSettings: {fileID: 0}
 --- !u!114 &558703979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,6 +2775,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetUrl: https://play.google.com/store/apps/details?id=comDarkWind.BeaverTime
+  goToPaidGame: 0
+  goToReviewGame: 0
+  gameSettings: {fileID: 0}
 --- !u!1 &616641346
 GameObject:
   m_ObjectHideFlags: 0
@@ -5160,6 +5166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetUrl: https://www.microsoft.com/ru-ru/store/games/beaver-time/9wzdncrd36s3
+  goToPaidGame: 0
+  goToReviewGame: 0
+  gameSettings: {fileID: 0}
 --- !u!1 &1310886452
 GameObject:
   m_ObjectHideFlags: 0
@@ -5279,6 +5288,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11440422, guid: 3fb3289911f8b475d9998e83a4dfaa43, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 32423162}
+    - target: {fileID: 11440422, guid: 3fb3289911f8b475d9998e83a4dfaa43, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 856484870}
     - target: {fileID: 11451846, guid: 3fb3289911f8b475d9998e83a4dfaa43, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5291,14 +5308,6 @@ Prefab:
       propertyPath: adsController
       value: 
       objectReference: {fileID: 1246733361}
-    - target: {fileID: 11440422, guid: 3fb3289911f8b475d9998e83a4dfaa43, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 32423162}
-    - target: {fileID: 11440422, guid: 3fb3289911f8b475d9998e83a4dfaa43, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 856484870}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb3289911f8b475d9998e83a4dfaa43, type: 2}
   m_IsPrefabParent: 0

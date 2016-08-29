@@ -35,5 +35,9 @@ public class GameGlobalSettings : ScriptableObject {
 	public string hdGameName;
 	public string freeGameBundleId;
 	public string hdGameBundleId;
+	public string googlePlayFree;
+	public string googlePlayHD;
+	public string appStoreFree;
+	public string appStoreHD;
 
 }

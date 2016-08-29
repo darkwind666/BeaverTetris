@@ -31,9 +31,19 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 			string appodealId;
 
 			if (settings.paidGame) {
+
 				appodealId = settings.androidHdAppodealId;
+
+				#if UNITY_IOS
+				appodealId = settings.iosHdAppodealId;
+				#endif 
+
 			} else {
 				appodealId = settings.androidFreeAppodealId;
+
+				#if UNITY_IOS
+				appodealId = settings.iosFreeAppodealId;
+				#endif 
 			}
 
 			Appodeal.initialize(appodealId, Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.INTERSTITIAL | Appodeal.BANNER_TOP);
@@ -79,15 +89,17 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 			#if UNITY_WP_8_1 || UNITY_WINRT_8_1
 			Vungle.onAdFinishedEvent += onAdFinishedEventVungle;
 			#endif 
-
-			Vungle.onAdFinishedEvent -= onAdFinishedEventVungle;
 		}
 	}
+
+	#if UNITY_WP_8_1 || UNITY_WINRT_8_1
 
 	void onAdFinishedEventVungle(AdFinishedEventArgs arg)
 	{
 		getRewardForAd();
 	}
+
+	#endif 
 
 	public void onNonSkippableVideoFinished()
 	{
