@@ -568,7 +568,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe9ed65d7346c4d498e9540d61eab1b3, type: 2}
-  m_RootGameObject: {fileID: 702402805}
+  m_RootGameObject: {fileID: 794458265}
   m_IsPrefabParent: 0
 --- !u!1 &583822343
 GameObject:
@@ -889,88 +889,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 622441643}
   m_GameObject: {fileID: 700424148}
---- !u!1 &702402805
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 145704, guid: fe9ed65d7346c4d498e9540d61eab1b3, type: 2}
-  m_PrefabInternal: {fileID: 540589360}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 702402810}
-  - 114: {fileID: 702402809}
-  - 114: {fileID: 702402808}
-  - 114: {fileID: 702402807}
-  - 114: {fileID: 702402806}
-  m_Layer: 0
-  m_Name: VkApi
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &702402806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11426616, guid: fe9ed65d7346c4d498e9540d61eab1b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 540589360}
-  m_GameObject: {fileID: 702402805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2b873aac1ebfb7419c6bba651b5738f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &702402807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11445706, guid: fe9ed65d7346c4d498e9540d61eab1b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 540589360}
-  m_GameObject: {fileID: 702402805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 090d7d5f1b758487ca08114cad954551, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &702402808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11445708, guid: fe9ed65d7346c4d498e9540d61eab1b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 540589360}
-  m_GameObject: {fileID: 702402805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59161f33432bcb2489fddfbd31df33a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &702402809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11445710, guid: fe9ed65d7346c4d498e9540d61eab1b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 540589360}
-  m_GameObject: {fileID: 702402805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e12ecf581ebac48987e542b0dc2745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsUserLoggedIn: 0
-  VkRequestUrlBase: https://api.vk.com/method/
---- !u!4 &702402810
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 445704, guid: fe9ed65d7346c4d498e9540d61eab1b3, type: 2}
-  m_PrefabInternal: {fileID: 540589360}
-  m_GameObject: {fileID: 702402805}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 250.12018, y: 114.445335, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
 --- !u!1 &753319386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1225,88 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 622441643}
   m_GameObject: {fileID: 765854558}
+--- !u!1 &794458265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 145704, guid: fe9ed65d7346c4d498e9540d61eab1b3, type: 2}
+  m_PrefabInternal: {fileID: 540589360}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 794458270}
+  - 114: {fileID: 794458269}
+  - 114: {fileID: 794458268}
+  - 114: {fileID: 794458267}
+  - 114: {fileID: 794458266}
+  m_Layer: 0
+  m_Name: VkApi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &794458266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11426616, guid: fe9ed65d7346c4d498e9540d61eab1b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 540589360}
+  m_GameObject: {fileID: 794458265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b873aac1ebfb7419c6bba651b5738f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &794458267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11445706, guid: fe9ed65d7346c4d498e9540d61eab1b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 540589360}
+  m_GameObject: {fileID: 794458265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090d7d5f1b758487ca08114cad954551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &794458268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11445708, guid: fe9ed65d7346c4d498e9540d61eab1b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 540589360}
+  m_GameObject: {fileID: 794458265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59161f33432bcb2489fddfbd31df33a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &794458269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11445710, guid: fe9ed65d7346c4d498e9540d61eab1b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 540589360}
+  m_GameObject: {fileID: 794458265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e12ecf581ebac48987e542b0dc2745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsUserLoggedIn: 0
+  VkRequestUrlBase: https://api.vk.com/method/
+--- !u!4 &794458270
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 445704, guid: fe9ed65d7346c4d498e9540d61eab1b3, type: 2}
+  m_PrefabInternal: {fileID: 540589360}
+  m_GameObject: {fileID: 794458265}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 250.12018, y: 114.445335, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &874436346
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DarkWindDev
-  productName: Beaver Time HD
+  productName: Beaver Time
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -89,8 +89,8 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: comDarkWind.BeaverTimePro
-  bundleVersion: 1.16
+  bundleIdentifier: comDarkWind.BeaverTime
+  bundleVersion: 1.17
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
@@ -105,7 +105,7 @@ PlayerSettings:
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
-  iPhoneBuildNumber: 16
+  iPhoneBuildNumber: 17
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
   CreateWallpaper: 0
