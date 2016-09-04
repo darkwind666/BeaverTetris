@@ -19,9 +19,9 @@ MonoBehaviour:
   joinGroupReward: 200
   inviteFriendReward: 30
   maxStopAdsCount: 3
-  gameSparkLeaderboard: 0
+  gameSparkLeaderboard: 1
   googlePlayServiceLeaderboard: 0
-  gameCenterLeaderboard: 1
+  gameCenterLeaderboard: 0
   blockAds: 0
   showVungleAds: 0
   showAppodealAds: 1
@@ -44,3 +44,5 @@ MonoBehaviour:
   googlePlayHD: https://play.google.com/store/apps/details?id=comDarkWind.BeaverTimePro
   appStoreFree: https://itunes.apple.com/us/app/beaver-time/id1141739087?ls=1&mt=8
   appStoreHD: https://itunes.apple.com/us/app/beaver-time-hd/id1144244575?ls=1&mt=8
+  windowsPhoneStoreFree: https://www.microsoft.com/store/apps/9nblggh528ww
+  windowsPhoneStoreHD: https://www.microsoft.com/store/apps/9nblggh528wv

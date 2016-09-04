@@ -8,15 +8,15 @@
     android:versionCode="1"
     android:versionName="1.0" >
     
-    <permission android:name="comDarkWind.BeaverTimePro.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-    <uses-permission android:name="comDarkWind.BeaverTimePro.permission.C2D_MESSAGE" />
+    <permission android:name="comDarkWind.BeaverTime.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="comDarkWind.BeaverTime.permission.C2D_MESSAGE" />
     <application>
       <receiver
             android:name="com.onesignal.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="comDarkWind.BeaverTimePro" />
+                <category android:name="comDarkWind.BeaverTime" />
             </intent-filter>
         </receiver>
     </application>

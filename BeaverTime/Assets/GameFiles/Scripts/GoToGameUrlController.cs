@@ -41,6 +41,10 @@ public class GoToGameUrlController : MonoBehaviour {
 				#if UNITY_ANDROID
 				targetUrl = gameSettings.googlePlayHD;
 				#endif
+
+				#if UNITY_WP_8_1 || UNITY_WINRT_8_1
+				targetUrl = gameSettings.windowsPhoneStoreHD;
+				#endif
 			} 
 			else 
 			{
@@ -50,6 +54,10 @@ public class GoToGameUrlController : MonoBehaviour {
 
 				#if UNITY_ANDROID
 				targetUrl = gameSettings.googlePlayFree;
+				#endif
+
+				#if UNITY_WP_8_1 || UNITY_WINRT_8_1
+				targetUrl = gameSettings.windowsPhoneStoreFree;
 				#endif
 			}
 		}

@@ -39,5 +39,6 @@ public class GameGlobalSettings : ScriptableObject {
 	public string googlePlayHD;
 	public string appStoreFree;
 	public string appStoreHD;
-
+	public string windowsPhoneStoreFree;
+	public string windowsPhoneStoreHD;
 }
