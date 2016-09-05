@@ -8,7 +8,6 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 	public GameGlobalSettings settings;
 	public FinalChanceController chanceController;
 	public LevelResultsController levelResultsController;
-	public string vungleID;
 
 	bool _finalChanceAd;
 	bool _simplifyGameAd;
@@ -22,7 +21,7 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 		if (settings.showVungleAds) 
 		{
 			#if UNITY_WP_8_1 || UNITY_WINRT_8_1
-			Vungle.init("5771811c74088aef5400016b", "Test_iOS", vungleID);
+			Vungle.init("5771811c74088aef5400016b", "Test_iOS", settings.windowsPhoneStoreFreeVungleID);
 			#endif    
 		}
 

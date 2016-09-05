@@ -23,8 +23,8 @@ MonoBehaviour:
   googlePlayServiceLeaderboard: 0
   gameCenterLeaderboard: 0
   blockAds: 0
-  showVungleAds: 0
-  showAppodealAds: 1
+  showVungleAds: 1
+  showAppodealAds: 0
   paidGame: 0
   androidFreeAppodealId: 6efe0ace3a0172df3d69dcd7af6b91333f355dc5072417ab
   androidHdAppodealId: dc24aa040be74be0fbf58fc63492494b24428fcf5597effe
@@ -46,3 +46,5 @@ MonoBehaviour:
   appStoreHD: https://itunes.apple.com/us/app/beaver-time-hd/id1144244575?ls=1&mt=8
   windowsPhoneStoreFree: https://www.microsoft.com/store/apps/9nblggh528ww
   windowsPhoneStoreHD: https://www.microsoft.com/store/apps/9nblggh528wv
+  windowsPhoneStoreFreeVungleID: 57cca4847a5988e852000019
+  windowsPhoneStoreHDVungleID: 

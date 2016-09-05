@@ -11,12 +11,23 @@
 	  android:theme="@android:style/Theme.NoTitleBar">
 	  
       <activity
-      	  android:name="com.vungle.publisher.FullScreenAdActivity"
-      	  android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
-      	  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
 		  android:label="@string/app_name"
-		  android:screenOrientation="fullSensor"/>
-	  
+		  android:screenOrientation="fullSensor"
+		  android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+		  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+      		  android:name="com.vungle.publisher.FullScreenAdActivity">
+      </activity>
+      <activity
+		  android:label="@string/app_name"
+		  android:screenOrientation="fullSensor"
+		  android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+		  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+      		  android:name="com.vungle.publisher.VideoFullScreenAdActivity">
+      </activity>
+      <activity android:name="com.vungle.publisher.MraidFullScreenAdActivity"
+	    android:configChanges="keyboardHidden|orientation|screenSize"
+	    android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+                	  
   </application>
   
   <uses-permission android:name="android.permission.INTERNET"/>

@@ -41,4 +41,6 @@ public class GameGlobalSettings : ScriptableObject {
 	public string appStoreHD;
 	public string windowsPhoneStoreFree;
 	public string windowsPhoneStoreHD;
+	public string windowsPhoneStoreFreeVungleID;
+	public string windowsPhoneStoreHDVungleID;
 }
