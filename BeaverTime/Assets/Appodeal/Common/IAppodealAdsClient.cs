@@ -34,10 +34,10 @@ namespace AppodealAds.Unity.Common {
 		void setSmartBanners(Boolean value);
 
 		void trackInAppPurchase(double amount, string currency);
-		void setCustomSegment(string name, Boolean value);
-		void setCustomSegment(string name, int value);
-		void setCustomSegment(string name, double value);
-		void setCustomSegment(string name, string value);
+		void setCustomRule(string name, Boolean value);
+		void setCustomRule(string name, int value);
+		void setCustomRule(string name, double value);
+		void setCustomRule(string name, string value);
 		
 		string getVersion();
 
@@ -45,8 +45,6 @@ namespace AppodealAds.Unity.Common {
 		void setAge(int age);
 		void setBirthday(string bDay);
 		void setEmail(String email);
-		void setFacebookId(String fbId);
-		void setVkId(String vkId);
 		void setGender(int gender);
 		void setInterests(String interests);
 		void setOccupation(int occupation);

@@ -3,10 +3,8 @@ using System;
 using System.Collections;
 using AppodealAds.Unity.Common;
 
-namespace AppodealAds.Unity.Api 
-{
-	public class Appodeal 
-	{
+namespace AppodealAds.Unity.Api {
+	public class Appodeal {
 
 		public const int NONE                = 0;
 		public const int INTERSTITIAL        = 1;
@@ -15,7 +13,11 @@ namespace AppodealAds.Unity.Api
 		public const int BANNER_BOTTOM       = 8;
 		public const int BANNER_TOP          = 16;
 		public const int REWARDED_VIDEO      = 128;
+		#if UNITY_ANDROID 
 		public const int NON_SKIPPABLE_VIDEO = 128;
+		#elif UNITY_IPHONE
+		public const int NON_SKIPPABLE_VIDEO = 256;
+		#endif
 
 		private static IAppodealAdsClient client;
 		private static IAppodealAdsClient getInstance() {
@@ -210,31 +212,31 @@ namespace AppodealAds.Unity.Api
 			#endif
 		}
 
-		public static void setCustomSegment(string name, bool value)
+		public static void setCustomRule(string name, bool value)
 		{
 			#if UNITY_ANDROID && !UNITY_EDITOR || UNITY_IPHONE && !UNITY_EDITOR
-			getInstance().setCustomSegment(name, value);
+			getInstance().setCustomRule(name, value);
 			#endif
 		}
 
-		public static void setCustomSegment(string name, int value)
+		public static void setCustomRule(string name, int value)
 		{
 			#if UNITY_ANDROID && !UNITY_EDITOR || UNITY_IPHONE && !UNITY_EDITOR
-			getInstance().setCustomSegment(name, value);
+			getInstance().setCustomRule(name, value);
 			#endif
 		}
 
-		public static void setCustomSegment(string name, double value)
+		public static void setCustomRule(string name, double value)
 		{
 			#if UNITY_ANDROID && !UNITY_EDITOR || UNITY_IPHONE && !UNITY_EDITOR
-			getInstance().setCustomSegment(name, value);
+			getInstance().setCustomRule(name, value);
 			#endif
 		}
 
-		public static void setCustomSegment(string name, string value)
+		public static void setCustomRule(string name, string value)
 		{
 			#if UNITY_ANDROID && !UNITY_EDITOR || UNITY_IPHONE && !UNITY_EDITOR
-			getInstance().setCustomSegment(name, value);
+			getInstance().setCustomRule(name, value);
 			#endif
 		}
 
@@ -316,23 +318,7 @@ namespace AppodealAds.Unity.Api
 			#endif
 			return this;
 		}
-		
-		public UserSettings setFacebookId(string fbId)
-		{
-			#if UNITY_ANDROID && !UNITY_EDITOR || UNITY_IPHONE && !UNITY_EDITOR
-			getInstance().setFacebookId(fbId);
-			#endif
-			return this;
-		}
-		
-		public UserSettings setVkId(string vkId)
-		{
-			#if UNITY_ANDROID && !UNITY_EDITOR || UNITY_IPHONE && !UNITY_EDITOR
-			getInstance().setVkId(vkId);
-			#endif
-			return this;
-		}
-		
+
 		public UserSettings setGender(Gender gender)
 		{
 			switch(gender) {

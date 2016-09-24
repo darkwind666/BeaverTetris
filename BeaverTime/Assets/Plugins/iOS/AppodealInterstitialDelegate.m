@@ -1,19 +1,35 @@
-//
-//  AppodealInterstitialDelegate.m
-//  Unity-iPhone
-//
-//  Created by Ivan Doroshenko on 8/17/15.
-//
-//
-
 #import "AppodealInterstitialDelegate.h"
 
 @implementation AppodealInterstitialDelegate
 
-APPODEAL_DELEGATE_METHOD(interstitialDidLoadAd)
-APPODEAL_DELEGATE_METHOD(interstitialDidFailToLoadAd)
-APPODEAL_DELEGATE_METHOD(interstitialWillPresent)
-APPODEAL_DELEGATE_METHOD(interstitialDidDismiss)
-APPODEAL_DELEGATE_METHOD(interstitialDidClick)
+-(void) interstitialDidLoadAdisPrecache:(BOOL)precache {
+    if(self.interstitialDidLoadCallback) {
+        self.interstitialDidLoadCallback();
+    }
+}
+
+-(void) interstitialDidClick {
+    if(self.interstitialDidClickCallback) {
+        self.interstitialDidClickCallback();
+    }
+}
+
+-(void) interstitialDidDismiss {
+    if(self.interstitialDidDismissCallback) {
+        self.interstitialDidDismissCallback();
+    }
+}
+
+-(void) interstitialDidFailToLoadAd {
+    if(self.interstitialDidFailToLoadAdCallback) {
+        self.interstitialDidFailToLoadAdCallback();
+    }
+}
+
+-(void) interstitialWillPresent {
+    if(self.interstitialWillPresentCallback) {
+        self.interstitialWillPresentCallback();
+    }
+}
 
 @end

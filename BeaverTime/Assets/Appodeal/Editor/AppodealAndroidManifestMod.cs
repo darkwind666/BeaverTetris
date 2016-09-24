@@ -52,17 +52,21 @@ public class AppodealAndroidManifestMod {
 	public const string startappOverlayActivityName = "com.startapp.android.publish.OverlayActivity";
 	public const string startappFullscreenActivityName = "com.startapp.android.publish.FullScreenActivity";
 	public const string yandexAdActivityName = "com.yandex.mobile.ads.AdActivity";
-	public const string inmobiActivityName = "com.inmobi.rendering.InMobiAdActivity";
 	public const string flurryActivityName = "com.flurry.android.FlurryFullscreenTakeoverActivity";
+	public const string appodealVideoPlayerActivityName = "com.appodeal.ads.VideoPlayerActivity";
+
+	public const string TJAdUnitActivityName = "com.tapjoy.TJAdUnitActivity";
+	public const string TJActionHandlerActivityName = "com.tapjoy.mraid.view.ActionHandler";
+	public const string TJBrowserActivityName = "com.tapjoy.mraid.view.Browser";
+	public const string TJContentActivityActivityName = "com.tapjoy.TJContentActivity";
+
 
 	//Recievers
 	public const string appodealPackageAddedReceiverName = "com.appodeal.ads.AppodealPackageAddedReceiver";
 	public const string yandexReceiverName = "com.yandex.metrica.MetricaEventHandler";
-	public const string inmobiReceiverName = "com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver";
 	
 	//Services
 	public const string yandexServiceName = "com.yandex.metrica.MetricaService";
-	public const string inmobiServiceName = "com.inmobi.signals.activityrecognition.ActivityRecognitionManager";
 
 
 	public static void GenerateManifest()
@@ -653,7 +657,7 @@ public class AppodealAndroidManifestMod {
 					yandexService.AppendChild(yandexMetaDataElement);
 					intentElement.AppendChild(categoryElement);
 					intentElement.AppendChild(actionElement);
-					intentElement.AppendChild(dataElement);
+					intentElement.AppendChild(categoryElement);
 				}
 			} else {
 				yandexService = doc.CreateElement(service);
@@ -676,7 +680,7 @@ public class AppodealAndroidManifestMod {
 				yandexService.AppendChild(yandexMetaDataElement);
 				intentElement.AppendChild(categoryElement);
 				intentElement.AppendChild(actionElement);
-				intentElement.AppendChild(dataElement);
+				intentElement.AppendChild(categoryElement);
 			}
 		}
 		XmlElement yandexReceiver = FindElementWithAndroidName(receiver, "name", ns, yandexReceiverName, dict);
@@ -709,9 +713,9 @@ public class AppodealAndroidManifestMod {
 				intentElement.AppendChild(actionElement);
 			}
 		}
+
 		XmlElement yandexAdsActivity = FindElementWithAndroidName(activity, "name", ns, yandexAdActivityName, dict);
-		if (yandexAdsActivity == null)
-		{
+		if (yandexAdsActivity == null) {
 			if(check) {
 				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", yandexAdActivityName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
 				if (val) { 
@@ -723,71 +727,9 @@ public class AppodealAndroidManifestMod {
 				dict.AppendChild(yandexAdsActivity);
 			}
 		}
-		XmlElement inmobiActivity = FindElementWithAndroidName(activity, "name", ns, inmobiActivityName, dict);
-		if (inmobiActivity == null)
-		{
-			if(check) {
-				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", inmobiActivityName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
-				if (val) { 
-					inmobiActivity = CreateExcludeHardwareActivityElement(doc, ns, inmobiActivityName, "true", "keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize", "@android:style/Theme.Translucent.NoTitleBar", "true");
-					dict.AppendChild(inmobiActivity);
-				}
-			} else {
-				inmobiActivity = CreateExcludeHardwareActivityElement(doc, ns, inmobiActivityName, "true", "keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize", "@android:style/Theme.Translucent.NoTitleBar", "true");
-				dict.AppendChild(inmobiActivity);
-			}
-		}
-		XmlElement inmobiReceiver = FindElementWithAndroidName(receiver, "name", ns, inmobiReceiverName, dict);
-		if (inmobiReceiver == null)
-		{
-			if(check) {
-				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", inmobiReceiverName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
-				if (val) { 
-					inmobiReceiver = doc.CreateElement(receiver);
-					inmobiReceiver.SetAttribute("name", ns, inmobiReceiverName);
-					inmobiReceiver.SetAttribute("enabled", ns, "true");
-					inmobiReceiver.SetAttribute("exported", ns, "true");
-					XmlElement intentElement = doc.CreateElement("intent-filter");
-					XmlElement actionElement = doc.CreateElement("action");
-					actionElement.SetAttribute("name", ns, "com.inmobi.share.id");
-					dict.AppendChild(inmobiReceiver);
-					inmobiReceiver.AppendChild(intentElement);
-					intentElement.AppendChild(actionElement);
-				}
-			} else {
-				inmobiReceiver = doc.CreateElement(receiver);
-				inmobiReceiver.SetAttribute("name", ns, inmobiReceiverName);
-				inmobiReceiver.SetAttribute("enabled", ns, "true");
-				inmobiReceiver.SetAttribute("exported", ns, "true");
-				XmlElement intentElement = doc.CreateElement("intent-filter");
-				XmlElement actionElement = doc.CreateElement("action");
-				actionElement.SetAttribute("name", ns, "com.inmobi.share.id");
-				dict.AppendChild(inmobiReceiver);
-				inmobiReceiver.AppendChild(intentElement);
-				intentElement.AppendChild(actionElement);
-			}
-		}
-		XmlElement inmobiService = FindElementWithAndroidName(service, "name", ns, inmobiServiceName, dict);
-		if (inmobiService == null)
-		{
-			if(check) {
-				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", inmobiServiceName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
-				if (val) { 
-					inmobiService = doc.CreateElement(service);
-					inmobiService.SetAttribute("enabled", ns, "true");
-					inmobiService.SetAttribute("name", ns, inmobiServiceName);
-					dict.AppendChild(inmobiService);
-				}
-			} else {
-				inmobiService = doc.CreateElement(service);
-				inmobiService.SetAttribute("enabled", ns, "true");
-				inmobiService.SetAttribute("name", ns, inmobiServiceName);
-				dict.AppendChild(inmobiService);
-			}
-		}
+
 		XmlElement flurryActivity = FindElementWithAndroidName(activity, "name", ns, flurryActivityName, dict);
-		if (flurryActivity == null)
-		{
+		if (flurryActivity == null) {
 			if(check) {
 				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", flurryActivityName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
 				if (val) { 
@@ -799,6 +741,77 @@ public class AppodealAndroidManifestMod {
 				dict.AppendChild(flurryActivity);
 			}
 		}
+
+		XmlElement appodealVideoPlayerActivity = FindElementWithAndroidName(activity, "name", ns, appodealVideoPlayerActivityName, dict);
+		if (appodealVideoPlayerActivity == null) {
+			if(check) {
+				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", appodealVideoPlayerActivityName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
+				if (val) { 
+					appodealVideoPlayerActivity = CreateActivityElement(doc, ns, appodealVideoPlayerActivityName, "keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize", null);
+					dict.AppendChild(appodealVideoPlayerActivity);
+				}
+			} else {
+				appodealVideoPlayerActivity = CreateActivityElement(doc, ns, appodealVideoPlayerActivityName, "keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize", null);
+				dict.AppendChild(appodealVideoPlayerActivity);
+			}
+		}
+
+		XmlElement TJActionHandlerActivity = FindElementWithAndroidName(activity, "name", ns, TJActionHandlerActivityName, dict);
+		if (TJActionHandlerActivity == null) {
+			if(check) {
+				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", TJActionHandlerActivityName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
+				if (val) { 
+					TJActionHandlerActivity = CreateActivityElement(doc, ns, TJActionHandlerActivityName, "orientation|keyboardHidden|screenSize", null);
+					dict.AppendChild(TJActionHandlerActivity);
+				}
+			} else {
+				TJActionHandlerActivity = CreateActivityElement(doc, ns, TJActionHandlerActivityName, "orientation|keyboardHidden|screenSize", null);
+				dict.AppendChild(TJActionHandlerActivity);
+			}
+		}
+
+		XmlElement TJAdUnitActivity = FindElementWithAndroidName(activity, "name", ns, TJAdUnitActivityName, dict);
+		if (TJAdUnitActivity == null) {
+			if(check) {
+				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", TJAdUnitActivityName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
+				if (val) { 
+					TJAdUnitActivity = CreateHardwareActivity(doc, ns, TJAdUnitActivityName, "orientation|keyboardHidden|screenSize", "@android:style/Theme.Translucent.NoTitleBar.Fullscreen", "true");
+					dict.AppendChild(TJAdUnitActivity);
+				}
+			} else {
+				TJAdUnitActivity = CreateHardwareActivity(doc, ns, TJAdUnitActivityName, "orientation|keyboardHidden|screenSize", "@android:style/Theme.Translucent.NoTitleBar.Fullscreen", "true");
+				dict.AppendChild(TJAdUnitActivity);
+			}
+		}
+
+		XmlElement TJBrowserActivity = FindElementWithAndroidName(activity, "name", ns, TJBrowserActivityName, dict);
+		if (TJBrowserActivity == null) {
+			if(check) {
+				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", TJBrowserActivityName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
+				if (val) { 
+					TJBrowserActivity = CreateActivityElement(doc, ns, TJBrowserActivityName, "orientation|keyboardHidden|screenSize", null);
+					dict.AppendChild(TJBrowserActivity);
+				}
+			} else {
+				TJBrowserActivity = CreateActivityElement(doc, ns, TJBrowserActivityName, "orientation|keyboardHidden|screenSize", null);
+				dict.AppendChild(TJBrowserActivity);
+			}
+		}
+
+		XmlElement TJContentActivityActivity = FindElementWithAndroidName(activity, "name", ns, TJContentActivityActivityName, dict);
+		if (TJContentActivityActivity == null) {
+			if(check) {
+				bool val = EditorUtility.DisplayDialog("Appodeal Manifest Editor", TJContentActivityActivityName + " is missing from AdnroidManifest.xml, would you like to add it?", "Yes", "No");
+				if (val) { 
+					TJContentActivityActivity = CreateHardwareActivity(doc, ns, TJContentActivityActivityName, "orientation|keyboardHidden|screenSize", "@android:style/Theme.Translucent.NoTitleBar", "true");
+					dict.AppendChild(TJContentActivityActivity);
+				}
+			} else {
+				TJContentActivityActivity = CreateHardwareActivity(doc, ns, TJContentActivityActivityName, "orientation|keyboardHidden|screenSize", "@android:style/Theme.Translucent.NoTitleBar", "true");
+				dict.AppendChild(TJContentActivityActivity);
+			}
+		}
+
 		doc.Save(fullPath);
 		EditorUtility.DisplayDialog("Appodeal Manifest Editor", "Your AndroidManifest.xml is up to date", "Ok");
 	}

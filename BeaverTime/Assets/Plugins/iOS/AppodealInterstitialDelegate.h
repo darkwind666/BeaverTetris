@@ -1,22 +1,14 @@
-//
-//  AppodealInterstitialDelegate.h
-//  Unity-iPhone
-//
-//  Created by Ivan Doroshenko on 8/17/15.
-//
-//
-
 #import <Foundation/Foundation.h>
-#import <Appodeal/AppodealInterstitialDelegate.h>
+#import <Appodeal/Appodeal.h>
 
-#import "AppodealObjCBridge.h"
+typedef void (*AppodealInterstitialCallbacks) ();
 
 @interface AppodealInterstitialDelegate : NSObject <AppodealInterstitialDelegate>
 
-APPODEAL_DELEGATE_PROPERTY(interstitialDidLoadAd)
-APPODEAL_DELEGATE_PROPERTY(interstitialDidFailToLoadAd)
-APPODEAL_DELEGATE_PROPERTY(interstitialWillPresent)
-APPODEAL_DELEGATE_PROPERTY(interstitialDidDismiss)
-APPODEAL_DELEGATE_PROPERTY(interstitialDidClick)
+@property (assign, nonatomic) AppodealInterstitialCallbacks interstitialDidLoadCallback;
+@property (assign, nonatomic) AppodealInterstitialCallbacks interstitialDidFailToLoadAdCallback;
+@property (assign, nonatomic) AppodealInterstitialCallbacks interstitialWillPresentCallback;
+@property (assign, nonatomic) AppodealInterstitialCallbacks interstitialDidDismissCallback;
+@property (assign, nonatomic) AppodealInterstitialCallbacks interstitialDidClickCallback;
 
 @end

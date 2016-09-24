@@ -1,18 +1,30 @@
-//
-//  AppodealBannerDelegate.m
-//  Unity-iPhone
-//
-//  Created by Ivan Doroshenko on 8/17/15.
-//
-//
-
 #import "AppodealBannerDelegate.h"
 
 @implementation AppodealBannerDelegate
 
-APPODEAL_DELEGATE_METHOD(bannerDidLoadAd)
-APPODEAL_DELEGATE_METHOD(bannerDidFailToLoadAd)
-APPODEAL_DELEGATE_METHOD(bannerDidClick)
-APPODEAL_DELEGATE_METHOD(bannerDidShow)
+
+-(void) bannerDidLoadAdisPrecache:(BOOL)precache {
+    if(self.bannerDidLoadAdCallback) {
+        self.bannerDidLoadAdCallback();
+    }
+}
+
+-(void) bannerDidShow {
+    if(self.bannerDidShowCallback) {
+        self.bannerDidShowCallback();
+    }
+}
+
+-(void) bannerDidClick {
+    if(self.bannerDidClickCallback) {
+        self.bannerDidClickCallback();
+    }
+}
+
+-(void) bannerDidFailToLoadAd {
+    if(self.bannerDidFailToLoadAdCallback) {
+        self.bannerDidFailToLoadAdCallback();
+    }
+}
 
 @end

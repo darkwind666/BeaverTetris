@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.IO;
+
 #if UNITY_EDITOR
 using UnityEditor;
 
@@ -7,7 +7,7 @@ using UnityEditor;
 #endif
 public class AppodealSettings : ScriptableObject
 {
-
+	#if UNITY_EDITOR
 	[MenuItem("Appodeal/Android/Create AndroidManifest.xml")]
 	private static void createManifest()
 	{
@@ -26,8 +26,7 @@ public class AppodealSettings : ScriptableObject
 		AppodealAndroidManifestMod.GenerateManifest ();
 	}
 
-	#if UNITY_EDITOR
-	[MenuItem("Appodeal/SDK Documentation")]
+    [MenuItem("Appodeal/SDK Documentation")]
 	public static void OpenDocumentation()
 	{
 		string url = "http://www.appodeal.com/sdk/choose_framework?framework=2&full=1&platform=1";

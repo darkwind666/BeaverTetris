@@ -1,25 +1,15 @@
-//
-//  AppodealRewardedVideoDelegate.h
-//  Unity-iPhone
-//
-//  Created by Ivan Doroshenko on 11/17/15.
-//
-//
-
 #import <Foundation/Foundation.h>
-#import <Appodeal/AppodealRewardedVideoDelegate.h>
+#import <Appodeal/Appodeal.h>
 
-#import "AppodealObjCBridge.h"
-
-typedef void (*AppodealRewardedVideoDidFinishDelegate) (int, const char *);
+typedef void (*AppodealRewardedVideoCallbacks) ();
+typedef void (*AppodealRewardedVideoDidFinishCallback) (int, const char *);
 
 @interface AppodealRewardedVideoDelegate : NSObject <AppodealRewardedVideoDelegate>
 
-APPODEAL_DELEGATE_PROPERTY(rewardedVideoDidLoadAd)
-APPODEAL_DELEGATE_PROPERTY(rewardedVideoDidFailToLoadAd)
-APPODEAL_DELEGATE_PROPERTY(rewardedVideoWillDismiss)
-APPODEAL_DELEGATE_PROPERTY(rewardedVideoDidPresent)
-
-@property (assign, nonatomic) AppodealRewardedVideoDidFinishDelegate rewardedVideoDidFinishDelegate;
+@property (assign, nonatomic) AppodealRewardedVideoCallbacks rewardedVideoDidLoadAdCallback;
+@property (assign, nonatomic) AppodealRewardedVideoCallbacks rewardedVideoDidFailToLoadAdCallback;
+@property (assign, nonatomic) AppodealRewardedVideoCallbacks rewardedVideoWillDismissCallback;
+@property (assign, nonatomic) AppodealRewardedVideoCallbacks rewardedVideoDidPresentCallback;
+@property (assign, nonatomic) AppodealRewardedVideoDidFinishCallback rewardedVideoDidFinishCallback;
 
 @end

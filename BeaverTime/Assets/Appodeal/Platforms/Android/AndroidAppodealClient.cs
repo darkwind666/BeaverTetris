@@ -156,20 +156,20 @@ namespace AppodealAds.Unity.Android
 			getAppodealClass().CallStatic("trackInAppPurchase", getActivity(), amount, currency);
 		}
 
-		public void setCustomSegment(string name, Boolean value) {
-			getAppodealClass().CallStatic("setCustomSegment", name, value);
+		public void setCustomRule(string name, Boolean value) {
+			getAppodealClass().CallStatic("setCustomRule", name, value);
 		}
 
-		public void setCustomSegment(string name, int value) {
-			getAppodealClass().CallStatic("setCustomSegment", name, value);
+		public void setCustomRule(string name, int value) {
+			getAppodealClass().CallStatic("setCustomRule", name, value);
 		}
 
-		public void setCustomSegment(string name, double value) {
-			getAppodealClass().CallStatic("setCustomSegment", name, value);
+		public void setCustomRule(string name, double value) {
+			getAppodealClass().CallStatic("setCustomRule", name, value);
 		}
 
-		public void setCustomSegment(string name, string value) {
-			getAppodealClass().CallStatic("setCustomSegment", name, value);
+		public void setCustomRule(string name, string value) {
+			getAppodealClass().CallStatic("setCustomRule", name, value);
 		}
 
 		public void setSmartBanners(Boolean value) {
@@ -201,16 +201,6 @@ namespace AppodealAds.Unity.Android
 		public void setEmail(String email)
 		{
 			userSettings.Call<AndroidJavaObject> ("setEmail", email);
-		}
-
-		public void setFacebookId(String fbId)
-		{
-			userSettings.Call<AndroidJavaObject> ("setFacebookId", fbId);
-		}
-
-		public void setVkId(String vkId)
-		{
-			userSettings.Call<AndroidJavaObject> ("setVkId", vkId);
 		}
 
 		public void setGender(int gender)

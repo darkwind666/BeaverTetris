@@ -1,21 +1,13 @@
-//
-//  AppodealBannerDelegate.h
-//  Unity-iPhone
-//
-//  Created by Ivan Doroshenko on 8/17/15.
-//
-//
-
 #import <Foundation/Foundation.h>
-#import <Appodeal/AppodealBannerDelegate.h>
+#import <Appodeal/Appodeal.h>
 
-#import "AppodealObjCBridge.h"
+typedef void (*AppodealBannerCallbacks) ();
 
 @interface AppodealBannerDelegate : NSObject <AppodealBannerDelegate>
 
-APPODEAL_DELEGATE_PROPERTY(bannerDidLoadAd)
-APPODEAL_DELEGATE_PROPERTY(bannerDidFailToLoadAd)
-APPODEAL_DELEGATE_PROPERTY(bannerDidClick)
-APPODEAL_DELEGATE_PROPERTY(bannerDidShow)
+@property (assign, nonatomic) AppodealBannerCallbacks bannerDidLoadAdCallback;
+@property (assign, nonatomic) AppodealBannerCallbacks bannerDidFailToLoadAdCallback;
+@property (assign, nonatomic) AppodealBannerCallbacks bannerDidClickCallback;
+@property (assign, nonatomic) AppodealBannerCallbacks bannerDidShowCallback;
 
 @end

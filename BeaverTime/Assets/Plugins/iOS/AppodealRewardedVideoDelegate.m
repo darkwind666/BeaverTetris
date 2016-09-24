@@ -1,23 +1,37 @@
-//
-//  AppodealRewardedVideoDelegate.m
-//  Unity-iPhone
-//
-//  Created by Ivan Doroshenko on 11/17/15.
-//
-//
-
 #import "AppodealRewardedVideoDelegate.h"
+#import "AppodealObjCBridge.h"
 
 @implementation AppodealRewardedVideoDelegate
 
-APPODEAL_DELEGATE_METHOD(rewardedVideoDidLoadAd)
-APPODEAL_DELEGATE_METHOD(rewardedVideoDidFailToLoadAd)
-APPODEAL_DELEGATE_METHOD(rewardedVideoWillDismiss)
-APPODEAL_DELEGATE_METHOD(rewardedVideoDidPresent)
+-(void) rewardedVideoDidLoadAd {
+    if(self.rewardedVideoDidLoadAdCallback) {
+        self.rewardedVideoDidLoadAdCallback();
+    }
+}
+
+-(void) rewardedVideoDidFailToLoadAd {
+    if(self.rewardedVideoDidFailToLoadAdCallback) {
+        self.rewardedVideoDidFailToLoadAdCallback();
+    }
+}
+
+-(void) rewardedVideoDidClick { }
+
+-(void) rewardedVideoDidPresent {
+    if(self.rewardedVideoDidPresentCallback) {
+        self.rewardedVideoDidPresentCallback();
+    }
+}
+
+-(void) rewardedVideoWillDismiss {
+    if(self.rewardedVideoWillDismissCallback) {
+        self.rewardedVideoWillDismissCallback();
+    }
+}
 
 - (void)rewardedVideoDidFinish:(NSUInteger)rewardAmount name:(NSString *)rewardName {
-    if (self.rewardedVideoDidFinishDelegate) {
-        self.rewardedVideoDidFinishDelegate((int)rewardAmount, AppodealUTF8StringFromString(rewardName));
+    if (self.rewardedVideoDidFinishCallback) {
+        self.rewardedVideoDidFinishCallback((int)rewardAmount, [rewardName UTF8String]);
     }
 }
 

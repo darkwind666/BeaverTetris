@@ -44,5 +44,3 @@ namespace AppodealAds.Unity.Android
 	}
 #endif
 }
-
-

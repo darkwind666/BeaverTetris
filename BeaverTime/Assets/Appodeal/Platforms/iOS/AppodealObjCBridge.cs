@@ -5,8 +5,12 @@ using System.Runtime.InteropServices;
 namespace AppodealAds.Unity.iOS
 {
 	
-	internal delegate void AppodealNativeDelegate ();
-	internal delegate void AppodealRewardedVideoDidFinishDelegate (int amount, String name);
+	internal delegate void AppodealInterstitialCallbacks ();
+	internal delegate void AppodealSkippableVideoCallbacks ();
+	internal delegate void AppodealNonSkippableVideoCallbacks ();
+	internal delegate void AppodealBannerCallbacks ();
+	internal delegate void AppodealRewardedVideoCallbacks ();
+	internal delegate void AppodealRewardedVideoDidFinishCallback (int amount, String name);
 	
 	internal class AppodealObjCBridge
 	{
@@ -15,6 +19,9 @@ namespace AppodealAds.Unity.iOS
 		
 		[DllImport("__Internal")]
 		internal static extern bool AppodealShowAd (int style);
+
+		[DllImport("__Internal")]
+		internal static extern bool AppodealShowAdforPlacement (int style, string placement);
 		
 		[DllImport("__Internal")]
 		internal static extern void AppodealSetAutocache (bool autocache, int types);
@@ -27,58 +34,81 @@ namespace AppodealAds.Unity.iOS
 		
 		[DllImport("__Internal")]
 		internal static extern void AppodealHideBanner ();
+
+		[DllImport("__Internal")]
+		internal static extern void AppodealConfirmUsage (int types);
 		
 		[DllImport("__Internal")]
 		internal static extern void AppodealSetInterstitialDelegate (
-			AppodealNativeDelegate interstitialDidLoadAd,
-			AppodealNativeDelegate interstitialDidFailToLoadAd,
-			AppodealNativeDelegate interstitialDidClick,
-			AppodealNativeDelegate interstitialDidDismiss,
-			AppodealNativeDelegate interstitialWillPresent
-			);
+			AppodealInterstitialCallbacks interstitialDidLoadAd,
+			AppodealInterstitialCallbacks interstitialDidFailToLoadAd,
+			AppodealInterstitialCallbacks interstitialDidClick,
+			AppodealInterstitialCallbacks interstitialDidDismiss,
+			AppodealInterstitialCallbacks interstitialWillPresent
+		);
 		
 		[DllImport("__Internal")]
-		internal static extern void AppodealSetVideoDelegate (
-			AppodealNativeDelegate videoDidLoadAd,
-			AppodealNativeDelegate videoDidFailToLoadAd,
-			AppodealNativeDelegate videoWillDismiss,
-			AppodealNativeDelegate videoDidFinish,
-			AppodealNativeDelegate videoDidPresent
-			);
+		internal static extern void AppodealSetSkippableVideoDelegate (
+			AppodealSkippableVideoCallbacks skippableVideoDidLoadAd,
+			AppodealSkippableVideoCallbacks skippableVideoDidFailToLoadAd,
+			AppodealSkippableVideoCallbacks skippableVideoWillDismiss,
+			AppodealSkippableVideoCallbacks skippableVideoDidFinish,
+			AppodealSkippableVideoCallbacks skippableVideoDidPresent
+		);
+
+		[DllImport("__Internal")]
+		internal static extern void AppodealSetNonSkippableVideoDelegate (
+			AppodealNonSkippableVideoCallbacks nonSkippableVideoDidLoadAd,
+			AppodealNonSkippableVideoCallbacks nonSkippableVideoDidFailToLoadAd,
+			AppodealNonSkippableVideoCallbacks nonSkippableVideoWillDismiss,
+			AppodealNonSkippableVideoCallbacks nonSkippableVideoDidFinish,
+			AppodealNonSkippableVideoCallbacks nonSkippableVideoDidPresent
+		);
 		
 		[DllImport("__Internal")]
 		internal static extern void AppodealSetRewardedVideoDelegate(
-			AppodealNativeDelegate rewardedVideoDidLoadAd,
-			AppodealNativeDelegate rewardedVideoDidFailToLoadAd,
-			AppodealNativeDelegate rewardedVideoWillDismiss,
-			AppodealRewardedVideoDidFinishDelegate rewardedVideoDidFinish,
-			AppodealNativeDelegate rewardedVideoDidPresent
-			);
+			AppodealRewardedVideoCallbacks rewardedVideoDidLoadAd,
+			AppodealRewardedVideoCallbacks rewardedVideoDidFailToLoadAd,
+			AppodealRewardedVideoCallbacks rewardedVideoWillDismiss,
+			AppodealRewardedVideoDidFinishCallback rewardedVideoDidFinish,
+			AppodealRewardedVideoCallbacks rewardedVideoDidPresent
+		);
 		
 		[DllImport("__Internal")]
 		internal static extern void AppodealSetBannerDelegate (
-			AppodealNativeDelegate bannerDidLoadAd,
-			AppodealNativeDelegate bannerDidFailToLoadAd,
-			AppodealNativeDelegate bannerDidClick,
-			AppodealNativeDelegate bannerDidShow
-			);
+			AppodealBannerCallbacks bannerDidLoadAd,
+			AppodealBannerCallbacks bannerDidFailToLoadAd,
+			AppodealBannerCallbacks bannerDidClick,
+			AppodealBannerCallbacks bannerDidShow
+		);
 		
 		[DllImport("__Internal")]
 		internal static extern string AppodealGetVersion ();
-		
-		[DllImport("__Internal")]
-		internal static extern void AppodealDisableNetwork(string networkName);
-		
-		[DllImport("__Internal")]
-		internal static extern void AppodealDisableNetworkForAdTypes(string networkName, int adTypes);
 		
 		[DllImport("__Internal")]
 		internal static extern void AppodealDisableLocationPermissionCheck();
 		
 		[DllImport("__Internal")]
 		internal static extern void AppodealSetDebugEnabled(bool debugEnabled);
-		
-		
+
+		[DllImport("__Internal")]
+		internal static extern void AppodealSetTestingEnabled(bool testingEnabled);
+
+		[DllImport("__Internal")]
+		internal static extern void setCustomSegmentString(string name, string value);
+
+		[DllImport("__Internal")]
+		internal static extern void setCustomSegmentDouble(string name, double value);
+
+		[DllImport("__Internal")]
+		internal static extern void setCustomSegmentInt(string name, int value);
+
+		[DllImport("__Internal")]
+		internal static extern void setCustomSegmentBool(string name, bool value);
+
+		[DllImport("__Internal")]
+		internal static extern void setSmartBanners(bool value);
+
 		[DllImport("__Internal")]
 		internal static extern void AppodealSetUserId(string id);
 
@@ -90,12 +120,6 @@ namespace AppodealAds.Unity.iOS
 		
 		[DllImport("__Internal")]
 		internal static extern void AppodealSetUserEmail(string email);
-		
-		[DllImport("__Internal")]
-		internal static extern void AppodealSetUserFacebookId(string facebookId);
-		
-		[DllImport("__Internal")]
-		internal static extern void AppodealSetUserVkId(string vkId);
 		
 		[DllImport("__Internal")]
 		internal static extern void AppodealSetUserGender(int gender);
