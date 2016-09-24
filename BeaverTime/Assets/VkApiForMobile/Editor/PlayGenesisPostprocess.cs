@@ -13,7 +13,7 @@ namespace UnityEditor.VKEditor
 		[PostProcessBuild(300)]
 		public static void OnPostProcessBuild(BuildTarget target, string path)
 		{
-			
+			/*
 			if (target.ToString() == "iOS" || target.ToString() == "iPhone")
 			{
 				// Create a new project object from build target
@@ -31,6 +31,7 @@ namespace UnityEditor.VKEditor
 				FixupFiles.FixSimulator(path);
 				
 			}
+			*/
 			
 			/*if (target == BuildTarget.MetroPlayer) {
 				FixupFiles.AddInternetCapabilitieWSA(path);

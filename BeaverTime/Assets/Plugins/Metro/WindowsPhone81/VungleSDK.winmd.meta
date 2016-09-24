@@ -1,6 +1,23 @@
 fileFormatVersion: 2
 guid: 2255cf2d17dd44f029385ec7d96d0762
-DefaultImporter:
+PluginImporter:
+  serializedVersion: 1
+  iconMap: {}
+  executionOrder: {}
+  isPreloaded: 0
+  platformData:
+    Any:
+      enabled: 0
+      settings: {}
+    Editor:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+    WindowsStoreApps:
+      enabled: 1
+      settings:
+        CPU: AnyCPU
+        SDK: PhoneSDK81
   userData: 
   assetBundleName: 
   assetBundleVariant: 
