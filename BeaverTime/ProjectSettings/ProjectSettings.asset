@@ -95,13 +95,13 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: comDarkWind.BeaverTime
-  bundleVersion: 1.18
+  bundleVersion: 1.19
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   xboxOneDisableKinectGpuReservation: 0
   singlePassStereoRendering: 0
   protectGraphicsMemory: 0
-  AndroidBundleVersionCode: 18
+  AndroidBundleVersionCode: 19
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -109,7 +109,7 @@ PlayerSettings:
   stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
-  iPhoneBuildNumber: 17
+  iPhoneBuildNumber: 19
   ForceInternetPermission: 0
   ForceSDCardPermission: 0
   CreateWallpaper: 0

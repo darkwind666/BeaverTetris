@@ -6,7 +6,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-#if UNITY_STANDALONE_OSX
+#if UNITY_STANDALONE_OSX || UNITY_IOS
 using System.Runtime.Serialization.Formatters.Binary;
 #endif
 
@@ -30,7 +30,7 @@ public class PlayersDatabaseController {
 		string fileName = "/playersRecords.xml";
 
 
-		#if UNITY_STANDALONE_OSX
+		#if UNITY_STANDALONE_OSX || UNITY_IOS
 		fileName = "/playersRecords.bt";
 		#endif
 
@@ -41,7 +41,7 @@ public class PlayersDatabaseController {
 	{
 		IFormatter formatter = new PlayersDatabaseXMLFormatter();
 
-		#if UNITY_STANDALONE_OSX
+		#if UNITY_STANDALONE_OSX || UNITY_IOS
 		formatter = new BinaryFormatter();
 		#endif
 

@@ -20,8 +20,8 @@ MonoBehaviour:
   inviteFriendReward: 30
   maxStopAdsCount: 3
   gameSparkLeaderboard: 0
-  googlePlayServiceLeaderboard: 0
-  gameCenterLeaderboard: 1
+  googlePlayServiceLeaderboard: 1
+  gameCenterLeaderboard: 0
   blockAds: 0
   showVungleAds: 0
   showAppodealAds: 1

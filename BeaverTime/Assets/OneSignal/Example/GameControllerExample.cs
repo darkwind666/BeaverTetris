@@ -1,7 +1,7 @@
 ﻿/**
  * Modified MIT License
  * 
- * Copyright 2015 OneSignal
+ * Copyright 2016 OneSignal
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,6 @@
  */
 
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 using OneSignalPush.MiniJSON;
@@ -39,38 +38,55 @@ public class GameControllerExample : MonoBehaviour {
       extraMessage = null;
 
       // Enable line below to debug issues with setuping OneSignal. (logLevel, visualLogLevel)
-      //OneSignal.SetLogLevel(OneSignal.LOG_LEVEL.INFO, OneSignal.LOG_LEVEL.INFO);
+      OneSignal.SetLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
 
       // The only required method you need to call to setup OneSignal to receive push notifications.
       // Call before using any other methods on OneSignal.
       // Should only be called once when your app is loaded.
-      // OneSignal.Init(OneSignal_AppId, GoogleProjectNumber, NotificationReceivedHandler(optional));
-      OneSignal.Init("b2f7f966-d8cc-11e4-bed1-df8f05be55ba", "703322744261", HandleNotification);
-
-      // Shows a Native iOS/Android alert dialog when the user is in your app when a notification comes in.
-      OneSignal.EnableInAppAlertNotification(true);
+      // OneSignal.Init(OneSignal_AppId, GoogleProjectNumber);
+      //b2f7f966-d8cc-11e4-bed1-df8f05be55ba
+		OneSignal.StartInit("4ba9ec31-b65a-4f5f-b210-a5077a245b3d", "703322744261")
+               .HandleNotificationReceived(HandleNotificationReceived)
+               .HandleNotificationOpened(HandleNotificationOpened)
+               .InFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+               .EndInit();
    }
 
-   // Gets called when the user opens the notification or gets one while in your app.
+   // Called when your app is in focus and a notificaiton is recieved.
    // The name of the method can be anything as long as the signature matches.
    // Method must be static or this object should be marked as DontDestroyOnLoad
-   private static void HandleNotification(string message, Dictionary<string, object> additionalData, bool isActive) {
-      print("GameControllerExample:HandleNotification:message" + message);
-      extraMessage = "Notification opened with text: " + message;
+   private static void HandleNotificationReceived(OSNotification notification) {
+      OSNotificationPayload payload = notification.payload;
+      string message = payload.body;
 
-      // When isActive is true this means the user is currently in your game.
-      // Use isActive and your own game logic so you don't interrupt the user with a popup or menu when they are in the middle of playing your game.
+      print("GameControllerExample:HandleNotificationReceived: " + message);
+      print("displayType: " + notification.displayType);
+      extraMessage = "Notification received with text: " + message;
+   }
+   
+   // Called when a notification is opened.
+   // The name of the method can be anything as long as the signature matches.
+   // Method must be static or this object should be marked as DontDestroyOnLoad
+   public static void HandleNotificationOpened(OSNotificationOpenedResult result) {
+      OSNotificationPayload payload = result.notification.payload;
+		Dictionary<string, object> additionalData = payload.additionalData;
+      string message = payload.body;
+      string actionID = result.action.actionID;
+
+      print("GameControllerExample:HandleNotificationOpened: " + message);
+      extraMessage = "Notification opened with text: " + message;
+      
       if (additionalData != null) {
          if (additionalData.ContainsKey("discount")) {
             extraMessage = (string)additionalData["discount"];
             // Take user to your store.
          }
-         else if (additionalData.ContainsKey("actionSelected")) {
+      }
+      if (actionID != null) {
             // actionSelected equals the id on the button the user pressed.
             // actionSelected will equal "__DEFAULT__" when the notification itself was tapped when buttons were present.
-            extraMessage = "Pressed ButtonId: " + additionalData["actionSelected"];
+            extraMessage = "Pressed ButtonId: " + actionID;
          }
-      }
    }
 
    // Test Menu
@@ -97,16 +113,16 @@ public class GameControllerExample : MonoBehaviour {
       }
 
       if (GUI.Button (new Rect (60, 170, 300, 60), "GetIds", customTextSize)) {
-            OneSignal.GetIdsAvailable((userId, pushToken) => {
+            OneSignal.IdsAvailable((userId, pushToken) => {
             extraMessage = "UserID:\n" + userId + "\n\nPushToken:\n" + pushToken;
          });
       }
 
       if (GUI.Button (new Rect (60, 260, 300, 60), "TestNotification", customTextSize)) {
          extraMessage = "Waiting to get a OneSignal userId. Uncomment OneSignal.SetLogLevel in the Start method if it hangs here to debug the issue.";
-         OneSignal.GetIdsAvailable((userId, pushToken) => {
+         OneSignal.IdsAvailable((userId, pushToken) => {
             if (pushToken != null) {
-               // See http://documentation.onesignal.com/v2.0/docs/notifications-create-notification for a full list of options.
+               // See http://documentation.onesignal.com/docs/notifications-create-notification for a full list of options.
                // You can not use included_segments or any fields that require your OneSignal 'REST API Key' in your app for security reasons.
                // If you need to use your OneSignal 'REST API Key' you will need your own server where you can make this call.
 

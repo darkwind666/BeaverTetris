@@ -7,7 +7,7 @@ using System;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-#if UNITY_STANDALONE_OSX
+#if UNITY_STANDALONE_OSX || UNITY_IOS
 using System.Runtime.Serialization.Formatters.Binary;
 #endif
 
@@ -35,6 +35,7 @@ public class GamePlayerDataController {
 	public bool simplifyLevel { get; set; }
 	public bool logInVk { get; set; }
 	public bool inVkGameGroup { get; set; }
+	public bool notNowPressed { get; set; }
 
 
     string _dataPath;
@@ -55,7 +56,7 @@ public class GamePlayerDataController {
 	{
 		string fileName = "/playerData.xml";
 
-		#if UNITY_STANDALONE_OSX
+		#if UNITY_STANDALONE_OSX || UNITY_IOS
 		fileName = "/playerData.bt";
 		#endif
 
@@ -66,7 +67,7 @@ public class GamePlayerDataController {
 	{
 		IFormatter formatter = new PlayerDataXMLFormatter();
 
-		#if UNITY_STANDALONE_OSX
+		#if UNITY_STANDALONE_OSX || UNITY_IOS
 		formatter = new BinaryFormatter();
 		#endif
 

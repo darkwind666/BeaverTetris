@@ -27,82 +27,69 @@
 
 #if UNITY_ANDROID
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using OneSignalPush.MiniJSON;
 
 public class OneSignalAndroid : OneSignalPlatform {
-	private static AndroidJavaObject mOneSignal = null;
+   private static AndroidJavaObject mOneSignal = null;
 
-	public OneSignalAndroid(string gameObjectName, string googleProjectNumber, string appId, OneSignal.LOG_LEVEL logLevel, OneSignal.LOG_LEVEL visualLevel) {
+   public OneSignalAndroid(string gameObjectName, string googleProjectNumber, string appId, OneSignal.OSInFocusDisplayOption displayOption, OneSignal.LOG_LEVEL logLevel, OneSignal.LOG_LEVEL visualLevel) {
         mOneSignal = new AndroidJavaObject("com.onesignal.OneSignalUnityProxy", gameObjectName, googleProjectNumber, appId, (int)logLevel, (int)visualLevel);
-	}
+        SetInFocusDisplaying(displayOption);
+   }
 
     public void SetLogLevel(OneSignal.LOG_LEVEL logLevel, OneSignal.LOG_LEVEL visualLevel) {
-        mOneSignal.Call("setLogLevel", (int)logLevel, (int)logLevel);
+        mOneSignal.Call("setLogLevel", (int)logLevel, (int)visualLevel);
     }
 
-	public void SendTag(string tagName, string tagValue) {
-		mOneSignal.Call("sendTag", tagName, tagValue);
-	}
+   public void SendTag(string tagName, string tagValue) {
+      mOneSignal.Call("sendTag", tagName, tagValue);
+   }
 
-	public void SendTags(IDictionary<string, string> tags) {
-		mOneSignal.Call("sendTags", Json.Serialize(tags));
-	}
+   public void SendTags(IDictionary<string, string> tags) {
+      mOneSignal.Call("sendTags", Json.Serialize(tags));
+   }
 
-	public void GetTags() {
-		mOneSignal.Call("getTags");
-	}
+   public void GetTags() {
+      mOneSignal.Call("getTags");
+   }
 
-	public void DeleteTag(string key) {
-		mOneSignal.Call("deleteTag", key);
-	}
+   public void DeleteTag(string key) {
+      mOneSignal.Call("deleteTag", key);
+   }
 
-	public void DeleteTags(IList<string> keys) {
-		mOneSignal.Call("deleteTags", Json.Serialize(keys));
-	}
+   public void DeleteTags(IList<string> keys) {
+      mOneSignal.Call("deleteTags", Json.Serialize(keys));
+   }
 
-	public void IdsAvailable() {
-		mOneSignal.Call("idsAvailable");
-	}
-	
-	public void FireNotificationReceivedEvent(string jsonString, OneSignal.NotificationReceived notificationReceived) {
-		var dict = Json.Deserialize(jsonString) as Dictionary<string, object>;
-		Dictionary<string, object> additionalData = null;
-		if (dict.ContainsKey("custom"))
-			additionalData = dict["custom"] as Dictionary<string, object>;
+   public void IdsAvailable() {
+      mOneSignal.Call("idsAvailable");
+   }
 
-		notificationReceived((string)(dict["alert"]), additionalData, (bool)dict["isActive"]);
-	}
+   public void RegisterForPushNotifications() { } // Doesn't apply to Android as the Native SDK always registers with GCM.
 
-	public void RegisterForPushNotifications() { } // Doesn't apply to Android as the Native SDK always registers with GCM.
+   public void EnableVibrate(bool enable) {
+      mOneSignal.Call("enableVibrate", enable);
+   }
 
-	public void EnableVibrate(bool enable) {
-		mOneSignal.Call("enableVibrate", enable);
-	}
+   public void EnableSound(bool enable) {
+      mOneSignal.Call("enableSound", enable);
+   }
 
-	public void EnableSound(bool enable) {
-		mOneSignal.Call("enableSound", enable);
-	}
+   public void SetInFocusDisplaying(OneSignal.OSInFocusDisplayOption display) {
+      mOneSignal.Call("setInFocusDisplaying", (int)display);
+   }
 
-	public void EnableInAppAlertNotification(bool enable) {
-		mOneSignal.Call("enableInAppAlertNotification", enable);
-	}
+   public void SetSubscription(bool enable) {
+      mOneSignal.Call("setSubscription", enable);
+   }
 
-	public void EnableNotificationsWhenActive(bool enable) {
-		mOneSignal.Call("enableNotificationsWhenActive", enable);
-	}
+   public void PostNotification(Dictionary<string, object> data) {
+      mOneSignal.Call("postNotification", Json.Serialize(data));
+   }
 
-	public void SetSubscription(bool enable) {
-		mOneSignal.Call("setSubscription", enable);
-	}
-
-	public void PostNotification(Dictionary<string, object> data) {
-		mOneSignal.Call("postNotification", Json.Serialize(data));
-	}
-
-  public void SetEmail(string email) {
-    mOneSignal.Call("setEmail", email);
+  public void SyncHashedEmail(string email) {
+    mOneSignal.Call("syncHashedEmail", email);
   }
 
   public void PromptLocation() {

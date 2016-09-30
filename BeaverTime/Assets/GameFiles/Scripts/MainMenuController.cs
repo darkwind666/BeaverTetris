@@ -35,19 +35,19 @@ public class MainMenuController : MonoBehaviour {
 		_vkapi.LoggedIn += onVKLogin;
 
 		if(gameGlobalSettings.paidGame){
-			OneSignal.Init(gameGlobalSettings.hdOneSignalId, gameGlobalSettings.hdOneSignalProjectNumber, HandleNotification);
+			OneSignal.StartInit(gameGlobalSettings.hdOneSignalId, gameGlobalSettings.hdOneSignalProjectNumber).EndInit();;
 		} else {
-			OneSignal.Init(gameGlobalSettings.freeOneSignalId, gameGlobalSettings.freeOneSignalProjectNumber, HandleNotification);
+			OneSignal.StartInit(gameGlobalSettings.freeOneSignalId, gameGlobalSettings.freeOneSignalProjectNumber).EndInit();;
 		}
 			
-		OneSignal.EnableInAppAlertNotification(true);
+		//OneSignal.EnableInAppAlertNotification(true);
 
         if (_playerData.playerExist == false) {
             selectLevelButton.SetActive(false);
 			endlessLevelButton.SetActive(false);
         }
 			
-		if (_playerData.playerExist == false) {
+		if (_playerData.playerExist == false && _playerData.notNowPressed == false) {
 			vkLogInPopUp.SetActive (true);
 		} 
 
@@ -114,6 +114,10 @@ public class MainMenuController : MonoBehaviour {
         _playerData.savePlayerData();
     }
 
+	public void notNowPressed()
+	{
+		_playerData.notNowPressed = true;
+	}
 
 	public void logIn()
 	{

@@ -150,7 +150,8 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 		if (settings.showAppodealAds) 
 		{
-			adAvailable = Appodeal.isLoaded(Appodeal.NON_SKIPPABLE_VIDEO);
+			//adAvailable = Appodeal.isLoaded(Appodeal.NON_SKIPPABLE_VIDEO);
+			adAvailable = true;
 		}
 			
 		return adAvailable;

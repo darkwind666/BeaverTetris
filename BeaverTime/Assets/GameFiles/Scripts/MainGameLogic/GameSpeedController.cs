@@ -25,6 +25,10 @@ public class GameSpeedController : MonoBehaviour {
 
     void Start () {
 
+		#if UNITY_IOS
+		standardUpdateTime = standardUpdateTime / 2;
+		#endif
+
         _maxUpdateTime = standardUpdateTime;
         _currentStandardUpdateTime = standardUpdateTime;
         _currentUpdateState = 0;
