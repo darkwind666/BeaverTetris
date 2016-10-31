@@ -20,6 +20,7 @@ public class GameGlobalSettings : ScriptableObject {
 	public bool blockAds;
 	public bool showVungleAds;
 	public bool showAppodealAds;
+	public bool showUnionAds;
 	public bool paidGame;
 	public string androidFreeAppodealId;
 	public string androidHdAppodealId;

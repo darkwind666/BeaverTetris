@@ -2,8 +2,9 @@
 using System.Collections;
 using AppodealAds.Unity.Api;
 using AppodealAds.Unity.Common;
+using Assets.Mediation_SDK.Library;
 
-public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
+public class AdsController : MonoBehaviour, INonSkippableVideoAdListener, AdListener {
 
 	public GameGlobalSettings settings;
 	public FinalChanceController chanceController;
@@ -15,6 +16,10 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 	bool _adToBlockAd;
 
 	BlockAdsController _currentBlockAdsController;
+
+	private Banner _mTopBanner;
+	private Interstitial _mInterstitial;
+	private Interstitial _mInterstitialVideo;
 
 	void Start () {
 	
@@ -47,6 +52,11 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 			Appodeal.initialize(appodealId, Appodeal.NON_SKIPPABLE_VIDEO | Appodeal.INTERSTITIAL | Appodeal.BANNER_TOP);
 			Appodeal.setNonSkippableVideoCallbacks(this);
+		}
+
+		if (settings.showUnionAds) 
+		{
+			AdSDK.start();
 		}
 	}
 
@@ -100,10 +110,18 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 
 	#endif 
 
-	public void onNonSkippableVideoFinished()
+
+	public virtual void onClosed(Ad ad)
 	{
 		getRewardForAd();
 	}
+
+	public virtual void onClicked(Ad ad) {}
+	public virtual void onError(Ad ad, AdError error) {}
+	public virtual void onLoaded(Ad ad) {}
+	public virtual void onOpened(Ad ad) {}
+
+	public void onNonSkippableVideoFinished() {}
 
 	public void onNonSkippableVideoLoaded() { }
 	public void onNonSkippableVideoFailedToLoad() { }
@@ -144,13 +162,19 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 		if (settings.showVungleAds) 
 		{
 			#if UNITY_WP_8_1 || UNITY_WINRT_8_1
-			adAvailable = Vungle.isAdvertAvailable ();
+			//adAvailable = Vungle.isAdvertAvailable ();
+			adAvailable = true;
 			#endif 
 		}
 
 		if (settings.showAppodealAds) 
 		{
 			//adAvailable = Appodeal.isLoaded(Appodeal.NON_SKIPPABLE_VIDEO);
+			adAvailable = true;
+		}
+
+		if (settings.showUnionAds) 
+		{
 			adAvailable = true;
 		}
 			
@@ -200,6 +224,21 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 		{
 			Appodeal.show(Appodeal.NON_SKIPPABLE_VIDEO);
 		}
+
+		if (settings.showUnionAds) 
+		{
+			if (_mInterstitialVideo == null)
+			{
+				_mInterstitialVideo = new Interstitial();
+				_mInterstitialVideo.setListener(this);
+			}
+
+			AdRequest adRequest = new AdRequest.Builder()
+				.pub("hexn@beavertimeV")
+				.build();
+			_mInterstitialVideo.load(adRequest);
+			_mInterstitialVideo.show();
+		}
 	}
 
 	public void tryShowInterstitial()
@@ -214,6 +253,20 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 					Appodeal.show(Appodeal.INTERSTITIAL);
 				}
 			}
+
+			if (settings.showUnionAds && settings.paidGame == false) 
+			{
+				if (_mInterstitial == null)
+				{
+					_mInterstitial = new Interstitial();
+				}
+
+				AdRequest adRequest = new AdRequest.Builder()
+					.pub("hexn@beavertimeI")
+					.build();
+				_mInterstitial.load(adRequest);
+				_mInterstitial.show();
+			}
 		}
 	}
 
@@ -226,6 +279,20 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 				Appodeal.show(Appodeal.INTERSTITIAL);
 			}
 		}
+
+		if (settings.showUnionAds && settings.paidGame == false && settings.blockAds == false) 
+		{
+			if (_mInterstitial == null)
+			{
+				_mInterstitial = new Interstitial();
+			}
+
+			AdRequest adRequest = new AdRequest.Builder()
+				.pub("hexn@beavertimeI")
+				.build();
+			_mInterstitial.load(adRequest);
+			_mInterstitial.show();
+		}
 	}
 
 	public void showBottomBanner()
@@ -237,6 +304,22 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 				Appodeal.show(Appodeal.BANNER_TOP);
 			}
 		}
+
+		if (settings.showUnionAds && settings.paidGame == false && settings.blockAds == false) 
+		{
+			if (_mTopBanner == null)
+			{
+				_mTopBanner = new Banner();
+				_mTopBanner.setShowPos(0,0);
+			}
+
+			AdRequest adRequest = new AdRequest.Builder()
+				.pub("hexn@beavertimeB")
+				.build();
+			_mTopBanner.load(adRequest);
+			_mTopBanner.show();
+
+		}
 	}
 
 	public void hideBottomBanner()
@@ -245,6 +328,25 @@ public class AdsController : MonoBehaviour, INonSkippableVideoAdListener {
 		{
 			Appodeal.hide(Appodeal.BANNER_TOP);
 		}
+
+		if (settings.showUnionAds) 
+		{
+			if (_mTopBanner != null)
+			{
+				_mTopBanner.Dispose();
+			}
+		}
+	}
+
+	int GetScreenDensityDpi()
+	{
+		AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+		AndroidJavaObject activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+		AndroidJavaObject wm = activity.Call<AndroidJavaObject>("getWindowManager");
+		AndroidJavaObject defaultDisplay = wm.Call<AndroidJavaObject>("getDefaultDisplay");
+		AndroidJavaObject displayMetrics = new AndroidJavaObject("android.util.DisplayMetrics");
+		defaultDisplay.Call("getMetrics", displayMetrics);
+		return displayMetrics.Get<int>("densityDpi");
 	}
 
 }
